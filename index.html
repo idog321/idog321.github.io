@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TopoKit — Field GIS for iOS & macOS</title>
-  <meta name="description" content="Professional field GIS on your iPhone, iPad, and Mac. Collect data, navigate terrain, and work with real coordinate systems — all offline, all on-device.">
+  <meta name="description" content="Professional field GIS on your iPhone, iPad, and Mac. Import rasters and vectors, navigate terrain, and work with real coordinate systems — all offline, all on-device.">
   <meta name="color-scheme" content="light dark">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="logo.svg">
@@ -38,8 +38,8 @@
         <span class="badge-dot"></span>
         Available for iPhone, iPad & Mac
       </div>
-      <h1>Your field data stays<br><em>in the field</em></h1>
-      <p>Professional GIS on your Apple devices. Collect features, navigate with real coordinate systems, and work with elevation data — all offline, all on-device, no account required.</p>
+      <h1>Professional GIS.<br><em>Personal privacy.</em></h1>
+      <p>Import your rasters and vectors, overlay them on real base maps, navigate terrain with elevation profiles — all offline, all on-device, no account required.</p>
       <div class="hero-actions">
         <!-- TODO: Replace # with your App Store link -->
         <a href="#" class="btn btn-primary">
@@ -51,77 +51,202 @@
     </div>
   </section>
 
-  <!-- Stats Band -->
-  <section class="specs">
-    <div class="specs-grid">
-      <div class="spec-item">
-        <div class="spec-value">6,000+</div>
-        <div class="spec-label">Coordinate Systems</div>
+  <!-- Feature Carousel -->
+  <section class="carousel-section" id="features">
+    <div class="carousel">
+      <div class="carousel-track">
+        <!-- Slide 1: Import Rasters -->
+        <div class="carousel-slide active">
+          <div class="slide-devices">
+            <div class="slide-mac">
+              <div class="screenshot-placeholder mac-screen">
+                <span class="placeholder-label">Mac — Raster Import</span>
+              </div>
+            </div>
+            <div class="slide-phone">
+              <div class="screenshot-placeholder phone-screen">
+                <span class="placeholder-label">iPhone</span>
+              </div>
+            </div>
+          </div>
+          <div class="slide-info">
+            <h3>Import rasters and vectors</h3>
+            <p>Load GeoTIFF, GeoPDF, GeoPackage, KML, KMZ, GeoJSON, and GPX files. Overlay them on Apple Maps with automatic coordinate system detection.</p>
+          </div>
+        </div>
+
+        <!-- Slide 2: Layers & Base Maps -->
+        <div class="carousel-slide">
+          <div class="slide-devices">
+            <div class="slide-mac">
+              <div class="screenshot-placeholder mac-screen">
+                <span class="placeholder-label">Mac — Layer Tree</span>
+              </div>
+            </div>
+            <div class="slide-phone">
+              <div class="screenshot-placeholder phone-screen">
+                <span class="placeholder-label">iPhone</span>
+              </div>
+            </div>
+          </div>
+          <div class="slide-info">
+            <h3>Layers on real base maps</h3>
+            <p>Organize your data in a hierarchical layer tree. Control opacity per layer, add XYZ tile servers and WMS services, and switch between standard, hybrid, or satellite views.</p>
+          </div>
+        </div>
+
+        <!-- Slide 3: Elevation -->
+        <div class="carousel-slide">
+          <div class="slide-devices">
+            <div class="slide-mac">
+              <div class="screenshot-placeholder mac-screen">
+                <span class="placeholder-label">Mac — Elevation Profile</span>
+              </div>
+            </div>
+            <div class="slide-phone">
+              <div class="screenshot-placeholder phone-screen">
+                <span class="placeholder-label">iPhone</span>
+              </div>
+            </div>
+          </div>
+          <div class="slide-info">
+            <h3>Elevation profiles</h3>
+            <p>Powered by the Copernicus GLO-30 DEM with 30-metre resolution worldwide. Generate elevation profiles along any path and see gain, loss, and min/max stats.</p>
+          </div>
+        </div>
+
+        <!-- Slide 4: Drawing -->
+        <div class="carousel-slide">
+          <div class="slide-devices">
+            <div class="slide-mac">
+              <div class="screenshot-placeholder mac-screen">
+                <span class="placeholder-label">Mac — Drawing Tools</span>
+              </div>
+            </div>
+            <div class="slide-phone">
+              <div class="screenshot-placeholder phone-screen">
+                <span class="placeholder-label">iPhone</span>
+              </div>
+            </div>
+          </div>
+          <div class="slide-info">
+            <h3>Draw, collect, annotate</h3>
+            <p>Drop points, draw lines and polygons with full customization — colours, dash patterns, pin icons, and photo attachments. Organize features into folders.</p>
+          </div>
+        </div>
+
+        <!-- Slide 5: GPS & Navigation -->
+        <div class="carousel-slide">
+          <div class="slide-devices">
+            <div class="slide-mac">
+              <div class="screenshot-placeholder mac-screen">
+                <span class="placeholder-label">Mac — GPS Tracks</span>
+              </div>
+            </div>
+            <div class="slide-phone">
+              <div class="screenshot-placeholder phone-screen">
+                <span class="placeholder-label">iPhone</span>
+              </div>
+            </div>
+          </div>
+          <div class="slide-info">
+            <h3>GPS track recording</h3>
+            <p>Record your path with three precision profiles — survey, hiking, and battery saver. Smart filtering rejects GPS errors automatically. Works in the background.</p>
+          </div>
+        </div>
+
+        <!-- Slide 6: iCloud Sync -->
+        <div class="carousel-slide">
+          <div class="slide-devices">
+            <div class="slide-mac">
+              <div class="screenshot-placeholder mac-screen">
+                <span class="placeholder-label">Mac — Drag & Drop</span>
+              </div>
+            </div>
+            <div class="slide-phone">
+              <div class="screenshot-placeholder phone-screen">
+                <span class="placeholder-label">iPhone</span>
+              </div>
+            </div>
+          </div>
+          <div class="slide-info">
+            <h3>Drag, drop, and go</h3>
+            <p>Drag your data straight into TopoKit on your Mac and it's instantly on your iPhone through iCloud. No cables, no export steps — just seamless sync between your Apple devices.</p>
+          </div>
+        </div>
       </div>
-      <div class="spec-item">
-        <div class="spec-value">30m</div>
-        <div class="spec-label">Global Elevation Data</div>
-      </div>
-      <div class="spec-item">
-        <div class="spec-value">100%</div>
-        <div class="spec-label">On-Device Privacy</div>
-      </div>
-      <div class="spec-item">
-        <div class="spec-value">0</div>
-        <div class="spec-label">Accounts Required</div>
+
+      <!-- Carousel Controls -->
+      <div class="carousel-controls">
+        <button class="carousel-btn prev" aria-label="Previous slide">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="carousel-dots"></div>
+        <button class="carousel-btn next" aria-label="Next slide">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
       </div>
     </div>
   </section>
 
-  <!-- Features -->
-  <section class="features" id="features">
-    <div class="section-label">Capabilities</div>
-    <h2 class="section-title">Built for the field</h2>
-    <p class="section-subtitle">Everything you need to collect spatial data, navigate terrain, and manage geographic information — designed for professionals who work outdoors.</p>
+  <!-- Feature Grid -->
+  <section class="features-compact">
+    <div class="section-label">Built for the field</div>
+    <h2 class="section-title">Everything you need outdoors</h2>
+    <p class="section-subtitle">Designed for geologists, surveyors, foresters, ecologists, and anyone who needs real GIS tools on their device.</p>
 
-    <div class="feature-grid">
-      <div class="feature-card">
-        <div class="feature-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.4 8 12 8 12s8-6.6 8-12a8 8 0 0 0-8-8Z"/></svg>
-        </div>
-        <h3>Real Coordinate Systems</h3>
-        <p>Work in any projection. Over 6,000 EPSG codes supported natively, powered by the PROJ library and NGA specifications. Enter and display coordinates in DD, DMS, DDM, or UTM.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1"/></svg>
-        </div>
-        <h3>Offline-First</h3>
-        <p>Cache map tiles and elevation data for offline use. Your fieldwork does not depend on cell service. Everything works in airplane mode, deep in the backcountry.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">
+    <div class="compact-grid">
+      <div class="compact-card">
+        <div class="compact-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
         </div>
-        <h3>Elevation Data</h3>
-        <p>Global 30-metre elevation from the Copernicus GLO-30 DEM, cached on your device. Get elevation for any point without an internet connection or API key.</p>
+        <h4>Elevation Data</h4>
+        <p>Copernicus GLO-30 DEM with 30m resolution. Elevation profiles, gain/loss stats, and single-point lookups — all cached offline.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      <div class="compact-card">
+        <div class="compact-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1"/></svg>
         </div>
-        <h3>Feature Collection</h3>
-        <p>Drop points, draw lines and polygons directly on the map. Attach attributes, organize by layer, and manage your spatial data with a clean, focused interface.</p>
+        <h4>Offline-First</h4>
+        <p>Download map tiles and elevation data for fully offline fieldwork. No cell service required.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
-        </div>
-        <h3>Routing & Navigation</h3>
-        <p>Plan routes with turn-by-turn directions using Apple Maps infrastructure. Multiple input methods: search, drop pins, or use your current location as a waypoint.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">
+      <div class="compact-card">
+        <div class="compact-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
-        <h3>Privacy by Design</h3>
-        <p>No accounts. No analytics. No tracking. Your data lives on your device and syncs through your personal iCloud. We never see it, and we never will.</p>
+        <h4>Privacy by Design</h4>
+        <p>No accounts. No analytics. No tracking. Your data lives on your device and syncs only through your personal iCloud.</p>
       </div>
+      <div class="compact-card">
+        <div class="compact-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.4 8 12 8 12s8-6.6 8-12a8 8 0 0 0-8-8Z"/></svg>
+        </div>
+        <h4>6,000+ Coordinate Systems</h4>
+        <p>Work in any projection with native EPSG support, powered by the PROJ library and NGA specifications.</p>
+      </div>
+      <div class="compact-card">
+        <div class="compact-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+        </div>
+        <h4>Raster Reprojection</h4>
+        <p>Automatically reprojects GeoTIFF and GeoPDF from any coordinate system. Handles large files with tiled processing.</p>
+      </div>
+      <div class="compact-card">
+        <div class="compact-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg>
+        </div>
+        <h4>One-Time Purchase</h4>
+        <p>No subscriptions. No in-app purchases. Buy it once and it's yours — every feature, every update.</p>
+      </div>
+    </div>
+
+    <div class="format-bar">
+      <span class="format-tag">GeoPackage</span>
+      <span class="format-tag">KML / KMZ</span>
+      <span class="format-tag">GeoJSON</span>
+      <span class="format-tag">GPX</span>
+      <span class="format-tag">GeoTIFF</span>
+      <span class="format-tag">GeoPDF</span>
     </div>
   </section>
 
@@ -138,7 +263,7 @@
     <div class="footer-inner">
       <div>
         <div class="footer-brand">TopoKit</div>
-        <div class="footer-copy">&copy; 2025 Nikolay Senilov. All rights reserved.</div>
+        <div class="footer-copy">&copy; 2026 Nikolay Senilov. All rights reserved.</div>
       </div>
       <ul class="footer-links">
         <li><a href="privacy.html">Privacy Policy</a></li>
@@ -149,5 +274,6 @@
   </footer>
 
   <script src="contours.js"></script>
+  <script src="carousel.js"></script>
 </body>
 </html>
