@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy — TopoKit</title>
   <meta name="description" content="TopoKit privacy policy. Your data stays on your device.">
+  <meta name="color-scheme" content="light dark">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗺️</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
 </head>
 <body>
 
@@ -14,11 +15,7 @@
   <nav class="nav">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <svg class="logo-icon" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="14" cy="14" r="12" stroke="currentColor" stroke-width="1.5" fill="none"/>
-          <ellipse cx="14" cy="14" rx="8" ry="6" stroke="currentColor" stroke-width="1.2" fill="none"/>
-          <ellipse cx="14" cy="14" rx="4" ry="2.5" stroke="currentColor" stroke-width="1" fill="none"/>
-        </svg>
+        <img class="logo-icon" src="logo.svg" alt="TopoKit logo">
         TopoKit
       </a>
       <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
@@ -42,21 +39,25 @@
 
     <h2>Data Collection</h2>
     <p>TopoKit does not collect, transmit, or store any personal data on external servers. The App does not require an account, does not use analytics or tracking services, and does not contain advertising.</p>
-    <p>All data you create in TopoKit — including features, annotations, layers, and settings — is stored locally on your device.</p>
+    <p>All data you create in TopoKit — including features, annotations, GPS tracks, layers, photos, and settings — is stored locally on your device.</p>
 
     <h2>iCloud Sync</h2>
-    <p>If you have iCloud enabled on your device, TopoKit may sync your data across your Apple devices using your personal iCloud account. This sync is handled entirely by Apple's CloudKit framework and is governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>. Nikolay Senilov does not have access to your iCloud data at any time.</p>
+    <p>If you have iCloud enabled on your device, TopoKit may sync your data across your Apple devices using your personal iCloud account. This includes project data, features, GPS tracks, and photos you have attached to map features. This sync is handled entirely by Apple's CloudKit framework and is governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>. Nikolay Senilov does not have access to your iCloud data at any time.</p>
 
     <h2>Location Data</h2>
-    <p>TopoKit requests access to your device's location services to show your position on the map and to enable navigation features. Location data is processed entirely on your device and is never transmitted to external servers by the App. You can revoke location access at any time through your device's Settings.</p>
+    <p>TopoKit requests access to your device's location services to show your position on the map, enable navigation features, and record GPS tracks. When GPS track recording is active, the App may access your location in the background. Location data is processed entirely on your device and is never transmitted to external servers by the App. You can revoke location access at any time through your device's Settings.</p>
+
+    <h2>Camera &amp; Photos</h2>
+    <p>TopoKit may request access to your device's camera to take photos and attach them to map features. Photos are stored locally within your project data on your device. If iCloud sync is enabled, photos may sync across your devices as part of your project data. Photos are never transmitted to external servers by the App. You can revoke camera access at any time through your device's Settings.</p>
 
     <h2>Network Requests</h2>
     <p>TopoKit connects to the following third-party services to provide core functionality:</p>
     <ul>
-      <li><strong>Apple MapKit</strong> — to load map tiles and provide routing/directions. These requests are governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>.</li>
-      <li><strong>Copernicus GLO-30 DEM</strong> — to download elevation data tiles, which are then cached locally on your device. These requests contain only geographic tile coordinates and no personal information.</li>
+      <li><strong>Apple MapKit</strong> — to load map tiles, search for places, and provide routing/directions. These requests are governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>.</li>
+      <li><strong>Copernicus GLO-30 DEM</strong> — to download elevation data tiles from Amazon Web Services (AWS S3), which are then cached locally on your device. These requests contain only geographic tile coordinates and no personal information.</li>
     </ul>
-    <p>No other network requests are made by the App. The App does not use analytics SDKs, crash reporting services, or advertising networks.</p>
+    <p>TopoKit also supports user-configured WMS and XYZ tile layer sources. If you add a custom tile layer, the App will make network requests to the server URL you specify to load map tiles. These connections are initiated by you, and the App does not control or monitor those third-party servers.</p>
+    <p>Beyond the services listed above, the App does not make network requests. The App does not use analytics SDKs, crash reporting services, or advertising networks.</p>
 
     <h2>Third-Party Libraries</h2>
     <p>TopoKit uses open-source and third-party libraries for coordinate reference system support (including PROJ, NGA Projections, and NGA Coordinate Reference Systems). These libraries operate entirely on-device and do not make any network requests or collect any data.</p>

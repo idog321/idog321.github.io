@@ -3,37 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TopoKit — Field GIS for iOS &amp; macOS</title>
+  <title>TopoKit — Field GIS for iOS & macOS</title>
   <meta name="description" content="Professional field GIS on your iPhone, iPad, and Mac. Collect data, navigate terrain, and work with real coordinate systems — all offline, all on-device.">
+  <meta name="color-scheme" content="light dark">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗺️</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
 </head>
 <body>
-
-  <!-- Contour background -->
-  <div class="contour-bg" aria-hidden="true">
-    <svg viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M-50 320 C200 280, 400 350, 600 310 S900 270, 1100 330 S1350 290, 1500 340" stroke="#C8BFA8" stroke-width="1" fill="none"/>
-      <path d="M-50 380 C180 340, 380 410, 580 370 S880 330, 1080 390 S1330 350, 1500 400" stroke="#C8BFA8" stroke-width="1" fill="none"/>
-      <path d="M-50 440 C220 400, 420 470, 620 430 S920 390, 1120 450 S1380 410, 1500 460" stroke="#C8BFA8" stroke-width="1" fill="none"/>
-      <path d="M-50 500 C200 460, 400 530, 600 490 S900 450, 1100 510 S1350 470, 1500 520" stroke="#C8BFA8" stroke-width="1" fill="none"/>
-      <path d="M-50 560 C240 520, 440 590, 640 550 S940 510, 1140 570 S1400 530, 1500 580" stroke="#C8BFA8" stroke-width="1" fill="none"/>
-      <path d="M-50 620 C180 580, 380 650, 580 610 S880 570, 1080 630 S1330 590, 1500 640" stroke="#C8BFA8" stroke-width="1" fill="none"/>
-      <path d="M-50 680 C220 640, 420 710, 620 670 S920 630, 1120 690 S1380 650, 1500 700" stroke="#C8BFA8" stroke-width="1" fill="none"/>
-      <path d="M-50 200 C260 160, 460 230, 660 190 S960 150, 1160 210 S1420 170, 1500 220" stroke="#C8BFA8" stroke-width="0.75" fill="none" opacity="0.6"/>
-      <path d="M-50 760 C260 720, 460 790, 660 750 S960 710, 1160 770 S1420 730, 1500 780" stroke="#C8BFA8" stroke-width="0.75" fill="none" opacity="0.6"/>
-    </svg>
-  </div>
 
   <!-- Navigation -->
   <nav class="nav">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <svg class="logo-icon" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="14" cy="14" r="12" stroke="currentColor" stroke-width="1.5" fill="none"/>
-          <ellipse cx="14" cy="14" rx="8" ry="6" stroke="currentColor" stroke-width="1.2" fill="none"/>
-          <ellipse cx="14" cy="14" rx="4" ry="2.5" stroke="currentColor" stroke-width="1" fill="none"/>
-        </svg>
+        <img class="logo-icon" src="logo.svg" alt="TopoKit logo">
         TopoKit
       </a>
       <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
@@ -54,14 +36,14 @@
     <div class="hero-inner">
       <div class="hero-badge">
         <span class="badge-dot"></span>
-        Available for iPhone, iPad &amp; Mac
+        Available for iPhone, iPad & Mac
       </div>
       <h1>Your field data stays<br><em>in the field</em></h1>
       <p>Professional GIS on your Apple devices. Collect features, navigate with real coordinate systems, and work with elevation data — all offline, all on-device, no account required.</p>
       <div class="hero-actions">
         <!-- TODO: Replace # with your App Store link -->
         <a href="#" class="btn btn-primary">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/><path d="M7 11l5 5 5-5"/><path d="M12 4v12"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/><path d="M7 11l5 5 5-5"/><path d="M12 4v12"/></svg>
           Download on the App Store
         </a>
         <a href="#features" class="btn btn-outline">See Features</a>
@@ -100,42 +82,42 @@
     <div class="feature-grid">
       <div class="feature-card">
         <div class="feature-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.4 8 12 8 12s8-6.6 8-12a8 8 0 0 0-8-8Z"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.4 8 12 8 12s8-6.6 8-12a8 8 0 0 0-8-8Z"/></svg>
         </div>
         <h3>Real Coordinate Systems</h3>
         <p>Work in any projection. Over 6,000 EPSG codes supported natively, powered by the PROJ library and NGA specifications. Enter and display coordinates in DD, DMS, DDM, or UTM.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1"/></svg>
         </div>
         <h3>Offline-First</h3>
         <p>Cache map tiles and elevation data for offline use. Your fieldwork does not depend on cell service. Everything works in airplane mode, deep in the backcountry.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
         </div>
         <h3>Elevation Data</h3>
         <p>Global 30-metre elevation from the Copernicus GLO-30 DEM, cached on your device. Get elevation for any point without an internet connection or API key.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
         <h3>Feature Collection</h3>
         <p>Drop points, draw lines and polygons directly on the map. Attach attributes, organize by layer, and manage your spatial data with a clean, focused interface.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
         </div>
-        <h3>Routing &amp; Navigation</h3>
+        <h3>Routing & Navigation</h3>
         <p>Plan routes with turn-by-turn directions using Apple Maps infrastructure. Multiple input methods: search, drop pins, or use your current location as a waypoint.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
         <h3>Privacy by Design</h3>
         <p>No accounts. No analytics. No tracking. Your data lives on your device and syncs through your personal iCloud. We never see it, and we never will.</p>
@@ -166,5 +148,6 @@
     </div>
   </footer>
 
+  <script src="contours.js"></script>
 </body>
 </html>
