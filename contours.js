@@ -256,10 +256,10 @@
         ? 0.06 + 0.1 * brightness
         : 0.04 + 0.08 * brightness;
 
-      ctx.strokeStyle = `rgba(${baseColor}, ${alpha})`;
-      ctx.lineWidth = 1;
       ctx.lineJoin = 'round';
       ctx.lineCap = 'round';
+      ctx.lineWidth = 1;
+      ctx.strokeStyle = `rgba(${baseColor}, ${alpha})`;
 
       for (const line of polylines) {
         ctx.beginPath();
