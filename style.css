@@ -229,7 +229,12 @@ body {
 .hero-devices {
   position: relative;
   width: 100%;
-  padding-bottom: 68.75%; /* 11/16 aspect ratio fallback for Safari */
+  /* Use native aspect-ratio instead of padding-bottom hack.
+     The padding-bottom trick collapses to zero height in Safari
+     when used inside a flex item, because Safari resolves the
+     percentage padding against a zero-width containing block.
+     aspect-ratio is supported in Safari 15+, Chrome 88+, Firefox 89+. */
+  aspect-ratio: 16 / 11;
 }
 
 .hero-mac {
