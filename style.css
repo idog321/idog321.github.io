@@ -237,11 +237,17 @@ body {
   aspect-ratio: 4260 / 2840;
 }
 
-/* All four images sit directly in .hero-devices — no wrapper divs.
-   DOM order = paint order in every browser. No z-index needed.
-   Order: mac-screen, mac-bezel, phone-screen, phone-bezel. */
+/* Mac wrapper — fills .hero-devices. Phone wrapper comes after
+   in DOM order so it naturally paints on top. No z-index needed. */
+.hero-mac {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
-.hero-devices .mac-screen {
+.hero-mac .mac-screen {
   position: absolute;
   top: 10.67%;
   left: 9.4%;
@@ -251,7 +257,7 @@ body {
   display: block;
 }
 
-.hero-devices .mac-bezel {
+.hero-mac .mac-bezel {
   position: absolute;
   top: 0;
   left: 0;
@@ -261,29 +267,33 @@ body {
   pointer-events: none;
 }
 
-/* Phone: bottom-right of .hero-devices.
-   Explicit width + height (no aspect-ratio) for Safari.
-   Parent is 4260:2840. Phone at 22% wide with 1350:2760 ratio
-   needs height = 22% × (2760/1350) / (2840/4260) ≈ 67.4%. */
-
-.hero-devices .phone-screen {
-  position: absolute;
-  /* Position the screen content within the phone bezel area */
-  bottom: calc(-10% + 67.4% * 0.025);
-  right: calc(-5% + 22% * 0.053);
-  width: calc(22% * 0.894);
-  height: calc(67.4% * 0.95);
-  object-fit: cover;
-  display: block;
-  border-radius: 6%;
-}
-
-.hero-devices .phone-bezel {
+/* Phone wrapper — explicit width + height for Safari.
+   No z-index, no filter — DOM order handles stacking. */
+.hero-phone {
   position: absolute;
   bottom: -10%;
   right: -5%;
   width: 22%;
   height: 67.4%;
+}
+
+.hero-phone .phone-screen {
+  position: absolute;
+  top: 2.5%;
+  left: 5.3%;
+  width: 89.4%;
+  height: 95%;
+  object-fit: cover;
+  display: block;
+  border-radius: 6%;
+}
+
+.hero-phone .phone-bezel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: block;
   pointer-events: none;
 }
