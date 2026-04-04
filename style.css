@@ -237,12 +237,12 @@ body {
   aspect-ratio: 4260 / 2840;
 }
 
+/* Mac device: absolutely positioned to fill .hero-devices.
+   Both the screenshot and bezel use inset:0 + width/height:100%
+   so Safari has fully explicit dimensions to resolve. */
 .hero-mac {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
 }
 
 .hero-mac .mac-screen {
@@ -258,22 +258,27 @@ body {
 
 .hero-mac .device-bezel {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
   display: block;
   pointer-events: none;
   filter: drop-shadow(0 4px 24px rgba(0, 0, 0, 0.4));
 }
 
+/* Phone device: positioned at bottom-right of .hero-devices.
+   Safari does not reliably resolve height from aspect-ratio on
+   absolutely-positioned elements, so we set both width and height
+   explicitly as percentages of the parent. The parent .hero-devices
+   has a known aspect-ratio of 4260/2840 ≈ 1.5:1, so a phone that
+   is 22% wide with a 1350:2760 (≈ 0.489:1) ratio needs a height
+   of 22% × (2760/1350) / (2840/4260) ≈ 67.4% of parent height. */
 .hero-phone {
   position: absolute;
   bottom: -10%;
   right: -5%;
   width: 22%;
-  aspect-ratio: 1350 / 2760;
+  height: 67.4%;
 }
 
 .hero-phone .phone-screen {
@@ -289,11 +294,9 @@ body {
 
 .hero-phone .device-bezel {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
   display: block;
   pointer-events: none;
   filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.5));
