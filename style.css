@@ -247,13 +247,28 @@ body {
 
 .hero-mac .mac-screen {
   position: absolute;
-  top: 12.9%;
+  top: 10.67%;
   left: 9.4%;
   width: 81.2%;
-  height: 76.4%;
+  height: 78.6%;
   object-fit: cover;
+  object-position: center top;
   display: block;
   border-radius: 2px;
+}
+
+/* Black bar behind the notch — simulates how macOS renders
+   the menu bar area black around the camera cutout. */
+.hero-mac::before {
+  content: "";
+  position: absolute;
+  top: 10.67%;
+  left: 9.4%;
+  width: 81.2%;
+  height: 2.25%;
+  background: #000;
+  z-index: 1;
+  border-radius: 2px 2px 0 0;
 }
 
 .hero-mac .device-bezel {
@@ -263,6 +278,7 @@ body {
   height: 100%;
   display: block;
   pointer-events: none;
+  z-index: 2;
   filter: drop-shadow(0 4px 24px rgba(0, 0, 0, 0.4));
 }
 
