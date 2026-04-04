@@ -234,7 +234,7 @@ body {
      when used inside a flex item, because Safari resolves the
      percentage padding against a zero-width containing block.
      aspect-ratio is supported in Safari 15+, Chrome 88+, Firefox 89+. */
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 4260 / 2840;
 }
 
 .hero-mac {
@@ -246,13 +246,26 @@ body {
 }
 
 .hero-mac .mac-screen {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  top: 12.9%;
+  left: 9.4%;
+  width: 81.2%;
+  height: 76.4%;
   object-fit: cover;
   display: block;
-  border-radius: 12px;
-  box-shadow: var(--shadow-lg);
-  border: 1.5px solid var(--color-card-border);
+  border-radius: 2px;
+}
+
+.hero-mac .device-bezel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 24px rgba(0, 0, 0, 0.4));
 }
 
 .hero-phone {
@@ -260,16 +273,30 @@ body {
   bottom: -10%;
   right: -5%;
   width: 22%;
+  aspect-ratio: 1350 / 2760;
 }
 
 .hero-phone .phone-screen {
-  width: 100%;
-  aspect-ratio: 1170 / 2532;
+  position: absolute;
+  top: 2.5%;
+  left: 5.3%;
+  width: 89.4%;
+  height: 95%;
   object-fit: cover;
   display: block;
-  border-radius: 14px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 0, 0, 0.15);
-  border: 1.5px solid var(--color-card-border);
+  border-radius: 6%;
+}
+
+.hero-phone .device-bezel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
+  filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.5));
 }
 
 
