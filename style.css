@@ -237,67 +237,53 @@ body {
   aspect-ratio: 4260 / 2840;
 }
 
-/* Mac device: absolutely positioned to fill .hero-devices.
-   Both the screenshot and bezel use inset:0 + width/height:100%
-   so Safari has fully explicit dimensions to resolve. */
-.hero-mac {
-  position: absolute;
-  inset: 0;
-}
+/* All four images sit directly in .hero-devices — no wrapper divs.
+   DOM order = paint order in every browser. No z-index needed.
+   Order: mac-screen, mac-bezel, phone-screen, phone-bezel. */
 
-.hero-mac .mac-screen {
+.hero-devices .mac-screen {
   position: absolute;
   top: 10.67%;
   left: 9.4%;
   width: 81.2%;
   height: 78.6%;
-  object-fit: cover;
+  object-fit: fill;
   display: block;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
 }
 
-.hero-mac .device-bezel {
+.hero-devices .mac-bezel {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   display: block;
   pointer-events: none;
 }
 
-/* Phone device: positioned at bottom-right of .hero-devices.
-   Safari does not reliably resolve height from aspect-ratio on
-   absolutely-positioned elements, so we set both width and height
-   explicitly as percentages of the parent. The parent .hero-devices
-   has a known aspect-ratio of 4260/2840 ≈ 1.5:1, so a phone that
-   is 22% wide with a 1350:2760 (≈ 0.489:1) ratio needs a height
-   of 22% × (2760/1350) / (2840/4260) ≈ 67.4% of parent height. */
-.hero-phone {
+/* Phone: bottom-right of .hero-devices.
+   Explicit width + height (no aspect-ratio) for Safari.
+   Parent is 4260:2840. Phone at 22% wide with 1350:2760 ratio
+   needs height = 22% × (2760/1350) / (2840/4260) ≈ 67.4%. */
+
+.hero-devices .phone-screen {
+  position: absolute;
+  /* Position the screen content within the phone bezel area */
+  bottom: calc(-10% + 67.4% * 0.025);
+  right: calc(-5% + 22% * 0.053);
+  width: calc(22% * 0.894);
+  height: calc(67.4% * 0.95);
+  object-fit: cover;
+  display: block;
+  border-radius: 6%;
+}
+
+.hero-devices .phone-bezel {
   position: absolute;
   bottom: -10%;
   right: -5%;
   width: 22%;
   height: 67.4%;
-  z-index: 2;
-}
-
-.hero-phone .phone-screen {
-  position: absolute;
-  top: 2.5%;
-  left: 5.3%;
-  width: 89.4%;
-  height: 95%;
-  object-fit: cover;
-  display: block;
-  border-radius: 6%;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-}
-
-.hero-phone .device-bezel {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
   display: block;
   pointer-events: none;
 }
