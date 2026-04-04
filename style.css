@@ -243,7 +243,6 @@ body {
 .hero-mac {
   position: absolute;
   inset: 0;
-  z-index: 1;
 }
 
 .hero-mac .mac-screen {
@@ -254,6 +253,7 @@ body {
   height: 78.6%;
   object-fit: cover;
   display: block;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
 }
 
 .hero-mac .device-bezel {
@@ -263,8 +263,6 @@ body {
   height: 100%;
   display: block;
   pointer-events: none;
-  z-index: 1;
-  filter: drop-shadow(0 4px 24px rgba(0, 0, 0, 0.4));
 }
 
 /* Phone device: positioned at bottom-right of .hero-devices.
@@ -292,6 +290,7 @@ body {
   object-fit: cover;
   display: block;
   border-radius: 6%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
 
 .hero-phone .device-bezel {
@@ -301,7 +300,6 @@ body {
   height: 100%;
   display: block;
   pointer-events: none;
-  filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.5));
 }
 
 
