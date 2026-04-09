@@ -3,11 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TopoKit — Field GIS for iOS & macOS</title>
-  <meta name="description" content="Professional field GIS on your iPhone, iPad, and Mac. Import rasters and vectors, navigate terrain, and work with real coordinate systems — all offline, all on-device.">
+  <title>TopoKit</title>
+  <meta name="description" content="TopoKit — Field GIS for iOS and macOS.">
   <meta name="color-scheme" content="light dark">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <style>
+    .coming-soon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      text-align: center;
+      padding: 4rem 1.5rem;
+    }
+    .coming-soon-text {
+      font-size: 1.25rem;
+      color: var(--color-text-muted);
+      margin-bottom: 2rem;
+    }
+    .coming-soon-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  </style>
 </head>
 <body>
 
@@ -18,339 +40,20 @@
         <img class="logo-icon" src="logo.svg" alt="TopoKit logo">
         TopoKit
       </a>
-      <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
-        <span></span><span></span><span></span>
-      </button>
       <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="support.html">Support</a></li>
-        <li><a href="privacy.html">Privacy</a></li>
-        <!-- TODO: Replace # with your App Store link once published -->
-        <li><a href="#" class="cta-link">Download</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Use</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <h1>All your maps.<br><em>One app.</em></h1>
-        <p>A full GIS workflow that syncs across your Apple devices. Organize your work in projects, work with raster and vector layers, and take everything offline. No subscription. No account.</p>
-        <div class="hero-actions">
-          <!-- TODO: Replace # with your App Store link -->
-          <a href="#" class="btn btn-primary">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/><path d="M7 11l5 5 5-5"/><path d="M12 4v12"/></svg>
-            Download for iPhone & Mac
-          </a>
-          <a href="#features" class="btn btn-outline">See Features</a>
-        </div>
-      </div>
-      <div class="hero-preview">
-        <div class="hero-devices">
-          <div class="hero-mac">
-            <img src="Images/mac-screenshot.png" alt="TopoKit on Mac" class="mac-screen">
-            <img src="Images/MacBook Pro M5 16-inch Space Black.png" alt="" class="mac-bezel" aria-hidden="true">
-          </div>
-          <div class="hero-phone">
-            <img src="Images/iphone-screenshot.jpg" alt="TopoKit on iPhone" class="phone-screen">
-            <img src="Images/iPhone 16 Pro - Black Titanium - Portrait.png" alt="" class="phone-bezel" aria-hidden="true">
-          </div>
-        </div>
-      </div>
+  <main class="coming-soon">
+    <p class="coming-soon-text">Full website coming soon.</p>
+    <div class="coming-soon-links">
+      <a href="privacy.html" class="btn btn-outline">Privacy Policy</a>
+      <a href="terms.html" class="btn btn-outline">Terms of Use</a>
     </div>
-  </section>
-
-
-  <!-- Feature Carousel -->
-  <section class="carousel-section" id="features">
-    <div class="carousel">
-      <div class="carousel-track">
-        <!-- Slide 1: Projects & Layers -->
-        <div class="carousel-slide active">
-          <div class="slide-devices">
-            <div class="slide-mac">
-              <div class="screenshot-placeholder mac-screen">
-                <span class="placeholder-label">Mac — Projects & Layers</span>
-              </div>
-            </div>
-            <div class="slide-phone">
-              <div class="screenshot-placeholder phone-screen">
-                <span class="placeholder-label">iPhone</span>
-              </div>
-            </div>
-          </div>
-          <div class="slide-info">
-            <h3>Projects and layers. Organized your way.</h3>
-            <p>Group everything into projects with a full hierarchical layer tree. Rasters, vectors, tile layers, and folders — drag and drop to reorder, nest as deep as you need, and control visibility and opacity per layer.</p>
-          </div>
-        </div>
-
-        <!-- Slide 2: Designed for Apple -->
-        <div class="carousel-slide">
-          <div class="slide-devices">
-            <div class="slide-mac">
-              <div class="screenshot-placeholder mac-screen">
-                <span class="placeholder-label">Mac — Customization</span>
-              </div>
-            </div>
-            <div class="slide-phone">
-              <div class="screenshot-placeholder phone-screen">
-                <span class="placeholder-label">iPhone</span>
-              </div>
-            </div>
-          </div>
-          <div class="slide-info">
-            <h3>Designed to feel native.</h3>
-            <p>Built from the ground up for Apple platforms — not a port, not a web wrapper. Customize the look to fit your workflow, with full dark mode support and an interface that feels right at home on your Mac and iPhone.</p>
-          </div>
-        </div>
-
-        <!-- Slide 3: Raster Overlay -->
-        <div class="carousel-slide">
-          <div class="slide-devices">
-            <div class="slide-mac">
-              <div class="screenshot-placeholder mac-screen">
-                <span class="placeholder-label">Mac — Raster Overlay</span>
-              </div>
-            </div>
-            <div class="slide-phone">
-              <div class="screenshot-placeholder phone-screen">
-                <span class="placeholder-label">iPhone</span>
-              </div>
-            </div>
-          </div>
-          <div class="slide-info">
-            <h3>Drop your rasters — they just work</h3>
-            <p>GeoTIFFs and GeoPDFs land exactly where they belong. Automatic CRS detection, on-the-fly reprojection across 6,000+ coordinate systems, per-layer opacity, and you can stack as many as you need.</p>
-          </div>
-        </div>
-
-        <!-- Slide 2: Tile Servers -->
-        <div class="carousel-slide">
-          <div class="slide-devices">
-            <div class="slide-mac">
-              <div class="screenshot-placeholder mac-screen">
-                <span class="placeholder-label">Mac — Tile Servers</span>
-              </div>
-            </div>
-            <div class="slide-phone">
-              <div class="screenshot-placeholder phone-screen">
-                <span class="placeholder-label">iPhone</span>
-              </div>
-            </div>
-          </div>
-          <div class="slide-info">
-            <h3>Add any tile server. Download for offline.</h3>
-            <p>Connect to any XYZ or WMS tile server, browse layers, and download tiles to your device. Select a region, pick your zoom levels, and take your maps into the field — no cell service needed.</p>
-          </div>
-        </div>
-
-        <!-- Slide 3: Vectors -->
-        <div class="carousel-slide">
-          <div class="slide-devices">
-            <div class="slide-mac">
-              <div class="screenshot-placeholder mac-screen">
-                <span class="placeholder-label">Mac — Vector Data</span>
-              </div>
-            </div>
-            <div class="slide-phone">
-              <div class="screenshot-placeholder phone-screen">
-                <span class="placeholder-label">iPhone</span>
-              </div>
-            </div>
-          </div>
-          <div class="slide-info">
-            <h3>Your data, your formats</h3>
-            <p>Import and export GPX, KML, KMZ, GeoJSON, and GeoPackage. Lossless round-tripping preserves your CRS metadata. Drop a folder of files and they all come in.</p>
-          </div>
-        </div>
-
-        <!-- Slide 4: Drawing & Measurement -->
-        <div class="carousel-slide">
-          <div class="slide-devices">
-            <div class="slide-mac">
-              <div class="screenshot-placeholder mac-screen">
-                <span class="placeholder-label">Mac — Drawing & Measurement</span>
-              </div>
-            </div>
-            <div class="slide-phone">
-              <div class="screenshot-placeholder phone-screen">
-                <span class="placeholder-label">iPhone</span>
-              </div>
-            </div>
-          </div>
-          <div class="slide-info">
-            <h3>Draw, measure, annotate</h3>
-            <p>Drop points, draw lines and polygons, then measure distance, area, and bearing in real time. Attach photos, customize styles, and organize everything into folders.</p>
-          </div>
-        </div>
-
-        <!-- Slide 5: GPS Recording -->
-        <div class="carousel-slide">
-          <div class="slide-devices">
-            <div class="slide-mac">
-              <div class="screenshot-placeholder mac-screen">
-                <span class="placeholder-label">Mac — GPS Tracks</span>
-              </div>
-            </div>
-            <div class="slide-phone">
-              <div class="screenshot-placeholder phone-screen">
-                <span class="placeholder-label">iPhone</span>
-              </div>
-            </div>
-          </div>
-          <div class="slide-info">
-            <h3>GPS track recording</h3>
-            <p>Three accuracy profiles — High Precision, Standard, and Battery Saver. Auto-pause when you stop, auto-resume when you move, background recording, and full trip statistics.</p>
-          </div>
-        </div>
-
-        <!-- Slide 7: iCloud Sync -->
-        <div class="carousel-slide">
-          <div class="slide-devices">
-            <div class="slide-mac">
-              <div class="screenshot-placeholder mac-screen">
-                <span class="placeholder-label">Mac — Drag & Drop</span>
-              </div>
-            </div>
-            <div class="slide-phone">
-              <div class="screenshot-placeholder phone-screen">
-                <span class="placeholder-label">iPhone</span>
-              </div>
-            </div>
-          </div>
-          <div class="slide-info">
-            <h3>Open on your Mac. Walk out the door.</h3>
-            <p>iCloud sync keeps your projects, rasters, vectors, and downloaded tiles in sync across all your devices. Pin projects for offline access — everything is there when you need it.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Carousel Controls -->
-      <div class="carousel-controls">
-        <button class="carousel-btn prev" aria-label="Previous slide">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
-        </button>
-        <div class="carousel-dots"></div>
-        <button class="carousel-btn next" aria-label="Next slide">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Feature Grid -->
-  <section class="features-compact">
-    <div class="section-label">Bring your own everything</div>
-    <h2 class="section-title">Your maps. Your data. Your rules.</h2>
-    <p class="section-subtitle">Built for anyone who works with maps — geologists, surveyors, hikers, ecologists, foresters, and everyone in between.</p>
-
-    <div class="compact-grid">
-      <div class="compact-card">
-        <div class="compact-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
-        </div>
-        <h4>Raster Reprojection</h4>
-        <p>Drop a GeoTIFF or GeoPDF and it lands in the right place. Auto CRS detection across 6,000+ projections, on-the-fly reprojection, tiled rendering for huge files.</p>
-      </div>
-      <div class="compact-card">
-        <div class="compact-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
-        </div>
-        <h4>Offline Tile Downloads</h4>
-        <p>Connect to any XYZ or WMS tile server, select a region, and download tiles straight to your device. Take your maps into the field with zero cell service.</p>
-      </div>
-      <div class="compact-card">
-        <div class="compact-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M12 18v-6"/><path d="m9 15 3-3 3 3"/></svg>
-        </div>
-        <h4>Import & Export Everything</h4>
-        <p>GPX, KML, KMZ, GeoJSON, GeoPackage, GeoTIFF, GeoPDF — bring it all in, take it all out. Lossless round-tripping preserves your metadata.</p>
-      </div>
-      <div class="compact-card">
-        <div class="compact-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h5"/><path d="M17 12h5"/><path d="M12 2v5"/><path d="M12 17v5"/><circle cx="12" cy="12" r="4"/></svg>
-        </div>
-        <h4>Measurement Tools</h4>
-        <p>Measure distance, area, and bearing right on the map. Geodesic calculations that account for the curvature of the Earth. Copy results to your clipboard.</p>
-      </div>
-      <div class="compact-card">
-        <div class="compact-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h4>Privacy by Design</h4>
-        <p>No accounts. No analytics. No tracking. Your data lives on your device and syncs only through your personal iCloud. That's it.</p>
-      </div>
-      <div class="compact-card">
-        <div class="compact-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg>
-        </div>
-        <h4>One-Time Purchase</h4>
-        <p>No subscriptions. No in-app purchases. Buy it once and it's yours — every feature, every update, forever.</p>
-      </div>
-      <div class="compact-card">
-        <div class="compact-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-        </div>
-        <h4>Hierarchical Layers</h4>
-        <p>Organize rasters, vectors, and tile layers in a full layer tree. Unlimited folder nesting, drag-and-drop reordering, per-layer opacity control.</p>
-      </div>
-      <div class="compact-card">
-        <div class="compact-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-        </div>
-        <h4>Search Everything</h4>
-        <p>Type a place name, a coordinate in any format, or the name of a feature in your project — TopoKit finds it instantly.</p>
-      </div>
-      <div class="compact-card">
-        <div class="compact-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        </div>
-        <h4>Directions & Routing</h4>
-        <p>Get driving or walking directions between any two points. Save routes as line features with distance and travel time metadata.</p>
-      </div>
-      <div class="compact-card">
-        <div class="compact-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-        </div>
-        <h4>Native Apple Design</h4>
-        <p>Built from the ground up for Mac and iPhone — not a port. Customize the appearance to fit your workflow, with full dark mode and an interface that feels right at home.</p>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- Supported Formats -->
-  <section class="formats-section">
-    <div class="section-label">What you can bring</div>
-    <h2 class="section-title">Supported formats</h2>
-    <table class="formats-table">
-      <tbody>
-        <tr>
-          <td class="format-type">Rasters</td>
-          <td>GeoTIFF, GeoPDF</td>
-        </tr>
-        <tr>
-          <td class="format-type">Vectors</td>
-          <td>GeoPackage, KML, KMZ, GeoJSON, GPX</td>
-        </tr>
-        <tr>
-          <td class="format-type">Tile Layers</td>
-          <td>XYZ, WMS</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-
-  <!-- CTA Band -->
-  <section class="highlight-band">
-    <h2 class="section-title">One purchase. Every feature. Forever.</h2>
-    <p>No subscriptions. No accounts. No data harvesting. Just your maps, your data, and an app that gets out of the way.</p>
-    <!-- TODO: Replace # with App Store link and $X.XX with actual price -->
-    <a href="#" class="btn btn-primary">Get TopoKit — $X.XX</a>
-  </section>
+  </main>
 
   <!-- Footer -->
   <footer class="footer">
@@ -362,12 +65,9 @@
       <ul class="footer-links">
         <li><a href="privacy.html">Privacy Policy</a></li>
         <li><a href="terms.html">Terms of Use</a></li>
-        <li><a href="support.html">Support</a></li>
       </ul>
     </div>
   </footer>
 
-  <script src="contours.js"></script>
-  <script src="carousel.js"></script>
 </body>
 </html>
