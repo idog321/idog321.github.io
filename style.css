@@ -123,6 +123,12 @@ body {
   border-radius: 6px;
 }
 
+.nav-logo .logo-wordmark {
+  height: 28px;
+  width: auto;
+  max-height: 28px;
+}
+
 .nav-links {
   display: flex;
   gap: 2rem;
