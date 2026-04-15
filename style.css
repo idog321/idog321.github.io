@@ -339,6 +339,60 @@ body {
   justify-content: flex-start;
   flex-wrap: wrap;
   animation: fadeInUp 0.7s ease-out 0.2s both;
+  margin-top: 2rem;
+}
+
+/* App Store badge */
+.app-store-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 1.4rem 0.55rem 1rem;
+  background: #000;
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.app-store-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.app-store-badge .apple-icon {
+  fill: #fff;
+  flex-shrink: 0;
+}
+
+.app-store-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.app-store-small {
+  font-size: 0.55rem;
+  letter-spacing: 0.02em;
+}
+
+.app-store-big {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+@media (prefers-color-scheme: dark) {
+  .app-store-badge {
+    background: #fff;
+    color: #000;
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .app-store-badge .apple-icon {
+    fill: #000;
+  }
 }
 
 .btn {
@@ -987,6 +1041,14 @@ body {
   line-height: 1.65;
 }
 
+/* ---- Coming Soon Note ---- */
+.coming-soon-note {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  padding: 3rem 1.5rem;
+}
+
 /* ---- Footer ---- */
 .footer {
   margin-top: auto;
@@ -1070,16 +1132,13 @@ body {
   }
 
   .hero-preview {
-    margin-top: -2rem;
+    margin-top: 1.5rem;
+    max-width: 500px;
+    width: 100%;
   }
 
   .hero-actions {
     justify-content: center;
-  }
-
-  .hero-preview {
-    max-width: 500px;
-    width: 100%;
   }
 
   .specs-grid {
