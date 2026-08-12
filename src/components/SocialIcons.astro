@@ -13,10 +13,13 @@ import Default from '@astrojs/starlight/components/SocialIcons.astro';
   <button type="button" data-value="mac">Mac</button>
   <button type="button" data-value="ios">iPhone</button>
 </div>
-<div class="version-toggle" role="group" aria-label="Show the manual for a TopoKit version">
-  <button type="button" data-value="1.1" title="TopoKit 1.1, the App Store release">1.1</button>
-  <button type="button" data-value="1.1.1" title="TopoKit 1.1.1, currently in beta">1.1.1</button>
-</div>
+<label class="version-select">
+  <span>Version</span>
+  <select aria-label="Show the manual for a TopoKit version">
+    <option value="1.1">1.1</option>
+    <option value="1.1.1">1.1.1 (beta)</option>
+  </select>
+</label>
 
 <script is:inline>
   // Starlight renders this slot twice — the header on wide screens, the mobile
@@ -74,16 +77,17 @@ import Default from '@astrojs/starlight/components/SocialIcons.astro';
       try {
         localStorage.setItem('topokit-version', value);
       } catch (e) {}
-      document.querySelectorAll('.version-toggle button').forEach(function (b) {
-        b.setAttribute('aria-pressed', String(b.dataset.value === value));
+      document.querySelectorAll('.version-select select').forEach(function (s) {
+        if (s.value !== value) s.value = value;
       });
     }
     document.addEventListener('click', function (e) {
       if (!e.target.closest) return;
       var b = e.target.closest('.platform-toggle button');
       if (b) return apply(b.dataset.value);
-      var v = e.target.closest('.version-toggle button');
-      if (v) applyVersion(v.dataset.value);
+    });
+    document.addEventListener('change', function (e) {
+      if (e.target.closest && e.target.closest('.version-select')) applyVersion(e.target.value);
     });
     // Wait for the full document: the mobile-menu copy of the toggle is further
     // down the page than this script, so an immediate call would miss it.

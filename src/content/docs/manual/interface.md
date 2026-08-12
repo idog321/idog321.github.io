@@ -21,7 +21,7 @@ The map takes centre stage on both platforms, and everything you add or create d
 :::ios
 ## iPhone layout
 
-![TopoKit on iPhone: full-screen map with the tool sidebar on the right edge and the bottom sheet at its slim height](../../../assets/manual/ios-overview.png)
+![TopoKit on iPhone: full-screen map with the tool sidebar on the right edge and the bottom sheet at its slim height](../../../assets/manual/overview-ios.png)
 
 The iPhone app is a full-screen map with a **bottom sheet** that you drag between three heights, from a slim tab-bar strip up to full screen.
 

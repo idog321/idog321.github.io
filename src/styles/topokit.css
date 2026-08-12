@@ -74,8 +74,7 @@
    Blocks/spans tagged by remark-platform hide when they don't match, and
    blocks show a small platform badge while in "All" mode.
    No z-index, no filter: plain flow layout only (Safari-safe). */
-.platform-toggle,
-.version-toggle {
+.platform-toggle {
   display: inline-flex;
   flex: none;
   align-self: center;
@@ -83,8 +82,7 @@
   border-radius: 999px;
   overflow: hidden;
 }
-.platform-toggle button,
-.version-toggle button {
+.platform-toggle button {
   font: inherit;
   font-size: var(--sl-text-xs);
   padding: 0.25rem 0.9rem;
@@ -93,14 +91,42 @@
   color: var(--sl-color-gray-2);
   cursor: pointer;
 }
-.platform-toggle button + button,
-.version-toggle button + button {
+.platform-toggle button + button {
   border-inline-start: 1px solid var(--sl-color-gray-5);
 }
-.platform-toggle button[aria-pressed='true'],
-.version-toggle button[aria-pressed='true'] {
+.platform-toggle button[aria-pressed='true'] {
   background: var(--sl-color-text-accent);
   color: var(--sl-color-black);
+}
+
+/* The version picker. A labelled dropdown rather than a segmented control:
+   two version numbers side by side read as a page count or a rating, and say
+   nothing about what they are. The word "Version" has to be on screen. */
+.version-select {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex: none;
+  align-self: center;
+  font-size: var(--sl-text-xs);
+  color: var(--sl-color-gray-2);
+  white-space: nowrap;
+}
+.version-select select {
+  font: inherit;
+  font-size: var(--sl-text-xs);
+  color: var(--sl-color-white);
+  background: transparent;
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 999px;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+}
+/* A transparent select renders its popup list transparent too on some
+   platforms, which makes the options unreadable. Paint them explicitly. */
+.version-select option {
+  background: var(--sl-color-bg-nav);
+  color: var(--sl-color-white);
 }
 
 /* Version scoping (1.1 / 1.1.1). No attribute on <html> means 1.1, the
@@ -212,7 +238,11 @@ html[data-manual-version='1.1.1'] [data-version='1.1'] {
   max-height: 30rem;
   width: auto;
 }
-.sl-markdown-content img[src*='ios-overview'],
+/* overview-ios was named ios-overview until 2026-08-13. The shared float rule
+   keys on a `-ios` SUFFIX, so the prefix form silently opted this one image out
+   of the float it is supposed to have — the deliberate one, beside the iPhone
+   layout prose. Renamed to match the convention rather than special-cased. */
+.sl-markdown-content img[src*='overview-ios'],
 .sl-markdown-content img[src*='sheet-half'] {
   max-height: 30rem;
   width: auto;
@@ -226,18 +256,7 @@ html[data-manual-version='1.1.1'] [data-version='1.1'] {
   align-items: flex-start;
   flex-wrap: wrap;
 }
-.platform-pair > /* Version scoping (1.1 / 1.1.1). No attribute on <html> means 1.1, the
-   released version, so the manual reads correctly for a first-time visitor
-   before any script runs. Only ever set display:none — never restore a
-   display value — so a scoped <li>, <div> or <span> keeps its own. */
-html:not([data-manual-version='1.1.1']) [data-version='1.1.1'] {
-  display: none;
-}
-html[data-manual-version='1.1.1'] [data-version='1.1'] {
-  display: none;
-}
-
-.platform-block {
+.platform-pair > .platform-block {
   flex: 0 0 auto;
   max-width: 100%;
   margin-block: 0;
