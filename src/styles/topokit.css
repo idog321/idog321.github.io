@@ -248,6 +248,19 @@ html[data-manual-version='1.1.1'] [data-version='1.1'] {
   width: auto;
 }
 
+/* On a wide display Starlight gives the right-hand column
+   `--sl-sidebar-width + half the leftover space`, so it can keep the 45rem
+   reading column optically centred. At 2000px that is a 640px container
+   holding a 268px list — most of it empty, and it reads as an enormous
+   sidebar. Cap it at the sidebar width instead: the gutters either side of
+   the content come out near-equal (316px / 340px at 2000px) and the reading
+   column is left alone, because 45rem is already about ninety characters. */
+@media (min-width: 87.5rem) {
+  .right-sidebar-container {
+    width: var(--sl-sidebar-width);
+  }
+}
+
 /* ::::platforms row — visible children (platform figures, and a ::::legend if
    present) sit side by side in every mode; hidden platforms just drop out. */
 .platform-pair {
