@@ -1,0 +1,38 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "astro-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev"
+      ],
+      "port": 4321
+    },
+    {
+      "name": "astro-preview",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "preview"
+      ],
+      "port": 4321
+    },
+    {
+      "comment": "Serves public/ verbatim, the way GitHub Pages does. Astro's dev server routes /index.html through Starlight and 404s on it, so the static marketing pages can only be looked at here.",
+      "name": "static-pages",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "4400", "--directory", "public"],
+      "port": 4400
+    },
+    {
+      "name": "manual-comments",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "scripts/comment-server.mjs"
+      ],
+      "port": 4399
+    }
+  ]
+}

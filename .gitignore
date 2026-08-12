@@ -1,0 +1,22 @@
+# build output
+dist/
+# generated types
+.astro/
+# dependencies
+node_modules/
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+# environment variables
+.env
+.env.production
+# macOS
+.DS_Store
+# working notes — audits, review comments, the app's fix list, publishing plans.
+# This repo is public and its history is permanent, so they stay out of it.
+# Backed up with full history in the private topokit-docs-archive repo.
+/notes/
+# personal tool config
+.claude/settings.local.json

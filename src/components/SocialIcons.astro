@@ -1,0 +1,75 @@
+---
+// Starlight SocialIcons override. This slot sits in the header, immediately
+// right of the search box, so it is where the platform toggle lives — the
+// toggle belongs with the site chrome, not under every page title.
+// The choice is stamped on <html data-platform="…"> (absent = All) and kept in
+// localStorage; a head script applies it pre-paint so there is no flash.
+import Default from '@astrojs/starlight/components/SocialIcons.astro';
+---
+
+<Default {...Astro.props}><slot /></Default>
+<div class="platform-toggle" role="group" aria-label="Show instructions for platform">
+  <button type="button" data-value="all">All</button>
+  <button type="button" data-value="mac">Mac</button>
+  <button type="button" data-value="ios">iPhone</button>
+</div>
+
+<script is:inline>
+  // Starlight renders this slot twice — the header on wide screens, the mobile
+  // menu footer on narrow ones. So: delegate from the document and drive every
+  // .platform-toggle on the page, and only wire it up once.
+  (function () {
+    if (window.__tkPlatformToggle) return;
+    window.__tkPlatformToggle = true;
+    var root = document.documentElement;
+    function apply(value) {
+      if (value === 'ios' || value === 'mac') {
+        root.setAttribute('data-platform', value);
+      } else {
+        root.removeAttribute('data-platform');
+        value = 'all';
+      }
+      try {
+        localStorage.setItem('topokit-platform', value);
+      } catch (e) {}
+      document.querySelectorAll('.platform-toggle button').forEach(function (b) {
+        b.setAttribute('aria-pressed', String(b.dataset.value === value));
+      });
+      syncContents();
+    }
+    // The On this page list is built at render time and knows nothing about the
+    // toggle, so a heading inside a hidden :::ios block still gets an entry that
+    // scrolls nowhere. GPS & Track Recording is the case that makes this obvious
+    // — in Mac mode eleven of its thirteen entries point at hidden sections.
+    // CSS cannot express "the anchor whose target is hidden", so hide each entry
+    // from here. Anything whose target is missing is left alone.
+    function syncContents() {
+      document
+        .querySelectorAll('starlight-toc a[href^="#"], mobile-starlight-toc a[href^="#"]')
+        .forEach(function (a) {
+          var target = document.getElementById(decodeURIComponent(a.getAttribute('href').slice(1)));
+          var item = a.closest('li') || a;
+          if (!target) {
+            item.hidden = false;
+            return;
+          }
+          // offsetParent is null for a heading inside a display:none block.
+          item.hidden = target.offsetParent === null && target.getClientRects().length === 0;
+        });
+    }
+    document.addEventListener('click', function (e) {
+      var b = e.target.closest && e.target.closest('.platform-toggle button');
+      if (b) apply(b.dataset.value);
+    });
+    // Wait for the full document: the mobile-menu copy of the toggle is further
+    // down the page than this script, so an immediate call would miss it.
+    var init = function () {
+      apply(root.getAttribute('data-platform') || 'all');
+    };
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>

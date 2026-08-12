@@ -1,0 +1,460 @@
+/* ============================================
+   TopoKit — Starlight theme overrides
+   Matches the live topokit.ca design system:
+   orange accent, Inter body, Libre Baskerville brand.
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  --sl-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+}
+
+/* --- Accent palette: TopoKit orange ---
+   Starlight's default theme is dark (:root); light theme is :root[data-theme='light']. */
+
+/* Dark theme (default) */
+:root {
+  --tk-bubble-bg: #2a2b31;
+  --tk-bubble-fg: #f2f2f3;
+  --sl-color-accent-low: #422800;
+  --sl-color-accent: #ff9f0a;
+  --sl-color-accent-high: #ffce8c;
+  --sl-color-text-accent: #ff9f0a;
+}
+
+/* Light theme */
+:root[data-theme='light'] {
+  --tk-bubble-bg: #1c1d21;
+  --tk-bubble-fg: #f2f2f3;
+  --sl-color-accent-low: #ffe8c9;
+  --sl-color-accent: #ff9500;
+  --sl-color-accent-high: #8a4a00;
+  --sl-color-text-accent: #cf7500;
+}
+
+/* Brand wordmark in the header uses the serif logo face, like the marketing site. */
+.site-title {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+}
+
+/* Inline UI-control chips (icon + label) rendered from the :ui[...] marker.
+   Plain inline layout, not inline-flex: an inline-flex box whose first child is
+   an image has no text baseline, so the whole chip floated up like superscript. */
+.ui-ctl {
+  white-space: nowrap;
+}
+.ui-ctl__icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.14em;
+  margin-inline-end: 0.28em;
+  color: var(--sl-color-accent);
+}
+/* App-artwork glyphs: PNG alpha masks painted in the accent colour. */
+.ui-ctl__icon--mask {
+  background-color: currentColor;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+.ui-ctl__label {
+  font-weight: 500;
+}
+
+/* ---------------------------------------------------------------------------
+   Platform toggle (Mac / iPhone / All)
+   The toggle stamps data-platform on <html>; absent attribute means "All".
+   Blocks/spans tagged by remark-platform hide when they don't match, and
+   blocks show a small platform badge while in "All" mode.
+   No z-index, no filter: plain flow layout only (Safari-safe). */
+.platform-toggle {
+  display: inline-flex;
+  flex: none;
+  align-self: center;
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.platform-toggle button {
+  font: inherit;
+  font-size: var(--sl-text-xs);
+  padding: 0.25rem 0.9rem;
+  background: transparent;
+  border: 0;
+  color: var(--sl-color-gray-2);
+  cursor: pointer;
+}
+.platform-toggle button + button {
+  border-inline-start: 1px solid var(--sl-color-gray-5);
+}
+.platform-toggle button[aria-pressed='true'] {
+  background: var(--sl-color-text-accent);
+  color: var(--sl-color-black);
+}
+
+.platform-block {
+  margin-block: 1rem;
+}
+/* Platform blocks are invisible containers: they hide when the toggle does not
+   match and are otherwise indistinguishable from the surrounding text. No
+   border, no indent, no badge — a reader in All mode should just read prose,
+   not be shown the machinery. */
+
+:root[data-platform='ios'] [data-platform='mac'] {
+  display: none;
+}
+:root[data-platform='mac'] [data-platform='ios'] {
+  display: none;
+}
+
+/* ---------------------------------------------------------------------------
+   DEFAULT FOR ALL MANUAL ARTWORK: centre it. Most captures are narrower than
+   the text column, and left-aligned they read as though they have slipped.
+   Floated images ignore margin:auto and full-width ones are unaffected, so
+   this needs no exceptions — a new screenshot centres without a new rule. */
+.sl-markdown-content img {
+  display: block;
+  margin-inline: auto;
+}
+
+/* ::::beside — a figure and its prose as flex siblings, so the text sits next to
+   the image without the hole a float leaves when the paragraph is shorter than a
+   portrait screenshot. Stacks below 50rem. The image keeps its own height cap. */
+.sl-markdown-content .figure-beside > p:first-child img,
+.sl-markdown-content .figure-beside > p:first-child video {
+  margin-inline: 0;
+}
+@media (min-width: 50rem) {
+  .sl-markdown-content .figure-beside {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+  .sl-markdown-content .figure-beside > p:first-child {
+    flex: 0 0 auto;
+    margin-block-start: 0;
+  }
+  .sl-markdown-content .figure-beside > :not(:first-child) {
+    flex: 1 1 0;
+  }
+  .sl-markdown-content .figure-beside > p:nth-child(2) {
+    margin-block-start: 0;
+  }
+  /* {side=right}: flip the visual order only. DOM order is unchanged, so
+     below 50rem the figure still stacks above its prose. */
+  .sl-markdown-content .figure-beside--right {
+    flex-direction: row-reverse;
+  }
+}
+
+/* Inline video (muted looping MP4s used as live screenshots) follows the same
+   rules as images: centred, column-bound, height-capped. */
+.sl-markdown-content video {
+  display: block;
+  margin-inline: auto;
+  max-width: 100%;
+  max-height: 34rem;
+  /* Videos get slightly rounded corners — his ask, and videos only. His still
+     artwork stays exactly as prepared: no radius, no border, no shadow. */
+  border-radius: 8px;
+}
+
+/* The tile-download recording floats so the whole section wraps around it —
+   the four numbered settings, not just the lead-in paragraph. ::::beside is
+   wrong here: it pairs the figure with ONE sibling, so a tall video beside a
+   two-line paragraph left the list stranded under 400px of white space. Safe as
+   a float because Starting a download holds only this one figure, and the
+   h2/h3 { clear: both } rule below stops it bleeding into the next section. */
+@media (min-width: 50rem) {
+  .sl-markdown-content video[src*='tile-download'] {
+    float: inline-end;
+    margin-inline-start: 1.5rem;
+    margin-block-end: 1rem;
+  }
+}
+
+/* DEFAULT CAP FOR EVERY MANUAL IMAGE. A portrait phone screenshot scaled to the
+   text column is 1000px+ tall and swallows the page. Capping height as well as
+   width means the browser fits within whichever binds: a wide window capture is
+   limited by the column, a tall phone capture by its height. This is a default
+   so a newly added screenshot cannot arrive un-capped — which is exactly what
+   happened with the pin glyph picker. */
+.sl-markdown-content img {
+  max-height: 34rem;
+  width: auto;
+}
+
+/* Tall UI-chrome images (toolbars, phone screenshots) display at a readable
+   height instead of stretching to column width. */
+.sl-markdown-content img[src*='tool-sidebar'] {
+  max-height: 30rem;
+  width: auto;
+}
+.sl-markdown-content img[src*='ios-overview'],
+.sl-markdown-content img[src*='sheet-half'] {
+  max-height: 30rem;
+  width: auto;
+}
+
+/* ::::platforms row — visible children (platform figures, and a ::::legend if
+   present) sit side by side in every mode; hidden platforms just drop out. */
+.platform-pair {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.platform-pair > .platform-block {
+  flex: 0 0 auto;
+  max-width: 100%;
+  margin-block: 0;
+}
+.platform-pair > .figure-legend {
+  flex: 1 1 12rem;
+}
+.platform-pair img {
+  max-width: 100%;
+}
+
+/* Annotated toolbar diagrams need more height than plain chrome art */
+.sl-markdown-content img[src*='annotated'] {
+  max-height: 42rem;
+  width: auto;
+}
+.sl-markdown-content img[src*='overview-mac'] {
+  max-height: 30rem;
+  width: auto;
+}
+
+/* EVERY PORTRAIT PHONE CAPTURE FLOATS BESIDE ITS PROSE. A full-screen iPhone
+   screenshot is tall and narrow: centred in the text column it swallows a
+   screenful and pushes the prose it illustrates off the page. This was three
+   copies of the same per-image rule (overview, showing-and-hiding, offline
+   pinning) and a fourth screenshot then shipped centred because nobody added
+   a fourth copy. Keyed on the `-ios` filename suffix so a new one floats by
+   default; the two exceptions below are the only cases where it is wrong. */
+@media (min-width: 50rem) {
+  .sl-markdown-content img[src*='-ios'] {
+    float: inline-end;
+    margin-inline-start: 1.5rem;
+    margin-block-end: 1rem;
+  }
+  /* 1. A section holding a SECOND image cannot float the first: the second
+        drops past the whole float and leaves a gap its height. Creating a
+        project pairs the iPhone shot with the Mac one, so neither floats.
+     2. ::::beside already pairs a figure with its prose as flex siblings, and
+        a float inside it would fight that. */
+  .sl-markdown-content img[src*='new-project-ios'],
+  .sl-markdown-content .figure-beside img {
+    float: none;
+  }
+  /* A floated figure must not bleed into the next section. Starlight wraps every
+     heading in a .sl-heading-wrapper div, and that wrapper — not the h2/h3 — is
+     the box in normal flow, so clearing only the heading left the wrapper (and
+     with it the heading) sitting beside the float. Clear the wrapper too. */
+  .sl-markdown-content h2,
+  .sl-markdown-content h3,
+  .sl-markdown-content .sl-heading-wrapper {
+    clear: both;
+  }
+  /* Nor squeeze a data table. A six-column table wrapping beside a portrait
+     screenshot rendered at 437px and started scrolling sideways; a table always
+     takes the full column and starts below the figure instead. Prose and lists
+     still wrap beside it, which is the point of the float. */
+  .sl-markdown-content table {
+    clear: both;
+  }
+}
+
+
+/* ---------------------------------------------------------------------------
+   Print / PDF export. Keeps the site's dark look and colours, drops the web
+   chrome (nav, TOC, header), so Cmd-P → Save as PDF, or the build-pdf script,
+   produces a clean document. Platform-tagged content all shows (badged), as
+   in "All" mode. */
+@media print {
+  /* Theme-neutral: honour whatever theme the page is in (the PDF script forces
+     light for readability; a manual Cmd-P follows your current site theme). */
+
+  /* Drop the web furniture */
+  header.header,
+  .sidebar,
+  nav.sidebar,
+  .right-sidebar,
+  starlight-toc,
+  mobile-starlight-toc,
+  .pagination-links,
+  .platform-toggle,
+  .content-panel > footer,
+  site-search,
+  .print-hidden {
+    display: none !important;
+  }
+
+  /* Let the content column use the full page */
+  .main-frame,
+  .main-pane,
+  .content-panel,
+  .sl-container,
+  .sl-markdown-content {
+    max-width: none !important;
+    width: 100% !important;
+    padding-inline: 0 !important;
+    margin-inline: 0 !important;
+  }
+  .main-frame { padding-top: 0 !important; }
+
+  /* Force the theme's colours to actually print */
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+  /* Each chapter (its <h1>) starts a fresh page; keep headings with their text */
+  .sl-markdown-content h1 { break-before: page; }
+  .sl-markdown-content h2,
+  .sl-markdown-content h3 { break-after: avoid; }
+  .sl-markdown-content img,
+  .sl-markdown-content table,
+  .sl-markdown-content pre { break-inside: avoid; }
+}
+
+/* Small UI-chrome captures (menus, sheets) shouldn't stretch to the full text
+   column — cap the width so they sit at roughly their real size.
+   SIZING ONLY: never add shadows, borders, or rounded corners to Nikolay's
+   images. They are prepared deliberately (transparent backgrounds and all) and
+   the manual must not decorate them. */
+.sl-markdown-content img[src*='right-click-menu'],
+.sl-markdown-content img[src*='-menu-'],
+.sl-markdown-content img[src*='new-project'] {
+  max-width: 26rem;
+  width: 100%;
+  height: auto;
+}
+
+/* The Reprojection Required sheet is a dialog, near square. At full column
+   width it reads far larger than it is on screen. */
+.sl-markdown-content img[src*='reprojection-sheet'] {
+  max-width: 24rem;
+  width: 100%;
+  height: auto;
+}
+
+/* The Edit Raster popover is a tall narrow panel crop. Full column width makes
+   it 700px+ tall and out of scale with the app; read it at a height instead. */
+.sl-markdown-content img[src*='raster-properties-and-editing'] {
+  max-height: 30rem;
+  width: auto;
+}
+
+/* Layer-tree captures: the Mac one is a tall panel crop, the iPhone one a full
+   phone screenshot. Both read at a height rather than stretching the column. */
+.sl-markdown-content img[src*='layer-tree-'] {
+  max-height: 32rem;
+  width: auto;
+}
+/* Portrait phone captures read at a height, not a width. The float itself is
+   the shared `-ios` rule above. */
+.sl-markdown-content img[src*='offline-pinning'] {
+  max-height: 34rem;
+  width: auto;
+}
+
+/* Visible screenshot placeholders. Deliberately loud so a missing shot cannot
+   be shipped by accident; delete the block when the image lands. */
+.shot-needed {
+  border: 2px dashed var(--sl-color-accent);
+  border-radius: 0.4rem;
+  padding: 0.85rem 1rem;
+  margin-block: 1.25rem;
+  font-size: var(--sl-text-sm);
+  color: var(--sl-color-gray-2);
+  background: rgba(255, 149, 0, 0.08); /* fallback: color-mix is Safari 16.2+ */
+  background: color-mix(in srgb, var(--sl-color-accent) 8%, transparent);
+}
+.shot-needed strong {
+  color: var(--sl-color-accent);
+  display: block;
+  margin-bottom: 0.2rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: var(--sl-text-xs);
+}
+
+/* ---------------------------------------------------------------------------
+   Glossary chips. remark-glossary wraps the first use of each glossary term in
+   a .gloss button; glossary.js shows the definition in one shared bubble.
+   The bubble uses the Popover API, so it renders in the browser's top layer —
+   no z-index is involved, and nothing can paint over it. */
+.gloss {
+  /* Rendered as a <span role="button">, not a real <button>: browsers blockify
+     form controls, so a button cannot be display:inline, and its taller box
+     inflated every line box it sat on — double spacing inside table cells. */
+  cursor: help;
+  /* Dotted underline, offset so it never collides with a descender. */
+  text-decoration: underline dotted var(--sl-color-accent);
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+.gloss:hover,
+.gloss:focus-visible {
+  color: var(--sl-color-text-accent);
+  text-decoration-style: solid;
+}
+
+.gloss-bubble {
+  /* Last child of <body>, so DOM order puts it on top — no z-index, per the
+     project rule. Plain fixed positioning rather than the Popover API: this
+     has to work in Safari, and fewer engine-specific behaviours is safer. */
+  position: fixed;
+  left: 0;
+  top: 0;
+  /* DOM order alone is not enough here: Starlight's right sidebar establishes
+     its own stacking context, so a term near it had its bubble painted behind
+     the page index. A tooltip has to win outright. */
+  z-index: 200;
+  display: none;
+  margin: 0;
+  max-width: min(24rem, calc(100vw - 2rem));
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 0.5rem;
+  background: var(--tk-bubble-bg);
+  color: var(--tk-bubble-fg);
+  font-size: var(--sl-text-sm);
+  line-height: 1.45;
+  box-shadow: 0 6px 24px rgb(0 0 0 / 0.35);
+}
+.gloss-bubble.is-open {
+  display: block;
+}
+
+@media print {
+  .gloss {
+    text-decoration: none;
+  }
+  .gloss-bubble {
+    display: none !important;
+  }
+}
+
+/* Card artwork: the toolbar cards, the Add Point card, and the iPhone tab bar.
+   All are wide, short crops of real UI that should read at roughly card size
+   rather than stretching to the full text column. */
+.sl-markdown-content img[src*='-tool'],
+.sl-markdown-content img[src*='tab-bar'] {
+  max-width: 34rem;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+/* The Add Point and tab-bar crops are wider and shorter than the measurement
+   cards, so they can take a little more width before they look oversized. */
+.sl-markdown-content img[src*='point-tool'],
+.sl-markdown-content img[src*='tab-bar'] {
+  max-width: 30rem;
+}

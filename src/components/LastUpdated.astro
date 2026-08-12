@@ -1,0 +1,18 @@
+---
+// Overrides Starlight's LastUpdated, which formats the git commit date with
+// timeZone: 'UTC' hardcoded. Committing at 23:15 PDT therefore displayed as the
+// next day. This formats in the build machine's own timezone, so the date shown
+// is the date the edit was actually made.
+const { lang, lastUpdated } = Astro.locals.starlightRoute;
+---
+
+{
+  lastUpdated && (
+    <p>
+      {Astro.locals.t('page.lastUpdated')}{' '}
+      <time datetime={lastUpdated.toISOString()}>
+        {lastUpdated.toLocaleDateString(lang, { dateStyle: 'medium' })}
+      </time>
+    </p>
+  )
+}

@@ -1,0 +1,29 @@
+{
+  "name": "topokit-site",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "rm -rf .astro node_modules/.astro && astro dev",
+    "start": "astro dev",
+    "build": "node scripts/guard-dev.mjs && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "lint:style": "node scripts/check-style.mjs",
+    "lint:links": "node scripts/check-links.mjs",
+    "build:force": "astro build",
+    "release-notes": "node scripts/gen-release-notes.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.3",
+    "@astrojs/starlight": "^0.41.3",
+    "astro": "^7.1.3",
+    "lucide-static": "^1.25.0",
+    "remark-directive": "^4.0.0",
+    "sharp": "^0.35.3"
+  },
+  "devDependencies": {
+    "pdf-lib": "^1.17.1",
+    "puppeteer": "^25.3.0"
+  }
+}

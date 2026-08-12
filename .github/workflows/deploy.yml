@@ -1,0 +1,52 @@
+# Builds the site and publishes it to GitHub Pages on every push to main.
+#
+# This replaces the old arrangement, where Pages served the main branch's root
+# directly and the branch held a hand-maintained flat site. main is now the
+# Astro source; what visitors get is dist/, built here.
+#
+# Requires Settings -> Pages -> Source = "GitHub Actions". With the old
+# "Deploy from a branch" setting this workflow runs and its output is ignored.
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+  # Lets you re-publish from the Actions tab without pushing anything.
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never let two deploys race. Queue instead of cancelling, so a push that
+# lands during a deploy still publishes rather than being dropped.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Full history, not the default shallow clone: Starlight's per-chapter
+          # "Last updated" date is read from each file's git log, and a shallow
+          # checkout has none to read.
+          fetch-depth: 0
+      - uses: withastro/action@v3
+        with:
+          # astro's package.json declares engines.node >= 22.12.0; the runner
+          # default is older and the install fails on it.
+          node-version: 22
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

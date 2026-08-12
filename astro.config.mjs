@@ -1,0 +1,156 @@
+// @ts-check
+import { defineConfig } from 'astro/config';
+import starlight from '@astrojs/starlight';
+import sitemap from '@astrojs/sitemap';
+import remarkDirective from 'remark-directive';
+import remarkUiIcon from './src/plugins/remark-ui-icon.mjs';
+import remarkPlatform from './src/plugins/remark-platform.mjs';
+import remarkGlossary from './src/plugins/remark-glossary.mjs';
+
+// TopoKit documentation site.
+// Starlight owns only the /manual/* routes. The marketing + legal pages
+// (index.html, privacy.html, terms.html, support.html) are served verbatim
+// from public/ so they remain pixel-identical to the current live site.
+export default defineConfig({
+  site: 'https://topokit.ca',
+  vite: {
+    plugins: [
+      {
+        // Astro's dev image URL is path + dimensions, with nothing about the
+        // file's contents in it. Re-shoot a screenshot and downscale it to the
+        // same size and the URL is byte-identical, so Safari keeps serving the
+        // old picture from cache and the new one looks like it never landed.
+        // Dev only; the built site still gets normal caching.
+        name: 'topokit:no-cache-dev-images',
+        apply: 'serve',
+        configureServer(server) {
+          server.middlewares.use((req, res, next) => {
+            if (req.url?.startsWith('/_image')) {
+              // Astro's own handler sets a year-long Cache-Control after this
+              // middleware runs, so setting it here is not enough — intercept
+              // the setter and hold our value.
+              const set = res.setHeader.bind(res);
+              res.setHeader = (name, value) =>
+                String(name).toLowerCase() === 'cache-control'
+                  ? set(name, 'no-store, must-revalidate')
+                  : set(name, value);
+              set('Cache-Control', 'no-store, must-revalidate');
+            }
+            next();
+          });
+        },
+      },
+    ],
+  },
+  markdown: {
+    // remarkDirective parses the :ui[Label]{icon=name} and :::ios/:::mac markers;
+    // remarkUiIcon and remarkPlatform render them.
+    // remarkGlossary runs last: by then :ui[…] chips and platform directives
+    // are already html/container nodes, so it can't wrap a term inside one.
+    remarkPlugins: [remarkDirective, remarkUiIcon, remarkPlatform, remarkGlossary],
+  },
+  integrations: [
+    // Starlight pulls in @astrojs/sitemap on its own, but only Astro's own
+    // routes end up in it. The marketing and legal pages are static files in
+    // public/, so Astro never sees them — customPages puts them in by hand.
+    // Declaring the integration here also replaces Starlight's default copy,
+    // which is the only way to pass it options.
+    sitemap({
+      customPages: [
+        'https://topokit.ca/',
+        'https://topokit.ca/privacy',
+        'https://topokit.ca/terms',
+        'https://topokit.ca/support',
+      ],
+    }),
+    starlight({
+      title: 'TopoKit',
+      // Brand wordmark replaces the text title; black on light, white on dark.
+      logo: {
+        light: './src/assets/brand/wordmark_for_light_background.svg',
+        dark: './src/assets/brand/wordmark_for_dark_background.svg',
+        replacesTitle: true,
+      },
+      favicon: '/Images/Logo/Logo.svg',
+      description:
+        'The official TopoKit manual — Field GIS for iPhone and macOS. Projects, layers, rasters, tiles, elevation, GPS.',
+      customCss: ['./src/styles/topokit.css'],
+      components: {
+        // Puts the Mac / iPhone / All platform toggle in the header, beside
+        // the search box. SocialIcons is the header slot right of search.
+        SocialIcons: './src/components/SocialIcons.astro',
+        // Starlight's own version hardcodes timeZone: 'UTC', so an evening
+        // commit displays as the next day. Ours formats in local time.
+        LastUpdated: './src/components/LastUpdated.astro',
+      },
+      head: [
+        {
+          // Apply the saved platform choice before first paint (no flash).
+          tag: 'script',
+          content:
+            "try{var p=localStorage.getItem('topokit-platform');if(p==='ios'||p==='mac')document.documentElement.setAttribute('data-platform',p)}catch(e){}",
+        },
+        {
+          // Glossary chips: hover or tap a GIS term for its definition.
+          tag: 'script',
+          attrs: { src: '/glossary.js', defer: true },
+        },
+        {
+          // Inline commenting while reviewing. Select text on any chapter and a
+          // Comment button appears; notes land in MANUAL-COMMENTS.md via
+          // scripts/comment-server.mjs. The script no-ops off localhost.
+          tag: 'script',
+          attrs: { src: '/comment.js', defer: true },
+        },
+      ],
+      // The docs header title links back to '/', which serves public/index.html.
+      pagination: true,
+      // Per-chapter "Last updated" date, read from each file's git history, so
+      // it can never drift from reality the way a hand-typed date would.
+      lastUpdated: true,
+      // Repo is private; no public "edit this page" link for now.
+      editLink: undefined,
+      // Order matters more than grouping here. The two chapters that define
+      // vocabulary — interface (the app's nouns) and glossary (the GIS ones) —
+      // come before the chapters that spend it, so cross-references point
+      // backward to something already read instead of forward to something
+      // not yet met.
+      sidebar: [
+        {
+          label: 'Start here',
+          items: [
+            'manual',
+            'manual/interface',
+            'manual/getting-started',
+            'manual/map-tools',
+            'manual/file-formats',
+          ],
+        },
+        {
+          label: 'Working with data',
+          items: [
+            'manual/projects-and-files',
+            'manual/layer-tree',
+            'manual/points-lines-polygons',
+            'manual/measurement',
+            'manual/vector-import-export',
+            'manual/raster-overlays',
+            'manual/tile-layers',
+          ],
+        },
+        {
+          label: 'In the field',
+          items: [
+            'manual/gps-and-track-recording',
+            'manual/elevation',
+            'manual/directions-and-routing',
+          ],
+        },
+        {
+          label: 'Reference',
+          items: ['manual/ui-settings-styling', 'manual/glossary'],
+        },
+      ],
+    }),
+  ],
+});
