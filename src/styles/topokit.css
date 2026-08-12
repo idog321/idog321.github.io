@@ -248,16 +248,18 @@ html[data-manual-version='1.1.1'] [data-version='1.1'] {
   width: auto;
 }
 
-/* On a wide display Starlight gives the right-hand column
-   `--sl-sidebar-width + half the leftover space`, so it can keep the 45rem
-   reading column optically centred. At 2000px that is a 640px container
-   holding a 268px list — most of it empty, and it reads as an enormous
-   sidebar. Cap it at the sidebar width instead: the gutters either side of
-   the content come out near-equal (316px / 340px at 2000px) and the reading
-   column is left alone, because 45rem is already about ninety characters. */
+/* Starlight's reading column is 45rem — 720px — at every width above its
+   breakpoint, and the right-hand column absorbs half of whatever is left over
+   so the text stays optically centred. On a 2000px window that means 720px of
+   manual and roughly 900px of nothing, which reads as an enormous sidebar even
+   though the contents list itself is only 268px wide.
+   Capping that container does nothing: it is an invisible box, so shrinking it
+   moves no pixel on screen. The column itself has to grow. 56rem is about 105
+   characters — wider than prose wants, but this is a manual full of lists,
+   tables and screenshots, and they are what the space buys. */
 @media (min-width: 87.5rem) {
-  .right-sidebar-container {
-    width: var(--sl-sidebar-width);
+  :root {
+    --sl-content-width: 56rem;
   }
 }
 
