@@ -5,7 +5,10 @@ import { appendFileSync, existsSync, writeFileSync } from 'node:fs';
 import { createServer } from 'node:http';
 
 const PORT = 4399;
-const FILE = 'MANUAL-COMMENTS.md';
+// notes/ is gitignored. This repo is public, and a header the server
+// recreates on every start is exactly the kind of file that gets swept
+// into a commit by accident — it happened once.
+const FILE = 'notes/MANUAL-COMMENTS.md';
 
 if (!existsSync(FILE)) {
   writeFileSync(

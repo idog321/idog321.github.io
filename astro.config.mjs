@@ -1,4 +1,6 @@
 // @ts-check
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import sitemap from '@astrojs/sitemap';
@@ -13,8 +15,33 @@ import remarkGlossary from './src/plugins/remark-glossary.mjs';
 // from public/ so they remain pixel-identical to the current live site.
 export default defineConfig({
   site: 'https://topokit.ca',
+  // Never appears in the built site; this just takes it off his screen too.
+  devToolbar: { enabled: false },
   vite: {
     plugins: [
+      {
+        // The home page is public/index.html, a static file. The dev server
+        // routes '/' through Starlight first, finds no page, and answers with
+        // Starlight's 404 — so clicking the header logo in the manual appears
+        // to go nowhere useful, even though the built site serves the real home
+        // page there. Hand '/' the file in dev too, so local matches live.
+        name: 'topokit:serve-home-in-dev',
+        apply: 'serve',
+        configureServer(server) {
+          server.middlewares.use((req, res, next) => {
+            const path = (req.url || '').split('?')[0];
+            if (path !== '/' && path !== '/index.html') return next();
+            try {
+              const html = readFileSync(resolve('./public/index.html'));
+              res.setHeader('Content-Type', 'text/html; charset=utf-8');
+              res.setHeader('Cache-Control', 'no-store');
+              res.end(html);
+            } catch {
+              next();
+            }
+          });
+        },
+      },
       {
         // Astro's dev image URL is path + dimensions, with nothing about the
         // file's contents in it. Re-shoot a screenshot and downscale it to the
@@ -97,7 +124,7 @@ export default defineConfig({
         },
         {
           // Inline commenting while reviewing. Select text on any chapter and a
-          // Comment button appears; notes land in MANUAL-COMMENTS.md via
+          // Comment button appears; notes land in notes/MANUAL-COMMENTS.md via
           // scripts/comment-server.mjs. The script no-ops off localhost.
           tag: 'script',
           attrs: { src: '/comment.js', defer: true },
@@ -108,7 +135,8 @@ export default defineConfig({
       // Per-chapter "Last updated" date, read from each file's git history, so
       // it can never drift from reality the way a hand-typed date would.
       lastUpdated: true,
-      // Repo is private; no public "edit this page" link for now.
+      // No "edit this page" link: the repo is public, but the manual is his
+      // alone and an edit link invites pull requests he does not want.
       editLink: undefined,
       // Order matters more than grouping here. The two chapters that define
       // vocabulary — interface (the app's nouns) and glossary (the GIS ones) —

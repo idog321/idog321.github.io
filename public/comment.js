@@ -1,6 +1,6 @@
 /* Local-only inline commenting for the manual.
    Select any text on a chapter page, hit the button, type a note.
-   It POSTs to scripts/comment-server.mjs, which appends to MANUAL-COMMENTS.md
+   It POSTs to scripts/comment-server.mjs, which appends to notes/MANUAL-COMMENTS.md
    with the chapter, the heading you were under, and the exact text you selected.
    No-ops anywhere that isn't localhost, so it can never do anything in production. */
 (() => {
@@ -144,7 +144,7 @@
       }
       if (!res.ok) return fail(`Comment server returned ${res.status}.`);
       box.remove();
-      toast('Saved to MANUAL-COMMENTS.md');
+      toast('Saved to notes/MANUAL-COMMENTS.md');
       getSelection().removeAllRanges();
     };
     box.querySelector('#tk-save').onclick = save;

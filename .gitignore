@@ -20,3 +20,5 @@ pnpm-debug.log*
 /notes/
 # personal tool config
 .claude/settings.local.json
+# belt and braces: the comment server used to write this at the root
+MANUAL-COMMENTS.md
