@@ -8,7 +8,7 @@ Everything in TopoKit happens in one of three places: on the map, in the panel t
 
 ## The map
 
-The map takes centre stage on both platforms, and everything you add or create draws on top of an Apple base map. The bottom icon on the tool sidebar switches between :ui[Standard]{icon=map-standard}, :ui[Hybrid]{icon=map-hybrid}, :ui[Satellite]{icon=map-satellite}, and :ui[No Map]{icon=map-no-map}. Floating above the map you will find:
+The map takes centre stage on both platforms, and everything you add or create draws on top of an Apple base map. The bottom icon on the tool sidebar switches between :ui[Standard]{icon=map-standard}, :ui[Hybrid]{icon=map-hybrid}, :v11[and ]:ui[Satellite]{icon=map-satellite}:v111[, and :ui[No Map]{icon=map-no-map}]. Floating above the map you will find:
 
 - **Compass** — appears when the map is rotated, and returns the map to north-up when tapped.
 - **Zoom** — :ios[On iPhone, zoom has no on-screen controls and works through pinch-to-zoom.] :mac[On Mac, a + / − pair, with a zoom-to-extent button below it that frames every visible feature and raster in the project, not just what is already on screen.] To zoom to a single feature, use its row menu in the [layer tree](/manual/layer-tree/).

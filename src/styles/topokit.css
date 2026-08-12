@@ -74,7 +74,8 @@
    Blocks/spans tagged by remark-platform hide when they don't match, and
    blocks show a small platform badge while in "All" mode.
    No z-index, no filter: plain flow layout only (Safari-safe). */
-.platform-toggle {
+.platform-toggle,
+.version-toggle {
   display: inline-flex;
   flex: none;
   align-self: center;
@@ -82,7 +83,8 @@
   border-radius: 999px;
   overflow: hidden;
 }
-.platform-toggle button {
+.platform-toggle button,
+.version-toggle button {
   font: inherit;
   font-size: var(--sl-text-xs);
   padding: 0.25rem 0.9rem;
@@ -91,12 +93,25 @@
   color: var(--sl-color-gray-2);
   cursor: pointer;
 }
-.platform-toggle button + button {
+.platform-toggle button + button,
+.version-toggle button + button {
   border-inline-start: 1px solid var(--sl-color-gray-5);
 }
-.platform-toggle button[aria-pressed='true'] {
+.platform-toggle button[aria-pressed='true'],
+.version-toggle button[aria-pressed='true'] {
   background: var(--sl-color-text-accent);
   color: var(--sl-color-black);
+}
+
+/* Version scoping (1.1 / 1.1.1). No attribute on <html> means 1.1, the
+   released version, so the manual reads correctly for a first-time visitor
+   before any script runs. Only ever set display:none — never restore a
+   display value — so a scoped <li>, <div> or <span> keeps its own. */
+html:not([data-manual-version='1.1.1']) [data-version='1.1.1'] {
+  display: none;
+}
+html[data-manual-version='1.1.1'] [data-version='1.1'] {
+  display: none;
 }
 
 .platform-block {
@@ -211,7 +226,18 @@
   align-items: flex-start;
   flex-wrap: wrap;
 }
-.platform-pair > .platform-block {
+.platform-pair > /* Version scoping (1.1 / 1.1.1). No attribute on <html> means 1.1, the
+   released version, so the manual reads correctly for a first-time visitor
+   before any script runs. Only ever set display:none — never restore a
+   display value — so a scoped <li>, <div> or <span> keeps its own. */
+html:not([data-manual-version='1.1.1']) [data-version='1.1.1'] {
+  display: none;
+}
+html[data-manual-version='1.1.1'] [data-version='1.1'] {
+  display: none;
+}
+
+.platform-block {
   flex: 0 0 auto;
   max-width: 100%;
   margin-block: 0;

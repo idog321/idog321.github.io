@@ -13,6 +13,10 @@ import Default from '@astrojs/starlight/components/SocialIcons.astro';
   <button type="button" data-value="mac">Mac</button>
   <button type="button" data-value="ios">iPhone</button>
 </div>
+<div class="version-toggle" role="group" aria-label="Show the manual for a TopoKit version">
+  <button type="button" data-value="1.1" title="TopoKit 1.1, the App Store release">1.1</button>
+  <button type="button" data-value="1.1.1" title="TopoKit 1.1.1, currently in beta">1.1.1</button>
+</div>
 
 <script is:inline>
   // Starlight renders this slot twice — the header on wide screens, the mobile
@@ -57,14 +61,35 @@ import Default from '@astrojs/starlight/components/SocialIcons.astro';
           item.hidden = target.offsetParent === null && target.getClientRects().length === 0;
         });
     }
+    // 1.1 is the App Store release and the default; 1.1.1 is the beta, whose
+    // only difference is the No Map base-map option. No attribute means 1.1,
+    // so the manual is correct before this script has run at all.
+    function applyVersion(value) {
+      if (value === '1.1.1') {
+        root.setAttribute('data-manual-version', value);
+      } else {
+        root.removeAttribute('data-manual-version');
+        value = '1.1';
+      }
+      try {
+        localStorage.setItem('topokit-version', value);
+      } catch (e) {}
+      document.querySelectorAll('.version-toggle button').forEach(function (b) {
+        b.setAttribute('aria-pressed', String(b.dataset.value === value));
+      });
+    }
     document.addEventListener('click', function (e) {
-      var b = e.target.closest && e.target.closest('.platform-toggle button');
-      if (b) apply(b.dataset.value);
+      if (!e.target.closest) return;
+      var b = e.target.closest('.platform-toggle button');
+      if (b) return apply(b.dataset.value);
+      var v = e.target.closest('.version-toggle button');
+      if (v) applyVersion(v.dataset.value);
     });
     // Wait for the full document: the mobile-menu copy of the toggle is further
     // down the page than this script, so an immediate call would miss it.
     var init = function () {
       apply(root.getAttribute('data-platform') || 'all');
+      applyVersion(root.getAttribute('data-manual-version') || '1.1');
     };
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', init);

@@ -23,7 +23,7 @@ Settings opens as a **list of nine categories**, not one long page. macOS shows 
 
 ### Appearance and controls
 
-- **Theme**: **System**, **Light** or **Dark** for TopoKit's own panels and controls, and for the map canvas under **No Map**. It does not affect exports.
+- **Theme**: **System**, **Light** or **Dark** for TopoKit's own panels and controls:v111[, and for the map canvas under **No Map**]. It does not affect exports.
 - **UI Style**: **Solid** (default, opaque, most readable in bright sun), **Blur** (a frosted translucent panel that blurs the map behind it), or **Glass** (Apple's translucent Liquid Glass material, which also refracts and shifts as you move). Applies to the compass, zoom buttons, tool sidebar, scale bar and the Mac top bar.
 - **Solid Panel Background** (appears only when UI Style is Glass or Blur): keeps the Mac panel, and the iPhone bottom sheet, opaque while the smaller controls stay translucent.
 - :mac[**Panel Position**: which side of the window the panel sits on. It floats over the map, which stays full-width underneath rather than reflowing.]

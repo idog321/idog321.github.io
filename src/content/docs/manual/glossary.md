@@ -8,7 +8,7 @@ Short, plain-language definitions of the GIS terms this manual uses. Skim it now
 
 **Axis order** — whether a coordinate pair is written latitude-first or longitude-first. Every vector format fixes this in its own spec, so only a raster can be genuinely ambiguous. See [Troubleshooting](/manual/raster-overlays/#troubleshooting).
 
-**Base map** — Apple's map underneath the whole project, cycled between :ui[Standard]{icon=map-standard}, :ui[Hybrid]{icon=map-hybrid}, :ui[Satellite]{icon=map-satellite} and :ui[No Map]{icon=map-no-map}. It is an app-wide preference, not a project setting. See [The base map button](/manual/map-tools/#the-base-map-button).
+**Base map** — Apple's map underneath the whole project, cycled between :ui[Standard]{icon=map-standard}, :ui[Hybrid]{icon=map-hybrid}:v11[ and ]:v111[, ]:ui[Satellite]{icon=map-satellite}:v111[ and :ui[No Map]{icon=map-no-map}]. It is an app-wide preference, not a project setting. See [The base map button](/manual/map-tools/#the-base-map-button).
 
 **Bearing** — the compass direction from one point to another, in degrees clockwise from north. Declination is the local difference between true north and magnetic north. See [Bearing](/manual/measurement/#bearing).
 

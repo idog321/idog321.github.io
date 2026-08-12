@@ -30,7 +30,7 @@ On iPhone, long-press any button to reveal its name; on Mac, hover for a tooltip
 10. **Download Data** — saves the tile layers you have added, and elevation tiles, for offline use.
 :::
 
-11. **Base map** — cycles Standard → Hybrid → Satellite → No Map.
+11. **Base map** — cycles Standard → Hybrid → Satellite:v111[ → No Map].
 
 ::::
 :::::
@@ -93,7 +93,7 @@ At the bottom of the tool sidebar, the base map button switches which Apple map 
 - :ui[Standard]{icon=map-standard} — the road map.
 - :ui[Hybrid]{icon=map-hybrid} — satellite imagery with road and label overlays.
 - :ui[Satellite]{icon=map-satellite} — imagery only, no labels.
-- :ui[No Map]{icon=map-no-map} — a plain background with only your own layers.
+- :v111[:ui[No Map]{icon=map-no-map} — a plain background with only your own layers.]
 
 :::mac
 ## The Mac right-click menu

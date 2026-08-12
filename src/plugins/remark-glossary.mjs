@@ -30,6 +30,14 @@ const stripMd = (s) =>
     // :ui[Label]{icon=x} and :ios[…]/:mac[…] directives render as chips on the
     // glossary page, but a hover bubble is plain text — reduce them to their
     // label, or the raw directive syntax shows verbatim in every bubble.
+    // Version-scoped spans resolve to the released version: a chip is plain
+    // text with no toggle of its own, and showing both variants reads as
+    // gibberish ("Standard, Hybrid and , Satellite and No Map").
+    // The label can itself contain a directive — :v111[ and :ui[No Map]{…}] —
+    // so the bracket group has to tolerate one level of nesting. A plain
+    // [^\]]* stops at the inner ] and leaves {icon=…}] stranded in the text.
+    .replace(/:v111\[(?:[^[\]]|\[[^\]]*\])*\]/g, '')
+    .replace(/:v11\[((?:[^[\]]|\[[^\]]*\])*)\]/g, '$1')
     .replace(/:[a-z][\w-]*\[([^\]]*)\](\{[^}]*\})?/g, '$1')
     .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
     .replace(/\*\*([^*]+)\*\*/g, '$1')

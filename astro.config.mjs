@@ -8,6 +8,7 @@ import remarkDirective from 'remark-directive';
 import remarkUiIcon from './src/plugins/remark-ui-icon.mjs';
 import remarkPlatform from './src/plugins/remark-platform.mjs';
 import remarkGlossary from './src/plugins/remark-glossary.mjs';
+import remarkVersion from './src/plugins/remark-version.mjs';
 
 // TopoKit documentation site.
 // Starlight owns only the /manual/* routes. The marketing + legal pages
@@ -74,7 +75,7 @@ export default defineConfig({
     // remarkUiIcon and remarkPlatform render them.
     // remarkGlossary runs last: by then :ui[…] chips and platform directives
     // are already html/container nodes, so it can't wrap a term inside one.
-    remarkPlugins: [remarkDirective, remarkUiIcon, remarkPlatform, remarkGlossary],
+    remarkPlugins: [remarkDirective, remarkUiIcon, remarkPlatform, remarkVersion, remarkGlossary],
   },
   integrations: [
     // Starlight pulls in @astrojs/sitemap on its own, but only Astro's own
@@ -115,7 +116,7 @@ export default defineConfig({
           // Apply the saved platform choice before first paint (no flash).
           tag: 'script',
           content:
-            "try{var p=localStorage.getItem('topokit-platform');if(p==='ios'||p==='mac')document.documentElement.setAttribute('data-platform',p)}catch(e){}",
+            "try{var p=localStorage.getItem('topokit-platform');if(p==='ios'||p==='mac')document.documentElement.setAttribute('data-platform',p);var v=localStorage.getItem('topokit-version');if(v==='1.1.1')document.documentElement.setAttribute('data-manual-version',v)}catch(e){}",
         },
         {
           // Glossary chips: hover or tap a GIS term for its definition.

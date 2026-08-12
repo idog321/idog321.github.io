@@ -18,7 +18,7 @@ If you are not signed into iCloud the choice does not appear and the project is 
 
 ## 2. Pick your base map
 
-Tap the button at the bottom of the **tool sidebar** to cycle the background map through :ui[Standard]{icon=map-standard}, :ui[Hybrid]{icon=map-hybrid} (satellite with labels), :ui[Satellite]{icon=map-satellite} and :ui[No Map]{icon=map-no-map}. Hybrid is the default. The choice applies to the whole app rather than to one project, and it is remembered between launches. All three map styles come from Apple over the network, so for a background you can rely on in the field, download a tile layer instead.
+Tap the button at the bottom of the **tool sidebar** to cycle the background map through :ui[Standard]{icon=map-standard}, :ui[Hybrid]{icon=map-hybrid} (satellite with labels):v11[ and ]:v111[, ]:ui[Satellite]{icon=map-satellite}:v111[ and :ui[No Map]{icon=map-no-map}]. Hybrid is the default. The choice applies to the whole app rather than to one project, and it is remembered between launches. All three map styles come from Apple over the network, so for a background you can rely on in the field, download a tile layer instead.
 
 ## 3. Mark your first point
 
