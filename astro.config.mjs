@@ -44,19 +44,25 @@ export default defineConfig({
         },
       },
       {
-        // The home page is public/index.html, a static file. The dev server
-        // routes '/' through Starlight first, finds no page, and answers with
-        // Starlight's 404 — so clicking the header logo in the manual appears
-        // to go nowhere useful, even though the built site serves the real home
-        // page there. Hand '/' the file in dev too, so local matches live.
-        name: 'topokit:serve-home-in-dev',
+        // Every page in public/ — the home page, privacy, terms, support — is a
+        // static file that GitHub Pages serves at its extensionless path. The
+        // dev server does not: it routes an unmatched path through Starlight and
+        // answers with Starlight's 404, so locally the site looked like the legal
+        // pages had been replaced by "some Astro thing" while production was
+        // fine the whole time. Serve them here exactly as Pages does.
+        name: 'topokit:serve-static-pages-in-dev',
         apply: 'serve',
         configureServer(server) {
           server.middlewares.use((req, res, next) => {
             const path = (req.url || '').split('?')[0];
-            if (path !== '/' && path !== '/index.html') return next();
+            // '/manual/', '/release-notes/' and friends are Astro's — a trailing
+            // slash means a real route, never one of these files.
+            if (path.endsWith('/') && path !== '/') return next();
+            const name = path === '/' ? 'index.html' : path.replace(/^\//, '');
+            const file = resolve('./public', name.endsWith('.html') ? name : `${name}.html`);
+            if (!file.startsWith(resolve('./public'))) return next();
             try {
-              const html = readFileSync(resolve('./public/index.html'));
+              const html = readFileSync(file);
               res.setHeader('Content-Type', 'text/html; charset=utf-8');
               res.setHeader('Cache-Control', 'no-store');
               res.end(html);
