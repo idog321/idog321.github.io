@@ -1084,20 +1084,42 @@ body {
   color: var(--color-text-light);
 }
 
-.footer-links {
+/* The top bar and the footer used to carry the same five links, which made
+   both of them noise and hid the release notes in the middle of a flat list.
+   The bar now carries only where you'd go next; the footer is the whole map,
+   grouped, plus the small print. */
+.footer-groups {
   display: flex;
-  gap: 2rem;
-  list-style: none;
+  gap: 3.5rem;
+  flex-wrap: wrap;
 }
 
-.footer-links a {
+.footer-group h2 {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  margin: 0 0 0.7rem;
+}
+
+.footer-group ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-group a {
   font-size: 0.82rem;
   color: var(--color-text-muted);
   text-decoration: none;
   transition: color 0.2s;
 }
 
-.footer-links a:hover {
+.footer-group a:hover {
   color: var(--color-text);
 }
 
