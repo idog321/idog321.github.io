@@ -14,12 +14,35 @@ import remarkVersion from './src/plugins/remark-version.mjs';
 // Starlight owns only the /manual/* routes. The marketing + legal pages
 // (index.html, privacy.html, terms.html, support.html) are served verbatim
 // from public/ so they remain pixel-identical to the current live site.
+// astro build sets NODE_ENV=production; astro dev does not.
+const DEV = process.env.NODE_ENV !== 'production';
+
 export default defineConfig({
   site: 'https://topokit.ca',
   // Never appears in the built site; this just takes it off his screen too.
   devToolbar: { enabled: false },
   vite: {
     plugins: [
+      {
+        // The review widget. It used to live in public/, which meant it was
+        // copied into the build and fetched by every visitor — 8KB of a tool
+        // that only works on localhost. It now lives in scripts/ and is served
+        // here, in dev only, so there is no version of the site that ships it.
+        name: 'topokit:comment-widget-in-dev',
+        apply: 'serve',
+        configureServer(server) {
+          server.middlewares.use((req, res, next) => {
+            if ((req.url || '').split('?')[0] !== '/comment.js') return next();
+            try {
+              res.setHeader('Content-Type', 'text/javascript; charset=utf-8');
+              res.setHeader('Cache-Control', 'no-store');
+              res.end(readFileSync(resolve('./scripts/comment-widget.js')));
+            } catch {
+              next();
+            }
+          });
+        },
+      },
       {
         // The home page is public/index.html, a static file. The dev server
         // routes '/' through Starlight first, finds no page, and answers with
@@ -95,8 +118,8 @@ export default defineConfig({
       title: 'TopoKit',
       // Brand wordmark replaces the text title; black on light, white on dark.
       logo: {
-        light: './src/assets/brand/wordmark_for_light_background.svg',
-        dark: './src/assets/brand/wordmark_for_dark_background.svg',
+        light: './src/assets/brand/wordmark_for_light_background.png',
+        dark: './src/assets/brand/wordmark_for_dark_background.png',
         replacesTitle: true,
       },
       favicon: '/Images/Logo/Logo.svg',
@@ -119,17 +142,28 @@ export default defineConfig({
             "try{var p=localStorage.getItem('topokit-platform');if(p==='ios'||p==='mac')document.documentElement.setAttribute('data-platform',p);var v=localStorage.getItem('topokit-version');if(v==='1.1.1')document.documentElement.setAttribute('data-manual-version',v)}catch(e){}",
         },
         {
+          // Starlight declares twitter:card = summary_large_image on every page
+          // and shipped no image to go in it, so every shared link rendered a
+          // blank card. Absolute URL: a share crawler has no page context.
+          tag: 'meta',
+          attrs: { property: 'og:image', content: 'https://topokit.ca/Images/og-card.jpg' },
+        },
+        {
+          tag: 'meta',
+          attrs: { name: 'twitter:image', content: 'https://topokit.ca/Images/og-card.jpg' },
+        },
+        {
           // Glossary chips: hover or tap a GIS term for its definition.
           tag: 'script',
           attrs: { src: '/glossary.js', defer: true },
         },
-        {
-          // Inline commenting while reviewing. Select text on any chapter and a
-          // Comment button appears; notes land in notes/MANUAL-COMMENTS.md via
-          // scripts/comment-server.mjs. The script no-ops off localhost.
-          tag: 'script',
-          attrs: { src: '/comment.js', defer: true },
-        },
+        // Inline commenting while reviewing: select text on any chapter and a
+        // Comment button appears; notes land in notes/MANUAL-COMMENTS.md via
+        // scripts/comment-server.mjs. Dev only — the built site never
+        // references it, and scripts/ is not copied into dist.
+        ...(DEV
+          ? [{ tag: 'script', attrs: { src: '/comment.js', defer: true } }]
+          : []),
       ],
       // The docs header title links back to '/', which serves public/index.html.
       pagination: true,
