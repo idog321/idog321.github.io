@@ -72,7 +72,7 @@ Short, plain-language definitions of the GIS terms this manual uses. Skim it now
 
 **WGS84 (EPSG:4326)** — the latitude/longitude datum GPS reports in, and the default for exchanging coordinates. Every coordinate in a TopoKit project is stored in it, and every export is written back out in it. See [Vector import and export](/manual/vector-import-export/).
 
-**WKT (well-known text)** — a coordinate system written out as text, the `PROJCS[...]` block a desktop GIS puts in a `.prj` file. TopoKit reads it from a GeoPDF but never from a GeoTIFF. See [Coordinate systems](/manual/raster-overlays/#coordinate-systems).
+**WKT (well-known text)** — a coordinate system written out as text, the `PROJCS[...]` block a desktop GIS writes into a `.prj` file. TopoKit reads WKT only from inside a GeoPDF. A `.prj` file is never read, for any format, and neither is the WKT held in a GeoTIFF's own tags. See [Coordinate systems](/manual/raster-overlays/#coordinate-systems).
 
 **WMS** — Web Map Service, the OGC standard most government data portals use. One address exposes a catalogue of named layers to pick from, instead of a single tile URL. See [Adding a WMS layer](/manual/tile-layers/#adding-a-wms-layer).
 

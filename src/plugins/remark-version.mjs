@@ -1,10 +1,11 @@
 // remark-version
 // Version-scoped content, for the 1.1 / 1.1.1 toggle.
 //
-// 1.1 is what the App Store ships. 1.1.1 is the beta, and its only difference
-// is a fourth base-map option, No Map. A reader on 1.1 should not be told about
-// a button they do not have, so the handful of sentences that mention it are
-// scoped rather than duplicated into a second manual.
+// 1.1 is what the App Store ships. 1.1.1 is the beta: a fourth base-map option
+// (No Map), UTM search reading N/S as the hemisphere, points no longer hidden by
+// a faded or offline-only layer, and feature attributes exported to GPX and KML.
+// A reader on 1.1 should not be told about behaviour they do not have, so the
+// sentences that differ are scoped rather than duplicated into a second manual.
 //
 // Authoring syntax (markdown directives), deliberately the same shape as
 // remark-platform's, so there is one idiom to learn:

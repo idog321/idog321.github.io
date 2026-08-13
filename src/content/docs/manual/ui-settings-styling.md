@@ -50,7 +50,7 @@ Settings opens as a **list of nine categories**, not one long page. macOS shows 
 ### GPS and recording
 
 - **Recording Profile**: Strict filter, Balanced (default), Permissive, or Record All Fixes. Each sets a distance filter, an accuracy threshold and jump filtering; [GPS and track recording](/manual/gps-and-track-recording/) has the numbers.
-- **Auto-Pause When Stationary**: pauses recording when you stop moving. This saves battery and prevents GPS drift from adding stray points to the track while you are stationary.
+- **Auto-Pause When Stationary**: pauses recording when you stop moving. Off by default. This saves battery and prevents GPS drift from adding stray points to the track while you are stationary. The toggle is read when you tap **Record Track**, so changing it during a recording takes effect on the next one.
 - **Track Line Style**: opens the line customization sheet for recorded tracks (width, colour, pattern, opacity).
 - **Randomize Track Colour**: when on, each new track gets a random colour instead of the track style's colour. The style's other properties (width, pattern, opacity) still apply.
 :::
@@ -123,7 +123,7 @@ Type a coordinate directly into the search bar in any of the four formats below:
 | **DD** decimal degrees | `49.976361, -124.149780` | Separator can be a comma, a semicolon, or a space. `°` is ignored. Hemisphere letters optional, at either end (`49.976361N 124.149780W`). Label the first value E or W and TopoKit takes it as longitude-first and swaps. |
 | **DMS** degrees minutes seconds | `49°58'35"N 124°08'59"W` | Hemisphere **required** on both halves. Degree and minute markers **required**: `°` or lowercase `d` for degrees, `'` `′` or lowercase `m` for minutes — uppercase `D`/`M`/`S` are not recognized. The seconds mark (`"`, `″` or lowercase `s`) is optional; seconds may have decimals. Bare `48 51 24 2 21 07` will not parse. |
 | **DDM** degrees decimal minutes | `49°58.5817'N 124°08.9868'W` | Marine charts. Degree marker (`°` or lowercase `d`) and hemisphere required; the minute marker after the minutes (`'`, `′` or lowercase `m`) is optional. |
-| **UTM** | `10U 417559 5536636` | Zones 1–60. Easting must be six digits (100 000–999 999), northing 0–10 000 000. A trailing `E`/`N` is tolerated. The zone letter sets the hemisphere: letters before `N` are southern. A UTM result is shown with its zone label, for example "UTM 10U". |
+| **UTM** | `10U 417559 5536636` | Zones 1–60. Easting must be six digits (100 000–999 999), northing 0–10 000 000. A trailing `E`/`N` is tolerated. :v11[The zone letter sets the hemisphere: letters before `N` are southern.]:v111[`N` and `S` are read as the hemisphere, so `S` is southern. Any other letter is read as an MGRS latitude band, where `C` to `M` are south of the equator and `P` to `X` are north. `S` is also the band covering 32°–40°N; it is read as the hemisphere, so enter a location in that band with `N` or in decimal degrees.] A UTM result is shown with its zone label, for example "UTM 10U". |
 
 Type something that looks like a coordinate but will not parse, and the dropdown says "Invalid coordinate format" with an example to copy, above whatever layer and place hits the text matched. Text that does not look like a coordinate is simply searched as text.
 
@@ -157,7 +157,7 @@ All of them live in the device's local preferences rather than the project file,
 
 **Why do I see fewer settings categories on macOS?**
 
-The **GPS & Recording** and **Toolbar** categories are iPhone-only. Track recording uses the iPhone's location services and, for bearing, its magnetometer, neither of which a Mac has. The Toolbar category configures the iPhone's edge-of-screen sidebar, which the Mac sidebar replaces.
+The **GPS & Recording** and **Toolbar** categories are iPhone-only. The Mac has no GPS tab and cannot record a track, so a recording profile, auto-pause and a track line style have nothing to apply to. It still reads your position, for the map's location marker, for centring the map on your fix, and for placing a point where you are standing. The Toolbar category configures the iPhone's edge-of-screen sidebar, which the Mac sidebar replaces.
 
 **What does changing units do to existing features?**
 

@@ -104,20 +104,20 @@ Everything TopoKit writes, and what each format can carry:
 
 | Format | Extensions | Geometry types | Attributes | Styling | Notes |
 |--------|------------|----------------|------------|---------|-------|
-| GPX | `.gpx` | Point → `<wpt>`, lines → `<trk>` | Name + description (track stats appended) | None | **Polygons are silently dropped.** |
-| KML | `.kml` | All six geometry types (Point, MultiPoint, LineString, MultiLineString, Polygon, MultiPolygon) | Name + description (track stats appended) | Fixed defaults only | Multi-part geometry and polygon holes survive. |
+| GPX | `.gpx` | Point → `<wpt>`, lines → `<trk>` | :v11[Name + description (track stats appended)]:v111[**Full**] | None | **Polygons are silently dropped.** |
+| KML | `.kml` | All six geometry types (Point, MultiPoint, LineString, MultiLineString, Polygon, MultiPolygon) | :v11[Name + description (track stats appended)]:v111[**Full**] | Fixed defaults only | Multi-part geometry and polygon holes survive. |
 | GeoJSON | `.geojson` | All six geometry types | **Full** | None | A key-sorted `FeatureCollection`. |
 | GeoPackage | `.gpkg` | All six geometry types, with polygon holes and multi-part geometry preserved | **Full** (a column per property, all TEXT) | None | Split into up to three tables by geometry type — see the [round-trip FAQ](#faq). |
 
 ### GPX export
 
-The export is GPX 1.1: points become `<wpt>`, all lines become `<trk>` (never `<rte>`). A MultiPoint is flattened to one `<wpt>` per vertex, every one of them carrying the parent feature's name and description, so it cannot be reassembled into a single feature on re-import. Recorded-track stats are appended to `<desc>` as readable text, with the machine-readable `track_*` values in `<extensions>`. **The readable text is always metric and always English, whatever your unit and language settings.** **Polygons cannot be expressed in GPX and are silently dropped.**
+The export is GPX 1.1: points become `<wpt>`, all lines become `<trk>` (never `<rte>`). A MultiPoint is flattened to one `<wpt>` per vertex, every one of them carrying the parent feature's name and description, so it cannot be reassembled into a single feature on re-import. Recorded-track stats are appended to `<desc>` as readable text, with the machine-readable `track_*` values in `<extensions>`.:v111[ A waypoint's own properties are written to its `<extensions>` the same way, so the accuracy, altitude, speed, heading and time recorded with a GPS-captured point leave with it. TopoKit does not read those waypoint properties back on import, so a GPX exported and re-imported keeps the points and loses their recorded GPS detail. Use GeoPackage or GeoJSON for a round-trip.] **The readable text is always metric and always English, whatever your unit and language settings.** **Polygons cannot be expressed in GPX and are silently dropped.**
 
 ### KML export
 
 The export is [OGC KML 2.2](https://www.ogc.org/standards/kml/): one `<Document>`, one `<Placemark>` per feature; multi-part features use `<MultiGeometry>` and polygon holes survive. Recorded tracks are written as `<gx:Track>` / `<gx:MultiTrack>` with per-point time, altitude, and accuracy intact. Only lines carrying TopoKit's `track_*` stats count as recorded tracks here: a line with per-vertex timestamps but no track stats — a `<gx:Track>` imported from another app, say — exports as a plain `<LineString>`, and its per-vertex times and accuracies are dropped.
 
-Feature properties are not written: a placemark carries only its name and description, so attributes that arrived through `<ExtendedData>` on import do not leave on export. The one exception is a recorded track, whose `track_*` stats are written back as `<ExtendedData>`.
+:v11[Feature properties are not written: a placemark carries only its name and description, so attributes that arrived through `<ExtendedData>` on import do not leave on export. The one exception is a recorded track, whose `track_*` stats are written back as `<ExtendedData>`.]:v111[Feature properties are written as `<Data>` entries in `<ExtendedData>` on the placemark, so attributes that arrived on import leave again on export. Name and description are not repeated there, because both already have their own elements.]
 
 **Your styling is not exported.** Every placemark gets one of three fixed defaults — yellow pushpin, red line, red translucent polygon — so your custom pin colours, widths, and fills will not appear.
 
@@ -135,7 +135,7 @@ The export is a `.gpkg` per the [OGC GeoPackage specification](https://www.geopa
 
 **Why did my styling disappear?**
 
-Styling is neither imported nor exported. Nothing is read from an imported KML, and nothing of yours is written to an exported one — KML export uses three fixed defaults. Restyle after importing; if it is the attributes you need to preserve rather than the look, use GeoPackage or GeoJSON.
+Styling is neither imported nor exported. Nothing is read from an imported KML, and nothing of yours is written to an exported one — KML export uses three fixed defaults. Restyle after importing.:v11[ If it is the attributes you need to preserve rather than the look, use GeoPackage or GeoJSON.]
 
 **Why are my features in the wrong place?**
 

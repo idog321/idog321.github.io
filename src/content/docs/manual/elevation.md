@@ -20,11 +20,11 @@ A tile reaches your device one of two ways: a query fetches it, or you select it
 
 ### On demand
 
-When a query needs a tile you don't have, TopoKit offers to fetch it:
+A query whose tile is already on the device reads it from storage and makes no network request. What happens when the tile is missing depends on where you asked from:
 
 - **The elevation measurement tool** shows **Download N elevation tiles (X MB)** on the [tool card](/manual/interface/), and downloads nothing until you tap it.
 - **The point editor** shows :ui[Get Elevation] with the download size beside it.
-- **The elevation profile on a saved line** downloads without asking: the button's subtitle names the tile count and size before you open it, and opening it fetches what is missing.
+- **The elevation profile on a saved line** downloads without asking, and what you are told beforehand depends on where you open it. In quick edit the :ui[Elevation Profile]{icon=elevation-profile} button carries a subtitle naming the tile count and estimated size, but tapping it starts the download rather than opening a confirmation. From the layer tree's context menu there is no subtitle and no estimate: the download starts the moment you choose **Elevation Profile**.
 
 ### The DEM Tile Manager
 

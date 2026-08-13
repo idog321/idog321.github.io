@@ -23,7 +23,7 @@ Downloading a tile layer for offline use does not change its row. The download a
 
 Rows higher in the tree draw on top of rows below them.
 
-A layer that is switched on can still be missing from the map, because something above it in the tree is covering it. A tile layer covers the whole map, so anything below it in the tree is hidden everywhere; a raster only hides the area inside its own footprint, so the same layer can be hidden in one part of the map and visible in another. Drag the covering layer below your data to see it again.
+A layer that is switched on can still be missing from the map, because something above it in the tree is covering it. A tile layer covers the whole map, so anything below it in the tree is hidden everywhere; a raster only hides the area inside its own footprint, so the same layer can be hidden in one part of the map and visible in another.:v111[ An offline tile layer covers only the regions you downloaded, and a layer faded to nothing covers nothing at all.] Drag the covering layer below your data to see it again.
 
 ## Folders
 

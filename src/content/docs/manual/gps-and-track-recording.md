@@ -19,7 +19,7 @@ If you deny permission or revoke it later, the GPS tab shows a full-screen promp
 :::
 
 :::mac
-TopoKit still uses location on the Mac for the map's show-my-location marker and initial centring: it asks for permission the first time that is needed. macOS has no Precise Location toggle — permission is all or nothing. Macs have no magnetometer, so heading (compass) data is never available on macOS.
+TopoKit still uses location on the Mac for the map's show-my-location marker, for initial centring, and for placing a point where you are standing: it asks for permission the first time that is needed. macOS has no Precise Location toggle — permission is all or nothing. Macs have no magnetometer, so heading (compass) data is never available on macOS.
 
 You work with recorded tracks on the Mac after they [sync into the project](/manual/projects-and-files/#icloud-sync).
 :::
@@ -148,7 +148,7 @@ A consumer GNSS receiver's typical position error is 3–8 m in open sky, and wo
 
 **Why did my recording auto-pause when I was still moving?**
 
-Auto-pause reads the speed the system reports, not positional change. Starting from stationary, or shifting a few centimetres at a viewpoint, the reported speed can read as zero even while fixes arrive. Turn auto-pause off in Settings if it gets in the way.
+Auto-pause runs only when you have turned it on; it is off by default. It reads the speed the system reports, not positional change. Starting from stationary, or shifting a few centimetres at a viewpoint, the reported speed can read as zero even while fixes arrive. Turning it off in Settings takes effect on your next recording, not the one in progress.
 
 **What's the battery impact?**
 

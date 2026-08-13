@@ -187,7 +187,7 @@ Usually nothing is wrong — only the map interior of a published sheet is geore
 
 **Why does the app say the coordinate system is unknown when my file has it embedded?**
 
-See [Coordinate systems](#coordinate-systems): a GeoTIFF's code has to be in its GeoTIFF keys, and a GeoPDF description without an explicit EPSG code may not match a recognized projection. A sidecar `.prj` is not read on either format. Re-tag the source — [`gdal_translate -a_srs EPSG:XXXX`](https://gdal.org/en/stable/programs/gdal_translate.html) is the usual way — and re-import.
+See [Coordinate systems](#coordinate-systems): a GeoTIFF's code has to be in its GeoTIFF keys, and a GeoPDF description without an explicit EPSG code may not match a recognized projection. A sidecar `.prj` is not read on either format. Write the code into the source file and re-import: for a GeoTIFF, [`gdal_translate -a_srs EPSG:XXXX in.tif out.tif`](https://gdal.org/en/stable/programs/gdal_translate.html) rewrites the GeoTIFF keys; for a GeoPDF, the WKT embedded in the file needs an `AUTHORITY["EPSG","XXXX"]` clause.
 
 **My GeoTIFF has a WLD/TFW sidecar. Does the app use it?**
 

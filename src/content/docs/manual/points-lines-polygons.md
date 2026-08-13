@@ -64,7 +64,7 @@ The editor has no free-form elevation field. A point's elevation is either fetch
 
 - If the DEM tile covering the point is already on the device, :ui[Get Elevation] returns a value instantly (for example `142.3 m`).
 - If not, the button reads "Get Elevation (25–40 MB download)" and waits for you to tap before downloading. Downloaded tiles are cached and reused for every feature in that area.
-- On open, elevation auto-fills silently only if the covering tile is already cached. There is never a silent download.
+- On open, elevation auto-fills only if the covering tile is already on the device. The point editor never downloads a tile on its own.
 - Over ocean, at extreme latitudes, or if a tile cannot be read, elevation shows "Not available" and is not saved.
 
 The full elevation-profile workflow is in the [Elevation and DEMs](/manual/elevation/) chapter.

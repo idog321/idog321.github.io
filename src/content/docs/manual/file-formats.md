@@ -49,7 +49,7 @@ Select a feature or a folder in the layer tree and export it to GPX, KML, GeoJSO
 
 - **Rasters are shared, not converted.** A shared raster (or a shared folder holding one) is the original file exactly as you imported it. The reprojected version TopoKit built for display stays on the device, so the recipient gets your source file in its original coordinate system.
 - **GPX cannot carry polygons.** Exporting a polygon to GPX does not fail — it writes a valid file with no features in it. Use KML, GeoJSON or GeoPackage for anything with an area.
-- **Styling does not travel in either direction.** No format carries your colours, widths or pin glyphs out, and none is read on the way in either — an imported file is drawn with your import defaults from Settings. GeoJSON and GeoPackage do carry your attributes.
+- **Styling does not travel in either direction.** No format carries your colours, widths or pin glyphs out, and none is read on the way in either — an imported file is drawn with your import defaults from Settings. :v11[GeoJSON and GeoPackage do carry your attributes.]:v111[Your attributes are carried by all four export formats.]
 
 ## DEMs
 
