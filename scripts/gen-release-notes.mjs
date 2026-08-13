@@ -52,12 +52,27 @@ if (!releases.length) {
   process.exit(1);
 }
 
+// Versions that exist only as a beta. Clear an entry the day it reaches the
+// App Store — nothing detects this, because the app repo has no notion of
+// "shipped", only of what the current build is.
+const UNRELEASED = new Set(['1.1.1']);
+
 const body = releases
-  .map(
-    (r) =>
-      `## Version ${r.version}\n\n` +
-      r.items.map((i) => `**${i.title}**\n\n${i.description}`).join('\n\n')
-  )
+  .map((r) => {
+    const beta = UNRELEASED.has(r.version);
+    return (
+      // A raw <h2> so it can carry a class: markdown headings cannot, and
+      // there is no page-level hook to scope styling to this page otherwise.
+      `<h2 class="release-version" id="version-${r.version.replace(/\./g, '-')}">` +
+      `Version ${r.version}${beta ? ' <span class="release-beta">Beta</span>' : ''}</h2>\n\n` +
+      (beta ? `<p class="release-unreleased">Not on the App Store yet.</p>\n\n` : '') +
+      // A heading, not bold text: these are the shape of the page, and bold
+      // body copy at body weight does not read as a title.
+      r.items
+        .map((i) => `<h3 class="release-item">${i.title}</h3>\n\n${i.description}`)
+        .join('\n\n')
+    );
+  })
   .join('\n\n');
 
 writeFileSync(

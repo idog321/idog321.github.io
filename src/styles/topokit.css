@@ -518,3 +518,62 @@ html[data-manual-version='1.1.1'] [data-version='1.1'] {
 .sl-markdown-content img[src*='tab-bar'] {
   max-width: 30rem;
 }
+
+/* ---------------------------------------------------------------------------
+   Release notes. The page is generated from the app's own ReleaseNotes.swift,
+   so the only thing styled here is the shape: versions are the spine, items
+   are subheadings under them, and a version that has not shipped says so. */
+.release-beta {
+  display: inline-block;
+  vertical-align: middle;
+  margin-inline-start: 0.6rem;
+  padding: 0.15em 0.6em;
+  border: 1px solid var(--sl-color-orange);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--sl-color-orange-high);
+  /* The pill must not inherit the h2's size or it becomes a banner. */
+  line-height: 1.4;
+}
+
+.sl-markdown-content .release-unreleased {
+  margin-block-start: 0.35rem;
+  color: var(--sl-color-gray-3);
+  font-size: var(--sl-text-sm);
+}
+
+/* Versions are the page's spine: air above each one and a rule, so a long list
+   reads as separate releases rather than one continuous column. The first has
+   no rule — there is nothing above it to separate from. */
+.sl-markdown-content .release-version {
+  margin-block-start: 3.5rem;
+  padding-block-start: 1.75rem;
+  border-block-start: 1px solid var(--sl-color-gray-5);
+}
+.sl-markdown-content .release-version:first-of-type {
+  margin-block-start: 1.5rem;
+  padding-block-start: 0;
+  border-block-start: 0;
+}
+/* Starlight's heading scale is built for chapters: on this page it rendered
+   feature titles at 29px against 16px body, so every item read as a headline
+   and the version it belonged to barely won. An explicit scale instead —
+   version, then item, then text, each clearly a step down. */
+.sl-markdown-content .release-version {
+  font-size: 1.8rem;
+}
+
+.sl-markdown-content .release-item {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-block: 1.9rem 0.4rem;
+}
+
+/* The paragraph belongs to the title above it, so it sits close. */
+.sl-markdown-content .release-item + p {
+  margin-block-start: 0.4rem;
+}
