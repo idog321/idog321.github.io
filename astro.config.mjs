@@ -57,8 +57,10 @@ export default defineConfig({
             const path = (req.url || '').split('?')[0];
             // '/manual/', '/release-notes/' and friends are Astro's — a trailing
             // slash means a real route, never one of these files.
-            if (path.endsWith('/') && path !== '/') return next();
-            const name = path === '/' ? 'index.html' : path.replace(/^\//, '');
+            const name =
+              path === '/' || path.endsWith('/')
+                ? `${path.replace(/^\//, '')}index.html`
+                : path.replace(/^\//, '');
             const file = resolve('./public', name.endsWith('.html') ? name : `${name}.html`);
             if (!file.startsWith(resolve('./public'))) return next();
             try {
@@ -115,6 +117,7 @@ export default defineConfig({
     sitemap({
       customPages: [
         'https://topokit.ca/',
+        'https://topokit.ca/release-notes/',
         'https://topokit.ca/privacy',
         'https://topokit.ca/terms',
         'https://topokit.ca/support',
