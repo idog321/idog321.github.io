@@ -165,3 +165,56 @@ body { font-family: 'Inter', -apple-system, sans-serif; color: var(--ink); backg
   .features-grid { grid-template-columns: 1fr; }
   .intro, .maker-inner, .privacy-inner { grid-template-columns: 1fr; gap: 2.5rem; }
 }
+
+
+/* ---- Phones ---- */
+@media (max-width: 640px) {
+  .nav-inner { padding: 0.55rem 1rem; }
+  .nav img { height: 20px; }
+  .nav-right { gap: 1rem; }
+  .nav-right .nav-hide-sm { display: none; }
+  .nav-right a { font-size: 0.82rem; }
+
+  .hero {
+    height: clamp(540px, 92vh, 720px);
+    background-position: 70% 40%;
+  }
+  .hero-inner { padding: 0 1.25rem 3rem; }
+  .hero h1 { font-size: clamp(2rem, 10.5vw, 2.6rem); }
+  .hero .sub { font-size: 1rem; margin-top: 1rem; }
+  .hero-actions { margin-top: 1.5rem; gap: 0.9rem; }
+  .price-note { font-size: 0.85rem; }
+
+  .intro { padding: 3.5rem 1.25rem 3rem; }
+  .intro h2 { font-size: clamp(1.55rem, 7.6vw, 2rem); }
+  .intro p { font-size: 0.98rem; }
+  .intro-devices { margin-top: 0.5rem; }
+
+  .band-features { padding: 3.5rem 1.25rem; }
+  .band-head h2 { font-size: clamp(1.7rem, 8vw, 2.2rem); }
+
+  .band-photo { min-height: clamp(340px, 60vh, 480px); background-position: 60% 62%; }
+  .band-photo-inner { padding: 3rem 1.25rem; }
+  .band-photo h2 { font-size: clamp(1.8rem, 9vw, 2.4rem); }
+  .band-photo p { font-size: 0.98rem; }
+
+  .moment { padding: 3.5rem 1.25rem 3rem; }
+  .moment h2 { font-size: clamp(1.7rem, 8vw, 2.2rem); }
+
+  .privacy { margin: 0 4vw; padding: 3rem 1.25rem 3.5rem; border-radius: 20px; }
+  .privacy h2 { font-size: clamp(1.6rem, 7.6vw, 2rem); }
+  .privacy .lead { font-size: 0.98rem; }
+  .net-list li { font-size: 0.92rem; }
+
+  .maker-inner { padding: 3.5rem 1.25rem 3rem; }
+  .maker h2 { font-size: clamp(1.6rem, 7.6vw, 2rem); }
+  .maker p { font-size: 0.98rem; }
+
+  .cta { padding: 3rem 1.25rem 4rem; }
+  .cta h2 { font-size: clamp(1.9rem, 9vw, 2.6rem); }
+  .cta .cta-trio { font-size: 0.95rem; }
+
+  .footer { padding: 2rem 1.25rem 2.4rem; }
+  .footer nav { gap: 1.1rem 1.5rem; }
+  .footer a { font-size: 0.85rem; }
+}
