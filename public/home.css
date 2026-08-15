@@ -177,14 +177,14 @@ body { font-family: 'Inter', -apple-system, sans-serif; color: var(--ink); backg
 
   .hero {
     height: clamp(540px, 92vh, 720px);
-    /* Crop to the right edge: the iPhone is the shot. The gradient stays dark
-       through 55% because the headline sits ~40% up, over the phone's bright
-       screen — it must not thin out before the type does. */
+    /* Crop to the right edge: the iPhone is the shot. The headline tops out
+       ~51% up the frame over the phone's bright screen, so the scrim stays
+       near-solid through 58% and only then dissolves into the photograph. */
     background-image: linear-gradient(to top,
-        rgba(12, 14, 12, 0.93) 0%,
-        rgba(12, 14, 12, 0.82) 34%,
-        rgba(12, 14, 12, 0.68) 55%,
-        rgba(12, 14, 12, 0.12) 82%,
+        rgba(12, 14, 12, 0.97) 0%,
+        rgba(12, 14, 12, 0.9) 38%,
+        rgba(12, 14, 12, 0.8) 58%,
+        rgba(12, 14, 12, 0.1) 84%,
         rgba(12, 14, 12, 0.28) 100%),
       url('Images/hero-field.jpg');
     background-position: 100% 45%;
