@@ -18,6 +18,11 @@
   <link rel="stylesheet" href="home.css">
   <link rel="icon" type="image/svg+xml" href="Images/Logo/Logo.svg">
   <link rel="icon" type="image/png" sizes="48x48" href="favicon.png">
+  <!-- Safari paints SVG <img>s incrementally while they stream, and mask references
+       don't resolve until the file is complete — a cold load flashes the card art
+       unmasked. With this class present, each card stays hidden until its own load
+       event; without JS the old behavior remains. -->
+  <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 
@@ -56,7 +61,7 @@
       <span>GeoTIFF</span><span>BigTIFF</span><span>GeoPDF</span><span>GeoPackage</span><span>GPX</span><span>KML</span><span>KMZ</span><span>GeoJSON</span>
     </div>
   </div>
-  <img class="intro-devices" src="Images/mac-and-iphone.png" alt="TopoKit on Mac and iPhone">
+  <img class="intro-devices" src="Images/mac-and-iphone.webp" alt="TopoKit on Mac and iPhone">
 </section>
 
 <section class="band-features">
@@ -65,49 +70,49 @@
   </div>
   <div class="features-grid">
     <div class="feat">
-      <img class="feat-art" src="Images/cards/projects.svg" alt="">
+      <img class="feat-art" onload="this.classList.add('loaded')" src="Images/cards/projects.svg" alt="">
       <h3>Projects</h3>
       <p>Keep your work organized in separate projects. Maps, points, polygons, and photos, all stored in one file you own.</p>
       <a class="feat-link" href="https://topokit.ca/manual/projects-and-files/">Learn more</a>
     </div>
     <div class="feat">
-      <img class="feat-art" src="Images/cards/rasters.svg" alt="">
+      <img class="feat-art" onload="this.classList.add('loaded')" src="Images/cards/rasters.svg" alt="">
       <h3>Multiple rasters</h3>
       <p>Stack as many GeoTIFFs and GeoPDFs as you need. Everything reprojects on the fly and lines up wherever it needs to be.</p>
       <a class="feat-link" href="https://topokit.ca/manual/raster-overlays/">Learn more</a>
     </div>
     <div class="feat">
-      <img class="feat-art" src="Images/cards/vector.svg" alt="">
+      <img class="feat-art" onload="this.classList.add('loaded')" src="Images/cards/vector.svg" alt="">
       <h3>Vector data</h3>
       <p>Drop points. Draw and edit lines and polygons. Import vector files, and export everything back out in four formats.</p>
       <a class="feat-link" href="https://topokit.ca/manual/points-lines-polygons/">Learn more</a>
     </div>
     <div class="feat">
-      <img class="feat-art" src="Images/cards/tree.svg" alt="">
+      <img class="feat-art" onload="this.classList.add('loaded')" src="Images/cards/tree.svg" alt="">
       <h3>Layer tree</h3>
       <p>Just like the GIS apps you already know. Drag to reorder layers, group them into folders, and change their opacity.</p>
       <a class="feat-link" href="https://topokit.ca/manual/layer-tree/">Learn more</a>
     </div>
     <div class="feat">
-      <img class="feat-art" src="Images/cards/tiles.svg" alt="">
+      <img class="feat-art" onload="this.classList.add('loaded')" src="Images/cards/tiles.svg" alt="">
       <h3>Offline tile layers</h3>
       <p>Add any XYZ or WMS tile server by URL. Draw a box on the map, and download tiles for offline use.</p>
       <a class="feat-link" href="https://topokit.ca/manual/tile-layers/">Learn more</a>
     </div>
     <div class="feat">
-      <img class="feat-art" src="Images/cards/gps.svg" alt="">
+      <img class="feat-art" onload="this.classList.add('loaded')" src="Images/cards/gps.svg" alt="">
       <h3>GPS recording</h3>
       <p>Record tracks with the phone in your pocket. Watch distance, speed, and elevation stats update live as you go. Every point tagged with accuracy, altitude, and time.</p>
       <a class="feat-link" href="https://topokit.ca/manual/gps-and-track-recording/">Learn more</a>
     </div>
     <div class="feat">
-      <img class="feat-art" src="Images/cards/elevation.svg" alt="">
+      <img class="feat-art" onload="this.classList.add('loaded')" src="Images/cards/elevation.svg" alt="">
       <h3>Elevation profiles</h3>
       <p>Download the elevation data once. Get point elevations and profiles anywhere you need. No signal required.</p>
       <a class="feat-link" href="https://topokit.ca/manual/elevation/">Learn more</a>
     </div>
     <div class="feat">
-      <img class="feat-art" src="Images/cards/icloud.svg" alt="">
+      <img class="feat-art" onload="this.classList.add('loaded')" src="Images/cards/icloud.svg" alt="">
       <h3>Synced through your iCloud</h3>
       <p>Work on a project on your Mac and open it on your iPhone. Same file, synced privately through your own iCloud.</p>
       <a class="feat-link" href="https://topokit.ca/manual/projects-and-files/">Learn more</a>
