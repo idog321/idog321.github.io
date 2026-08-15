@@ -189,6 +189,11 @@
 var pv = document.getElementById('privacy-card');
 var ticking = false;
 function expandOnScroll() {
+  if (window.matchMedia('(max-width: 640px)').matches) {
+    pv.style.marginLeft = pv.style.marginRight = pv.style.borderRadius = '';
+    ticking = false;
+    return;
+  }
   var r = pv.getBoundingClientRect();
   var vh = window.innerHeight;
   var p = (vh - r.top) / (vh * 0.55);
