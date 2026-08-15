@@ -126,8 +126,7 @@ const html = `<!DOCTYPE html>
     <div class="nav-inner">
       <a href="/" class="nav-logo">
         <picture>
-          <source srcset="/Images/Logo/wordmark_for_dark_background.png" media="(prefers-color-scheme: dark)">
-          <img class="logo-wordmark" src="/Images/Logo/wordmark_for_light_background.png" alt="TopoKit" height="28">
+                    <img class="logo-wordmark" src="/Images/Logo/wordmark_for_light_background.png" alt="TopoKit" height="28">
         </picture>
       </a>
       <ul class="nav-links">

@@ -3,93 +3,253 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TopoKit – Field GIS app for iPhone and Mac</title>
-  <meta name="description" content="Field GIS for Apple devices — projects, layers, offline maps. No subscription. No account.">
-  <meta name="color-scheme" content="light dark">
+  <title>TopoKit — All your maps. One app.</title>
+  <meta name="description" content="A full GIS workflow on your iPhone and Mac. Organize your work in projects, work with raster and vector layers, and take your maps offline. No subscription. No account.">
+  <meta name="color-scheme" content="light">
   <link rel="canonical" href="https://topokit.ca/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="TopoKit">
   <meta property="og:url" content="https://topokit.ca/">
-  <meta property="og:title" content="TopoKit — field GIS for iPhone and Mac">
-  <meta property="og:description" content="A full GIS workflow that syncs across your Apple devices. Projects, raster and vector layers, offline maps. No subscription, no account.">
+  <meta property="og:title" content="TopoKit — All your maps. One app.">
+  <meta property="og:description" content="A full GIS workflow on your iPhone and Mac. Organize your work in projects, work with raster and vector layers, and take your maps offline. No subscription. No account.">
   <meta property="og:image" content="https://topokit.ca/Images/og-card.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://topokit.ca/Images/og-card.jpg">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
   <link rel="icon" type="image/svg+xml" href="Images/Logo/Logo.svg">
   <link rel="icon" type="image/png" sizes="48x48" href="favicon.png">
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="/" class="nav-logo">
-        <picture>
-          <source srcset="Images/Logo/wordmark_for_dark_background.png" media="(prefers-color-scheme: dark)">
-          <img class="logo-wordmark" src="Images/Logo/wordmark_for_light_background.png" alt="TopoKit" height="28">
-        </picture>
-      </a>
-      <ul class="nav-links">
-        <li><a href="/release-notes/">Release notes</a></li>
-        <li><a href="/support">Support</a></li>
-      </ul>
-      <a href="/manual/" class="nav-cta">Manual</a>
+<nav class="nav">
+  <div class="nav-inner">
+    <img class="logo-white" src="Images/Logo/wordmark_for_dark_background.svg" alt="TopoKit">
+    <img class="logo-color" src="Images/Logo/wordmark_for_light_background.svg" alt="TopoKit">
+    <div class="nav-right">
+      <a href="https://topokit.ca/manual/">Manual</a>
+      <a href="https://topokit.ca/release-notes/">Release notes</a>
+      <a href="https://topokit.ca/support">Support</a>
+      <a href="https://apps.apple.com/us/app/topokit/id6761090144" class="nav-cta">Get TopoKit</a>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <h1>All your maps.<br><em>One app.</em></h1>
-        <p>A full GIS workflow that syncs across your Apple devices. Organize your work in projects, work with raster and vector layers, and take everything offline. No subscription. No account.</p>
-        <div class="hero-actions">
-          <a href="https://apps.apple.com/us/app/topokit/id6761090144" class="app-store-badge" aria-label="Download on the App Store">
-            <svg class="apple-icon" viewBox="0 0 814 1000" width="20" height="24">
-              <path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76.5 0-103.7 40.8-165.9 40.8s-105.6-57.5-155.5-127.4c-57.9-81.6-104.6-208.7-104.6-329.3 0-193.5 125.8-296.2 249.6-296.2 65.8 0 120.5 43.1 161.9 43.1 39.5 0 101-45.7 175.3-45.7 28.3 0 130 2.6 197.4 99.5zm-234.6-182.9c31.4-37.2 53.7-88.9 53.7-140.6 0-7.2-.6-14.4-1.9-20.2-51.2 1.9-112 34.1-148.6 76.5-26.4 30.1-55.6 81.7-55.6 134.2 0 7.8.6 15.7 1.3 18.3 2.6.6 6.4.6 10.2.6 46.4 0 105.3-30.7 140.9-68.8z"/>
-            </svg>
-            <span class="app-store-text">
-              <span class="app-store-small">Download on the</span>
-              <span class="app-store-big">App Store</span>
-            </span>
-          </a>
-        </div>
+<header class="hero">
+  <div class="hero-inner">
+    <h1 class="display">All your maps.<br><em>One app.</em></h1>
+    <p class="sub">A full GIS workflow on your iPhone and Mac. Organize your work in projects, work with raster and vector layers, and take your maps offline. No subscription. No account.</p>
+    <div class="hero-actions">
+      <a href="https://apps.apple.com/us/app/topokit/id6761090144" class="store-btn">
+        <svg viewBox="0 0 814 1000" width="20" height="24"><path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76.5 0-103.7 40.8-165.9 40.8s-105.6-57.5-155.5-127.4c-57.9-81.6-104.6-208.7-104.6-329.3 0-193.5 125.8-296.2 249.6-296.2 65.8 0 120.5 43.1 161.9 43.1 39.5 0 101-45.7 175.3-45.7 28.3 0 130 2.6 197.4 99.5zm-234.6-182.9c31.4-37.2 53.7-88.9 53.7-140.6 0-7.2-.6-14.4-1.9-20.2-51.2 1.9-112 34.1-148.6 76.5-26.4 30.1-55.6 81.7-55.6 134.2 0 7.8.6 15.7 1.3 18.3 2.6.6 6.4.6 10.2.6 46.4 0 105.3-30.7 140.9-68.8z"/></svg>
+        <span class="store-txt"><span class="store-small">Download on the</span><span class="store-big">App Store</span></span>
+      </a>
+      <span class="price-note js-price">$9.99 USD. Once.</span>
+    </div>
+  </div>
+</header>
+
+<section class="intro">
+  <div>
+    <h2 class="display"><span class="l1">Take all your <span id="rotator" class="rotator">data</span></span><br>outside.</h2>
+    <p>TopoKit handles all your raster and vector data fully offline, organized into projects. Import your maps and points in any of the formats below, and take it into the field.</p>
+    <div class="chips">
+      <span>GeoTIFF</span><span>BigTIFF</span><span>GeoPDF</span><span>GeoPackage</span><span>GPX</span><span>KML</span><span>KMZ</span><span>GeoJSON</span>
+    </div>
+  </div>
+  <img class="intro-devices" src="Images/mac-and-iphone.png" alt="TopoKit on Mac and iPhone">
+</section>
+
+<section class="band-features">
+  <div class="band-head">
+    <h2 class="display">Every tool for the job.</h2>
+  </div>
+  <div class="features-grid">
+    <div class="feat">
+      <img class="feat-art" src="Images/cards/projects.svg" alt="">
+      <h3>Projects</h3>
+      <p>Keep your work organized in separate projects. Maps, points, polygons, and photos, all stored in one file you own.</p>
+      <a class="feat-link" href="https://topokit.ca/manual/projects-and-files/">Learn more</a>
+    </div>
+    <div class="feat">
+      <img class="feat-art" src="Images/cards/rasters.svg" alt="">
+      <h3>Multiple rasters</h3>
+      <p>Stack as many GeoTIFFs and GeoPDFs as you need. Everything reprojects on the fly and lines up wherever it needs to be.</p>
+      <a class="feat-link" href="https://topokit.ca/manual/raster-overlays/">Learn more</a>
+    </div>
+    <div class="feat">
+      <img class="feat-art" src="Images/cards/vector.svg" alt="">
+      <h3>Vector data</h3>
+      <p>Drop points. Draw and edit lines and polygons. Import vector files, and export everything back out in four formats.</p>
+      <a class="feat-link" href="https://topokit.ca/manual/points-lines-polygons/">Learn more</a>
+    </div>
+    <div class="feat">
+      <img class="feat-art" src="Images/cards/tree.svg" alt="">
+      <h3>Layer tree</h3>
+      <p>Just like the GIS apps you already know. Drag to reorder layers, group them into folders, and change their opacity.</p>
+      <a class="feat-link" href="https://topokit.ca/manual/layer-tree/">Learn more</a>
+    </div>
+    <div class="feat">
+      <img class="feat-art" src="Images/cards/tiles.svg" alt="">
+      <h3>Offline tile layers</h3>
+      <p>Add any XYZ or WMS tile server by URL. Draw a box on the map, and download tiles for offline use.</p>
+      <a class="feat-link" href="https://topokit.ca/manual/tile-layers/">Learn more</a>
+    </div>
+    <div class="feat">
+      <img class="feat-art" src="Images/cards/gps.svg" alt="">
+      <h3>GPS recording</h3>
+      <p>Record tracks with the phone in your pocket. Watch distance, speed, and elevation stats update live as you go. Every point tagged with accuracy, altitude, and time.</p>
+      <a class="feat-link" href="https://topokit.ca/manual/gps-and-track-recording/">Learn more</a>
+    </div>
+    <div class="feat">
+      <img class="feat-art" src="Images/cards/elevation.svg" alt="">
+      <h3>Elevation profiles</h3>
+      <p>Download the elevation data once. Get point elevations and profiles anywhere you need. No signal required.</p>
+      <a class="feat-link" href="https://topokit.ca/manual/elevation/">Learn more</a>
+    </div>
+    <div class="feat">
+      <img class="feat-art" src="Images/cards/icloud.svg" alt="">
+      <h3>Synced through your iCloud</h3>
+      <p>Work on a project on your Mac and open it on your iPhone. Same file, synced privately through your own iCloud.</p>
+      <a class="feat-link" href="https://topokit.ca/manual/projects-and-files/">Learn more</a>
+    </div>
+  </div>
+</section>
+
+<section class="band-photo">
+  <div class="band-photo-inner">
+    <h2 class="display">No signal <em>needed.</em></h2>
+    <p>Import your maps and download your tiles before you leave. Once you're past cell service, they work exactly the same.</p>
+  </div>
+</section>
+
+<section class="moment">
+  <h2 class="display">See it work.</h2>
+  <p class="soon">Demo videos are coming soon.</p>
+</section>
+
+<div class="privacy-wrap">
+  <section class="privacy" id="privacy-card">
+    <div class="privacy-inner">
+      <div>
+        <h2 class="display">Built for <em>privacy</em>,<br>from day one.</h2>
+        <p class="lead">TopoKit was built without an account and without a server. Your projects live on your device, and in your own iCloud if you turn on sync. Nothing you record is public by default, because nothing goes anywhere by default.</p>
       </div>
-      <div class="hero-preview">
-        <div class="hero-devices">
-          <div class="hero-mac">
-            <img src="Images/mac-screenshot.png" alt="TopoKit on Mac" class="mac-screen">
-            <img src="Images/MacBook Pro M5 16-inch Space Black.png" alt="" class="mac-bezel" aria-hidden="true">
-          </div>
-          <div class="hero-phone">
-            <img src="Images/iphone-screenshot.jpg" alt="TopoKit on iPhone" class="phone-screen">
-            <img src="Images/iPhone 16 Pro - Black Titanium - Portrait.png" alt="" class="phone-bezel" aria-hidden="true">
-          </div>
-        </div>
-      </div>
+      <ul class="net-list">
+        <li><strong>What touches the network:</strong> Apple's basemap, search and directions.</li>
+        <li>Elevation tiles you ask for.</li>
+        <li>Map servers you add yourself.</li>
+        <li><strong>That's the whole list.</strong> Everything else stays on your device.</li>
+      </ul>
     </div>
   </section>
+</div>
 
-
-  <p class="coming-soon-note">Full website coming soon.</p>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <div>
-        <div class="footer-brand">TopoKit</div>
-        <div class="footer-copy">&copy; 2026 Nikolay Senilov. All rights reserved.</div>
-      </div>
-      <ul class="footer-links">
-        <li><a href="/manual/">Manual</a></li>
-        <li><a href="/release-notes/">Release notes</a></li>
-        <li><a href="/support">Support</a></li>
-        <li><a href="/privacy">Privacy Policy</a></li>
-        <li><a href="/terms">Terms of Use</a></li>
-      </ul>
+<section class="maker">
+  <div class="maker-inner">
+    <img src="Images/nikolay.jpg" alt="Nikolay standing in the snow with mountains behind him">
+    <div>
+      <h2 class="display">Made by a working GIS technician.</h2>
+      <p>Hi, I'm Nikolay. I'm an outdoor enthusiast and GIS technician in British Columbia, Canada.</p>
+      <p>I built TopoKit because I wanted to take my data outdoors, and I couldn't find a mapping app that handled both raster and vector data, kept everything private, and didn't lock me into an expensive subscription. So I made one.</p>
+      <p>I use the app weekly: for data collection, backcountry trips on my own time, and any fieldwork that starts where cell service ends.</p>
+      <p>I'm constantly learning from my own experiences with TopoKit and always working to improve it. If you have an idea or something you'd like me to fix, I'm happy to look into it. Every message comes straight to me.</p>
+      <p><a href="mailto:support@topokit.ca">support@topokit.ca</a></p>
     </div>
-  </footer>
+  </div>
+</section>
+
+<section class="cta">
+  <h2 class="display">Made for <em>the field.</em></h2>
+  <p class="cta-trio">Capable. Private. One-time purchase.</p>
+  <a href="https://apps.apple.com/us/app/topokit/id6761090144" class="store-btn">
+    <svg viewBox="0 0 814 1000" width="20" height="24"><path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76.5 0-103.7 40.8-165.9 40.8s-105.6-57.5-155.5-127.4c-57.9-81.6-104.6-208.7-104.6-329.3 0-193.5 125.8-296.2 249.6-296.2 65.8 0 120.5 43.1 161.9 43.1 39.5 0 101-45.7 175.3-45.7 28.3 0 130 2.6 197.4 99.5zm-234.6-182.9c31.4-37.2 53.7-88.9 53.7-140.6 0-7.2-.6-14.4-1.9-20.2-51.2 1.9-112 34.1-148.6 76.5-26.4 30.1-55.6 81.7-55.6 134.2 0 7.8.6 15.7 1.3 18.3 2.6.6 6.4.6 10.2.6 46.4 0 105.3-30.7 140.9-68.8z"/></svg>
+    <span class="store-txt"><span class="store-small">Download on the</span><span class="store-big">App Store</span></span>
+  </a>
+  <p class="cta-price js-price">$9.99 USD. Once.</p>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <img src="Images/Logo/wordmark_for_light_background.svg" alt="TopoKit">
+    <nav>
+      <a href="https://topokit.ca/manual/">Manual</a>
+      <a href="https://topokit.ca/release-notes/">Release notes</a>
+      <a href="https://topokit.ca/support">Support</a>
+      <a href="https://topokit.ca/privacy">Privacy</a>
+      <a href="https://topokit.ca/terms">Terms</a>
+    </nav>
+    <span class="fine">Made in Canada. &nbsp;·&nbsp; © 2026 Nikolay Senilov</span>
+  </div>
+</footer>
+
+<script>
+
+/* Privacy card expands to full-bleed as it scrolls into view.
+   Plain scroll listener: works in Safari, Firefox and Chrome alike. */
+var pv = document.getElementById('privacy-card');
+var ticking = false;
+function expandOnScroll() {
+  var r = pv.getBoundingClientRect();
+  var vh = window.innerHeight;
+  var p = (vh - r.top) / (vh * 0.55);
+  p = Math.max(0, Math.min(1, p));
+  var m = 5 * (1 - p);            /* vw of side margin */
+  var rad = 28 * (1 - p);         /* px of corner radius */
+  pv.style.marginLeft = m + 'vw';
+  pv.style.marginRight = m + 'vw';
+  pv.style.borderRadius = rad + 'px';
+  ticking = false;
+}
+window.addEventListener('scroll', function () {
+  if (!ticking) { ticking = true; requestAnimationFrame(expandOnScroll); }
+}, { passive: true });
+window.addEventListener('resize', expandOnScroll);
+expandOnScroll();
+
+/* The word after "all your" cycles through what "all" means. */
+(function () {
+  var el = document.getElementById('rotator');
+  if (!el) return;
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var words = ['data', 'rasters', 'vectors', 'GeoPDFs', 'GeoPackages', 'projects'];
+  var i = 0;
+  function swap() {
+    el.classList.add('swap');
+    setTimeout(function () {
+      i = (i + 1) % words.length;
+      el.textContent = words[i];
+      el.classList.remove('swap');
+    }, 260);
+  }
+  /* Hold the opening "data" a beat longer so the sentence reads complete first. */
+  setTimeout(function () { swap(); setInterval(swap, 2200); }, 3200);
+})();
+
+/* Top bar: transparent over the hero, paper blur once scrolling. */
+var navEl = document.querySelector('.nav');
+function navState() { navEl.classList.toggle('scrolled', window.scrollY > 40); }
+window.addEventListener('scroll', navState, { passive: true });
+navState();
+
+/* Local price, straight from the App Store. Falls back to the static USD text. */
+(function () {
+  var region = 'US';
+  try { region = (new Intl.Locale(navigator.language).region) || 'US'; } catch (e) {
+    var parts = (navigator.language || 'en-US').split('-');
+    if (parts.length > 1) region = parts[parts.length - 1];
+  }
+  fetch('https://itunes.apple.com/lookup?id=6761090144&country=' + encodeURIComponent(region))
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      var app = d.results && d.results[0];
+      if (!app || !app.formattedPrice || !app.currency) return;
+      var txt = app.formattedPrice + ' ' + app.currency + '. Once.';
+      var els = document.querySelectorAll('.js-price');
+      for (var i = 0; i < els.length; i++) els[i].textContent = txt;
+    })
+    .catch(function () {});
+})();
+</script>
 
 </body>
 </html>

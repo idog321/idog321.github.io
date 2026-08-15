@@ -5,13 +5,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
-  --color-bg: #FFFFFF;
-  --color-bg-alt: #F5F5F7;
+  --color-bg: #F6F4EF;            /* warm paper — matches the home page */
+  --color-bg-alt: #EFEDE6;
   --color-surface: #FFFFFF;
-  --color-surface-raised: rgba(0, 0, 0, 0.03);
-  --color-text: #1D1D1F;
-  --color-text-muted: #6E6E73;
-  --color-text-light: #86868B;
+  --color-surface-raised: rgba(35, 34, 31, 0.04);
+  --color-text: #23221F;
+  --color-text-muted: #5D5B55;
+  --color-text-light: #8B887F;
   --color-accent: #FF9500;
   --color-accent-hover: #E68600;
   --color-accent-light: #FFB340;
@@ -32,32 +32,6 @@
   --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.08);
   --nav-bg: rgba(255, 255, 255, 0.72);
   --nav-border: rgba(0, 0, 0, 0.06);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #1A1A1D;
-    --color-bg-alt: #141416;
-    --color-surface: #1C1C1E;
-    --color-surface-raised: rgba(255, 255, 255, 0.06);
-    --color-text: #F5F5F7;
-    --color-text-muted: #A1A1A6;
-    --color-text-light: #86868B;
-    --color-accent: #FF9F0A;
-    --color-accent-hover: #FFB340;
-    --color-accent-light: #FFB340;
-    --color-border: rgba(255, 255, 255, 0.08);
-    --color-link: #FF9F0A;
-    --color-link-hover: #FFB340;
-    --color-card-bg: rgba(255, 255, 255, 0.08);
-    --color-card-border: rgba(255, 255, 255, 0.12);
-    --color-glow: rgba(255, 149, 0, 0.06);
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
-    --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.5);
-    --nav-bg: rgba(26, 26, 29, 0.72);
-    --nav-border: rgba(255, 255, 255, 0.06);
-  }
 }
 
 *, *::before, *::after {
@@ -89,10 +63,10 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--nav-bg);
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 1px solid var(--nav-border);
+  background: rgba(246, 244, 239, 0.85);
+  backdrop-filter: saturate(160%) blur(14px);
+  -webkit-backdrop-filter: saturate(160%) blur(14px);
+  border-bottom: 1px solid rgba(35, 34, 31, 0.08);
 }
 
 .nav-inner {
@@ -210,12 +184,6 @@ body {
   background: radial-gradient(ellipse, rgba(255, 149, 0, 0.12) 0%, rgba(255, 149, 0, 0.04) 40%, transparent 70%);
   pointer-events: none;
   z-index: -1;
-}
-
-@media (prefers-color-scheme: dark) {
-  .hero::before {
-    background: radial-gradient(ellipse, rgba(255, 149, 0, 0.1) 0%, rgba(255, 149, 0, 0.03) 40%, transparent 70%);
-  }
 }
 
 .hero-inner {
@@ -387,18 +355,6 @@ body {
   font-size: 1.2rem;
   font-weight: 600;
   letter-spacing: -0.01em;
-}
-
-@media (prefers-color-scheme: dark) {
-  .app-store-badge {
-    background: #fff;
-    color: #000;
-    border-color: rgba(0, 0, 0, 0.1);
-  }
-
-  .app-store-badge .apple-icon {
-    fill: #000;
-  }
 }
 
 .btn {
@@ -889,7 +845,7 @@ body {
 }
 
 .legal-page h1 {
-  font-family: var(--font-body);
+  font-family: var(--font-logo);
   font-size: clamp(1.75rem, 3.5vw, 2.5rem);
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -950,7 +906,7 @@ body {
 }
 
 .support-page h1 {
-  font-family: var(--font-body);
+  font-family: var(--font-logo);
   font-size: clamp(1.75rem, 3.5vw, 2.5rem);
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -1251,7 +1207,7 @@ body {
    versions are the spine, items are subheadings under them, and a version that
    has not shipped says so. */
 .release-notes .release-version {
-  font-family: var(--font-body);
+  font-family: var(--font-logo);
   font-size: 1.45rem;
   font-weight: 700;
   letter-spacing: -0.01em;
