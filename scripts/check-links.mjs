@@ -3,27 +3,30 @@
 // than no link — it silently drops the reader at the top of the page.
 import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import GithubSlugger from 'github-slugger';
 
 const DIR = 'src/content/docs/manual';
 const files = readdirSync(DIR).filter((f) => f.endsWith('.md'));
 
-// slug: lowercase, drop anything that isn't a letter/digit/space/hyphen, spaces -> hyphens.
-// Matches Starlight's GitHub-style heading slugs for the headings this manual uses.
-const slug = (h) =>
+// Astro builds heading ids with github-slugger, so the checker must too. A
+// hand-rolled slug passed "storage-icloud" for "Storage & iCloud" while the
+// page's real id is "storage--icloud" (the & is dropped, both spaces become
+// hyphens), so every link to a Settings page would have landed at the top.
+// Chips and bold render as their text; strip the markup the same way first.
+const headingText = (h) =>
   h
     .replace(/`/g, '')
     .replace(/\*\*/g, '')
     .replace(/:ui\[([^\]]*)\][^\s]*/g, '$1')
-    .toLowerCase()
-    .replace(/[^a-z0-9 -]/g, '')
-    .trim()
-    .replace(/\s+/g, '-');
+    .replace(/:(?:ios|mac)\[([^\]]*)\]/g, '$1');
 
 const anchors = new Map(); // '/manual/foo/' -> Set of anchors
 for (const f of files) {
   const route = f === 'index.md' ? '/manual/' : `/manual/${f.slice(0, -3)}/`;
+  // One slugger per file: a repeated heading gets "-1", as on the page.
+  const slugger = new GithubSlugger();
   const heads = [...readFileSync(join(DIR, f), 'utf8').matchAll(/^#{2,6} (.+)$/gm)].map((m) =>
-    slug(m[1]),
+    slugger.slug(headingText(m[1])),
   );
   anchors.set(route, new Set(heads));
 }
