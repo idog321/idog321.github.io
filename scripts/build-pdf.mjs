@@ -8,12 +8,13 @@ import { writeFileSync } from 'node:fs';
 const BASE = process.env.PDF_BASE || 'http://localhost:4321';
 // Sidebar order (matches astro.config.mjs groups).
 const PAGES = [
-  'manual/', 'manual/getting-started/', 'manual/interface/', 'manual/map-tools/',
-  'manual/file-formats/', 'manual/projects-and-files/', 'manual/layer-tree/',
-  'manual/points-lines-polygons/', 'manual/vector-import-export/',
-  'manual/raster-overlays/', 'manual/tile-layers/', 'manual/elevation/',
-  'manual/measurement/', 'manual/gps-and-track-recording/',
-  'manual/directions-and-routing/', 'manual/ui-settings-styling/', 'manual/glossary/',
+  'manual/', 'manual/getting-started/', 'manual/interface/', 'manual/your-topokit/',
+  'manual/basemaps/', 'manual/search-and-identify/', 'manual/tile-layers/',
+  'manual/raster-overlays/', 'manual/elevation/',
+  'manual/points-lines-polygons/', 'manual/measurement/', 'manual/layer-tree/',
+  'manual/import-and-export/', 'manual/projects-and-files/',
+  'manual/gps-and-track-recording/', 'manual/routes/', 'manual/offline/',
+  'manual/settings/', 'manual/glossary/',
 ];
 
 const browser = await puppeteer.launch({ headless: 'shell', args: ['--no-sandbox'] });
