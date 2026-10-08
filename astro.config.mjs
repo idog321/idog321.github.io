@@ -8,7 +8,6 @@ import remarkDirective from 'remark-directive';
 import remarkUiIcon from './src/plugins/remark-ui-icon.mjs';
 import remarkPlatform from './src/plugins/remark-platform.mjs';
 import remarkGlossary from './src/plugins/remark-glossary.mjs';
-import remarkVersion from './src/plugins/remark-version.mjs';
 
 // TopoKit documentation site.
 // Starlight owns only the /manual/* routes. The marketing + legal pages
@@ -19,6 +18,15 @@ const DEV = process.env.NODE_ENV !== 'production';
 
 export default defineConfig({
   site: 'https://topokit.ca',
+  // Chapters retired in the 1.2 rewrite. Old links and bookmarks land on the
+  // chapter that now holds the material.
+  redirects: {
+    '/manual/map-tools': '/manual/interface/',
+    '/manual/file-formats': '/manual/import-and-export/',
+    '/manual/vector-import-export': '/manual/import-and-export/',
+    '/manual/directions-and-routing': '/manual/routes/',
+    '/manual/ui-settings-styling': '/manual/settings/',
+  },
   // Never appears in the built site; this just takes it off his screen too.
   devToolbar: { enabled: false },
   vite: {
@@ -106,7 +114,7 @@ export default defineConfig({
     // remarkUiIcon and remarkPlatform render them.
     // remarkGlossary runs last: by then :ui[…] chips and platform directives
     // are already html/container nodes, so it can't wrap a term inside one.
-    remarkPlugins: [remarkDirective, remarkUiIcon, remarkPlatform, remarkVersion, remarkGlossary],
+    remarkPlugins: [remarkDirective, remarkUiIcon, remarkPlatform, remarkGlossary],
   },
   integrations: [
     // Starlight pulls in @astrojs/sitemap on its own, but only Astro's own
@@ -148,7 +156,7 @@ export default defineConfig({
           // Apply the saved platform choice before first paint (no flash).
           tag: 'script',
           content:
-            "try{var p=localStorage.getItem('topokit-platform');if(p==='ios'||p==='mac')document.documentElement.setAttribute('data-platform',p);var v=localStorage.getItem('topokit-version');if(v==='1.1.1')document.documentElement.setAttribute('data-manual-version',v)}catch(e){}",
+            "try{var p=localStorage.getItem('topokit-platform');if(p==='ios'||p==='mac')document.documentElement.setAttribute('data-platform',p)}catch(e){}",
         },
         {
           // Starlight declares twitter:card = summary_large_image on every page
@@ -182,45 +190,41 @@ export default defineConfig({
       // No "edit this page" link: the repo is public, but the manual is his
       // alone and an edit link invites pull requests he does not want.
       editLink: undefined,
-      // Order matters more than grouping here. The two chapters that define
-      // vocabulary — interface (the app's nouns) and glossary (the GIS ones) —
-      // come before the chapters that spend it, so cross-references point
-      // backward to something already read instead of forward to something
-      // not yet met.
+      // Grouped by what the reader is trying to do, not by which button does
+      // it. The glossary sits last, but every term in it reaches the chapters
+      // as a hover chip, so it is read where the term is met.
       sidebar: [
         {
           label: 'Start here',
+          items: ['manual', 'manual/getting-started', 'manual/interface', 'manual/your-topokit'],
+        },
+        {
+          label: 'The map',
           items: [
-            'manual',
-            'manual/interface',
-            'manual/getting-started',
-            'manual/map-tools',
-            'manual/file-formats',
+            'manual/basemaps',
+            'manual/search-and-identify',
+            'manual/tile-layers',
+            'manual/raster-overlays',
+            'manual/elevation',
           ],
         },
         {
-          label: 'Working with data',
+          label: 'Your data',
           items: [
-            'manual/projects-and-files',
-            'manual/layer-tree',
             'manual/points-lines-polygons',
             'manual/measurement',
-            'manual/vector-import-export',
-            'manual/raster-overlays',
-            'manual/tile-layers',
+            'manual/layer-tree',
+            'manual/import-and-export',
+            'manual/projects-and-files',
           ],
         },
         {
           label: 'In the field',
-          items: [
-            'manual/gps-and-track-recording',
-            'manual/elevation',
-            'manual/directions-and-routing',
-          ],
+          items: ['manual/gps-and-track-recording', 'manual/routes', 'manual/offline'],
         },
         {
           label: 'Reference',
-          items: ['manual/ui-settings-styling', 'manual/glossary'],
+          items: ['manual/settings', 'manual/glossary'],
         },
       ],
     }),
