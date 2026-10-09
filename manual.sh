@@ -42,7 +42,7 @@ sleep 1
 # nohup + disown so both survive this shell exiting. Without it the comment
 # server dies whenever manual.sh is launched from a non-interactive shell, and
 # the widget then has nowhere to POST — which silently ate a round of notes.
-echo "Starting comment server on :$COMMENT_PORT…"
+echo "Starting comment server on :${COMMENT_PORT}…"
 nohup node scripts/comment-server.mjs > /tmp/topokit-comments.log 2>&1 &
 disown 2>/dev/null || true
 
