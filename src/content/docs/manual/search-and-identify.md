@@ -105,16 +105,16 @@ Results come in up to four sections, in this order: **Coordinate**, **Layers**, 
 | **Basemaps** | Names your project's basemaps print, from the data on the device, hidden basemaps included. Needs two letters or digits, so `19` finds Highway 19; every typed word must start a word of the name, so `tin h` finds Tin Hat Mountain. Works offline. | Up to 20 rows. |
 | **Places** | Apple's suggestions for addresses, points of interest and natural features, favouring the part of the world the map shows. Needs a connection. | Up to eight rows. |
 
-A query that is exactly a category word, such as `points`, `lines`, `area`, `rasters`, `tiles` or `folders`, lists every layer of that kind under **Layers** instead of matching names.
+A query that is exactly a category word, such as `points`, `lines`, `area`, `rasters`, `tiles` or `folders`, lists every layer of that kind under **Layers** instead of matching names; `vectors` lists points, lines and polygons together.
 
 ### Coordinate formats
 
 | Format | Example | What it reads |
 |---|---|---|
 | DD | `49.976361, -124.149780` | A comma, a semicolon or a space between the values. Hemisphere letters are optional, before or after each number; label the first value E or W and it is read as longitude first. |
-| DMS | `49°58'35"N 124°08'59"W` | Hemisphere letter required on both. Degree mark `°` or `d` and minute mark `'`, `′` or `m` required; seconds mark optional. Capital `D`, `M`, `S` and bare numbers are not read. |
+| DMS | `49°58'35"N 124°08'59"W` | Hemisphere letter required on both. Degree mark `°` or `d` and minute mark `'`, `′` or `m` required; seconds mark `"`, `″` or `s` optional. Capital `D`, `M`, `S` and bare numbers are not read. |
 | DDM | `49°58.5817'N 124°08.9868'W` | Degree mark and hemisphere letter required; minute mark optional. |
-| UTM | `10U 417559 5536636` | Zones 1–60, a six-digit easting, a northing of five to eight digits. `N` and `S` are the hemisphere; any other letter is a latitude band, `C` to `M` south and `P` to `X` north. |
+| UTM | `10U 417559 5536636` | Zones 1–60, a six-digit easting, a northing of five to eight digits. `N` and `S` are the hemisphere, so a position in latitude band S (32° to 40° N) takes `N`; any other letter is a band, `C` to `M` south and `P` to `X` north. |
 
 Decimals take a point in every format. A comma always separates latitude from longitude, so `49,5 8,2` gives no coordinate row and `48,2` is read as latitude 48, longitude 2.
 

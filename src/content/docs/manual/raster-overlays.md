@@ -84,14 +84,14 @@ A reprojected copy keeps the quality it was made at, except a GeoPDF placed by f
 
 ### Reprojection time
 
-A large raster can take several minutes to reproject.
+A large raster can take several minutes to reproject. Meanwhile its row shows a progress bar captioned "Keep TopoKit open", and an **All (N)** run adds a "Reprojecting rasters…" banner above the tree that counts the rasters done against the total.
 
 There is no cancel button, and no way to pick up where it left off. An interrupted reprojection keeps none of its work and starts over, without the sheet, the next time the project opens.
 
 A reprojection that fails raises no alert: the raster returns to the Reprojection Required sheet, and **Reproject** tries it once more. An **All (N)** run skips it and offers its sheet once the rest are done.
 
 :::ios
-On iPhone, keep TopoKit on screen: in another app, iOS lets the reprojection continue only briefly before suspending TopoKit, and if iOS then closes it, the reprojection starts over the next time the project opens.
+On iPhone, keep TopoKit on screen: in another app, iOS lets the reprojection continue only briefly before suspending TopoKit, and if iOS then closes it, the reprojection starts over.
 :::
 
 ### Caching
@@ -113,7 +113,7 @@ Changing NoData Transparency or Flip Y-Axis on a reprojected raster reprojects i
 On iPhone, a Full decode runs only when the whole image fits in about 150 MB; over that, the raster stays at a 4096 px preview, which Balanced and Fast do not improve, so crop or downsample the source before importing.
 :::
 
-Below the controls, **CRS** is the first line to check when a raster is in the wrong place. The import diagnostics below **Bounds** flag a GeoTIFF 8,000 px or more on a side, which is slow to reproject. They also flag a latitude span over 120°, a longitude span over 360°, or bounds that look like latitude and longitude swapped; each means the coordinate system or axis order is wrong.
+Below the controls, **CRS**, an EPSG code or "Custom WKT" for a raster with none, is the first line to check when a raster is in the wrong place. The import diagnostics below **Bounds** flag a GeoTIFF 8,000 px or more on a side, which is slow to reproject. They also flag a latitude span over 120°, a longitude span over 360°, or bounds that look like latitude and longitude swapped; each means the coordinate system or axis order is wrong.
 
 Changes made in Edit Raster are not on the undo history.
 

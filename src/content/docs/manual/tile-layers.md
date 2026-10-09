@@ -28,15 +28,16 @@ The sheet shows no preview and accepts any text as a template, so a wrong addres
 
 ### Adding an XYZ tile layer
 
-1. Type a **Layer Name**.
+1. Type a **Layer Name**. Left blank, the layer is named XYZ Layer.
 2. Paste the provider's address into **Tile URL Template** with its placeholders intact, in the order the provider documents. Some services use `{z}/{y}/{x}`.
 3. Tap **Add**.
 
 For a TMS server, which counts rows from the south, write `{-y}` in place of `{y}`; with `{y}`, its tiles come back from the wrong rows, with north and south swapped.
 
 - **API keys**: put the key in the address as the provider documents it. TopoKit has no way to add a header, so a provider that wants its key in a header does not work.
+- **Placeholders**: `{s}` always becomes `a`. `{r}` is not filled in and is sent as written, so remove it.
 - **Tile size**: 256 × 256 pixels.
-- **Zoom ceiling**: TopoKit assumes the server publishes up to z19 and scales up the last tile beyond that. A zoom below the ceiling that the server lacks comes back blank.
+- **Zoom ceiling**: TopoKit assumes the server publishes up to z19 and scales up the last tile beyond that. A zoom below the ceiling that the server lacks comes back blank. A download that finds the server stops short of its **Max Zoom Level** lowers the ceiling to the deepest zoom it fetched, and a later download that fetches deeper raises it again.
 
 ### Adding a WMS layer
 
@@ -56,8 +57,8 @@ For a TMS server, which counts rows from the south, write `{-y}` in place of `{y
 
 ### Saving a source for reuse
 
-- **XYZ**: **Save URL** saves the name and template at the top of the **XYZ Tiles** tab. Tapping a saved template fills in the form without adding the layer.
-- **WMS**: **Save URL** after **Connect** saves the service, and starring a layer row saves that layer with the sheet's current **Format** and **Transparent** settings. Tapping a starred layer under its saved service adds it without connecting.
+- **XYZ**: **Save URL** saves the name and template at the top of the **XYZ Tiles** tab. Tapping a saved template fills in the form without adding the layer; its context menu holds **Edit Name**.
+- **WMS**: **Save URL** after **Connect** saves the service, and starring a layer row saves that layer with the sheet's current **Format** and **Transparent** settings. Tapping a starred layer under its saved service adds it without connecting. The context menu of a saved service or starred layer holds **Rename**.
 
 Saved sources are kept on the device, not in the project, so every project on that device offers them and other devices do not.
 
@@ -82,7 +83,7 @@ A download saves a layer's tiles to this device, so the layer draws without a co
    - :mac[**Map View**: on Mac, the current map view.]
    - **Draw**: tap two opposite corners on the map, then **Done** on the tool card; its ✕ abandons the download. Draw turns a hidden layer on and leaves it on.
    - **Coordinates**: type a **Northwest Corner** and a **Southeast Corner**, in any [coordinate format](/manual/points-lines-polygons/#coordinate-entry-formats).
-3. **Download Mode**: **All zoom levels** fetches every zoom from 0 to the max. **Max resolution only** fetches only the max zoom and builds the lower zooms from it on the device, clipped to the rectangle, so it downloads less.
+3. **Download Mode**: **All zoom levels** fetches every zoom from 0 to the max. **Max resolution only** fetches only the max zoom and builds the lower zooms from it on the device, clipped to the rectangle, so it downloads less; while it builds them, the bar reads "Building: {layer name}".
 4. **Max Zoom Level**: from 1 to 20, starting at z16. Each level up quadruples the tile count.
 5. Tap **Download**.
 
@@ -90,10 +91,11 @@ The **Tiles** estimate is exact. The **Storage** estimate counts every tile at 1
 
 ### While it downloads
 
-Several downloads run at once, each with its own progress bar.
+Several downloads run at once, each with its own bar.
 
 - **Cancel**: × then **Cancel Download** stops the download and drops its rectangle. If the layer has no finished download, its partial tiles are deleted; if it has one, they stay and a later download reuses them.
 - **Retries**: a tile that fails on a dropped connection or a server error is tried up to three times. A tile the server refuses with a 4xx answer, such as 404 or 429, is not retried.
+- **Retry Failed**: a download that ends with failed tiles reports them in **Download Complete**, where **Retry Failed** fetches only the missing tiles. One that fails outright shows **Download Failed**, with **Retry**.
 - **Stopping**: downloads run only while their project is open. Tiles already on disk are kept, and the same download started again fetches only what is missing.
 
 ### Downloads over cellular data
@@ -131,7 +133,7 @@ The system never purges downloaded tiles. A layer's downloads share one store, s
 ## FAQ
 
 **Why did my download stop, or finish with failed tiles?**
-Tiles fail past the zoom the server publishes, and a server that throttles bulk requests refuses some; download a smaller area at a time.
+Tiles fail past the zoom the server publishes, and a server that throttles bulk requests refuses some; retry, or download a smaller area at a time.
 
 **Why does my WMS layer connect but draw nothing?**
 A server that answers with an error picture has it drawn like any other tile.

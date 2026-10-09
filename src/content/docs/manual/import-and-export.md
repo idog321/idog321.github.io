@@ -79,7 +79,7 @@ TopoKit reads [GPX 1.1](https://www.topografix.com/GPX/1/1/). Waypoints arrive a
 
 A line with a timestamp on any point keeps its parts exactly as recorded. In a line without, parts with fewer than two points or under 5 m long are left out, unless that would leave none, and the rest are joined end to end by proximity, which can reverse a part. The same rule applies to a line in several parts in any format, and the import alert says how many lines it changed.
 
-Per-point elevation and time are read from any GPX; horizontal accuracy only from TopoKit's own extension. A `<time>` with no time zone is read as UTC, so a device that logs local time without a zone arrives shifted by its UTC offset. The name comes from `<name>` and the description from `<desc>` and `<cmt>`. Other attributes are read only from TopoKit's own extensions; extensions written by other apps, and track colours and icons, are dropped.
+Per-point elevation and time are read from any GPX; horizontal accuracy only from a `<topokit:hAccuracy>` element in a point's `<extensions>`, the element TopoKit writes. A `<time>` with no time zone is read as UTC, so a device that logs local time without a zone arrives shifted by its UTC offset. The name comes from `<name>` and the description from `<desc>` and `<cmt>`. Other attributes are read only from TopoKit's own extensions; extensions written by other apps, and track colours and icons, are dropped.
 
 When TopoKit writes GPX, points become `<wpt>` and every line becomes a `<trk>`, never a `<rte>`. A multi-point feature is written as one `<wpt>` per point, each with the feature's name and description, so it comes back as separate points. Every attribute except name and description goes into the element's `<extensions>`, and TopoKit reads them back. A recorded track's statistics are also appended to `<desc>` as readable text, always metric and in English whatever your settings.
 
@@ -139,6 +139,7 @@ Each format fixes its axis order in its specification, so TopoKit never guesses.
 **What changes when my data goes to my desktop GIS and comes back?**
 - **Column types**: TopoKit keeps every attribute as text and types each column again on export ([GeoPackage](#geopackage)), so a DATE column comes back as TEXT and a whole number in a REAL column gains a decimal: `10` returns as `10.0`.
 - **Identity**: each import assigns new identifiers, so carry a stable attribute of your own, named anything but `name`, `fid` or `geom`.
+- **Layer structure**: an export records no folder, and an import puts every feature directly in one folder, so features from separate folders come back mixed together; export each folder to its own file to keep them apart.
 
 **Can TopoKit open a shapefile or a CSV of coordinates?**
 No. Convert a shapefile or a table of coordinates to GeoPackage or GeoJSON in your desktop GIS first.

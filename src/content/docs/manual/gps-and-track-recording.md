@@ -41,9 +41,10 @@ The dial reads the iPhone's compass: it shows where the phone points, not your d
 
 ### The stat slots
 
-Tap one of the five slots' labels to choose its reading from nine.
+Tap a slot's label to choose its reading from nine.
 
 - **Dist. Traveled**: counts from when you open the tab, recording or not, and starts at zero each time you return to it, so it does not match the Speed card's **Distance**. It ignores fixes of 50 m or worse and any step of 500 m or more.
+- **Mag Declination**: the declination **Mag N** subtracts from a true bearing, read from the phone's compass and shown in degrees with **E** or **W**.
 - **Sunrise** and **Sunset**: worked out on the phone from your position and the date, shown in the phone's time zone rather than the local one at your position; "N/A" in polar day or night.
 
 Tapping a coordinate, an accuracy pill, the compass or a stat's value copies it: a coordinate in the format shown, a stat with its unit, the compass heading from whichever north is set.
@@ -63,7 +64,7 @@ Every resume starts a new segment in the saved track, as does any gap longer tha
 
 ## Saving a track
 
-**Stop Recording** pauses the recording and raises the **Recording Paused** alert, where **Cancel** resumes.
+**Stop Recording** pauses the recording and raises the **Recording Paused** alert, where **Cancel** resumes. **Delete Recording**, like the trash button beside the pause button, asks for confirmation, and a deleted recording cannot be recovered.
 
 **Save Recording** opens the **Save Track** prompt, whose **Cancel** also resumes. Left blank, **Track name** names the track after the moment you tapped **Record Track**, such as "Track 2026-10-08 14:30". A recording in which no fix was accepted saves no track. The track goes into whichever project is open when you save, not the one open when you tapped **Record Track**; if the project was closed during the recording, saving creates a project named "Recorded Track" and the start date, such as "Recorded Track 2026-10-08".
 
@@ -141,6 +142,9 @@ On a saved track's [card](/manual/search-and-identify/#the-card), **Elevation pr
 **Why did my recording pause while I was still moving?**
 iOS can report a speed of zero at a slow start or while you shuffle a few centimetres. Turning auto-pause off takes effect on the next recording, not the one in progress.
 :::
+
+**Why does my track zigzag on a straight road?**
+Every fix within the profile's accuracy threshold is kept, so on Balanced a fix reporting 40 m accuracy still joins the track. Strict filter keeps only fixes of 15 m or better.
 
 **Why is a track's saved distance longer than a line drawn along it?**
 `track_distance` is added up fix by fix while recording, so it includes the wander of the GPS path. Retracing the same route with Add Line follows the route itself and reads shorter.
