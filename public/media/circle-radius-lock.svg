@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="t">
+<title id="t">The circle tool card. Unlocked, dragging the edge point resizes the circle and the Radius figure grows from 120 to 180 m. Tapping the lock button turns it solid orange and puts a small lock beside Radius. Locked, dragging the centre moves the whole circle and Radius stays at 180 m.</title>
+<style>
+text{font-family:-apple-system,system-ui,sans-serif}
+.lab{fill:#3C3C43;fill-opacity:.6;font-size:14px}
+.val{fill:#000;font-size:14px;font-weight:700}
+.unit{fill:#FF9500;font-size:12px;font-weight:700}
+.cap{fill:#3C3C43;font-size:12px}
+.grow,.edge,.move,.fa,.fb,.fc,.sa,.sm,.sb,.lk,.ul,.dot,.ue,.ud,.ae,.ac{transform-origin:0 0;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:linear}
+.grow{animation-name:grow}
+.ring{animation:ring 12s linear infinite}
+.rline{animation:rline 12s linear infinite}
+.edge{animation-name:edge}
+.move{animation-name:move;animation-timing-function:ease-in-out}
+.fa{animation-name:fa}.fb{animation-name:fb}.fc{animation-name:fc}
+.sa{animation-name:sa}.sm{animation-name:sm}.sb{animation-name:sb}
+.lk{animation-name:lk}.ul{animation-name:ul}.dot{animation-name:lk}
+.ue{animation-name:ue}.ud{animation-name:ud}.ae{animation-name:ae}.ac{animation-name:ac}
+@keyframes grow{0%,8%{transform:scale(1)}30%,100%{transform:scale(1.5)}}
+@keyframes ring{0%,8%{stroke-width:4px;stroke-dasharray:12.75px 8.5px}30%,100%{stroke-width:2.667px;stroke-dasharray:8.5px 5.667px}}
+@keyframes rline{0%,8%{stroke-width:4px;stroke-dasharray:8.5px 8.5px}30%,100%{stroke-width:2.667px;stroke-dasharray:5.667px 5.667px}}
+@keyframes edge{0%,8%{transform:translate(0,0)}30%,100%{transform:translate(30px,0)}}
+@keyframes move{0%,54%{transform:translate(0,0)}80%,100%{transform:translate(65px,20px)}}
+@keyframes fa{0%,5%{opacity:0}7%,31%{opacity:1}33%,100%{opacity:0}}
+@keyframes fb{0%,37%{opacity:0}39%,45%{opacity:1}47%,100%{opacity:0}}
+@keyframes fc{0%,48%{opacity:0}50%,81%{opacity:1}83%,100%{opacity:0}}
+@keyframes sa{0%,15.9%{opacity:1}16%,100%{opacity:0}}
+@keyframes sm{0%,15.9%{opacity:0}16%,26.9%{opacity:1}27%,100%{opacity:0}}
+@keyframes sb{0%,26.9%{opacity:0}27%,100%{opacity:1}}
+@keyframes lk{0%,41.9%{opacity:0}42%,100%{opacity:1}}
+@keyframes ul{0%,41.9%{opacity:1}42%,100%{opacity:0}}
+@keyframes ud{0%,6.9%{opacity:0}7%,30.9%{opacity:1}31%,52.9%{opacity:0}53%,80.9%{opacity:1}81%,100%{opacity:0}}
+@keyframes ue{0%,6.9%{opacity:1}7%,30.9%{opacity:0}31%,52.9%{opacity:1}53%,80.9%{opacity:0}81%,100%{opacity:1}}
+@keyframes ae{0%,52.9%{opacity:1}53%,100%{opacity:0}}
+@keyframes ac{0%,52.9%{opacity:0}53%,100%{opacity:1}}
+@media (prefers-reduced-motion:reduce){
+.grow,.ring,.rline,.edge,.move,.fa,.fb,.fc,.sa,.sm,.sb,.lk,.ul,.dot,.ue,.ud,.ae,.ac{animation:none}
+.grow{transform:scale(1.5)}
+.ring{stroke-width:2.667px;stroke-dasharray:8.5px 5.667px}
+.rline{stroke-width:2.667px;stroke-dasharray:5.667px 5.667px}
+.edge{transform:translate(30px,0)}
+.move{transform:translate(65px,20px)}
+.fa,.fb,.fc,.sa,.sm,.ul,.ud,.ae{opacity:0}
+.sb,.lk,.dot,.ue,.ac{opacity:1}
+}
+</style>
+<rect width="640" height="360" fill="#E9E7E1"/>
+<!-- the circle on the map: centre (vertex 0), edge (vertex 1), dashed radius line -->
+<g class="move">
+ <g transform="translate(140 165)">
+  <g class="grow">
+   <circle class="ring" r="60" fill="#FF9500" fill-opacity=".15" stroke="#FF9500" stroke-opacity=".9" stroke-width="4" stroke-dasharray="12.75 8.5"/>
+   <line class="rline" x1="0" y1="0" x2="60" y2="0" stroke="#FF9500" stroke-opacity=".7" stroke-width="4" stroke-linecap="round" stroke-dasharray="8.5 8.5"/>
+  </g>
+  <circle class="ac" r="7.65" fill="none" stroke="#FF9500" stroke-opacity=".8" stroke-width="2.1" opacity="0"/>
+  <circle r="5" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle class="fc" r="14" fill="#000000" fill-opacity=".18" opacity="0"/>
+  <g class="edge">
+   <circle class="ae" cx="60" r="7.65" fill="none" stroke="#FF9500" stroke-opacity=".8" stroke-width="2.1"/>
+   <circle cx="60" r="5" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.5"/>
+   <circle class="fa" cx="60" r="14" fill="#000000" fill-opacity=".18" opacity="0"/>
+  </g>
+ </g>
+</g>
+<!-- the circle tool's card -->
+<rect x="370" y="112" width="254" height="123" rx="17" fill="#FFFFFF"/>
+<g class="sa">
+ <text x="384" y="136"><tspan class="lab">Area: </tspan><tspan class="val">45,239</tspan><tspan class="unit"> m²</tspan></text>
+ <text x="384" y="156"><tspan class="lab">Radius: </tspan><tspan class="val">120</tspan><tspan class="unit"> m</tspan></text>
+ <text x="384" y="176"><tspan class="lab">Circumference: </tspan><tspan class="val">754</tspan><tspan class="unit"> m</tspan></text>
+</g>
+<g class="sm" opacity="0">
+ <text x="384" y="136"><tspan class="lab">Area: </tspan><tspan class="val">70,686</tspan><tspan class="unit"> m²</tspan></text>
+ <text x="384" y="156"><tspan class="lab">Radius: </tspan><tspan class="val">150</tspan><tspan class="unit"> m</tspan></text>
+ <text x="384" y="176"><tspan class="lab">Circumference: </tspan><tspan class="val">942.5</tspan><tspan class="unit"> m</tspan></text>
+</g>
+<g class="sb" opacity="0">
+ <text x="384" y="136"><tspan class="lab">Area: </tspan><tspan class="val">101,788</tspan><tspan class="unit"> m²</tspan></text>
+ <text x="384" y="156"><tspan class="lab">Radius: </tspan><tspan class="val">180</tspan><tspan class="unit"> m</tspan></text>
+ <text class="dot" x="475" y="156" font-size="8" fill="#FF9500" opacity="0">●</text>
+ <text x="384" y="176"><tspan class="lab">Circumference: </tspan><tspan class="val">1,131</tspan><tspan class="unit"> m</tspan></text>
+</g>
+<line x1="380" y1="188" x2="614" y2="188" stroke="#C6C6C8" stroke-width="1"/>
+<!-- action row: Cancel | Lock, Undo, Save -->
+<circle cx="399" cy="211.5" r="15" fill="#FF3B30" fill-opacity=".15"/>
+<circle cx="399" cy="211.5" r="4.5" fill="#FF3B30"/>
+<g class="ul">
+ <circle cx="492" cy="211.5" r="15" fill="#FF9500" fill-opacity=".15"/>
+ <rect x="487.5" y="207" width="9" height="9" rx="1.5" fill="none" stroke="#FF9500" stroke-width="1.8"/>
+</g>
+<g class="lk" opacity="0">
+ <circle cx="492" cy="211.5" r="15" fill="#FF9500"/>
+ <rect x="487.5" y="207" width="9" height="9" rx="1.5" fill="#FFFFFF"/>
+</g>
+<circle class="fb" cx="492" cy="211.5" r="14" fill="#000000" fill-opacity=".18" opacity="0"/>
+<g class="ue">
+ <circle cx="530.5" cy="211.5" r="15" fill="#FF9500" fill-opacity=".15"/>
+ <line x1="525" y1="211.5" x2="536" y2="211.5" stroke="#FF9500" stroke-width="2" stroke-linecap="round"/>
+</g>
+<g class="ud" opacity="0">
+ <circle cx="530.5" cy="211.5" r="15" fill="#8E8E93" fill-opacity=".1"/>
+ <line x1="525" y1="211.5" x2="536" y2="211.5" stroke="#8E8E93" stroke-opacity=".5" stroke-width="2" stroke-linecap="round"/>
+</g>
+<rect x="554" y="196.5" width="56" height="30" rx="15" fill="#FF9500"/>
+<rect x="562.5" y="207.5" width="8" height="8" rx="1" fill="#FFFFFF"/>
+<text x="574.5" y="215.5" fill="#FFFFFF" font-size="11" font-weight="600">Save</text>
+<text class="cap" x="320" y="342" text-anchor="middle">Unlocked, a drag resizes the circle; locked, it moves at the same radius.</text>
+</svg>

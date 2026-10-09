@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="330" viewBox="0 0 640 330" role="img" aria-labelledby="t">
+<title id="t">Draw order in the Layers tab: dragging the line row Ridge Trail above the raster row Survey Map makes the line draw over the raster on the map</title>
+<style>
+.bg{fill:#ffffff}.txt{fill:#000000;font:15px -apple-system,system-ui,sans-serif}.cap{fill:#3C3C43;fill-opacity:.6;font:13px -apple-system,system-ui,sans-serif}
+.rowbg{fill:#3C3C43;fill-opacity:.048}.sec{fill:#3C3C43;fill-opacity:.6}.secs{stroke:#3C3C43;stroke-opacity:.6}.prim{fill:#000000}
+.ground{fill:#E9E6DF}.raster{fill:#CFCAC0}.edge{fill:none;stroke:#3C3C43;stroke-opacity:.25}
+.r-trail{animation:up 8s ease-in-out infinite}.r-survey{animation:down 8s ease-in-out infinite}.r-tiles{animation:gap 8s ease-in-out infinite}
+.over{opacity:0;animation:show 8s linear infinite}.ind{opacity:0;animation:ind 8s linear infinite}
+@keyframes up{0%,28%{transform:translate(0px,0px)}32%,46%{transform:translate(0px,30px)}50%,94%{transform:translate(0px,-58px)}100%{transform:translate(0px,0px)}}
+@keyframes down{0%,28%{transform:translate(0px,0px)}32%,46%{transform:translate(0px,30px)}50%,94%{transform:translate(0px,58px)}100%{transform:translate(0px,0px)}}
+@keyframes gap{0%,28%{transform:translate(0px,0px)}32%,46%{transform:translate(0px,30px)}50%,100%{transform:translate(0px,0px)}}
+@keyframes show{0%,50%{opacity:0}56%,94%{opacity:1}100%{opacity:0}}
+@keyframes ind{0%,28%{opacity:0}32%,46%{opacity:1}50%,100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.r-trail,.r-survey,.r-tiles,.over,.ind{animation:none}.r-tiles{transform:none}.r-trail{transform:translate(0px,-58px)}.r-survey{transform:translate(0px,58px)}.over{opacity:1}.ind{opacity:0}}
+</style>
+<defs>
+<linearGradient id="pinlit" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF665E"/><stop offset=".55" stop-color="#FF3B30"/><stop offset="1" stop-color="#DB3329"/></linearGradient>
+<path id="eye" d="M 101.037018 125.747795 C 160.129883 125.747795 201 77.941971 201 63.039982 C 201 48.063965 160.055862 0.332489 101.037018 0.332489 C 42.682064 0.332489 1 48.063965 1 63.039982 C 1 77.941971 42.682064 125.747795 101.037018 125.747795 Z M 101.037018 104.279663 C 78.240829 104.279663 59.797489 85.762299 59.797489 63.039982 C 59.797489 40.243942 78.240829 21.800606 101.037018 21.800606 C 123.759171 21.800606 142.27655 40.243942 142.27655 63.039982 C 142.27655 85.762299 123.759171 104.279663 101.037018 104.279663 Z M 101.037018 78.090034 C 109.373314 78.090034 116.086914 71.376427 116.086914 63.039982 C 116.086914 54.703613 109.373314 47.990158 101.037018 47.990158 C 92.700722 47.990158 85.987122 54.703613 85.987122 63.039982 C 85.987122 71.376427 92.700722 78.090034 101.037018 78.090034 Z"/>
+<path id="dots" d="M 179.6353 41.260159 C 190.889374 41.260159 200 32.256996 200 21.003008 C 200 9.749001 190.889374 0.638626 179.6353 0.638626 C 168.381195 0.638626 159.270569 9.749001 159.270569 21.003008 C 159.270569 32.256996 168.381195 41.260159 179.6353 41.260159 Z M 99.999779 41.260159 C 111.25354 41.260159 120.256599 32.256996 120.256599 21.003008 C 120.256599 9.749001 111.25354 0.638626 99.999779 0.638626 C 88.745796 0.638626 79.635399 9.749001 79.635399 21.003008 C 79.635399 32.256996 88.745796 41.260159 99.999779 41.260159 Z M 20.36438 41.260159 C 31.618366 41.260159 40.621532 32.256996 40.621532 21.003008 C 40.621532 9.749001 31.618366 0.638626 20.36438 0.638626 C 9.110373 0.638626 0 9.749001 0 21.003008 C 0 32.256996 9.110373 41.260159 20.36438 41.260159 Z"/>
+<g id="chrome">
+<use href="#eye" fill="#FF9500" transform="translate(277.9 19.7) scale(.1)"/>
+<circle class="secs" cx="328" cy="26" r="9.5" fill="none" stroke-width="1.5"/>
+<use href="#dots" class="sec" transform="translate(323 24.95) scale(.05)"/>
+</g>
+<path id="line" d="M392 230 C430 210 440 170 480 160 S560 120 612 48" fill="none" stroke="#007AFF" stroke-opacity=".8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</defs>
+<rect class="bg" width="640" height="330"/>
+
+<!-- map stand-in: the tile layer is the plain ground, the raster a plain footprint -->
+<rect class="ground" x="380" y="26" width="244" height="226"/>
+<use href="#line"/>
+<rect class="raster" x="450" y="78" width="124" height="122"/>
+<use href="#line" class="over"/>
+<g transform="translate(506 108)">
+<path d="M13.1 36.4 L3.07 21.04 A13 13 0 1 1 24.93 21.04 L14.9 36.4 Q14 38 13.1 36.4 Z" fill="url(#pinlit)" stroke="#ffffff" stroke-width="4" stroke-linejoin="round"/>
+<path d="M13.1 36.4 L3.07 21.04 A13 13 0 1 1 24.93 21.04 L14.9 36.4 Q14 38 13.1 36.4 Z" fill="url(#pinlit)" stroke="#2B2F36" stroke-width=".8" stroke-linejoin="round"/>
+<circle cx="14" cy="14" r="4.8" fill="#9E251E"/>
+</g>
+<rect class="edge" x="380.5" y="26.5" width="243" height="225"/>
+
+<!-- tree: slot 0 Camp -->
+<g transform="translate(0 26)">
+<rect class="rowbg" x="20" y="0" width="332" height="52" rx="10"/>
+<circle cx="80" cy="26" r="11" fill="url(#pinlit)" stroke="#ffffff" stroke-width="3.4"/>
+<circle cx="80" cy="26" r="11" fill="url(#pinlit)" stroke="#2B2F36" stroke-width=".7"/>
+<circle cx="80" cy="26" r="4.06" fill="#9E251E"/>
+<text class="txt" x="100" y="31">Camp</text>
+<use href="#chrome"/>
+</g>
+<!-- slot 3 Topo Tiles -->
+<g transform="translate(0 200)"><g class="r-tiles">
+<rect class="rowbg" x="20" y="0" width="332" height="52" rx="10"/>
+<rect x="72" y="18" width="16" height="16" fill="#FF66A6"/>
+<text class="txt" x="100" y="31">Topo Tiles</text>
+<use href="#chrome"/>
+</g></g>
+<!-- slot 1 Survey Map, pushed down -->
+<g transform="translate(0 84)"><g class="r-survey">
+<rect class="rowbg" x="20" y="0" width="332" height="52" rx="10"/>
+<rect class="prim" x="71" y="19" width="18" height="14"/>
+<text class="txt" x="100" y="31">Survey Map</text>
+<use href="#chrome"/>
+</g></g>
+<!-- insertion indicator: the targeted drop zone opens to 36 pt above Survey Map -->
+<g class="ind"><circle cx="32" cy="96" r="4" fill="#FF9500"/><rect x="36" y="94" width="308" height="4" rx="2" fill="#FF9500"/></g>
+<!-- slot 2 Ridge Trail, dragged up -->
+<g transform="translate(0 142)"><g class="r-trail">
+<rect class="bg" x="20" y="0" width="332" height="52" rx="10"/>
+<rect class="rowbg" x="20" y="0" width="332" height="52" rx="10"/>
+<path d="M70 26 Q75.2 18 80 26 Q84.8 34 90 26" fill="none" stroke="#007AFF" stroke-opacity=".8" stroke-width="3" stroke-linecap="butt"/>
+<text class="txt" x="100" y="31">Ridge Trail</text>
+<use href="#chrome"/>
+</g></g>
+
+<text class="cap" x="320" y="314" text-anchor="middle">Rows higher in the tree draw on top</text>
+</svg>

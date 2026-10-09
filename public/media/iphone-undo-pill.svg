@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="268" viewBox="0 0 640 268" role="img" aria-labelledby="t">
+<title id="t">The Undo pill at the bottom right of the Layers tab on iPhone and iPad: Undo alone; Undo with Redo beside it once a step has been undone; Undo dimmed with Redo when there is nothing left to undo.</title>
+<style>
+text{font-family:-apple-system,system-ui,sans-serif;fill:#3C3C43}
+.lbl{font-size:13px;text-anchor:middle}
+.cap{font-size:13px;text-anchor:middle;fill:#8E8E93}
+.short{animation:short 4s infinite}
+.long,.redo{animation:long 4s infinite}
+.redo{transform-box:fill-box;transform-origin:center;animation-name:pop}
+@keyframes short{0%,30%{opacity:1}45%,100%{opacity:0}}
+@keyframes long{0%,30%{opacity:0}45%,100%{opacity:1}}
+@keyframes pop{0%,30%{opacity:0;transform:scale(.4)}45%,100%{opacity:1;transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){.short{animation:none;opacity:0}.long,.redo{animation:none;opacity:1;transform:none}}
+</style>
+<rect width="640" height="268" fill="#FFFFFF"/>
+<g fill="#FFFFFF" stroke="#D1D1D6">
+<rect x="16.5" y="16.5" width="196" height="180" rx="12"/>
+<rect x="222.5" y="16.5" width="196" height="180" rx="12"/>
+<rect x="428.5" y="16.5" width="196" height="180" rx="12"/>
+</g>
+<!-- 1: Undo only -->
+<rect x="128" y="118" width="72" height="66" rx="33" fill="#F2F2F7"/>
+<circle cx="164" cy="151" r="9" fill="#FF9500"/>
+<text class="lbl" x="164" y="220">Undo</text>
+<!-- 2: Undo + Redo, Redo slides in -->
+<rect class="short" x="334" y="118" width="72" height="66" rx="33" fill="#F2F2F7"/>
+<rect class="long" x="266" y="118" width="140" height="66" rx="33" fill="#F2F2F7"/>
+<circle cx="302" cy="151" r="9" fill="#FF9500" class="long"/>
+<circle cx="370" cy="151" r="9" fill="#FF9500" class="short"/>
+<rect class="long" x="335" y="134.5" width="1.5" height="33" fill="#3C3C43" fill-opacity="0.29"/>
+<g class="redo"><circle cx="369.5" cy="151" r="9" fill="#FF9500"/></g>
+<text class="lbl" x="302" y="220">Undo</text>
+<text class="lbl" x="369.5" y="220">Redo</text>
+<!-- 3: Undo dimmed + Redo -->
+<rect x="472" y="118" width="140" height="66" rx="33" fill="#F2F2F7"/>
+<circle cx="508" cy="151" r="9" fill="#3C3C43" fill-opacity="0.3"/>
+<rect x="541" y="134.5" width="1.5" height="33" fill="#3C3C43" fill-opacity="0.29"/>
+<circle cx="575.5" cy="151" r="9" fill="#FF9500"/>
+<text class="lbl" x="508" y="220">Undo</text>
+<text class="lbl" x="575.5" y="220">Redo</text>
+<text class="cap" x="320" y="254">Bottom right of the Layers tab</text>
+</svg>

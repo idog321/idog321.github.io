@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="340" viewBox="0 0 640 340" role="img" aria-labelledby="t">
+<title id="t">Basemap area picker: in quarters a tap picks one quarter of a 1° square; in whole squares a tap picks the whole square. Picked areas are orange; a green dot marks elevation data on the device, a blue dot map data, a blue ring map data for only some quarters.</title>
+<style>
+text{font-family:-apple-system,system-ui,sans-serif;fill:#3C3C43}
+.h{font-size:15px;font-weight:600}
+.grid{stroke:#8E8E93;stroke-opacity:.4;stroke-width:1;fill:none}
+.qline{stroke:#8E8E93;stroke-opacity:.25;stroke-width:1}
+.pick{fill:#FF9500;fill-opacity:.3;stroke:#FF9500;stroke-opacity:.9;stroke-width:2;opacity:0;animation:pick 6s infinite}
+.touch{fill:#3C3C43;fill-opacity:.25;opacity:0;animation:touch 6s infinite}
+.dot{stroke:#000;stroke-opacity:.35;stroke-width:1}
+@keyframes pick{0%,24%{opacity:0}25%,90%{opacity:1}97%,100%{opacity:0}}
+@keyframes touch{0%,12%{opacity:0;transform:scale(1.6)}18%{opacity:1;transform:scale(1)}26%{opacity:1;transform:scale(.8)}34%,100%{opacity:0;transform:scale(.8)}}
+.touch{transform-box:fill-box;transform-origin:center}
+@media (prefers-reduced-motion:reduce){.pick{animation:none;opacity:1}.touch{animation:none;opacity:0}}
+</style>
+<!-- Quarters -->
+<text class="h" x="160" y="30" text-anchor="middle">Quarters</text>
+<rect x="36" y="52" width="248" height="248" fill="#E4E1D8"/>
+<path class="grid" d="M36 66H284M36 286H284M50 52V300M270 52V300"/>
+<path class="qline" d="M50 176H270M160 66V286"/>
+<rect class="pick" x="50" y="176" width="110" height="110"/>
+<circle class="touch" cx="105" cy="231" r="14"/>
+<circle class="dot" cx="254.3" cy="81.7" r="7.7" fill="#34C759"/>
+<circle cx="233.9" cy="81.7" r="6.7" fill="#000" fill-opacity=".25" stroke="#007AFF" stroke-width="2"/>
+<!-- Whole squares -->
+<text class="h" x="480" y="30" text-anchor="middle">Whole square</text>
+<rect x="356" y="52" width="248" height="248" fill="#E4E1D8"/>
+<path class="grid" d="M356 66H604M356 286H604M370 52V300M590 52V300"/>
+<path class="qline" d="M370 176H590M480 66V286"/>
+<rect class="pick" x="370" y="66" width="220" height="220"/>
+<circle class="touch" cx="425" cy="231" r="14"/>
+<circle class="dot" cx="574.3" cy="81.7" r="7.7" fill="#34C759"/>
+<circle class="dot" cx="553.9" cy="81.7" r="7.7" fill="#007AFF"/>
+<text x="320" y="326" text-anchor="middle" font-size="13">The square button on the tool card switches between the two.</text>
+</svg>

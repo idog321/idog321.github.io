@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400" font-family="-apple-system, system-ui, sans-serif">
+<title>The Project Changed on Another Device alert and what each of its four buttons does to this device's version and the other device's version</title>
+<style>
+.hl{opacity:0;animation:hl 8s infinite}
+.h2{animation-delay:2s}.h3{animation-delay:4s}.h4{animation-delay:6s}
+@keyframes hl{0%{opacity:0}3%{opacity:1}22%{opacity:1}25%{opacity:0}100%{opacity:0}}
+@media (prefers-reduced-motion: reduce){.hl{animation:none;opacity:0}}
+</style>
+<rect width="640" height="400" fill="#FFFFFF"/>
+<rect x="16" y="16" width="270" height="335" rx="28" fill="#F2F2F7"/>
+<text x="36" y="42" font-size="13" text-anchor="start" fill="#000000" font-weight="600">Project Changed on Another Device</text>
+<text x="36" y="64" font-size="10" text-anchor="start" fill="#000000" font-weight="400">This project was updated on another device</text>
+<text x="36" y="79" font-size="10" text-anchor="start" fill="#000000" font-weight="400">while you have unsaved changes here. Merge</text>
+<text x="36" y="94" font-size="10" text-anchor="start" fill="#000000" font-weight="400">combines both devices' changes into this</text>
+<text x="36" y="109" font-size="10" text-anchor="start" fill="#000000" font-weight="400">project. Split Into Two Projects saves your</text>
+<text x="36" y="124" font-size="10" text-anchor="start" fill="#000000" font-weight="400">changes as a separate project instead. Until</text>
+<text x="36" y="139" font-size="10" text-anchor="start" fill="#000000" font-weight="400">you choose, automatic saving stays paused.</text>
+<rect x="28" y="183" width="246" height="34" rx="17" fill="#E5E5EA"/>
+<rect class="hl" x="28" y="183" width="246" height="34" rx="17" fill="#FF9500" fill-opacity="0.14"/>
+<rect class="hl" x="300" y="180" width="324" height="40" rx="8" fill="#FF9500" fill-opacity="0.14"/>
+<text x="151" y="205" font-size="13" text-anchor="middle" fill="#FF9500" font-weight="400">Merge Changes</text>
+<line x1="292" y1="200" x2="318" y2="200" stroke="#C6C6C8" stroke-width="1"/>
+<rect x="28" y="223" width="246" height="34" rx="17" fill="#E5E5EA"/>
+<rect class="hl h2" x="28" y="223" width="246" height="34" rx="17" fill="#FF9500" fill-opacity="0.14"/>
+<rect class="hl h2" x="300" y="220" width="324" height="40" rx="8" fill="#FF9500" fill-opacity="0.14"/>
+<text x="151" y="245" font-size="13" text-anchor="middle" fill="#FF9500" font-weight="400">Split Into Two Projects</text>
+<line x1="292" y1="240" x2="318" y2="240" stroke="#C6C6C8" stroke-width="1"/>
+<rect x="28" y="263" width="246" height="34" rx="17" fill="#E5E5EA"/>
+<rect class="hl h3" x="28" y="263" width="246" height="34" rx="17" fill="#FF9500" fill-opacity="0.14"/>
+<rect class="hl h3" x="300" y="260" width="324" height="40" rx="8" fill="#FF9500" fill-opacity="0.14"/>
+<text x="151" y="285" font-size="13" text-anchor="middle" fill="#FF3B30" font-weight="400">Overwrite Their Version</text>
+<line x1="292" y1="280" x2="318" y2="280" stroke="#C6C6C8" stroke-width="1"/>
+<rect x="28" y="303" width="246" height="34" rx="17" fill="#E5E5EA"/>
+<rect class="hl h4" x="28" y="303" width="246" height="34" rx="17" fill="#FF9500" fill-opacity="0.14"/>
+<rect class="hl h4" x="300" y="300" width="324" height="40" rx="8" fill="#FF9500" fill-opacity="0.14"/>
+<text x="151" y="325" font-size="13" text-anchor="middle" fill="#FF9500" font-weight="400">Decide Later</text>
+<line x1="292" y1="320" x2="318" y2="320" stroke="#C6C6C8" stroke-width="1"/>
+<g opacity="1"><rect x="338" y="72" width="26" height="18" rx="3" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.5"/><rect x="334" y="76" width="26" height="18" rx="3" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.5"/><rect x="330" y="80" width="26" height="18" rx="3" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.5"/></g>
+<g opacity="1"><rect x="388" y="72" width="26" height="18" rx="3" fill="#8E8E93" stroke="#FFFFFF" stroke-width="1.5"/><rect x="384" y="76" width="26" height="18" rx="3" fill="#8E8E93" stroke="#FFFFFF" stroke-width="1.5"/><rect x="380" y="80" width="26" height="18" rx="3" fill="#8E8E93" stroke="#FFFFFF" stroke-width="1.5"/></g>
+<line x1="300" y1="140" x2="624" y2="140" stroke="#E5E5EA" stroke-width="1"/>
+<g opacity="1"><rect x="338" y="183" width="26" height="18" rx="3" fill="#8E8E93" stroke="#FFFFFF" stroke-width="1.5"/><rect x="334" y="187" width="26" height="18" rx="3" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.5"/><rect x="330" y="191" width="26" height="18" rx="3" fill="#8E8E93" stroke="#FFFFFF" stroke-width="1.5"/></g>
+<g opacity="1"><rect x="338" y="223" width="26" height="18" rx="3" fill="#8E8E93" stroke="#FFFFFF" stroke-width="1.5"/><rect x="334" y="227" width="26" height="18" rx="3" fill="#8E8E93" stroke="#FFFFFF" stroke-width="1.5"/><rect x="330" y="231" width="26" height="18" rx="3" fill="#8E8E93" stroke="#FFFFFF" stroke-width="1.5"/></g><g opacity="1"><rect x="388" y="223" width="26" height="18" rx="3" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.5"/><rect x="384" y="227" width="26" height="18" rx="3" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.5"/><rect x="380" y="231" width="26" height="18" rx="3" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.5"/></g><text x="418" y="245" font-size="10" text-anchor="start" fill="#3C3C43" font-weight="400">(my changes, …)</text>
+<g opacity="1"><rect x="338" y="263" width="26" height="18" rx="3" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.5"/><rect x="334" y="267" width="26" height="18" rx="3" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.5"/><rect x="330" y="271" width="26" height="18" rx="3" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.5"/></g><g opacity="0.35"><rect x="388" y="263" width="26" height="18" rx="3" fill="#8E8E93" stroke="#FFFFFF" stroke-width="1.5"/><rect x="384" y="267" width="26" height="18" rx="3" fill="#8E8E93" stroke="#FFFFFF" stroke-width="1.5"/><rect x="380" y="271" width="26" height="18" rx="3" fill="#8E8E93" stroke="#FFFFFF" stroke-width="1.5"/></g><text x="418" y="285" font-size="10" text-anchor="start" fill="#3C3C43" font-weight="400">Last save backup — …</text>
+<g opacity="1"><rect x="338" y="303" width="26" height="18" rx="3" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.5"/><rect x="334" y="307" width="26" height="18" rx="3" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.5"/><rect x="330" y="311" width="26" height="18" rx="3" fill="#FF9500" stroke="#FFFFFF" stroke-width="1.5"/></g><g opacity="1"><rect x="388" y="303" width="26" height="18" rx="3" fill="#8E8E93" stroke="#FFFFFF" stroke-width="1.5"/><rect x="384" y="307" width="26" height="18" rx="3" fill="#8E8E93" stroke="#FFFFFF" stroke-width="1.5"/><rect x="380" y="311" width="26" height="18" rx="3" fill="#8E8E93" stroke="#FFFFFF" stroke-width="1.5"/></g>
+<rect x="16" y="370" width="12" height="10" rx="2" fill="#FF9500"/><text x="34" y="379" font-size="11" text-anchor="start" fill="#3C3C43" font-weight="400">This device</text>
+<rect x="120" y="370" width="12" height="10" rx="2" fill="#8E8E93"/><text x="138" y="379" font-size="11" text-anchor="start" fill="#3C3C43" font-weight="400">Another device</text>
+</svg>
