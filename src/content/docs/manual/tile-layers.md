@@ -22,7 +22,7 @@ On Mac, choose **Add Tile Layer…** from :ui[Add Data]{icon=plus} in the [tool 
 On iPhone, tap :ui[Add Data]{icon=plus} in the [tool sidebar](/manual/interface/#the-tool-sidebar) or :ui[plus]{icon=plus} in the **Layers** tab, and choose **Add Tile Layer…**.
 :::
 
-Adding a tile layer, editing one and downloading tiles are part of the full app, though tile layers and downloaded tiles already in a project keep drawing without it; see [Your TopoKit](/manual/your-topokit/).
+Adding a tile layer, editing one and downloading tiles are part of the full app, though tile layers and downloaded tiles already in a project keep drawing without it; see [What asks you to unlock](/manual/your-topokit/#what-asks-you-to-unlock).
 
 The sheet shows no preview and accepts any text as a template, so a wrong address is added and draws nothing. The new layer goes to the top of the **Layers** tab, where it hides everything below it everywhere; drag it below your data ([Draw order](/manual/layer-tree/#draw-order)).
 
@@ -64,7 +64,7 @@ Saved sources are kept on the device, not in the project, so every project on th
 
 ## Managing tile layers
 
-**Edit** in a tile layer's context menu opens its editor. :mac[On Mac, **Layer → Edit Layer…** (Cmd-I) opens it too.] The editor changes the name and the opacity, nothing else. :ios[On iPhone, tap **Save** to keep a new name; leaving without saving keeps the opacity but not the name.] :mac[On Mac the editor is a popover that keeps the new name when it closes.]
+**Edit** in the row's :ui[Layer options]{icon=ellipsis} menu, or its right-click menu on Mac, opens the tile layer's editor. :mac[On Mac, **Layer → Edit Layer…** (`Cmd-I`) opens it too.] The editor changes the name and the opacity, nothing else. :ios[On iPhone, tap **Save** to keep a new name; leaving without saving keeps the opacity but not the name.] :mac[On Mac the editor is a popover that keeps the new name when it closes.]
 
 To change the address, delete the layer and add it again. Tap the address under **Source URL** to copy it first; for a WMS layer, the **Layer** row below it copies the machine name to find again with **Filter**.
 
@@ -76,7 +76,7 @@ A download saves a layer's tiles to this device, so the layer draws without a co
 
 ### Starting a download
 
-**Download Map Tiles…** in the :ui[Add Data]{icon=plus} menu or the **Layers** tab's :ui[plus]{icon=plus} menu opens the download sheet. :mac[On Mac it is also in the **Layer** menu.] **Download for Offline** in a tile layer's context menu opens the same sheet with that layer selected. :mac[On Mac, **Layer → Download for Offline…** does the same for the selected layer.]
+**Download Map Tiles…** in the :ui[Add Data]{icon=plus} menu or the **Layers** tab's :ui[plus]{icon=plus} menu opens the download sheet. :mac[On Mac it is also in the **Layer** menu.] **Download for Offline** in a tile layer's :ui[Layer options]{icon=ellipsis} menu opens the same sheet with that layer selected. :mac[On Mac, **Layer → Download for Offline…** does the same for the selected layer.]
 
 1. **Tile Layer**: choose the layer. **Offline: …** layers and built basemaps are not offered.
 2. **Region**: set the rectangle.
@@ -93,7 +93,7 @@ The **Tiles** estimate is exact. The **Storage** estimate counts every tile at 1
 
 Several downloads run at once, each with its own bar.
 
-- **Cancel**: × then **Cancel Download** stops the download and drops its rectangle. If the layer has no finished download, its partial tiles are deleted; if it has one, they stay and a later download reuses them.
+- **Cancel**: ✕ then **Cancel Download** stops the download and drops its rectangle. If the layer has no finished download, its partial tiles are deleted; if it has one, they stay and a later download reuses them.
 - **Retries**: a tile that fails on a dropped connection or a server error is tried up to three times. A tile the server refuses with a 4xx answer, such as 404 or 429, is not retried.
 - **Retry Failed**: a download that ends with failed tiles reports them in **Download Complete**, where **Retry Failed** fetches only the missing tiles. One that fails outright shows **Download Failed**, with **Retry**.
 - **Stopping**: downloads run only while their project is open. Tiles already on disk are kept, and the same download started again fetches only what is missing.
@@ -116,7 +116,7 @@ The Mac has no cellular setting and downloads over any connection, a personal ho
 
 A finished download adds an **Offline: {layer name}** layer at the top of the source layer's folder. The next is **Offline: {layer name} (2)**, and so on; downloads never merge. Each reads only the downloaded tiles inside its own rectangle. Past the downloaded max zoom it scales up its sharpest tile.
 
-Downloaded tiles never sync. The project carries each download's rectangle and zoom range, so on another device the **Offline: …** layer is there without tiles. The **Layers** tab offers them in an **Offline tiles available** banner, and the layer's context menu has **Download for This Device**; either fetches the same rectangle and zooms again on that device. Built basemaps follow their own rule ([Other projects and other devices](/manual/basemaps/#other-projects-and-other-devices)).
+Downloaded tiles never sync. The project carries each download's rectangle and zoom range, so on another device the **Offline: …** layer is there without tiles. The **Layers** tab offers them in an **Offline tiles available** banner, and the layer's :ui[Layer options]{icon=ellipsis} menu has **Download for This Device**; either fetches the same rectangle and zooms again on that device. Built basemaps follow their own rule ([Other projects and other devices](/manual/basemaps/#other-projects-and-other-devices)).
 
 ### Removing downloaded tiles
 
@@ -124,8 +124,8 @@ The system never purges downloaded tiles. A layer's downloads share one store, s
 
 | Action | What it removes | What stays |
 |---|---|---|
-| **Remove Offline Tiles** in the source layer's context menu | Every downloaded tile of that layer, after **Remove Offline Tiles?** | The layer, which streams from the server again |
-| **Clear Downloaded Map Tiles** in [Storage & iCloud](/manual/settings/#storage--icloud) | Downloaded tiles of every layer in every project, deleted layers included, and of built basemaps | Every layer |
+| **Remove Offline Tiles** in the source layer's :ui[Layer options]{icon=ellipsis} menu | Every downloaded tile of that layer, after **Remove Offline Tiles?** | The layer, which streams from the server again |
+| **Clear Downloaded Map Tiles** in [Storage & iCloud](/manual/settings/#storage--icloud) | Every downloaded tile on this device | Every layer |
 | Deleting the layer | The layer, and any download it is running | Its downloaded tiles, which its **Offline: …** layers keep drawing |
 
 **Remove Offline Tiles** appears once the layer has a finished download, never on an **Offline: …** layer, and removes all of the layer's downloads at once; to keep a smaller area, remove them and download that area again. :mac[On Mac it is also **Layer → Remove Offline Tiles…**.]

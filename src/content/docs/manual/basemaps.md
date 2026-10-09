@@ -13,7 +13,7 @@ Hybrid is the default. The choice belongs to this device, not the project: every
 
 ## What a basemap is
 
-A basemap is a topographic map TopoKit builds on the device for an area you pick, from downloaded satellite elevation data and map data; once built it draws with no connection. In the project it is a [tile layer](/manual/tile-layers/).
+A basemap is a topographic map TopoKit builds on the device for an area you pick, from downloaded satellite elevation data and map data; once built it draws, answers taps and is searched with no connection. In the project it is a [tile layer](/manual/tile-layers/).
 
 ## Building a basemap
 
@@ -22,7 +22,7 @@ A basemap is a topographic map TopoKit builds on the device for an area you pick
 3. Tap the map to pick each area. Tap a picked area again to drop it.
 4. Tap :ui[Build] on the tool card.
 
-Each area builds in that look with no setup page. To change anything first, tap the pencil beside a look, or **Build your own**: the tool card's button then reads :ui[Next] and opens [the setup page](#the-setup-page).
+Each area builds in that look with no setup page. To change anything first, tap the pencil beside a look, or **Build your own**: the tool card's button then reads **Next** and opens [the setup page](#the-setup-page).
 
 **Light** and **Dark** draw shaded relief and contours over a solid pale or dark ground, without elevation colours, and turn on all nine map features, so either one downloads the area's map data. Their contour interval follows **Settings → Units & Coordinates → Units**: 20 m for Metric, 80 ft for Imperial.
 
@@ -34,7 +34,7 @@ Each tap picks a quarter of a 1° square; the quartered-square button on the too
 
 ![Basemap area picker: a tap picks one quarter in quarters mode, the whole square in whole-square mode](/media/basemap-area-picker.svg)
 
-In a square's top-right corner, a green dot means its elevation data is on this device, a blue dot means its map data is, and a blue ring means map data for only some quarters. A quarter still downloads its square's whole elevation file, 25–40 MB, which the other quarters and the [elevation tools](/manual/elevation/#elevation-data-source) reuse.
+In a square's top-right corner, a green dot means its elevation data is on this device, a blue dot means its map data is, and a blue ring means map data for only some quarters. A quarter still downloads its square's whole elevation tile, 25–40 MB, which the other quarters and the [elevation tools](/manual/elevation/#elevation-data-source) reuse.
 
 ## The setup page
 
@@ -115,7 +115,7 @@ Map data does not update on its own. Opening the editor with a connection checks
 
 ## Other projects and other devices
 
-A basemap's ground, its shading, colours, contours and map data, is stored once per 1° square on each device and shared by every basemap covering it; each project keeps its own look, so two projects can show one square as Light and as Dark without a second download.
+A basemap's ground (its shading, colours, contours and map data) is stored once per 1° square on each device and shared by every basemap covering it; each project keeps its own look, so two projects can show one square as Light and as Dark without a second download.
 
 A basemap's settings [sync with the project](/manual/projects-and-files/#icloud-sync); its built files stay on the device that built them and are left out of device backups.
 
@@ -127,17 +127,13 @@ When a project opens, whatever its basemaps need that the elevation data on this
 
 **Delete Offline Basemaps**, in **Settings → Storage & iCloud → Offline Basemaps**, deletes every basemap's built files and map data on this device. The rows stay in their projects with the hammer badge until rebuilt. Deleting one basemap's row removes only ground no other basemap uses, and keeps the area's map data.
 
-**Clear Elevation Data** leaves built basemaps in place; a later change that needs new ground downloads the elevation file again. **Clear Downloaded Map Tiles** also deletes basemaps' map tiles, which are made again from the elevation data when the project next opens ([Storage & iCloud](/manual/settings/#storage--icloud)).
+**Clear Elevation Data** leaves built basemaps in place; a later change that needs new ground downloads the elevation tile again. **Clear Downloaded Map Tiles** also deletes basemaps' map tiles, which are made again from the elevation data when the project next opens ([Storage & iCloud](/manual/settings/#storage--icloud)).
 
 ## Credit and licences
 
 While a basemap with map features is visible in the Layers tab and its area is in view, the map shows **© OpenStreetMap contributors** under Apple's Legal link at the bottom left; tapping it opens the map data's copyright page.
 
-**Licenses**, in **Settings → About TopoKit**, :mac[and on Mac in **Help → Licenses**,] credits the elevation data and the map data.
-
-## What works offline
-
-[Tapping a basemap](/manual/search-and-identify/#what-a-tap-finds) and [searching its names](/manual/search-and-identify/#what-each-section-finds) work with no connection.
+**Settings → About TopoKit → Licenses**, :mac[and on Mac **Help → Licenses**,] credits the elevation data and the map data.
 
 ## Reading the map
 

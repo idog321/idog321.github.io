@@ -16,7 +16,7 @@ A chapter marks the first use of each term with a dotted underline, and hovering
 
 **Shaded relief (hillshade)** — shading computed from elevation and a light direction. See [Ground and relief](/manual/basemaps/#ground-and-relief).
 
-**Slope angle** — how steep the ground is, in degrees from level. A basemap measures it across 30 m, so a short steep step reads gentler than it is; its colours start at 27°. See [Ground and relief](/manual/basemaps/#ground-and-relief).
+**Slope angle** — how steep the ground is, in degrees from level. A basemap's slope shading measures it across 30 m, so a short steep step reads gentler than it is, and its colours start at 27°; a spot's card measures it across about 90 m ([Height, slope and aspect at a spot](/manual/elevation/#height-slope-and-aspect-at-a-spot)). See [Ground and relief](/manual/basemaps/#ground-and-relief).
 
 **Tile layer** — map imagery drawn as square tiles, one set per zoom level. See [Tile layers](/manual/tile-layers/).
 

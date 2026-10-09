@@ -176,4 +176,4 @@ On Mac, **Show in Finder** opens the folder. The paths are:
 Move a local project to iCloud; both devices need iCloud Drive, which **Settings → Storage & iCloud** shows as **Connected**.
 
 **How do I send a project to someone?**
-**Export Project**, at the top of the Projects tab while the project is open, writes the project file alone, without rasters, photos or downloaded data; the recipient uses **Import Project**. To include rasters and photos, zip the project folder ([File locations](#file-locations)). For a colleague without TopoKit, export the layers ([Importing and exporting](/manual/import-and-export/)).
+**Export Project**, at the top of the Projects tab while the project is open, writes the project file alone, without rasters, photos or downloaded data; the recipient uses **Import Project**. To include rasters and photos, zip the project folder ([File locations](#file-locations)). For a colleague without TopoKit, export the layers ([Exporting and sharing](/manual/import-and-export/#exporting-and-sharing)).

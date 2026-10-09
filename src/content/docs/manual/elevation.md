@@ -25,8 +25,8 @@ Every one of these stores the tile in the app's own data area, not a cache, so i
 
 When the tile is missing, each place that reads heights asks before downloading:
 
-- The profile panel says "This line needs N elevation tiles that are not on this device." and offers **Download N tiles** with a size. The size assumes the largest tile, so the download is usually smaller. With no connection the panel says so and offers nothing; it checks when it opens, so reopen it once you are back online. Closing the panel cancels its download.
-- A point's editor shows :ui[Get Elevation] with "(25–40 MB download)" beside it, and downloads as soon as you tap it.
+- The profile says "This line needs N elevation tiles that are not on this device." and offers **Download N tiles** with a size. The size assumes the largest tile, so the download is usually smaller. With no connection the profile says so and offers nothing; it checks when it opens, so reopen it once you are back online. Closing the profile cancels its download.
+- A point's editor shows **Get Elevation** with "(25–40 MB download)" beside it, and downloads as soon as you tap it.
 - A spot's card says "Terrain for this spot is not downloaded." with a **Download** button sized for that one tile.
 
 ### The elevation grid
@@ -83,7 +83,7 @@ With the spot's tile on the device, the card leads with **Elevation**, **Slope**
 
 ## The elevation profile
 
-The elevation profile charts the ground along any line, drawn or imported, a recorded track, a saved route, or a trail, road or other line on a basemap you built. Polygons and circles have no profile. It opens from :ui[Elevation profile] on a line's [card](/manual/search-and-identify/#the-card), and from **Elevation Profile** in the line's menu in the [Layers tab](/manual/layer-tree/) and in its editor. :mac[On Mac, **Elevation Profile** is also in the right-click menu on a line and in the **Layer** menu.]
+The elevation profile charts the ground along any line, drawn or imported, a recorded track, a saved route, or a trail, road or other line on a basemap you built. Polygons and circles have no profile. It opens from **Elevation profile** on a line's [card](/manual/search-and-identify/#the-card), and from **Elevation Profile** in the line's menu in the [Layers tab](/manual/layer-tree/) and in its editor. :mac[On Mac, **Elevation Profile** is also in the right-click menu on a line and in the **Layer** menu.]
 
 A named trail or road on a basemap is profiled along its whole length, not only the stretch you tapped; an unnamed one along the stretch outlined on the map.
 
@@ -121,7 +121,7 @@ On any line in several parts, a jump of 100 m or less between parts is charted a
 
 ### A profile while you draw
 
-The :ui[Add Line]{icon=add-line} and :ui[Add Route] tool cards have an :ui[Elevation profile] button. The drawing stays editable while the profile is open, and the chart redraws after each point you add, move or delete, clearing any selected stretch or zoom window.
+The :ui[Add Line]{icon=add-line} and :ui[Add Route] tool cards have an **Elevation profile** button. The drawing stays editable while the profile is open, and the chart redraws after each point you add, move or delete, clearing any selected stretch or zoom window.
 
 A route is charted along the roads its legs follow.
 

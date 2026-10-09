@@ -6,7 +6,7 @@ description: "What the introduction sets up, then one pass through a field job: 
 
 A new install opens with an introduction before the map: eight pages on iPhone, seven on Mac, which has no permissions page. It sets your appearance and units and creates your first project.
 
-**Customize Your Look** and **Units & Coordinates** set the same options as **Settings → Appearance** and **Settings → Units & Coordinates**, so a choice made here is changed there later. :ios[On iPhone, the toolbar side is in **Settings → Toolbar & Haptics**.] :mac[On Mac, the panel side is in **Settings → Appearance → Panel Position**.] :ios[On iPhone, **TopoKit Needs Your Permission** asks for Location, Camera and Photo Library up front. A permission skipped there or denied is turned on later in the iPhone's Settings app under TopoKit, not in TopoKit's Settings; until then GPS tracking and **Take Photo** do not work. Choosing a photo from the library needs no permission.] :mac[On Mac, each permission is asked for when a feature first needs it.]
+**Customize Your Look** and **Units & Coordinates** set the same options as **Settings → Appearance** and **Settings → Units & Coordinates**, so a choice made here is changed there later. :ios[On iPhone, the tool sidebar's side is **Settings → Toolbar & Haptics → Position**.] :mac[On Mac, the panel side is in **Settings → Appearance → Panel Position**.] :ios[On iPhone, **TopoKit Needs Your Permission** asks for Location, Camera and Photo Library up front. A permission skipped there or denied is turned on later in the iPhone's Settings app under TopoKit, not in TopoKit's Settings; until then GPS tracking and **Take Photo** do not work. Choosing a photo from the library needs no permission.] :mac[On Mac, each permission is asked for when a feature first needs it.]
 
 **Create Your First Project** makes a project, and that project is open when the introduction ends. The name starts as **My First Project**. **Storage** appears only when iCloud is available, and starts at **iCloud**.
 
@@ -15,7 +15,7 @@ On iPhone, **Skip** at the top right goes from the first three pages to the perm
 :::
 
 :::mac
-On Mac, **Skip** at the top right goes from the first three pages to the project page, and from the story to the plans. Escape ends the introduction at once, and creates no project unless **Create Project** was already pressed. Return presses the page's main button, **Create Project** included.
+On Mac, **Skip** at the top right goes from the first three pages to the project page, and from the story to the plans. `Esc` ends the introduction at once, and creates no project unless **Create Project** was already pressed. `Return` presses the page's main button, **Create Project** included.
 :::
 
 **Settings → Help & Feedback → Replay Introduction** runs the introduction again from its first page; its **Create Project** makes another project and opens it in place of the open one, and **Skip** keeps the one you have. :mac[On Mac, **Help → Replay Introduction** does the same.]
@@ -57,7 +57,7 @@ TopoKit downloads elevation and map data for the area once and builds the basema
 
 1. Tap :ui[Add Point]{icon=add-point}.
 2. Tap the map where the point goes, or tap the orange :ui[location]{icon=location} button on the tool card to place it where you are. The button appears only once TopoKit has location access.
-3. Name the point, choose its style, add a photo if it needs one, and tap :ui[Create], which stays dimmed until the point has a name.
+3. Name the point, choose its style, add a photo if it needs one, and tap **Create**, which stays dimmed until the point has a name.
 
 Every other way to add a point is in [Adding a point](/manual/points-lines-polygons/#adding-a-point).
 
@@ -65,9 +65,9 @@ Every other way to add a point is in [Adding a point](/manual/points-lines-polyg
 
 1. Tap :ui[Add Polygon]{icon=add-polygon} and tap the corners of the area. The tool card shows the area, perimeter and point count as you go. Drag a corner to move it, or pull out the faint dot between two corners to add one.
 2. Tap a figure to copy it.
-3. Tap :ui[Save] to keep the shape once it has three corners, name it in the editor that opens, and tap :ui[Create]. To discard the shape instead, tap ✕ on the tool card.
+3. Tap **Save** to keep the shape once it has three corners, name it in the editor that opens, and tap **Create**. To discard the shape instead, tap ✕ on the tool card.
 
-The drawing tools and the measuring tools are the same tools; saving is the only difference. :ui[Add Line]{icon=add-line} gives distance and bearing the same way. The figures are not stored with the shape, but tapping a saved polygon shows its area and perimeter again. Units and the earth model behind each figure are in [Measuring](/manual/measurement/#live-measurements).
+The drawing tools and the measuring tools are the same tools; saving is the only difference. :ui[Add Line]{icon=add-line} gives distance and bearing the same way. The figures are not stored with the shape, but tapping a saved polygon shows its area and perimeter again. Units are in [Units](/manual/measurement/#units), and the earth model behind each figure in [Calculation methods](/manual/measurement/#calculation-methods).
 
 ## Prepare for offline
 
@@ -91,7 +91,7 @@ TopoKit keeps recording with the screen off or another app open, and saves the t
 
 :ios[On iPhone, tap :ui[Layer options]{icon=ellipsis} on a feature's or folder's row in the **Layers** tab and choose **Export to File**.] :mac[On Mac, right-click the row and choose **Export to File**, or select it and choose **Layer → Export to File**.] Then choose GPX, KML, GeoJSON or GeoPackage and pick where the file goes; it is named after the row.
 
-Only vector features export. GPX cannot carry polygons: a folder exported as GPX leaves its polygons out, and an export of nothing but polygons is refused, so export the shape from [Draw and measure](#draw-and-measure) as KML, GeoJSON or GeoPackage. Formats and sharing are in [Exporting and sharing](/manual/import-and-export/#exporting-and-sharing).
+Only vector features export, and GPX carries no polygons, so export the shape from [Draw and measure](#draw-and-measure) as KML, GeoJSON or GeoPackage ([GPX](/manual/import-and-export/#gpx)). Formats and sharing are in [Exporting and sharing](/manual/import-and-export/#exporting-and-sharing).
 
 ## FAQ
 

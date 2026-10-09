@@ -2,9 +2,9 @@
 title: "Measuring"
 description: "What the figures on the tool card are, which units they use, and how TopoKit calculates each one."
 ---
-Drawing and measuring are one tool. :ui[Add Line]{icon=add-line}, :ui[Add Polygon]{icon=add-polygon}, :ui[Add Circle]{icon=add-circle} and :ui[Add Route] show their figures on the tool card while you draw, and saving is optional: cancelling closes the tool without adding anything to the project. Placing and moving points is in [Points, lines, polygons and circles](/manual/points-lines-polygons/).
+Drawing and measuring are one tool. :ui[Add Line]{icon=add-line}, :ui[Add Polygon]{icon=add-polygon}, :ui[Add Circle]{icon=add-circle} and :ui[Add Route] show their figures on the tool card while you draw, and saving is optional: cancelling closes the tool without adding anything to the project. Placing and moving vertices is in [Moving, adding and deleting vertices](/manual/points-lines-polygons/#moving-adding-and-deleting-vertices).
 
-The line, polygon and circle tools need an open project even when you only measure; a [route](/manual/routes/) started from a card does not. Drawing and measuring are part of the full app, described in [Your TopoKit](/manual/your-topokit/).
+The line, polygon and circle tools need an open project even when you only measure; a [route](/manual/routes/) started from a card does not. Drawing and measuring are part of the [full app](/manual/your-topokit/#what-asks-you-to-unlock).
 
 ## Live measurements
 
@@ -26,11 +26,11 @@ Locking and unlocking are [undo steps](/manual/interface/#while-a-tool-is-open) 
 
 ## Units
 
-The **Distance** and **Area** pickers under **Measuring Tools Start With** in **Settings → Units & Coordinates** set the units a line, polygon or circle card opens in. **Distance** also covers perimeter, radius and circumference. The two pickers offer only the units of the system the **Units** picker names, and switching **Units** between **Metric** and **Imperial** resets them to km and km², or mi and mi². The rows are listed in [Settings](/manual/settings/#units--coordinates).
+**Settings → Units & Coordinates → Measuring Tools Start With** holds the **Distance** and **Area** pickers, which set the units a line, polygon or circle card opens in. **Distance** also covers perimeter, radius and circumference. The two pickers offer only the units of the system the **Units** picker names, and switching **Units** between **Metric** and **Imperial** resets them to km and km², or mi and mi². The rows are listed in [Settings](/manual/settings/#units--coordinates).
 
 While measuring, the unit after a figure is a menu offering metric and imperial units alike, whatever **Units** says. Choosing one converts every figure of that kind on the card and does not change the defaults. Feet, miles, square feet and acres are built on the international foot of exactly 0.3048 m.
 
-Every other distance and area TopoKit shows follows the **Units** picker alone and picks its scale by size: m below 1,000 m, then km; ft below 1,000 ft, then mi; m², ha and km², or ft², acres and mi². That covers a route's distance, the :ui[Edit Vertices on Map] card, the elevation profile, a saved feature's card and the segment lengths on the map.
+Every other distance and area TopoKit shows follows the **Units** picker alone and picks its scale by size: m below 1,000 m, then km; ft below 1,000 ft, then mi; m², ha and km², or ft², acres and mi². That covers a route's distance, the **Edit Vertices on Map** card, the elevation profile, a saved feature's card and the segment lengths on the map.
 
 ## Bearing
 
@@ -46,9 +46,9 @@ A line opens in True North unless **Settings → Units & Coordinates → Bearing
 
 ## Segment lengths
 
-While you draw a line or polygon, and while you edit a saved one with :ui[Edit Vertices on Map], each segment shows its length on the map, a polygon's closing side included. A label appears only where its text fits inside the segment on screen, so zooming in shows more of them; where two would overlap, the longer segment keeps its label. Circles and routes have none: a route's would measure the straight line between two stops, not the road.
+While you draw a line or polygon, and while you edit a saved one with **Edit Vertices on Map**, each segment shows its length on the map, a polygon's closing side included. A label appears only where its text fits inside the segment on screen, so zooming in shows more of them; where two would overlap, the longer segment keeps its label. Circles and routes have none: a route's would measure the straight line between two stops, not the road.
 
-**Show Segment Lengths** in **Settings → Units & Coordinates** turns them off; the faint dots between points stay.
+**Settings → Units & Coordinates → Show Segment Lengths** turns them off; the faint dots between points stay.
 
 ## Calculation methods
 

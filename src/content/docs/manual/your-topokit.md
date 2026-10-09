@@ -15,7 +15,7 @@ Nothing is dimmed or badged. A control that needs the full app opens the **Unloc
 
 - A new project from the Projects tab or, on Mac, **File → New Project…**
 - :ui[Add Point]{icon=add-point}, :ui[Add Line]{icon=add-line}, :ui[Add Polygon]{icon=add-polygon} and :ui[Add Circle]{icon=add-circle}, however they start; **Add Point** and **Save** on a card; **Edit Vertices on Map**; opening a feature's, raster's, tile layer's or basemap's editor; a folder's style sheets
-- :ui[Add Route], **Route to Here**, and every other way of starting a route
+- :ui[Add Route], **Route here** on a card (**Route to Here** on Mac and in :ui[Layer options]{icon=ellipsis}), and every other way of starting a route
 - **Add Vector Layer…** and **Add Raster Layer…**, dragging a file in, and opening a file in TopoKit from another app
 - **Add Tile Layer…**, **Download Map Tiles…** and **Download for This Device**
 - **Download Elevation…**, the terrain download on a card, and **Elevation Profile**
@@ -97,7 +97,7 @@ It appears once on each device: when the introduction ends for someone new, and 
 ## FAQ
 
 **Can I cancel the free month without paying?**
-Yes. Cancel with **Manage Subscription** before the date the **Your TopoKit** page gives. The free month stays unlocked until that date, its row still "Free trial · Ends *date*", and Monthly never starts.
+Yes: cancel with **Manage Subscription** before the date on the page, and Monthly never starts.
 
 **The sheet says "Purchases are turned off on this device." Why?**
 In-app purchases are blocked on the device, by parental controls or by whoever manages it. TopoKit shows no plans until that changes.

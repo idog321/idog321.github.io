@@ -2,7 +2,7 @@
 title: "The Layers tab"
 description: "Organise a project's rows into folders, set the order they draw in, and move, hide, rename, copy and delete them."
 ---
-The Layers tab lists everything in the open project, in the order it draws on the map. :ios[On iPhone, the search field at the top of the tab finds rows by name as well as places.] [Search](/manual/search-and-identify/#search) covers what it finds.
+The Layers tab lists everything in the open project, in the order it draws on the map. :ios[On iPhone, the search bar at the top of the tab finds rows by name as well as places.] [Search](/manual/search-and-identify/#search) covers what it finds.
 
 ## What is in the tree
 
@@ -26,7 +26,7 @@ A new folder, drawn feature, import, raster or tile layer goes to the top of the
 
 ## Folders
 
-Choose **New Folder** from the :ui[Add Data]{icon=plus} menu in the Layers toolbar, :mac[on Mac also **Layer → New Folder** (`Cmd-Shift-N`),] or **New Subfolder** from a folder's :ui[Layer options]{icon=ellipsis} menu (its right-click menu on Mac) to make one inside it.
+Choose **New Folder** from the :ui[plus]{icon=plus} menu at the top of the Layers tab, :mac[on Mac also **Layer → New Folder** (`Cmd-Shift-N`),] or **New Subfolder** from a folder's :ui[Layer options]{icon=ellipsis} menu (its right-click menu on Mac) to make one inside it.
 
 To put rows you already have into a new folder, use **Group** in the **Select** bar, or **New Folder with “{name}”** in a row's menu. Each makes a folder called **New Group** in the place of the topmost chosen row, puts the rows inside it in their order, and opens its editor.
 
@@ -47,7 +47,7 @@ On iPhone, **Select** turns the tree into a checklist for the bar's **Hide**, **
 :::
 
 :::mac
-On Mac, **Select** in the Layers toolbar does the same. Command-click and Shift-click turn it on as well; a Shift-click range skips rows inside closed folders.
+On Mac, **Select** at the top of the Layers tab does the same. Cmd-click and Shift-click turn it on as well; a Shift-click range skips rows inside closed folders.
 
 Right-clicking a row that is part of the selection acts on every selected row. A row inside a selected folder goes with its folder when the selection is moved, copied, shared or exported.
 :::

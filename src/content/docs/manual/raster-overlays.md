@@ -117,7 +117,7 @@ Below the controls, **CRS**, an EPSG code or "Custom WKT" for a raster with none
 
 Changes made in Edit Raster are not on the undo history.
 
-**Share** in a raster's row menu sends its source file.
+**Share** in a raster's :ui[Layer options]{icon=ellipsis} menu, or its right-click menu on Mac, sends its source file.
 
 ## NoData
 

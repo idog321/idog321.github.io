@@ -8,7 +8,7 @@ Points, lines and polygons are the three geometry types a TopoKit project stores
 
 Set the point's location in one of these ways; the editor then opens on that spot.
 
-- Activate :ui[Add Point]{icon=add-point} and tap the map where you want it.
+- Tap :ui[Add Point]{icon=add-point}, then tap the map where the point goes.
 - Tap the :ui[location]{icon=location} button on the Add Point tool card to place the point on your GPS fix. It appears once TopoKit has location access, and only on that card.
 - Choose **Add Point** on the card of a search result, a typed coordinate, a [held spot](/manual/search-and-identify/#holding-a-spot-and-the-place-card), or a peak, hut or other mark on a basemap you built.
 - :mac[On Mac, right-click the map and choose **Add Point Here** on an empty spot, or **Add Point** on a basemap mark.]
@@ -25,7 +25,7 @@ Each map tap adds a vertex, drawn as a dot styled by **Settings → Features →
 
 Every change to the shape is a [step](/manual/interface/#while-a-tool-is-open), and **Undo** on the card takes back the newest. The line card's **Elevation profile** button charts the line ([A profile while you draw](/manual/elevation/#a-profile-while-you-draw)).
 
-**Cancel** on the card discards the shape and its steps without asking. Starting another tool does the same, and also puts a line or polygon open in [Edit Vertices on Map](#reshaping-a-saved-line-or-polygon) back as it was. :ios[On iPhone, nothing asks first.] :mac[On Mac, an **Unsaved Work** alert asks first when vertices are placed or moved.]
+The ✕ on the card discards the shape and its steps without asking. Starting another tool does the same, and also puts a line or polygon open in [Edit Vertices on Map](#reshaping-a-saved-line-or-polygon) back as it was. :ios[On iPhone, nothing asks first.] :mac[On Mac, an **Unsaved Work** alert asks first when vertices are placed or moved.]
 
 ### Polygons
 
@@ -59,7 +59,7 @@ Cancelling the editor returns you to the drawing with every vertex in place. The
 
 ## Reshaping a saved line or polygon
 
-Tap :ui[Edit Vertices on Map] in a line's or polygon's editor. :mac[On Mac, **Layer → Edit Vertices on Map** does the same for the line or polygon selected in the Layers tab.] The editor closes, saving what it held, and the vertices come up as dots to [move, add and delete](#moving-adding-and-deleting-vertices).
+Tap **Edit Vertices on Map** in a line's or polygon's editor. :mac[On Mac, **Layer → Edit Vertices on Map** does the same for the line or polygon selected in the Layers tab.] The editor closes, saving what it held, and the vertices come up as dots to [move, add and delete](#moving-adding-and-deleting-vertices).
 
 ![Edit Vertices on Map: a point dragged, then deleted with Delete Point, and Undo bringing it back one step at a time](/media/edit-vertices.svg)
 
@@ -77,7 +77,7 @@ On Mac, a saved feature's editor is a popover with no Cancel: clicking outside i
 On iPhone, the editor saves whenever you leave it: tap **Done**, swipe the sheet down, or go back to the Layers tab.
 :::
 
-A style is saved when you tap **Done** in its sheet, a photo when you add or delete it, and a height when **Get Elevation** returns, without waiting for the editor to close. A point's **Elevation** section fills in on its own when the spot's elevation tile is on the device, and otherwise offers :ui[Get Elevation], which downloads that one tile, 25 to 40 MB ([Elevation at a point](/manual/elevation/#elevation-at-a-point)). Changes made in an editor are not [undo steps](/manual/interface/#undo-and-redo); moving the feature to another folder is, and so is deleting it.
+A style is saved when you tap **Done** in its sheet, a photo when you add or delete it, and a height when **Get Elevation** returns, without waiting for the editor to close. A point's **Elevation** section fills in on its own when the spot's elevation tile is on the device, and otherwise offers **Get Elevation**, which downloads that one tile, 25–40 MB ([Elevation at a point](/manual/elevation/#elevation-at-a-point)). Changes made in an editor are not [undo steps](/manual/interface/#undo-and-redo); moving the feature to another folder is, and so is deleting it.
 
 ### Coordinate entry formats
 
@@ -97,7 +97,7 @@ For structured attribute capture, collect the geometry in TopoKit, export to Geo
 
 ## Photos
 
-Tap :ui[Add Photo], or the **+** tile after the last thumbnail, in an editor's Details section. :ios[On iPhone, :ui[Take Photo] adds one photo per use and stores it in the project only, not in your Photos library.] :mac[On Mac, :ui[Import from Files] takes any number of images at once.] The photo library takes at most 10 images per pass; a feature can hold more.
+Tap :ui[Add Photo], or the **+** tile after the last thumbnail, in an editor's Details section. :ios[On iPhone, **Take Photo** adds one photo per use and stores it in the project only, not in your Photos library.] :mac[On Mac, **Import from Files** takes any number of images at once.] The photo library takes at most 10 images per pass; a feature can hold more.
 
 Each image is capped on its longest edge by **Settings → Storage & iCloud → [Photo Size](/manual/settings/#storage--icloud)**, saved upright as JPEG, and stored with a thumbnail in a `Photos/` folder [beside the project file](/manual/projects-and-files/#file-locations). On a feature you are creating, photos are attached when you tap **Create**.
 
@@ -130,10 +130,10 @@ A feature's **Create New Folder** button creates the new folder at the top level
 ## FAQ
 
 **Why does the Unlock TopoKit sheet open when I draw or edit?**
-Drawing, measuring and editing are part of the full app; see [Your TopoKit](/manual/your-topokit/).
+Drawing, measuring and editing are part of the full app; see [What asks you to unlock](/manual/your-topokit/#what-asks-you-to-unlock).
 
 **Why can I reshape only part of a multi-part line or polygon?**
-Edit Vertices on Map edits a line's first part, or the outer ring of a polygon's first part; the other parts and any holes are kept as they are. An imported multi-point opens in the point editor on its first point, and a new coordinate moves that point only. To change the rest, [export](/manual/import-and-export/) the feature, edit it in your desktop GIS, and import it again.
+Edit Vertices on Map edits a line's first part, or the outer ring of a polygon's first part; the other parts and any holes are kept as they are. An imported multi-point opens in the point editor on its first point, and a new coordinate moves that point only. To change the rest, [export](/manual/import-and-export/#exporting-and-sharing) the feature, edit it in your desktop GIS, and import it again.
 
 **How precise are the stored coordinates?**
 They are stored at full double precision. The fields show decimal degrees to 6 decimal places (about 11 cm), DMS seconds 2 decimals (about 31 cm), DDM minutes 3 decimals (about 1.85 m) and UTM whole metres. Changing any field stores both latitude and longitude as the fields show them, so an edit in DDM can move a point by up to about 1 m.

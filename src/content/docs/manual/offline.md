@@ -6,11 +6,11 @@ description: "What works with no connection, and the four things to do before a 
 
 Works with no connection:
 
-- Projects on the device. iCloud syncs what you save once the connection returns.
-- Basemaps you have built, including tapping and searching their features. See [What works offline](/manual/basemaps/#what-works-offline).
+- Projects on the device. iCloud syncs what you save once the connection returns. See [Offline pinning](/manual/projects-and-files/#offline-pinning).
+- Basemaps you have built, including [tapping](/manual/search-and-identify/#what-a-tap-finds) and [searching](/manual/search-and-identify/#what-each-section-finds) their features.
 - Downloaded map tiles, inside the rectangle they were downloaded for. See [Using offline tiles](/manual/tile-layers/#using-offline-tiles).
-- Elevation tiles on the device: heights, a spot's terrain and elevation profiles.
-- Search of your layers, your basemaps and typed coordinates.
+- Elevation tiles on the device: heights, a spot's terrain and elevation profiles. See [Downloading tiles](/manual/elevation/#downloading-tiles).
+- Search of your layers, your basemaps and typed coordinates. See [What each section finds](/manual/search-and-identify/#what-each-section-finds).
 - :ios[On iPhone, track recording, which uses no network.]
 
 Needs a connection:

@@ -15,7 +15,7 @@ With access denied, the GPS tab shows **Location Access Required** with an **Ope
 :::
 
 :::mac
-On Mac, only the map's location button and **View → Show My Location** (`Cmd-L`) ask for permission. Until you grant it, the map does not centre on you when it opens, and the Add Point card offers no current-location button.
+On Mac, only the map's location button and **View → Show My Location** (`Cmd-L`) ask for permission. Until you grant it, the map does not centre on you when it opens, and the Add Point card offers no :ui[location]{icon=location} button.
 :::
 
 ## The location dot
@@ -56,7 +56,7 @@ Tapping a coordinate, an accuracy pill, the compass or a stat's value copies it:
 3. Tap the pause button for a rest break, and again to resume.
 4. Tap **Stop Recording** when the track is finished.
 
-A track records into an open project; with none open, **Record Track** asks you to open or create one from the [Projects tab](/manual/projects-and-files/). Recording tracks is part of the full app ([What asks you to unlock](/manual/your-topokit/#what-asks-you-to-unlock)).
+A track records into an open project; with none open, **Record Track** asks you to open or create one from the [Projects tab](/manual/projects-and-files/#creating-a-project). Recording tracks is part of the full app ([What asks you to unlock](/manual/your-topokit/#what-asks-you-to-unlock)).
 
 While a recording runs, paused included, the line under the buttons names the profile in use, adding "· Paused" whether you paused or auto-pause did. If 60 seconds pass without a fix being accepted, a **No recent GPS fixes** banner appears; the recording continues. Dismissing this banner or **Precise Location Off** hides it for the rest of that recording only; **Location Access Revoked** cannot be dismissed.
 

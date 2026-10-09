@@ -22,11 +22,11 @@ Every coordinate in a project is stored in WGS84 (EPSG:4326). Imports are conver
 ## Importing a file
 
 :::mac
-On Mac, choose :ui[Add Vector Layer…] from the :ui[Add Data]{icon=plus} menu in the tool sidebar, from the **+** in the Layers tab, or from the **Layer** menu, and pick one or more files. You can also drag files from Finder onto the open project's window, or open a file with TopoKit from Finder, which takes a GeoPackage only as `.gpkg`. A dropped `.mapproject` opens as a project and a dropped TIFF or PDF as a [raster overlay](/manual/raster-overlays/#importing-a-raster); any other type is ignored.
+On Mac, choose **Add Vector Layer…** from the :ui[Add Data]{icon=plus} menu in the tool sidebar, from the :ui[plus]{icon=plus} menu in the Layers tab, or from the **Layer** menu, and pick one or more files. You can also drag files from Finder onto the open project's window, or open a file with TopoKit from Finder, which takes a GeoPackage only as `.gpkg`. A dropped `.mapproject` opens as a project and a dropped TIFF or PDF as a [raster overlay](/manual/raster-overlays/#importing-a-raster); any other type is ignored.
 :::
 
 :::ios
-On iPhone, tap :ui[Add Data]{icon=plus} in the tool sidebar or the **+** in the Layers tab, choose :ui[Add Vector Layer…], and pick one or more files. A file opened in TopoKit from the Files app or another app is imported the same way, except a `.geopackage`, which only the picker reads.
+On iPhone, tap :ui[Add Data]{icon=plus} in the tool sidebar or :ui[plus]{icon=plus} in the Layers tab, choose **Add Vector Layer…**, and pick one or more files. A file opened in TopoKit from the Files app or another app is imported the same way, except a `.geopackage`, which only the picker reads.
 :::
 
 A file opened in TopoKit while no project is open waits, and is imported into the next project you open. TopoKit picks the reader from the file extension, so a GPX or KML file saved as `.xml` is refused as an unsupported format. Files picked together are imported one after another: a file that fails does not stop the rest, and the alert gives the reason for the first failure only.
@@ -57,7 +57,7 @@ On Mac, right-click a row or a selection of rows and choose **Export to File**. 
 On iPhone, tap a row's :ui[Layer options]{icon=ellipsis} button and choose **Export to File**, or tap **Select**, check the rows and tap **Export** in the action bar.
 :::
 
-**Share**, in the same row menus and action bar and in the Mac **Layer** menu, asks for a format for vector features, then opens the share sheet with the file instead of asking where to save it. Sharing a folder sends the image files of its raster overlays beside the vector file.
+**Share**, in the same menus and action bar and in the Mac **Layer** menu, asks for a format for vector features, then opens the share sheet with the file instead of asking where to save it. Sharing a folder sends the image files of its raster overlays beside the vector file.
 
 To send one feature from the map, use **Share** on its card ([The card's buttons](/manual/search-and-identify/#the-cards-buttons)).
 

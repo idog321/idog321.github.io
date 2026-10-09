@@ -13,7 +13,7 @@ Everything you add draws over Apple Maps, which the **Apple Maps** button at the
 - **Location button**: :ios[On iPhone, the first tap follows you, the second also turns the map to your heading, and the third stops following.] :mac[On Mac, each click centres the map on you once; the Mac map never follows you.]
 - **Scale bar**: under the location button, in the units set in **Settings → Units & Coordinates → Units**.
 - **Search bar**: finds your layers, basemap names, places and typed coordinates. :ios[On iPhone, it is at the top of the **Layers** tab.] :mac[On Mac, it is in the bar above the map, and `Cmd-F` puts the cursor in it.] See [Search](/manual/search-and-identify/#search).
-- **Tool card**: appears at the bottom while a tool runs and holds its live figures, a ✕ at the left that cancels, and **Save** at the right, with **Undo** between them on the line, polygon and circle cards and **Redo** beside it once a step has been undone. The Add Point card has only the ✕ and, once location access is granted, the use-my-location button, because a placed point opens its editor at once. Tapping a figure copies it, and tapping a unit opens a menu of units ([Units](/manual/measurement/#units)).
+- **Tool card**: appears at the bottom while a tool runs and holds its live figures, a ✕ at the left that cancels, and **Save** at the right, with **Undo** between them on the line, polygon and circle cards and **Redo** beside it once a step has been undone. The Add Point card has only the ✕ and, once location access is granted, the :ui[location]{icon=location} button, because a placed point opens its editor at once. Tapping a figure copies it, and tapping a unit opens a menu of units ([Units](/manual/measurement/#units)).
 - **Map credits**: Apple's logo and **Legal** are at the bottom left, and while a basemap you built with map features is on screen, a credit line under them opens the map data's copyright page ([Credit and licences](/manual/basemaps/#credit-and-licences)).
 
 Opening a project frames its visible features and rasters, and so does **Reload** on **Updated on another device** ([iCloud sync](/manual/projects-and-files/#icloud-sync)), so the view you had is lost; with nothing to frame, the map centres once per launch on your first location fix.
@@ -29,7 +29,7 @@ The sidebar holds the same eight buttons on iPhone and Mac.
 3. :ui[Add Polygon]{icon=add-polygon} draws an area with its live area and perimeter ([Polygons](/manual/points-lines-polygons/#polygons)).
 4. :ui[Add Circle]{icon=add-circle} draws a circle from a centre and an edge point, with a lock that holds the radius ([Circles](/manual/points-lines-polygons/#circles)).
 5. :ui[Add Route] draws a driving, walking or cycling route through the stops you place, following the roads from Apple Maps, and saves it as a line ([Routes](/manual/routes/)).
-6. :ui[Add Data]{icon=plus} opens a menu: **Add Vector Layer…** ([Importing a file](/manual/import-and-export/#importing-a-file)), **Add Raster Layer…** ([Importing a raster](/manual/raster-overlays/#importing-a-raster)), **Add Tile Layer…** ([Tile layers](/manual/tile-layers/)), **Download Map Tiles…** ([Offline downloads](/manual/tile-layers/#offline-downloads)) and **Download Elevation…** ([Downloading tiles](/manual/elevation/#downloading-tiles)). :ios[On iPhone, a pick from this menu opens the Layers tab and finishes there, except **Download Elevation…**, which opens its grid on the map.]
+6. :ui[Add Data]{icon=plus} opens a menu: **Add Vector Layer…** ([Importing a file](/manual/import-and-export/#importing-a-file)), **Add Raster Layer…** ([Importing a raster](/manual/raster-overlays/#importing-a-raster)), **Add Tile Layer…** ([Adding a tile layer](/manual/tile-layers/#adding-a-tile-layer)), **Download Map Tiles…** ([Offline downloads](/manual/tile-layers/#offline-downloads)) and **Download Elevation…** ([Downloading tiles](/manual/elevation/#downloading-tiles)). :ios[On iPhone, a pick from this menu opens the Layers tab and finishes there, except **Download Elevation…**, which opens its grid on the map.]
 7. :ui[Basemaps] builds an offline map with contours for an area you pick and adds it to the project ([Building a basemap](/manual/basemaps/#building-a-basemap)).
 8. **Apple Maps** moves Apple Maps to the next state with each tap or click, and its label names the current one, such as **Apple Maps (Hybrid)**.
 
@@ -42,7 +42,7 @@ TopoKit on iPhone runs in portrait only. The map fills the screen, and the sheet
 
 While a tool runs or a card is open, the sheet and the tool sidebar leave the screen. The area pickers of Download Map Tiles…, Download Elevation… and Basemaps, Edit Vertices on Map and an open elevation profile count as tools. When you finish or close it, the sheet returns as the strip whatever its height before, unless the tool carries on in a page of the Layers tab.
 
-The sheet's four tabs are :ui[Projects]{icon=folder} for your projects and their sync state ([Projects and files](/manual/projects-and-files/)), :ui[Layers]{icon=layers} for the open project's layers, the search bar and the Undo pill ([The layer tree](/manual/layer-tree/)), :ui[GPS] for position, accuracy, the compass, readouts and track recording, red while a track is recording or paused ([The GPS tab](/manual/gps-and-track-recording/#the-gps-tab)), and :ui[Settings]{icon=settings} for all ten Settings pages ([Settings](/manual/settings/)).
+The sheet's four tabs are :ui[Projects]{icon=folder} for your projects and their sync state ([Projects, saving and iCloud](/manual/projects-and-files/)), :ui[Layers]{icon=layers} for the open project's layers, the search bar and the Undo pill ([The Layers tab](/manual/layer-tree/)), :ui[GPS] for position, accuracy, the compass, readouts and track recording, red while a track is recording or paused ([The GPS tab](/manual/gps-and-track-recording/#the-gps-tab)), and :ui[Settings]{icon=settings} for all ten Settings pages ([Settings](/manual/settings/)).
 
 The tool sidebar is on the right edge by default. **Settings → Toolbar & Haptics → Position** moves it to the left ([Toolbar & Haptics](/manual/settings/#toolbar--haptics)).
 
@@ -52,14 +52,14 @@ Beyond pan, pinch, two-finger twist and a two-finger drag up or down, which tilt
 
 - **Tap a feature** to open its card ([What a tap finds](/manual/search-and-identify/#what-a-tap-finds)).
 - **Touch and hold a spot** for half a second to open a card for the ground there; it does nothing while a tool is running ([Holding a spot and the place card](/manual/search-and-identify/#holding-a-spot-and-the-place-card)).
-- **Swipe toward the screen edge, starting on the map just beside the sidebar,** to hide the sidebar. The chevron tab left at the edge brings it back ([Toolbar & Haptics](/manual/settings/#toolbar--haptics)).
+- **Swipe toward the screen edge** from the map just beside the sidebar to hide it. The chevron tab left at the edge brings it back ([Toolbar & Haptics](/manual/settings/#toolbar--haptics)).
 - **Slide a finger up or down the sidebar** to see each button's name as the finger passes it. Lifting the finger presses the button under it.
 :::
 
 :::mac
 ## Mac layout
 
-The window holds the map, the tool sidebar and one floating panel with three tabs: :ui[Projects]{icon=folder} for your projects ([Projects and files](/manual/projects-and-files/)), :ui[Layers]{icon=layers} for the open project's layers ([The layer tree](/manual/layer-tree/)), and :ui[Settings]{icon=settings} for the Settings pages as a list ([Settings](/manual/settings/)).
+The window holds the map, the tool sidebar and one floating panel with three tabs: :ui[Projects]{icon=folder} for your projects ([Projects, saving and iCloud](/manual/projects-and-files/)), :ui[Layers]{icon=layers} for the open project's layers ([The Layers tab](/manual/layer-tree/)), and :ui[Settings]{icon=settings} for the Settings pages as a list ([Settings](/manual/settings/)).
 
 TopoKit opens the panel unfolded on the Projects tab at its narrowest width, and dragging its edge widens it; the width, the fold and the tab are not kept between launches. While the pointer is over the tab bar, a chevron appears on the panel's outer edge; clicking it, or `Cmd-Ctrl-S`, folds the panel to a pull tab. The pull tab or the same key brings it back. **Settings → Appearance → Panel Position** puts the panel on the left, the default, or on the right ([Appearance](/manual/settings/#appearance)).
 
@@ -79,12 +79,12 @@ Most commands grey out while the Settings window is in front, or while a dialog,
 | Menu | Commands and keys |
 |---|---|
 | **TopoKit** | **Settings…** `Cmd-,`, in a window of its own ([The Mac Settings window](/manual/settings/#the-mac-settings-window)); **Unlock TopoKit…** and **Restore Purchases** ([Your TopoKit](/manual/your-topokit/)); **Quit** `Cmd-Q`. |
-| **File** | **New Project…** `Cmd-N`, **Open Project…** `Cmd-O`, **Open Recent**, **Close Project** `Cmd-W`, **Save** `Cmd-S`, and the open project's commands ([Projects and files](/manual/projects-and-files/)). |
+| **File** | **New Project…** `Cmd-N`, **Open Project…** `Cmd-O`, **Open Recent**, **Close Project** `Cmd-W`, **Save** `Cmd-S`, and the open project's commands ([Projects, saving and iCloud](/manual/projects-and-files/)). |
 | **Edit** | **Undo** `Cmd-Z` and **Redo** `Cmd-Shift-Z`, named for the step; **Copy**, **Paste** and **Duplicate** `Cmd-D` act on layers while the Layers list has the keyboard; **Search** `Cmd-F`. |
 | **View** | **Hide Panel** or **Show Panel** `Cmd-Ctrl-S`, **Show Projects**, **Show Layers**, **Apple Maps**, **Zoom In** `Cmd-+`, **Zoom Out** `Cmd-−`, **Zoom to Project** `Cmd-0`, **Show My Location** `Cmd-L`, **Reset to North** `Cmd-Shift-Up`. |
 | **Layer** | The **Add Data** rows and **Build Basemap…**, **New Folder** `Cmd-Shift-N`, **New Folder with Selection** `Cmd-Ctrl-N`, **Edit Layer…** `Cmd-I`, and a row's right-click commands, acting on the rows selected in the Layers tab. |
 | **Tools** | **Add Point** `Cmd-1`, **Add Line** `Cmd-2`, **Add Polygon** `Cmd-3`, **Add Circle** `Cmd-4`, **Add Route** `Cmd-5`, **Cancel Tool**. |
-| **Help** | **TopoKit Help** `Cmd-?` opens this manual and **Getting Started** its first chapter, then the feedback, rating and legal items. |
+| **Help** | **TopoKit Help** `Cmd-?` opens this manual and **Getting Started** its first chapter; **Replay Introduction** ([The first launch](/manual/getting-started/#the-first-launch)) and **What's New**; then the feedback, rating and legal items. |
 
 - `Cmd-W` saves the project and closes it, leaving the window open; if the save fails, the project stays open.
 - Closing the map window quits TopoKit, as `Cmd-Q` does. Both save the open project first, and TopoKit quits after 10 seconds whether or not the save has finished.
@@ -112,7 +112,7 @@ On Mac, **Edit → Undo** (`Cmd-Z`) and **Edit → Redo** (`Cmd-Shift-Z`) carry 
 
 ### While a tool is open
 
-Every change to the shape you are drawing is a step: a point added by a tap or pulled out of the faint dot in the middle of a segment, a point dragged, which is recorded when you let go, and a point deleted.
+Every change to the shape you are drawing is a step: a vertex added by a tap or pulled out of the faint dot in the middle of a segment, a vertex dragged, recorded when you let go, and a vertex deleted.
 
 The card's **Undo** and **Redo** act only on the drawing's own steps, and wait while a point is held. The ✕ discards the steps with the shape. **Save** replaces them with one step, **Create** and the feature's name, so one Undo afterwards removes the whole feature. :mac[On Mac, `Cmd-Z` takes back the drawing's steps first and then carries on into the project's earlier steps; the card's Undo stops at the drawing's.]
 
