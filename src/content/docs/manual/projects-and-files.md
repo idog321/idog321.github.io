@@ -101,6 +101,8 @@ If the project is open on another device, **Updated on another device** appears 
 
 TopoKit never replaces your unsaved changes with another device's version, and never saves over a version it has not loaded. If you have unsaved changes when another device's version arrives, or make one before you reload, automatic saving stops and **Project Changed on Another Device** asks what to do:
 
+![The Project Changed on Another Device alert, with what each of its four buttons does to this device's version and the other device's](/media/icloud-alert.svg)
+
 - **Merge Changes**: combines both devices' changes and saves. A **Merged** alert says how many changes were kept from each device.
 - **Split Into Two Projects**: saves your changes as a new project beside this one, named with "(my changes, Oct 8, 14:32)" added and holding copies of its rasters and photos, and loads the other device's version.
 - **Overwrite Their Version**: saves your version over theirs. Theirs is kept as the **Last save backup** until the next save.

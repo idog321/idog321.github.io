@@ -14,6 +14,8 @@ An **Offline: {name}** row's icon carries a small download arrow when the tiles 
 
 Rows higher in the tree draw on top of rows below them.
 
+![The Layers tab beside the map: dragging the line row Ridge Trail above the raster row Survey Map makes the line draw over the raster](/media/draw-order.svg)
+
 A layer that is switched on can still be missing from the map, because something above it in the tree is covering it. A tile layer covers the whole map, so anything below it in the tree is hidden everywhere; a raster only hides the area inside its own footprint, so the same layer can be hidden in one part of the map and visible in another. An offline tile layer covers only the regions you downloaded, a basemap you built covers only the area it was built for, and a layer faded below 5% opacity covers nothing at all.
 
 Points are not stacked with lines and polygons: a point always draws above every line and polygon, whatever the tree says. A point below a raster or tile layer is removed wherever that layer covers it, even a partly transparent one, and for a raster that means anywhere inside its bounding box. A line or polygon below one stays drawn and shows through as far as the layer's opacity allows.

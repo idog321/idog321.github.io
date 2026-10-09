@@ -18,6 +18,8 @@ A saved line, polygon or circle keeps none of the card's figures: tapping it ope
 
 Until the circle is locked, dragging its centre moves the centre alone and changes the radius, and a tap or a drag of the edge point resizes it ([Circles](/manual/points-lines-polygons/#circles)).
 
+![The circle tool card: unlocked, dragging the edge point resizes the circle; with the lock on, dragging the centre moves the whole circle and Radius stays at 180 m.](/media/circle-radius-lock.svg)
+
 The lock button becomes active once the circle has a radius, and locking freezes that radius. With the lock on, a tap elsewhere or a drag of the centre moves the whole circle at the fixed radius, the edge point keeping its bearing from the centre; dragging the edge point slides it round the rim. The readout and the ring both come from the radius captured at locking, so the figure does not change however far the circle moves, and unlocking leaves it as it was.
 
 Locking and unlocking are [undo steps](/manual/interface/#while-a-tool-is-open) of their own, **Lock Size** and **Unlock Size**, so Undo straight after locking unlocks the circle at the same size. A move made while locked undoes with the lock still on.

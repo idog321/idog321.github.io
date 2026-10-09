@@ -102,6 +102,8 @@ The history has no length limit. It starts empty whenever a project is created, 
 
 :::ios
 On iPhone, Undo is a pill at the bottom right of the **Layers** list, shown while there is a step to undo or redo, and an editor opened from the list covers it. The pill steps aside while rows are checked in **Select**. It is the only place for the project's Undo on iPhone, so a change made on the map is undone from the Layers tab.
+
+![The Undo pill at the bottom right of the Layers tab: Undo alone, Undo with Redo once a step has been undone, and Undo dimmed with Redo when nothing is left to undo](/media/iphone-undo-pill.svg)
 :::
 
 :::mac

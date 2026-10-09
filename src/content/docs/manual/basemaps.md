@@ -7,6 +7,8 @@ description: "Switch Apple's map, build a topographic basemap that works with no
 
 The last button of the tool sidebar picks which Apple map is drawn under your layers. Each tap or click steps :ui[Standard]{icon=map-standard} → :ui[Hybrid]{icon=map-hybrid} → :ui[Satellite]{icon=map-satellite} → :ui[Off]. :mac[On Mac, **View → Apple Maps** in the [menu bar](/manual/interface/#the-menu-bar) holds the same choices.]
 
+![Each tap of the Apple Maps button steps Standard, Hybrid, Satellite, Off, then back to Standard](/media/apple-maps-switch.svg)
+
 Hybrid is the default. The choice belongs to this device, not the project: every project opens with it, and it does not sync. **Off** stops Apple's map from loading, so your layers draw over a plain background.
 
 ## What a basemap is
@@ -29,6 +31,8 @@ Building or restyling a basemap is part of the [full app](/manual/your-topokit/#
 ### Picking the area
 
 Each tap picks a quarter of a 1° square; the quartered-square button on the tool card switches to whole squares. Picking one form clears the other in that square. Each area becomes its own basemap and row; they build square by square, north to south, then west to east.
+
+![Basemap area picker: a tap picks one quarter in quarters mode, the whole square in whole-square mode](/media/basemap-area-picker.svg)
 
 In a square's top-right corner, a green dot means its elevation data is on this device, a blue dot means its map data is, and a blue ring means map data for only some quarters. A quarter still downloads its square's whole elevation file, 25–40 MB, which the other quarters and the [elevation tools](/manual/elevation/#elevation-data-source) reuse.
 

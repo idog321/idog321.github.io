@@ -61,6 +61,8 @@ Cancelling the editor returns you to the drawing with every vertex in place. The
 
 Tap :ui[Edit Vertices on Map] in a line's or polygon's editor. :mac[On Mac, **Layer → Edit Vertices on Map** does the same for the line or polygon selected in the Layers tab.] The editor closes, saving what it held, and the vertices come up as dots to [move, add and delete](#moving-adding-and-deleting-vertices).
 
+![Edit Vertices on Map: a point dragged, then deleted with Delete Point, and Undo bringing it back one step at a time](/media/edit-vertices.svg)
+
 Each change is written into the saved feature as you make it, as its own undo step. **Done** keeps them all, so Undo afterward takes the changes back one at a time. ✕ puts the line or polygon back as it was when you opened Edit Vertices on Map and removes those steps. Every vertex you leave in place keeps its height, time and accuracy, so a recorded track keeps its timings; a vertex you move or add has none. While the card is up, its **Undo** :mac[and **Edit → Undo**] take back only this editing's changes ([While a tool is open](/manual/interface/#while-a-tool-is-open)).
 
 ## Editing a feature

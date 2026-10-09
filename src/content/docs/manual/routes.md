@@ -8,6 +8,8 @@ Add Route builds a route through up to 14 stops for driving, walking or cycling.
 
 :ui[Add Route] in the tool sidebar starts the tool. :mac[On Mac, **Tools → Add Route** (`Cmd-5`) does the same.] Both are dimmed until a project is open. Routes are part of the full app; see [Your TopoKit](/manual/your-topokit/#what-asks-you-to-unlock).
 
+![The Add Route card: a stop tapped onto the map, a second picked from search, the two reordered by dragging, and the end of the list at 14 stops reading "14 stops is the most"](/media/route-stops.svg)
+
 The tool card opens with one empty field reading **Start**. To fill it:
 
 1. **Tap the map.** Each tap adds a stop at the end of the list.

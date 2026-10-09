@@ -105,6 +105,8 @@ All six follow **Settings → Units & Coordinates → Units**, not the units the
 
 Selecting a stretch gives its own climb and descent. :mac[On Mac, drag across the chart.] :ios[On iPhone, hold a finger on the chart for a moment, then drag; a drag without the hold only moves the marker.] A stretch under 50 m is dropped.
 
+![Selecting a stretch of the elevation profile: hold, then drag across the chart, and the stretch lights on the map while the numbers switch to the stretch's own](/media/elevation-profile-stretch.svg)
+
 Pinch the chart to zoom into part of the line, down to 200 m or 2% of the line, whichever is longer. Double-click or double-tap the bar along the foot of the zoomed chart to show the whole line.
 
 ### The line above the chart
