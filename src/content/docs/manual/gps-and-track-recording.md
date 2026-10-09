@@ -1,160 +1,159 @@
 ---
-title: "GPS & Track Recording"
-description: "Live GPS readouts, recording profiles, track filtering, trip stats, and crash recovery."
+title: "GPS and recording tracks"
+description: "Location permission, the location dot, the GPS tab, recording and saving tracks, recording profiles, and recovering a recording after a crash."
 ---
-The GPS tab shows your live position, a compass, and five readings you choose, and records your route as a track you can save into the project. TopoKit filters fixes as they arrive, dropping the ones that are too inaccurate, too old, or implausibly far from the last.
+The GPS tab shows your position, a compass and five readings you choose, and records where you go as a track saved into the project.
 
-**The GPS tab is iPhone only.** The Mac records no tracks, and the GPS & Recording settings page does not appear there.
+:mac[On Mac, TopoKit records no tracks; the map shows your position and the tracks that sync in.]
 
 ## Location permissions
 
 :::ios
-On iPhone, TopoKit asks for **When In Use** location access during first-launch onboarding — tapping the **Location** row on the permissions page brings up the system prompt. If you skipped that step, the prompt appears the first time you use anything that needs your position, such as opening the GPS tab or [centring the map on your location](/manual/map-tools/#centring-on-your-location).
+On iPhone, TopoKit asks for access to your location while the app is in use, from the **Location** row of the introduction's permissions page ([The first launch](/manual/getting-started/#the-first-launch)), or, if that was skipped, the first time something needs your position, such as the GPS tab or the map's location button ([The map](/manual/interface/#the-map)).
 
-iOS also exposes a second toggle, **Precise Location**, that you can turn off independently of the permission grant. With it off, iOS returns approximate fixes with horizontal accuracy in the several-hundred-metre to 1-km range.
+With iOS's **Precise Location** switch off, iOS gives only approximate positions, and every profile except **Record All Fixes** rejects nearly every fix. A recording in that state shows a **Precise Location Off** banner whose **Settings** button opens TopoKit's page in iOS Settings.
 
-**With Precise Location off, the accuracy filter rejects nearly every fix.** An orange banner appears while you record in that state.
-
-If you deny permission or revoke it later, the GPS tab shows a full-screen prompt with a button that opens the relevant Settings pane. Revoking permission during a recording does not lose the recording: the tab stays on screen with a red banner above the controls, and Pause, **Stop Recording** and the trash button all keep working.
+With access denied, the GPS tab shows **Location Access Required** with an **Open Settings** button. Revoked during a recording, the tab shows a **Location Access Revoked** banner whose **Settings** button opens TopoKit's page in iOS Settings; the recording is not ended, and the pause button, **Stop Recording** and the trash button keep working, so the track can still be saved.
 :::
 
 :::mac
-TopoKit still uses location on the Mac for the map's show-my-location marker, for initial centring, and for placing a point where you are standing: it asks for permission the first time that is needed. macOS has no Precise Location toggle — permission is all or nothing. Macs have no magnetometer, so heading (compass) data is never available on macOS.
+On Mac, only the map's location button and **View → Show My Location** (`Cmd-L`) ask for permission. Until you grant it, the map does not centre on you when it opens, and the Add Point card offers no current-location button. TopoKit reads no compass on the Mac, so there is no heading. Tracks recorded on iPhone reach the Mac through [iCloud sync](/manual/projects-and-files/#icloud-sync).
+:::
 
-You work with recorded tracks on the Mac after they [sync into the project](/manual/projects-and-files/#icloud-sync).
+## The location dot
+
+:::ios
+On iPhone, the map marks your position with an orange dot. A pointer on the dot shows the direction the phone faces. It is sharp when the compass is accurate to 10° or better and turns rounder and fainter as accuracy drops, reaching its faintest at 45° or worse. With no usable compass reading, or with Precise Location off, the dot has no pointer. A circle around the dot shows the fix's horizontal accuracy when that is worse than 5 m; at 5 m or better no circle is drawn.
+:::
+
+:::mac
+On Mac, the map marks your position with the system's blue location dot, with no pointer.
 :::
 
 :::ios
 ## The GPS tab
 
-At the top of the tab:
+The top of the tab holds latitude and longitude in the format set under [Settings → Units & Coordinates](/manual/settings/#units--coordinates); with UTM chosen, a single UTM line replaces them. The **H** and **V** pills give horizontal and vertical accuracy, green to 5 m, yellow to 15 m, orange to 50 m and red beyond. A grey dot and `--` mean iOS is not reporting that figure, most often vertical accuracy.
 
-- **Latitude and longitude** in the app's [preferred coordinate format](/manual/ui-settings-styling/#units-and-coordinates). With the format set to UTM, the two lines are replaced by a single **Coordinates** line.
-- **Horizontal accuracy (H)** and **vertical accuracy (V)** pills, colour-coded: green ≤ 5 m, yellow ≤ 15 m, orange ≤ 50 m, red worse than 50 m. A grey dot and `--` mean the system is not reporting that figure yet, which happens most often to vertical accuracy.
+### The compass
 
-### The compass and declination
+The dial reads the iPhone's compass: it shows where the phone points, not your direction of travel, which is the **Course** reading, `--` while iOS reports none, as when you stand still.
 
-Below that is a compass dial driven by the iPhone's magnetometer. It shows where the phone is pointing, not your direction of travel, so it does not swing around to match your course once you are moving.
-
-A two-button toggle underneath, labelled **True N** and **Mag N**, switches the display between true north and magnetic north. The toggle is not local to the GPS tab: it writes the app-wide **Bearing** default, the same setting as [Settings → Measurement Defaults → Bearing](/manual/ui-settings-styling/#units-and-coordinates), so tapping **Mag N** here also changes which north the measurement tools start in.
-
-The difference between the two is the [magnetic declination](/manual/measurement/#bearing), available as one of the stat slots below. It reads as a magnitude with a direction: **E** when true bearings run larger than magnetic, **W** when they run smaller.
+**True N** and **Mag N** under the dial set the app-wide bearing, the same setting as **Settings → Units & Coordinates → Bearing**, so tapping **Mag N** here also changes which north the measuring tools start in ([Bearing](/manual/measurement/#bearing)).
 
 ### The stat slots
 
-Next to the compass are five configurable stat slots. Tap a slot's label to open the picker and choose what it reads. Nine readings are available:
+Tap one of the five slots' labels to choose its reading from nine. The defaults, top to bottom, are **Speed**, **Altitude**, **Course**, **Sunrise** and **Sunset**. **Speed**, **Altitude** and **Dist. Traveled** follow **Settings → Units & Coordinates → Units**, in km/h and metres or mph and feet.
 
-- **Speed**: your current speed, in km/h or mph.
-- **Course**: your direction of travel in degrees, which is what you are doing rather than where the phone points.
-- **Altitude**: the GPS altitude, in metres or feet.
-- **Mag Declination**: the difference between true and magnetic north at your position, as a magnitude with an **E** or **W**.
-- **Last Fix**: the time of the most recent fix, so you can tell a frozen readout from a live one.
-- **Heading Accuracy**: how far the compass reading could be off, in degrees.
-- **Dist. Traveled**: an odometer for the tab rather than for a recording. It counts from the moment you opened the GPS tab, runs whether or not you are recording, ignores fixes worse than 50 m whatever profile is set, and will not match the Distance figure in the Speed card. Leaving the tab and coming back starts it at zero.
-- **Sunrise** and **Sunset**: computed on-device from your latitude, longitude, and date. At high latitudes they read "N/A" for polar day or polar night.
+- **Mag Declination**: the difference between true and magnetic north at your position, as a magnitude with **E** or **W**.
+- **Last Fix**: the time of the newest fix, so a frozen readout can be told from a live one.
+- **Heading Accuracy**: how far the compass could be off, in degrees; the same figure that softens the location dot's pointer.
+- **Dist. Traveled**: an odometer for the tab, counting from when you open it whether or not you are recording, so it does not match the Speed card's **Distance**. It ignores fixes of 50 m or worse and any step of 500 m or more, and starts at zero each time you return to the tab.
+- **Sunrise** and **Sunset**: worked out on the phone from your position and the date, shown in the phone's time zone rather than the local one at your position; "N/A" in polar day or night.
 
-TopoKit remembers each assignment across launches. Tapping any stat copies its value, flashing "Copied" as confirmation.
+Tapping a coordinate, an accuracy pill, the compass or a stat's value copies it: a coordinate in the format shown, a stat with its unit, the compass heading from whichever north is set.
 
 ## Recording a track
 
-![The GPS tab mid-recording: the coordinate readout and accuracy pills, the compass, five stat slots, the red Stop Recording button with Pause and trash beside it, and the Speed, Time and Elevation cards with the elevation profile below](../../../assets/manual/gps-and-track-recording-recording-a-track-ios.png)
-
-1. Open the GPS tab.
+1. Open the **GPS** tab.
 2. Tap **Record Track**.
-3. Tap **Pause** for a rest break.
+3. Tap the pause button for a rest break, and again to resume.
 4. Tap **Stop Recording** when the track is finished.
 
-A track records into an open project. With none open, **Record Track** shows a brief "Open or create a project to get started" notice — open or create one from the [Projects tab](/manual/projects-and-files/) first.
+A track records into an open project; with none open, **Record Track** asks you to open or create one from the [Projects tab](/manual/projects-and-files/). Recording tracks is part of the full app, checked only when a recording starts, so a recording under way always finishes and saves ([What asks you to unlock](/manual/your-topokit/#what-asks-you-to-unlock)).
 
-While a recording runs, the button turns red, pulses, and reads **Stop Recording**. TopoKit draws a live red line on the map as fixes arrive. If 60 seconds pass without a single fix being accepted, a banner appears at the top of the tab, with a dismiss button that resets on a new recording.
+The GPS tab stays red for as long as a recording runs, paused included, and the line under the buttons names the profile in use, adding "· Paused" whether you paused or auto-pause did. If 60 seconds pass without a fix being accepted, a **No recent GPS fixes** banner appears; the recording continues and points are added once the signal returns. Dismissing this banner or **Precise Location Off** hides it for the rest of that recording only, so the next recording shows it again; **Location Access Revoked** cannot be dismissed.
 
-**Pause** holds the recording open and adds no fixes until you resume. Every resume starts a new segment in the saved track, as does any gap longer than 60 seconds. Segments are what keep the map from drawing a line across the part you did not record — the live red line is not split, so the break appears once you save.
+Every resume starts a new segment in the saved track, as does any gap longer than 60 seconds between accepted fixes, so the map draws no line across the part you did not record. The live red line on the map breaks at the same places while you record.
 
-**Stop Recording** pauses first, then raises a **Recording Paused** alert with three choices: **Save Recording** opens a name prompt, **Delete Recording** opens a confirmation, and **Cancel** resumes recording. The **trash** button next to Pause goes straight to that confirmation, which warns that the recorded points cannot be recovered.
+## Saving a track
 
-After saving, the track is added to your [layer tree](/manual/layer-tree/) as a line feature with the trip statistics attached as properties.
+**Stop Recording** pauses the recording and raises the **Recording Paused** alert, where **Cancel** resumes. **Delete Recording**, like the trash button, asks for confirmation first; deleted points cannot be recovered.
 
-### Auto-pause
+**Save Recording** opens the **Save Track** prompt, whose **Cancel** also resumes. Left blank, **Track name** names the track after the moment you tapped **Record Track**, such as "Track 2026-10-08 14:30". A recording in which no fix was accepted saves no track. The track goes into whichever project is open when you save, not the one open when you tapped **Record Track**; if the project was closed during the recording, saving creates a project named "Recorded Track" and the start date, such as "Recorded Track 2026-10-08".
 
-Auto-pause is off by default. Turn on **Auto-Pause When Stationary** in [Settings → GPS & Recording](/manual/ui-settings-styling/#gps-and-recording), and a recording pauses itself once the reported speed stays below 0.5 m/s for 30 seconds, then resumes when you move at 1.0 m/s or more. The gap between the two thresholds keeps a slow stretch from pausing and resuming repeatedly.
+The track goes to the top of the [Layers tab](/manual/layer-tree/) as a line feature, drawn in **Settings → Features → Tracks → Default Style** ([Features](/manual/settings/#features)); with **Randomize Colour** on, each track gets a random colour in place of the style's. The style is copied onto the track when it is saved, so changing it later does not restyle saved tracks.
 
-Without auto-pause, receiver drift larger than the distance filter still gets through, so a water break adds a cluster of points at one spot for as long as you stand there.
+## Background recording and recovery
 
-### Recording profiles
+A recording keeps running with the phone locked or another app in front, with the system's location indicator lit.
 
-Choose one with **Recording Profile** in [Settings → GPS & Recording](/manual/ui-settings-styling/#gps-and-recording). The profile is read when you tap **Record Track**, so a change takes effect on your next recording. Each profile bundles accuracy settings, filter thresholds, and battery behaviour:
+**Settings → Map → Keep Screen On** ([Map](/manual/settings/#map)) is off by default. **While Recording** keeps the screen on from **Record Track** until the track is saved or deleted, paused included; **Always** keeps it on whenever TopoKit is open, at a cost in battery.
 
-| Profile             | Distance filter | Accuracy threshold | Jump threshold | Max velocity    | Desired accuracy       |
-| ------------------- | --------------- | ------------------ | -------------- | --------------- | ---------------------- |
-| Strict filter       | 3 m             | ≤15 m              | 200 m          | 15 m/s (33 mph) | Best available         |
-| Balanced (default)  | 8 m             | ≤50 m              | 500 m          | 40 m/s (90 mph) | Best available         |
-| Permissive          | 20 m            | ≤150 m             | 1000 m         | 150 m/s         | Nearest 10 m           |
-| Record All Fixes    | 0 m             | no filter          | no filter      | no filter       | Best available         |
+TopoKit saves a snapshot of the track every 30 seconds or 100 metres, whichever comes first, and whenever you pause or leave the app. If iOS ends TopoKit, you force-quit it, or it crashes, the next launch raises a **Recover Track?** alert once your last project has opened, saying whether the track will go into the open project or a new one.
 
-![The GPS & Recording settings page on iPhone: the Recording Profile list with Strict filter, Balanced, Permissive and Record All Fixes, each with its accuracy and use case, and the Auto-Pause When Stationary toggle below](../../../assets/manual/gps-and-track-recording-recording-profiles-ios.png)
+**Recover** adds the track to the open project, or to a new project named like "Recovered Track 2026-10-08". **Discard** deletes it. **Not Now** leaves it for the next launch. One recording is offered per launch, newest first. No alert appears for a track already saved into the open project before TopoKit ended, for a recording whose last point is more than 30 days old, or for a recovery file TopoKit cannot read.
 
-- **Distance filter**: how far you must move before the system delivers another fix.
-- **Accuracy threshold**: the worst reported accuracy a fix can have and still be kept.
-- **Jump threshold and max velocity**: a fix has to exceed both before it counts as an impossible jump.
-- **Desired accuracy**: the battery tradeoff. Best requests the highest accuracy available; Nearest 10 m lets iOS use lower-power positioning sources.
+A recovered track is named like "Track 2026-10-08 14:30 (Recovered)" and carries `track_recovered` set to `true`. TopoKit works its statistics out again from the points; its speeds and moving time come from the distance and time between points rather than the speed each fix reported, so they can differ slightly from what the cards showed.
 
-**Balanced** accepts fixes up to 50 m, which covers how far accuracy degrades under tree canopy or among buildings. **Strict filter** suits survey and detailed cross-country work. **Permissive** suits long trips and dense cover, where coverage matters more than precision. **Record All Fixes** saves everything the system delivers, for raw data you intend to post-process yourself.
+## Recording profiles
 
-### How fixes are filtered
+The profile set at **Settings → GPS & Recording → Recording Profile** ([GPS & Recording](/manual/settings/#gps--recording)) is read when you tap **Record Track**, so a change takes effect on the next recording.
 
-Every fix from the system location service passes four checks before it is added to the track:
+| Profile | Distance filter | Accuracy threshold | Jump threshold | Max velocity | Desired accuracy |
+| --- | --- | --- | --- | --- | --- |
+| Strict filter | 3 m | ≤15 m | 200 m | 15 m/s | Best available |
+| Balanced (default) | 8 m | ≤50 m | 500 m | 40 m/s | Best available |
+| Permissive | 20 m | ≤150 m | 1000 m | 150 m/s | Nearest 10 m |
+| Record All Fixes | 0 m | none | none | none | Best available |
 
-1. **Accuracy.** Horizontal accuracy must be at least 0 and no worse than the profile's threshold. Record All Fixes skips the threshold but still rejects fixes the system flags as invalid.
-2. **Age.** Fixes older than 10 seconds are rejected on every profile, so a recording is never back-filled with cached positions after a signal gap.
-3. **Distance from the last point.** A fix closer than half the profile's distance filter is dropped without counting as a rejection. With Record All Fixes this never fires.
-4. **Impossible jumps.** A fix is rejected only when its distance from the last point exceeds the jump threshold *and* its implied speed exceeds max velocity. A car at 80 mph is kept; a large shift while you stand still is not.
+**Nearest 10 m** lets iOS use lower-power positioning, so Permissive draws less power; Strict filter and Balanced ask iOS for the same accuracy.
+
+## Auto-pause
+
+With **Settings → GPS & Recording → Auto-Pause When Stationary** on, a recording pauses itself once the reported speed stays below 0.5 m/s for 30 seconds, and resumes when you move at 1.0 m/s or more. The gap between the two thresholds keeps a slow stretch from pausing and resuming repeatedly. It is off by default.
+
+Auto-pause reads the speed each fix reports, not the change in position, and is judged before the distance filter, so standing still is noticed even though those fixes are not recorded. Without it, receiver drift larger than the distance filter still gets through, and a water break adds a cluster of points at one spot.
+
+## How fixes are filtered
+
+Every fix passes four checks:
+
+1. **Accuracy**: horizontal accuracy must be 0 or more and no worse than the profile's threshold. Record All Fixes skips the threshold but still rejects fixes iOS marks invalid.
+2. **Age**: fixes older than 10 seconds are rejected on every profile, so a recording is never back-filled with cached positions after a signal gap.
+3. **Distance**: a fix closer to the last point than half the profile's distance filter is dropped without counting as a rejection.
+4. **Impossible jumps**: a fix is rejected only when its distance from the last point exceeds the jump threshold and its implied speed exceeds max velocity. A car at 80 mph is kept; a large shift while you stand still is not.
+
+Rejections by checks 1, 2 and 4 are counted in the Time card's **Rejected** row, which appears once anything has been rejected.
 
 ## Trip statistics
 
-During recording the dashboard shows three cards:
+Three cards and a chart appear when a recording starts and stay through pauses; once the track is saved or deleted they go, and the figures remain only in the saved track's card. They follow **Settings → Units & Coordinates → Units**, as the stat slots do.
 
-- **Speed**: current, max, average, and distance travelled. The average is distance divided by moving time, so a rest break does not drag it down.
-- **Time**: total, moving time (time above 0.3 m/s, a lower bar than auto-pause's 0.5 m/s), stopped time, point count, and a **Rejected** row, which appears only once a fix has been rejected. The total excludes every second spent paused, so a recording paused for an hour reports the same total as one that was never paused.
-- **Elevation**: gain, loss, current altitude, min, and max. Gain and loss use a 2-metre noise threshold, so receiver jitter does not add tens of metres of climb to a flat walk.
+- **Speed**: current, max, average and distance. The average is distance over moving time, so a rest does not drag it down.
+- **Time**: total, moving, stopped and points. Moving time counts above 0.3 m/s, a lower bar than auto-pause's 0.5 m/s, and the total leaves out every second spent paused.
+- **Elevation**: gain, loss, current, min and max, from the GPS altitude. Gain and loss count a change only once it reaches 2 m, so receiver jitter does not add climb to a flat walk.
 
-Below the cards is a switchable chart showing either the elevation profile or the speed profile over distance. It samples at most once per 10 metres, and the interval grows with the track: about 500 samples at 5 km, and roughly 1,200 by 20 km.
+Below the cards, a chart plots **Elevation** or **Speed** over distance. These are the altitudes the GPS reported; a saved track's elevation profile charts the terrain model instead ([The elevation profile](/manual/elevation/#the-elevation-profile)).
+:::
 
-## Saving a track and its properties
+## What a saved track carries
 
-When you save a track, the [line feature](/manual/points-lines-polygons/#lines) carries these properties. Values are stored in raw SI units, so the file imports into other GIS tools without unit conversion:
+A saved track's properties hold the trip statistics, on iPhone and on any Mac it syncs to, in SI units, so a desktop GIS reads them without converting:
 
-- `track_distance`, `track_duration`, `track_moving_time`, `track_stopped_time`: metres and seconds. `track_duration` is the paused-time-excluded total the Time card shows, not the wall-clock span.
-- `track_elevation_gain`, `track_elevation_loss`, `track_min_altitude`, `track_max_altitude`.
-- `track_max_speed`, `track_avg_speed`: in m/s. `track_avg_speed` is the same moving-time average the Speed card shows.
-- `track_point_count`, `track_segment_count`, `track_avg_accuracy`.
-- `track_recorded`, the moment you tapped **Record Track**, and `track_end_time`, the timestamp of the last fix, both ISO-8601.
-- `track_profile`, which stores the profile's internal identifier rather than its menu name: `highPrecision` (Strict filter), `standard` (Balanced), `batterySaver` (Permissive), or `recordAll`.
+- `track_distance`, `track_duration`, `track_moving_time`, `track_stopped_time`: metres and seconds. `track_duration` leaves out paused time.
+- `track_elevation_gain`, `track_elevation_loss`, `track_min_altitude`, `track_max_altitude`: metres.
+- `track_max_speed`, `track_avg_speed`: metres per second; the average is over moving time.
+- `track_point_count`, `track_segment_count`, `track_avg_accuracy` (metres).
+- `track_recorded` and `track_end_time`: when **Record Track** was tapped and the time of the last fix, in ISO 8601.
+- `track_profile`: the profile's internal identifier, `highPrecision` (Strict filter), `standard` (Balanced), `batterySaver` (Permissive) or `recordAll`.
 
-A single-segment track is saved as LineString geometry; a multi-segment track is saved as [MultiLineString](/manual/vector-import-export/#gpx).
+Each point of the track also keeps its own altitude, time and horizontal accuracy, which GPX, KML, GeoJSON and GeoPackage exports can write per point ([Format by format](/manual/import-and-export/#format-by-format)). A track with one segment is saved as a LineString, and one with several as a MultiLineString.
 
-## Background recording and crash recovery
-
-Once a recording starts it keeps running in the background: you can lock the phone, switch to other apps, and the track continues. The system's location indicator stays lit the whole time.
-
-TopoKit saves a snapshot of the track to disk every 30 seconds or every 100 metres, whichever comes first, and again whenever you pause or leave the app. If iOS terminates TopoKit, you force-quit it, or it crashes, the next launch offers to recover the unsaved recording as a new track.
-
-A recovered track arrives named "(Recovered)" and keeps its points, distance, duration, altitude range and average accuracy. Elevation gain and loss, max and average speed, and moving and stopped time are not recovered, and its `track_duration` is the wall-clock span rather than the paused-time-excluded total.
+Tapping a saved track opens [its card](/manual/search-and-identify/#the-card), which reads its figures from these properties and its points. The card's **Elevation profile** charts the terrain under the track rather than the recorded altitudes, so the profile's gain and loss can differ from the card's ([The elevation profile](/manual/elevation/#the-elevation-profile)).
 
 ## FAQ
 
-**Why does my track have zigzags on a straight road?**
+:::ios
+**Why does my track zigzag on a straight road?**
+Every fix carries some position error, larger near buildings, under trees and in narrow valleys, and the filter keeps any fix within the profile's accuracy threshold.
 
-A consumer GNSS receiver's typical position error is 3–8 m in open sky, and worse near buildings, trees, or in narrow valleys. The filter accepts any fix within the profile's accuracy threshold, so small zigzags inside that margin are not glitches and are not removed. Switch to **Strict filter**, which rejects anything worse than 15 m, or move somewhere with a clearer view of the sky.
-
-**Why did my recording auto-pause when I was still moving?**
-
-Auto-pause runs only when you have turned it on; it is off by default. It reads the speed the system reports, not positional change. Starting from stationary, or shifting a few centimetres at a viewpoint, the reported speed can read as zero even while fixes arrive. Turning it off in Settings takes effect on your next recording, not the one in progress.
-
-**What's the battery impact?**
-
-Continuous recording at full GPS accuracy costs 10–15% battery per hour on an iPhone. That range is an estimate rather than a measured figure, and it moves with satellite visibility and whether the screen is on. Permissive draws less because it requests reduced accuracy. Strict filter and Balanced request the same best-available accuracy and draw about the same power: Strict just discards more of what it captures.
+**Why did my recording pause while I was still moving?**
+It reads the speed iOS reports, which can be zero at a slow start or while you shuffle a few centimetres. Turning it off takes effect on the next recording, not the one in progress.
 
 **What happens if my battery dies mid-recording?**
-
-A dead battery is treated as a crash, and the next launch offers to recover the recording. See [Background recording and crash recovery](#background-recording-and-crash-recovery).
+TopoKit treats it like a crash, and the next launch offers the track back ([Background recording and recovery](#background-recording-and-recovery)). The recovered track ends at the last snapshot, so up to 30 seconds or 100 metres before the phone died can be missing.
 :::
+
+**Why is a track's saved distance longer than a line drawn along it?**
+`track_distance` is added up fix by fix while recording, so it includes the wander of the GPS path. Retracing the same route with Add Line follows the route itself and reads shorter.
