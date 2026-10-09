@@ -1,46 +1,107 @@
 ---
-title: "Getting started"
-description: "Your first TopoKit project in five minutes: create, mark, measure, import, take offline, record, and export."
+title: "Your first project"
+description: "What the introduction sets up, then one pass through a field job: a project, a map, a point, a measured shape, offline data, a track and an export."
 ---
-Eight steps, about five minutes: create a project, pick a base map, mark a point, measure a field, import a file, take it offline, record a track, and export it all.
+## The first launch
 
+A new install opens with an introduction before the map: eight pages on iPhone, seven on Mac, which has no permissions page. It sets your appearance and units and creates your first project.
 
-## 1. Create a project
+**Customize Your Look** and **Units & Coordinates** set the same options as **Settings → Appearance** and **Settings → Units & Coordinates**, so a choice made here is changed there later. :ios[On iPhone, the toolbar side is in **Settings → Toolbar & Haptics**.] :mac[On Mac, the panel side is in **Settings → Appearance → Panel Position**.] :ios[On iPhone, **TopoKit Needs Your Permission** asks for Location, Camera and Photo Library up front. A permission skipped there or denied is turned on later in the iPhone's Settings app under TopoKit, not in TopoKit's Settings; until then GPS tracking and **Take Photo** do not work. Choosing a photo from the library needs no permission.] :mac[On Mac, each permission is asked for when a feature first needs it.]
 
-A **project** holds everything for one job: your points, lines, maps, and photos, in a single project folder you can move or back up. Open the **Projects tab** and tap the new-project button at the top. If you are signed into iCloud you will be asked where it should be stored:
+**Create Your First Project** makes a project, and that project is open when the introduction ends. The name starts as **My First Project**. **Storage** appears only when iCloud is available, and starts at **iCloud**. **Create Project** does nothing while the name is empty.
 
-- **iCloud** syncs the project to all your devices, with its photos and any rasters you chose to copy into it.
-- **Local** keeps it on this device only.
+On the story page, **Continue** steps through the scenes one at a time and goes on to the plans after the last. **Not now** on the plans page goes on without buying.
 
-Two things never sync either way: a raster you imported without copying it into the project — the default — and any tiles or elevation data you download, which are stored per device rather than inside the project. You can move a project between the two later.
+:::ios
+On iPhone, **Skip** at the top right goes from the first three pages to the permissions page, from the project page to the story without creating a project, and from the story to the plans.
+:::
 
-If you are not signed into iCloud the choice does not appear and the project is created locally. You can move a project between them later. Details in [Projects and files](/manual/projects-and-files/).
+:::mac
+On Mac, **Skip** at the top right goes from the first three pages to the project page, and from the story to the plans. Escape ends the introduction at once, and creates no project unless **Create Project** was already pressed. Right and Left arrow move between pages, and Return presses the page's main button, **Create Project** included.
+:::
 
-## 2. Pick your base map
+**Settings → Help & Feedback → Replay Introduction** runs the introduction again from its first page; its **Create Project** makes another project and opens it in place of the open one, and **Skip** keeps the one you have. :mac[On Mac, **Help → Replay Introduction** does the same.]
 
-Tap the button at the bottom of the **tool sidebar** to cycle the background map through :ui[Standard]{icon=map-standard}, :ui[Hybrid]{icon=map-hybrid} (satellite with labels):v11[ and ]:v111[, ]:ui[Satellite]{icon=map-satellite}:v111[ and :ui[No Map]{icon=map-no-map}]. Hybrid is the default. The choice applies to the whole app rather than to one project, and it is remembered between launches. All three map styles come from Apple over the network, so for a background you can rely on in the field, download a tile layer instead.
+When the introduction ends, TopoKit shows a safety notice, **Before you head out**, once on each device; [Your TopoKit](/manual/your-topokit/#the-safety-notice) has what it says.
 
-## 3. Mark your first point
+Creating a project other than the one the introduction makes, drawing and measuring, importing, tile and elevation downloads, building basemaps and recording tracks are part of the full app; see [Your TopoKit](/manual/your-topokit/#what-asks-you-to-unlock).
 
-Tap :ui[Add Point]{icon=add-point} in the tool sidebar. A card appears at the bottom of the screen: tap the map where you want the point. If you have given TopoKit location access, the card also shows an orange :ui[location]{icon=location} button that places the point where you are standing instead. Give it a name, pick a colour, attach a photo, and tap :ui[Create]{icon=check}. TopoKit autosaves everything within a couple of seconds; you never need to manually save.
+## Create a project
 
-## 4. Measure something
+A project holds everything for one job: points, lines, polygons, rasters and photos. With no project open, every button in the tool sidebar except the Apple Maps switch is dimmed, so skipping the introduction's project means making one here first. Creating another project saves the open one and replaces it with the new, empty one; the first stays in the Projects tab with everything in it.
 
-Tap :ui[Add Polygon]{icon=add-polygon} and tap out the corners of a field, lot, or clearing. The tool card at the bottom shows live **area and perimeter** as you go, as well as how many points the shape has. If you just wanted the number, tap the value to copy it and press :ui[Cancel]{icon=x}. If the shape is worth keeping, press :ui[Save] and it becomes a feature like your point. The live figures are not stored with the shape, so seeing them again means retracing it — copy the value before you press either button. The drawing tools and the measuring tools are the same tools; saving is the only difference. More in [Map tools](/manual/map-tools/) and [Measuring](/manual/measurement/).
+:::ios
+1. In the **Projects** tab, tap the new-project button at the top left.
+2. Name the project and tap **Create in iCloud** or **Create Locally**. Without iCloud the one button is **Create**.
+:::
 
-## 5. Import data
+:::mac
+1. Click the new-project button at the top of the **Projects** tab, or choose **File → New Project…** (`Cmd-N`).
+2. Name the project, choose **Local** or **iCloud** if the switch is shown, and click **Create**.
+:::
 
-Your existing data works here. TopoKit reads GPX, KML and KMZ, GeoJSON, GeoPackage, and georeferenced maps — GeoTIFF imagery and GeoPDF sheets. :mac[On Mac, drag the files onto the window.] :ios[On iPhone, pick them from the **Layers** tab's :ui[plus]{icon=plus} menu.] Each file becomes a folder in the layer tree, with every feature inside it ready to edit, style, and measure like anything you drew yourself. See [File formats at a glance](/manual/file-formats/) if you do not recognise a file.
+An iCloud project syncs to your other iPhone and Mac, and a project can move between iCloud and this device later; see [Projects, saving and iCloud](/manual/projects-and-files/#creating-a-project).
 
-## 6. Prepare for offline use
+## Choose a map
 
-Download two kinds of data before you leave Wi-Fi: **map tiles** for your work area, and **elevation tiles** if you need elevation profiles offline. Your project data works offline as long as it is on the device: local projects always are. An iCloud project is only guaranteed to be there if you **pin** it, from its row in the Projects tab — opening it once downloads it, but the system can evict an unpinned project to free space. Pinning works the same on Mac and iPhone. Details in [Tile layers](/manual/tile-layers/), [Elevation and DEMs](/manual/elevation/), and [Projects and files](/manual/projects-and-files/).
+The **Apple Maps** button at the bottom of the tool sidebar cycles :ui[Standard]{icon=map-standard}, :ui[Hybrid]{icon=map-hybrid}, :ui[Satellite]{icon=map-satellite} and :ui[Off]. Standard, Hybrid and Satellite load from Apple over the network; [Basemaps](/manual/basemaps/#the-apple-maps-switch) covers the switch in full.
 
-## 7. Record your track
+For a map that draws with no connection, build a basemap:
 
-Track recording is iPhone only. Open the **GPS tab** and tap **Record Track**. TopoKit records your path in the background, filters out GPS glitches, and saves the result as a line with distance, time, and elevation statistics attached. Details in [GPS and track recording](/manual/gps-and-track-recording/).
+1. Tap **Basemaps** in the tool sidebar, directly above the Apple Maps button.
+2. Tap **Light** or **Dark**.
+3. Tap the map to pick the area. Each tap adds a quarter of a 1° square, and you can add several.
+4. Tap **Build**. The picker closes and the areas build one after another.
 
-## 8. Export your data
+TopoKit downloads elevation and map data for the area once and builds the basemap on the device; after that it draws offline. Larger areas and your own look are in [Building a basemap](/manual/basemaps/#building-a-basemap).
 
-To export one feature or folder, right-click it on Mac, or use the :ui[More]{icon=ellipsis} menu on its row on iPhone. All four formats — GPX, KML, GeoJSON and GeoPackage — are offered whatever you picked. To export everything at once, tap **Select** in the layer tree, choose your layers, and use the **Export** button that appears. See [Vector import and export](/manual/vector-import-export/).
+## Mark a point
 
+1. Tap :ui[Add Point]{icon=add-point}.
+2. Tap the map where the point goes, or tap the orange :ui[location]{icon=location} button on the tool card to place it where you are. The button appears only once TopoKit has location access.
+3. Name the point, choose its style, add a photo if it needs one, and tap :ui[Create], which stays dimmed until the point has a name.
+
+Every other way to add a point is in [Adding a point](/manual/points-lines-polygons/#adding-a-point).
+
+## Draw and measure
+
+1. Tap :ui[Add Polygon]{icon=add-polygon} and tap the corners of the area. The tool card shows the area, perimeter and point count as you go. Drag a corner to move it, or pull out the faint dot between two corners to add one; the card's Undo steps back one change at a time, moves included.
+2. Tap a figure to copy it.
+3. Tap :ui[Save] to keep the shape once it has three corners, name it in the editor that opens, and tap :ui[Create]. To discard the shape instead, tap ✕ on the tool card.
+
+The drawing tools and the measuring tools are the same tools; saving is the only difference. :ui[Add Line]{icon=add-line} gives distance and bearing the same way. The figures are not stored with the shape, but tapping a saved polygon shows its area and perimeter again. Units and the earth model behind each figure are in [Measuring](/manual/measurement/#live-measurements).
+
+## Prepare for offline
+
+Before you leave a connection, put three kinds of map data on the device. The :ui[Add Data]{icon=plus} menu in the tool sidebar holds **Download Map Tiles…**, which saves an area of a tile layer added with **Add Tile Layer…** in the same menu, and **Download Elevation…**, which saves the terrain behind heights and elevation profiles. **Basemaps**, beside it, builds a basemap as in [Choose a map](#choose-a-map). Downloaded tiles, downloaded elevation and a basemap's map data are stored on the device, not in the project, so each device needs its own.
+
+A local project is always on the device. An iCloud project downloads when you open it, but only **Save Offline** in the :ui[Project options]{icon=ellipsis} menu on its row in the Projects tab keeps a copy on the device that iCloud cannot remove to free space. :mac[On Mac, **File → Save Offline** does the same for the open project.]
+
+The full checklist is in [Before you go offline](/manual/offline/), and pinning in [Offline pinning](/manual/projects-and-files/#offline-pinning).
+
+:::ios
+## Record a track
+
+1. Open the **GPS** tab and tap **Record Track**. Recording needs an open project.
+2. Tap **Stop Recording** when you finish, then **Save Recording**. Stopping pauses the track, and **Cancel** in that alert resumes recording.
+3. Name the track and tap **Save**. With no name the track is called Track and its start date and time; a recording with no points saves nothing.
+
+TopoKit keeps recording with the screen off or another app open, and saves the track as a line with its distance, time and elevation statistics. Profiles and auto-pause are in [Recording a track](/manual/gps-and-track-recording/#recording-a-track).
+:::
+
+## Export your data
+
+:ios[On iPhone, tap :ui[Layer options]{icon=ellipsis} on a feature's or folder's row in the **Layers** tab and choose **Export to File**.] :mac[On Mac, right-click the row and choose **Export to File**, or select it and choose **Layer → Export to File**.] Then choose GPX, KML, GeoJSON or GeoPackage and pick where the file goes; it is named after the row.
+
+Only vector features export; rasters and tile layers are left out. GPX cannot carry polygons: a folder exported as GPX leaves its polygons out, and an export of nothing but polygons is refused, so export the shape from [Draw and measure](#draw-and-measure) as KML, GeoJSON or GeoPackage. Formats and sharing are in [Exporting and sharing](/manual/import-and-export/#exporting-and-sharing).
+
+## FAQ
+
+**Do I need to save my work?**
+No. TopoKit saves the open project two seconds after your last change. :mac[On Mac, **File → Save** (`Cmd-S`) saves at once.] See [Saving](/manual/projects-and-files/#saving).
+
+**How do I bring in the GPX, KML or GeoTIFF files I already have?**
+Tap :ui[Add Data]{icon=plus} in the tool sidebar and choose **Add Vector Layer…** or **Add Raster Layer…**. :mac[On Mac, you can also drag the files onto the window.] Each vector file becomes a folder of features; a GeoTIFF or GeoPDF becomes one [raster overlay](/manual/raster-overlays/). See [Importing a file](/manual/import-and-export/#importing-a-file).
+
+**Can I record a track on my Mac?**
+No, recording is iPhone only. Record into an iCloud project and the track appears on the Mac with the rest of the project.
