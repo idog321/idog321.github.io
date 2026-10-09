@@ -20,7 +20,7 @@ A basemap is a topographic map TopoKit builds on the device for an area you pick
 1. Tap :ui[Basemaps] in the tool sidebar with a project open. :mac[On Mac, **Layer → Build Basemap…** does the same.]
 2. In the **Basemaps** chooser, tap a look: **Light**, **Dark**, or a style you saved.
 3. Tap the map to pick each area. Tap a picked area again to drop it.
-4. Tap :ui[Build] on the tool card.
+4. Tap **Build** on the tool card.
 
 Each area builds in that look with no setup page. To change anything first, tap the pencil beside a look, or **Build your own**: the tool card's button then reads **Next** and opens [the setup page](#the-setup-page).
 

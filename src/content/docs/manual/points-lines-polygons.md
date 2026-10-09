@@ -97,7 +97,7 @@ For structured attribute capture, collect the geometry in TopoKit, export to Geo
 
 ## Photos
 
-Tap :ui[Add Photo], or the **+** tile after the last thumbnail, in an editor's Details section. :ios[On iPhone, **Take Photo** adds one photo per use and stores it in the project only, not in your Photos library.] :mac[On Mac, **Import from Files** takes any number of images at once.] The photo library takes at most 10 images per pass; a feature can hold more.
+Tap **Add Photo**, or the **+** tile after the last thumbnail, in an editor's Details section. :ios[On iPhone, **Take Photo** adds one photo per use and stores it in the project only, not in your Photos library.] :mac[On Mac, **Import from Files** takes any number of images at once.] The photo library takes at most 10 images per pass; a feature can hold more.
 
 Each image is capped on its longest edge by **Settings → Storage & iCloud → [Photo Size](/manual/settings/#storage--icloud)**, saved upright as JPEG, and stored with a thumbnail in a `Photos/` folder [beside the project file](/manual/projects-and-files/#file-locations). On a feature you are creating, photos are attached when you tap **Create**.
 
