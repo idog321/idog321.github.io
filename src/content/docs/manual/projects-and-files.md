@@ -4,7 +4,7 @@ description: "Create, open, save and restore projects, sync them between iPhone 
 ---
 A project holds the points, lines, polygons and circles you draw, saved routes and tracks, raster overlays, tile layers with their download areas, the basemaps you build with their build settings, the folders of the Layers tab, each feature's style, and photos.
 
-On disk a project is a folder named by a unique ID, holding `project.mapproject` and the files it depends on, so copying, syncing or pinning the folder takes its rasters and photos with it. Downloaded offline tiles, downloaded elevation data and the map data of basemaps you build are kept outside the folder, so they stay on the device that downloaded or built them; another device builds the same basemap from the settings in the project ([Other projects and other devices](/manual/basemaps/#other-projects-and-other-devices)).
+On disk a project is a folder named by a unique ID, holding `project.mapproject` and the files it depends on, so copying, syncing or pinning the folder takes its rasters and photos with it. Downloaded offline tiles, downloaded elevation data and the map data of basemaps you build are kept outside the folder, on the device that downloaded or built them ([Other projects and other devices](/manual/basemaps/#other-projects-and-other-devices)).
 
 ```
 <projects root>/
@@ -19,26 +19,26 @@ On disk a project is a folder named by a unique ID, holding `project.mapproject`
 
 ## Creating a project
 
-Create a project with the new-project button at the top of the Projects tab. :mac[On Mac, **File → New Project…** (`Cmd-N`) does the same.] New projects are part of the full app; see [What asks you to unlock](/manual/your-topokit/#what-asks-you-to-unlock).
+Create a project with the new-project button at the top of the Projects tab. New projects are part of the full app; see [What asks you to unlock](/manual/your-topokit/#what-asks-you-to-unlock).
 
 :::ios
-On iPhone, the **New Project** alert offers **Create in iCloud**, which syncs the project to your other devices, and **Create Locally**, which keeps it on this device only. Without iCloud the alert has a single **Create** button, and the project is local.
+On iPhone, the **New Project** alert offers **Create in iCloud** and **Create Locally**. Without iCloud the alert has a single **Create** button, and the project is local.
 
 ![The New Project alert on iPhone: a name field reading Untitled Project, then Create in iCloud, Create Locally, and Cancel](../../../assets/manual/projects-new-project-ios.png)
 :::
 
 :::mac
-On Mac, the **New Project** sheet selects **Local** by default, which keeps the project on this Mac only; **iCloud** syncs it to your other devices. Without iCloud the choice is not shown, and the project is local.
+On Mac, the **New Project** sheet selects **Local** by default; the other choice is **iCloud**. Without iCloud the choice is not shown, and the project is local.
 
 ![The New Project sheet on Mac: a Project Name field, a Local / iCloud picker with Local selected, the caption Stored on this device only, and Cancel and Create buttons](../../../assets/manual/projects-new-project-mac.png)
 :::
 
 ## Opening a project
 
-**From the Projects tab.** The tab lists iCloud and local projects together, most recently saved first. Selecting a row opens it. If iCloud holds a newer version of a project already on this device, TopoKit waits up to 4 seconds for it, then opens the copy on this device. An iCloud project not yet on this device downloads first, with its progress on the row; if it has not arrived within 60 seconds, TopoKit reports "Project download timed out. Check your internet connection."
+**From the Projects tab.** The tab lists iCloud and local projects together, most recently saved first. If iCloud holds a newer version of a project already on this device, TopoKit waits up to 4 seconds for it, then opens the copy on this device. An iCloud project not yet on this device downloads first, with its progress on the row; if it has not arrived within 60 seconds, TopoKit reports "Project download timed out. Check your internet connection."
 
 :::mac
-**From Open Recent.** On Mac, **File → Open Recent** lists up to ten projects opened or created on this Mac, newest first, leaving out the one that is open. A `.mapproject` opened from Finder is not added. A project no longer on this Mac is taken off the list when you choose it; with iCloud Drive off, TopoKit keeps it on the list and asks you to turn iCloud Drive on.
+**From Open Recent.** On Mac, **File → Open Recent** lists up to ten projects opened or created on this Mac, newest first; a `.mapproject` opened from Finder is not added. A project no longer on this Mac is taken off the list when you choose it.
 :::
 
 **From a file.** Opening a `.mapproject` from another app opens that file without adding it to the Projects tab, and it cannot be renamed, moved, saved offline, restored or deleted from TopoKit. :mac[On Mac, TopoKit saves your edits back to that file and keeps its backup beside it as a `.bak`.] :ios[On iPhone, to keep a project someone sent you, use **Import Project**.]
@@ -51,13 +51,10 @@ On Mac, the **New Project** sheet selects **Local** by default, which keeps the 
 
 Each row in the Projects tab ends in a :ui[Project options]{icon=ellipsis} menu:
 
-- **Rename**: changes the name only. The folder keeps its ID, so nothing else changes.
-- **Move to iCloud** / **Move to Local Storage**: copies the whole folder, rasters and photos included, to the other location after you confirm, then removes the original. An open project is saved first and stays open; an iCloud project not on this device downloads first. Both appear only while iCloud is available. A project moved to local storage disappears from your other devices; a project moved into iCloud is pinned on this device.
-- **Save Offline** / **Remove Offline Copy**: keeps a full copy of an iCloud project on this device, or deletes it ([Offline pinning](#offline-pinning)).
-- **Restore from Backup**: puts back an earlier version. It appears only when TopoKit holds one ([Restoring an earlier version](#restoring-an-earlier-version)).
+- **Move to iCloud** / **Move to Local Storage**: copies the whole folder, rasters and photos included, to the other location after you confirm, then removes the original. An open project is saved first and stays open; an iCloud project not on this device downloads first. Both appear only while iCloud is available. A project moved to local storage disappears from your other devices.
+- **Save Offline** / **Remove Offline Copy**: pins or unpins an iCloud project ([Offline pinning](#offline-pinning)).
+- **Restore from Backup**: appears only when TopoKit holds an earlier version ([Restoring an earlier version](#restoring-an-earlier-version)).
 - **Delete**: deletes the folder with its rasters and photos, this device's backup of it and its offline copy, after you confirm. An iCloud project is deleted from your other devices too.
-- :ios[**Zoom to Project Extent**: on iPhone, fits the map to everything visible in the project. Only the open project's row has it.]
-- :mac[**Show in Finder**: on Mac, selects the project's ID-named folder.]
 
 ## Saving
 
@@ -65,35 +62,32 @@ TopoKit saves every edit two seconds after the last change, and at once when you
 
 On the project card at the top of the Projects tab, an orange dot beside the name means changes are waiting for the next save. **Not saved — changed on another device** means saving is paused ([Merging changes from another device](#merging-changes-from-another-device)). If a save fails, the card reads "Save failed:" with the reason, and an automatic save also raises **Autosave Failed**. The reason "Cloud sync is paused for this session" is not a failed save: iCloud could not be verified at launch, so the project is saved on this device and syncs the next time TopoKit opens with iCloud available.
 
-- **Save**: writes at once. :mac[On Mac, **File → Save** (`Cmd-S`) does the same.]
 - **Refresh**: reloads the open project from disk; the arrow at the top of the Projects tab only rereads the list. Unsaved changes are merged with the version on disk when nothing clashes; otherwise TopoKit asks.
-- **Close**: saves and closes the project, which is then not reopened at the next launch. If the save fails, the project stays open and an alert gives the reason. :mac[On Mac, **File → Close Project** (`Cmd-W`) does the same and leaves the window open.]
-
-Saving keeps the undo history; opening, closing, reloading or restoring a project clears it ([Undo and redo](/manual/interface/#undo-and-redo)).
+- **Close**: saves and closes the project. If the save fails, the project stays open and an alert gives the reason. :mac[On Mac, **File → Close Project** (`Cmd-W`) does the same and leaves the window open.]
 
 ### What a save does
 
-1. TopoKit checks that the file on disk is still the version this device last opened or saved. If another device's save replaced it, TopoKit merges the two when no item was edited on both devices; otherwise nothing is written, automatic saving pauses and TopoKit asks ([Merging changes from another device](#merging-changes-from-another-device)).
+1. TopoKit checks that the file on disk is still the version this device last opened or saved. If another device's save replaced it, TopoKit merges or asks before writing anything ([Merging changes from another device](#merging-changes-from-another-device)).
 2. It copies the current `project.mapproject` to a one-deep backup on this device, outside the project folder. The backup does not sync, so each device keeps its own.
 3. It writes the new version to a temporary file and swaps it into place, so the file on disk is always fully old or fully new.
 
 ## Restoring an earlier version
 
-When TopoKit holds an earlier version, the row's :ui[Project options]{icon=ellipsis} menu offers **Restore from Backup**, newest first. :mac[On Mac, **File → Restore from Backup** lists the same for the open project.]
+**Restore from Backup** lists the earlier versions TopoKit holds, newest first. :mac[On Mac, **File → Restore from Backup** lists the same for the open project.]
 
-- **Last save backup**: the version on disk before this device's latest save. Each device lists its own.
+- **Last save backup**: the version on disk before this device's latest save.
 - **Sync conflict**: a version set aside when iCloud reported a conflict ([Sync conflicts](#sync-conflicts)).
 - **Saved copy**: any other `.mapproject` in the project folder, including the copy a restore keeps.
 
-A version that does not read as a project is refused. Otherwise, once you confirm **Restore This Version?**, unsaved edits are saved first, the replaced version is kept as `project (replaced 2026-04-15 14-32-05).mapproject`, and the project reloads; restoring that copy undoes the restore. For an iCloud project, items the restore brings back reappear on your other devices, and items it removes are removed there.
+A version that does not read as a project is refused. Otherwise, once you confirm **Restore This Version?**, unsaved edits are saved first, the replaced version is kept as `project (replaced 2026-04-15 14-32-05).mapproject`, and the project reloads; restoring that copy undoes the restore.
 
 ## When a project will not open
 
 When TopoKit opens a project, it runs three checks. If the project it resumes at launch fails them, the project list opens.
 
-1. **Does it parse as JSON?** If not, TopoKit falls back to a backup: this device's, or failing that a `.bak` beside the file. If it reads, the bad file is renamed `project.mapproject.corrupt` and the project opens at the backup's version. If the backup does not read, or there is none because this device has never saved the project, TopoKit reports an error and leaves the file alone; open the project on a device that has saved it.
-2. **Does it decode into a project?** If not, TopoKit leaves the file exactly as it is and reports "TopoKit couldn't read this project. If it was saved with a newer TopoKit on another device, update TopoKit here." The backup is not swapped in, because the file may hold edits from a newer TopoKit; earlier versions are under [Restore from Backup](#restoring-an-earlier-version).
-3. **Is the layer tree consistent?** Orphaned items, broken parent-child links, cycles and duplicate IDs are repaired in place, here and before every save.
+1. If the file does not parse as JSON, TopoKit falls back to a backup: this device's, or failing that a `.bak` beside the file. If it reads, the bad file is renamed `project.mapproject.corrupt` and the project opens at the backup's version. If the backup does not read, or there is none, TopoKit reports an error and leaves the file alone; open the project on a device that has saved it.
+2. If it parses but does not decode into a project, TopoKit leaves the file exactly as it is and reports "TopoKit couldn't read this project. If it was saved with a newer TopoKit on another device, update TopoKit here." The backup is not swapped in, because the file may hold edits from a newer TopoKit; earlier versions are under [Restore from Backup](#restoring-an-earlier-version).
+3. In the layer tree, orphaned items, broken parent-child links, cycles and duplicate IDs are repaired in place, here and before every save.
 
 ## iCloud sync
 
@@ -101,7 +95,7 @@ iCloud syncs an iCloud project between your iPhone and Mac through your own iClo
 
 An iCloud project is not necessarily downloaded to the device you are holding; only [pinning](#offline-pinning) keeps it there. Photos always sync. A raster syncs only once it is copied into the project ([Rasters and iCloud](/manual/raster-overlays/#rasters-and-icloud)).
 
-When one device saves, the file uploads in the background. If the project is open on the other device, **Updated on another device** appears as soon as the new version arrives, with a **Reload** button that works like the card's **Refresh**. :ios[On iPhone, the banner is on the map.] :mac[On Mac, it is at the top of the panel, under its tabs.] If the project is closed there, opening it merges the arrived version with that device's last save: an item only that device had is kept, and an item it deleted stays deleted.
+If the project is open on another device, **Updated on another device** appears there as soon as a new version arrives, with a **Reload** button that works like the card's **Refresh**. If the project is closed there, opening it merges the arrived version with that device's last save.
 
 ### Merging changes from another device
 
@@ -137,44 +131,28 @@ If two devices save the same project while neither can reach iCloud, iCloud repo
 Update TopoKit on every device that syncs a project before editing it on more than one. While one device is still on 1.1:
 
 - TopoKit 1.1 neither checks the file before saving nor merges, so an edit there is saved over another device's version without asking.
-- A save from 1.1 drops 1.2's record of deleted items. A deletion made on 1.2 shows on the 1.1 device only once it reloads, and an edit made there to a deleted item is dropped when 1.2 merges.
+- A save from 1.1 drops 1.2's record of deleted items.
 - A save from 1.1 removes a basemap's build settings from the project. TopoKit 1.2 keeps a copy of them on each device that has opened or saved the project, and writes them back on its next save.
 
 ## Offline pinning
 
 ![The Projects tab with rows in four different states: an orange pin for a pinned project, a grey cloud with a down arrow for an iCloud project not yet downloaded, a green cloud with a check for one that is downloaded, and no icon at all for a local project](../../../assets/manual/projects-and-files-offline-pinning-ios.png)
 
-Pinning keeps a full copy of an iCloud project folder, rasters and photos included, on this device, so the project opens with no connection. The row shows a spinner while the copy is made, as it does during an upload, then an orange pin; a green cloud with a check marks a project that is downloaded but not pinned. The copy is refreshed only when this device saves the project, so another device's edits reach it once you have saved here.
+Pinning keeps a full copy of an iCloud project folder, rasters and photos included, on this device, so the project opens with no connection. The row shows a spinner while the copy is made, then an orange pin; a green cloud with a check marks a project that is downloaded but not pinned. The copy is refreshed only when this device saves the project, so another device's edits reach it once you have saved here.
 
-To pin, choose **Save Offline** from the row's :ui[Project options]{icon=ellipsis} menu. :mac[On Mac, **File → Save Offline** pins the open project.] Moving a pinned project to local storage clears its pin, since it is on the device either way, and moving a project into iCloud pins it.
+:mac[On Mac, **File → Save Offline** pins the open project.] Moving a pinned project to local storage clears its pin, and moving a project into iCloud pins it.
 
-**Keep All Projects Offline** in [Settings → Storage & iCloud](/manual/settings/#storage--icloud) pins every iCloud project in one step. Turning it off removes every offline copy, including those of projects you pinned one by one.
-
-The rest of a trip's preparation is in [Before you go offline](/manual/offline/).
+Turning off **Keep All Projects Offline** in [Settings → Storage & iCloud](/manual/settings/#storage--icloud) removes every offline copy, including those of projects you pinned one by one.
 
 ## The project file
 
-The `.mapproject` file holds the project's name and dates, the style of each feature, and a tree of every layer and folder. TopoKit writes it as a single line with its keys in alphabetical order. Indented and abridged:
-
-```json
-{
-  "createdAt": "2026-04-01T09:00:00Z",
-  "deletedNodes": { "UUID": "2026-04-17T10:05:00Z" },
-  "fileFormatVersion": 1,
-  "id": "UUID",
-  "modifiedAt": "2026-04-18T14:22:11Z",
-  "name": "My Survey",
-  "nodes": [ "UUID", { ... }, "UUID", { ... } ],
-  "rootNodeIDs": [ "UUID", ... ],
-  "treeVersion": 2
-}
-```
+The `.mapproject` file holds the project's name and dates, the style of each feature, and a tree of every layer and folder. TopoKit writes it as a single line with its keys in alphabetical order.
 
 `nodes` is a lookup keyed by item ID, written as a flat array that alternates an ID string and an item object, so search for an ID as an array element, not a key. `deletedNodes` holds each deleted item's ID with its deletion date, for [merging](#merging-changes-from-another-device).
 
-`fileFormatVersion` records the format the file was written in. TopoKit refuses a file from a newer format and asks you to update, instead of opening it partially. TopoKit 1.2 still writes format 1 ([Devices on different versions](#devices-on-different-versions)).
+`fileFormatVersion` records the format the file was written in. TopoKit 1.2 still writes format 1 ([Devices on different versions](#devices-on-different-versions)).
 
-A raster copied into the project is recorded by a path relative to the project folder, such as `Rasters/my-geotiff.tif`, so the folder can move between devices. Any other raster keeps an absolute path on this device, so another device does not find it.
+A raster copied into the project is recorded by a path relative to the project folder, such as `Rasters/my-geotiff.tif`, so the folder can move between devices; any other raster keeps an absolute path on this device.
 
 ## File locations
 
@@ -193,10 +171,7 @@ On Mac, **Show in Finder** opens the folder. The paths are:
 ## FAQ
 
 **My project isn't on my other device. Why?**
-A project created locally never syncs; move it to iCloud. Both devices need iCloud Drive, which **Settings → Storage & iCloud** shows as **Connected**.
+Move a local project to iCloud; both devices need iCloud Drive, which **Settings → Storage & iCloud** shows as **Connected**.
 
 **How do I send a project to someone?**
 **Export Project**, at the top of the Projects tab while the project is open, writes the project file alone, without rasters, photos or downloaded data; the recipient uses **Import Project**. To include rasters and photos, zip the project folder ([File locations](#file-locations)). For a colleague without TopoKit, export the layers ([Importing and exporting](/manual/import-and-export/)).
-
-**I deleted a project by accident. Can I get it back?**
-Not from TopoKit: **Delete** also removes this device's backup and the offline copy, and an iCloud project is deleted from every device. A copy you exported or backed up by hand comes back with **Import Project**.

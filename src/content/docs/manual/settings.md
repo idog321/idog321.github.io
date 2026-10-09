@@ -14,7 +14,7 @@ The window has a toolbar button for each page under a shorter name: **Map**, **F
 
 ## Your TopoKit
 
-The first row shows where your unlock stands under its title. Its page is where you unlock TopoKit, restore a purchase or redeem a code; [The Your TopoKit page](/manual/your-topokit/#the-your-topokit-page) covers each.
+The first row shows the state of your unlock under its title. Its page is where you unlock TopoKit, restore a purchase or redeem a code; [The Your TopoKit page](/manual/your-topokit/#the-your-topokit-page) covers each.
 
 ## Map
 
@@ -42,7 +42,7 @@ The **Default Style** under **Points**, **Lines** and **Polygons** is copied ont
 
 ## Appearance
 
-- **Theme**: System, Light or Dark for TopoKit's own panels and controls. It does not change exports.
+- **Theme**: applies to TopoKit's own panels and controls, and does not change exports.
 - **Panel Style**: **Solid**, the default, is opaque, so controls keep the same contrast over any map; **Blur** and **Glass** let the map show through.
 - **Solid Panel Background**: shown under **Blur** or **Glass**. :ios[On iPhone, it keeps the sheet opaque while the smaller controls stay translucent.] :mac[On Mac, it keeps the panel opaque while the smaller controls stay translucent.]
 - :mac[**Panel Position**: on Mac, which side of the window the panel is on, the left unless you change it. See [Mac layout](/manual/interface/#mac-layout).]
@@ -52,8 +52,8 @@ The **Default Style** under **Points**, **Lines** and **Polygons** is copied ont
 
 This page is on iPhone only.
 
-- **Show Toolbar**: whether the [tool sidebar](/manual/interface/#the-tool-sidebar) is drawn; turning it off hides the three rows below it too. **Basemaps** and the Apple Maps switch are on the sidebar only, so with it off neither can be reached. The card that holding the map shows still offers :ui[Add Point] as its pill, and its ruler button's menu holds :ui[Add Line], :ui[Add Polygon], :ui[Add Circle] and :ui[Add Route] ([Holding a spot and the place card](/manual/search-and-identify/#holding-a-spot-and-the-place-card)); **Add Data** opens from :ui[plus]{icon=plus} in the **Layers** tab.
-- **Position** and **Swipe to Dismiss**: the sidebar is on the right unless you change it, and a sideways swipe toward that edge tucks it away while **Swipe to Dismiss** is on.
+- **Show Toolbar**: whether the [tool sidebar](/manual/interface/#the-tool-sidebar) is drawn; turning it off hides the three rows below it too. **Basemaps** and the Apple Maps switch are on the sidebar only, so with it off neither can be reached. Holding the map still opens a card with :ui[Add Point] as its pill, and its ruler button's menu holds :ui[Add Line], :ui[Add Polygon], :ui[Add Circle] and :ui[Add Route] ([Holding a spot and the place card](/manual/search-and-identify/#holding-a-spot-and-the-place-card)); **Add Data** opens from :ui[plus]{icon=plus} in the **Layers** tab.
+- **Position** and **Swipe to Dismiss**: the sidebar is on the right unless you change it, and a sideways swipe toward that edge hides it while **Swipe to Dismiss** is on.
 - **Icon Size**: draws each button 36, 44 or 52 points across, and the sidebar sizes itself to fit, so **Small** leaves the most map and **Large** is easiest to hit with gloves. **Medium** is the default.
 - **Haptic Feedback**: on unless you change it; the one switch for every vibration in TopoKit, not only the sidebar's.
 :::
@@ -77,11 +77,11 @@ A recorded track's look is set under [Features](#features).
 - **Elevation Data**: elevation tiles downloaded for lookups and profiles. **Manage Tiles** lists them with their sizes and deletes one at a time, and **Clear Elevation Data** deletes all of them; a deleted tile downloads again the next time a lookup, a profile or a basemap needs it, so rebuilding a basemap afterwards needs a connection. Basemaps already built keep their map. See [Disk space](/manual/elevation/#disk-space).
 - **Downloaded Map Tiles**: tile-layer tiles downloaded for offline use. **Clear Downloaded Map Tiles** also deletes the map tiles of every basemap built on this device, though their size is counted under **Offline Basemaps**, and empties **Recently Viewed Tiles**. Tile layers keep their place in your projects and need their tiles downloaded again; those basemaps stay in your projects and can be rebuilt from their elevation data. See [Removing downloaded tiles](/manual/tile-layers/#removing-downloaded-tiles).
 - **Map Image Cache**: reprojected copies of your rasters. **Clear Map Image Cache** makes each raster reproject the next time it loads, at the current **Map Image Quality**, which takes a while for a large one. See [Caching](/manual/raster-overlays/#caching).
-- **Recently Viewed Tiles**: map tiles loaded from the network as you browse, kept so the map does not fetch them again; **Clear Downloaded Map Tiles** empties it.
+- **Recently Viewed Tiles**: map tiles loaded from the network as you browse, kept so the map does not fetch them again.
 
 The rest of the page:
 
-- :ios[**Large Downloads**, under **Cellular Data**: on iPhone, **Always Ask**, **Always Allow** or **Wi-Fi Only** for elevation data, offline map downloads and a basemap's map data over cellular data or a personal hotspot. **Always Ask** is the default; the question and its answers are in [Downloads over cellular data](/manual/tile-layers/#downloads-over-cellular-data).]
+- :ios[**Large Downloads**, under **Cellular Data**: on iPhone, whether elevation data, offline map downloads and a basemap's map data download over cellular data or a personal hotspot. **Always Ask** is the default; the question and its answers are in [Downloads over cellular data](/manual/tile-layers/#downloads-over-cellular-data).]
 - **iCloud**: with iCloud Drive connected, how much iCloud space your projects and map images take, and the projects folder's path, which you can select and copy. Without it, **iCloud Drive** reads **Not Available** and the group prompts you to sign in to iCloud. See [iCloud sync](/manual/projects-and-files/#icloud-sync).
 - **Keep All Projects Offline**: shown with iCloud Drive connected. Turning it on keeps a copy of every project in iCloud on this device; turning it off removes those copies. What each copy holds is in [Offline pinning](/manual/projects-and-files/#offline-pinning).
 - **Photo Size**, under **Photos**: the longest side a photo is saved at, **Medium (2048px)** unless you change it. It applies when you add a photo, so photos already in a project keep their size. See [Photos](/manual/points-lines-polygons/#photos).
@@ -92,8 +92,8 @@ The rest of the page:
 
 Under **Troubleshooting**:
 
-- **Debug Mode**: off unless you change it; shows a message the moment the app runs into an error and records detailed entries alongside the errors and warnings it keeps anyway. Errors that arrive while a message is open add to a count in it instead of opening messages of their own, and warnings are logged without one. **Send to Developer** on the message opens the same email as **Send Logs to Developer** without asking first, though the log can hold the same project names, file paths and coordinates; **Copy Details** copies the entry with its time and category.
-- **View Logs**: the entries recorded since TopoKit launched, newest first, with a filter by level, up to the latest 2,000. The saved log that **Send Logs to Developer** sends also holds earlier launches; it starts a new file at about 1 MB and keeps one earlier file, so a long session pushes its oldest entries out. **Clear** deletes both, and cannot be undone.
+- **Debug Mode**: off unless you change it; shows a message the moment the app runs into an error and records detailed entries alongside the errors and warnings it keeps anyway. Errors that arrive while a message is open add to a count in it instead of opening messages of their own, and warnings are logged without one. **Send to Developer** on the message opens the same email as **Send Logs to Developer** without asking first.
+- **View Logs**: the entries recorded since TopoKit launched, up to the latest 2,000. The saved log that **Send Logs to Developer** sends also holds earlier launches; it starts a new file at about 1 MB and keeps one earlier file, so a long session pushes its oldest entries out. **Clear** deletes both, and cannot be undone.
 - **Send Logs to Developer**: asks first, because the log can include project names, file paths and coordinates from your work, then emails the log to the developer. The attached file opens with the app version and build, the system version, :ios[the iPhone model, ]the language and region, the device's memory and its free disk space. :ios[On iPhone with no mail account set up, the share sheet opens instead.] :mac[On Mac, the log opens in a new message in your mail app; with no mail app set up, a sharing menu offers where to send the file.]
 
 After a crash, TopoKit asks at the next launch whether to send the system's crash report, whether or not **Debug Mode** is on; a force quit, a restart or a flat battery is not a crash and brings no question. **Send Report…** opens an email with the report's text in the body, so you read all of it before it goes, and the system's full report attached. The report holds the app and system versions and where the crash happened, not your projects, your locations or the log. A report you neither send nor decline is asked about again at the next launch. :ios[On iPhone, if the crash interrupted a recording, the question waits until you have answered the one about the recovered track.]
@@ -106,6 +106,3 @@ After a crash, TopoKit asks at the next launch whether to send the system's cras
 
 **Why does the Mac have fewer Settings pages?**
 The Mac records no tracks and gives no haptic feedback, so **GPS & Recording**, **Toolbar & Haptics** and the **Tracks** group of **Features** are iPhone-only, as are **Keep Screen On** and **Large Downloads**; the Mac downloads over any connection, a phone's hotspot included.
-
-**What does switching Units do to my data?**
-Nothing stored changes. Lengths and areas are worked out from the coordinates each time they are shown, in the units set at that moment.

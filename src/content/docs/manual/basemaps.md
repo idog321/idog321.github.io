@@ -9,8 +9,6 @@ The last button of the tool sidebar picks which Apple map is drawn under your la
 
 Hybrid is the default. The choice belongs to this device, not the project: every project opens with it, and it does not sync. **Off** stops Apple's map from loading, so your layers draw over a plain background.
 
-Rasters, tile layers, and basemaps with **Solid Background** on cover Apple's place names where they draw ([draw order](/manual/layer-tree/#draw-order)).
-
 ## What a basemap is
 
 A basemap is a topographic map TopoKit builds on the device for an area you pick, from downloaded satellite elevation data and map data; once built it draws with no connection. In the project it is a [tile layer](/manual/tile-layers/).
@@ -36,15 +34,15 @@ In a square's top-right corner, a green dot means its elevation data is on this 
 
 ## The setup page
 
-:ios[On iPhone, **Build Offline Basemap** opens as a page in the Layers tab.] :mac[On Mac, **Build Offline Basemap** is a floating panel; `Esc` closes it, and `Return` does not start a build.]
+:ios[On iPhone, **Build Offline Basemap** opens as a page in the Layers tab.] :mac[On Mac, **Build Offline Basemap** opens over the map; `Esc` closes it, and `Return` does not start a build.]
 
 **Change Area** returns to the map and keeps every setting and the name; closing the setup any other way discards them. **Name** applies only when one area is picked; with several, each basemap is named for its own square.
 
-**Build your own** starts from elevation colours, shaded relief with **Four Suns**, contours at the **Units** default, **Solid Background** off, and no map features. The build button stays grey until relief, a coloured ground or contours is on.
+The build button stays grey until relief, a coloured ground or contours is on.
 
 ### Ground and relief
 
-The first control on the **Basemap** card picks the coloured layer under the relief, **Elevation**, **Slope Angle** or **None**.
+The first control on the **Basemap** card picks the coloured layer under the relief.
 
 - **Solid Background**: on, the basemap covers Apple Maps where it draws, on the ground colour set by **Background**; off, the relief and colours shade Apple's map and its names stay on top ([draw order](/manual/layer-tree/#draw-order)).
 - **Elevation Colors**: **Color Range** on **Automatic** matches a basemap built nearby so neighbours share one scale, and an edit keeps the range the basemap was built with; **This area only** can change colour at the shared edge.
@@ -58,18 +56,13 @@ The strength sliders stop at 15%; switch a layer off to remove it.
 
 ### Map features
 
-Nine switches choose what the map data draws; [Reading the map](#reading-the-map) lists what each one shows. Turning on any one downloads the map data for all nine in that area, a few megabytes, so the others can be turned on later with no connection. With none on, the basemap is terrain only and downloads no map data.
+Nine switches choose what the map data draws; [Reading the map](#reading-the-map) lists what each one shows. Turning on any one downloads the map data for all nine in that area, a few megabytes, so the others can be turned on later with no connection.
 
 A colour left on **Default** follows TopoKit's colour for that feature, so an app update can change it; a swatch or custom colour stays. A weight set to **Off** removes that kind of line; for roads, trails and tracks it removes their names too, while river names stay. **Run colours** on **Automatic** uses North American difficulty colours for a basemap centred between 170° W and 30° W, European everywhere else.
 
 ### Labels
 
-Each switch on the **Labels** card redraws the map at once, with no rebuild.
-
-- **Place names** covers settlements, localities, neighbourhoods and bays.
-- **Park & water names** covers area names, capes and dams.
-- **Peaks & symbols** covers every mark drawn with an icon.
-- **Road & river names** needs the map feature that draws the line as well.
+Each switch on the **Labels** card redraws the map at once, with no rebuild; the last column of [Marks and names](#marks-and-names) shows what each one covers. **Road & river names** also needs the map feature that draws the line.
 
 ### Estimates and saved styles
 
@@ -101,7 +94,7 @@ A new basemap goes to the bottom of the tree, so it draws under everything else,
 
 :ios[On iPhone, tap the basemap's row. The page **Edit Offline Basemap** has no **Save**: leaving it keeps every change, the name included.] :mac[On Mac, click the row, or choose **Layer → Edit Layer…** (`Cmd-I`). Closing the popover **Edit Offline Basemap** keeps every change.]
 
-Every change applies at once, and the map keeps drawing the previous version of a layer until the new one is made:
+Every change is kept as you make it, and the map keeps drawing the previous version of a layer until the new one is made:
 
 - Colours, weights, the Labels switches, and map features whose data is on the device: drawn at once, nothing to make.
 - **Solid Background** and its colour, the strengths, and a look that recombines ground already made: drawn at once, finished when you close the editor.
@@ -110,7 +103,7 @@ Every change applies at once, and the map keeps drawing the previous version of 
 
 Until it is made, the section holding that change shows ⏱ before its summary.
 
-The **Elevation Colours**, **Slope Angle** and **Contour Lines** sections appear only while their layer is on; to add contours, switch on **Contour Lines** under **Terrain**.
+To add contours, switch on **Contour Lines** under **Terrain**.
 
 An edit never deletes ground already made. **Undo Changes**, in the footer while a change waits, returns the basemap to how it was when you opened the editor; basemap edits are not on the app's undo history.
 
@@ -142,13 +135,11 @@ While a basemap with map features is visible in the Layers tab and its area is i
 
 [Tapping a basemap](/manual/search-and-identify/#what-a-tap-finds) and [searching its names](/manual/search-and-identify/#what-each-section-finds) work with no connection.
 
-A connection is needed to build when the square's elevation data or map data is not on the device, to refresh map data, and for Apple Maps. [Before you go offline](/manual/offline/) has the steps for a trip.
-
 ## Reading the map
 
 Everything in these tables except contours comes with the map data, so it needs at least one map feature on. Colours are the Light look's; Dark and the colour rows change them.
 
-A mark with no name is drawn at two-thirds size, except springs, hot springs, geysers, drinking water, toilets and information. When labels collide, settlements win, then area names and named huts, hospitals, ranger stations and lookouts, then named peaks with a height, then other named marks. In the marks table, the first column is the word the [card](/manual/search-and-identify/#what-a-tap-finds) shows when you tap. Of the lines, only trails, tracks, ski runs, lifts, and named roads, rivers and ferry routes answer a tap.
+A mark with no name is drawn at two-thirds size, except springs, hot springs, geysers, drinking water, toilets and information. When labels collide, settlements win, then area names and named huts, hospitals, ranger stations and lookouts, then named peaks with a height, then other named marks. Of the lines, only trails, tracks, ski runs, lifts, and named roads, rivers and ferry routes answer a tap.
 
 ### Marks and names
 
@@ -194,9 +185,6 @@ A mark with no name is drawn at two-thirds size, except springs, hot springs, ge
 | Contour | Brown; every fifth heavier, with its height | Contour Lines; Contour numbers |
 
 ## FAQ
-
-**Why are there no peaks or place names on my basemap?**
-It has no map features, as Build your own starts. Turn one on in its editor; the map data downloads when you close it.
 
 **Why does the shading go soft when I zoom in close?**
 Relief, colours and slope are made at one level of detail from 30 m elevation samples and enlarged past it. Two levels past it they ease toward the **Background** colour; with **Solid Background** off there is nothing to ease toward. Contours, features and names are drawn as lines and stay sharp.

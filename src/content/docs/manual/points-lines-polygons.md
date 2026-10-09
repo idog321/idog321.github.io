@@ -2,44 +2,40 @@
 title: "Points, lines, polygons and circles"
 description: "Adding, reshaping and editing points, lines, polygons and circles, with their photos, elevation, style and folders."
 ---
-Points, lines and polygons are the three geometry types a TopoKit project stores. Circles are a fourth tool, not a fourth type: a circle is saved as a polygon.
-
-Every vector feature you draw or import is stored in WGS84 (EPSG:4326).
+Points, lines and polygons are the three geometry types a TopoKit project stores.
 
 ## Adding a point
 
-You place the point first, then the editor opens on that spot for the name and details. Set the location in one of these ways:
+Set the point's location in one of these ways; the editor then opens on that spot.
 
-- **Tap the map.** Activate :ui[Add Point]{icon=add-point} and tap where you want it.
-- **Use your current location.** Tap the :ui[location]{icon=location} button on the Add Point tool card to place the point on your GPS fix. It appears once TopoKit has location access, and only on that card.
-- **Use an info card.** Choose **Add Point** on the card of a search result, a typed coordinate, a [held spot](/manual/search-and-identify/#holding-a-spot-and-the-place-card), or a peak, hut or other mark on a basemap you built. A place from search or a named mark fills in the new point's name, and a mark with a height fills in its elevation.
-- :mac[**Right-click the map.** Choose **Add Point Here** on an empty spot, or **Add Point** on a basemap mark. Without a project open, an empty spot's menu offers only **Info** and the copy items.]
+- Activate :ui[Add Point]{icon=add-point} and tap the map where you want it.
+- Tap the :ui[location]{icon=location} button on the Add Point tool card to place the point on your GPS fix. It appears once TopoKit has location access, and only on that card.
+- Choose **Add Point** on the card of a search result, a typed coordinate, a [held spot](/manual/search-and-identify/#holding-a-spot-and-the-place-card), or a peak, hut or other mark on a basemap you built.
+- :mac[On Mac, right-click the map and choose **Add Point Here** on an empty spot, or **Add Point** on a basemap mark.]
 
-However you started, the tool closes once the point is placed; the coordinate stays editable in the editor, and nothing is saved until **Create**, which waits for a name.
+The tool closes once the point is placed; the coordinate stays editable in the editor, and nothing is saved until **Create**, which waits for a name.
 
-:ios[On iPhone, a point placed from your location also stores the GPS reading: its accuracy, timestamp and original lat/lon, plus altitude, speed and course when the fix includes them. A saved point you move keeps the original lat/lon and gains **Gps Location Edited** in its Attributes; moving it back onto the reading removes it.]
+:ios[On iPhone, a point placed from your location also stores the GPS reading in its **Attributes**: its accuracy, timestamp and original lat/lon, plus altitude, speed and course when the fix includes them. A saved point you move keeps the original lat/lon and gains **Gps Location Edited** in its Attributes; moving it back onto the reading removes it.]
 
 ## Adding lines, polygons and circles
 
-Choose :ui[Add Line]{icon=add-line}, :ui[Add Polygon]{icon=add-polygon} or :ui[Add Circle]{icon=add-circle} in the tool sidebar; they are greyed out until a project is open. The [tool card](/manual/interface/#the-map) shows the shape's [live figures](/manual/measurement/).
+Choose :ui[Add Line]{icon=add-line}, :ui[Add Polygon]{icon=add-polygon} or :ui[Add Circle]{icon=add-circle} in the tool sidebar; they are greyed out until a project is open. :mac[On Mac, the **Tools** menu starts each one from the keyboard ([The menu bar](/manual/interface/#the-menu-bar)).] The [tool card](/manual/interface/#the-map) shows the shape's [live figures](/manual/measurement/).
 
 Each map tap adds a vertex, drawn as a dot styled by **Settings → Features → [Vertex Style](/manual/settings/#features)**. The vertex you touched last is the **active** one, marked by a ring, and new vertices insert after it, so you can tap back to an earlier vertex and add mid-line without starting over.
 
-Every change to the shape is a [step](/manual/interface/#while-a-tool-is-open): **Undo** on the card takes back the newest, and **Redo** appears beside it once something has been undone. The line card's **Elevation profile** button charts the line ([A profile while you draw](/manual/elevation/#a-profile-while-you-draw)).
-
-The **Start here** menu on a [held spot's](/manual/search-and-identify/#holding-a-spot-and-the-place-card) or a typed coordinate's card starts a line, polygon, circle or route with its first vertex, or a circle's centre, on that spot. :mac[On Mac, the right-click menu on an empty spot does the same.]
+Every change to the shape is a [step](/manual/interface/#while-a-tool-is-open), and **Undo** on the card takes back the newest. The line card's **Elevation profile** button charts the line ([A profile while you draw](/manual/elevation/#a-profile-while-you-draw)).
 
 **Cancel** on the card discards the shape and its steps without asking. Starting another tool does the same, and also puts a line or polygon open in [Edit Vertices on Map](#reshaping-a-saved-line-or-polygon) back as it was. :ios[On iPhone, nothing asks first.] :mac[On Mac, an **Unsaved Work** alert asks first when vertices are placed or moved.]
 
 ### Polygons
 
-A polygon needs **3** vertices, and below that it draws as an open outline. Its card shows [area and perimeter](/manual/measurement/#area-and-perimeter) instead of length and has no elevation profile button.
+A polygon needs **3** vertices, and below that it draws as an open outline. Its card shows [area and perimeter](/manual/measurement/#area-and-perimeter) instead of length.
 
 TopoKit closes the ring, so there is no need to tap the first corner again.
 
 ### Circles
 
-The first tap places the centre and the second sets the edge; each tap after that resizes the circle. The lock button on the card keeps the radius, so tapping or dragging moves the whole circle ([Circles and the radius lock](/manual/measurement/#circles-and-the-radius-lock)). A circle has no faint dots, no **Delete Point** and no segment lengths.
+The first tap places the centre and the second sets the edge; each tap after that resizes the circle. The lock button on the card keeps the radius ([Circles and the radius lock](/manual/measurement/#circles-and-the-radius-lock)). A circle has no faint dots, no **Delete Point** and no segment lengths.
 
 On save, the circle is stored as a polygon feature: a 64-vertex ring, placed on the WGS84 ellipsoid at the radius the card shows. **Save** opens the polygon editor, and from then on the feature is a polygon in every respect, export included.
 
@@ -55,13 +51,11 @@ In Edit Vertices on Map a line keeps at least two vertices and a polygon three; 
 
 ## Finishing a shape
 
-**Save** on the card turns on at two vertices for a line or circle and three for a polygon, and opens the editor:
+**Save** on the card turns on at two vertices for a line or circle and three for a polygon, and opens the editor, where **Create** waits for a name.
 
-- **Details**: the name, which **Create** waits for, the description, photos, the folder and **Create New Folder**.
-- **Style**: a preview and **Edit**, which opens the [style sheet](#styling-a-feature).
-- **Vertices**: one row per vertex, collapsed when the shape has 20 or more and shown 20 at a time under **Show more** once expanded. Each coordinate is editable in place. :ios[On iPhone, **Edit** in the list's header reorders and deletes rows, down to 2 vertices for a line and 3 for a polygon.]
+Its **Vertices** section has one row per vertex, collapsed when the shape has 20 or more and shown 20 at a time under **Show more** once expanded. Each coordinate is editable in place. :ios[On iPhone, **Edit** in the list's header reorders and deletes rows, down to 2 vertices for a line and 3 for a polygon.]
 
-**Create** saves the shape and closes the tool. Cancelling the editor returns you to the drawing with every vertex in place. Once saved, the drawing's steps give way to a single step, so one Undo removes the new feature ([Undo and redo](/manual/interface/#undo-and-redo)). The Vertices list is in the creation editor only; a saved shape is reshaped on the map.
+Cancelling the editor returns you to the drawing with every vertex in place. The Vertices list is in the creation editor only; a saved shape is reshaped on the map.
 
 ## Reshaping a saved line or polygon
 
@@ -71,17 +65,17 @@ Each change is written into the saved feature as you make it, as its own undo st
 
 ## Editing a feature
 
-Open a saved feature from its Layers tab row, or with **Edit** on its card on the map. This editor adds a read-only **Attributes** list, a delete button at the foot, a point's [Elevation](#elevation) section, :ui[Edit Vertices on Map] for lines and polygons, and :ui[Elevation Profile] for lines, which opens [the elevation profile](/manual/elevation/#the-elevation-profile).
+Open a saved feature from its Layers tab row, or with **Edit** on its card on the map.
 
 :::mac
-On Mac, the popover has no Cancel: clicking outside it saves.
+On Mac, a saved feature's editor is a popover with no Cancel: clicking outside it saves. A new feature's editor is a sheet.
 :::
 
 :::ios
 On iPhone, the editor saves whenever you leave it: tap **Done**, swipe the sheet down, or go back to the Layers tab.
 :::
 
-A style is saved when you tap **Done** in its sheet, a photo when you add or delete it, and a height when **Get Elevation** returns, without waiting for the editor to close. Changes made in an editor are not [undo steps](/manual/interface/#undo-and-redo); moving the feature to another folder is, and so is deleting it.
+A style is saved when you tap **Done** in its sheet, a photo when you add or delete it, and a height when **Get Elevation** returns, without waiting for the editor to close. A point's **Elevation** section fills in on its own when the spot's elevation tile is on the device, and otherwise offers :ui[Get Elevation], which downloads that one tile, 25 to 40 MB ([Elevation at a point](/manual/elevation/#elevation-at-a-point)). Changes made in an editor are not [undo steps](/manual/interface/#undo-and-redo); moving the feature to another folder is, and so is deleting it.
 
 ### Coordinate entry formats
 
@@ -95,27 +89,23 @@ An entry that does not parse or is out of range shows the reason in red, and the
 
 TopoKit has no attribute editor: a feature you draw carries a name and a description, and no custom fields.
 
-The **Attributes** list shows the values TopoKit wrote, such as a recorded track's statistics, and every attribute that came with an imported feature. Names show in title case with their words split, so `track_distance` reads **Track Distance**, and sorted alphabetically rather than in the file's order; empty values are left out, and a list of more than five opens collapsed. :ios[On iPhone, it also holds the GPS reading of a point placed from your location.] Imported values are written back out on [export](/manual/import-and-export/#what-an-export-contains), and [search](/manual/search-and-identify/#search) matches them.
+The **Attributes** list shows the values TopoKit wrote, such as a recorded track's statistics, and every attribute that came with an imported feature. Names show in title case with their words split, so `track_distance` reads **Track Distance**, and sorted alphabetically rather than in the file's order; empty values are left out, and a list of more than five opens collapsed. Imported values are written back out on [export](/manual/import-and-export/#what-an-export-contains), and [search](/manual/search-and-identify/#search) matches them.
 
 For structured attribute capture, collect the geometry in TopoKit, export to GeoPackage, and attribute it in your desktop GIS.
 
 ## Photos
 
-Tap :ui[Add Photo], or the **+** tile after the last thumbnail, in an editor's Details section. :ios[On iPhone, the picker offers :ui[Choose from Library] and :ui[Take Photo]. **Take Photo** adds one photo per use and stores it in the project only, not in your Photos library.] :mac[On Mac, it offers :ui[Import from Files], which takes any number of images at once, and **Choose from Photo Library**.] The photo library takes at most 10 images per pass; a feature can hold more.
+Tap :ui[Add Photo], or the **+** tile after the last thumbnail, in an editor's Details section. :ios[On iPhone, :ui[Take Photo] adds one photo per use and stores it in the project only, not in your Photos library.] :mac[On Mac, :ui[Import from Files] takes any number of images at once.] The photo library takes at most 10 images per pass; a feature can hold more.
 
 Each image is capped on its longest edge by **Settings → Storage & iCloud → [Photo Size](/manual/settings/#storage--icloud)**, saved upright as JPEG, and stored with a thumbnail in a `Photos/` folder [beside the project file](/manual/projects-and-files/#file-locations). On a feature you are creating, photos are attached when you tap **Create**.
 
-Tapping a thumbnail, in the editor or on the feature's card, opens a viewer that pages through every photo on the feature. :ios[On iPhone, its :ui[More]{icon=ellipsis} menu holds **Save to Photos** and **Delete**.] :mac[On Mac, the Left and Right arrow keys page through them, and its :ui[More]{icon=ellipsis} menu holds **Save to Disk** and **Delete**.] The viewer's **Delete** asks first; the **Delete** in a thumbnail's own menu in the editor does not. :mac[On Mac, a thumbnail's menu also holds **Save to Disk**.] A deleted photo's file is removed from the project, and Undo does not bring it back.
+Tapping a thumbnail, in the editor or on the feature's card, opens a viewer that pages through every photo on the feature. :mac[On Mac, the Left and Right arrow keys page through them.] **Delete** in the viewer's :ui[More]{icon=ellipsis} menu asks first; **Delete** in a thumbnail's own menu in the editor does not. A deleted photo's file is removed from the project, and Undo does not bring it back.
 
 A photo shows an exclamation mark in place of its thumbnail, and **Photo unavailable** in the viewer, when its file is missing, as after a project is moved by hand without its `Photos/` folder. Put the folder back beside the project file and open the feature again. Over iCloud Drive, a feature opened before its photos arrive shows them unavailable until you reopen it. A [pasted or duplicated](/manual/layer-tree/#copying-pasting-and-duplicating) feature has no photos.
 
-## Elevation
-
-A saved point's **Elevation** section shows its height. If the elevation tile for the spot is on the device, the editor fills the height in when it opens; if not, :ui[Get Elevation] downloads that one tile, 25 to 40 MB, only when tapped. The height is saved into the point as soon as it arrives. A point added from a basemap peak shows the peak's height here in place of the button. Where no height exists is in [Elevation at a point](/manual/elevation/#elevation-at-a-point).
-
 ## Styling a feature
 
-**Edit** in the editor's **Style** row opens **Customize Pin**, **Customize Line** or **Customize Polygon**. A feature you draw starts with the **Default Style** for its kind in **Settings → Features**, copied when the feature is made, so changing a default later leaves existing features as they are. Imported lines and polygons start from the **Imported Files** styles on the same page, and imported points from the points' **Default Style** ([Features](/manual/settings/#features)).
+**Edit** in the editor's **Style** row opens **Customize Pin**, **Customize Line** or **Customize Polygon**. A feature you draw starts with the **Default Style** for its kind in **Settings → Features**, copied when the feature is made, so changing a default later leaves existing features as they are.
 
 - **Pins**: the small dot first in the **General** symbol category is the no-symbol choice, and a pin with no symbol shows a disc in a shade of its own colour. **Custom icon colour** appears only once a symbol is set. The symbol picker opens on **Recently Used**, your last eight symbols, and on **General** until you have used one.
 - **Polygons**: the first stroke swatch, marked with a link, copies the current fill colour to the stroke once, so a fill changed afterwards leaves the stroke as it was. Stroke and fill opacities both run from 0.0, so a polygon can be outline only or fill only; a line's opacity stops at 0.1. Fill opacity starts at 0.15 for polygons you draw and 0.25 for imported ones.
@@ -125,10 +115,7 @@ To restyle every feature of a kind in a folder at once, [style the folder](/manu
 
 ## Points on the map
 
-Each point's name prints under its pin, as **Settings → Features → [Pin Names](/manual/settings/#features)** sets:
-
-- **Always**, the default, leaves out any name that would overlap another pin, a cluster bubble or another name, so zooming in prints more of them. No more than 150 names print at once, and with more than 600 single pins on screen, pins inside bubbles not counted, only the picked pin's name prints.
-- **Only When Picked** prints the picked pin's name alone.
+Each point's name prints under its pin, as **Settings → Features → [Pin Names](/manual/settings/#features)** sets. **Always**, the default, leaves out any name that would overlap another pin, a cluster bubble or another name, so zooming in prints more of them. No more than 150 names print at once, and with more than 600 single pins on screen, pins inside bubbles not counted, only the picked pin's name prints.
 
 A name prints on at most two lines, cut at an ellipsis; a point with no name, or named Untitled Point, prints none. A picked pin draws at one and a half times its size, and its name prints in bold whatever it overlaps. :ios[On iPhone, names follow the system text size, up to 22 pt.]
 
@@ -136,19 +123,7 @@ With **Point Clustering** on, the default, pins that overlap merge into one roun
 
 ## Moving features between folders
 
-In a feature's editor, change **Folder** and close the editor, or tap **Create** for a new feature. The Layers tab has its own ways of [moving rows](/manual/layer-tree/#moving-rows).
-
-A feature's **Create New Folder** button creates the new folder at the top level of the tree at once, so cancelling the editor afterwards leaves it there empty, and makes it the feature's folder: a feature you are creating saves into it, and a feature you are editing moves into it when the editor closes. The folder picker lists only folders that directly hold a feature of the same type, so a new or empty folder, or one holding only subfolders, is not in its list. To file a feature into a folder made in the Layers tab, move it there from the Layers tab.
-
-## Platform differences
-
-:::ios
-On iPhone, an editor opened from the map is a sheet that opens at half height and drags up to full height; one opened from the Layers tab replaces the list inside the tab. The editors that **Save** opens are full-height sheets.
-:::
-
-:::mac
-On Mac, a saved feature's editor is a popover and a new feature's editor is a sheet. The **Tools** menu starts each drawing tool from the keyboard; its shortcuts are listed in [The menu bar](/manual/interface/#the-menu-bar).
-:::
+A feature's **Create New Folder** button creates the new folder at the top level of the tree at once, so cancelling the editor afterwards leaves it there empty, and makes it the feature's folder: a feature you are creating saves into it, and a feature you are editing moves into it when the editor closes. The folder picker lists only folders that directly hold a feature of the same type, so a new or empty folder, or one holding only subfolders, is not in its list. The Layers tab has its own ways of [moving rows](/manual/layer-tree/#moving-rows).
 
 ## FAQ
 
@@ -159,7 +134,7 @@ Drawing, measuring and editing are part of the full app; see [Your TopoKit](/man
 Edit Vertices on Map edits a line's first part, or the outer ring of a polygon's first part; the other parts and any holes are kept as they are. An imported multi-point opens in the point editor on its first point, and a new coordinate moves that point only. To change the rest, [export](/manual/import-and-export/) the feature, edit it in your desktop GIS, and import it again.
 
 **How precise are the stored coordinates?**
-They are stored at full double precision. The fields show decimal degrees to 6 decimal places (about 11 cm), DMS seconds 2 decimals (about 31 cm), DDM minutes 3 decimals (about 1.85 m) and UTM whole metres. Changing any field stores both latitude and longitude as the fields show them, so an edit in DDM can move a point by up to about 1 m. Changing the **Coordinate Format** setting never rewrites a stored coordinate.
+They are stored at full double precision. The fields show decimal degrees to 6 decimal places (about 11 cm), DMS seconds 2 decimals (about 31 cm), DDM minutes 3 decimals (about 1.85 m) and UTM whole metres. Changing any field stores both latitude and longitude as the fields show them, so an edit in DDM can move a point by up to about 1 m.
 
 **Can I make a feature use the default style again?**
-Not with one tap: a feature keeps the style it was saved with, and the sheets have no reset. Open the **Default Style** you want in **Settings → Features**, save it with **Save Current** under **My Presets**, then apply that preset in the feature's own sheet.
+Not with one tap: the style sheets have no reset. Open the **Default Style** you want in **Settings → Features**, save it with **Save Current** under **My Presets**, then apply that preset in the feature's own sheet.
