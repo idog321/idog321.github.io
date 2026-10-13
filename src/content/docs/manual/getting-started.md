@@ -130,6 +130,10 @@ TopoKit keeps recording with the screen off or another app open, and saves the t
 :ios[On iPhone, tap :ui[Layer options]{icon=ellipsis} on a feature's or folder's row in the **Layers** tab and choose **Export to File**.] :mac[On Mac, right-click the row and choose **Export to File**, or select it and choose **Layer → Export to File**.] Then choose GPX, KML, GeoJSON or GeoPackage and pick where the file goes; it is named after the row.
 
 ::::platforms
+:::ios
+![A row's Layer options menu on iPhone with the Export to File submenu open beside it: GPX, KML, GeoJSON and GeoPackage](../../../assets/manual/getting-started-export-your-data-menus-iphone.png)
+:::
+
 :::mac
 ![The right-click menu on the Trail row on Mac with Export to File highlighted and its submenu open: GPX, KML, GeoJSON and GeoPackage](../../../assets/manual/getting-started-export-your-data-menus-mac.png)
 :::

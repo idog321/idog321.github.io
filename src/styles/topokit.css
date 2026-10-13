@@ -402,6 +402,11 @@
 .sl-markdown-content img[src*='-menu-iphone'] {
   max-width: 21rem;
 }
+.sl-markdown-content img[src*='chevron-tab'] {
+  max-width: 8rem;
+  width: 100%;
+  height: auto;
+}
 .sl-markdown-content img[src*='pull-tab'] {
   max-width: 10rem;
   width: 100%;

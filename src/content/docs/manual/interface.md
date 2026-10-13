@@ -68,6 +68,8 @@ Beyond pan, pinch, two-finger twist and a two-finger drag up or down, which tilt
 - **Touch and hold a spot** for half a second to open a card for the ground there; it does nothing while a tool is running ([Holding a spot and the place card](/manual/search-and-identify/#holding-a-spot-and-the-place-card)).
 - **Swipe toward the screen edge** from the map just beside the sidebar to hide it. The chevron tab left at the edge brings it back ([Toolbar & Haptics](/manual/settings/#toolbar--haptics)).
 - **Slide a finger up or down the sidebar** to see each button's name as the finger passes it. Lifting the finger presses the button under it.
+
+![The tool sidebar swiped off the screen on iPhone: a small tab with a chevron is left at the right edge of the map](../../../assets/manual/interface-sidebar-chevron-tab-iphone.png)
 :::
 
 :::mac

@@ -93,6 +93,10 @@ With Ask to Buy, TopoKit unlocks as soon as the purchase is approved, even if yo
 **Before you head out** says that TopoKit is not certified for navigation or life-safety use, that anything it shows can be wrong, that its elevation is not survey grade, and that you should carry another way to navigate.
 
 ::::platforms
+:::ios
+![The Before you head out sheet on iPhone: four short paragraphs, the Terms of Use and Privacy Policy links, and the I Understand button](../../../assets/manual/your-topokit-safety-notice-sheet-iphone.png)
+:::
+
 :::mac
 ![The Before you head out sheet on Mac: four short paragraphs, the Terms of Use and Privacy Policy links, and the I Understand button](../../../assets/manual/your-topokit-safety-notice-sheet-mac.png)
 :::
