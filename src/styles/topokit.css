@@ -360,7 +360,7 @@
    settings-window the Mac Settings window. A panel is tall, so it gets more
    height than the default cap. */
 .sl-markdown-content img[src*='-menu-'] {
-  max-width: 13.5rem;
+  max-width: 15rem;
   width: 100%;
   height: auto;
 }
@@ -379,6 +379,44 @@
   max-width: 35rem;
   width: 100%;
   height: auto;
+}
+/* A Mac sheet or an iPhone sheet page (-sheet-), a live tool card
+   (-live-card-, narrower than the feature card), a row menu with its
+   submenu open (-menus-), an iPhone menu (its text is larger than a Mac
+   menu's), and the folded panel's pull tab. */
+.sl-markdown-content img[src*='-sheet-'] {
+  max-width: 35rem;
+  width: auto;
+  height: auto;
+}
+.sl-markdown-content img[src*='-live-card-'] {
+  max-width: 17.5rem;
+  width: 100%;
+  height: auto;
+}
+.sl-markdown-content img[src*='-menus-'] {
+  max-width: 20rem;
+  width: 100%;
+  height: auto;
+}
+.sl-markdown-content img[src*='-menu-iphone'] {
+  max-width: 21rem;
+}
+.sl-markdown-content img[src*='pull-tab'] {
+  max-width: 10rem;
+  width: 100%;
+  height: auto;
+}
+/* In a ::::platforms row the two halves of a pair must fit side by side
+   in the 45rem column: 21rem each plus the 2rem gap. */
+.platform-pair > p {
+  flex: 0 0 auto;
+  margin-block: 0;
+}
+.platform-pair img[src*='-card-'],
+.platform-pair img[src*='-sheet-'],
+.platform-pair img[src*='-menu-'] {
+  max-width: 21rem;
 }
 
 /* The Reprojection Required sheet is a dialog, near square. At full column

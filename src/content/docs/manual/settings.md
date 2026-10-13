@@ -14,7 +14,7 @@ Settings keeps its rows on the device, not in the project or your iCloud account
 The window has a toolbar button for each page under a shorter name: **Map**, **Features**, **Units**, **Appearance**, **Storage**, **Help** and **About**. It has no **Your TopoKit** button: **Your TopoKit**, **Restore Purchases** and **Redeem Code** head the **About** tab instead. The window opens on **Map** the first time and on the tab you used last after that.
 :::
 
-![The Mac Settings window on its Features tab: the toolbar with Map, Features, Units, Appearance, Storage, Help and About, then the Points section with Default Style, Pin Names and Point Clustering](../../../assets/manual/settings-window-mac.png)
+![The Mac Settings window on its Map tab: the toolbar with Map, Features, Units, Appearance, Storage, Help and About, then the Orientation rows Lock North Up and Always Show Compass, and Map Image Quality under Map Images](../../../assets/manual/settings-window-mac.png)
 
 ## Your TopoKit
 

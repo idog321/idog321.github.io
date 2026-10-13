@@ -8,6 +8,10 @@ TopoKit is a full-screen map with the tool sidebar at one edge. :ios[On iPhone, 
 
 Everything you add draws over Apple Maps, which the **Apple Maps** button at the foot of the tool sidebar switches between :ui[Standard]{icon=map-standard}, :ui[Hybrid]{icon=map-hybrid}, :ui[Satellite]{icon=map-satellite} and :ui[Off] ([The Apple Maps switch](/manual/basemaps/#the-apple-maps-switch)). Over the map:
 
+:::mac
+![The tool card while a polygon is drawn on Mac: Area, Perimeter and Points with their unit menus, the ✕ at the left, Undo, and Save at the right](../../../assets/manual/interface-the-map-live-card-mac.png)
+:::
+
 - **Compass**: appears when the map is rotated, and a tap or click turns the map back to north, keeping any tilt. **Settings → Map** can keep it on screen or lock north up ([Map](/manual/settings/#map)).
 - **Zoom**: :ios[On iPhone, there is no zoom button.] :mac[On Mac, a + and − pair is at the top right, with **Zoom to Project Extent** below it, which frames every visible feature and raster in the project; tile layers and basemaps are not counted.]
 - **Location button**: :ios[On iPhone, the first tap follows you, the second also turns the map to your heading, and the third stops following.] :mac[On Mac, each click centres the map on you once; the Mac map never follows you.]
@@ -24,8 +28,10 @@ Each tile download, elevation download and basemap build shows a progress row at
 
 The sidebar holds the same eight buttons on iPhone and Mac.
 
-![The tool sidebar on the right edge of the iPhone screen: Add Point, Add Line, Add Polygon, Add Circle and Add Route, a divider, Add Data and Basemaps, a divider, and the Apple Maps button](../../../assets/manual/interface-sidebar-strip-ios.png)
+:::::platforms
+![The tool sidebar with its eight buttons numbered from the top](../../../assets/manual/interface-tool-sidebar-annotated.svg)
 
+::::legend
 1. :ui[Add Point]{icon=add-point} marks one location where you tap or click, or where you stand, and opens its editor ([Adding a point](/manual/points-lines-polygons/#adding-a-point)).
 2. :ui[Add Line]{icon=add-line} draws a line with its live length and bearing ([Adding lines, polygons and circles](/manual/points-lines-polygons/#adding-lines-polygons-and-circles)).
 3. :ui[Add Polygon]{icon=add-polygon} draws an area with its live area and perimeter ([Polygons](/manual/points-lines-polygons/#polygons)).
@@ -34,15 +40,19 @@ The sidebar holds the same eight buttons on iPhone and Mac.
 6. :ui[Add Data]{icon=plus} opens a menu: **Add Vector Layer…** ([Importing a file](/manual/import-and-export/#importing-a-file)), **Add Raster Layer…** ([Importing a raster](/manual/raster-overlays/#importing-a-raster)), **Add Tile Layer…** ([Adding a tile layer](/manual/tile-layers/#adding-a-tile-layer)), **Download Map Tiles…** ([Offline downloads](/manual/tile-layers/#offline-downloads)) and **Download Elevation…** ([Downloading tiles](/manual/elevation/#downloading-tiles)). :ios[On iPhone, a pick from this menu opens the Layers tab and finishes there, except **Download Elevation…**, which opens its grid on the map.]
 7. :ui[Basemaps] builds an offline map with contours for an area you pick and adds it to the project ([Building a basemap](/manual/basemaps/#building-a-basemap)).
 8. **Apple Maps** moves Apple Maps to the next state with each tap or click, and its label names the current one, such as **Apple Maps (Hybrid)**.
+::::
+:::::
 
 :ios[On iPhone, touch and hold a button to see its name.]
 
 :::ios
 ## iPhone layout
 
-![TopoKit on iPhone: a built basemap of the Sunshine Coast Trail between Tin Hat Hut and Elk Lake Hut fills the screen, the tool sidebar sits on the right edge with its eight buttons, and the sheet rests at its strip height showing the Projects, Layers, GPS and Settings tabs](../../../assets/manual/interface-iphone-layout-ios.png)
+![TopoKit on iPhone: a built basemap of the Sunshine Coast Trail between Tin Hat Hut and Elk Lake Hut fills the screen, the tool sidebar sits on the right edge with its eight buttons, and the sheet rests at its strip height showing the Projects, Layers, GPS and Settings tabs](../../../assets/manual/interface-iphone-layout-iphone.png)
 
 TopoKit on iPhone runs in portrait only. The map fills the screen, and the sheet stays at one of three heights: a strip showing only the tab bar, half the screen, or nearly full. Tapping another tab raises the strip to half height, and tapping the selected tab raises the sheet to nearly full, and again lowers it to half. Choosing a search result, or **Zoom to** on a row, lowers the sheet to the strip so the place is in view. Pulling the sheet down to the strip keeps what is open in it, so an editor in the Layers tab keeps its unsaved changes. Near full height the location button, scale bar, compass and credit line fade out.
+
+![The sheet at its three heights on iPhone, side by side: the strip showing only the tab bar, half the screen, and nearly full](../../../assets/manual/interface-sheet-heights-iphone.png)
 
 While a tool runs or a card is open, the sheet and the tool sidebar leave the screen. The area pickers of Download Map Tiles…, Download Elevation… and Basemaps, Edit Vertices on Map and an open elevation profile count as tools. When you finish or close it, the sheet returns as the strip whatever its height before, unless the tool carries on in a page of the Layers tab.
 
@@ -69,6 +79,8 @@ The window holds the map, the tool sidebar and one floating panel with three tab
 
 TopoKit opens the panel unfolded on the Projects tab at its narrowest width, and dragging its edge widens it; the width, the fold and the tab are not kept between launches. While the pointer is over the tab bar, a chevron appears on the panel's outer edge; clicking it, or `Cmd-Ctrl-S`, folds the panel to a pull tab. The pull tab or the same key brings it back. **Settings → Appearance → Panel Position** puts the panel on the left, the default, or on the right ([Appearance](/manual/settings/#appearance)).
 
+![The panel folded away on Mac: a small pull tab with a chevron at the left edge of the map](../../../assets/manual/interface-panel-pull-tab-mac.png)
+
 The tool sidebar is always on the left of the map and moves up above the elevation profile while one is open. The bar above the map holds the search bar and, when the map is rotated, the compass.
 
 ### Mouse and keyboard
@@ -94,6 +106,8 @@ Most commands grey out while the Settings window is in front, or while a dialog,
 
 - `Cmd-W` saves the project and closes it, leaving the window open; if the save fails, the project stays open.
 - Closing the map window quits TopoKit, as `Cmd-Q` does. Both save the open project first, and TopoKit quits after 10 seconds whether or not the save has finished.
+
+![The View menu on Mac: Hide Panel, Show Projects and Show Layers, Apple Maps, Zoom In, Zoom Out and Zoom to Project, Show My Location, Reset to North, and Exit Full Screen](../../../assets/manual/interface-view-menu-mac.png)
 :::
 
 ## Undo and redo
@@ -114,6 +128,8 @@ On iPhone, Undo is a pill at the bottom right of the **Layers** list, shown whil
 
 :::mac
 On Mac, **Edit → Undo** (`Cmd-Z`) and **Edit → Redo** (`Cmd-Shift-Z`) carry the step's name. While you type in a field they undo the typing, and while a point is held they wait.
+
+![The Edit menu on Mac with the step's name in the first row: Undo Hide Folder, then Redo dimmed, the clipboard commands, Duplicate and Search](../../../assets/manual/interface-edit-menu-mac.png)
 :::
 
 ### While a tool is open

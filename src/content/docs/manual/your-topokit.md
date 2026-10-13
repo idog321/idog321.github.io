@@ -92,6 +92,12 @@ With Ask to Buy, TopoKit unlocks as soon as the purchase is approved, even if yo
 
 **Before you head out** says that TopoKit is not certified for navigation or life-safety use, that anything it shows can be wrong, that its elevation is not survey grade, and that you should carry another way to navigate.
 
+::::platforms
+:::mac
+![The Before you head out sheet on Mac: four short paragraphs, the Terms of Use and Privacy Policy links, and the I Understand button](../../../assets/manual/your-topokit-safety-notice-sheet-mac.png)
+:::
+::::
+
 It appears once on each device: when the introduction ends for someone new, and on the first launch of 1.2 for anyone who finished the introduction in an earlier version. Only **I Understand** closes it. **Replay Introduction** does not bring it back ([The first launch](/manual/getting-started/#the-first-launch)); a later version of TopoKit shows it again only if the notice's words change.
 
 ## FAQ
