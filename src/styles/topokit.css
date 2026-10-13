@@ -229,6 +229,9 @@
   gap: 2rem;
   align-items: flex-start;
   flex-wrap: wrap;
+  /* A pair of figures sits centred as one group; with one platform hidden
+     the remaining figure is centred on its own (Nikolay, 13 October). */
+  justify-content: center;
 }
 .platform-pair > .platform-block {
   flex: 0 0 auto;

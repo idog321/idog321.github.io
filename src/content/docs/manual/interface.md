@@ -8,10 +8,6 @@ TopoKit is a full-screen map with the tool sidebar at one edge. :ios[On iPhone, 
 
 Everything you add draws over Apple Maps, which the **Apple Maps** button at the foot of the tool sidebar switches between :ui[Standard]{icon=map-standard}, :ui[Hybrid]{icon=map-hybrid}, :ui[Satellite]{icon=map-satellite} and :ui[Off] ([The Apple Maps switch](/manual/basemaps/#the-apple-maps-switch)). Over the map:
 
-:::mac
-![The tool card while a polygon is drawn on Mac: Area, Perimeter and Points with their unit menus, the ✕ at the left, Undo, and Save at the right](../../../assets/manual/interface-the-map-live-card-mac.png)
-:::
-
 - **Compass**: appears when the map is rotated, and a tap or click turns the map back to north, keeping any tilt. **Settings → Map** can keep it on screen or lock north up ([Map](/manual/settings/#map)).
 - **Zoom**: :ios[On iPhone, there is no zoom button.] :mac[On Mac, a + and − pair is at the top right, with **Zoom to Project Extent** below it, which frames every visible feature and raster in the project; tile layers and basemaps are not counted.]
 - **Location button**: :ios[On iPhone, the first tap follows you, the second also turns the map to your heading, and the third stops following.] :mac[On Mac, each click centres the map on you once; the Mac map never follows you.]
@@ -47,8 +43,6 @@ The sidebar holds the same eight buttons on iPhone and Mac.
 
 :::ios
 ## iPhone layout
-
-![TopoKit on iPhone: a built basemap of the Sunshine Coast Trail between Tin Hat Hut and Elk Lake Hut fills the screen, the tool sidebar sits on the right edge with its eight buttons, and the sheet rests at its strip height showing the Projects, Layers, GPS and Settings tabs](../../../assets/manual/interface-iphone-layout-iphone.png)
 
 TopoKit on iPhone runs in portrait only. The map fills the screen, and the sheet stays at one of three heights: a strip showing only the tab bar, half the screen, or nearly full. Tapping another tab raises the strip to half height, and tapping the selected tab raises the sheet to nearly full, and again lowers it to half. Choosing a search result, or **Zoom to** on a row, lowers the sheet to the strip so the place is in view. Pulling the sheet down to the strip keeps what is open in it, so an editor in the Layers tab keeps its unsaved changes. Near full height the location button, scale bar, compass and credit line fade out.
 
