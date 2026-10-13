@@ -87,7 +87,7 @@ With the spot's tile on the device, the card leads with **Elevation**, **Slope**
 
 The elevation profile charts the ground along any line, drawn or imported, a recorded track, a saved route, or a trail, road or other line on a basemap you built. Polygons and circles have no profile. It opens from **Elevation profile** on a line's [card](/manual/search-and-identify/#the-card), and from **Elevation Profile** in the line's menu in the [Layers tab](/manual/layer-tree/) and in its editor. :mac[On Mac, **Elevation Profile** is also in the right-click menu on a line and in the **Layer** menu.]
 
-<video src="/media/elevation-profile-hover.mp4" autoplay loop muted playsinline aria-label="The elevation profile panel open on a recorded walk: a finger dragged along the chart moves a marker along the line on the map, then a hold and drag shades a stretch of the chart and lights that stretch on the map"></video>
+<video src="/media/elevation-profile-hover.mp4" autoplay loop muted playsinline aria-label="The elevation profile of the Sunshine Coast Trail open under the map on a Mac: the pointer moves along the chart and a marker follows along the trail on the map, then a drag across the chart selects a stretch, which lights on the map while the numbers switch to the stretch's own"></video>
 
 A named trail or road on a basemap is profiled along its whole length, not only the stretch you tapped; an unnamed one along the stretch outlined on the map.
 
@@ -109,7 +109,7 @@ All six follow **Settings → Units & Coordinates → Units**, not the units the
 
 Selecting a stretch gives its own climb and descent. :mac[On Mac, drag across the chart.] :ios[On iPhone, hold a finger on the chart for a moment, then drag; a drag without the hold only moves the marker.] A stretch under 50 m is dropped.
 
-![A stretch selected on the elevation profile of a recorded walk: the stretch is shaded on the chart with a handle at each end, the line above the chart reads Selection with Clear, the numbers switch to the stretch's own, and the same stretch is lit on the map](../../../assets/manual/elevation-selecting-and-zooming-ios.png)
+![A stretch selected on the profile of the Sunshine Coast Trail on a Mac: the stretch is shaded on the chart with a handle at each end, the line above the chart reads Selection 32.6 km with its start and end and Clear, the numbers switch to Selection, Gain, Loss, Min, Max and Avg for the stretch, and the same stretch is lit on the map](../../../assets/manual/elevation-selecting-and-zooming-mac.png)
 
 Pinch the chart to zoom into part of the line, down to 200 m or 2% of the line, whichever is longer. Double-click or double-tap the bar along the foot of the zoomed chart to show the whole line.
 

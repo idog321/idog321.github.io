@@ -34,7 +34,13 @@ The card opens on the best answer and lists the rest under **Also here**. Your p
 :ios[On iPhone, the card opens at the bottom of the screen in place of the bottom sheet; when the card closes, the sheet returns lowered to the strip even if it was raised before.]
 :mac[On Mac, the card is a popover on the pin, or at the spot you clicked for a line or an area.]
 
-![The card for a drawn line named West Ridge on iPhone: the name, the coordinate of the nearest point of the line, Length, and the round buttons along the foot with Edit as the pill](../../../assets/manual/search-and-identify-the-card-ios.png)
+:::ios
+![The card for Tin Hat Hut on iPhone: its glyph, the name, the line Huts for its folder, the coordinate, Elevation 1145.9 m, the distance and bearing from you, and the round buttons along the foot with Edit as the pill](../../../assets/manual/search-and-identify-the-card-iphone.png)
+:::
+
+:::mac
+![The card for Tin Hat Hut on Mac, a popover on the pin: the name, the line Huts, the coordinate, Elevation 1145.9 m, the distance and bearing from you, and the button row with Edit as the pill](../../../assets/manual/search-and-identify-the-card-mac.png)
+:::
 
 The outline stays while the card is open, and on a line while its elevation profile is open. A basemap trail lights as far as the map has loaded, then the whole feature once it has been read.
 
@@ -90,6 +96,10 @@ When the elevation tile for the spot is on the device, the card leads with **Ele
 ## Right-clicking the map
 
 Right-click the map, or Control-click it. Right-clicking a cluster bubble spreads or lists its points, as a click does, with no menu. While a tool is running there is no menu.
+
+![The right-click menu on bare ground: Info, then Add Point Here, Add Line From Here, Add Polygon From Here, Add Circle Here, Add Route From Here and Route to Here, then Copy Coordinates and Copy As](../../../assets/manual/search-and-identify-menu-bare-ground-mac.png)
+
+![The right-click menu on one of your own points: Info and Place Info, then Edit…, Route to Here, Zoom To and Share, then Delete…](../../../assets/manual/search-and-identify-menu-on-a-feature-mac.png)
 
 Without a project the menu holds only **Info**, **Copy Coordinates** and **Copy As**.
 

@@ -8,7 +8,7 @@ The Layers tab lists everything in the open project, in the order it draws on th
 
 A row is a feature (a point, line or polygon, drawn or imported), a raster overlay (an imported GeoTIFF or GeoPDF map), a tile layer (streamed from a server, or a basemap you built) or a folder, which holds any of these nested to any depth.
 
-![The Layers tab on iPhone: an Offline: Hillshade row with the download arrow on its icon, the Hillshade tile layer it came from, a saved route, a recorded track and a drawn line each previewing their own style, five points, a Summits folder and a From the map folder, and a built basemap at the bottom](../../../assets/manual/layer-tree-what-is-in-the-tree-ios.png)
+![The Layers tab on Mac: a folder holding the trail line, a point with its own glyph, a Huts folder open with six hut points, the Parks and Maps folders switched off, and a built basemap row with the download arrow on its icon](../../../assets/manual/layer-tree-what-is-in-the-tree-panel-mac.png)
 
 An **Offline: {name}** row's icon carries a small download arrow when the tiles are on this device, and is dimmed with an orange iCloud arrow when the project arrived by sync and the tiles did not ([Using offline tiles](/manual/tile-layers/#using-offline-tiles)).
 

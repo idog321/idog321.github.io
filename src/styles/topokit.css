@@ -348,9 +348,35 @@
    images. They are prepared deliberately (transparent backgrounds and all) and
    the manual must not decorate them. */
 .sl-markdown-content img[src*='right-click-menu'],
-.sl-markdown-content img[src*='-menu-'],
 .sl-markdown-content img[src*='new-project'] {
   max-width: 26rem;
+  width: 100%;
+  height: auto;
+}
+
+/* Captures of the app's own pop-ups and panels, taken at 2x and shown at the
+   size they have on screen. The kind token in the file name picks the width:
+   -menu- a context menu, -card- the feature card, -panel- the Layers panel,
+   settings-window the Mac Settings window. A panel is tall, so it gets more
+   height than the default cap. */
+.sl-markdown-content img[src*='-menu-'] {
+  max-width: 13.5rem;
+  width: 100%;
+  height: auto;
+}
+.sl-markdown-content img[src*='-card-'] {
+  max-width: 23rem;
+  width: 100%;
+  height: auto;
+}
+.sl-markdown-content img[src*='-panel-'] {
+  max-width: 19rem;
+  max-height: 40rem;
+  width: auto;
+  height: auto;
+}
+.sl-markdown-content img[src*='settings-window'] {
+  max-width: 35rem;
   width: 100%;
   height: auto;
 }

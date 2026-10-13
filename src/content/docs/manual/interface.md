@@ -40,7 +40,7 @@ The sidebar holds the same eight buttons on iPhone and Mac.
 :::ios
 ## iPhone layout
 
-![TopoKit on iPhone: the map fills the screen with a built basemap of Mount Douglas Park, the tool sidebar sits on the right edge with all eight buttons, and the sheet rests at its strip height showing the Projects, Layers, GPS and Settings tabs](../../../assets/manual/interface-iphone-layout-ios.png)
+![TopoKit on iPhone: a built basemap of the Sunshine Coast Trail between Tin Hat Hut and Elk Lake Hut fills the screen, the tool sidebar sits on the right edge with its eight buttons, and the sheet rests at its strip height showing the Projects, Layers, GPS and Settings tabs](../../../assets/manual/interface-iphone-layout-ios.png)
 
 TopoKit on iPhone runs in portrait only. The map fills the screen, and the sheet stays at one of three heights: a strip showing only the tab bar, half the screen, or nearly full. Tapping another tab raises the strip to half height, and tapping the selected tab raises the sheet to nearly full, and again lowers it to half. Choosing a search result, or **Zoom to** on a row, lowers the sheet to the strip so the place is in view. Pulling the sheet down to the strip keeps what is open in it, so an editor in the Layers tab keeps its unsaved changes. Near full height the location button, scale bar, compass and credit line fade out.
 
@@ -64,6 +64,8 @@ Beyond pan, pinch, two-finger twist and a two-finger drag up or down, which tilt
 ## Mac layout
 
 The window holds the map, the tool sidebar and one floating panel with three tabs: :ui[Projects]{icon=folder} for your projects ([Projects, saving and iCloud](/manual/projects-and-files/)), :ui[Layers]{icon=layers} for the open project's layers ([The Layers tab](/manual/layer-tree/)), and :ui[Settings]{icon=settings} for the Settings pages as a list ([Settings](/manual/settings/)).
+
+![TopoKit on a Mac at full screen: the menu bar along the top, the panel on the left on the Layers tab with a Huts folder open, the tool sidebar beside it, the search bar above the map, and the Sunshine Coast Trail with its huts on a built basemap](../../../assets/manual/interface-mac-layout-mac.png)
 
 TopoKit opens the panel unfolded on the Projects tab at its narrowest width, and dragging its edge widens it; the width, the fold and the tab are not kept between launches. While the pointer is over the tab bar, a chevron appears on the panel's outer edge; clicking it, or `Cmd-Ctrl-S`, folds the panel to a pull tab. The pull tab or the same key brings it back. **Settings → Appearance → Panel Position** puts the panel on the left, the default, or on the right ([Appearance](/manual/settings/#appearance)).
 
