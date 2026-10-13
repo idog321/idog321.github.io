@@ -6,6 +6,8 @@ description: "What the introduction sets up, then one pass through a field job: 
 
 A new install opens with an introduction before the map: eight pages on iPhone, seven on Mac, which has no permissions page. It sets your appearance and units and creates your first project.
 
+![The Create Your First Project page of the introduction on iPhone: the Project Name field reading My First Project with the keyboard up, and the line You can skip this and create a project later](../../../assets/manual/getting-started-the-first-launch-ios.png)
+
 **Customize Your Look** and **Units & Coordinates** set the same options as **Settings → Appearance** and **Settings → Units & Coordinates**, so a choice made here is changed there later. :ios[On iPhone, the tool sidebar's side is **Settings → Toolbar & Haptics → Position**.] :mac[On Mac, the panel side is in **Settings → Appearance → Panel Position**.] :ios[On iPhone, **TopoKit Needs Your Permission** asks for Location, Camera and Photo Library up front. A permission skipped there or denied is turned on later in the iPhone's Settings app under TopoKit, not in TopoKit's Settings; until then GPS tracking and **Take Photo** do not work. Choosing a photo from the library needs no permission.] :mac[On Mac, each permission is asked for when a feature first needs it.]
 
 **Create Your First Project** makes a project, and that project is open when the introduction ends. The name starts as **My First Project**. **Storage** appears only when iCloud is available, and starts at **iCloud**.
@@ -66,6 +68,8 @@ Every other way to add a point is in [Adding a point](/manual/points-lines-polyg
 1. Tap :ui[Add Polygon]{icon=add-polygon} and tap the corners of the area. The tool card shows the area, perimeter and point count as you go. Drag a corner to move it, or pull out the faint dot between two corners to add one.
 2. Tap a figure to copy it.
 3. Tap **Save** to keep the shape once it has three corners, name it in the editor that opens, and tap **Create**. To discard the shape instead, tap ✕ on the tool card.
+
+![A polygon being drawn on a built basemap on iPhone: three corners placed with a length along each side, and the tool card reading Area, Perimeter and Points](../../../assets/manual/getting-started-draw-and-measure-ios.png)
 
 The drawing tools and the measuring tools are the same tools; saving is the only difference. :ui[Add Line]{icon=add-line} gives distance and bearing the same way. The figures are not stored with the shape, but tapping a saved polygon shows its area and perimeter again. Units are in [Units](/manual/measurement/#units), and the earth model behind each figure in [Calculation methods](/manual/measurement/#calculation-methods).
 

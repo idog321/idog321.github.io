@@ -6,6 +6,8 @@ Settings keeps its rows on the device, not in the project or your iCloud account
 
 :ios[On iPhone, Settings is a tab.] :mac[On Mac, Settings is a tab in the panel, and **TopoKit → Settings…** (`Cmd-,`) opens the same pages in a window of their own.]
 
+![The Settings tab on iPhone: the Your TopoKit row with its status line, then Map, Features and Units & Coordinates, Appearance, Toolbar & Haptics and GPS & Recording, Storage & iCloud, and Help & Feedback and About TopoKit with an orange dot](../../../assets/manual/settings-ios.png)
+
 :::mac
 ## The Mac Settings window
 
@@ -26,6 +28,8 @@ The first row shows the state of your unlock under its title. Its page is where 
 ## Features
 
 The **Default Style** under **Points**, **Lines** and **Polygons** is copied onto each feature as you make it, so a later change leaves existing features as they are. Drawn lines and polygons start orange and dashed. The style sheets themselves are in [Styling a feature](/manual/points-lines-polygons/#styling-a-feature).
+
+![The Features page in Settings on iPhone, scrolled to show the Points, Lines, Polygons, Routes and Tracks sections with their Default Style swatches](../../../assets/manual/settings-features-ios.png)
 
 - **Pin Names**: which point names print under their pins. **Always** leaves a name out where pins crowd together; under either setting the picked pin's name prints however crowded the map is. See [Points on the map](/manual/points-lines-polygons/#points-on-the-map).
 - **Default Style** under **Routes**: the style :ui[Add Route] draws in and its save sheet starts from, kept apart from the **Lines** default. It is written into the route when you save it, so a later change leaves saved routes alone. See [How the route is drawn](/manual/routes/#how-the-route-is-drawn).
@@ -72,6 +76,8 @@ A recorded track's look is set under [Features](#features).
 ## Storage & iCloud
 
 **On This Device**, :mac[or **On This Mac** on a Mac,] lists five stores with their combined size beside the heading. Photos are saved in the project folder, so the total never counts them, and nothing in these stores is part of a project.
+
+![The Storage & iCloud page in Settings on iPhone: the five rows under On This Device with their sizes, and the iCloud group below](../../../assets/manual/settings-storage-and-icloud-ios.png)
 
 - **Offline Basemaps**: basemaps built on this device, with their working data. **Delete Offline Basemaps** removes this device's copy only; the basemap layers stay in your projects, shown as not on this device until rebuilt. See [Storage](/manual/basemaps/#storage).
 - **Elevation Data**: elevation tiles downloaded for lookups and profiles. **Manage Tiles** lists them with their sizes and deletes one at a time, and **Clear Elevation Data** deletes all of them; a deleted tile downloads again the next time a lookup, a profile or a basemap needs it, so rebuilding a basemap afterwards needs a connection. Basemaps already built keep their map. See [Disk space](/manual/elevation/#disk-space).

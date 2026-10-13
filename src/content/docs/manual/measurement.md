@@ -10,6 +10,8 @@ The line, polygon and circle tools need an open project even when you only measu
 
 Figures appear once the shape has enough points: two for a line or a route, three for a polygon, a centre and an edge point for a circle.
 
+<video src="/media/measurement-live-measurements.mp4" autoplay loop muted playsinline aria-label="Drawing a polygon on iPhone while the tool card updates Area, Perimeter and Points with each corner, segment lengths appearing along the sides, then a tap on Area showing Copied"></video>
+
 Tapping a figure copies the number as the card shows it, rounded, with the device's thousands separator and decimal mark (`1,234.5`) and without its unit; a bearing copies with its degree sign, as three digits (`045°`). A route's figures have no unit menu and do not copy.
 
 A saved line, polygon or circle keeps none of the card's figures: tapping it opens its [card](/manual/search-and-identify/#the-card), which measures it again, and a copy from that card carries the unit. A saved circle is a polygon, so that card shows **Area** and **Perimeter** and no **Radius**. A [saved route](/manual/routes/#saving-a-route) keeps its distance and travel time as properties.
@@ -18,7 +20,7 @@ A saved line, polygon or circle keeps none of the card's figures: tapping it ope
 
 Until the circle is locked, dragging its centre moves the centre alone and changes the radius, and a tap or a drag of the edge point resizes it ([Circles](/manual/points-lines-polygons/#circles)).
 
-![The circle tool card: unlocked, dragging the edge point resizes the circle; with the lock on, dragging the centre moves the whole circle and Radius stays at 180 m.](/media/circle-radius-lock.svg)
+![A circle being drawn on iPhone with the lock on: the centre dot, the edge dot and the dashed radius line between them, and the tool card reading Radius 92 m, Area, Circumference and Points 2, with the lock button filled](../../../assets/manual/measurement-circles-and-the-radius-lock-ios.png)
 
 The lock button becomes active once the circle has a radius, and locking freezes that radius. With the lock on, a tap elsewhere or a drag of the centre moves the whole circle at the fixed radius, the edge point keeping its bearing from the centre; dragging the edge point slides it round the rim. The readout and the ring both come from the radius captured at locking, so the figure does not change however far the circle moves, and unlocking leaves it as it was.
 

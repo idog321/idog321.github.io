@@ -35,6 +35,8 @@ When the tile is missing, each place that reads heights asks before downloading:
 2. Tap or click squares to select them.
 3. Choose **Download**.
 
+![The elevation grid over the Strait of Georgia on iPhone: the one-degree square holding Victoria is green, the two squares north and east of it are blue, the sea squares have no overlay, and the bar reads 2 tiles · 50–80 MB with the trash and Download](../../../assets/manual/elevation-the-elevation-grid-ios.png)
+
 :ios[On iPhone, opening the grid ends any tool in progress and discards an unfinished drawing.]
 
 Each square's colour gives its state:
@@ -85,6 +87,8 @@ With the spot's tile on the device, the card leads with **Elevation**, **Slope**
 
 The elevation profile charts the ground along any line, drawn or imported, a recorded track, a saved route, or a trail, road or other line on a basemap you built. Polygons and circles have no profile. It opens from **Elevation profile** on a line's [card](/manual/search-and-identify/#the-card), and from **Elevation Profile** in the line's menu in the [Layers tab](/manual/layer-tree/) and in its editor. :mac[On Mac, **Elevation Profile** is also in the right-click menu on a line and in the **Layer** menu.]
 
+<video src="/media/elevation-profile-hover.mp4" autoplay loop muted playsinline aria-label="The elevation profile panel open on a recorded walk: a finger dragged along the chart moves a marker along the line on the map, then a hold and drag shades a stretch of the chart and lights that stretch on the map"></video>
+
 A named trail or road on a basemap is profiled along its whole length, not only the stretch you tapped; an unnamed one along the stretch outlined on the map.
 
 Opening a profile from the Layers tab, the line's editor or the **Layer** menu ends any tool in progress and discards an unfinished drawing.
@@ -105,7 +109,7 @@ All six follow **Settings → Units & Coordinates → Units**, not the units the
 
 Selecting a stretch gives its own climb and descent. :mac[On Mac, drag across the chart.] :ios[On iPhone, hold a finger on the chart for a moment, then drag; a drag without the hold only moves the marker.] A stretch under 50 m is dropped.
 
-![Selecting a stretch of the elevation profile: hold, then drag across the chart, and the stretch lights on the map while the numbers switch to the stretch's own](/media/elevation-profile-stretch.svg)
+![A stretch selected on the elevation profile of a recorded walk: the stretch is shaded on the chart with a handle at each end, the line above the chart reads Selection with Clear, the numbers switch to the stretch's own, and the same stretch is lit on the map](../../../assets/manual/elevation-selecting-and-zooming-ios.png)
 
 Pinch the chart to zoom into part of the line, down to 200 m or 2% of the line, whichever is longer. Double-click or double-tap the bar along the foot of the zoomed chart to show the whole line.
 

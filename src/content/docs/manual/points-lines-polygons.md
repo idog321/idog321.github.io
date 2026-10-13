@@ -8,6 +8,8 @@ Points, lines and polygons are the three geometry types a TopoKit project stores
 
 Set the point's location in one of these ways; the editor then opens on that spot.
 
+![The Point Editor on iPhone for a point added from a basemap peak's card: the name PKOLS (Mt. Douglas) already filled in, an empty description, Add Photo, the Folder row, the Style row with the default pin and its Edit button, and the coordinates](../../../assets/manual/points-lines-polygons-adding-a-point-ios.png)
+
 - Tap :ui[Add Point]{icon=add-point}, then tap the map where the point goes.
 - Tap the :ui[location]{icon=location} button on the Add Point tool card to place the point on your GPS fix. It appears once TopoKit has location access, and only on that card.
 - Choose **Add Point** on the card of a search result, a typed coordinate, a [held spot](/manual/search-and-identify/#holding-a-spot-and-the-place-card), or a peak, hut or other mark on a basemap you built.
@@ -20,6 +22,8 @@ The tool closes once the point is placed; the coordinate stays editable in the e
 ## Adding lines, polygons and circles
 
 Choose :ui[Add Line]{icon=add-line}, :ui[Add Polygon]{icon=add-polygon} or :ui[Add Circle]{icon=add-circle} in the tool sidebar; they are greyed out until a project is open. :mac[On Mac, the **Tools** menu starts each one from the keyboard ([The menu bar](/manual/interface/#the-menu-bar)).] The [tool card](/manual/interface/#the-map) shows the shape's [live figures](/manual/measurement/).
+
+<video src="/media/points-lines-polygons-line-tool.mp4" autoplay loop muted playsinline aria-label="The line tool on iPhone: each tap places a vertex and a length appears along each segment, a tap back on an earlier vertex rings it so the next tap inserts mid-line, a faint dot is dragged out into a new vertex, and Save opens the Line Editor"></video>
 
 Each map tap adds a vertex, drawn as a dot styled by **Settings → Features → [Vertex Style](/manual/settings/#features)**. The vertex you touched last is the **active** one, marked by a ring, and new vertices insert after it, so you can tap back to an earlier vertex and add mid-line without starting over.
 
@@ -43,6 +47,8 @@ On save, the circle is stored as a polygon feature: a 64-vertex ring, placed on 
 
 These work while drawing a line or polygon and in [Edit Vertices on Map](#reshaping-a-saved-line-or-polygon).
 
+![A saved line in Edit Vertices on Map on iPhone: the ringed vertex with the Delete Point bubble above it, faint dots at the middle of the long segments, and the Edit Vertices card below reading 5 pts • 1.2 km with ✕, Undo, Redo and Done](../../../assets/manual/points-lines-polygons-deleting-a-vertex-ios.png)
+
 - **Move.** Drag a vertex. Letting go records the drag as one step.
 - **Add.** A faint dot halfway along a segment becomes a new vertex when you drag it; a tap on it adds nothing. A segment shows its faint dot only when it is long enough on screen to grab without touching its ends, and no more than 100 show at once, so a long line seen from far out has none until you zoom in. :mac[On Mac, a segment's faint dot shows only while the pointer is near it.]
 - **Delete.** :ios[On iPhone, tap a vertex to ring it, tap the ringed vertex again, and choose **Delete Point**. The vertex you placed or touched last is already ringed, so one tap on it is enough.] :mac[On Mac, right-click or Control-click a vertex to delete it; no menu opens.] **Undo** brings it back.
@@ -61,7 +67,7 @@ Cancelling the editor returns you to the drawing with every vertex in place. The
 
 Tap **Edit Vertices on Map** in a line's or polygon's editor. :mac[On Mac, **Layer → Edit Vertices on Map** does the same for the line or polygon selected in the Layers tab.] The editor closes, saving what it held, and the vertices come up as dots to [move, add and delete](#moving-adding-and-deleting-vertices).
 
-![Edit Vertices on Map: a point dragged, then deleted with Delete Point, and Undo bringing it back one step at a time](/media/edit-vertices.svg)
+<video src="/media/points-lines-polygons-edit-vertices.mp4" autoplay loop muted playsinline aria-label="Edit Vertices on Map on a saved line: a vertex dragged, a second tap on the ringed vertex showing Delete Point, the vertex deleted, Undo bringing it back, a faint dot pulled out into a new vertex, and Done"></video>
 
 Each change is written into the saved feature as you make it, as its own undo step. **Done** keeps them all, so Undo afterward takes the changes back one at a time. ✕ puts the line or polygon back as it was when you opened Edit Vertices on Map and removes those steps. Every vertex you leave in place keeps its height, time and accuracy, so a recorded track keeps its timings; a vertex you move or add has none. While the card is up, its **Undo** :mac[and **Edit → Undo**] take back only this editing's changes ([While a tool is open](/manual/interface/#while-a-tool-is-open)).
 
@@ -109,6 +115,8 @@ A photo shows an exclamation mark in place of its thumbnail, and **Photo unavail
 
 **Edit** in the editor's **Style** row opens **Customize Pin**, **Customize Line** or **Customize Polygon**. A feature you draw starts with the **Default Style** for its kind in **Settings → Features**, copied when the feature is made, so changing a default later leaves existing features as they are.
 
+![The Customize Pin sheet on iPhone: a green swatch chosen in the Colour row, the Symbol row with Recently Used, General and Nature & Outdoors tabs and a star chosen, the Custom icon colour switch, and the empty My Presets card with Save Current](../../../assets/manual/points-lines-polygons-styling-a-feature-ios.png)
+
 - **Pins**: the small dot first in the **General** symbol category is the no-symbol choice, and a pin with no symbol shows a disc in a shade of its own colour. **Custom icon colour** appears only once a symbol is set. The symbol picker opens on **Recently Used**, your last eight symbols, and on **General** until you have used one.
 - **Polygons**: the first stroke swatch, marked with a link, copies the current fill colour to the stroke once, so a fill changed afterwards leaves the stroke as it was. Stroke and fill opacities both run from 0.0, so a polygon can be outline only or fill only; a line's opacity stops at 0.1. Fill opacity starts at 0.15 for polygons you draw and 0.25 for imported ones.
 - **My Presets**: empty until you save a style with **Save Current**. Tapping a preset loads it into the sheet, and **Done** applies it; its context menu holds **Delete**. A preset cannot be renamed. Presets are kept on this device and do not sync, but a project opened elsewhere looks the same, because each feature's style is saved in the project.
@@ -118,6 +126,8 @@ To restyle every feature of a kind in a folder at once, [style the folder](/manu
 ## Points on the map
 
 Each point's name prints under its pin, as **Settings → Features → [Pin Names](/manual/settings/#features)** sets. **Always**, the default, leaves out any name that would overlap another pin, a cluster bubble or another name, so zooming in prints more of them. No more than 150 names print at once, and with more than 600 single pins on screen, pins inside bubbles not counted, only the picked pin's name prints.
+
+![Five named pins on a built basemap of Mount Douglas Park, with Picnic table picked: its pin is larger and its name bold, and the card at the foot of the screen shows its coordinate and Also here](../../../assets/manual/points-lines-polygons-points-on-the-map-ios.png)
 
 A name prints on at most two lines, cut at an ellipsis; a point with no name, or named Untitled Point, prints none. A picked pin draws at one and a half times its size, and its name prints in bold whatever it overlaps. :ios[On iPhone, names follow the system text size, up to 22 pt.]
 

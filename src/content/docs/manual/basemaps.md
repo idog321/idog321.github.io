@@ -7,7 +7,7 @@ description: "Switch Apple's map, build a topographic basemap that works with no
 
 The last button of the tool sidebar picks which Apple map is drawn under your layers. Each tap or click steps :ui[Standard]{icon=map-standard} → :ui[Hybrid]{icon=map-hybrid} → :ui[Satellite]{icon=map-satellite} → :ui[Off]. :mac[On Mac, **View → Apple Maps** in the [menu bar](/manual/interface/#the-menu-bar) holds the same choices.]
 
-![Each tap of the Apple Maps button steps Standard, Hybrid, Satellite, Off, then back to Standard](/media/apple-maps-switch.svg)
+<video src="/media/basemaps-apple-maps-switch.mp4" autoplay loop muted playsinline aria-label="Tapping the Apple Maps button at the foot of the tool sidebar four times: the map under a built basemap changes from Hybrid to Satellite, then Off, then Standard, then back to Hybrid"></video>
 
 Hybrid is the default. The choice belongs to this device, not the project: every project opens with it, and it does not sync. **Off** stops Apple's map from loading, so your layers draw over a plain background.
 
@@ -22,6 +22,8 @@ A basemap is a topographic map TopoKit builds on the device for an area you pick
 3. Tap the map to pick each area. Tap a picked area again to drop it.
 4. Tap **Build** on the tool card.
 
+![The Basemaps chooser on iPhone: the Light and Dark cards, each with a pencil, and Build your own below them](../../../assets/manual/basemaps-building-a-basemap-ios.png)
+
 Each area builds in that look with no setup page. To change anything first, tap the pencil beside a look, or **Build your own**: the tool card's button then reads **Next** and opens [the setup page](#the-setup-page).
 
 **Light** and **Dark** draw shaded relief and contours over a solid pale or dark ground, without elevation colours, and turn on all nine map features, so either one downloads the area's map data. Their contour interval follows **Settings → Units & Coordinates → Units**: 20 m for Metric, 80 ft for Imperial.
@@ -32,13 +34,15 @@ Building or restyling a basemap is part of the [full app](/manual/your-topokit/#
 
 Each tap picks a quarter of a 1° square; the quartered-square button on the tool card switches to whole squares. Picking one form clears the other in that square. Each area becomes its own basemap and row; they build square by square, north to south, then west to east.
 
-![Basemap area picker: a tap picks one quarter in quarters mode, the whole square in whole-square mode](/media/basemap-area-picker.svg)
+![The area picker on iPhone: the half-degree grid over Vancouver Island with two quarters picked in orange, a green dot and a blue dot in the corner of the square whose data is on the device, and the tool card reading 2 areas selected with the quartered-square button, the trash and Build](../../../assets/manual/basemaps-picking-the-area-ios.png)
 
 In a square's top-right corner, a green dot means its elevation data is on this device, a blue dot means its map data is, and a blue ring means map data for only some quarters. A quarter still downloads its square's whole elevation tile, 25–40 MB, which the other quarters and the [elevation tools](/manual/elevation/#elevation-data-source) reuse.
 
 ## The setup page
 
 :ios[On iPhone, **Build Offline Basemap** opens as a page in the Layers tab.] :mac[On Mac, **Build Offline Basemap** opens over the map; `Esc` closes it, and `Return` does not start a build.]
+
+![The Build Offline Basemap page on iPhone: the Basemap card with the Light look, its preview, Change Area, the Name field and the Solid Background, Elevation Colors, Shaded Relief and Slope Angle rows](../../../assets/manual/basemaps-the-setup-page-ios.png)
 
 **Change Area** returns to the map and keeps every setting and the name; closing the setup any other way discards them. **Name** applies only when one area is picked; with several, each basemap is named for its own square.
 
@@ -62,6 +66,8 @@ The strength sliders stop at 15%; switch a layer off to remove it.
 
 Nine switches choose what the map data draws; [Reading the map](#reading-the-map) lists what each one shows. Turning on any one downloads the map data for all nine in that area, a few megabytes, so the others can be turned on later with no connection.
 
+![The Map Features card on the Build Offline Basemap page: nine switches from Roads to Boundaries, each with its colour and weight, above the Labels card](../../../assets/manual/basemaps-map-features-ios.png)
+
 A colour left on **Default** follows TopoKit's colour for that feature, so an app update can change it; a swatch or custom colour stays. A weight set to **Off** removes that kind of line; for roads, trails and tracks it removes their names too, while river names stay. **Run colours** on **Automatic** uses North American difficulty colours for a basemap centred between 170° W and 30° W, European everywhere else.
 
 ### Labels
@@ -78,6 +84,8 @@ Each switch on the **Labels** card redraws the map at once, with no rebuild; the
 
 One build runs at a time and the rest wait. Quitting TopoKit clears the queue. A build that finishes after you open another project adds no layer; run the same build in the original project and it is added without building again.
 
+![A build in progress on iPhone: the progress bar above the bottom sheet reads Downloading elevation data with its percentage, and the ✕ at its right end](../../../assets/manual/basemaps-while-it-builds-ios.png)
+
 A download that stalls reads **Waiting for connection…** and resumes when data returns.
 
 The ✕ on the bar stops the build; with areas queued, **Stop Building?** offers **Stop This Area** or **Stop All**. A stopped build adds no layer and loses nothing: building the same area again makes only what is missing. Deleting a basemap's row while its area builds stops that build and drops its queued repeats.
@@ -91,6 +99,8 @@ Over cellular data, the downloads follow **Settings → Storage & iCloud → Lar
 ## The basemap in the Layers tab
 
 A basemap's row is named for its square, such as **Offline Basemap — 49°N 126°W**, with **NE**, **NW**, **SE** or **SW** after it for a quarter. A download arrow badge means the basemap is built on this device; a dimmed icon with an orange hammer means it is not, and needs [Build on This Device](#other-projects-and-other-devices).
+
+![A built Light basemap of Victoria on the map, with its row at the bottom of the Layers tab: a teal topo tile with a download arrow, and the name Offline Basemap — 48°N 124°W](../../../assets/manual/basemaps-the-basemap-in-the-layers-tab-ios.png)
 
 A new basemap goes to the bottom of the tree, so it draws under everything else, unless it overlaps a top-level basemap; then it goes directly above that one. Building the same area again updates its row instead of adding a second. A basemap cannot be [copied or duplicated](/manual/layer-tree/#copying-pasting-and-duplicating); build the area in the other project, which reuses what this device has made.
 

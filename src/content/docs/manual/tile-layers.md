@@ -20,6 +20,8 @@ On Mac, choose **Add Tile Layer…** from :ui[Add Data]{icon=plus} in the [tool 
 
 :::ios
 On iPhone, tap :ui[Add Data]{icon=plus} in the [tool sidebar](/manual/interface/#the-tool-sidebar) or :ui[plus]{icon=plus} in the **Layers** tab, and choose **Add Tile Layer…**.
+
+![The Add Data menu open on iPhone: Add Vector Layer…, Add Raster Layer… and Add Tile Layer…, each with a hint line, then Download Map Tiles… and Download Elevation…](../../../assets/manual/interface-add-data-ios.png)
 :::
 
 Adding a tile layer, editing one and downloading tiles are part of the full app, though tile layers and downloaded tiles already in a project keep drawing without it; see [What asks you to unlock](/manual/your-topokit/#what-asks-you-to-unlock).
@@ -31,6 +33,8 @@ The sheet shows no preview and accepts any text as a template, so a wrong addres
 1. Type a **Layer Name**. Left blank, the layer is named XYZ Layer.
 2. Paste the provider's address into **Tile URL Template** with its placeholders intact, in the order the provider documents. Some services use `{z}/{y}/{x}`.
 3. Tap **Add**.
+
+![The Add Tile Layer sheet on iPhone on the XYZ Tiles tab: an empty Layer Name field, the Tile URL Template field, the hint line about {z}, {x}, {y} and {-y}, and Add in the corner](../../../assets/manual/tile-layers-adding-an-xyz-tile-layer-ios.png)
 
 For a TMS server, which counts rows from the south, write `{-y}` in place of `{y}`; with `{y}`, its tiles come back from the wrong rows, with north and south swapped.
 
@@ -78,6 +82,8 @@ A download saves a layer's tiles to this device, so the layer draws without a co
 
 **Download Map Tiles…** in the :ui[Add Data]{icon=plus} menu or the **Layers** tab's :ui[plus]{icon=plus} menu opens the download sheet. :mac[On Mac it is also in the **Layer** menu.] **Download for Offline** in a tile layer's :ui[Layer options]{icon=ellipsis} menu opens the same sheet with that layer selected. :mac[On Mac, **Layer → Download for Offline…** does the same for the selected layer.]
 
+<video src="/media/tile-layers-tile-download.mp4" autoplay loop muted playsinline aria-label="Setting up a tile download on iPhone: Download Map Tiles… in the Add Data menu, Draw with two corners tapped on the map and Done on the tool card, then back in the sheet the Download Mode and Max Zoom Level rows with the Tiles and Storage cards updating, Download, and the progress bar above the bottom sheet"></video>
+
 1. **Tile Layer**: choose the layer. **Offline: …** layers and built basemaps are not offered.
 2. **Region**: set the rectangle.
    - :mac[**Map View**: on Mac, the current map view.]
@@ -115,6 +121,8 @@ The Mac has no cellular setting and downloads over any connection, a personal ho
 ### Using offline tiles
 
 A finished download adds an **Offline: {layer name}** layer at the top of the source layer's folder. The next is **Offline: {layer name} (2)**, and so on; downloads never merge. Each reads only the downloaded tiles inside its own rectangle. Past the downloaded max zoom it scales up its sharpest tile.
+
+![The Layers tab on iPhone after a download: an Offline: Hillshade row with a small download arrow on its icon, above the Hillshade tile layer it came from](../../../assets/manual/tile-layers-using-offline-tiles-ios.png)
 
 Downloaded tiles never sync. The project carries each download's rectangle and zoom range, so on another device the **Offline: …** layer is there without tiles. The **Layers** tab offers them in an **Offline tiles available** banner, and the layer's :ui[Layer options]{icon=ellipsis} menu has **Download for This Device**; either fetches the same rectangle and zooms again on that device. Built basemaps follow their own rule ([Other projects and other devices](/manual/basemaps/#other-projects-and-other-devices)).
 

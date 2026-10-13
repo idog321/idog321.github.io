@@ -8,6 +8,8 @@ Tap anything on the map, your own features or the marks, names and trails of a [
 
 :mac[On Mac, a click does everything a tap does in this chapter.]
 
+![A basemap trail tapped on iPhone: the Glendenning trail lit orange along its length, and the card at the foot of the screen showing its name, the line Footpath · Mount Douglas Park, the coordinate, Length and Stretches, with Save bright](../../../assets/manual/search-and-identify-what-a-tap-finds-ios.png)
+
 Your own points, lines and polygons answer, recorded tracks, saved routes and circles included. A line answers a tap on or just beside its stroke; a polygon anywhere inside its outline except in a hole, and just outside its edge.
 
 Only what the map is drawing answers. A hidden layer does not, nor anything below a tile layer in the tree ([Draw order](/manual/layer-tree/#draw-order)).
@@ -25,10 +27,14 @@ While a drawing tool or Edit Vertices is running, a tap goes to the tool and ope
 
 The card opens on the best answer and lists the rest under **Also here**. Your points come first, then basemap marks, your lines, your polygons, smallest first, and basemap lines.
 
+![The card for a point named Picnic table on iPhone, with an Also here row listing the Whittaker and Norn trails under it](../../../assets/manual/search-and-identify-also-here-ios.png)
+
 ## The card
 
 :ios[On iPhone, the card opens at the bottom of the screen in place of the bottom sheet; when the card closes, the sheet returns lowered to the strip even if it was raised before.]
 :mac[On Mac, the card is a popover on the pin, or at the spot you clicked for a line or an area.]
+
+![The card for a drawn line named West Ridge on iPhone: the name, the coordinate of the nearest point of the line, Length, and the round buttons along the foot with Edit as the pill](../../../assets/manual/search-and-identify-the-card-ios.png)
 
 The outline stays while the card is open, and on a line while its elevation profile is open. A basemap trail lights as far as the map has loaded, then the whole feature once it has been read.
 
@@ -66,6 +72,8 @@ The feature goes into a folder named **From the map**, made at the top of the La
 
 :::ios
 On iPhone, hold the map still for half a second. A ring with a dot marks the spot and its place card opens; nothing is added to the project. A hold does nothing while a tool is running. Holding a pin or a trail still opens the place card, with the pin or trail under **Also here**.
+
+![The place card on iPhone after holding a spot on a hillside: the ring and dot on the map, and the card reading Marked Location with Elevation, Slope and Aspect, Sunrise, Sunset and Daylight, and the distance from you](../../../assets/manual/search-and-identify-the-place-card-ios.png)
 :::
 
 :mac[On Mac, right-click bare ground and choose **Info**.]
@@ -104,6 +112,8 @@ Results come in up to four sections, in this order: **Coordinate**, **Layers**, 
 | **Layers** | Names of folders, features, rasters and tile layers, anywhere in the name, ignoring case and accents. Also the parent folder's name, attribute keys and values, a point's coordinate and a tile layer's URL. | Names that start with the text first. Up to 100 rows. |
 | **Basemaps** | Names your project's basemaps print, from the data on the device, hidden basemaps included. Needs two letters or digits, so `19` finds Highway 19; every typed word must start a word of the name, so `tin h` finds Tin Hat Mountain. Works offline. | Up to 20 rows. |
 | **Places** | Apple's suggestions for addresses, points of interest and natural features, favouring the part of the world the map shows. Needs a connection. | Up to eight rows. |
+
+![Search in the Layers tab on iPhone with Look typed: a Layers section listing a point and a line, then a Basemaps section listing a peak and a footpath with their distances](../../../assets/manual/search-and-identify-what-each-section-finds-ios.png)
 
 A query that is exactly a category word, such as `points`, `lines`, `area`, `rasters`, `tiles` or `folders`, lists every layer of that kind under **Layers** instead of matching names; `vectors` lists points, lines and polygons together.
 

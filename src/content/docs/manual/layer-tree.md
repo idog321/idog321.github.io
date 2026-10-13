@@ -8,13 +8,13 @@ The Layers tab lists everything in the open project, in the order it draws on th
 
 A row is a feature (a point, line or polygon, drawn or imported), a raster overlay (an imported GeoTIFF or GeoPDF map), a tile layer (streamed from a server, or a basemap you built) or a folder, which holds any of these nested to any depth.
 
+![The Layers tab on iPhone: an Offline: Hillshade row with the download arrow on its icon, the Hillshade tile layer it came from, a saved route, a recorded track and a drawn line each previewing their own style, five points, a Summits folder and a From the map folder, and a built basemap at the bottom](../../../assets/manual/layer-tree-what-is-in-the-tree-ios.png)
+
 An **Offline: {name}** row's icon carries a small download arrow when the tiles are on this device, and is dimmed with an orange iCloud arrow when the project arrived by sync and the tiles did not ([Using offline tiles](/manual/tile-layers/#using-offline-tiles)).
 
 ## Draw order
 
 Rows higher in the tree draw on top of rows below them.
-
-![The Layers tab beside the map: dragging the line row Ridge Trail above the raster row Survey Map makes the line draw over the raster](/media/draw-order.svg)
 
 A layer that is switched on can still be missing from the map, because something above it in the tree is covering it. A tile layer covers the whole map, so anything below it in the tree is hidden everywhere; a raster only hides the area inside its own footprint, so the same layer can be hidden in one part of the map and visible in another. An offline tile layer covers only the regions you downloaded, a basemap you built covers only the area it was built for, and a layer faded below 5% opacity covers nothing at all.
 
@@ -44,6 +44,8 @@ It is not a live default: a feature you draw afterwards starts from the **Defaul
 
 :::ios
 On iPhone, **Select** turns the tree into a checklist for the bar's **Hide**, **Delete**, **Share** and **Export**. **Delete** and **Group** end Select; **Hide** leaves the rows checked for another action.
+
+![Select mode on iPhone: two rows checked, and the bar along the foot of the sheet reading 2, Share, Export, Hide, Group, Move and Delete](../../../assets/manual/layer-tree-selecting-several-rows-ios.png)
 :::
 
 :::mac
@@ -104,6 +106,8 @@ Copy also puts the features on the clipboard as GeoJSON text, for pasting into a
 
 :::ios
 On iPhone, **Copy**, **Paste** and **Duplicate** are in a row's :ui[Layer options]{icon=ellipsis} menu and act on that one row.
+
+![A folder's Layer options menu on iPhone: Edit, Hide and Zoom to, New Subfolder, Move to… and New Folder with “Summits”, Copy and Duplicate, and Delete](../../../assets/manual/layer-tree-copying-pasting-and-duplicating-ios.png)
 :::
 
 :::mac

@@ -75,6 +75,8 @@ On the project card at the top of the Projects tab, an orange dot beside the nam
 
 **Restore from Backup** lists the earlier versions TopoKit holds, newest first. :mac[On Mac, **File → Restore from Backup** lists the same for the open project.]
 
+![The Restore from Backup submenu open on a project row in the Projects tab on iPhone, listing one Last save backup with its date and time](../../../assets/manual/projects-and-files-restoring-an-earlier-version-ios.png)
+
 - **Last save backup**: the version on disk before this device's latest save.
 - **Sync conflict**: a version set aside when iCloud reported a conflict ([Sync conflicts](#sync-conflicts)).
 - **Saved copy**: any other `.mapproject` in the project folder, including the copy a restore keeps.
@@ -100,8 +102,6 @@ If the project is open on another device, **Updated on another device** appears 
 ### Merging changes from another device
 
 TopoKit never replaces your unsaved changes with another device's version, and never saves over a version it has not loaded. If you have unsaved changes when another device's version arrives, or make one before you reload, automatic saving stops and **Project Changed on Another Device** asks what to do:
-
-![The Project Changed on Another Device alert, with what each of its four buttons does to this device's version and the other device's](/media/icloud-alert.svg)
 
 - **Merge Changes**: combines both devices' changes and saves. A **Merged** alert says how many changes were kept from each device.
 - **Split Into Two Projects**: saves your changes as a new project beside this one, named with "(my changes, Oct 8, 14:32)" added and holding copies of its rasters and photos, and loads the other device's version.

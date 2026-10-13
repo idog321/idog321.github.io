@@ -24,6 +24,8 @@ Each tile download, elevation download and basemap build shows a progress row at
 
 The sidebar holds the same eight buttons on iPhone and Mac.
 
+![The tool sidebar on the right edge of the iPhone screen: Add Point, Add Line, Add Polygon, Add Circle and Add Route, a divider, Add Data and Basemaps, a divider, and the Apple Maps button](../../../assets/manual/interface-sidebar-strip-ios.png)
+
 1. :ui[Add Point]{icon=add-point} marks one location where you tap or click, or where you stand, and opens its editor ([Adding a point](/manual/points-lines-polygons/#adding-a-point)).
 2. :ui[Add Line]{icon=add-line} draws a line with its live length and bearing ([Adding lines, polygons and circles](/manual/points-lines-polygons/#adding-lines-polygons-and-circles)).
 3. :ui[Add Polygon]{icon=add-polygon} draws an area with its live area and perimeter ([Polygons](/manual/points-lines-polygons/#polygons)).
@@ -37,6 +39,8 @@ The sidebar holds the same eight buttons on iPhone and Mac.
 
 :::ios
 ## iPhone layout
+
+![TopoKit on iPhone: the map fills the screen with a built basemap of Mount Douglas Park, the tool sidebar sits on the right edge with all eight buttons, and the sheet rests at its strip height showing the Projects, Layers, GPS and Settings tabs](../../../assets/manual/interface-iphone-layout-ios.png)
 
 TopoKit on iPhone runs in portrait only. The map fills the screen, and the sheet stays at one of three heights: a strip showing only the tab bar, half the screen, or nearly full. Tapping another tab raises the strip to half height, and tapping the selected tab raises the sheet to nearly full, and again lowers it to half. Choosing a search result, or **Zoom to** on a row, lowers the sheet to the strip so the place is in view. Pulling the sheet down to the strip keeps what is open in it, so an editor in the Layers tab keeps its unsaved changes. Near full height the location button, scale bar, compass and credit line fade out.
 
@@ -103,7 +107,7 @@ The history has no length limit. It starts empty whenever a project is created, 
 :::ios
 On iPhone, Undo is a pill at the bottom right of the **Layers** list, shown while there is a step to undo or redo, and an editor opened from the list covers it. The pill steps aside while rows are checked in **Select**. It is the only place for the project's Undo on iPhone, so a change made on the map is undone from the Layers tab.
 
-![The Undo pill at the bottom right of the Layers tab: Undo alone, Undo with Redo once a step has been undone, and Undo dimmed with Redo when nothing is left to undo](/media/iphone-undo-pill.svg)
+![The Undo pill at the bottom right of the Layers tab in its three states: Undo alone, Undo beside Redo once a step has been undone, and Undo dimmed beside Redo when nothing is left to undo](../../../assets/manual/interface-undo-pill.png)
 :::
 
 :::mac
