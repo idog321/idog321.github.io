@@ -8,8 +8,6 @@ Add Route builds a route through up to 14 stops for driving, walking or cycling.
 
 :ui[Add Route] in the tool sidebar starts the tool. :mac[On Mac, **Tools → Add Route** (`Cmd-5`) does the same.] Both are dimmed until a project is open. Routes are part of the full app; see [Your TopoKit](/manual/your-topokit/#what-asks-you-to-unlock).
 
-<video src="/media/routes-adding-stops.mp4" autoplay loop muted playsinline aria-label="Adding a route on iPhone: tapping the map adds the first two stops and the road draws between them, a third stop is picked from search, the stops are reordered by dragging a field up the list, and the distance and travel time update each time"></video>
-
 The tool card opens with one empty field reading **Start**. To fill it:
 
 - **Tap the map.** Each tap adds a stop at the end of the list.
@@ -31,15 +29,11 @@ A stop tapped onto the map is named from Apple's place lookup, for example "St M
 
 From two stops, the totals line under the fields holds the travel-mode menu, the distance and travel time, a count of straight legs when there are any, **Undo**, **Redo** once something has been undone, and **Reverse**.
 
-![The Add Route card on iPhone with two stops: each stop in a numbered field with a drag handle, the empty field below reading Add a stop, and under them the Drive menu, 0.8 km and 2 min, Undo and Save](../../../assets/manual/routes-card-ios.png)
-
 The distance is measured along the line drawn on the map, so it matches the elevation profile; the travel time is Apple's. [Measuring](/manual/measurement/#units) covers the units, and **Elevation profile** opens the [elevation profile](/manual/elevation/#a-profile-while-you-draw) of the route being drawn.
 
 ## Travel modes
 
 The mode menu is on the card before the first stop. TopoKit starts in **Drive** and remembers the last mode chosen across launches. Every leg is asked for in the chosen mode. There is no transit and no off-trail routing.
-
-![The travel-mode menu open over the Add Route card: Cycle, Walk and Drive, with Drive ticked](../../../assets/manual/routes-travel-modes-ios.png)
 
 ## Changing a route
 
@@ -66,8 +60,6 @@ Stops draw in **Vertex Style** and legs in **Default Style** under **Routes**, b
 ## Saving a route
 
 **Save** on the tool card opens the route editor. It stays dimmed until a project is open. The route stays on the map while the editor is open, so cancelling the editor keeps it, and the tool closes once the route is saved.
-
-![The Route Editor on iPhone: the name pre-filled as Lookout → 4085 Beam Cres, a description reading Route via Apple Maps Directions, and the Distance, Travel Time and Transport rows](../../../assets/manual/routes-saving-a-route-ios.png)
 
 The name is pre-filled as "Start → End" from the names of the first and last stops, or from the travel mode and the distance when either end has no name. A blank description is saved as "Route via Apple Maps Directions".
 
