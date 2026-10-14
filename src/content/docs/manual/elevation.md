@@ -35,7 +35,15 @@ When the tile is missing, each place that reads heights asks before downloading:
 2. Tap or click squares to select them.
 3. Choose **Download**.
 
-![The elevation grid over the Strait of Georgia on iPhone: the one-degree square holding Victoria is green, the two squares north and east of it are blue, the sea squares have no overlay, and the bar reads 2 tiles · 50–80 MB with the trash and Download](../../../assets/manual/elevation-the-elevation-grid-ios.png)
+::::platforms
+:::ios
+![The elevation grid over Vancouver Island on iPhone: the squares whose tiles are on the device green, one of them tapped and so red, and the tool card reading 1 downloaded tile selected with the trash turned red and Download dimmed](../../../assets/manual/elevation-the-elevation-grid-iphone.png)
+:::
+
+:::mac
+![The elevation grid on Mac: the one-degree squares over British Columbia green because their tiles are on the device, two squares south of the border blue because they are selected, and the tool card reading 2 tiles · 50–80 MB with the trash and Download](../../../assets/manual/elevation-the-elevation-grid-mac.png)
+:::
+::::
 
 :ios[On iPhone, opening the grid ends any tool in progress and discards an unfinished drawing.]
 

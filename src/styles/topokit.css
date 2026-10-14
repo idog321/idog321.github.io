@@ -392,6 +392,16 @@
   width: auto;
   height: auto;
 }
+/* Mac popovers (Edit Offline Basemap, Edit Raster): about their own size */
+.sl-markdown-content img[src*='-popover-'] {
+  max-width: 23rem;
+}
+
+/* The search results panel, wider than a card */
+.sl-markdown-content img[src*='-results-'] {
+  max-width: 32rem;
+}
+
 .sl-markdown-content img[src*='-live-card-'] {
   max-width: 17.5rem;
   width: 100%;

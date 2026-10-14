@@ -16,6 +16,16 @@ On iPhone, tap :ui[Add Data]{icon=plus} on the [tool sidebar](/manual/interface/
 
 TopoKit copies each raster into its own storage on the device, so moving, renaming or deleting the original afterwards does not affect the layer.
 
+::::platforms
+:::ios
+![A GeoPDF trail map drawn over the basemap between Tin Hat Hut and Elk Lake Hut on iPhone, after Zoom to on its row](../../../assets/manual/raster-overlays-importing-a-raster-iphone.png)
+:::
+
+:::mac
+![A GeoPDF trail map drawn over the basemap around Tin Hat Hut on Mac, with the Maps folder open in the Layers panel and its raster rows, each with a cloud icon](../../../assets/manual/raster-overlays-importing-a-raster-mac.png)
+:::
+::::
+
 A raster that needs no reprojection appears at once; in an iCloud project it is followed by the **Raster Storage** question ([Rasters and iCloud](#rasters-and-icloud)). One that needs reprojection brings up the **Reprojection Required** sheet.
 
 ## The reprojection sheet
@@ -68,6 +78,8 @@ The collar outside a topographic sheet's neatline, with the title block, legend 
 
 ## How reprojection works
 
+![A GeoPDF sheet reprojected and set at its true angle over the satellite map on Mac, cut at its neatline](../../../assets/manual/raster-overlays-how-reprojection-works-mac.png)
+
 Everything in TopoKit draws in Web Mercator (EPSG:3857). A raster already in Web Mercator or plain latitude/longitude (EPSG:4326, 4269 or 4258) is drawn straight from its file, except a GeoPDF with four or more control points. Every other raster is reprojected once and the result cached. [PROJ](https://proj.org) does the projection math, so almost any coordinate system with an EPSG code works. Imagery above about 85° latitude is clipped at the Mercator limit.
 
 ### Datum accuracy
@@ -102,6 +114,16 @@ The cache does not sync through [iCloud](/manual/projects-and-files/#icloud-sync
 
 :mac[On Mac, click the raster's row to open **Edit Raster**.] :ios[On iPhone, tap the raster's row to open **Edit Raster**.]
 
+::::platforms
+:::ios
+![Edit Raster on iPhone: the Name field, Opacity, NoData Transparency with its switch, Flip Y-Axis with Auto-detect, Force Flip and Force No Flip, iCloud Sync reading Synced via iCloud with Remove from iCloud, then Format and Area](../../../assets/manual/raster-overlays-editing-a-raster-iphone.png)
+:::
+
+:::mac
+![The Edit Raster popover on Mac: the Name field, Opacity, NoData Transparency with its switch, Flip Y-Axis with Auto-detect, Force Flip and Force No Flip, iCloud Sync reading Synced via iCloud with Remove from iCloud, then Format, Area, CRS and Bounds, and Delete Raster](../../../assets/manual/raster-overlays-editing-a-raster-popover-mac.png)
+:::
+::::
+
 - **Opacity**: how much of the map below shows through the raster, Apple Maps' place names included.
 - **Render Quality**: how much of the image is decoded, from 2048 px at Fast to the whole image at **Full**, the default. The row appears only for a GeoTIFF and applies only to one drawn straight from its file; a reprojected raster draws from its cached copy.
 - **NoData Transparency**: the pixel value drawn transparent ([NoData](#nodata)). Applied when you close the editor.
@@ -122,6 +144,8 @@ Changes made in Edit Raster are not on the undo history.
 ## NoData
 
 NoData is the pixel value a raster uses for "no image here", usually the black or white block around a scanned sheet. To make it transparent, set the value and turn its switch on; neither works alone. The switch starts off. When a GeoTIFF stores its own NoData value, TopoKit fills in the field at import; otherwise the field starts empty.
+
+![A hillshade raster on Mac split by a line: on one side the black collar around the image is drawn, on the other, with NoData set to 0, it is transparent and the map shows through](../../../assets/manual/raster-overlays-nodata-crop-mac.png)
 
 Enter the value the unwanted pixels display as, usually `0` for black or `255` for white. The value is rounded to a whole number, and only 0 to 255 matches a pixel, so a declared sentinel such as `-9999` makes nothing transparent: replace it with the display value, or null those pixels out before importing. A pixel counts as NoData only when all three RGB channels equal the value.
 

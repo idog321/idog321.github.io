@@ -8,7 +8,15 @@ Tap anything on the map, your own features or the marks, names and trails of a [
 
 :mac[On Mac, a click does everything a tap does in this chapter.]
 
-![A basemap trail tapped on iPhone: the Glendenning trail lit orange along its length, and the card at the foot of the screen showing its name, the line Footpath · Mount Douglas Park, the coordinate, Length and Stretches, with Save bright](../../../assets/manual/search-and-identify-what-a-tap-finds-ios.png)
+::::platforms
+:::ios
+![A basemap trail tapped on iPhone: the Sunshine Coast Trail lit along its length, and the card at the foot of the screen with its name, Trail, the coordinate, Length, the count of other stretches with this name, and Save](../../../assets/manual/search-and-identify-what-a-tap-finds-iphone.png)
+:::
+
+:::mac
+![A basemap trail clicked on Mac: the Sunshine Coast Trail lit orange along its length, and the card at the spot clicked with its name, Trail, unpaved, the coordinate, Length and Stretches, the count of other stretches with this name, an Also here row, and Save](../../../assets/manual/search-and-identify-what-a-tap-finds-mac.png)
+:::
+::::
 
 Your own points, lines and polygons answer, recorded tracks, saved routes and circles included. A line answers a tap on or just beside its stroke; a polygon anywhere inside its outline except in a hole, and just outside its edge.
 
@@ -27,7 +35,15 @@ While a drawing tool or Edit Vertices is running, a tap goes to the tool and ope
 
 The card opens on the best answer and lists the rest under **Also here**. Your points come first, then basemap marks, your lines, your polygons, smallest first, and basemap lines.
 
-![The card for a point named Picnic table on iPhone, with an Also here row listing the Whittaker and Norn trails under it](../../../assets/manual/search-and-identify-also-here-ios.png)
+::::platforms
+:::ios
+![The card for Manzanita Bluff on iPhone, a hut on the trail: its glyph, Huts, Elevation, the distance from you, and an Also here row reading Trail](../../../assets/manual/search-and-identify-also-here-iphone.png)
+:::
+
+:::mac
+![The card for Confederation Hut on Mac, a hut on the trail: its glyph, Huts, the coordinate, the distance from you, an Also here row reading Trail, and the button row with Edit as the pill](../../../assets/manual/search-and-identify-also-here-card-mac.png)
+:::
+::::
 
 ## The card
 
@@ -78,11 +94,19 @@ The feature goes into a folder named **From the map**, made at the top of the La
 
 :::ios
 On iPhone, hold the map still for half a second. A ring with a dot marks the spot and its place card opens; nothing is added to the project. A hold does nothing while a tool is running. Holding a pin or a trail still opens the place card, with the pin or trail under **Also here**.
-
-![The place card on iPhone after holding a spot on a hillside: the ring and dot on the map, and the card reading Marked Location with Elevation, Slope and Aspect, Sunrise, Sunset and Daylight, and the distance from you](../../../assets/manual/search-and-identify-the-place-card-ios.png)
 :::
 
 :mac[On Mac, right-click bare ground and choose **Info**.]
+
+::::platforms
+:::ios
+![The place card on iPhone after holding a spot: the ring and dot on the map, and the card reading Marked Location with the nearest place, Elevation, Slope, Sunrise, Sunset and Daylight, the distance from you, and Add Point](../../../assets/manual/search-and-identify-the-place-card-iphone.png)
+:::
+
+:::mac
+![The place card on Mac after Info on bare ground: Marked Location, the coordinate, Near Haslam Lake, Elevation, Slope, Sunrise, Sunset and Daylight, the distance from you, and Add Point as the pill](../../../assets/manual/search-and-identify-the-place-card-mac.png)
+:::
+::::
 
 The "Near <place>" line under the coordinate needs Apple's place look-up, so it appears only with a connection.
 
@@ -123,7 +147,15 @@ Results come in up to four sections, in this order: **Coordinate**, **Layers**, 
 | **Basemaps** | Names your project's basemaps print, from the data on the device, hidden basemaps included. Needs two letters or digits, so `19` finds Highway 19; every typed word must start a word of the name, so `tin h` finds Tin Hat Mountain. Works offline. | Up to 20 rows. |
 | **Places** | Apple's suggestions for addresses, points of interest and natural features, favouring the part of the world the map shows. Needs a connection. | Up to eight rows. |
 
-![Search in the Layers tab on iPhone with Look typed: a Layers section listing a point and a line, then a Basemaps section listing a peak and a footpath with their distances](../../../assets/manual/search-and-identify-what-each-section-finds-ios.png)
+::::platforms
+:::ios
+![Search in the Layers tab on iPhone with tin h typed: a Layers section listing Tin Hat Hut, then a Basemaps section listing Tin Hat Mountain and Tin Hat Hut cabin with their distances](../../../assets/manual/search-and-identify-search-results-iphone.png)
+:::
+
+:::mac
+![The search bar on Mac with tin h typed and its results below: a Layers section listing Tin Hat Hut, then a Basemaps section listing Tin Hat Mountain and Tin Hat Hut cabin with their distances](../../../assets/manual/search-and-identify-search-results-mac.png)
+:::
+::::
 
 A query that is exactly a category word, such as `points`, `lines`, `area`, `rasters`, `tiles` or `folders`, lists every layer of that kind under **Layers** instead of matching names; `vectors` lists points, lines and polygons together.
 
