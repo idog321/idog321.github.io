@@ -19,6 +19,10 @@ A stop picked from search, a typed coordinate or :ui[My Location]{icon=location}
 
 A stop tapped onto the map is named from Apple's place lookup, for example "St Mary's Ln"; until the lookup answers, or when it finds nothing, the field shows its coordinates.
 
+:::mac
+<video src="/media/routes-adding-stops.mp4" autoplay loop muted playsinline aria-label="Add Route on a Mac: three stops clicked along the highway, each leg drawn as Apple answers with the distance and time on the card's totals line, then Walk chosen from the travel-mode menu and the legs asked for again"></video>
+:::
+
 ### Starting from a point or a place
 
 - **A card on the map**: :ios[**Route here**]:mac[**Route to Here**] on a point's, a place's or a search result's [card](/manual/search-and-identify/#the-cards-buttons) makes that spot the last stop. With a location fix, "My Location" becomes the start and TopoKit asks for the route at once. Without one, the spot is the only stop, and your first tap, search pick or :ui[My Location]{icon=location} becomes the start. This works with no project open; saving still needs one.
@@ -29,11 +33,25 @@ A stop tapped onto the map is named from Apple's place lookup, for example "St M
 
 From two stops, the totals line under the fields holds the travel-mode menu, the distance and travel time, a count of straight legs when there are any, **Undo**, **Redo** once something has been undone, and **Reverse**.
 
+:::ios
+![The Add Route tool card on iPhone with a walking route between two stops picked from search: the numbered Start and End fields, the empty Add a stop field, the totals line reading 3.30 km · 47 min with Undo and Reverse, and ✕, Zoom to, Elevation profile, Share and Save](../../../assets/manual/routes-the-tool-card-iphone.png)
+:::
+
 The distance is measured along the line drawn on the map, so it matches the elevation profile; the travel time is Apple's. [Measuring](/manual/measurement/#units) covers the units, and **Elevation profile** opens the [elevation profile](/manual/elevation/#a-profile-while-you-draw) of the route being drawn.
 
 ## Travel modes
 
 The mode menu is on the card before the first stop. TopoKit starts in **Drive** and remembers the last mode chosen across launches. Every leg is asked for in the chosen mode. There is no transit and no off-trail routing.
+
+::::platforms
+:::ios
+![The travel-mode menu on iPhone: Cycle, Walk ticked, and Drive](../../../assets/manual/routes-travel-modes-menu-iphone.png)
+:::
+
+:::mac
+![The travel-mode menu on Mac: Drive, Walk and Cycle](../../../assets/manual/routes-travel-modes-menu-mac.png)
+:::
+::::
 
 ## Changing a route
 
