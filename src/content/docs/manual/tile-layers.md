@@ -166,6 +166,8 @@ The Mac has no cellular setting and downloads over any connection, a personal ho
 
 A finished download adds an **Offline: {layer name}** layer at the top of the source layer's folder. The next is **Offline: {layer name} (2)**, and so on; downloads never merge. Each reads only the downloaded tiles inside its own rectangle. Past the downloaded max zoom it scales up its sharpest tile.
 
+<video src="/media/tile-layers-using-offline-tiles.mp4" autoplay loop muted playsinline aria-label="Downloading tiles on a Mac: Download Map Tiles… chosen from the Add Data menu, the sheet with the Topo layer and Map View over Mount St. Helens, the zoom set to 14 and the cards reading 111 tiles, Download, the Download Complete alert, the Offline: Topo row appearing above Topo, the map zoomed out twice, and then the Topo row's eye clicked so the streamed layer goes and the downloaded rectangle stands alone over Apple's imagery"></video>
+
 ![Two rows at the top of the Layers panel on Mac: Offline: Topo, its tile icon badged with a download arrow, above the Topo tile layer it came from](../../../assets/manual/tile-layers-using-offline-tiles-panel-mac.png)
 
 Downloaded tiles never sync. The project carries each download's rectangle and zoom range, so on another device the **Offline: …** layer is there without tiles. The **Layers** tab offers them in an **Offline tiles available** banner, and the layer's :ui[Layer options]{icon=ellipsis} menu has **Download for This Device**; either fetches the same rectangle and zooms again on that device. Built basemaps follow their own rule ([Other projects and other devices](/manual/basemaps/#other-projects-and-other-devices)).
