@@ -407,6 +407,11 @@
   max-width: 32rem;
 }
 
+/* Two 400 px crops of the location dot side by side, at about 1x */
+.sl-markdown-content img[src*='location-dot'] {
+  max-width: 26rem;
+}
+
 /* An alert (Save Track, Delete Layer?) is a small dialog */
 .sl-markdown-content img[src*='-alert-'] {
   max-width: 22rem;

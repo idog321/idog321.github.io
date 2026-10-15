@@ -23,7 +23,7 @@ On Mac, only the map's location button and **View → Show My Location** (`Cmd-L
 :::ios
 On iPhone, the map marks your position with an orange dot. A pointer on the dot shows the direction the phone faces. It is sharp when the compass is accurate to 10° or better and turns rounder and fainter as accuracy drops, reaching its faintest at 45° or worse. With no usable compass reading, or with Precise Location off, the dot has no pointer. A circle around the dot shows the fix's horizontal accuracy when that is worse than 5 m.
 
-![The orange location dot on the map with its white ring](../../../assets/manual/gps-and-track-recording-the-location-dot.png)
+![The location dot on iPhone twice, on the trail at the same spot: on the left with a sharp pointer, the compass accurate to 5°, and on the right with the pointer rounder and fainter at 30°](../../../assets/manual/gps-and-track-recording-the-location-dot-iphone.png)
 :::
 
 :::mac
@@ -32,6 +32,8 @@ On Mac, the map marks your position with the system's blue location dot. TopoKit
 
 :::ios
 ## The GPS tab
+
+![The GPS tab on iPhone at rest on the trail: the coordinate, the H and V accuracy pills in yellow at 9 m and 8 m, the compass reading 349° with True N chosen, the Speed, Altitude, Course, Sunrise and Sunset slots, and Record Track](../../../assets/manual/gps-and-track-recording-the-gps-tab-iphone.png)
 
 The top of the tab holds latitude and longitude, or a single UTM line, in the format set under [Settings → Units & Coordinates](/manual/settings/#units--coordinates). The **H** and **V** pills give horizontal and vertical accuracy, green to 5 m, yellow to 15 m, orange to 50 m and red beyond. A grey dot and `--` mean iOS is not reporting that figure, most often vertical accuracy.
 
@@ -57,6 +59,8 @@ Tapping a coordinate, an accuracy pill, the compass or a stat's value copies it:
 2. Tap **Record Track**.
 3. Tap the pause button for a rest break, and again to resume.
 4. Tap **Stop Recording** when the track is finished.
+
+![The GPS tab mid-recording on iPhone: the tab red, the compass reading the direction of travel, the trash, pause and Stop Recording buttons with Balanced under them, the Speed, Time and Elevation cards with their figures, and the live chart drawing the descent](../../../assets/manual/gps-and-track-recording-recording-a-track-iphone.png)
 
 A track records into an open project; with none open, **Record Track** asks you to open or create one from the [Projects tab](/manual/projects-and-files/#creating-a-project). Recording tracks is part of the full app ([What asks you to unlock](/manual/your-topokit/#what-asks-you-to-unlock)).
 
