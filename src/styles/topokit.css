@@ -171,19 +171,6 @@
   max-width: 17rem;
 }
 
-/* The tile-download recording floats so the whole section wraps around it —
-   the four numbered settings, not just the lead-in paragraph. ::::beside is
-   wrong here: it pairs the figure with ONE sibling, so a tall video beside a
-   two-line paragraph left the list stranded under 400px of white space. Safe as
-   a float because Starting a download holds only this one figure, and the
-   h2/h3 { clear: both } rule below stops it bleeding into the next section. */
-@media (min-width: 50rem) {
-  .sl-markdown-content video[src*='tile-download'] {
-    float: inline-end;
-    margin-inline-start: 1.5rem;
-    margin-block-end: 1rem;
-  }
-}
 
 /* DEFAULT CAP FOR EVERY MANUAL IMAGE. A portrait phone screenshot scaled to the
    text column is 1000px+ tall and swallows the page. Capping height as well as
