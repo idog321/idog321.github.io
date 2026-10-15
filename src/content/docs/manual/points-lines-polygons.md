@@ -55,9 +55,15 @@ On save, the circle is stored as a polygon feature: a 64-vertex ring, placed on 
 
 These work while drawing a line or polygon and in [Edit Vertices on Map](#reshaping-a-saved-line-or-polygon).
 
+::::platforms
 :::ios
 ![A line in Edit Vertices on Map on iPhone: the ringed vertex with the Delete Point bubble beside it, faint dots and lengths along the segments, and the card below reading 4 pts • 20.2 km with ✕, Undo and Done](../../../assets/manual/points-lines-polygons-moving-adding-and-deleting-vertices-iphone.png)
 :::
+
+:::mac
+![A line traced along the trail in Edit Vertices on Map on a Mac: the vertex dots along it, the segment lengths, the open hand resting beside the faint dot halfway along a segment, and the card below reading 10 pts • 3.18 km with ✕, Undo and Done](../../../assets/manual/points-lines-polygons-moving-adding-and-deleting-vertices-mac.png)
+:::
+::::
 
 - **Move.** Drag a vertex. Letting go records the drag as one step.
 - **Add.** A faint dot halfway along a segment becomes a new vertex when you drag it; a tap on it adds nothing. A segment shows its faint dot only when it is long enough on screen to grab without touching its ends, and no more than 100 show at once, so a long line seen from far out has none until you zoom in. :mac[On Mac, a segment's faint dot shows only while the pointer is near it.]
@@ -77,7 +83,7 @@ Cancelling the editor returns you to the drawing with every vertex in place. The
 
 Tap **Edit Vertices on Map** in a line's or polygon's editor. :mac[On Mac, **Layer → Edit Vertices on Map** does the same for the line or polygon selected in the Layers tab.] The editor closes, saving what it held, and the vertices come up as dots to [move, add and delete](#moving-adding-and-deleting-vertices).
 
-<video src="/media/points-lines-polygons-edit-vertices.mp4" autoplay loop muted playsinline aria-label="Edit Vertices on Map on a saved line on a Mac: a vertex dragged, a right-click deleting a vertex with no menu, the card's Undo bringing it back, a faint dot dragged out into a new vertex, and Done"></video>
+<video src="/media/points-lines-polygons-edit-vertices.mp4" autoplay loop muted playsinline aria-label="Edit Vertices on Map on a line traced along the Sunshine Coast Trail on a Mac: a vertex that slipped beside the trail is dragged onto it, a right-click deletes a vertex with no menu, the card's Undo brings it back, a faint dot is dragged from a segment that cuts a bend onto the bend, and Done"></video>
 
 Each change is written into the saved feature as you make it, as its own undo step. **Done** keeps them all, so Undo afterward takes the changes back one at a time. ✕ puts the line or polygon back as it was when you opened Edit Vertices on Map and removes those steps. Every vertex you leave in place keeps its height, time and accuracy, so a recorded track keeps its timings; a vertex you move or add has none. While the card is up, its **Undo** :mac[and **Edit → Undo**] take back only this editing's changes ([While a tool is open](/manual/interface/#while-a-tool-is-open)).
 
