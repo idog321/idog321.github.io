@@ -57,7 +57,7 @@ These work while drawing a line or polygon and in [Edit Vertices on Map](#reshap
 
 ::::platforms
 :::ios
-![A line in Edit Vertices on Map on iPhone: the ringed vertex with the Delete Point bubble beside it, faint dots and lengths along the segments, and the card below reading 4 pts • 20.2 km with ✕, Undo and Done](../../../assets/manual/points-lines-polygons-moving-adding-and-deleting-vertices-iphone.png)
+![A line traced along the trail in Edit Vertices on Map on iPhone: the vertex squares on the trail, the ringed vertex at a bend with the Delete Point bubble under it, faint dots and lengths along the segments, and the card below reading 7 pts • 998 m with ✕, Undo and Done](../../../assets/manual/points-lines-polygons-moving-adding-and-deleting-vertices-iphone.png)
 :::
 
 :::mac
