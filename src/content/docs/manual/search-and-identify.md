@@ -10,7 +10,7 @@ Tap anything on the map, your own features or the marks, names and trails of a [
 
 ::::platforms
 :::ios
-![A basemap trail tapped on iPhone: the Sunshine Coast Trail lit along its length, and the card at the foot of the screen with its name, Trail, the coordinate, Length, the count of other stretches with this name, and Save](../../../assets/manual/search-and-identify-what-a-tap-finds-iphone.png)
+![A basemap trail tapped on iPhone beside Manzanita Bluff: the card at the foot of the screen with its name, Sunshine Coast Trail, the line Trail, the coordinate, Length 26.2 km, the count of other stretches with this name, and Save](../../../assets/manual/search-and-identify-what-a-tap-finds-iphone.png)
 :::
 
 :::mac
@@ -100,7 +100,7 @@ On iPhone, hold the map still for half a second. A ring with a dot marks the spo
 
 ::::platforms
 :::ios
-![The place card on iPhone after holding a spot: the ring and dot on the map, and the card reading Marked Location with the nearest place, Elevation, Slope, Sunrise, Sunset and Daylight, the distance from you, and Add Point](../../../assets/manual/search-and-identify-the-place-card-iphone.png)
+![The place card on iPhone after holding a spot on the bluff: the ring and dot on the map, and the card reading Marked Location with the coordinate, Near Qathet, Elevation, Slope and Aspect, Sunrise, Sunset and Daylight, the distance from you, and Add Point](../../../assets/manual/search-and-identify-the-place-card-iphone.png)
 :::
 
 :::mac

@@ -22,7 +22,7 @@ Until the circle is locked, dragging its centre moves the centre alone and chang
 
 ::::platforms
 :::ios
-![A circle being drawn on iPhone with the lock on: the centre and edge squares with the dashed ring between them, and the card reading Area 102.5 km², Radius 5.71 km with a lock, and Circumference 35.89 km, with the lock button filled](../../../assets/manual/measurement-circles-and-the-radius-lock-iphone.png)
+![A circle being drawn on iPhone with the lock on: its centre on Tin Hat Hut and its edge on Elk Lake Hut, the dashed ring round the huts, and the card reading Area 257.8 km², Radius 9.06 km with a lock, and Circumference 56.91 km, with the lock button filled](../../../assets/manual/measurement-circles-and-the-radius-lock-iphone.png)
 :::
 
 :::mac

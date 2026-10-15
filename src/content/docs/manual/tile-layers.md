@@ -4,9 +4,15 @@ description: "Add XYZ and WMS tile layers and download regions for offline use."
 ---
 A tile layer is a map streamed from a server. TopoKit fetches only the tiles for the area on screen.
 
+::::platforms
+:::ios
+![A topographic tile layer drawn over Mount St. Helens on iPhone: the crater, the lava dome and the contour lines fill the map at the 1 km scale](../../../assets/manual/tile-layers-on-the-map-iphone.png)
+:::
+
 :::mac
 ![A topographic tile layer drawn over Mount St. Helens on a Mac: the crater and its contour lines fill the map, and the layer's row, named Topo, sits at the top of the Layers panel](../../../assets/manual/tile-layers-on-the-map-mac.png)
 :::
+::::
 
 TopoKit ships no tile sources: you paste the address of a service you choose. For a topographic map without a source of your own, :ui[Basemaps] in the tool sidebar [builds one](/manual/basemaps/#building-a-basemap).
 
@@ -49,7 +55,7 @@ The sheet shows no preview and accepts any text as a template, so a wrong addres
 
 ::::platforms
 :::ios
-![Add Tile Layer on iPhone on the XYZ Tiles tab: an empty Layer Name field, the Tile URL Template field, the hint line about {z}, {x}, {y} and {-y}, and Add](../../../assets/manual/tile-layers-adding-an-xyz-tile-layer-sheet-iphone.png)
+![Add Tile Layer on iPhone on the XYZ Tiles tab: the Layer Name field reading Topo, the Tile URL Template field with a public topographic map service's address typed in, the hint line about the placeholders, Save URL and Add](../../../assets/manual/tile-layers-adding-an-xyz-tile-layer-sheet-iphone.png)
 :::
 
 :::mac
@@ -98,7 +104,7 @@ Saved sources are kept on the device, not in the project, so every project on th
 
 ::::platforms
 :::ios
-![A tile layer's Layer options menu on iPhone: Edit, Hide and Zoom to, Download for Offline, Move to… and New Folder with, Copy and Duplicate, and Delete](../../../assets/manual/tile-layers-managing-tile-layers-menu-iphone.png)
+![The Topo row's Layer options menu on iPhone: Edit, Hide and Zoom to, Download for Offline and Remove Offline Tiles, Move to… and New Folder with “Topo”, Copy and Duplicate, and Delete](../../../assets/manual/tile-layers-managing-tile-layers-menu-iphone.png)
 :::
 
 :::mac
@@ -120,7 +126,7 @@ A download saves a layer's tiles to this device, so the layer draws without a co
 
 ::::platforms
 :::ios
-![Download Tiles on iPhone after drawing a region: the Tile Layer row, the Region row with Draw chosen and the corners' coordinates, Download Mode, the Max Zoom Level slider at z16, the Tiles and Storage cards, and Cancel and Download](../../../assets/manual/tile-layers-starting-a-download-sheet-iphone.png)
+![Download Tiles on iPhone after drawing a region round the crater: Tile Layer reading Topo, the Region row with Draw chosen and the corners' coordinates, Download Mode on All zoom levels, the Max Zoom Level slider at z14, the cards reading 23 Tiles and 345 KB Storage, and Cancel and Download](../../../assets/manual/tile-layers-starting-a-download-sheet-iphone.png)
 :::
 
 :::mac
@@ -166,9 +172,23 @@ The Mac has no cellular setting and downloads over any connection, a personal ho
 
 A finished download adds an **Offline: {layer name}** layer at the top of the source layer's folder. The next is **Offline: {layer name} (2)**, and so on; downloads never merge. Each reads only the downloaded tiles inside its own rectangle. Past the downloaded max zoom it scales up its sharpest tile.
 
-<video src="/media/tile-layers-using-offline-tiles.mp4" autoplay loop muted playsinline aria-label="Downloading tiles on a Mac: Download Map Tiles… chosen from the Add Data menu, the sheet with the Topo layer and Map View over Mount St. Helens, the zoom set to 14 and the cards reading 111 tiles, Download, the Download Complete alert, the Offline: Topo row appearing above Topo, the map zoomed out twice, and then the Topo row's eye clicked so the streamed layer goes and the downloaded rectangle stands alone over Apple's imagery"></video>
+:::ios
+![The downloaded area on its own on iPhone: with the Topo row hidden, only the Offline: Topo rectangle of topographic tiles draws over the crater, and the rest of the volcano is Apple's imagery](../../../assets/manual/tile-layers-using-offline-tiles-iphone.png)
+:::
 
+:::mac
+<video src="/media/tile-layers-using-offline-tiles.mp4" autoplay loop muted playsinline aria-label="Downloading tiles on a Mac: Download Map Tiles… chosen from the Add Data menu, the sheet with the Topo layer and Map View over Mount St. Helens, the zoom set to 14 and the cards reading 111 tiles, Download, the Download Complete alert, the Offline: Topo row appearing above Topo, the map zoomed out twice, and then the Topo row's eye clicked so the streamed layer goes and the downloaded rectangle stands alone over Apple's imagery"></video>
+:::
+
+::::platforms
+:::ios
+![Two rows at the top of the Layers tab on iPhone: Offline: Topo, its tile icon badged with a download arrow, above the Topo tile layer it came from](../../../assets/manual/tile-layers-using-offline-tiles-panel-iphone.png)
+:::
+
+:::mac
 ![Two rows at the top of the Layers panel on Mac: Offline: Topo, its tile icon badged with a download arrow, above the Topo tile layer it came from](../../../assets/manual/tile-layers-using-offline-tiles-panel-mac.png)
+:::
+::::
 
 Downloaded tiles never sync. The project carries each download's rectangle and zoom range, so on another device the **Offline: …** layer is there without tiles. The **Layers** tab offers them in an **Offline tiles available** banner, and the layer's :ui[Layer options]{icon=ellipsis} menu has **Download for This Device**; either fetches the same rectangle and zooms again on that device. Built basemaps follow their own rule ([Other projects and other devices](/manual/basemaps/#other-projects-and-other-devices)).
 
