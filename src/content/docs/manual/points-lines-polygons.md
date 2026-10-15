@@ -155,9 +155,15 @@ To restyle every feature of a kind in a folder at once, [style the folder](/manu
 
 Each point's name prints under its pin, as **Settings → Features → [Pin Names](/manual/settings/#features)** sets. **Always**, the default, leaves out any name that would overlap another pin, a cluster bubble or another name, so zooming in prints more of them. No more than 150 names print at once, and with more than 600 single pins on screen, pins inside bubbles not counted, only the picked pin's name prints.
 
+::::platforms
 :::ios
 ![Four named hut pins along the trail on iPhone with Tin Hat Hut picked: its pin larger than the others, and its card at the foot of the screen with Huts, the coordinate, Elevation 1145.9 m and the distance from you](../../../assets/manual/points-lines-polygons-points-on-the-map-iphone.png)
 :::
+
+:::mac
+![The hut pins along the trail on a Mac with Confederation Hut picked: its pin larger than the others, and its card beside it with Huts, the coordinate, the distance from you and an Also here row reading Trail](../../../assets/manual/points-lines-polygons-points-on-the-map-mac.png)
+:::
+::::
 
 A name prints on at most two lines, cut at an ellipsis; a point with no name, or named Untitled Point, prints none. A picked pin draws at one and a half times its size, and its name prints in bold whatever it overlaps. :ios[On iPhone, names follow the system text size, up to 22 pt.]
 
