@@ -34,7 +34,7 @@ A stop tapped onto the map is named from Apple's place lookup, for example "St M
 From two stops, the totals line under the fields holds the travel-mode menu, the distance and travel time, a count of straight legs when there are any, **Undo**, **Redo** once something has been undone, and **Reverse**.
 
 :::ios
-![The Add Route tool card on iPhone with a walking route between two stops picked from search: the numbered Start and End fields, the empty Add a stop field, the totals line reading 3.30 km · 47 min with Undo and Reverse, and ✕, Zoom to, Elevation profile, Share and Save](../../../assets/manual/routes-the-tool-card-iphone.png)
+![The Add Route tool card on iPhone with a walking route between two stops picked from search: the numbered Start and End fields, the empty Add a stop field, the totals line reading 3.30 km · 47 min with Undo and Reverse, and ✕, Zoom to, Elevation profile, Share and Save](../../../assets/manual/routes-stops-and-totals-iphone.png)
 :::
 
 The distance is measured along the line drawn on the map, so it matches the elevation profile; the travel time is Apple's. [Measuring](/manual/measurement/#units) covers the units, and **Elevation profile** opens the [elevation profile](/manual/elevation/#a-profile-while-you-draw) of the route being drawn.
