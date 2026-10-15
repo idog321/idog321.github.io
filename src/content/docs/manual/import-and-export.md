@@ -56,8 +56,17 @@ On Mac, right-click a row or a selection of rows and choose **Export to File**. 
 :::ios
 On iPhone, tap a row's :ui[Layer options]{icon=ellipsis} button and choose **Export to File**, or tap **Select**, check the rows and tap **Export** in the action bar.
 
-![The Export to File submenu open from a row's Layer options menu on iPhone, listing GPX, KML, GeoJSON and GeoPackage](../../../assets/manual/import-and-export-exporting-and-sharing-ios.png)
 :::
+
+::::platforms
+:::ios
+![A row's Layer options menu on iPhone with the Export to File submenu open beside it: GPX, KML, GeoJSON and GeoPackage](../../../assets/manual/getting-started-export-your-data-menus-iphone.png)
+:::
+
+:::mac
+![The right-click menu on the Trail row on Mac with Export to File highlighted and its submenu open: GPX, KML, GeoJSON and GeoPackage](../../../assets/manual/getting-started-export-your-data-menus-mac.png)
+:::
+::::
 
 **Share**, in the same menus and action bar and in the Mac **Layer** menu, asks for a format for vector features, then opens the share sheet with the file instead of asking where to save it. Sharing a folder sends the image files of its raster overlays beside the vector file.
 

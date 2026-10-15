@@ -10,7 +10,7 @@ The line, polygon and circle tools need an open project even when you only measu
 
 Figures appear once the shape has enough points: two for a line or a route, three for a polygon, a centre and an edge point for a circle.
 
-<video src="/media/measurement-live-measurements.mp4" autoplay loop muted playsinline aria-label="Drawing a polygon on iPhone while the tool card updates Area, Perimeter and Points with each corner, segment lengths appearing along the sides, then a tap on Area showing Copied"></video>
+<video src="/media/getting-started-draw-and-measure.mp4" autoplay loop muted playsinline aria-label="Drawing a polygon round Inland Lake on a Mac: each click adds a corner, a length appears along each side, and the card's Area, Perimeter and Points update as the shape grows"></video>
 
 Tapping a figure copies the number as the card shows it, rounded, with the device's thousands separator and decimal mark (`1,234.5`) and without its unit; a bearing copies with its degree sign, as three digits (`045°`). A route's figures have no unit menu and do not copy.
 
@@ -20,7 +20,15 @@ A saved line, polygon or circle keeps none of the card's figures: tapping it ope
 
 Until the circle is locked, dragging its centre moves the centre alone and changes the radius, and a tap or a drag of the edge point resizes it ([Circles](/manual/points-lines-polygons/#circles)).
 
-![A circle being drawn on iPhone with the lock on: the centre dot, the edge dot and the dashed radius line between them, and the tool card reading Radius 92 m, Area, Circumference and Points 2, with the lock button filled](../../../assets/manual/measurement-circles-and-the-radius-lock-ios.png)
+::::platforms
+:::ios
+![A circle being drawn on iPhone with the lock on: the centre and edge squares with the dashed ring between them, and the card reading Area 102.5 km², Radius 5.71 km with a lock, and Circumference 35.89 km, with the lock button filled](../../../assets/manual/measurement-circles-and-the-radius-lock-iphone.png)
+:::
+
+:::mac
+![A circle being drawn on a Mac with the lock on: the dashed ring across the trail, and the card reading Area, Radius with a lock and Circumference, with the lock button filled](../../../assets/manual/measurement-circles-and-the-radius-lock-mac.png)
+:::
+::::
 
 The lock button becomes active once the circle has a radius, and locking freezes that radius. With the lock on, a tap elsewhere or a drag of the centre moves the whole circle at the fixed radius, the edge point keeping its bearing from the centre; dragging the edge point slides it round the rim. The readout and the ring both come from the radius captured at locking, so the figure does not change however far the circle moves, and unlocking leaves it as it was.
 
@@ -32,6 +40,16 @@ Locking and unlocking are [undo steps](/manual/interface/#while-a-tool-is-open) 
 
 While measuring, the unit after a figure is a menu offering metric and imperial units alike, whatever **Units** says. Choosing one converts every figure of that kind on the card and does not change the defaults. Feet, miles, square feet and acres are built on the international foot of exactly 0.3048 m.
 
+::::platforms
+:::ios
+![The unit menu on a line's card on iPhone: Imperial with mi, yd, ft and in, then Metric with km ticked, m, cm and mm](../../../assets/manual/measurement-units-menu-iphone.png)
+:::
+
+:::mac
+![The unit menu on a line's card on Mac: Metric with mm, cm, m and km, then Imperial with in, ft, yd and mi](../../../assets/manual/measurement-units-menu-mac.png)
+:::
+::::
+
 Every other distance and area TopoKit shows follows the **Units** picker alone and picks its scale by size: m below 1,000 m, then km; ft below 1,000 ft, then mi; m², ha and km², or ft², acres and mi². That covers a route's distance, the **Edit Vertices on Map** card, the elevation profile, a saved feature's card and the segment lengths on the map.
 
 ## Bearing
@@ -41,6 +59,10 @@ A line's card shows the bearing of its last segment, 0–360° clockwise from no
 - **True North**: the initial great-circle bearing from true north, calculated on a sphere rather than the ellipsoid.
 - **Magnetic North**: the true bearing minus the magnetic declination at your position, taken from the difference between the true and magnetic headings the compass reports. Declination is read where you stand, so a line drawn far away still uses your local declination, and it is recomputed on every compass reading.
 - **Back Bearing**: the true bearing plus 180°, the direction back the way you came.
+
+:::mac
+![The bearing menu on a line's card on Mac: True North, Magnetic North (iOS only) greyed, and Back Bearing](../../../assets/manual/measurement-bearing-menu-mac.png)
+:::
 
 A line opens in True North unless **Settings → Units & Coordinates → Bearing** names another mode; switching **Units** leaves it as it is. :ios[On iPhone, the **True N** / **Mag N** switch under the [GPS tab's compass](/manual/gps-and-track-recording/#the-compass) sets the same default.]
 

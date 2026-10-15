@@ -431,6 +431,13 @@
   flex: 0 0 auto;
   margin-block: 0;
 }
+
+/* A panel crop that runs to the bottom of the panel (Select mode's bar, the
+   Projects list) is tall; in a pair it may stand taller than the 34rem cap. */
+.platform-pair img[src*='-panel-'] {
+  max-height: 42rem;
+}
+
 .platform-pair img[src*='-card-'],
 .platform-pair img[src*='-sheet-'],
 .platform-pair img[src*='-menu-'] {

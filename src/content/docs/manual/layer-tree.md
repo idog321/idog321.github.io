@@ -8,7 +8,15 @@ The Layers tab lists everything in the open project, in the order it draws on th
 
 A row is a feature (a point, line or polygon, drawn or imported), a raster overlay (an imported GeoTIFF or GeoPDF map), a tile layer (streamed from a server, or a basemap you built) or a folder, which holds any of these nested to any depth.
 
+::::platforms
+:::ios
+![The Layers tab on iPhone: a folder open on the trail line, a point with its own glyph, the Huts, Parks and Maps folders with Parks switched off, and four built basemap rows with the download arrow on their icons](../../../assets/manual/layer-tree-what-is-in-the-tree-iphone.png)
+:::
+
+:::mac
 ![The Layers tab on Mac: a folder holding the trail line, a point with its own glyph, a Huts folder open with six hut points, the Parks and Maps folders switched off, and a built basemap row with the download arrow on its icon](../../../assets/manual/layer-tree-what-is-in-the-tree-panel-mac.png)
+:::
+::::
 
 An **Offline: {name}** row's icon carries a small download arrow when the tiles are on this device, and is dimmed with an orange iCloud arrow when the project arrived by sync and the tiles did not ([Using offline tiles](/manual/tile-layers/#using-offline-tiles)).
 
@@ -44,8 +52,6 @@ It is not a live default: a feature you draw afterwards starts from the **Defaul
 
 :::ios
 On iPhone, **Select** turns the tree into a checklist for the bar's **Hide**, **Delete**, **Share** and **Export**. **Delete** and **Group** end Select; **Hide** leaves the rows checked for another action.
-
-![Select mode on iPhone: two rows checked, and the bar along the foot of the sheet reading 2, Share, Export, Hide, Group, Move and Delete](../../../assets/manual/layer-tree-selecting-several-rows-ios.png)
 :::
 
 :::mac
@@ -53,6 +59,16 @@ On Mac, **Select** at the top of the Layers tab does the same. Cmd-click and Shi
 
 Right-clicking a row that is part of the selection acts on every selected row. A row inside a selected folder goes with its folder when the selection is moved, copied, shared or exported.
 :::
+
+::::platforms
+:::ios
+![Select mode on iPhone: Freda and Huts checked, and the bar along the foot of the sheet reading 2, Share, Export, Hide, Group, Move and Delete](../../../assets/manual/layer-tree-selecting-several-rows-panel-iphone.png)
+:::
+
+:::mac
+![Select mode on Mac: Elk Lake Hut and Tin Hat Hut checked, Done at the top of the panel, and the bar along its foot reading 2, Share, Export, Hide, Group, Move and Delete](../../../assets/manual/layer-tree-selecting-several-rows-panel-mac.png)
+:::
+::::
 
 ## Moving rows
 
@@ -72,7 +88,15 @@ To move rows without dragging, right-click one and choose **Move to**, or choose
 
 ## Showing and hiding
 
-![Two folders on iPhone. In the first, one point is visible and one is hidden by its own eye. The second folder is switched off, and the point inside it shows an orange crossed-out eye even though its own eye is still on](../../../assets/manual/layer-tree-showing-and-hiding-ios.png)
+::::platforms
+:::ios
+![The hidden Parks folder open on iPhone: the folder's eye crossed out, and each park inside dimmed with an orange crossed-out eye beside its own eye, which is still on](../../../assets/manual/layer-tree-showing-and-hiding-panel-iphone.png)
+:::
+
+:::mac
+![The hidden Parks folder open on Mac: the folder's eye crossed out, and each park inside dimmed with an orange crossed-out eye beside its own eye, which is still on](../../../assets/manual/layer-tree-showing-and-hiding-panel-mac.png)
+:::
+::::
 
 A hidden folder hides every row inside it, whatever each row's own eye is set to. A layer that is switched on but does not appear on the map is most often inside a hidden folder. The row dims and shows an orange :ui[crossed-out eye]{icon=eye-hidden} when a folder above it is hiding it.
 
@@ -106,13 +130,21 @@ Copy also puts the features on the clipboard as GeoJSON text, for pasting into a
 
 :::ios
 On iPhone, **Copy**, **Paste** and **Duplicate** are in a row's :ui[Layer options]{icon=ellipsis} menu and act on that one row.
-
-![A folder's Layer options menu on iPhone: Edit, Hide and Zoom to, New Subfolder, Move to… and New Folder with “Summits”, Copy and Duplicate, and Delete](../../../assets/manual/layer-tree-copying-pasting-and-duplicating-ios.png)
 :::
 
 :::mac
 On Mac, **Copy**, **Paste** and **Duplicate** are in the right-click menu; on a selection of several rows **Paste** is not offered, so right-click a single row to paste. Under **Select**, `Cmd-V` pastes at the row you clicked last, and pasted and duplicated rows become the selection, so a second `Cmd-D` duplicates the copies, not the originals.
 :::
+
+::::platforms
+:::ios
+![A folder's Layer options menu on iPhone: Edit, Hide and Zoom to, New Subfolder, Share and Export to File, Move to… and New Folder with “Folder”, Copy and Duplicate, and Delete](../../../assets/manual/layer-tree-copying-pasting-and-duplicating-menu-iphone.png)
+:::
+
+:::mac
+![The right-click menu on the Huts folder on Mac: Hide and Zoom to, New Subfolder, Move to and New Folder with “Huts”, Copy and Duplicate, Share and Export to File, and Delete](../../../assets/manual/layer-tree-copying-pasting-and-duplicating-menu-mac.png)
+:::
+::::
 
 ## Deleting
 
@@ -130,6 +162,8 @@ A basemap you built is the exception. Deleting it also deletes its map files fro
 On Mac, the **Layer** menu in the menu bar acts on the rows selected in the Layers tab, and only while the Layers tab is showing. A plain click on a row selects it, so outside **Select** the menu acts on the row you clicked last.
 
 **Edit Layer…** (`Cmd-I`) opens the editor of the one selected row, opening any closed folder above it. Copy, Paste, Duplicate and Delete are not in it.
+
+![The Layer menu on Mac with the Trail row selected: Add Vector Layer, Add Raster Layer and Add Tile Layer, Download Map Tiles, Download Elevation and Build Basemap, New Folder and New Folder with Selection, Edit Layer, Hide Layer, Zoom to Layer and Move To, Edit Vertices on Map and Elevation Profile, Share and Export to File, and the offline items greyed](../../../assets/manual/layer-tree-the-layer-menu-menu-mac.png)
 :::
 
 ## FAQ

@@ -37,6 +37,16 @@ On Mac, the **New Project** sheet selects **Local** by default; the other choice
 
 **From the Projects tab.** The tab lists iCloud and local projects together, most recently saved first. If iCloud holds a newer version of a project already on this device, TopoKit waits up to 4 seconds for it, then opens the copy on this device. An iCloud project not yet on this device downloads first, with its progress on the row; if it has not arrived within 60 seconds, TopoKit reports "Project download timed out. Check your internet connection."
 
+::::platforms
+:::ios
+![The Projects tab on iPhone: the open project's card with its counts of points, rasters and vectors and Save, Refresh and Close, then the list of projects with the open one checked](../../../assets/manual/projects-and-files-opening-a-project-panel-iphone.png)
+:::
+
+:::mac
+![The Projects tab on Mac: the open project's card with its counts and Save, Refresh and Close, then the list of projects, each with a Project options button and a green cloud on the iCloud ones](../../../assets/manual/projects-and-files-opening-a-project-panel-mac.png)
+:::
+::::
+
 :::mac
 **From Open Recent.** On Mac, **File → Open Recent** lists up to ten projects opened or created on this Mac, newest first; a `.mapproject` opened from Finder is not added. A project no longer on this Mac is taken off the list when you choose it.
 :::
@@ -75,7 +85,15 @@ On the project card at the top of the Projects tab, an orange dot beside the nam
 
 **Restore from Backup** lists the earlier versions TopoKit holds, newest first. :mac[On Mac, **File → Restore from Backup** lists the same for the open project.]
 
-![The Restore from Backup submenu open on a project row in the Projects tab on iPhone, listing one Last save backup with its date and time](../../../assets/manual/projects-and-files-restoring-an-earlier-version-ios.png)
+::::platforms
+:::ios
+![Restore from Backup opened from a project's menu on iPhone, listing one Last save backup with its date and time](../../../assets/manual/projects-and-files-restoring-an-earlier-version-menus-iphone.png)
+:::
+
+:::mac
+![The Project options menu on Mac with Restore from Backup open: Open, Rename, Show in Finder, Move to iCloud, Restore from Backup with its submenu listing one Last save backup with its date and time, and Delete](../../../assets/manual/projects-and-files-restoring-an-earlier-version-menus-mac.png)
+:::
+::::
 
 - **Last save backup**: the version on disk before this device's latest save.
 - **Sync conflict**: a version set aside when iCloud reported a conflict ([Sync conflicts](#sync-conflicts)).
