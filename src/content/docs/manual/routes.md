@@ -20,7 +20,7 @@ A stop picked from search, a typed coordinate or :ui[My Location]{icon=location}
 A stop tapped onto the map is named from Apple's place lookup, for example "St Mary's Ln"; until the lookup answers, or when it finds nothing, the field shows its coordinates.
 
 :::mac
-<video src="/media/routes-adding-stops.mp4" autoplay loop muted playsinline aria-label="Add Route on a Mac: three stops clicked along the highway, each leg drawn as Apple answers with the distance and time on the card's totals line, then Walk chosen from the travel-mode menu and the legs asked for again"></video>
+<video src="/media/routes-adding-stops.mp4" autoplay loop muted playsinline aria-label="Add Route on a Mac, a loop round southern Vancouver Island: six stops typed into the card's search field and picked one after another, Crofton Terminal, Ganges, Victoria, Port Renfrew, Lake Cowichan and Crofton Terminal again, each leg drawn as Apple answers, the two ferry crossings included, then Walk and Cycle chosen from the travel-mode menu and the legs asked for again, and Drive once more"></video>
 :::
 
 ### Starting from a point or a place
@@ -33,15 +33,25 @@ A stop tapped onto the map is named from Apple's place lookup, for example "St M
 
 From two stops, the totals line under the fields holds the travel-mode menu, the distance and travel time, a count of straight legs when there are any, **Undo**, **Redo** once something has been undone, and **Reverse**.
 
+::::platforms
 :::ios
 ![The Add Route tool card on iPhone with a walking route between two stops picked from search: the numbered Start and End fields, the empty Add a stop field, the totals line reading 3.30 km · 47 min with Undo and Reverse, and ✕, Zoom to, Elevation profile, Share and Save](../../../assets/manual/routes-stops-and-totals-iphone.png)
 :::
 
+:::mac
+![The Add Route tool card on a Mac with the loop round southern Vancouver Island drawn: the numbered stop fields, the empty Add a stop field, the totals line reading 281.8 km · 6h 1m in Drive with Undo and Reverse, and ✕, Zoom to, Elevation profile, Share and Save](../../../assets/manual/routes-stops-and-totals-mac.png)
+:::
+::::
+
 The distance is measured along the line drawn on the map, so it matches the elevation profile; the travel time is Apple's. [Measuring](/manual/measurement/#units) covers the units, and **Elevation profile** opens the [elevation profile](/manual/elevation/#a-profile-while-you-draw) of the route being drawn.
+
+:::mac
+![The elevation profile of the loop open under the map on a Mac: the chart runs the whole 281.8 km with the six stops marked along its foot, the pointer rests on it at 110 km and 44 m with its marker on the route near Sooke, and the figures below read Gain 5,854 m, Loss 5,854 m, Min 0 m, Max 395 m and Avg 106 m](../../../assets/manual/routes-elevation-profile-mac.png)
+:::
 
 ## Travel modes
 
-The mode menu is on the card before the first stop. TopoKit starts in **Drive** and remembers the last mode chosen across launches. Every leg is asked for in the chosen mode. There is no transit and no off-trail routing.
+The mode menu is on the card before the first stop. TopoKit starts in **Drive** and remembers the last mode chosen across launches. Every leg is asked for in the chosen mode, so the same stops give a different road and a different figure in each: the loop round southern Vancouver Island above reads 281.8 km and about 6 hours in **Drive**, 290.6 km and 18 h 23 m in **Cycle**, and 278.6 km and 88 h 55 m in **Walk**. There is no transit and no off-trail routing.
 
 ::::platforms
 :::ios
