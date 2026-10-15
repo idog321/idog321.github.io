@@ -166,9 +166,11 @@
   border-radius: 8px;
 }
 
-/* A portrait phone recording is narrow */
-.sl-markdown-content video[src*='sidebar-hide'] {
-  max-width: 17rem;
+/* A portrait phone recording is narrow: the sidebar clip, and every clip
+   named -iphone (the line tool, the profile, the route, the download…). */
+.sl-markdown-content video[src*='sidebar-hide'],
+.sl-markdown-content video[src*='-iphone'] {
+  max-width: 18rem;
 }
 
 
