@@ -31,7 +31,7 @@ The tool closes once the point is placed; the coordinate stays editable in the e
 
 Choose :ui[Add Line]{icon=add-line}, :ui[Add Polygon]{icon=add-polygon} or :ui[Add Circle]{icon=add-circle} in the tool sidebar; they are greyed out until a project is open. :mac[On Mac, the **Tools** menu starts each one from the keyboard ([The menu bar](/manual/interface/#the-menu-bar)).] The [tool card](/manual/interface/#the-map) shows the shape's [live figures](/manual/measurement/).
 
-<video src="/media/points-lines-polygons-line-tool.mp4" autoplay loop muted playsinline aria-label="The line tool on a Mac: five clicks place vertices and a length appears along each segment, a click back on an earlier vertex rings it so the next click inserts after it, a faint dot halfway along a segment is dragged out into a new vertex, and Save opens the New Line sheet"></video>
+<video src="/media/points-lines-polygons-line-tool.mp4" autoplay loop muted playsinline aria-label="The line tool on a Mac tracing the Sunshine Coast Trail south of Tin Hat Hut: each click adds a vertex on the trail and a length appears along the segment, a click back on an earlier vertex rings it so the next click inserts the trail's hairpin after it, a faint dot is dragged onto a bend the trace cut, and Save opens the New Line sheet"></video>
 
 Each map tap adds a vertex, drawn as a dot styled by **Settings → Features → [Vertex Style](/manual/settings/#features)**. The vertex you touched last is the **active** one, marked by a ring, and new vertices insert after it, so you can tap back to an earlier vertex and add mid-line without starting over.
 
