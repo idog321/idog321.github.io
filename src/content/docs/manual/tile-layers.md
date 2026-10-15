@@ -4,6 +4,10 @@ description: "Add XYZ and WMS tile layers and download regions for offline use."
 ---
 A tile layer is a map streamed from a server. TopoKit fetches only the tiles for the area on screen.
 
+:::mac
+![A topographic tile layer drawn over Mount St. Helens on a Mac: the crater and its contour lines fill the map, and the layer's row, named Topo, sits at the top of the Layers panel](../../../assets/manual/tile-layers-on-the-map-mac.png)
+:::
+
 TopoKit ships no tile sources: you paste the address of a service you choose. For a topographic map without a source of your own, :ui[Basemaps] in the tool sidebar [builds one](/manual/basemaps/#building-a-basemap).
 
 ## Finding a tile source
@@ -49,7 +53,7 @@ The sheet shows no preview and accepts any text as a template, so a wrong addres
 :::
 
 :::mac
-![The Add Tile Layer sheet on Mac on the XYZ Tiles tab: the Layer Name field, the Tile URL Template field with an address typed in, the hint line about {z}, {x}, {y} and {-y}, Save URL, and Cancel and Add](../../../assets/manual/tile-layers-adding-an-xyz-tile-layer-sheet-mac.png)
+![The Add Tile Layer sheet on Mac on the XYZ Tiles tab: a saved source listed under Saved Sources, the Layer Name field reading Topo, the Tile URL Template field with a public topographic map service's address typed in, its tail showing the {z}/{y}/{x} order, the hint line about the placeholders, Save URL, and Cancel and Add](../../../assets/manual/tile-layers-adding-an-xyz-tile-layer-sheet-mac.png)
 :::
 ::::
 
@@ -62,7 +66,7 @@ For a TMS server, which counts rows from the south, write `{-y}` in place of `{y
 
 ### Adding a WMS layer
 
-![The Add Tile Layer sheet on the WMS Service tab after connecting, listing the service's layers under a Filter field, one layer selected](../../../assets/manual/tile-layers-adding-a-wms-layer-mac.png)
+![The Add Tile Layer sheet on Mac on the WMS Service tab after Connect: the service's address in the field, its one layer listed under a Filter field and selected, the Layer Name filled in from it, Format PNG, Transparent ticked, Save URL, and Cancel and Add](../../../assets/manual/tile-layers-adding-a-wms-layer-sheet-mac.png)
 
 1. Select **WMS Service** and paste the service address. A bare endpoint gets the GetCapabilities request added; an address that already carries `SERVICE` and `REQUEST` is used as is.
 2. Tap **Connect**. TopoKit reads WMS 1.1.1 and 1.3.0 capabilities, nested layers included. `WMS server error: HTTP 401` or `HTTP 403` under the field means the server wants a login.
@@ -85,7 +89,12 @@ Saved sources are kept on the device, not in the project, so every project on th
 
 ## Managing tile layers
 
-**Edit** in the row's :ui[Layer options]{icon=ellipsis} menu, or its right-click menu on Mac, opens the tile layer's editor. :mac[On Mac, **Layer → Edit Layer…** (`Cmd-I`) opens it too.] The editor changes the name and the opacity, nothing else. :ios[On iPhone, tap **Save** to keep a new name; leaving without saving keeps the opacity but not the name.] :mac[On Mac the editor is a popover that keeps the new name when it closes.]
+**Edit** in the row's :ui[Layer options]{icon=ellipsis} menu, or its right-click menu on Mac, opens the tile layer's editor. :mac[On Mac, **Layer → Edit Layer…** (`Cmd-I`) opens it too.] The editor changes the name and the opacity, nothing else.
+
+:::mac
+![The Edit Tile Layer popover on Mac: the name field reading Topo, the Opacity slider at 100%, and the Source URL with its copy button](../../../assets/manual/tile-layers-editing-a-tile-layer-popover-mac.png)
+:::
+ :ios[On iPhone, tap **Save** to keep a new name; leaving without saving keeps the opacity but not the name.] :mac[On Mac the editor is a popover that keeps the new name when it closes.]
 
 ::::platforms
 :::ios
@@ -93,7 +102,7 @@ Saved sources are kept on the device, not in the project, so every project on th
 :::
 
 :::mac
-![The right-click menu on a tile layer's row on Mac: Edit, Hide and Zoom to, Move to and New Folder with, Copy and Duplicate, Download for Offline and Remove Offline Tiles, and Delete](../../../assets/manual/tile-layers-managing-tile-layers-menu-mac.png)
+![The right-click menu on the Topo row on Mac: Edit, Hide and Zoom to, Move to and New Folder with “Topo”, Copy and Duplicate, Download for Offline and Remove Offline Tiles, and Delete](../../../assets/manual/tile-layers-managing-tile-layers-menu-mac.png)
 :::
 ::::
 
@@ -115,7 +124,7 @@ A download saves a layer's tiles to this device, so the layer draws without a co
 :::
 
 :::mac
-![The download sheet on Mac after Map View: the Tile Layer row, the Region row with Map View chosen and the corners' coordinates, Download Mode, the Max Zoom Level slider at z16, the Tiles and Storage cards, Has offline tiles, and Cancel and Download](../../../assets/manual/tile-layers-starting-a-download-sheet-mac.png)
+![The download sheet on Mac: Tile Layer reading Topo, Region with Map View chosen and the corners' coordinates round Mount St. Helens, Download Mode on All zoom levels, the Max Zoom Level slider at z14, the cards reading 111 Tiles and 1.7 MB Storage, and Cancel and Download](../../../assets/manual/tile-layers-starting-a-download-sheet-mac.png)
 :::
 ::::
 
@@ -157,7 +166,7 @@ The Mac has no cellular setting and downloads over any connection, a personal ho
 
 A finished download adds an **Offline: {layer name}** layer at the top of the source layer's folder. The next is **Offline: {layer name} (2)**, and so on; downloads never merge. Each reads only the downloaded tiles inside its own rectangle. Past the downloaded max zoom it scales up its sharpest tile.
 
-![Two rows at the top of the Layers panel on Mac: Offline: Hillshade, its tile icon badged with a download arrow, above the Hillshade tile layer it came from](../../../assets/manual/tile-layers-using-offline-tiles-panel-mac.png)
+![Two rows at the top of the Layers panel on Mac: Offline: Topo, its tile icon badged with a download arrow, above the Topo tile layer it came from](../../../assets/manual/tile-layers-using-offline-tiles-panel-mac.png)
 
 Downloaded tiles never sync. The project carries each download's rectangle and zoom range, so on another device the **Offline: …** layer is there without tiles. The **Layers** tab offers them in an **Offline tiles available** banner, and the layer's :ui[Layer options]{icon=ellipsis} menu has **Download for This Device**; either fetches the same rectangle and zooms again on that device. Built basemaps follow their own rule ([Other projects and other devices](/manual/basemaps/#other-projects-and-other-devices)).
 
