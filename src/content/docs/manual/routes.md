@@ -35,7 +35,7 @@ From two stops, the totals line under the fields holds the travel-mode menu, the
 
 ::::platforms
 :::ios
-![The Add Route tool card on iPhone with a walking route between two stops picked from search: the numbered Start and End fields, the empty Add a stop field, the totals line reading 3.30 km · 47 min with Undo and Reverse, and ✕, Zoom to, Elevation profile, Share and Save](../../../assets/manual/routes-stops-and-totals-iphone.png)
+![The Add Route tool card on iPhone with the loop round southern Vancouver Island drawn: the numbered stop fields with Port Renfrew, Lake Cowichan and Crofton Terminal in view, the empty Add a stop field, the totals line reading 277.4 km · 5h 34m in Drive with Undo and Reverse, and ✕, Zoom to, Elevation profile, Share and Save](../../../assets/manual/routes-stops-and-totals-iphone.png)
 :::
 
 :::mac
@@ -45,17 +45,27 @@ From two stops, the totals line under the fields holds the travel-mode menu, the
 
 The distance is measured along the line drawn on the map, so it matches the elevation profile; the travel time is Apple's. [Measuring](/manual/measurement/#units) covers the units, and **Elevation profile** opens the [elevation profile](/manual/elevation/#a-profile-while-you-draw) of the route being drawn.
 
+::::platforms
+:::ios
+![The elevation profile of the loop on iPhone, drawn on the tool card: the chart with the six stops marked along its foot, and Distance 277.4 km, Gain 5,679 m, Loss 5,679 m, Min 0 m, Max 395 m and Avg 107 m below it](../../../assets/manual/routes-elevation-profile-iphone.png)
+:::
+
 :::mac
 ![The elevation profile of the loop open under the map on a Mac: the chart runs the whole 281.8 km with the six stops marked along its foot, the pointer rests on it at 110 km and 44 m with its marker on the route near Sooke, and the figures below read Gain 5,854 m, Loss 5,854 m, Min 0 m, Max 395 m and Avg 106 m](../../../assets/manual/routes-elevation-profile-mac.png)
 :::
+::::
 
 ## Travel modes
 
-The mode menu is on the card before the first stop. TopoKit starts in **Drive** and remembers the last mode chosen across launches. Every leg is asked for in the chosen mode, so the same stops give a different road and a different figure in each: the loop round southern Vancouver Island above reads 281.8 km and about 6 hours in **Drive**, 290.6 km and 18 h 23 m in **Cycle**, and 278.6 km and 88 h 55 m in **Walk**. There is no transit and no off-trail routing.
+The mode menu is on the card before the first stop. TopoKit starts in **Drive** and remembers the last mode chosen across launches. Every leg is asked for in the chosen mode, so the same stops give a different road and a different figure in each: the loop round southern Vancouver Island above comes back at about 280 km and 6 hours in **Drive**, 290 km and 18 hours in **Cycle**, and 275 km and 88 hours in **Walk**. There is no transit and no off-trail routing.
+
+:::ios
+![The same loop on iPhone in Walk: the totals line reading 274.2 km · 87h 15m under the six stops](../../../assets/manual/routes-walking-iphone.png)
+:::
 
 ::::platforms
 :::ios
-![The travel-mode menu on iPhone: Cycle, Walk ticked, and Drive](../../../assets/manual/routes-travel-modes-menu-iphone.png)
+![The travel-mode menu on iPhone: Cycle, Walk, and Drive ticked](../../../assets/manual/routes-travel-modes-menu-iphone.png)
 :::
 
 :::mac
