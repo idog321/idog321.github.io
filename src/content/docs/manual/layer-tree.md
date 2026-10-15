@@ -14,7 +14,7 @@ A row is a feature (a point, line or polygon, drawn or imported), a raster overl
 :::
 
 :::mac
-![The Layers tab on Mac: a folder holding the trail line, a point with its own glyph, a Huts folder open with six hut points, the Parks and Maps folders switched off, and a built basemap row with the download arrow on its icon](../../../assets/manual/layer-tree-what-is-in-the-tree-panel-mac.png)
+![The Layers tab on Mac: an Offline: Topo row with the download arrow on its icon above the Topo tile layer it came from, both switched off, a folder holding the trail line, a point with its own glyph, a Huts folder open with six hut points, and the Parks and Maps folders switched off](../../../assets/manual/layer-tree-what-is-in-the-tree-panel-mac.png)
 :::
 ::::
 

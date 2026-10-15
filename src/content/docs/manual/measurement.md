@@ -26,7 +26,7 @@ Until the circle is locked, dragging its centre moves the centre alone and chang
 :::
 
 :::mac
-![A circle being drawn on a Mac with the lock on: the dashed ring across the trail, and the card reading Area, Radius with a lock and Circumference, with the lock button filled](../../../assets/manual/measurement-circles-and-the-radius-lock-mac.png)
+![A circle being drawn on a Mac with the lock on: its centre on Tin Hat Hut and its edge on the trail, the dashed ring over the mountain, and the card reading Area 3.23 km², Radius 1.01 km with a lock, and Circumference 6.38 km, with the lock button filled](../../../assets/manual/measurement-circles-and-the-radius-lock-mac.png)
 :::
 ::::
 
