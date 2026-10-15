@@ -265,7 +265,6 @@
         project pairs the iPhone shot with the Mac one, so neither floats.
      2. ::::beside already pairs a figure with its prose as flex siblings, and
         a float inside it would fight that. */
-  .sl-markdown-content img[src*='new-project-ios'],
   .sl-markdown-content .figure-beside img {
     float: none;
   }
@@ -342,8 +341,7 @@
    SIZING ONLY: never add shadows, borders, or rounded corners to Nikolay's
    images. They are prepared deliberately (transparent backgrounds and all) and
    the manual must not decorate them. */
-.sl-markdown-content img[src*='right-click-menu'],
-.sl-markdown-content img[src*='new-project'] {
+.sl-markdown-content img[src*='right-click-menu'] {
   max-width: 26rem;
   width: 100%;
   height: auto;
@@ -442,6 +440,7 @@
 
 .platform-pair img[src*='-card-'],
 .platform-pair img[src*='-sheet-'],
+.platform-pair img[src*='-alert-'],
 .platform-pair img[src*='-menu-'] {
   max-width: 21rem;
 }

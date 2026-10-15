@@ -23,15 +23,21 @@ Create a project with the new-project button at the top of the Projects tab. New
 
 :::ios
 On iPhone, the **New Project** alert offers **Create in iCloud** and **Create Locally**. Without iCloud the alert has a single **Create** button, and the project is local.
-
-![The New Project alert on iPhone: a name field reading Untitled Project, then Create in iCloud, Create Locally, and Cancel](../../../assets/manual/projects-new-project-ios.png)
 :::
 
 :::mac
 On Mac, the **New Project** sheet selects **Local** by default; the other choice is **iCloud**. Without iCloud the choice is not shown, and the project is local.
-
-![The New Project sheet on Mac: a Project Name field, a Local / iCloud picker with Local selected, the caption Stored on this device only, and Cancel and Create buttons](../../../assets/manual/projects-new-project-mac.png)
 :::
+
+::::platforms
+:::ios
+![The New Project alert on iPhone: a name field reading Untitled Project, then Create in iCloud, Create Locally, and Cancel](../../../assets/manual/projects-and-files-creating-a-project-alert-iphone.png)
+:::
+
+:::mac
+![The New Project sheet on Mac: a Project Name field reading Untitled Project, a Local / iCloud picker with Local selected, the caption Stored on this device only, and Cancel and Create](../../../assets/manual/projects-and-files-creating-a-project-sheet-mac.png)
+:::
+::::
 
 ## Opening a project
 

@@ -78,7 +78,7 @@ The collar outside a topographic sheet's neatline, with the title block, legend 
 
 ## How reprojection works
 
-![A GeoPDF sheet reprojected and set at its true angle over the satellite map on Mac, cut at its neatline](../../../assets/manual/raster-overlays-how-reprojection-works-mac.png)
+![A rotated raster on the Mac map: a scanned sheet drawn as a tilted quadrilateral in its true orientation over the satellite map, cut at its neatline](../../../assets/manual/raster-overlays-rotation-mac.png)
 
 Everything in TopoKit draws in Web Mercator (EPSG:3857). A raster already in Web Mercator or plain latitude/longitude (EPSG:4326, 4269 or 4258) is drawn straight from its file, except a GeoPDF with four or more control points. Every other raster is reprojected once and the result cached. [PROJ](https://proj.org) does the projection math, so almost any coordinate system with an EPSG code works. Imagery above about 85° latitude is clipped at the Mercator limit.
 
@@ -145,7 +145,7 @@ Changes made in Edit Raster are not on the undo history.
 
 NoData is the pixel value a raster uses for "no image here", usually the black or white block around a scanned sheet. To make it transparent, set the value and turn its switch on; neither works alone. The switch starts off. When a GeoTIFF stores its own NoData value, TopoKit fills in the field at import; otherwise the field starts empty.
 
-![A hillshade raster on Mac split by a line: on one side the black collar around the image is drawn, on the other, with NoData set to 0, it is transparent and the map shows through](../../../assets/manual/raster-overlays-nodata-crop-mac.png)
+![A hillshade raster on Mac split by a diagonal: above the line, labelled No NoData Value Applied, the collar around the image draws as a solid black block over the water; below it, labelled NoData = 0, the same pixels are transparent and the map shows through](../../../assets/manual/raster-overlays-nodata-mac.png)
 
 Enter the value the unwanted pixels display as, usually `0` for black or `255` for white. The value is rounded to a whole number, and only 0 to 255 matches a pixel, so a declared sentinel such as `-9999` makes nothing transparent: replace it with the display value, or null those pixels out before importing. A pixel counts as NoData only when all three RGB channels equal the value.
 
