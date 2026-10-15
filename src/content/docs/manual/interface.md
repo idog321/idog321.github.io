@@ -63,7 +63,7 @@ Beyond pan, pinch, two-finger twist and a two-finger drag up or down, which tilt
 - **Swipe toward the screen edge** from the map just beside the sidebar to hide it. The chevron tab left at the edge brings it back ([Toolbar & Haptics](/manual/settings/#toolbar--haptics)).
 - **Slide a finger up or down the sidebar** to see each button's name as the finger passes it. Lifting the finger presses the button under it.
 
-![The tool sidebar swiped off the screen on iPhone: a small tab with a chevron is left at the right edge of the map](../../../assets/manual/interface-sidebar-chevron-tab-iphone.png)
+<video src="/media/interface-sidebar-hide-and-show.mp4" autoplay loop muted playsinline aria-label="The tool sidebar on iPhone swiped toward the screen edge: it slides off and leaves a small chevron tab at the right edge of the map, and a tap on the tab brings it back"></video>
 :::
 
 :::mac
@@ -75,7 +75,7 @@ The window holds the map, the tool sidebar and one floating panel with three tab
 
 TopoKit opens the panel unfolded on the Projects tab at its narrowest width, and dragging its edge widens it; the width, the fold and the tab are not kept between launches. While the pointer is over the tab bar, a chevron appears on the panel's outer edge; clicking it, or `Cmd-Ctrl-S`, folds the panel to a pull tab. The pull tab or the same key brings it back. **Settings → Appearance → Panel Position** puts the panel on the left, the default, or on the right ([Appearance](/manual/settings/#appearance)).
 
-![The panel folded away on Mac: a small pull tab with a chevron at the left edge of the map](../../../assets/manual/interface-panel-pull-tab-mac.png)
+<video src="/media/interface-panel-hide-and-show.mp4" autoplay loop muted playsinline aria-label="The panel on a Mac folded away with its chevron, leaving a small pull tab at the left edge of the map, then unfolded again with a click on the tab"></video>
 
 The tool sidebar is always on the left of the map and moves up above the elevation profile while one is open. The bar above the map holds the search bar and, when the map is rotated, the compass.
 

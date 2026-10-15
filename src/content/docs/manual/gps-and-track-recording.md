@@ -58,8 +58,6 @@ Tapping a coordinate, an accuracy pill, the compass or a stat's value copies it:
 3. Tap the pause button for a rest break, and again to resume.
 4. Tap **Stop Recording** when the track is finished.
 
-![The GPS tab mid-recording on iPhone: the tab red, the pause and stop buttons with the line Balanced under them, the Distance, Duration and Elevation cards, and the live chart](../../../assets/manual/gps-and-track-recording-recording-a-track-ios.png)
-
 A track records into an open project; with none open, **Record Track** asks you to open or create one from the [Projects tab](/manual/projects-and-files/#creating-a-project). Recording tracks is part of the full app ([What asks you to unlock](/manual/your-topokit/#what-asks-you-to-unlock)).
 
 While a recording runs, paused included, the line under the buttons names the profile in use, adding "· Paused" whether you paused or auto-pause did. If 60 seconds pass without a fix being accepted, a **No recent GPS fixes** banner appears; the recording continues. Dismissing this banner or **Precise Location Off** hides it for the rest of that recording only; **Location Access Revoked** cannot be dismissed.
@@ -70,7 +68,7 @@ Every resume starts a new segment in the saved track, as does any gap longer tha
 
 **Stop Recording** pauses the recording and raises the **Recording Paused** alert, where **Cancel** resumes. **Delete Recording**, like the trash button beside the pause button, asks for confirmation, and a deleted recording cannot be recovered.
 
-![The Save Track prompt on iPhone with its Track name field, Save and Cancel](../../../assets/manual/gps-and-track-recording-saving-a-track-ios.png)
+![The Save Track prompt on iPhone: Name your recorded track, the Track name field, Cancel and Save](../../../assets/manual/gps-and-track-recording-saving-a-track-alert-iphone.png)
 
 **Save Recording** opens the **Save Track** prompt, whose **Cancel** also resumes. Left blank, **Track name** names the track after the moment you tapped **Record Track**, such as "Track 2026-10-08 14:30". A recording in which no fix was accepted saves no track. The track goes into whichever project is open when you save, not the one open when you tapped **Record Track**; if the project was closed during the recording, saving creates a project named "Recorded Track" and the start date, such as "Recorded Track 2026-10-08".
 
@@ -92,7 +90,7 @@ A recovered track is named like "Track 2026-10-08 14:30 (Recovered)" and carries
 
 The profile set at **Settings → GPS & Recording → Recording Profile** ([GPS & Recording](/manual/settings/#gps--recording)) is read when you tap **Record Track**, so a change takes effect on the next recording.
 
-![The GPS & Recording page in Settings on iPhone: the four recording profiles with a line describing each, Balanced ticked, and the Auto-Pause When Stationary switch](../../../assets/manual/gps-and-track-recording-recording-profiles-ios.png)
+![The GPS & Recording page in Settings on iPhone: the four recording profiles, Strict filter, Balanced, Permissive and Record All Fixes, each with a line describing it, Balanced ticked, and the Auto-Pause When Stationary switch](../../../assets/manual/gps-and-track-recording-recording-profiles-iphone.png)
 
 | Profile | Distance filter | Accuracy threshold | Jump threshold | Max velocity | Desired accuracy |
 | --- | --- | --- | --- | --- | --- |

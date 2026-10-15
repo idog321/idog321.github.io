@@ -166,6 +166,11 @@
   border-radius: 8px;
 }
 
+/* A portrait phone recording is narrow */
+.sl-markdown-content video[src*='sidebar-hide'] {
+  max-width: 17rem;
+}
+
 /* The tile-download recording floats so the whole section wraps around it —
    the four numbered settings, not just the lead-in paragraph. ::::beside is
    wrong here: it pairs the figure with ONE sibling, so a tall video beside a
@@ -400,6 +405,11 @@
 /* The search results panel, wider than a card */
 .sl-markdown-content img[src*='-results-'] {
   max-width: 32rem;
+}
+
+/* An alert (Save Track, Delete Layer?) is a small dialog */
+.sl-markdown-content img[src*='-alert-'] {
+  max-width: 22rem;
 }
 
 .sl-markdown-content img[src*='-live-card-'] {

@@ -93,9 +93,15 @@ On Mac, a saved feature's editor is a popover with no Cancel: clicking outside i
 On iPhone, the editor saves whenever you leave it: tap **Done**, swipe the sheet down, or go back to the Layers tab.
 :::
 
+::::platforms
+:::ios
+![Edit Point on iPhone for Tin Hat Hut: the Details card with the name, a description and Add Photo, the Folder row reading Huts with Create New Folder, the Style row reading House Fill with Edit, and the Coordinates below](../../../assets/manual/points-lines-polygons-editing-a-feature-sheet-iphone.png)
+:::
+
 :::mac
 ![The Edit Point popover on Mac for Elk Lake Hut: Name, Description, Add Photo, the Folder row reading Huts with Create New Folder, the Style row reading House Fill with Edit, the coordinates, and Elevation 783.9 m](../../../assets/manual/points-lines-polygons-editing-a-feature-popover-mac.png)
 :::
+::::
 
 A style is saved when you tap **Done** in its sheet, a photo when you add or delete it, and a height when **Get Elevation** returns, without waiting for the editor to close. A point's **Elevation** section fills in on its own when the spot's elevation tile is on the device, and otherwise offers **Get Elevation**, which downloads that one tile, 25–40 MB ([Elevation at a point](/manual/elevation/#elevation-at-a-point)). Changes made in an editor are not [undo steps](/manual/interface/#undo-and-redo); moving the feature to another folder is, and so is deleting it.
 
