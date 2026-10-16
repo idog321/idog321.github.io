@@ -13,7 +13,7 @@ The map under your layers is Apple Maps, in **Standard**, **Hybrid** or **Satell
 ## What you can do
 
 - **Build basemaps**: TopoKit builds a topographic map of an area you pick, on the device, with shaded relief, contours, slope angle, trails, roads, water and place names. See [Basemaps](/manual/basemaps/).
-- **Add your own maps**: TopoKit streams any XYZ or WMS map service from its address, and reprojects imported GeoTIFF and GeoPDF maps to line up with the map. See [Tile layers](/manual/tile-layers/) and [Raster overlays](/manual/raster-overlays/).
+- **Add your own maps**: TopoKit streams an XYZ or WMS map service from its address, and reprojects imported GeoTIFF and GeoPDF maps to line up with the map. See [Tile layers](/manual/tile-layers/) and [Raster overlays](/manual/raster-overlays/).
 - **Search and identify**: a tap on a trail, a peak or one of your own features opens a card that says what it is; search takes names and coordinates; holding a spot, or right-clicking it on a Mac, gives its elevation, slope, aspect, sunrise and sunset. See [Search and identify](/manual/search-and-identify/).
 - **Draw features**: points, lines, polygons and circles carry their own styles and photos. See [Points, lines, polygons and circles](/manual/points-lines-polygons/).
 - **Measure**: distance, area and bearing update live as you draw. See [Measuring](/manual/measurement/).
@@ -35,14 +35,14 @@ TopoKit has no account, no sign-in, no analytics or tracking, and no server that
 
 ### What TopoKit sends, and where
 
-- **Apple Maps**: the map imagery for the area on screen; every search, as you type it, with the area the map is showing, including text that matches your layers or reads as a coordinate; the coordinate of a spot you hold, to name the nearest place and its time zone; and for a route, each leg's two ends and the travel mode, and each stop's coordinate to name it.
-- **The App Store**: a check of what you own and the current prices, at launch, each time TopoKit returns to the foreground, and when you buy, restore or redeem a code.
-- **Elevation data**: one file for each one-degree square, named by the square and carrying nothing else, whenever TopoKit downloads elevation. See [Elevation](/manual/elevation/#elevation-data-source) for the source.
+- **Apple Maps**: the map imagery for the area on screen; every search, as you type it, with the area the map is showing, including text that matches your layers or reads as a coordinate; the coordinate of a spot you hold or open a place card for, to name the nearest place and its time zone; and for a route, each leg's two ends and the travel mode, and the coordinate of each stop that has no name yet, to name it.
+- **The App Store**: the current prices at launch, and a check of what you own at launch, each time TopoKit returns to the foreground, and when you buy, restore or redeem a code.
+- **Elevation data**: one file for each one-degree square, named by the square, whenever TopoKit downloads elevation. See [Elevation](/manual/elevation/#elevation-data-source) for the source.
 - **Map data for basemaps** ([Overture Maps](https://overturemaps.org)): a listing to find the newest release, then only the parts of the data that cover the area you picked, sent with the app's name, version and platform. The same requests measure the download size before a build, and opening a built basemap's editor checks once for newer data. A basemap whose data is already on the device builds without them.
 - **topokit.ca**: before any map-data request, TopoKit reads one small file that can point it to another copy of the map data or pause map-data downloads. The request carries a timestamp and the app's name, version and platform. If topokit.ca does not answer, TopoKit goes straight to the map data. When the file pauses map-data downloads, a basemap build stops and shows the file's message, or "Map data downloads are currently disabled" if it has none.
 - **Tile and WMS servers you add**: the tiles for the area on screen, a WMS service's capabilities when you connect to it, and for an offline download every tile in the area you chose, sent with the app's name, version and platform.
-- **Routes you hand off**: Apple Maps receives the start, the end and the travel mode; another maps app also receives up to nine stops between them.
-- **Email you send**: **Send Feedback** and **Send Logs to Developer** in **Settings → Help & Feedback** ([Help & Feedback](/manual/settings/#help--feedback)), and a crash report, each open a draft to feedback@topokit.ca in your own mail, and nothing goes until you send it. The diagnostic log can include project names, file paths and coordinates, and TopoKit says so before it attaches it; a crash report holds the app and system versions and where the crash happened, not your projects, your locations or the log.
+- **Routes you hand off**: Apple Maps receives the start and the end, each with the name the tool card shows for it, and the travel mode; another maps app receives the coordinates of the start, the end and up to nine stops between them, and the travel mode.
+- **Email you send**: **Send Feedback** and **Send Logs to Developer** in **Settings → Help & Feedback** ([Help & Feedback](/manual/settings/#help--feedback)), and a crash report, each open a draft to feedback@topokit.ca in your own mail, and nothing goes until you send it. The diagnostic log can include project names, file paths and coordinates, and **Send Logs to Developer** says so before it attaches it; a crash report holds the app and system versions, the device model and where the crash happened, not your projects, your locations or the log.
 
 ## How to use this manual
 
@@ -50,7 +50,7 @@ TopoKit has no account, no sign-in, no analytics or tracking, and no server that
 
 The **All**, **Mac** and **iPhone** buttons beside the search box, or in the menu on a narrow screen, hide the other platform's sections, sentences and table rows on every page, and the site remembers the choice.
 
-The first time a chapter uses a term from the [Glossary](/manual/glossary/), it is underlined with dots; hover over it or tap it for the definition.
+The first time a chapter's text uses a term from the [Glossary](/manual/glossary/), other than raster, route and track, it is underlined with dots; hover over it or tap it for the definition.
 
 ## FAQ
 
