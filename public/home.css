@@ -292,8 +292,16 @@ html.clip-open { overflow: hidden; }
 .hl-scrim { position: absolute; left: 0; right: 0; bottom: 0; height: 55%; background: linear-gradient(to top, rgba(10,11,12,0.72), rgba(10,11,12,0)); }
 .hl-type-full h3, .hl-type-photo h3 { position: absolute; left: 3rem; right: 3rem; bottom: 2.4rem; color: #fff; max-width: 22em; }
 /* a mosaic of map looks */
-.hl-mosaic { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 0; border-radius: 14px; overflow: hidden; }
-.hl-mosaic img { display: block; width: 100%; height: 100%; min-height: 0; object-fit: cover; }
+/* The four looks are quadrants of one frame. Each tile is a window on its quadrant, and every quadrant image is sized as a
+   quarter of ONE picture cover-fitted to the whole mosaic (width = max(50cqw, 75cqh) for a 3:2 frame) and anchored to the
+   centre seam, so the four crop together and the contours run across the seams at any box shape. */
+.hl-mosaic { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 0; border-radius: 14px; overflow: hidden; container-type: size; }
+.hl-mosaic span { position: relative; overflow: hidden; min-width: 0; min-height: 0; }
+.hl-mosaic img { position: absolute; display: block; width: max(50cqw, 75cqh); max-width: none; height: auto; }
+.hl-mosaic span:nth-child(1) img { right: 0; bottom: 0; }
+.hl-mosaic span:nth-child(2) img { left: 0; bottom: 0; }
+.hl-mosaic span:nth-child(3) img { right: 0; top: 0; }
+.hl-mosaic span:nth-child(4) img { left: 0; top: 0; }
 /* the two devices together */
 .hl-pair { position: relative; margin: auto; height: var(--media); width: min(100%, calc(var(--media) * 1.8)); }
 .hl-pair .hl-device.mac { position: absolute; right: 0; bottom: 0; width: calc(var(--media) * 1.6368); margin: 0; }
