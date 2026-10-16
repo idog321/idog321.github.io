@@ -77,7 +77,9 @@ body { font-family: 'Inter', -apple-system, sans-serif; color: var(--ink); backg
 .band-head h2 { font-size: clamp(2rem, 3.4vw, 2.9rem); }
 .features-grid { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
 
-.feat { background: #232428; border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 1.6rem 1.4rem 1.5rem; }
+.feat { display: block; color: inherit; text-decoration: none; background: #232428; border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 1.6rem 1.4rem 1.5rem; transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease; }
+.feat:hover, .feat:focus-visible { border-color: rgba(255,149,0,0.6); background: #27282c; transform: translateY(-2px); outline: none; }
+.feat:hover .feat-link { text-decoration: underline; }
 
 .feat-art { width: 100%; height: auto; aspect-ratio: 800 / 480; display: block; background: #1A1B1E; border-radius: 10px; margin-bottom: 1.15rem; }
 /* Hidden until the file fully arrives — Safari paints streaming SVGs with masks unresolved. */
@@ -231,37 +233,8 @@ body { font-family: 'Inter', -apple-system, sans-serif; color: var(--ink); backg
 
 /* ---- 1.2: cards that open their recording, and the See it work carousel ---- */
 .band-sub { margin-top: 0.7rem; font-size: 1rem; color: rgba(255,255,255,0.66); }
-.feat.has-clip { cursor: pointer; transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease; }
-.feat.has-clip:hover, .feat.has-clip:focus-within { border-color: rgba(255,149,0,0.6); background: #27282c; transform: translateY(-2px); }
-.feat-open { background: none; border: 0; padding: 0; margin: 0; font: inherit; color: inherit; text-transform: inherit; letter-spacing: inherit; text-align: left; cursor: pointer; }
-.feat-open:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; border-radius: 3px; }
-html.clip-open { overflow: hidden; }
-
-/* The universal margin reset above would pin the dialog to the top-left; auto puts it back in the middle. */
-.clip { margin: auto; border: 0; padding: 0; background: #141517; color: #fff; border-radius: 14px; width: min(92vw, 1120px); max-width: none; max-height: 100vh; overflow: auto; box-shadow: 0 30px 80px rgba(0,0,0,0.5); }
-.clip.portrait { width: min(92vw, 420px); }
-.clip::backdrop { background: rgba(10,11,12,0.72); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
-.clip-bar { display: flex; align-items: center; gap: 1rem; padding: 0.75rem 0.9rem 0.75rem 1.1rem; }
-.clip-title { flex: 1; min-width: 0; font-size: 0.95rem; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.seg { display: inline-flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; }
-.seg button { background: none; border: 0; color: rgba(255,255,255,0.78); font: 600 0.78rem 'Inter', -apple-system, sans-serif; padding: 0.3rem 0.7rem; cursor: pointer; }
-.seg button + button { border-left: 1px solid rgba(255,255,255,0.22); }
-.seg button[aria-pressed="true"] { background: var(--orange); color: var(--charcoal); }
-.clip-close { background: none; border: 0; color: rgba(255,255,255,0.78); font-size: 1.6rem; line-height: 1; width: 2.2rem; height: 2.2rem; border-radius: 50%; cursor: pointer; }
-.clip-close:hover { background: rgba(255,255,255,0.1); color: #fff; }
-.clip video { display: block; width: 100%; height: auto; max-height: 78vh; background: #000; }
-.clip-foot { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding: 0.7rem 1.1rem 0.85rem; }
-.clip-caption { font-size: 0.85rem; color: rgba(255,255,255,0.7); }
-.clip-chapters { display: flex; flex-wrap: wrap; gap: 0.45rem; }
-.clip-chapters:empty { display: none; }
-.pill { background: none; border: 1px solid rgba(255,255,255,0.22); color: rgba(255,255,255,0.78); border-radius: 100px; font: 600 0.76rem 'Inter', -apple-system, sans-serif; padding: 0.25rem 0.7rem; cursor: pointer; }
-.pill[aria-pressed="true"] { border-color: var(--orange); color: #fff; }
 
 @media (max-width: 640px) {
-  /* Full screen on a phone. [open] keeps the browser's own display:none for a closed dialog. */
-  .clip { width: 100vw; max-width: 100vw; border-radius: 0; margin: 0; height: 100vh; max-height: 100vh; }
-  .clip[open] { display: flex; flex-direction: column; justify-content: center; }
-  .clip video { max-height: 72vh; }
 
 }
 
