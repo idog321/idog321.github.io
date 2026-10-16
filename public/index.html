@@ -69,56 +69,81 @@
 <section class="band-features">
   <div class="band-head">
     <h2 class="display">Every tool for the job.</h2>
+    <p class="band-sub">Click a card to watch it work, on Mac or on iPhone.</p>
   </div>
   <div class="features-grid">
-    <div class="feat">
+    <article class="feat">
+      <img class="feat-art" onload="this.classList.add('loaded')" src="Images/cards/basemaps.svg" alt="">
+      <h3>Basemaps</h3>
+      <p>Pick an area and TopoKit builds a topographic map of it right on your iPhone or Mac, with shaded relief, contours, slope angle, trails, roads, water and place names. Once built, it works without a signal.</p>
+      <a class="feat-link" href="/manual/basemaps/">Learn more</a>
+    </article>
+    <article class="feat">
+      <img class="feat-art" onload="this.classList.add('loaded')" src="Images/cards/search.svg" alt="">
+      <h3>Tap and search</h3>
+      <p>Tap a trail, a peak or one of your own lines and a card tells you what it is. Save trails and parks from your basemap into your project. Search finds their names without a signal.</p>
+      <a class="feat-link" href="/manual/search-and-identify/">Learn more</a>
+    </article>
+    <article class="feat">
       <img class="feat-art" onload="this.classList.add('loaded')" src="Images/cards/projects.svg" alt="">
       <h3>Projects</h3>
       <p>Keep your work organized in separate projects. Maps, points, polygons, and photos, all stored in one file you own.</p>
-      <a class="feat-link" href="https://topokit.ca/manual/projects-and-files/">Learn more</a>
-    </div>
-    <div class="feat">
+      <a class="feat-link" href="/manual/projects-and-files/">Learn more</a>
+    </article>
+    <article class="feat">
       <img class="feat-art" onload="this.classList.add('loaded')" src="Images/cards/rasters.svg" alt="">
       <h3>Multiple rasters</h3>
       <p>Stack as many GeoTIFFs and GeoPDFs as you need. Everything reprojects on the fly and lines up wherever it needs to be.</p>
-      <a class="feat-link" href="https://topokit.ca/manual/raster-overlays/">Learn more</a>
-    </div>
-    <div class="feat">
+      <a class="feat-link" href="/manual/raster-overlays/">Learn more</a>
+    </article>
+    <article class="feat has-clip" data-clips="Drawing a line|points-lines-polygons-line-tool;Editing vertices|points-lines-polygons-edit-vertices">
       <img class="feat-art" onload="this.classList.add('loaded')" src="Images/cards/vector.svg" alt="">
-      <h3>Vector data</h3>
+      <h3><button type="button" class="feat-open">Vector data</button></h3>
       <p>Drop points. Draw and edit lines and polygons. Import vector files, and export everything back out in four formats.</p>
-      <a class="feat-link" href="https://topokit.ca/manual/points-lines-polygons/">Learn more</a>
-    </div>
-    <div class="feat">
+      <a class="feat-link" href="/manual/points-lines-polygons/">Learn more</a>
+    </article>
+    <article class="feat has-clip" data-clips="Drawing and measuring a polygon|getting-started-draw-and-measure">
+      <img class="feat-art" onload="this.classList.add('loaded')" src="Images/cards/measure.svg" alt="">
+      <h3><button type="button" class="feat-open">Measure</button></h3>
+      <p>Drawing and measuring are one tool. Lengths appear along each side as you draw, and the card shows distance, area, bearing and more, in your units. Saving is optional.</p>
+      <a class="feat-link" href="/manual/measurement/">Learn more</a>
+    </article>
+    <article class="feat has-clip" data-clips="Draw order|layer-tree-draw-order">
       <img class="feat-art" onload="this.classList.add('loaded')" src="Images/cards/tree.svg" alt="">
-      <h3>Layer tree</h3>
+      <h3><button type="button" class="feat-open">Layer tree</button></h3>
       <p>Just like the GIS apps you already know. Drag to reorder layers, group them into folders, and change their opacity.</p>
-      <a class="feat-link" href="https://topokit.ca/manual/layer-tree/">Learn more</a>
-    </div>
-    <div class="feat">
+      <a class="feat-link" href="/manual/layer-tree/">Learn more</a>
+    </article>
+    <article class="feat has-clip" data-clips="Downloading tiles for offline use|tile-layers-using-offline-tiles">
       <img class="feat-art" onload="this.classList.add('loaded')" src="Images/cards/tiles.svg" alt="">
-      <h3>Offline tile layers</h3>
+      <h3><button type="button" class="feat-open">Offline tile layers</button></h3>
       <p>Add any XYZ or WMS tile server by URL. Draw a box on the map, and download tiles for offline use.</p>
-      <a class="feat-link" href="https://topokit.ca/manual/tile-layers/">Learn more</a>
-    </div>
-    <div class="feat">
+      <a class="feat-link" href="/manual/tile-layers/">Learn more</a>
+    </article>
+    <article class="feat">
       <img class="feat-art" onload="this.classList.add('loaded')" src="Images/cards/gps.svg" alt="">
       <h3>GPS recording</h3>
       <p>Record tracks with the phone in your pocket. Watch distance, speed, and elevation stats update live as you go. Every point tagged with accuracy, altitude, and time.</p>
-      <a class="feat-link" href="https://topokit.ca/manual/gps-and-track-recording/">Learn more</a>
-    </div>
-    <div class="feat">
+      <a class="feat-link" href="/manual/gps-and-track-recording/">Learn more</a>
+    </article>
+    <article class="feat has-clip" data-clips="Adding stops|routes-adding-stops">
+      <img class="feat-art" onload="this.classList.add('loaded')" src="Images/cards/routes.svg" alt="">
+      <h3><button type="button" class="feat-open">Routes</button></h3>
+      <p>Add stops by searching or tapping the map, and the roads between them fill in for driving, walking or cycling. Check the elevation profile before saving, then share the route as a file.</p>
+      <a class="feat-link" href="/manual/routes/">Learn more</a>
+    </article>
+    <article class="feat has-clip" data-clips="The elevation profile|elevation-profile-hover|elevation-profile-select-iphone">
       <img class="feat-art" onload="this.classList.add('loaded')" src="Images/cards/elevation.svg" alt="">
-      <h3>Elevation profiles</h3>
+      <h3><button type="button" class="feat-open">Elevation profiles</button></h3>
       <p>Download the elevation data once. Get point elevations and profiles anywhere you need. No signal required.</p>
-      <a class="feat-link" href="https://topokit.ca/manual/elevation/">Learn more</a>
-    </div>
-    <div class="feat">
+      <a class="feat-link" href="/manual/elevation/">Learn more</a>
+    </article>
+    <article class="feat">
       <img class="feat-art" onload="this.classList.add('loaded')" src="Images/cards/icloud.svg" alt="">
       <h3>Synced through your iCloud</h3>
       <p>Work on a project on your Mac and open it on your iPhone. Same file, synced privately through your own iCloud.</p>
-      <a class="feat-link" href="https://topokit.ca/manual/projects-and-files/">Learn more</a>
-    </div>
+      <a class="feat-link" href="/manual/projects-and-files/">Learn more</a>
+    </article>
   </div>
 </section>
 
@@ -130,9 +155,54 @@
   </div>
 </section>
 
-<section class="moment">
+<section class="moment carousel-section" id="see-it-work">
   <h2 class="display">See it work.</h2>
-  <p class="soon">Demo videos are coming soon.</p>
+  <p class="soon">The app on a Mac and an iPhone, one thing at a time. Swipe, or use the arrows.</p>
+  <div class="carousel">
+    <div class="carousel-track">
+      <div class="carousel-slide active">
+        <div class="slide-devices"><div class="slide-mac"><img src="Images/carousel/basemap-mac.webp" width="1800" height="1171" alt="TopoKit on a Mac: a built topographic basemap with the Sunshine Coast Trail and its huts, the Layers panel beside it"></div><div class="slide-phone"><img src="Images/carousel/basemap-iphone.webp" width="506" height="1100" alt="TopoKit on an iPhone: two squares of the basemap area picker selected over the coast, with the Build button"></div></div>
+        <div class="slide-info"><h3>A basemap you built</h3><p>Pick the squares on the iPhone and TopoKit builds the map on the device. On the Mac, the finished basemap under the trail and its huts.</p></div>
+      </div>
+      <div class="carousel-slide">
+        <div class="slide-devices"><div class="slide-mac"><img src="Images/carousel/card-mac.webp" width="1800" height="1171" alt="The Sunshine Coast Trail&#x27;s card open over the basemap on a Mac, with its length and the Save button" loading="lazy"></div><div class="slide-phone"><img src="Images/carousel/card-iphone.webp" width="506" height="1100" alt="A Marked Location card on an iPhone over the basemap near Manzanita Bluff: elevation, slope, aspect, sunrise and sunset" loading="lazy"></div></div>
+        <div class="slide-info"><h3>Tap anything for a card</h3><p>A tap on the trail opens its card on the Mac. On the iPhone, a held spot gives its height, slope, aspect, sunrise and sunset.</p></div>
+      </div>
+      <div class="carousel-slide">
+        <div class="slide-devices"><div class="slide-mac"><img src="Images/carousel/rasters-mac.webp" width="1800" height="1171" alt="A scanned map sheet lying at an angle over the satellite image on a Mac" loading="lazy"></div><div class="slide-phone"><img src="Images/carousel/rasters-iphone.webp" width="506" height="1100" alt="A scanned map sheet imported over the map on an iPhone, with the huts and the trail on top" loading="lazy"></div></div>
+        <div class="slide-info"><h3>Your own maps on top</h3><p>A scanned sheet imported, reprojected and lying at its true angle over the satellite image, on both devices.</p></div>
+      </div>
+      <div class="carousel-slide">
+        <div class="slide-devices"><div class="slide-mac"><img src="Images/carousel/tiles-mac.webp" width="1800" height="1171" alt="A topographic tile layer over Mount St. Helens on a Mac" loading="lazy"></div><div class="slide-phone"><img src="Images/carousel/tiles-iphone.webp" width="506" height="1100" alt="The same topographic tile layer over Mount St. Helens on an iPhone" loading="lazy"></div></div>
+        <div class="slide-info"><h3>Tiles for the trip</h3><p>A topographic tile layer streamed from a server. Draw a box and the tiles inside it download for offline use.</p></div>
+      </div>
+      <div class="carousel-slide">
+        <div class="slide-devices"><div class="slide-mac"><img src="Images/carousel/elevation-mac.webp" width="1800" height="1171" alt="The elevation grid over southern British Columbia on a Mac, two tiles selected for download" loading="lazy"></div><div class="slide-phone"><img src="Images/carousel/elevation-iphone.webp" width="506" height="1100" alt="The elevation grid on an iPhone with one downloaded tile selected" loading="lazy"></div></div>
+        <div class="slide-info"><h3>Elevation, downloaded once</h3><p>The elevation grid: pick the squares you need and the heights come along, for profiles and spot heights without a signal.</p></div>
+      </div>
+      <div class="carousel-slide">
+        <div class="slide-devices"><div class="slide-mac"><img src="Images/carousel/profile-mac.webp" width="1800" height="1171" alt="A route round southern Vancouver Island on a Mac with its elevation profile open under the map" loading="lazy"></div><div class="slide-phone"><img src="Images/carousel/profile-iphone.webp" width="506" height="1100" alt="The same route&#x27;s elevation profile on an iPhone" loading="lazy"></div></div>
+        <div class="slide-info"><h3>The elevation profile</h3><p>A route's profile under the map, with its gain and loss, on Mac and iPhone.</p></div>
+      </div>
+      <div class="carousel-slide">
+        <div class="slide-devices"><div class="slide-mac"><img src="Images/carousel/measure-mac.webp" width="1800" height="1171" alt="A circle drawn round Tin Hat Hut on a Mac, with Area, Radius and Circumference on the tool card" loading="lazy"></div><div class="slide-phone"><img src="Images/carousel/measure-iphone.webp" width="506" height="1100" alt="The same circle on an iPhone with its figures on the tool card" loading="lazy"></div></div>
+        <div class="slide-info"><h3>Measure as you draw</h3><p>A circle with its area, radius and circumference on the tool card while you draw. Saving is optional.</p></div>
+      </div>
+      <div class="carousel-slide">
+        <div class="slide-devices"><div class="slide-mac"><img src="Images/carousel/route-mac.webp" width="1800" height="1171" alt="A route through six stops round southern Vancouver Island on a Mac, with the stop list and totals" loading="lazy"></div><div class="slide-phone"><img src="Images/carousel/route-iphone.webp" width="506" height="1100" alt="The same route on an iPhone with its stops and totals" loading="lazy"></div></div>
+        <div class="slide-info"><h3>A route through the stops</h3><p>Six stops, the roads between them and the totals, on Mac and iPhone.</p></div>
+      </div>
+      <div class="carousel-slide">
+        <div class="slide-devices"><div class="slide-mac"><video controls preload="none" playsinline width="1468" height="922" poster="media/posters/tile-layers-using-offline-tiles.webp" src="media/tile-layers-using-offline-tiles.mp4"></video></div></div>
+        <div class="slide-info"><h3>Downloading tiles, start to finish</h3><p>The whole download on the Mac in forty seconds: the sheet, the zoom level, the tile count, and the downloaded rectangle standing alone.</p></div>
+      </div>
+    </div>
+    <div class="carousel-controls">
+      <button class="carousel-btn prev" type="button" aria-label="Previous">&#8592;</button>
+      <div class="carousel-dots"></div>
+      <button class="carousel-btn next" type="button" aria-label="Next">&#8594;</button>
+    </div>
+  </div>
 </section>
 
 <div class="privacy-wrap">
@@ -140,12 +210,13 @@
     <div class="privacy-inner">
       <div>
         <h2 class="display">Built for <em>privacy</em>,<br>from day one.</h2>
-        <p class="lead">TopoKit was built without an account and without a server. Your projects live on your device, and in your own iCloud if you turn on sync. Nothing you record is public by default, because nothing goes anywhere by default.</p>
+        <p class="lead">TopoKit was built without an account. Your projects live on your device, and in your own iCloud if you turn on sync. Nothing you record is public by default, because nothing goes anywhere by default.</p>
       </div>
       <ul class="net-list">
         <li><strong>What touches the network:</strong> Apple's basemap, search and directions.</li>
-        <li>Elevation tiles you ask for.</li>
+        <li>Elevation and map data you ask for, when you download elevation or build a basemap.</li>
         <li>Map servers you add yourself.</li>
+        <li>The App Store, to check what you own, and one small file on topokit.ca that says where the map data lives.</li>
         <li><strong>That's the whole list.</strong> Everything else stays on your device.</li>
       </ul>
     </div>
@@ -179,6 +250,20 @@
     <p>Already bought TopoKit? You own all of it, with nothing to buy or restore. However you got it, TopoKit is unlocked on every iPhone and Mac signed into the same Apple Account.</p>
   </div>
 </section>
+
+<!-- The clip player. A card that has a recording opens it here. -->
+<dialog class="clip" id="clip">
+  <div class="clip-bar">
+    <strong class="clip-title"></strong>
+    <span class="seg" role="group" aria-label="Device">
+      <button type="button" data-device="mac" aria-pressed="true">Mac</button>
+      <button type="button" data-device="iphone" aria-pressed="false">iPhone</button>
+    </span>
+    <button type="button" class="clip-close" aria-label="Close">×</button>
+  </div>
+  <video muted loop playsinline controls preload="none"></video>
+  <div class="clip-foot"><p class="clip-caption"></p><div class="clip-chapters"></div></div>
+</dialog>
 
 <footer class="footer">
   <div class="footer-inner">
@@ -247,7 +332,55 @@ var navEl = document.querySelector('.nav');
 function navState() { navEl.classList.toggle('scrolled', window.scrollY > 40); }
 window.addEventListener('scroll', navState, { passive: true });
 navState();
+
+/* Feature cards. A card with data-clips="Label|mac-name|iphone-name;…" opens its
+   recording over the page: the files in media/ by name, the iPhone one defaulting
+   to "<mac-name>-iphone", a poster of the same name in media/posters/. A click
+   anywhere on the card opens it, except on the Learn more link. */
+(function () {
+  var dlg = document.getElementById('clip');
+  if (!dlg || typeof dlg.showModal !== 'function') return;
+  var video = dlg.querySelector('video'), title = dlg.querySelector('.clip-title'), caption = dlg.querySelector('.clip-caption');
+  var chapters = dlg.querySelector('.clip-chapters'), seg = dlg.querySelectorAll('.seg button');
+  var clips = [], cur = 0, dev = 'mac';
+  function pressed(list, isOn) { for (var i = 0; i < list.length; i++) list[i].setAttribute('aria-pressed', isOn(list[i], i) ? 'true' : 'false'); }
+  function load() {
+    var c = clips[cur], n = dev === 'iphone' ? c.iphone : c.mac;
+    dlg.classList.toggle('portrait', dev === 'iphone');
+    video.poster = 'media/posters/' + n + '.webp';
+    video.src = 'media/' + n + '.mp4';
+    video.load();
+    var p = video.play(); if (p && p.catch) p.catch(function () {});
+    caption.textContent = c.label + ' · ' + (dev === 'iphone' ? 'iPhone' : 'Mac');
+    pressed(seg, function (b) { return b.getAttribute('data-device') === dev; });
+    pressed(chapters.querySelectorAll('button'), function (b, i) { return i === cur; });
+  }
+  function open(card) {
+    clips = card.getAttribute('data-clips').split(';').map(function (x) {
+      var p = x.split('|'); return { label: p[0], mac: p[1], iphone: p[2] || (p[1] + '-iphone') };
+    });
+    cur = 0; dev = matchMedia('(max-width: 640px)').matches ? 'iphone' : 'mac';
+    title.textContent = card.querySelector('h3').textContent;
+    chapters.innerHTML = '';
+    if (clips.length > 1) clips.forEach(function (c, i) {
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'pill'; b.textContent = c.label;
+      b.addEventListener('click', function () { cur = i; load(); }); chapters.appendChild(b);
+    });
+    document.documentElement.classList.add('clip-open');
+    dlg.showModal(); load();
+  }
+  document.addEventListener('click', function (e) {
+    var card = e.target.closest && e.target.closest('.feat.has-clip');
+    if (!card || e.target.closest('a')) return;
+    e.preventDefault(); open(card);
+  });
+  for (var i = 0; i < seg.length; i++) seg[i].addEventListener('click', function () { dev = this.getAttribute('data-device'); load(); });
+  dlg.querySelector('.clip-close').addEventListener('click', function () { dlg.close(); });
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+  dlg.addEventListener('close', function () { video.pause(); video.removeAttribute('src'); video.load(); document.documentElement.classList.remove('clip-open'); });
+})();
 </script>
+<script src="carousel.js"></script>
 
 </body>
 </html>
