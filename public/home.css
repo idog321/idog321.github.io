@@ -330,10 +330,11 @@ html.clip-open { overflow: hidden; }
   .hl-card { padding: 1.4rem 1.25rem 1.5rem; border-radius: 22px; gap: 1.1rem; }
   .hl-card h3 { font-size: 1.1rem; }
   .hl-type-full h3, .hl-type-photo h3 { left: 1.25rem; right: 1.25rem; bottom: 1.4rem; }
-  /* on a phone the pair stays a pair: the Mac in flow, right-aligned, the iPhone in front of its lower left corner */
+  /* on a phone the pair stays a pair at the desktop's proportions: the Mac in flow, right-aligned, the iPhone in front of
+     its lower left corner at real scale (a 150 mm phone beside a 14-inch MacBook: two thirds of the Mac's height) */
   .hl-pair { width: 100%; height: auto; }
-  .hl-pair .hl-device.mac { position: relative; right: auto; bottom: auto; width: 90%; margin: 0 0 0 auto; }
-  .hl-pair .hl-device.iphone { position: absolute; left: 0; bottom: 0; width: 27%; margin: 0; }
+  .hl-pair .hl-device.mac { position: relative; right: auto; bottom: auto; width: 90.9%; margin: 0 0 0 auto; }
+  .hl-pair .hl-device.iphone { position: absolute; left: 0; bottom: 0; width: 17.7%; margin: 0; }
   .hl-dots { padding: 0.75rem 1rem; }
   .hl-dot[aria-selected="true"] { width: 44px; }
 }
