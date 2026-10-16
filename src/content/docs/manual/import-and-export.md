@@ -2,7 +2,7 @@
 title: "Importing and exporting"
 description: "The file formats TopoKit reads and writes, and what happens to features, attributes and coordinates on import and export."
 ---
-Every coordinate in a project is stored in WGS84 (EPSG:4326). Imports are converted to it on the way in, and every export is written in it.
+Every feature in a project is stored in WGS84 (EPSG:4326). Vector imports are converted to it on the way in, and every vector export is written in it.
 
 ## Formats at a glance
 
@@ -22,16 +22,16 @@ Every coordinate in a project is stored in WGS84 (EPSG:4326). Imports are conver
 ## Importing a file
 
 :::mac
-On Mac, choose **Add Vector Layer…** from the :ui[Add Data]{icon=plus} menu in the tool sidebar, from the :ui[plus]{icon=plus} menu in the Layers tab, or from the **Layer** menu, and pick one or more files. You can also drag files from Finder onto the open project's window, or open a file with TopoKit from Finder, which takes a GeoPackage only as `.gpkg`. A dropped `.mapproject` opens as a project and a dropped TIFF or PDF as a [raster overlay](/manual/raster-overlays/#importing-a-raster); any other type is ignored.
+On Mac, choose **Add Vector Layer…** from the :ui[Add Data]{icon=plus} menu in the tool sidebar, from the :ui[plus]{icon=plus} menu in the Layers tab, or from the **Layer** menu, and pick one or more files. You can also drag files from Finder onto the open project's map, or open a file with TopoKit from Finder, which takes GeoJSON only as `.geojson` and a GeoPackage only as `.gpkg`. A dropped `.mapproject` opens as a project and a dropped TIFF or PDF as a [raster overlay](/manual/raster-overlays/#importing-a-raster); any other type is ignored.
 :::
 
 :::ios
-On iPhone, tap :ui[Add Data]{icon=plus} in the tool sidebar or :ui[plus]{icon=plus} in the Layers tab, choose **Add Vector Layer…**, and pick one or more files. A file opened in TopoKit from the Files app or another app is imported the same way, except a `.geopackage`, which only the picker reads.
+On iPhone, tap :ui[Add Data]{icon=plus} in the tool sidebar or :ui[plus]{icon=plus} in the Layers tab, choose **Add Vector Layer…**, and pick one or more files. A file opened in TopoKit from the Files app or another app is imported the same way, except a `.json` or `.geopackage` file, which only the picker reads.
 :::
 
 A file opened in TopoKit while no project is open waits, and is imported into the next project you open. TopoKit picks the reader from the file extension, so a GPX or KML file saved as `.xml` is refused as an unsupported format. Files picked together are imported one after another: a file that fails does not stop the rest, and the alert gives the reason for the first failure only.
 
-Without the full app, a file you import brings up the **Unlock TopoKit** sheet and nothing is added; exporting, sharing and copying do not need it ([What asks you to unlock](/manual/your-topokit/#what-asks-you-to-unlock)).
+Without the full app, importing a vector or raster file brings up the **Unlock TopoKit** sheet and nothing is added; opening a `.mapproject`, exporting, sharing and copying do not need it ([What asks you to unlock](/manual/your-topokit/#what-asks-you-to-unlock)).
 
 ## What happens on import
 
@@ -41,16 +41,16 @@ Styling in the file is not read. Imported features take their style from [Settin
 
 One Undo removes an import's folder and every feature in it ([Undo and redo](/manual/interface/#undo-and-redo)).
 
-A GPX or KML file with no feature TopoKit can read still adds its folder, empty. :mac[On Mac, an import that skipped or changed something ends with an alert titled **Imported, With Gaps** or **Imported, With Notes**, giving the number of features imported, the number skipped, and the first three reasons.]
+A GPX or KML file with no feature TopoKit can read, or a GeoPackage whose feature tables hold none it can read, still adds its folder, empty. :mac[On Mac, an import that skipped or changed something ends with an alert titled **Imported, With Gaps** or **Imported, With Notes**, giving the number of features imported, the number skipped, and the first three reasons.]
 
-Every format is capped at 100 MB a file, checked before any of it is read; a KMZ must be under the cap both as the archive and as the KML inside it.
+Every vector format is capped at 100 MB a file, checked before any of it is read; a KMZ must be under the cap both as the archive and as the KML inside it.
 
 ## Exporting and sharing
 
 Several rows exported together always become one file.
 
 :::mac
-On Mac, right-click a row or a selection of rows and choose **Export to File**. To export rows from different places in the tree, click **Select** in the Layers tab, check the rows and click **Export** in the action bar.
+On Mac, right-click a row or a selection of rows and choose **Export to File**, or select them and choose **Layer → Export to File…** (`Cmd-E`). To export rows from different places in the tree, click **Select** in the Layers tab, check the rows and click **Export** in the action bar.
 :::
 
 :::ios
@@ -60,7 +60,7 @@ On iPhone, tap a row's :ui[Layer options]{icon=ellipsis} button and choose **Exp
 
 ::::platforms
 :::ios
-![A row's Layer options menu on iPhone with the Export to File submenu open beside it: GPX, KML, GeoJSON and GeoPackage](../../../assets/manual/getting-started-export-your-data-menus-iphone.png)
+![The Layer options menu on the Trail row on iPhone, with the Export to File submenu open over its lower end: GPX, KML, GeoJSON and GeoPackage](../../../assets/manual/getting-started-export-your-data-menus-iphone.png)
 :::
 
 :::mac
@@ -112,15 +112,15 @@ A recorded track, and any line with a time on any vertex, is written as `<gx:Tra
 
 TopoKit reads [RFC 7946](https://datatracker.ietf.org/doc/html/rfc7946) GeoJSON: a `FeatureCollection`, a lone `Feature` or a bare geometry. A `GeometryCollection` becomes separate features sharing one `properties` block. A third coordinate value is read as the vertex's elevation.
 
-Every `properties` key is kept as text: numbers as their plain decimal text, so `1.50` arrives as `1.5`, booleans as `true` or `false`, `null` dropped, nested objects and arrays as JSON text. A feature's own top-level `id` is kept as an attribute named `id` unless `properties` already has one. The name comes from a `name`, `title` or `label` key. `coordTimes` and `coordHorizontalAccuracy` in `properties` are read as per-point times and accuracies, not as attributes.
+Every `properties` key is kept as text: numbers as their plain decimal text, so `1.50` arrives as `1.5`, booleans as `true` or `false`, `null` dropped, nested objects and arrays as JSON text. A feature's own top-level `id` is kept as an attribute named `id` unless `properties` already has one. The name comes from a `name`, `title` or `label` key. `coordTimes` and `coordHorizontalAccuracy` in `properties` are read as a line's per-point times and accuracies, not as attributes.
 
-A legacy `"crs"` member is read. When it names an EPSG code other than 4326, every feature is reprojected to WGS84 on the way in, and a feature still out of range afterwards is skipped. A `"crs"` member TopoKit cannot read, or one that names no EPSG code, is ignored with a note in the import alert, and the coordinates are read as longitude, latitude.
+A legacy `"crs"` member is read. When it names an EPSG code other than 4326, every feature is reprojected to WGS84 on the way in, and a feature still out of range afterwards is skipped. A `"crs"` member TopoKit cannot read, or one that names neither CRS84 nor an EPSG code, is ignored with a note in the import alert, and the coordinates are read as longitude, latitude.
 
 TopoKit writes an RFC 7946 `FeatureCollection`, with sorted keys so two exports diff cleanly. Coordinates are `[lon, lat]`, or `[lon, lat, elevation]` when any vertex of the feature has a height, with `0` for a vertex without one. Polygon rings are written exterior counterclockwise and holes clockwise, so a ring drawn or imported the other way round exports with its vertices reversed.
 
 Values are typed on the way out. Text becomes a number only when the number prints back as exactly the same text, `true` and `false` in any capitalization become booleans, and everything else stays text, so a `site_id` of `007` or a reading of `1.50` exports unchanged as text.
 
-A `name` attribute is written in place of the feature's own name, so a feature renamed in TopoKit exports under the `name` it was imported with. Per-point times and accuracies go out as `coordTimes` and `coordHorizontalAccuracy`.
+A `name` attribute is written in place of the feature's own name, so a feature renamed in TopoKit exports under the `name` it was imported with. A line's per-point times and accuracies go out as `coordTimes` and `coordHorizontalAccuracy`; the time and accuracy a point was imported with, such as a GPX waypoint's `<time>`, are not written.
 
 ### GeoPackage
 
@@ -128,7 +128,7 @@ Every column except the geometry and the table's integer primary key, usually `f
 
 Z becomes each vertex's elevation. M becomes a per-point time when it reads as Unix time in seconds or milliseconds, and is dropped otherwise, so a measure such as a milepost is not mistaken for a date. A layer in a coordinate system other than WGS84 is reprojected on the way in; where a transform fails, the raw coordinates are kept and the import alert says so. Raster tile tables, attribute-only tables and styling are not read.
 
-TopoKit writes an [OGC GeoPackage](https://www.geopackage.org/spec/) with features split into `points`, `lines` and `polygons` tables, skipping any that would be empty, all tagged SRS 4326. Each attribute gets its own column, its name reduced to letters, digits and underscores, so `site id` becomes `site_id`. A column is INTEGER when every value is a whole number, REAL when every value is a number, BOOLEAN when every value is `true` or `false`, and TEXT otherwise, by the rule under [GeoJSON](#geojson).
+TopoKit writes an [OGC GeoPackage](https://www.geopackage.org/spec/) with features split into `points`, `lines` and `polygons` tables, skipping any that would be empty, all tagged SRS 4326. Each attribute gets its own column, every character in its name other than the letters A to Z, the digits 0 to 9 and the underscore turned into an underscore, so `site id` becomes `site_id` and `Höhe` becomes `H_he`. A column is INTEGER when every value is a whole number, REAL when every value is a number, BOOLEAN when every value is `true` or `false`, and TEXT otherwise, by the rule under [GeoJSON](#geojson).
 
 A column name already taken, by another attribute or by the table's own `fid`, `geom` and `name` columns in any capitalization, takes a numbered suffix: an attribute called `name` is written as `name_2`. A file imported with a `name` column therefore exports with both `name`, the feature's current name, and `name_2`, the attribute.
 
@@ -138,9 +138,9 @@ Each feature gets only the dimensions it has: Z when any of its vertices has a h
 
 A coordinate must fall between −90 and 90 latitude and −180 and 180 longitude.
 
-- **GPX and KML**: the vertex is dropped without a note and the rest of the line is kept, so it draws with a notch in it. A GPX waypoint out of range is skipped with a note in the import alert; a KML point is dropped without one. KML longitude is brought into range first, so a KML vertex is only dropped for its latitude.
+- **GPX and KML**: the vertex is dropped without a note and the rest of the line is kept, running straight from the vertex before it to the one after. A GPX waypoint out of range is skipped with a note in the import alert; a KML point is dropped without one. KML longitude is brought into range first, so a KML vertex is only dropped for its latitude.
 - **GeoJSON**: the whole feature is skipped if any coordinate is out of range, with a note in the import alert. A file left with no features fails with an alert giving the reasons, so a lone `Feature` or a bare geometry with one bad coordinate fails the whole import. Inside a `GeometryCollection` only the bad part is dropped, without a note.
-- **GeoPackage**: out-of-range coordinates are kept, so the feature draws in the wrong place rather than disappearing, and the import alert gives how many there are.
+- **GeoPackage**: out-of-range coordinates are kept, and the import alert gives how many there are.
 
 ## FAQ
 
