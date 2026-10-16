@@ -20,6 +20,10 @@
   <link rel="stylesheet" href="home.css">
   <link rel="icon" type="image/svg+xml" href="Images/Logo/Logo.svg">
   <link rel="icon" type="image/png" sizes="192x192" href="favicon.png">
+  <!-- Safari paints SVG <img>s incrementally while they stream, and mask references
+       don't resolve until the file is complete — a cold load flashes the card art
+       unmasked. With this class present, each card stays hidden until its own load
+       event; without JS the old behavior remains. -->
   <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -62,121 +66,59 @@
   <img class="intro-devices" src="Images/mac-and-iphone.webp" width="2268" height="1398" alt="TopoKit on a MacBook and an iPhone: a built topographic basemap with the Sunshine Coast Trail and its huts on the Mac, and the trail's card over the same basemap on the iPhone">
 </section>
 
-<section class="band-features" id="features">
+<section class="band-features">
   <div class="band-head">
     <h2 class="display">Every tool for the job.</h2>
-    <p class="band-sub">Tap a picture to watch the tool work, on Mac or on iPhone.</p>
   </div>
   <div class="features-grid">
-
-    <article class="feat">
-      <a class="feat-art" href="media/basemaps-apple-maps-switch.mp4" data-title="Basemaps" data-clips="The Apple Maps switch|basemaps-apple-maps-switch" aria-label="Watch: a built basemap over Apple Maps">
-        <img src="Images/cards/basemaps.webp" width="1200" height="720" alt="" loading="lazy" decoding="async"><span class="play"></span>
-      </a>
-      <h3>Basemaps</h3>
-      <p>Pick an area and TopoKit builds a topographic map of it right on your iPhone or Mac, with shaded relief, contours, slope angle, trails, roads, water and place names. Once built, it works without a signal.</p>
-      <a class="feat-link" href="/manual/basemaps/">Learn more</a>
-    </article>
-
-    <article class="feat">
-      <a class="feat-art" href="/manual/search-and-identify/" aria-label="Search and identify in the manual">
-        <img src="Images/cards/search.webp" width="1200" height="720" alt="" loading="lazy" decoding="async">
-      </a>
-      <h3>Tap and search</h3>
-      <p>Tap a trail, a peak or one of your own lines and a card tells you what it is. Save trails and parks from your basemap into your project. Search finds their names without a signal.</p>
-      <a class="feat-link" href="/manual/search-and-identify/">Learn more</a>
-    </article>
-
-    <article class="feat">
-      <a class="feat-art" href="media/tile-layers-using-offline-tiles.mp4" data-title="Tile layers" data-clips="Downloading tiles for offline use|tile-layers-using-offline-tiles" aria-label="Watch: downloading tiles for offline use">
-        <img src="Images/cards/tiles.webp" width="1200" height="720" alt="" loading="lazy" decoding="async"><span class="play"></span>
-      </a>
-      <h3>Tile layers</h3>
-      <p>Add any XYZ or WMS tile server by URL. Draw a box on the map and download its tiles for offline use.</p>
-      <a class="feat-link" href="/manual/tile-layers/">Learn more</a>
-    </article>
-
-    <article class="feat">
-      <a class="feat-art" href="/manual/raster-overlays/" aria-label="Raster overlays in the manual">
-        <img src="Images/cards/rasters.webp" width="1200" height="720" alt="" loading="lazy" decoding="async">
-      </a>
-      <h3>Your own maps</h3>
-      <p>Stack as many GeoTIFFs and GeoPDFs as you need. Everything reprojects on the fly and lines up where it belongs.</p>
-      <a class="feat-link" href="/manual/raster-overlays/">Learn more</a>
-    </article>
-
-    <article class="feat">
-      <a class="feat-art" href="media/elevation-profile-hover.mp4" data-title="Elevation" data-clips="The elevation profile|elevation-profile-hover|elevation-profile-select-iphone" aria-label="Watch: the elevation profile">
-        <img src="Images/cards/elevation.webp" width="1200" height="720" alt="" loading="lazy" decoding="async"><span class="play"></span>
-      </a>
-      <h3>Elevation</h3>
-      <p>Open the elevation profile of any line, including recorded tracks and trails on your basemap. Select part of the chart and it lights up on the map. Download the data once and it works anywhere.</p>
-      <a class="feat-link" href="/manual/elevation/">Learn more</a>
-    </article>
-
-    <article class="feat">
-      <a class="feat-art" href="media/points-lines-polygons-line-tool.mp4" data-title="Points, lines and polygons" data-clips="Drawing a line|points-lines-polygons-line-tool;Editing vertices|points-lines-polygons-edit-vertices" aria-label="Watch: drawing a line and editing its vertices">
-        <img src="Images/cards/vector.webp" width="1200" height="720" alt="" loading="lazy" decoding="async"><span class="play"></span>
-      </a>
-      <h3>Points, lines and polygons</h3>
-      <p>Drop points. Draw lines and polygons, then drag any vertex, add one between two others, or delete it. Style each one, attach photos, and keep them in folders.</p>
-      <a class="feat-link" href="/manual/points-lines-polygons/">Learn more</a>
-    </article>
-
-    <article class="feat">
-      <a class="feat-art" href="media/getting-started-draw-and-measure.mp4" data-title="Measure" data-clips="Drawing and measuring a polygon|getting-started-draw-and-measure" aria-label="Watch: drawing and measuring a polygon">
-        <img src="Images/cards/measure.webp" width="1200" height="720" alt="" loading="lazy" decoding="async"><span class="play"></span>
-      </a>
-      <h3>Measure</h3>
-      <p>Drawing and measuring are one tool. Lengths appear along each side as you draw, and the card shows distance, area, bearing and more, in your units. Saving is optional.</p>
-      <a class="feat-link" href="/manual/measurement/">Learn more</a>
-    </article>
-
-    <article class="feat">
-      <a class="feat-art" href="media/layer-tree-draw-order.mp4" data-title="Layers" data-clips="Draw order|layer-tree-draw-order" aria-label="Watch: dragging a folder to change the draw order">
-        <img src="Images/cards/layers.webp" width="1200" height="720" alt="" loading="lazy" decoding="async"><span class="play"></span>
-      </a>
-      <h3>Layers</h3>
-      <p>Just like the GIS apps you already know. Drag to reorder layers, group them into folders, and change their opacity. Copy, paste and duplicate layers, even between projects.</p>
-      <a class="feat-link" href="/manual/layer-tree/">Learn more</a>
-    </article>
-
-    <article class="feat">
-      <a class="feat-art" href="/manual/import-and-export/" aria-label="Importing and exporting in the manual">
-        <img src="Images/cards/export.webp" width="1200" height="720" alt="" loading="lazy" decoding="async">
-      </a>
-      <h3>Import and export</h3>
-      <p>Import GPX, KML, KMZ, GeoJSON and GeoPackage, and export everything back out in four formats. Rasters come in as GeoTIFF and GeoPDF.</p>
-      <a class="feat-link" href="/manual/import-and-export/">Learn more</a>
-    </article>
-
-    <article class="feat">
-      <a class="feat-art" href="/manual/projects-and-files/" aria-label="Projects, saving and iCloud in the manual">
-        <img src="Images/cards/projects.webp" width="1200" height="720" alt="" loading="lazy" decoding="async">
-      </a>
-      <h3>Projects and iCloud</h3>
-      <p>Keep each job in its own project. Open it on your Mac and pick it up on your iPhone, synced privately through your own iCloud. Sync merges changes instead of overwriting them.</p>
-      <a class="feat-link" href="/manual/projects-and-files/">Learn more</a>
-    </article>
-
-    <article class="feat">
-      <a class="feat-art" href="/manual/gps-and-track-recording/" aria-label="GPS and recording tracks in the manual">
-        <img src="Images/cards/gps.webp" width="1200" height="720" alt="" loading="lazy" decoding="async">
-      </a>
+    <div class="feat">
+      <img class="feat-art" onload="this.classList.add('loaded')" src="Images/cards/projects.svg" alt="">
+      <h3>Projects</h3>
+      <p>Keep your work organized in separate projects. Maps, points, polygons, and photos, all stored in one file you own.</p>
+      <a class="feat-link" href="https://topokit.ca/manual/projects-and-files/">Learn more</a>
+    </div>
+    <div class="feat">
+      <img class="feat-art" onload="this.classList.add('loaded')" src="Images/cards/rasters.svg" alt="">
+      <h3>Multiple rasters</h3>
+      <p>Stack as many GeoTIFFs and GeoPDFs as you need. Everything reprojects on the fly and lines up wherever it needs to be.</p>
+      <a class="feat-link" href="https://topokit.ca/manual/raster-overlays/">Learn more</a>
+    </div>
+    <div class="feat">
+      <img class="feat-art" onload="this.classList.add('loaded')" src="Images/cards/vector.svg" alt="">
+      <h3>Vector data</h3>
+      <p>Drop points. Draw and edit lines and polygons. Import vector files, and export everything back out in four formats.</p>
+      <a class="feat-link" href="https://topokit.ca/manual/points-lines-polygons/">Learn more</a>
+    </div>
+    <div class="feat">
+      <img class="feat-art" onload="this.classList.add('loaded')" src="Images/cards/tree.svg" alt="">
+      <h3>Layer tree</h3>
+      <p>Just like the GIS apps you already know. Drag to reorder layers, group them into folders, and change their opacity.</p>
+      <a class="feat-link" href="https://topokit.ca/manual/layer-tree/">Learn more</a>
+    </div>
+    <div class="feat">
+      <img class="feat-art" onload="this.classList.add('loaded')" src="Images/cards/tiles.svg" alt="">
+      <h3>Offline tile layers</h3>
+      <p>Add any XYZ or WMS tile server by URL. Draw a box on the map, and download tiles for offline use.</p>
+      <a class="feat-link" href="https://topokit.ca/manual/tile-layers/">Learn more</a>
+    </div>
+    <div class="feat">
+      <img class="feat-art" onload="this.classList.add('loaded')" src="Images/cards/gps.svg" alt="">
       <h3>GPS recording</h3>
-      <p>Record tracks with the phone in your pocket. Watch distance, speed and elevation update live as you go. Every point is tagged with accuracy, altitude and time.</p>
-      <a class="feat-link" href="/manual/gps-and-track-recording/">Learn more</a>
-    </article>
-
-    <article class="feat">
-      <a class="feat-art" href="media/routes-adding-stops.mp4" data-title="Routes" data-clips="Adding stops|routes-adding-stops" aria-label="Watch: adding stops to a route">
-        <img src="Images/cards/routes.webp" width="1200" height="720" alt="" loading="lazy" decoding="async"><span class="play"></span>
-      </a>
-      <h3>Routes</h3>
-      <p>Add stops by searching or tapping the map, and the roads between them fill in for driving, walking or cycling. Check the elevation profile before saving, then share the route as a file.</p>
-      <a class="feat-link" href="/manual/routes/">Learn more</a>
-    </article>
-
+      <p>Record tracks with the phone in your pocket. Watch distance, speed, and elevation stats update live as you go. Every point tagged with accuracy, altitude, and time.</p>
+      <a class="feat-link" href="https://topokit.ca/manual/gps-and-track-recording/">Learn more</a>
+    </div>
+    <div class="feat">
+      <img class="feat-art" onload="this.classList.add('loaded')" src="Images/cards/elevation.svg" alt="">
+      <h3>Elevation profiles</h3>
+      <p>Download the elevation data once. Get point elevations and profiles anywhere you need. No signal required.</p>
+      <a class="feat-link" href="https://topokit.ca/manual/elevation/">Learn more</a>
+    </div>
+    <div class="feat">
+      <img class="feat-art" onload="this.classList.add('loaded')" src="Images/cards/icloud.svg" alt="">
+      <h3>Synced through your iCloud</h3>
+      <p>Work on a project on your Mac and open it on your iPhone. Same file, synced privately through your own iCloud.</p>
+      <a class="feat-link" href="https://topokit.ca/manual/projects-and-files/">Learn more</a>
+    </div>
   </div>
 </section>
 
@@ -188,32 +130,9 @@
   </div>
 </section>
 
-<section class="demos" id="demos">
-  <div class="demos-inner">
-    <div class="demos-head">
-      <h2 class="display">See it work.</h2>
-      <p>One field job from start to finish, in six short films. Recorded on the Sunshine Coast Trail, on a Mac and an iPhone.</p>
-    </div>
-    <div class="demos-grid">
-      <div class="demo-stage" id="demo-stage">
-        <div class="demo-card">
-          <div class="demo-card-in">
-            <span class="demo-n">01</span>
-            <span class="demo-t display">Start a project</span>
-            <span class="demo-m">Mac · 1 min</span>
-          </div>
-        </div>
-      </div>
-      <ol class="demo-list">
-        <li><span class="n">1</span><div><strong>Start a project</strong><p>A new project, saved to iCloud, and the map found by search.</p><span class="m">Mac · 1 min</span></div></li>
-        <li><span class="n">2</span><div><strong>Build a basemap</strong><p>Pick the area, build it, and tap the finished map for a trail's card.</p><span class="m">Mac · 1½ min</span></div></li>
-        <li><span class="n">3</span><div><strong>Bring in your own maps and data</strong><p>A scanned sheet dropped on the map, a GPX trail imported, and the layers put in order.</p><span class="m">Mac · 1½ min</span></div></li>
-        <li><span class="n">4</span><div><strong>Plan the route and read the terrain</strong><p>A walking route between two huts, its elevation profile, and a measured distance.</p><span class="m">Mac · 1½ min</span></div></li>
-        <li><span class="n">5</span><div><strong>Take it offline</strong><p>Tiles and elevation downloaded, the project saved offline, and the phone in Airplane Mode still working.</p><span class="m">Mac and iPhone · 1 min</span></div></li>
-        <li><span class="n">6</span><div><strong>In the field, and home again</strong><p>A track recorded on the walk, a photo on a point, and the track back on the Mac as a GPX export.</p><span class="m">iPhone and Mac · 1½ min</span></div></li>
-      </ol>
-    </div>
-  </div>
+<section class="moment">
+  <h2 class="display">See it work.</h2>
+  <p class="soon">Demo videos are coming soon.</p>
 </section>
 
 <div class="privacy-wrap">
@@ -221,14 +140,12 @@
     <div class="privacy-inner">
       <div>
         <h2 class="display">Built for <em>privacy</em>,<br>from day one.</h2>
-        <p class="lead">TopoKit was built without an account. Your projects live on your device, and in your own iCloud if you turn on sync. Nothing you record is public by default, because nothing goes anywhere by default.</p>
+        <p class="lead">TopoKit was built without an account and without a server. Your projects live on your device, and in your own iCloud if you turn on sync. Nothing you record is public by default, because nothing goes anywhere by default.</p>
       </div>
       <ul class="net-list">
-        <li><strong>What touches the network:</strong> Apple's map, search and directions.</li>
-        <li>Elevation data and public map data, when you build a basemap or download elevation.</li>
+        <li><strong>What touches the network:</strong> Apple's basemap, search and directions.</li>
+        <li>Elevation tiles you ask for.</li>
         <li>Map servers you add yourself.</li>
-        <li>The App Store, to check what you own.</li>
-        <li>One small file on topokit.ca that says where the map data lives.</li>
         <li><strong>That's the whole list.</strong> Everything else stays on your device.</li>
       </ul>
     </div>
@@ -276,24 +193,6 @@
     <span class="fine">Made in Canada. &nbsp;·&nbsp; © 2026 Nikolay Senilov</span>
   </div>
 </footer>
-
-<!-- The clip player. A card's picture opens it; without JavaScript the same
-     link opens the Mac recording itself. -->
-<dialog class="clip" id="clip">
-  <div class="clip-bar">
-    <strong class="clip-title"></strong>
-    <span class="clip-seg" role="group" aria-label="Device">
-      <button type="button" data-device="mac" aria-pressed="true">Mac</button>
-      <button type="button" data-device="iphone" aria-pressed="false">iPhone</button>
-    </span>
-    <button type="button" class="clip-close" aria-label="Close">×</button>
-  </div>
-  <video muted loop playsinline controls preload="none"></video>
-  <div class="clip-foot">
-    <p class="clip-caption"></p>
-    <div class="clip-chapters"></div>
-  </div>
-</dialog>
 
 <script>
 
@@ -348,103 +247,6 @@ var navEl = document.querySelector('.nav');
 function navState() { navEl.classList.toggle('scrolled', window.scrollY > 40); }
 window.addEventListener('scroll', navState, { passive: true });
 navState();
-
-/* Feature clips. A card's picture carries data-clips="Label|mac-name|iphone-name;…":
-   the recordings in media/ by name, with the iPhone one defaulting to
-   "<mac-name>-iphone", and a poster of the same name in media/posters/. */
-(function () {
-  var dlg = document.getElementById('clip');
-  if (!dlg || typeof dlg.showModal !== 'function') return;
-  var video = dlg.querySelector('video');
-  var title = dlg.querySelector('.clip-title');
-  var caption = dlg.querySelector('.clip-caption');
-  var chapters = dlg.querySelector('.clip-chapters');
-  var segButtons = dlg.querySelectorAll('.clip-seg button');
-  var clips = [], current = 0, device = 'mac';
-
-  function pressed(buttons, isOn) {
-    for (var i = 0; i < buttons.length; i++) buttons[i].setAttribute('aria-pressed', isOn(buttons[i], i) ? 'true' : 'false');
-  }
-  function load() {
-    var c = clips[current];
-    var name = device === 'iphone' ? c.iphone : c.mac;
-    dlg.classList.toggle('portrait', device === 'iphone');
-    video.poster = 'media/posters/' + name + '.webp';
-    video.src = 'media/' + name + '.mp4';
-    video.load();
-    var p = video.play();
-    if (p && p.catch) p.catch(function () {});
-    caption.textContent = c.label + ' · ' + (device === 'iphone' ? 'iPhone' : 'Mac');
-    pressed(segButtons, function (b) { return b.getAttribute('data-device') === device; });
-    pressed(chapters.querySelectorAll('button'), function (b, i) { return i === current; });
-  }
-  function open(a) {
-    clips = a.getAttribute('data-clips').split(';').map(function (s) {
-      var p = s.split('|');
-      return { label: p[0], mac: p[1], iphone: p[2] || (p[1] + '-iphone') };
-    });
-    current = 0;
-    device = window.matchMedia('(max-width: 640px)').matches ? 'iphone' : 'mac';
-    title.textContent = a.getAttribute('data-title') || '';
-    chapters.innerHTML = '';
-    if (clips.length > 1) {
-      clips.forEach(function (c, i) {
-        var b = document.createElement('button');
-        b.type = 'button';
-        b.textContent = c.label;
-        b.addEventListener('click', function () { current = i; load(); });
-        chapters.appendChild(b);
-      });
-    }
-    document.documentElement.classList.add('clip-open');
-    dlg.showModal();
-    load();
-  }
-  document.addEventListener('click', function (e) {
-    var a = e.target.closest && e.target.closest('a[data-clips]');
-    if (!a) return;
-    e.preventDefault();
-    open(a);
-  });
-  for (var i = 0; i < segButtons.length; i++) {
-    segButtons[i].addEventListener('click', function () { device = this.getAttribute('data-device'); load(); });
-  }
-  dlg.querySelector('.clip-close').addEventListener('click', function () { dlg.close(); });
-  dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
-  dlg.addEventListener('close', function () {
-    video.pause();
-    video.removeAttribute('src');
-    video.load();
-    document.documentElement.classList.remove('clip-open');
-  });
-})();
-
-/* Demo films. A list item with data-demo="media/demos/01-…" plays "….mp4" on
-   the stage with "….webp" as its poster; an item without one is plain text,
-   and the stage keeps its title card until the first film arrives. */
-(function () {
-  var stage = document.getElementById('demo-stage');
-  var items = document.querySelectorAll('.demo-list a[data-demo]');
-  if (!stage || !items.length) return;
-  function show(a, play) {
-    var base = a.getAttribute('data-demo');
-    var v = stage.querySelector('video');
-    if (!v) {
-      v = document.createElement('video');
-      v.controls = true; v.playsInline = true; v.preload = 'none';
-      stage.innerHTML = '';
-      stage.appendChild(v);
-    }
-    v.poster = base + '.webp';
-    v.src = base + '.mp4';
-    for (var i = 0; i < items.length; i++) items[i].parentNode.parentNode.classList.toggle('is-current', items[i] === a);
-    if (play) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
-  }
-  show(items[0], false);
-  for (var i = 0; i < items.length; i++) {
-    items[i].addEventListener('click', function (e) { e.preventDefault(); show(this, true); });
-  }
-})();
 </script>
 
 </body>
