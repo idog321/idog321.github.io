@@ -15,6 +15,8 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { font-size: 16px; }
 body { font-family: 'Inter', -apple-system, sans-serif; color: var(--ink); background: var(--paper); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+/* The page stays put behind the clip player. */
+html.clip-open { overflow: hidden; }
 
 .display { font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; line-height: 1.12; letter-spacing: -0.005em; }
 
@@ -51,7 +53,7 @@ body { font-family: 'Inter', -apple-system, sans-serif; color: var(--ink); backg
 .store-txt { display: flex; flex-direction: column; line-height: 1.15; text-align: left; }
 .store-small { font-size: 0.55rem; letter-spacing: 0.02em; }
 .store-big { font-size: 1.15rem; font-weight: 600; }
-.price-note { font-size: 0.9rem; font-weight: 600; text-shadow: 0 1px 8px rgba(0,0,0,0.65); }
+.price-note { font-size: 0.9rem; font-weight: 600; text-shadow: 0 1px 8px rgba(0,0,0,0.65); max-width: 24em; line-height: 1.4; }
 
 /* Intro */
 .intro { max-width: 1220px; margin: 0 auto; padding: 5rem 2rem 4.5rem; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 4rem; align-items: center; }
@@ -66,7 +68,7 @@ body { font-family: 'Inter', -apple-system, sans-serif; color: var(--ink); backg
 .chips span { padding: 0.4rem 1rem; border: 1.5px solid rgba(255,149,0,0.5); background: rgba(255,149,0,0.08); border-radius: 100px; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.03em; color: var(--ink); }
 .intro-devices { width: 100%; height: auto; display: block; }
 
-/* Feature band — real app screenshots */
+/* Feature band — real app screenshots, each a door to its recording */
 .band-features {
   background-color: var(--charcoal);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='700' height='700' viewBox='0 0 700 700'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.045' stroke-width='1.4'%3E%3Cpath d='M60 620 C140 520 120 430 210 380 C300 330 320 240 430 220 C540 200 560 120 660 90'/%3E%3Cpath d='M20 640 C120 540 100 440 200 385 C300 330 330 230 450 205 C570 180 590 100 690 70'/%3E%3Cpath d='M100 600 C170 510 150 430 230 380 C310 330 330 250 420 235 C510 220 540 150 630 115'/%3E%3Cpath d='M-20 560 C60 500 80 420 160 390 C240 360 260 300 340 280 C420 260 470 200 520 170'/%3E%3Cpath d='M180 660 C240 590 230 520 300 470 C370 420 390 350 480 330 C570 310 600 240 680 210'/%3E%3C/g%3E%3C/svg%3E");
@@ -75,30 +77,46 @@ body { font-family: 'Inter', -apple-system, sans-serif; color: var(--ink); backg
 }
 .band-head { max-width: 1160px; margin: 0 auto 2.5rem; }
 .band-head h2 { font-size: clamp(2rem, 3.4vw, 2.9rem); }
-.features-grid { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+.band-sub { margin-top: 0.7rem; font-size: 1rem; color: rgba(255,255,255,0.66); }
+.features-grid { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; }
 
-.feat { background: #232428; border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 1.6rem 1.4rem 1.5rem; }
+.feat { background: #232428; border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 1.1rem 1.4rem 1.5rem; display: flex; flex-direction: column; }
 
-.feat-art { width: 100%; height: auto; aspect-ratio: 800 / 480; display: block; background: #1A1B1E; border-radius: 10px; margin-bottom: 1.15rem; }
-/* Hidden until the file fully arrives — Safari paints streaming SVGs with masks unresolved. */
-.js .feat-art:not(.loaded) { visibility: hidden; }
-.feat-art .o { stroke: var(--orange); stroke-width: 2.2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
-.feat-art .ot { stroke: var(--orange); stroke-width: 1.4; fill: none; stroke-linecap: round; stroke-linejoin: round; }
-.feat-art .of { fill: var(--orange); stroke: none; }
-.feat-art .hi { stroke: var(--orange); stroke-width: 2.2; fill: rgba(255,149,0,0.08); stroke-linejoin: round; }
-.feat-art .w { stroke: rgba(255,255,255,0.30); stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
-.feat-art .fillo { fill: rgba(255,149,0,0.10); stroke: none; }
-.feat-art .dash { stroke-dasharray: 5 4; }
-.feat-art .t { fill: rgba(255,255,255,0.55); font: 700 9px 'Inter', sans-serif; letter-spacing: 0.5px; text-anchor: middle; }
+/* The picture: a crop of the real app, sized by its own width and height
+   attributes, so the box exists before the file arrives. */
+.feat-art { display: block; position: relative; border-radius: 10px; overflow: hidden; background: #1A1B1E; margin-bottom: 1.15rem; color: #fff; }
+.feat-art img { display: block; width: 100%; height: auto; }
+.feat-art .play { position: absolute; right: 0.6rem; bottom: 0.6rem; width: 2.3rem; height: 2.3rem; border-radius: 50%; background: rgba(26,27,30,0.78); border: 1.5px solid rgba(255,255,255,0.4); transition: background 0.2s ease; }
+.feat-art .play::after { content: ''; position: absolute; left: 56%; top: 50%; transform: translate(-50%, -50%); border-left: 0.72rem solid #fff; border-top: 0.46rem solid transparent; border-bottom: 0.46rem solid transparent; }
+.feat-art:hover .play, .feat-art:focus-visible .play { background: var(--orange); border-color: var(--orange); }
+.feat-art:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
 
-
-.feat-link { display: inline-block; margin-top: 0.65rem; color: var(--orange); font-weight: 600; font-size: 0.85rem; text-decoration: none; white-space: nowrap; }
+.feat-link { display: inline-block; margin-top: auto; padding-top: 0.65rem; color: var(--orange); font-weight: 600; font-size: 0.85rem; text-decoration: none; white-space: nowrap; align-self: flex-start; }
 .feat-link::after { content: ' \2192'; }
 .feat-link:hover { text-decoration: underline; }
 .feat h3 { font-weight: 800; text-transform: uppercase; font-size: 0.92rem; letter-spacing: 0.05em; }
-
 .feat p { font-size: 0.88rem; color: rgba(255,255,255,0.76); margin-top: 0.45rem; line-height: 1.55; }
 
+/* The clip player */
+/* The universal margin reset above would pin the dialog to the top-left; auto puts it back in the middle. */
+.clip { margin: auto; border: 0; padding: 0; background: #141517; color: #fff; border-radius: 14px; width: min(92vw, 1120px); max-width: none; max-height: 100vh; overflow: auto; box-shadow: 0 30px 80px rgba(0,0,0,0.5); }
+.clip.portrait { width: min(92vw, 420px); }
+.clip::backdrop { background: rgba(10,11,12,0.72); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.clip-bar { display: flex; align-items: center; gap: 1rem; padding: 0.75rem 0.9rem 0.75rem 1.1rem; }
+.clip-title { flex: 1; min-width: 0; font-size: 0.95rem; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.clip-seg { display: inline-flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; }
+.clip-seg button { background: none; border: 0; color: rgba(255,255,255,0.78); font: 600 0.8rem 'Inter', -apple-system, sans-serif; padding: 0.38rem 0.85rem; cursor: pointer; }
+.clip-seg button + button { border-left: 1px solid rgba(255,255,255,0.22); }
+.clip-seg button[aria-pressed="true"] { background: var(--orange); color: var(--charcoal); }
+.clip-close { background: none; border: 0; color: rgba(255,255,255,0.78); font-size: 1.6rem; line-height: 1; width: 2.2rem; height: 2.2rem; border-radius: 50%; cursor: pointer; }
+.clip-close:hover { background: rgba(255,255,255,0.1); color: #fff; }
+.clip video { display: block; width: 100%; height: auto; max-height: 78vh; background: #000; }
+.clip-foot { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding: 0.7rem 1.1rem 0.85rem; }
+.clip-caption { font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+.clip-chapters { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.clip-chapters:empty { display: none; }
+.clip-chapters button { background: none; border: 1px solid rgba(255,255,255,0.22); color: rgba(255,255,255,0.78); border-radius: 100px; font: 600 0.78rem 'Inter', -apple-system, sans-serif; padding: 0.3rem 0.8rem; cursor: pointer; }
+.clip-chapters button[aria-pressed="true"] { border-color: var(--orange); color: #fff; }
 
 /* Alpenglow band */
 .band-photo {
@@ -113,11 +131,8 @@ body { font-family: 'Inter', -apple-system, sans-serif; color: var(--ink); backg
 .band-photo h2 { font-size: clamp(2.2rem, 4.4vw, 3.6rem); text-shadow: 0 2px 22px rgba(0,0,0,0.55); }
 .band-photo h2 em { font-style: italic; color: var(--orange); }
 .band-photo p { margin-top: 0.9rem; font-size: 1.08rem; font-weight: 500; max-width: 32em; text-shadow: 0 1px 10px rgba(0,0,0,0.6); }
-
-/* Video carousel */
-.moment { max-width: 1000px; margin: 0 auto; padding: 5.5rem 2rem 4.5rem; text-align: center; }
-.moment h2 { font-size: clamp(1.9rem, 3.2vw, 2.5rem); margin-bottom: 2.25rem; }
-.moment .soon { font-size: 1.05rem; color: var(--muted); }
+.band-link { display: inline-block; margin-top: 1.1rem; color: #fff; font-weight: 700; font-size: 0.95rem; text-decoration: none; border-bottom: 2px solid var(--orange); padding-bottom: 0.1rem; text-shadow: 0 1px 10px rgba(0,0,0,0.6); }
+.band-link::after { content: ' \2192'; }
 
 /* Privacy — charcoal card that expands to full-bleed on scroll */
 .privacy-wrap { padding: 3rem 0 0; }
@@ -134,7 +149,7 @@ body { font-family: 'Inter', -apple-system, sans-serif; color: var(--ink); backg
 .privacy h2 em { font-style: italic; color: var(--orange); }
 .privacy .lead { margin: 1.2rem 0 0; font-size: 1.08rem; color: rgba(255,255,255,0.82); max-width: 30em; }
 .net-list { list-style: none; margin: 0; padding: 0; text-align: left; border-left: 2px solid var(--orange); }
-.net-list li { padding: 0.85rem 0 0.85rem 1.4rem; font-size: 0.97rem; color: rgba(255,255,255,0.85); border-bottom: 1px solid rgba(255,255,255,0.08); }
+.net-list li { padding: 0.7rem 0 0.7rem 1.4rem; font-size: 0.97rem; color: rgba(255,255,255,0.85); border-bottom: 1px solid rgba(255,255,255,0.08); }
 .net-list li:last-child { border-bottom: none; }
 .net-list strong { color: #fff; font-weight: 700; }
 
@@ -145,14 +160,15 @@ body { font-family: 'Inter', -apple-system, sans-serif; color: var(--ink); backg
 .maker p { margin-top: 1.1rem; font-size: 1.05rem; color: var(--muted); max-width: 32em; }
 .maker a { color: var(--orange); font-weight: 600; text-decoration: none; }
 .maker a:hover { text-decoration: underline; }
-.maker .placeholder { color: #A19F98; }
 
 /* CTA — stacked closer */
 .cta { padding: 4.5rem 2rem 6rem; text-align: center; }
 .cta h2 { font-size: clamp(2.2rem, 4.4vw, 3.4rem); }
 .cta h2 em { font-style: italic; color: var(--orange); }
 .cta .cta-trio { margin: 0.9rem 0 2.2rem; font-size: 1.05rem; font-weight: 700; letter-spacing: 0.04em; color: var(--muted); }
-.cta .cta-price { margin-top: 1.3rem; font-size: 0.95rem; font-weight: 600; color: var(--ink); }
+.cta-pricing { max-width: 36em; margin: 1.8rem auto 0; }
+.cta-pricing p { font-size: 0.95rem; color: var(--muted); margin-top: 0.6rem; }
+.cta-pricing p strong { color: var(--ink); font-weight: 600; }
 
 /* Bottom bar */
 .footer { border-top: 1px solid rgba(35,34,31,0.12); padding: 2.2rem 2rem 2.6rem; }
@@ -163,8 +179,11 @@ body { font-family: 'Inter', -apple-system, sans-serif; color: var(--ink); backg
 .footer a:first-child { color: var(--ink); font-weight: 600; }
 .footer .fine { font-size: 0.75rem; color: #A19F98; }
 
+@media (max-width: 1180px) {
+  .features-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
 @media (max-width: 900px) {
-  .features-grid { grid-template-columns: 1fr; }
+  .features-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .intro, .maker-inner, .privacy-inner { grid-template-columns: 1fr; gap: 2.5rem; }
 }
 
@@ -204,14 +223,18 @@ body { font-family: 'Inter', -apple-system, sans-serif; color: var(--ink); backg
 
   .band-features { padding: 3.5rem 1.25rem; }
   .band-head h2 { font-size: clamp(1.7rem, 8vw, 2.2rem); }
+  .features-grid { grid-template-columns: 1fr; }
+
+  /* Full screen on a phone. [open] keeps the browser's own display:none for a closed dialog. */
+  .clip { width: 100vw; max-width: 100vw; border-radius: 0; margin: 0; height: 100vh; max-height: 100vh; }
+  .clip[open] { display: flex; flex-direction: column; justify-content: center; }
+  .clip.portrait { width: 100vw; }
+  .clip video { max-height: 72vh; }
 
   .band-photo { min-height: clamp(300px, 52vh, 420px); background-position: 60% 78%; }
   .band-photo-inner { padding: 3rem 1.25rem; }
   .band-photo h2 { font-size: clamp(1.8rem, 9vw, 2.4rem); }
   .band-photo p { font-size: 0.98rem; }
-
-  .moment { padding: 3.5rem 1.25rem 3rem; }
-  .moment h2 { font-size: clamp(1.7rem, 8vw, 2.2rem); }
 
   .privacy { margin: 0 4vw; padding: 3rem 1.25rem 3.5rem; border-radius: 20px; }
   .privacy h2 { font-size: clamp(1.6rem, 7.6vw, 2rem); }
@@ -225,6 +248,7 @@ body { font-family: 'Inter', -apple-system, sans-serif; color: var(--ink); backg
   .cta { padding: 3rem 1.25rem 4rem; }
   .cta h2 { font-size: clamp(1.9rem, 9vw, 2.6rem); }
   .cta .cta-trio { font-size: 0.95rem; }
+  .cta-pricing p { font-size: 0.9rem; }
 
   .footer { padding: 2rem 1.25rem 2.4rem; }
   .footer nav { gap: 1.1rem 1.5rem; }
