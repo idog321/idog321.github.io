@@ -6,15 +6,15 @@ Settings keeps its rows on the device, not in the project or your iCloud account
 
 :ios[On iPhone, Settings is a tab.] :mac[On Mac, Settings is a tab in the panel, and **TopoKit → Settings…** (`Cmd-,`) opens the same pages in a window of their own.]
 
-![The Settings tab on iPhone: the Your TopoKit row with its status line, then Map, Features and Units & Coordinates, Appearance, Toolbar & Haptics and GPS & Recording, Storage & iCloud, and Help & Feedback and About TopoKit with an orange dot](../../../assets/manual/settings-ios.png)
+![The Settings tab on iPhone: the Your TopoKit row with its status line reading Checking…, then Map, Features and Units and Coordinates, Appearance, Toolbar and Haptics and GPS and Recording, Storage and iCloud, and Help and Feedback and About TopoKit with the orange dot of unread release notes](../../../assets/manual/settings-ios.png)
 
 :::mac
 ## The Mac Settings window
 
 The window has a toolbar button for each page under a shorter name: **Map**, **Features**, **Units**, **Appearance**, **Storage**, **Help** and **About**. It has no **Your TopoKit** button: **Your TopoKit**, **Restore Purchases** and **Redeem Code** head the **About** tab instead. The window opens on **Map** the first time and on the tab you used last after that.
-:::
 
-![The Mac Settings window on its Map tab: the toolbar with Map, Features, Units, Appearance, Storage, Help and About, then the Orientation rows Lock North Up and Always Show Compass, and Map Image Quality under Map Images](../../../assets/manual/settings-window-mac.png)
+![The Mac Settings window on its Map tab: the toolbar with Map, Features, Units, Appearance, Storage, Help and About, then the Orientation rows Lock North Up and Always Show Compass, both off, and Map Image Quality set to Original under Map Images](../../../assets/manual/settings-window-mac.png)
+:::
 
 ## Your TopoKit
 
@@ -31,9 +31,10 @@ The first row shows the state of your unlock under its title. Its page is where 
 
 The **Default Style** under **Points**, **Lines** and **Polygons** is copied onto each feature as you make it, so a later change leaves existing features as they are. Drawn lines and polygons start orange and dashed. The style sheets themselves are in [Styling a feature](/manual/points-lines-polygons/#styling-a-feature).
 
-![The Features page in Settings on iPhone, scrolled to show the Points, Lines, Polygons, Routes and Tracks sections with their Default Style swatches](../../../assets/manual/settings-features-ios.png)
+![The Features page in Settings on iPhone, at its top: under Points, Default Style, Pin Names set to Always and Point Clustering on; then the Default Style rows of Lines, Polygons and Routes, with the Tracks heading at the bottom edge](../../../assets/manual/settings-features-ios.png)
 
 - **Pin Names**: which point names print under their pins. **Always** leaves a name out where pins crowd together; under either setting the picked pin's name prints however crowded the map is. See [Points on the map](/manual/points-lines-polygons/#points-on-the-map).
+- **Point Clustering**: on unless you change it; pins that overlap merge into one bubble with a count. See [Points on the map](/manual/points-lines-polygons/#points-on-the-map).
 - **Default Style** under **Routes**: the style :ui[Add Route] draws in and its save sheet starts from, kept apart from the **Lines** default. It is written into the route when you save it, so a later change leaves saved routes alone. See [How the route is drawn](/manual/routes/#how-the-route-is-drawn).
 - :ios[**Default Style** under **Tracks**: on iPhone, the line a recorded track is saved with. **Randomize Colour** swaps the style's colour for one of twelve picked at random for each saved track; width, pattern and opacity still come from **Default Style**. See [Saving a track](/manual/gps-and-track-recording/#saving-a-track).]
 - **Vertex Style** under **Drawing**: the dots drawn while you create and measure. Unlike the defaults above it is not saved into features; it is read every time you draw, so a change shows at once. The dots, and the faint dots between them, take the colour of the line or polygon being drawn until **Inherit Colour from Feature** is turned off in its sheet.
@@ -41,8 +42,8 @@ The **Default Style** under **Points**, **Lines** and **Polygons** is copied ont
 
 ## Units & Coordinates
 
-- **Units**: Metric or Imperial, following the device's region until you choose. It sets the scale bar, the figures on the elevation profile and the contour unit a new basemap starts from; a basemap already built keeps its own. :ios[On iPhone, it also sets the speed, altitude and distance on the GPS tab.] Switching it resets **Distance** and **Area** under **Measuring Tools Start With** to the new system's defaults; **Bearing** keeps its value. See [Units](/manual/measurement/#units).
-- **Coordinate Format**: how every coordinate in TopoKit reads and copies. Coordinates are stored as WGS84 latitude and longitude whatever this says, and the search bar accepts every format whatever this says; see [Coordinate formats](/manual/search-and-identify/#coordinate-formats).
+- **Units**: Metric or Imperial, taken from the device's region the first time TopoKit opens. It sets the scale bar, the figures on the elevation profile and the contour unit a new basemap starts from; a basemap already built keeps its own. :ios[On iPhone, it also sets the speed, altitude and distance on the GPS tab.] Switching it resets **Distance** and **Area** under **Measuring Tools Start With** to the new system's defaults; **Bearing** keeps its value. See [Units](/manual/measurement/#units).
+- **Coordinate Format**: how coordinates in TopoKit read and copy. Coordinates are stored as WGS84 latitude and longitude whatever this says, and the search bar accepts every format whatever this says; see [Coordinate formats](/manual/search-and-identify/#coordinate-formats).
 - **Measuring Tools Start With**: the **Distance** and **Area** units and the **Bearing** a measuring tool opens with; the tool card changes them for one measurement. :mac[On Mac, **Bearing** has no magnetic north, which needs a compass.] See [Bearing](/manual/measurement/#bearing).
 - **Show Segment Lengths**: on unless you change it; labels each segment with its length while you draw or edit a line or polygon. See [Segment lengths](/manual/measurement/#segment-lengths).
 
@@ -70,16 +71,16 @@ This page is on iPhone only.
 This page is on iPhone only.
 
 - **Recording Profile**: how far you move and how accurate a fix must be before a recording keeps it. **Balanced** is the default; the numbers behind each profile are in [Recording profiles](/manual/gps-and-track-recording/#recording-profiles).
-- **Auto-Pause When Stationary**: off unless you change it; pauses a recording while you stand still. See [Auto-pause](/manual/gps-and-track-recording/#auto-pause).
+- **Auto-Pause When Stationary**: off unless you change it; pauses a recording once the reported speed stays below 0.5 m/s for 30 seconds. See [Auto-pause](/manual/gps-and-track-recording/#auto-pause).
 
 A recorded track's look is set under [Features](#features).
 :::
 
 ## Storage & iCloud
 
-**On This Device**, :mac[or **On This Mac** on a Mac,] lists five stores with their combined size beside the heading. Photos are saved in the project folder, so the total never counts them, and nothing in these stores is part of a project.
+**On This Device**:mac[, or **On This Mac** on a Mac,] lists five stores with their combined size beside the heading. Photos are saved in the project folder, so the total never counts them, and nothing in these stores is part of a project.
 
-![The Storage & iCloud page in Settings on iPhone: the five rows under On This Device with their sizes, and the iCloud group below](../../../assets/manual/settings-storage-and-icloud-ios.png)
+![The Storage and iCloud page in Settings on iPhone: the five rows under On This Device with their sizes, Large Downloads set to Always Ask under Cellular Data, and iCloud Drive reading Not Available under iCloud](../../../assets/manual/settings-storage-and-icloud-ios.png)
 
 - **Offline Basemaps**: basemaps built on this device, with their working data. **Delete Offline Basemaps** removes this device's copy only; the basemap layers stay in your projects, shown as not on this device until rebuilt. See [Storage](/manual/basemaps/#storage).
 - **Elevation Data**: elevation tiles downloaded for lookups and profiles. **Manage Tiles** lists them with their sizes and deletes one at a time, and **Clear Elevation Data** deletes all of them; a deleted tile downloads again the next time a lookup, a profile or a basemap needs it, so rebuilding a basemap afterwards needs a connection. Basemaps already built keep their map. See [Disk space](/manual/elevation/#disk-space).
@@ -104,7 +105,7 @@ Under **Troubleshooting**:
 - **View Logs**: the entries recorded since TopoKit launched, up to the latest 2,000. The saved log that **Send Logs to Developer** sends also holds earlier launches; it starts a new file at about 1 MB and keeps one earlier file, so a long session pushes its oldest entries out. **Clear** deletes both, and cannot be undone.
 - **Send Logs to Developer**: asks first, because the log can include project names, file paths and coordinates from your work, then emails the log to the developer. The attached file opens with the app version and build, the system version, :ios[the iPhone model, ]the language and region, the device's memory and its free disk space. :ios[On iPhone with no mail account set up, the share sheet opens instead.] :mac[On Mac, the log opens in a new message in your mail app; with no mail app set up, a sharing menu offers where to send the file.]
 
-After a crash, TopoKit asks at the next launch whether to send the system's crash report, whether or not **Debug Mode** is on; a force quit, a restart or a flat battery is not a crash and brings no question. **Send Report…** opens an email with the report's text in the body, so you read all of it before it goes, and the system's full report attached. The report holds the app and system versions and where the crash happened, not your projects, your locations or the log. A report you neither send nor decline is asked about again at the next launch. :ios[On iPhone, if the crash interrupted a recording, the question waits until you have answered the one about the recovered track.]
+After a crash, TopoKit asks at the next launch whether to send the system's crash report, whether or not **Debug Mode** is on; a force quit, a restart or a flat battery is not a crash and brings no question. **Send Report…** opens an email with the report's text in the body, so you read all of it before it goes, and the system's full report attached. The report holds the app and system versions, the device model and where the crash happened, not your projects, your locations or the log. A report you neither send nor decline is asked about again at the next launch. :ios[On iPhone, if the crash interrupted a recording, TopoKit asks this question and the one about the recovered track one at a time.]
 
 ## About TopoKit
 
