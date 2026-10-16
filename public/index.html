@@ -17,7 +17,7 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://topokit.ca/Images/og-card.jpg">
-  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="home.css?v=3">
   <link rel="icon" type="image/svg+xml" href="Images/Logo/Logo.svg">
   <link rel="icon" type="image/png" sizes="192x192" href="favicon.png">
   <!-- Safari paints SVG <img>s incrementally while they stream, and mask references
@@ -155,46 +155,71 @@
   </div>
 </section>
 
-<section class="moment carousel-section" id="see-it-work">
-  <h2 class="display">See it work.</h2>
-  <div class="carousel">
-    <div class="carousel-track">
-      <div class="carousel-slide active">
-        <div class="slide-stage"><video muted loop playsinline preload="none" poster="media/posters/points-lines-polygons-line-tool.webp" src="media/points-lines-polygons-line-tool.mp4" data-mac="points-lines-polygons-line-tool" data-iphone="points-lines-polygons-line-tool-iphone"></video></div>
-        <div class="slide-info"><h3>Drawing a line</h3><p>Each click adds a point on the trail and the length shows along the segment. Click an earlier point to insert the next one after it.</p></div>
-      </div>
-      <div class="carousel-slide">
-        <div class="slide-stage"><video muted loop playsinline preload="none" poster="media/posters/getting-started-draw-and-measure.webp" src="media/getting-started-draw-and-measure.mp4" data-mac="getting-started-draw-and-measure" data-iphone="getting-started-draw-and-measure-iphone"></video></div>
-        <div class="slide-info"><h3>Measuring as you draw</h3><p>A polygon round Inland Lake. The card shows the area and perimeter while you draw. Nothing is saved unless you press Save.</p></div>
-      </div>
-      <div class="carousel-slide">
-        <div class="slide-stage"><video muted loop playsinline preload="none" poster="media/posters/points-lines-polygons-edit-vertices.webp" src="media/points-lines-polygons-edit-vertices.mp4" data-mac="points-lines-polygons-edit-vertices" data-iphone="points-lines-polygons-edit-vertices-iphone"></video></div>
-        <div class="slide-info"><h3>Editing a line</h3><p>Drag a point onto the trail, delete one, or drag the faint dot between two points to add one there.</p></div>
-      </div>
-      <div class="carousel-slide">
-        <div class="slide-stage"><video muted loop playsinline preload="none" poster="media/posters/layer-tree-draw-order.webp" src="media/layer-tree-draw-order.mp4" data-mac="layer-tree-draw-order" data-iphone="layer-tree-draw-order-iphone"></video></div>
-        <div class="slide-info"><h3>Changing the draw order</h3><p>Drag the Maps folder above the trail and the pins disappear under the rasters. Drag it back and they return.</p></div>
-      </div>
-      <div class="carousel-slide">
-        <div class="slide-stage"><video muted loop playsinline preload="none" poster="media/posters/tile-layers-using-offline-tiles.webp" src="media/tile-layers-using-offline-tiles.mp4" data-mac="tile-layers-using-offline-tiles" data-iphone="tile-layers-using-offline-tiles-iphone"></video></div>
-        <div class="slide-info"><h3>Downloading tiles</h3><p>Download Map Tiles from the Add Data menu, set the zoom level, and the tiles come down. Turn the streamed layer off and the downloaded area stays.</p></div>
-      </div>
-      <div class="carousel-slide">
-        <div class="slide-stage"><video muted loop playsinline preload="none" poster="media/posters/routes-adding-stops.webp" src="media/routes-adding-stops.mp4" data-mac="routes-adding-stops" data-iphone="routes-adding-stops-iphone"></video></div>
-        <div class="slide-info"><h3>Adding stops to a route</h3><p>Type each stop and pick it from the results. The roads fill in as you go, with the distance and time on the totals line.</p></div>
-      </div>
-      <div class="carousel-slide">
-        <div class="slide-stage"><video muted loop playsinline preload="none" poster="media/posters/elevation-profile-hover.webp" src="media/elevation-profile-hover.mp4" data-mac="elevation-profile-hover" data-iphone="elevation-profile-select-iphone"></video></div>
-        <div class="slide-info"><h3>The elevation profile</h3><p>Move along the chart and a marker follows the trail on the map. Drag across the chart to select a stretch.</p></div>
-      </div>
-      <div class="carousel-slide">
-        <div class="slide-stage"><video muted loop playsinline preload="none" poster="media/posters/basemaps-apple-maps-switch.webp" src="media/basemaps-apple-maps-switch.mp4" data-mac="basemaps-apple-maps-switch" data-iphone="basemaps-apple-maps-switch-iphone"></video></div>
-        <div class="slide-info"><h3>Switching the Apple map</h3><p>The last button in the sidebar steps through Hybrid, Satellite, Off and Standard under your layers.</p></div>
-      </div>
+<section class="highlights" id="see-it-work">
+  <div class="hl-head"><h2 class="display">See it work.</h2></div>
+  <div class="hl-viewport">
+    <div class="hl-track">
+      <article class="hl-card active">
+        <h3>Draw a line along the trail and read its length as you go.</h3>
+        <div class="hl-device mac">
+          <video muted playsinline preload="none" poster="media/posters/points-lines-polygons-line-tool.webp" src="media/points-lines-polygons-line-tool.mp4" data-mac="points-lines-polygons-line-tool" data-iphone="points-lines-polygons-line-tool-iphone"></video>
+          <img class="hl-frame" src="Images/frames/macbook.png" width="2110" height="1289" alt="">
+        </div>
+      </article>
+      <article class="hl-card">
+        <h3>Measure an area before you save anything.</h3>
+        <div class="hl-device iphone">
+          <video muted playsinline preload="none" poster="media/posters/getting-started-draw-and-measure-iphone.webp" src="media/getting-started-draw-and-measure-iphone.mp4" data-mac="getting-started-draw-and-measure" data-iphone="getting-started-draw-and-measure-iphone"></video>
+          <img class="hl-frame" src="Images/frames/iphone.png" width="654" height="1355" alt="">
+        </div>
+      </article>
+      <article class="hl-card">
+        <h3>Drag a point onto the trail, or add one between two.</h3>
+        <div class="hl-device mac">
+          <video muted playsinline preload="none" poster="media/posters/points-lines-polygons-edit-vertices.webp" src="media/points-lines-polygons-edit-vertices.mp4" data-mac="points-lines-polygons-edit-vertices" data-iphone="points-lines-polygons-edit-vertices-iphone"></video>
+          <img class="hl-frame" src="Images/frames/macbook.png" width="2110" height="1289" alt="">
+        </div>
+      </article>
+      <article class="hl-card">
+        <h3>Drag a folder and the map redraws in that order.</h3>
+        <div class="hl-device iphone">
+          <video muted playsinline preload="none" poster="media/posters/layer-tree-draw-order-iphone.webp" src="media/layer-tree-draw-order-iphone.mp4" data-mac="layer-tree-draw-order" data-iphone="layer-tree-draw-order-iphone"></video>
+          <img class="hl-frame" src="Images/frames/iphone.png" width="654" height="1355" alt="">
+        </div>
+      </article>
+      <article class="hl-card">
+        <h3>Download the tiles for an area and take them with you.</h3>
+        <div class="hl-device mac">
+          <video muted playsinline preload="none" poster="media/posters/tile-layers-using-offline-tiles.webp" src="media/tile-layers-using-offline-tiles.mp4" data-mac="tile-layers-using-offline-tiles" data-iphone="tile-layers-using-offline-tiles-iphone"></video>
+          <img class="hl-frame" src="Images/frames/macbook.png" width="2110" height="1289" alt="">
+        </div>
+      </article>
+      <article class="hl-card">
+        <h3>Type the stops and the roads fill in between them.</h3>
+        <div class="hl-device iphone">
+          <video muted playsinline preload="none" poster="media/posters/routes-adding-stops-iphone.webp" src="media/routes-adding-stops-iphone.mp4" data-mac="routes-adding-stops" data-iphone="routes-adding-stops-iphone"></video>
+          <img class="hl-frame" src="Images/frames/iphone.png" width="654" height="1355" alt="">
+        </div>
+      </article>
+      <article class="hl-card">
+        <h3>Move along the profile and the marker follows on the map.</h3>
+        <div class="hl-device mac">
+          <video muted playsinline preload="none" poster="media/posters/elevation-profile-hover.webp" src="media/elevation-profile-hover.mp4" data-mac="elevation-profile-hover" data-iphone="elevation-profile-select-iphone"></video>
+          <img class="hl-frame" src="Images/frames/macbook.png" width="2110" height="1289" alt="">
+        </div>
+      </article>
+      <article class="hl-card">
+        <h3>Switch the Apple map under your layers, or turn it off.</h3>
+        <div class="hl-device iphone">
+          <video muted playsinline preload="none" poster="media/posters/basemaps-apple-maps-switch-iphone.webp" src="media/basemaps-apple-maps-switch-iphone.mp4" data-mac="basemaps-apple-maps-switch" data-iphone="basemaps-apple-maps-switch-iphone"></video>
+          <img class="hl-frame" src="Images/frames/iphone.png" width="654" height="1355" alt="">
+        </div>
+      </article>
     </div>
-    <button class="carousel-btn prev" type="button" aria-label="Previous">&#8592;</button>
-    <button class="carousel-btn next" type="button" aria-label="Next">&#8594;</button>
-    <div class="carousel-dots"></div>
+  </div>
+  <div class="hl-controls">
+    <div class="hl-dots" role="tablist" aria-label="Films"></div>
+    <button type="button" class="hl-pause" aria-label="Pause" aria-pressed="false"><span class="ico-pause"></span><span class="ico-play"></span></button>
   </div>
 </section>
 
@@ -373,32 +398,78 @@ navState();
   dlg.addEventListener('close', function () { video.pause(); video.removeAttribute('src'); video.load(); document.documentElement.classList.remove('clip-open'); });
 })();
 
-/* See it work. On a phone each slide shows its iPhone recording, elsewhere the
-   Mac one. The slide on screen plays, muted, only while the carousel is in view. */
+/* See it work. One card at a time with its neighbours peeking in; the film on the
+   card's device plays while the section is in view and the dot under it fills.
+   When a film ends the next card comes. On a phone every card shows its iPhone
+   recording in the iPhone frame. */
 (function () {
-  var vids = document.querySelectorAll('.carousel-slide video');
-  if (!vids.length) return;
-  var phone = matchMedia('(max-width: 640px)').matches;
-  for (var i = 0; i < vids.length; i++) {
-    var v = vids[i], n = v.getAttribute(phone ? 'data-iphone' : 'data-mac');
-    v.poster = 'media/posters/' + n + '.webp';
-    v.src = 'media/' + n + '.mp4';
+  var sec = document.getElementById('see-it-work');
+  if (!sec) return;
+  var wrap = sec.querySelector('.hl-viewport'), track = sec.querySelector('.hl-track');
+  var cards = [].slice.call(track.children), dotsWrap = sec.querySelector('.hl-dots'), pauseBtn = sec.querySelector('.hl-pause');
+  var phone = matchMedia('(max-width: 640px)').matches, cur = 0, userPaused = false, inView = false;
+  cards.forEach(function (card, i) {
+    var v = card.querySelector('video'), dev = card.querySelector('.hl-device');
+    if (phone) {
+      dev.className = 'hl-device iphone';
+      var f = card.querySelector('.hl-frame'); f.src = 'Images/frames/iphone.png'; f.width = 654; f.height = 1355;
+    }
+    var n = v.getAttribute(phone ? 'data-iphone' : (dev.classList.contains('mac') ? 'data-mac' : 'data-iphone'));
+    v.poster = 'media/posters/' + n + '.webp'; v.src = 'media/' + n + '.mp4';
+    var d = document.createElement('button'); d.type = 'button'; d.className = 'hl-dot'; d.setAttribute('role', 'tab');
+    d.setAttribute('aria-label', 'Film ' + (i + 1) + ' of ' + cards.length); d.innerHTML = '<span class="fill"></span>';
+    d.addEventListener('click', function () { go(i); }); dotsWrap.appendChild(d);
+    card.addEventListener('click', function () { if (i !== cur) go(i); });
+    v.addEventListener('timeupdate', function () { if (i === cur && v.duration) dots[i].firstChild.style.width = (v.currentTime / v.duration * 100) + '%'; });
+    v.addEventListener('ended', function () { if (i === cur && !userPaused) go(cur + 1); });
+  });
+  var dots = dotsWrap.children;
+  function layout() {
+    var cw = cards[0].offsetWidth, gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+    track.style.transform = 'translateX(' + (-(cur * (cw + gap) - (wrap.offsetWidth - cw) / 2)) + 'px)';
   }
-  function playActive() {
-    var v = document.querySelector('.carousel-slide.active video');
-    if (v) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+  function playCur() {
+    var v = cards[cur].querySelector('video');
+    if (!inView || userPaused) return;
+    var p = v.play(); if (p && p.catch) p.catch(function () {});
   }
-  var inView = false, section = document.querySelector('.carousel-section');
+  function go(i) {
+    var old = cards[cur].querySelector('video'); old.pause(); old.currentTime = 0;
+    dots[cur].firstChild.style.width = '0'; cards[cur].classList.remove('active'); dots[cur].setAttribute('aria-selected', 'false');
+    cur = (i + cards.length) % cards.length;
+    cards[cur].classList.add('active'); dots[cur].setAttribute('aria-selected', 'true');
+    cards[(cur + 1) % cards.length].querySelector('video').preload = 'auto';
+    layout(); playCur();
+  }
+  pauseBtn.addEventListener('click', function () {
+    userPaused = !userPaused;
+    pauseBtn.setAttribute('aria-pressed', userPaused ? 'true' : 'false'); pauseBtn.setAttribute('aria-label', userPaused ? 'Play' : 'Pause');
+    pauseBtn.classList.toggle('paused', userPaused);
+    if (userPaused) cards[cur].querySelector('video').pause(); else playCur();
+  });
+  var sx = 0, sy = 0;
+  wrap.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, { passive: true });
+  wrap.addEventListener('touchend', function (e) {
+    var dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) go(dx < 0 ? cur + 1 : cur - 1);
+  }, { passive: true });
+  document.addEventListener('keydown', function (e) {
+    var r = sec.getBoundingClientRect();
+    if (r.top < innerHeight && r.bottom > 0) { if (e.key === 'ArrowLeft') go(cur - 1); if (e.key === 'ArrowRight') go(cur + 1); }
+  });
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(function (es) {
       inView = es[0].isIntersecting;
-      if (inView) playActive(); else for (var i = 0; i < vids.length; i++) vids[i].pause();
-    }, { threshold: 0.35 }).observe(section);
-  } else { inView = true; playActive(); }
-  section.addEventListener('carouselchange', function () { if (inView) playActive(); });
+      if (inView) playCur(); else cards[cur].querySelector('video').pause();
+    }, { threshold: 0.3 }).observe(sec);
+  } else { inView = true; }
+  dots[0].setAttribute('aria-selected', 'true'); cards[0].querySelector('video').preload = 'auto';
+  layout(); addEventListener('resize', layout); addEventListener('load', layout);
+  if ('ResizeObserver' in window) { var ro = new ResizeObserver(layout); ro.observe(wrap); ro.observe(cards[0]); }
+  setTimeout(layout, 400);
+  playCur();
 })();
 </script>
-<script src="carousel.js"></script>
 
 </body>
 </html>
