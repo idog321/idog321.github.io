@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Draft for Nikolay to refine: a tap on the map and the card it opens -->
+<svg width="800" height="480" viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg">
+    <path fill="#1a1b1e" stroke="none" d="M 0 0 L 800 0 L 800 480 L 0 480 Z"/>
+    <rect x="120" y="48" width="560" height="60" rx="30" fill="none" stroke="#5f5f62" stroke-width="8"/>
+    <circle cx="162" cy="76" r="13" fill="none" stroke="#5f5f62" stroke-width="8"/>
+    <path d="M 172 86 L 184 98" fill="none" stroke="#5f5f62" stroke-width="8" stroke-linecap="round"/>
+    <text x="212" y="90" font-family="Helvetica Neue" font-size="34" font-weight="500" fill="#5f5f62">Tin Hat</text>
+    <path d="M 60 420 C 120 380 150 320 200 300 C 250 280 270 230 310 232 C 350 234 380 280 430 300 C 480 320 520 400 600 440" fill="none" stroke="#393a3d" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 296 252 C 296 240 300 212 310 196 C 320 180 346 180 356 196 C 366 212 370 240 370 252 C 370 272 333 300 333 300 C 333 300 296 272 296 252 Z" fill="#1a1b1e" stroke="#ff9500" stroke-width="8.8" stroke-linejoin="round"/>
+    <circle cx="333" cy="236" r="13" fill="#ff9500" stroke="none"/>
+    <rect x="392" y="170" width="300" height="150" rx="20" fill="#ff9500" fill-opacity="0.08" stroke="#ff9500" stroke-width="8.8" stroke-linejoin="round"/>
+    <path d="M 424 208 L 572 208" fill="none" stroke="#ff9500" stroke-width="8.8" stroke-linecap="round"/>
+    <path d="M 424 248 L 652 248" fill="none" stroke="#5f5f62" stroke-width="8" stroke-linecap="round"/>
+    <path d="M 424 284 L 580 284" fill="none" stroke="#5f5f62" stroke-width="8" stroke-linecap="round"/>
+</svg>
