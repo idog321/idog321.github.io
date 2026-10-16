@@ -239,7 +239,7 @@
   </a>
   <div class="cta-pricing">
     <p><strong>TopoKit is free to download. Get it before 1 January 2027 and it's yours forever.</strong></p>
-    <p>After that, opening, viewing, searching and exporting stay free. Creating and editing need the full app. Monthly is $4.99 USD a month, with a free first month. Unlock Forever is one payment of $34.99 USD.</p>
+    <p>After that, opening, viewing, searching and exporting stay free. Creating and editing need the full app. Monthly is <span class="js-monthly">$4.99 USD</span> a month, with a free first month. Unlock Forever is one payment of <span class="js-forever">$34.99 USD</span>.<span class="js-price-note"></span></p>
     <p>Already bought TopoKit? You own all of it, with nothing to buy or restore. However you got it, TopoKit is unlocked on every iPhone and Mac signed into the same Apple Account.</p>
   </div>
 </section>
@@ -312,6 +312,37 @@ var navEl = document.querySelector('.nav');
 function navState() { navEl.classList.toggle('scrolled', window.scrollY > 40); }
 window.addEventListener('scroll', navState, { passive: true });
 navState();
+
+/* The closer's prices in the visitor's currency. The App Store's public lookup only carries the app's own price, not the
+   in-app purchases, so the prices come from this table, one row per storefront as set in App Store Connect. The storefront
+   is guessed from the time zone first (a Canadian with an en-US system still sits in a Canadian zone), then from the
+   browser language's region. A storefront not in the table keeps the USD prices and says so. ?region=CA forces one. */
+(function () {
+  var PRICES = {
+    US: { monthly: '$4.99 USD', forever: '$34.99 USD' },
+    CA: { monthly: '$6.99 CAD', forever: '$49.99 CAD' }
+  };
+  var ZONES = {
+    CA: ['America/Toronto', 'America/Vancouver', 'America/Edmonton', 'America/Winnipeg', 'America/Halifax', 'America/St_Johns', 'America/Regina', 'America/Moncton', 'America/Whitehorse', 'America/Yellowknife', 'America/Iqaluit', 'America/Dawson', 'America/Dawson_Creek', 'America/Fort_Nelson', 'America/Creston', 'America/Glace_Bay', 'America/Goose_Bay', 'America/Inuvik', 'America/Cambridge_Bay', 'America/Rankin_Inlet', 'America/Resolute', 'America/Swift_Current', 'America/Atikokan', 'America/Blanc-Sablon', 'America/Nipigon', 'America/Thunder_Bay', 'America/Rainy_River', 'America/Pangnirtung'],
+    US: ['America/New_York', 'America/Chicago', 'America/Denver', 'America/Los_Angeles', 'America/Phoenix', 'America/Anchorage', 'Pacific/Honolulu', 'America/Detroit', 'America/Boise', 'America/Indiana/Indianapolis', 'America/Kentucky/Louisville', 'America/Juneau', 'America/Sitka', 'America/Nome', 'America/Adak', 'America/Menominee', 'America/North_Dakota/Center', 'America/Indiana/Knox', 'America/Kentucky/Monticello', 'America/Metlakatla', 'America/Yakutat']
+  };
+  var region = null, m = /[?&]region=([A-Za-z]{2})/.exec(location.search);
+  if (m) region = m[1].toUpperCase();
+  if (!region) {
+    try {
+      var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      for (var k in ZONES) if (ZONES[k].indexOf(tz) >= 0) region = k;
+    } catch (e) {}
+  }
+  if (!region) {
+    var langs = navigator.languages || [navigator.language || ''];
+    for (var i = 0; i < langs.length && !region; i++) { var p = langs[i].split('-'); if (p.length > 1 && /^[A-Za-z]{2}$/.test(p[p.length - 1])) region = p[p.length - 1].toUpperCase(); }
+  }
+  var row = region && PRICES[region];
+  var mo = document.querySelector('.js-monthly'), fo = document.querySelector('.js-forever'), note = document.querySelector('.js-price-note');
+  if (row) { mo.textContent = row.monthly; fo.textContent = row.forever; }
+  else if (note) { note.textContent = ' The App Store shows the prices in your currency.'; }
+})();
 
 /* See it work. One card at a time with its neighbours peeking in. A card with a
    film plays it, muted, while the band is in view, and the dot under it fills;
