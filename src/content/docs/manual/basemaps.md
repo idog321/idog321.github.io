@@ -13,7 +13,7 @@ The last button of the tool sidebar picks which Apple map is drawn under your la
 :::
 
 :::mac
-<video src="/media/basemaps-apple-maps-switch.mp4" autoplay loop muted playsinline aria-label="Tapping the Apple Maps button at the foot of the tool sidebar four times: the map under a built basemap changes from Hybrid to Satellite, then Off, then Standard, then back to Hybrid"></video>
+<video src="/media/basemaps-apple-maps-switch.mp4" autoplay loop muted playsinline aria-label="Clicking the Apple Maps button at the foot of the tool sidebar four times, with a label beside it naming each state: the map under a built basemap changes from Hybrid to Satellite, then Off, then Standard, then back to Hybrid"></video>
 :::
 ::::
 
@@ -32,11 +32,11 @@ A basemap is a topographic map TopoKit builds on the device for an area you pick
 
 ::::platforms
 :::ios
-![The Basemaps chooser on iPhone: a style of your own under Your styles, then the Light and Dark looks with a sample and a pencil each, and Build your own](../../../assets/manual/getting-started-choose-a-map-sheet-iphone.png)
+![The Basemaps chooser on iPhone: a style of your own under Your Styles, then the Light and Dark looks with a sample and a pencil each, and Build your own](../../../assets/manual/getting-started-choose-a-map-sheet-iphone.png)
 :::
 
 :::mac
-![The Basemaps sheet on Mac: a style of your own under Your styles, then the Light and Dark looks with their samples, and Build your own](../../../assets/manual/getting-started-choose-a-map-sheet-mac.png)
+![The Basemaps sheet on Mac: a style of your own under Your Styles, then the Light and Dark looks with their samples, and Build your own](../../../assets/manual/getting-started-choose-a-map-sheet-mac.png)
 :::
 ::::
 
@@ -48,7 +48,7 @@ Building or restyling a basemap is part of the [full app](/manual/your-topokit/#
 
 ### Picking the area
 
-Each tap picks a quarter of a 1° square; the quartered-square button on the tool card switches to whole squares. Picking one form clears the other in that square. Each area becomes its own basemap and row; they build square by square, north to south, then west to east.
+Each tap picks a quarter of a 1° square; the quartered-square button on the tool card switches to whole squares. Picking one form clears the other in that square. The ↺ on the tool card clears every picked area. Each area becomes its own basemap and row; they build square by square, north to south, then west to east.
 
 ::::platforms
 :::ios
@@ -84,7 +84,7 @@ The build button stays grey until relief, a coloured ground or contours is on.
 
 The first control on the **Basemap** card picks the coloured layer under the relief.
 
-- **Solid Background**: on, the basemap covers Apple Maps where it draws, on the ground colour set by **Background**; off, the relief and colours shade Apple's map and its names stay on top ([draw order](/manual/layer-tree/#draw-order)).
+- **Solid Background**: on, the basemap covers Apple Maps where it draws, on the ground colour set by **Background**; off, the relief shades Apple's map, elevation or slope colours cover it unless their strength is lowered, and Apple's names stay on top ([draw order](/manual/layer-tree/#draw-order)).
 - **Elevation Colors**: **Color Range** on **Automatic** matches a basemap built nearby so neighbours share one scale, and an edit keeps the range the basemap was built with; **This area only** can change colour at the shared edge.
 - **Slope Angle**: pale under 27°, yellow 27–29°, orange 30–34°, red 35–45°, violet 46–50°, blue 51° and steeper.
 
@@ -98,7 +98,7 @@ The strength sliders stop at 15%; switch a layer off to remove it.
 
 Nine switches choose what the map data draws; [Reading the map](#reading-the-map) lists what each one shows. Turning on any one downloads the map data for all nine in that area, a few megabytes, so the others can be turned on later with no connection.
 
-A colour left on **Default** follows TopoKit's colour for that feature, so an app update can change it; a swatch or custom colour stays. A weight set to **Off** removes that kind of line; for roads, trails and tracks it removes their names too, while river names stay. **Run colours** on **Automatic** uses North American difficulty colours for a basemap centred between 170° W and 30° W, European everywhere else.
+A colour left on **Default** follows TopoKit's colour for that feature, so an app update can change it; a swatch or custom colour stays. A weight set to **Off** removes that kind of line; for roads, trails and tracks it removes their names too, while river names stay. **Road weight** also covers railways, ferry routes, runways and taxiways, and **Run weight** covers lifts; trails follow **Road weight** until you choose a **Trail weight**, and tracks follow **Trail weight** until you choose a **Track weight**. **Run colours** on **Automatic** uses North American difficulty colours for a basemap centred between 170° W and 30° W, European everywhere else.
 
 ### Labels
 
@@ -134,7 +134,7 @@ A basemap's row is named for its square, such as **Offline Basemap — 49°N 126
 :::
 
 :::mac
-![A built basemap around Tin Hat Hut on Mac, with its four rows at the foot of the Layers panel, each a topo tile badged with a download arrow and named Offline Basemap with its square and quarter](../../../assets/manual/basemaps-the-basemap-in-the-layers-tab-mac.png)
+![Four built basemaps around Tin Hat Hut on Mac, with their rows at the foot of the Layers tab, each a topo tile badged with a download arrow and named Offline Basemap with its square](../../../assets/manual/basemaps-the-basemap-in-the-layers-tab-mac.png)
 :::
 ::::
 
@@ -165,7 +165,7 @@ Until it is made, the section holding that change shows ⏱ before its summary.
 
 To add contours, switch on **Contour Lines** under **Terrain**.
 
-An edit never deletes ground already made. **Undo Changes**, in the footer while a change waits, returns the basemap to how it was when you opened the editor; basemap edits are not on the app's undo history.
+An edit never deletes ground already made. **Undo Changes**, in the footer while a change waits, returns the basemap to how it was when you opened the editor, except its name and **Opacity**; basemap edits are not on the app's undo history.
 
 Map data does not update on its own. Opening the editor with a connection checks for a newer release, and **About This Basemap** then offers **Refresh Map Data**.
 
@@ -195,7 +195,7 @@ While a basemap with map features is visible in the Layers tab and its area is i
 
 Everything in these tables except contours comes with the map data, so it needs at least one map feature on. Colours are the Light look's; Dark and the colour rows change them.
 
-A mark with no name is drawn at two-thirds size, except springs, hot springs, geysers, drinking water, toilets and information. When labels collide, settlements win, then area names and named huts, hospitals, ranger stations and lookouts, then named peaks with a height, then other named marks. Of the lines, only trails, tracks, ski runs, lifts, and named roads, rivers and ferry routes answer a tap.
+A mark with no name is drawn at two-thirds size, except springs, hot springs, geysers, drinking water, toilets and information. When labels collide, settlements win, then area names and named huts, hospitals, ranger stations and lookouts, then named peaks with a height, then other named marks. Of the lines, trails, tracks, ski runs and lifts answer a tap along their length, and so do footpaths, cycleways, steps, sidewalks and crossings close in; roads, rivers and ferry routes answer only where their name is printed.
 
 ### Marks and names
 
