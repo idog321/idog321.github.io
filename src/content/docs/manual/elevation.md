@@ -25,7 +25,7 @@ Every one of these stores the tile in the app's own data area, not a cache, so i
 
 When the tile is missing, each place that reads heights asks before downloading:
 
-- The profile says "This line needs N elevation tiles that are not on this device." and offers **Download N tiles** with a size. The size assumes the largest tile, so the download is usually smaller. With no connection the profile says so and offers nothing; it checks when it opens, so reopen it once you are back online. Closing the profile cancels its download.
+- The profile says "This line needs N elevation tiles that are not on this device." and offers **Download N tiles** with a size. The size counts 41.9 MB a tile, so the download is usually smaller. With no connection the profile says so and offers nothing; it checks when it opens, so reopen it once you are back online. Closing the profile cancels its download.
 - A point's editor shows **Get Elevation** with "(25–40 MB download)" beside it, and downloads as soon as you tap it.
 - A spot's card says "Terrain for this spot is not downloaded." with a **Download** button sized for that one tile.
 
@@ -37,11 +37,11 @@ When the tile is missing, each place that reads heights asks before downloading:
 
 ::::platforms
 :::ios
-![The elevation grid over Vancouver Island on iPhone: the squares whose tiles are on the device green, one of them tapped and so red, and the tool card reading 1 downloaded tile selected with the trash turned red and Download dimmed](../../../assets/manual/elevation-the-elevation-grid-iphone.png)
+![The elevation grid on iPhone over the Sunshine Coast: the square above the trail tapped and so tinted red, brown over the imagery and pink over a built basemap in its lower half, the square below it tinted green, which shows only over the basemap, as turquoise, and the tool card reading 1 downloaded tile selected with the trash turned red and Download dimmed](../../../assets/manual/elevation-the-elevation-grid-iphone.png)
 :::
 
 :::mac
-![The elevation grid on Mac: the one-degree squares over British Columbia green because their tiles are on the device, two squares south of the border blue because they are selected, and the tool card reading 2 tiles · 50–80 MB with the trash and Download](../../../assets/manual/elevation-the-elevation-grid-mac.png)
+![The elevation grid on Mac over southern British Columbia and Washington: two squares south of the border, by Lake Chelan, tinted blue because they are selected, and the tool card reading 2 tiles · 50–80 MB with Download ready and the trash dimmed](../../../assets/manual/elevation-the-elevation-grid-mac.png)
 :::
 ::::
 
@@ -55,9 +55,9 @@ Each square's colour gives its state:
 - **Grey**: the last download found no tile there. Tapping it selects it to try again.
 - **No square**: the dataset publishes nothing there.
 
-Tiles finished before you cancel stay on the device. A dropped connection, a timeout or a server error gets a tile up to three attempts, and an attempt not finished in 15 minutes fails; a tile that still fails is not stored, so its square can be selected again.
+Tiles finished before you cancel stay on the device. A dropped connection, a timeout or a server error gets a tile up to three attempts, but an attempt not finished in 15 minutes, the wait for a connection included, fails and is the last; a tile that still fails is not stored, so its square can be selected again.
 
-The trash button in the bar turns red once a red square is selected, and removes exactly those tiles after you confirm.
+The trash button on the tool card turns red once a red square is selected, and removes exactly those tiles after you confirm.
 
 ### Removing tiles
 
@@ -65,11 +65,11 @@ In **Settings → Storage & iCloud → Elevation Data**, **Manage Tiles** delete
 
 ## Coverage gaps
 
-The dataset publishes nothing over open ocean or north of 84°N; Antarctica is covered. Armenia and Azerbaijan are absent from the release TopoKit reads, so they have no square to select and return no height.
+The dataset publishes nothing over open ocean or north of 84°N; Antarctica is covered. Armenia and Azerbaijan are absent from the release TopoKit reads, and so is every 1° square that touches either, which takes in neighbouring ground in Georgia, Turkey, Iran and Russia, Tbilisi and Tabriz among it; none of it has a square to select or returns a height.
 
 Over ground with no terrain data the profile shows a hole: a dashed line with no fill beneath joins the heights either side of it, and the dashed stretch is not data.
 
-The line above the chart gives, in orange, the length with no terrain under it, as in "850 m with no terrain data", counting both where the dataset publishes no tile and where a tile on the device holds no value under the line, such as along a coastline.
+The line above the chart gives, in orange, the length with no terrain under it, as in "850 m with no terrain data", counting both where the dataset publishes no tile and where a tile on the device holds no value under the line.
 
 ## Disk space
 
@@ -95,7 +95,11 @@ With the spot's tile on the device, the card leads with **Elevation**, **Slope**
 
 The elevation profile charts the ground along any line, drawn or imported, a recorded track, a saved route, or a trail, road or other line on a basemap you built. Polygons and circles have no profile. It opens from **Elevation profile** on a line's [card](/manual/search-and-identify/#the-card), and from **Elevation Profile** in the line's menu in the [Layers tab](/manual/layer-tree/) and in its editor. :mac[On Mac, **Elevation Profile** is also in the right-click menu on a line and in the **Layer** menu.]
 
-<video src="/media/elevation-profile-hover.mp4" autoplay loop muted playsinline aria-label="The elevation profile of the Sunshine Coast Trail open under the map on a Mac: the pointer moves along the chart and a marker follows along the trail on the map, then a drag across the chart selects a stretch, which lights on the map while the numbers switch to the stretch's own"></video>
+:::mac
+<video src="/media/elevation-profile-hover.mp4" autoplay loop muted playsinline aria-label="The elevation profile of the saved line Trail, which follows the Sunshine Coast Trail, open under the map on a Mac: the pointer moves along the chart and a marker follows along the trail on the map, then a drag across the chart selects a stretch, which lights on the map while the numbers switch to the stretch's own"></video>
+:::
+
+The chart shows the height and distance under the pointer, or under a finger dragged along it, and a marker on the map moves to that place on the line. The row at the foot of the profile has the card's **Zoom to** and **Share**, with no **Share** on a profile opened from the Layers tab, the line's editor or the **Layer** menu; see [The card's buttons](/manual/search-and-identify/#the-cards-buttons).
 
 A named trail or road on a basemap is profiled along its whole length, not only the stretch you tapped; an unnamed one along the stretch outlined on the map.
 
@@ -107,7 +111,7 @@ The height scale fits the heights in view, never less than 20 m (66 ft) top to b
 
 The numbers under the chart:
 
-- **Distance**: the line's length, including any gap between its parts.
+- **Distance**: the length the profile charts, including any gap between its parts; side pieces it leaves out, and the second side of a line drawn twice, are not in it.
 - **Gain** and **Loss**: the total climb and descent, counting a rise or fall only once it reaches 4 m (13 ft) from the last counted height, the terrain model's own error from one point to the next. The step across a hole in the data, or across a gap between two parts of a line, is not counted. Without a hole or gap, gain minus loss equals the change in height from start to end.
 - **Min**, **Max** and **Avg**: taken from the samples, so a summit between two samples is not in **Max**, and **Avg** weighs every sample equally, so on a GPS track it leans toward stretches where the fixes lie closest together.
 
@@ -115,15 +119,15 @@ All six follow **Settings → Units & Coordinates → Units**, not the units the
 
 ### Selecting and zooming
 
-Selecting a stretch gives its own climb and descent. :mac[On Mac, drag across the chart.] :ios[On iPhone, hold a finger on the chart for a moment, then drag; a drag without the hold only moves the marker.] A stretch under 50 m is dropped.
+Selecting a stretch gives its own climb and descent. :mac[On Mac, drag across the chart.] :ios[On iPhone, hold a finger on the chart for a moment, then drag; a drag without the hold only moves the marker.] A stretch under 50 m is dropped. The stretch lights on the map with a handle at each end, as on the chart; drag a handle on the chart to move that end.
 
 ::::platforms
 :::ios
-<video src="/media/elevation-profile-select-iphone.mp4" autoplay loop muted playsinline aria-label="The elevation profile of the Sunshine Coast Trail on iPhone: a finger runs along the chart and the marker follows along the trail on the map, a hold and a drag select a stretch whose Selection, Gain, Loss, Min, Max and Avg replace the line's figures, a pinch zooms the chart to part of the line, and a double tap on the bar along its foot shows the whole line again"></video>
+<video src="/media/elevation-profile-select-iphone.mp4" autoplay loop muted playsinline aria-label="The elevation profile of the Sunshine Coast Trail on iPhone: a finger runs along the chart and the marker follows along the trail on the map, a hold and a drag select a stretch whose Selection, Gain, Loss, Min, Max and Avg replace the line's figures, a pinch zooms the chart to part of the line and the map to the same stretch, and a double tap on the bar along its foot shows the whole line again on both"></video>
 :::
 
 :::mac
-![A stretch selected on the profile of the Sunshine Coast Trail on a Mac: the stretch is shaded on the chart with a handle at each end, the line above the chart reads Selection 32.6 km with its start and end and Clear, the numbers switch to Selection, Gain, Loss, Min, Max and Avg for the stretch, and the same stretch is lit on the map](../../../assets/manual/elevation-selecting-and-zooming-mac.png)
+![A stretch selected on the profile of the saved line Trail on a Mac: the stretch is shaded on the chart with a handle at each end, the line above the chart reads Selection 32.6 km with its start and end and Clear, the numbers switch to Selection, Gain, Loss, Min, Max and Avg for the stretch, and the same stretch is lit on the map](../../../assets/manual/elevation-selecting-and-zooming-mac.png)
 :::
 ::::
 
@@ -131,7 +135,7 @@ Pinch the chart to zoom into part of the line, down to 200 m or 2% of the line, 
 
 ### The line above the chart
 
-When the chart carries a note, such as a length with no terrain data, gaps between the line's parts or side pieces left out of the profile, the line above the chart shows only the first. A tap or click on a note, or on the line at rest, opens a short note on where the heights come from and how **Gain** and **Loss** are counted, with every chart note in full.
+When the chart carries a note, such as a length with no terrain data, gaps between the line's parts or side pieces left out of the profile, the line above the chart shows only the first. A tap or click on a note, or on the line at rest, opens a short note on where the heights come from and how **Gain** and **Loss** are counted, with every chart note in full. On each device, until you first select a stretch, the line at rest says how to select one instead, and a tap or click on it opens nothing.
 
 ### Recorded tracks and lines in several parts
 
@@ -148,7 +152,7 @@ A route is charted along the roads its legs follow.
 ## FAQ
 
 **Can TopoKit read heights from my own DEM or lidar?**
-No. Every height comes from the Copernicus model. A DEM imported as a [raster](/manual/raster-overlays/) is drawn as an image and never read for heights.
+No. Every height TopoKit reads from the ground comes from the Copernicus model. A DEM imported as a [raster](/manual/raster-overlays/) is drawn as an image and never read for heights.
 
 **Why does no grid appear when I choose Download Elevation…?**
 The grid is drawn only once a 1° square is large enough on screen; zoom in until the squares appear.
