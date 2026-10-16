@@ -134,6 +134,31 @@ html.clip-open { overflow: hidden; }
 .band-link { display: inline-block; margin-top: 1.1rem; color: #fff; font-weight: 700; font-size: 0.95rem; text-decoration: none; border-bottom: 2px solid var(--orange); padding-bottom: 0.1rem; text-shadow: 0 1px 10px rgba(0,0,0,0.6); }
 .band-link::after { content: ' \2192'; }
 
+/* Demo films: a stage and the programme beside it */
+.demos { padding: 5.5rem 2rem 4.5rem; }
+.demos-inner { max-width: 1160px; margin: 0 auto; }
+.demos-head h2 { font-size: clamp(1.9rem, 3.2vw, 2.5rem); }
+.demos-head p { margin-top: 0.8rem; font-size: 1.05rem; color: var(--muted); max-width: 36em; }
+.demos-grid { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 2.5rem; align-items: start; margin-top: 2.5rem; }
+.demo-stage { display: block; border-radius: 14px; overflow: hidden; background: var(--charcoal); color: #fff; }
+.demo-stage video { display: block; width: 100%; height: auto; }
+/* The title card until the first film lands: 16:9 by padding, which every
+   browser resolves the same way. */
+.demo-card { position: relative; height: 0; padding-top: 56.25%; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='700' height='700' viewBox='0 0 700 700'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.07' stroke-width='1.4'%3E%3Cpath d='M60 620 C140 520 120 430 210 380 C300 330 320 240 430 220 C540 200 560 120 660 90'/%3E%3Cpath d='M20 640 C120 540 100 440 200 385 C300 330 330 230 450 205 C570 180 590 100 690 70'/%3E%3Cpath d='M100 600 C170 510 150 430 230 380 C310 330 330 250 420 235 C510 220 540 150 630 115'/%3E%3Cpath d='M-20 560 C60 500 80 420 160 390 C240 360 260 300 340 280 C420 260 470 200 520 170'/%3E%3Cpath d='M180 660 C240 590 230 520 300 470 C370 420 390 350 480 330 C570 310 600 240 680 210'/%3E%3C/g%3E%3C/svg%3E"); background-size: 700px 700px; }
+.demo-card-in { position: absolute; left: 0; right: 0; bottom: 0; padding: 2rem 2.2rem 2rem; display: flex; flex-direction: column; gap: 0.35rem; }
+.demo-n { font-family: 'Libre Baskerville', Georgia, serif; font-size: 2.6rem; line-height: 1; color: var(--orange); }
+.demo-t { font-size: clamp(1.4rem, 2.4vw, 2rem); }
+.demo-m { font-size: 0.85rem; font-weight: 600; letter-spacing: 0.04em; color: rgba(255,255,255,0.6); text-transform: uppercase; }
+.demo-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(35,34,31,0.12); }
+.demo-list li { display: grid; grid-template-columns: 2rem minmax(0, 1fr); gap: 0.6rem; padding: 0.95rem 0; border-bottom: 1px solid rgba(35,34,31,0.12); }
+.demo-list .n { font-family: 'Libre Baskerville', Georgia, serif; font-size: 1.2rem; line-height: 1.3; color: var(--orange); }
+.demo-list strong { display: block; font-weight: 700; font-size: 0.98rem; }
+.demo-list p { margin-top: 0.2rem; font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
+.demo-list .m { display: block; margin-top: 0.3rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: #8E8B83; }
+.demo-list a { color: inherit; text-decoration: none; }
+.demo-list a:hover strong { color: var(--orange); }
+.demo-list li.is-current { background: rgba(255,149,0,0.08); margin: 0 -0.8rem; padding-left: 0.8rem; padding-right: 0.8rem; border-radius: 10px; }
+
 /* Privacy — charcoal card that expands to full-bleed on scroll */
 .privacy-wrap { padding: 3rem 0 0; }
 .privacy {
@@ -184,7 +209,7 @@ html.clip-open { overflow: hidden; }
 }
 @media (max-width: 900px) {
   .features-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .intro, .maker-inner, .privacy-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .intro, .maker-inner, .privacy-inner, .demos-grid { grid-template-columns: 1fr; gap: 2.5rem; }
 }
 
 
@@ -235,6 +260,13 @@ html.clip-open { overflow: hidden; }
   .band-photo-inner { padding: 3rem 1.25rem; }
   .band-photo h2 { font-size: clamp(1.8rem, 9vw, 2.4rem); }
   .band-photo p { font-size: 0.98rem; }
+
+  .demos { padding: 3.5rem 1.25rem 3rem; }
+  .demos-head h2 { font-size: clamp(1.7rem, 8vw, 2.2rem); }
+  .demos-head p { font-size: 0.98rem; }
+  .demos-grid { margin-top: 1.8rem; gap: 1.6rem; }
+  .demo-card-in { padding: 1.2rem 1.3rem; }
+  .demo-n { font-size: 1.8rem; }
 
   .privacy { margin: 0 4vw; padding: 3rem 1.25rem 3.5rem; border-radius: 20px; }
   .privacy h2 { font-size: clamp(1.6rem, 7.6vw, 2rem); }

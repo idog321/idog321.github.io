@@ -188,6 +188,34 @@
   </div>
 </section>
 
+<section class="demos" id="demos">
+  <div class="demos-inner">
+    <div class="demos-head">
+      <h2 class="display">See it work.</h2>
+      <p>One field job from start to finish, in six short films. Recorded on the Sunshine Coast Trail, on a Mac and an iPhone.</p>
+    </div>
+    <div class="demos-grid">
+      <div class="demo-stage" id="demo-stage">
+        <div class="demo-card">
+          <div class="demo-card-in">
+            <span class="demo-n">01</span>
+            <span class="demo-t display">Start a project</span>
+            <span class="demo-m">Mac · 1 min</span>
+          </div>
+        </div>
+      </div>
+      <ol class="demo-list">
+        <li><span class="n">1</span><div><strong>Start a project</strong><p>A new project, saved to iCloud, and the map found by search.</p><span class="m">Mac · 1 min</span></div></li>
+        <li><span class="n">2</span><div><strong>Build a basemap</strong><p>Pick the area, build it, and tap the finished map for a trail's card.</p><span class="m">Mac · 1½ min</span></div></li>
+        <li><span class="n">3</span><div><strong>Bring in your own maps and data</strong><p>A scanned sheet dropped on the map, a GPX trail imported, and the layers put in order.</p><span class="m">Mac · 1½ min</span></div></li>
+        <li><span class="n">4</span><div><strong>Plan the route and read the terrain</strong><p>A walking route between two huts, its elevation profile, and a measured distance.</p><span class="m">Mac · 1½ min</span></div></li>
+        <li><span class="n">5</span><div><strong>Take it offline</strong><p>Tiles and elevation downloaded, the project saved offline, and the phone in Airplane Mode still working.</p><span class="m">Mac and iPhone · 1 min</span></div></li>
+        <li><span class="n">6</span><div><strong>In the field, and home again</strong><p>A track recorded on the walk, a photo on a point, and the track back on the Mac as a GPX export.</p><span class="m">iPhone and Mac · 1½ min</span></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
 <div class="privacy-wrap">
   <section class="privacy" id="privacy-card">
     <div class="privacy-inner">
@@ -389,6 +417,33 @@ navState();
     video.load();
     document.documentElement.classList.remove('clip-open');
   });
+})();
+
+/* Demo films. A list item with data-demo="media/demos/01-…" plays "….mp4" on
+   the stage with "….webp" as its poster; an item without one is plain text,
+   and the stage keeps its title card until the first film arrives. */
+(function () {
+  var stage = document.getElementById('demo-stage');
+  var items = document.querySelectorAll('.demo-list a[data-demo]');
+  if (!stage || !items.length) return;
+  function show(a, play) {
+    var base = a.getAttribute('data-demo');
+    var v = stage.querySelector('video');
+    if (!v) {
+      v = document.createElement('video');
+      v.controls = true; v.playsInline = true; v.preload = 'none';
+      stage.innerHTML = '';
+      stage.appendChild(v);
+    }
+    v.poster = base + '.webp';
+    v.src = base + '.mp4';
+    for (var i = 0; i < items.length; i++) items[i].parentNode.parentNode.classList.toggle('is-current', items[i] === a);
+    if (play) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+  }
+  show(items[0], false);
+  for (var i = 0; i < items.length; i++) {
+    items[i].addEventListener('click', function (e) { e.preventDefault(); show(this, true); });
+  }
 })();
 </script>
 
