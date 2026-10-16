@@ -9,7 +9,7 @@ The last button of the tool sidebar picks which Apple map is drawn under your la
 
 ::::platforms
 :::ios
-<video src="/media/basemaps-apple-maps-switch-iphone.mp4" autoplay loop muted playsinline aria-label="The Apple Maps button at the foot of the tool sidebar on iPhone tapped four times, with a built basemap in the upper half of the map and Apple's map below its edge: Hybrid to Satellite, then Off, then Standard, then back to Hybrid, the button's glyph changing with each"></video>
+<video src="/media/basemaps-apple-maps-switch-iphone.mp4" autoplay loop muted playsinline aria-label="The Apple Maps button at the foot of the tool sidebar on iPhone tapped four times, with the trail and three huts drawn over Apple's map: Hybrid to Satellite, then Off with the map a plain dark background, then Standard, then back to Hybrid, the button's glyph changing with each"></video>
 :::
 
 :::mac
