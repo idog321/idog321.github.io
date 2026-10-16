@@ -443,7 +443,7 @@
 .platform-pair img[src*='-card-'],
 .platform-pair img[src*='-sheet-'],
 .platform-pair img[src*='-alert-'],
-.platform-pair img[src*='-menu-'] {
+.platform-pair img[src*='-menu-iphone'] {
   max-width: 21rem;
 }
 
@@ -571,15 +571,52 @@
 }
 
 /* ON A PHONE NO FIGURE IS WIDER THAN ITS COLUMN. The rem caps above are the
-   on-screen sizes of pop-ups in a desktop column, and several of them (35rem
-   for a sheet, 32rem for search results, 26rem for the location dot, 23rem for
-   a popover) are wider than the 358px column of a 390px phone, so those
-   figures ran off the right edge. Same specificity as the per-token rules and
-   later in the file, so it wins; the desktop sizes are untouched. */
+   on-screen sizes of pop-ups in a desktop column, and the ones over 22rem (a
+   sheet at 35rem, search results at 32rem, the location dot at 26rem, a card
+   or popover at 23rem, the reprojection sheet at 24rem, the settings window,
+   the right-click menu, the toolbar art) are wider than the 358px column of a
+   390px phone, so those figures ran off the right edge. Only those tokens are
+   capped here: a menu keeps its 15rem, so it is not stretched to the column.
+   Same specificity as the per-token rules and later in the file, so it wins;
+   desktop sizes are untouched. */
 @media (max-width: 50rem) {
-  .sl-markdown-content img[src],
+  .sl-markdown-content img[src*='-sheet-'],
+  .sl-markdown-content img[src*='-results-'],
+  .sl-markdown-content img[src*='location-dot'],
+  .sl-markdown-content img[src*='-card-'],
+  .sl-markdown-content img[src*='-popover-'],
+  .sl-markdown-content img[src*='reprojection-sheet'],
+  .sl-markdown-content img[src*='settings-window'],
+  .sl-markdown-content img[src*='right-click-menu'],
+  .sl-markdown-content img[src*='-tool'],
+  .sl-markdown-content img[src*='tab-bar'],
+  .sl-markdown-content img[src*='undo-pill'],
   .sl-markdown-content video[src] {
     max-width: 100%;
     height: auto;
   }
+}
+
+/* Captures narrower than their token's cap are 2x or 3x pixels and would draw
+   at that scale: the Mac unit menu (154px for 77pt) and the Mac travel-mode
+   menu (132px for 66pt). Each gets its on-screen width. The Undo pill strip
+   is a 3x capture about 484pt wide with no kind token, so it stretched to the
+   column; 30rem is its real width. */
+.sl-markdown-content img[src*='measurement-units-menu-mac'] {
+  width: 4.8rem;
+}
+.sl-markdown-content img[src*='routes-travel-modes-menu-mac'] {
+  width: 4.1rem;
+}
+/* Two more 2x Mac menus narrower than the 15rem cap would otherwise draw
+   larger than life: the View menu (408px for 204pt) and the bearing menu
+   (380px for 190pt). */
+.sl-markdown-content img[src*='interface-view-menu-mac'] {
+  width: 12.75rem;
+}
+.sl-markdown-content img[src*='measurement-bearing-menu-mac'] {
+  width: 11.9rem;
+}
+.sl-markdown-content img[src*='undo-pill'] {
+  max-width: min(30rem, 100%);
 }
