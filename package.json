@@ -6,13 +6,14 @@
   "scripts": {
     "dev": "rm -rf .astro node_modules/.astro && astro dev",
     "start": "astro dev",
-    "build": "node scripts/guard-dev.mjs && astro build",
+    "build": "node scripts/guard-dev.mjs && node scripts/app-store-prices.mjs && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "lint:style": "node scripts/check-style.mjs",
     "lint:links": "node scripts/check-links.mjs",
     "build:force": "astro build",
-    "release-notes": "node scripts/gen-release-notes.mjs"
+    "release-notes": "node scripts/gen-release-notes.mjs",
+    "prices": "node scripts/app-store-prices.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",

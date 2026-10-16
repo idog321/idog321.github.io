@@ -313,15 +313,12 @@ function navState() { navEl.classList.toggle('scrolled', window.scrollY > 40); }
 window.addEventListener('scroll', navState, { passive: true });
 navState();
 
-/* The closer's prices in the visitor's currency. The App Store's public lookup only carries the app's own price, not the
-   in-app purchases, so the prices come from this table, one row per storefront as set in App Store Connect. The storefront
-   is guessed from the time zone first (a Canadian with an en-US system still sits in a Canadian zone), then from the
-   browser language's region. A storefront not in the table keeps the USD prices and says so. ?region=CA forces one. */
+/* The closer's prices in the visitor's currency. prices.json is written at build time by scripts/app-store-prices.mjs
+   from Apple's own listings: for every storefront that sells TopoKit, its currency, the app's price and each in-app
+   purchase's name and price as the App Store shows them there. The visitor's storefront is taken from the time zone for
+   Canada and the US (a Canadian with an en-US system still sits in a Canadian zone), otherwise from the browser language's
+   region. A storefront without the purchases on the store page yet keeps the USD line. ?region=XX forces one. */
 (function () {
-  var PRICES = {
-    US: { monthly: '$4.99 USD', forever: '$34.99 USD' },
-    CA: { monthly: '$6.99 CAD', forever: '$49.99 CAD' }
-  };
   var ZONES = {
     CA: ['America/Toronto', 'America/Vancouver', 'America/Edmonton', 'America/Winnipeg', 'America/Halifax', 'America/St_Johns', 'America/Regina', 'America/Moncton', 'America/Whitehorse', 'America/Yellowknife', 'America/Iqaluit', 'America/Dawson', 'America/Dawson_Creek', 'America/Fort_Nelson', 'America/Creston', 'America/Glace_Bay', 'America/Goose_Bay', 'America/Inuvik', 'America/Cambridge_Bay', 'America/Rankin_Inlet', 'America/Resolute', 'America/Swift_Current', 'America/Atikokan', 'America/Blanc-Sablon', 'America/Nipigon', 'America/Thunder_Bay', 'America/Rainy_River', 'America/Pangnirtung'],
     US: ['America/New_York', 'America/Chicago', 'America/Denver', 'America/Los_Angeles', 'America/Phoenix', 'America/Anchorage', 'Pacific/Honolulu', 'America/Detroit', 'America/Boise', 'America/Indiana/Indianapolis', 'America/Kentucky/Louisville', 'America/Juneau', 'America/Sitka', 'America/Nome', 'America/Adak', 'America/Menominee', 'America/North_Dakota/Center', 'America/Indiana/Knox', 'America/Kentucky/Monticello', 'America/Metlakatla', 'America/Yakutat']
@@ -329,19 +326,23 @@ navState();
   var region = null, m = /[?&]region=([A-Za-z]{2})/.exec(location.search);
   if (m) region = m[1].toUpperCase();
   if (!region) {
-    try {
-      var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-      for (var k in ZONES) if (ZONES[k].indexOf(tz) >= 0) region = k;
-    } catch (e) {}
+    try { var tz = Intl.DateTimeFormat().resolvedOptions().timeZone; for (var k in ZONES) if (ZONES[k].indexOf(tz) >= 0) region = k; } catch (e) {}
   }
   if (!region) {
     var langs = navigator.languages || [navigator.language || ''];
     for (var i = 0; i < langs.length && !region; i++) { var p = langs[i].split('-'); if (p.length > 1 && /^[A-Za-z]{2}$/.test(p[p.length - 1])) region = p[p.length - 1].toUpperCase(); }
   }
-  var row = region && PRICES[region];
   var mo = document.querySelector('.js-monthly'), fo = document.querySelector('.js-forever'), note = document.querySelector('.js-price-note');
-  if (row) { mo.textContent = row.monthly; fo.textContent = row.forever; }
-  else if (note) { note.textContent = ' The App Store shows the prices in your currency.'; }
+  if (!region || region === 'US' || !mo || !fo) return;
+  fetch('prices.json').then(function (r) { return r.json(); }).then(function (d) {
+    var row = d.storefronts && d.storefronts[region];
+    if (!row) return;
+    var monthly = null, forever = null;
+    for (var name in row.iap) { if (/month/i.test(name)) monthly = row.iap[name]; else if (/forever|lifetime|once/i.test(name)) forever = row.iap[name]; }
+    var cur = row.currency ? ' ' + row.currency : '';
+    if (monthly && forever) { mo.textContent = monthly + cur; fo.textContent = forever + cur; }
+    else if (note) note.textContent = ' The App Store shows the prices in your currency.';
+  }).catch(function () {});
 })();
 
 /* See it work. One card at a time with its neighbours peeking in. A card with a

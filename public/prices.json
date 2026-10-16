@@ -1,0 +1,882 @@
+{
+ "app": "6761090144",
+ "generated": "2026-10-16T22:16:13.516Z",
+ "storefronts": {
+  "AE": {
+   "currency": "AED",
+   "app": "AED 39.99",
+   "iap": {}
+  },
+  "AF": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "AG": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "AI": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "AL": {
+   "currency": "USD",
+   "app": "USD 11.99",
+   "iap": {}
+  },
+  "AM": {
+   "currency": "USD",
+   "app": "USD 11.99",
+   "iap": {}
+  },
+  "AO": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "AR": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "AT": {
+   "currency": "EUR",
+   "app": "9,99 €",
+   "iap": {}
+  },
+  "AU": {
+   "currency": "AUD",
+   "app": "$14.99",
+   "iap": {}
+  },
+  "AZ": {
+   "currency": "USD",
+   "app": "USD 11.99",
+   "iap": {}
+  },
+  "BA": {
+   "currency": "EUR",
+   "app": "9,99 €",
+   "iap": {}
+  },
+  "BB": {
+   "currency": "USD",
+   "app": "USD 11.99",
+   "iap": {}
+  },
+  "BE": {
+   "currency": "EUR",
+   "app": "9,99 €",
+   "iap": {}
+  },
+  "BF": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "BG": {
+   "currency": "EUR",
+   "app": "9,99 €",
+   "iap": {}
+  },
+  "BH": {
+   "currency": "USD",
+   "app": "$9.99",
+   "iap": {}
+  },
+  "BJ": {
+   "currency": "USD",
+   "app": "USD 11.99",
+   "iap": {}
+  },
+  "BM": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "BN": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "BO": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "BR": {
+   "currency": "BRL",
+   "app": "R$ 59,90",
+   "iap": {}
+  },
+  "BS": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "BT": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "BW": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "BY": {
+   "currency": "USD",
+   "app": "USD 11.99",
+   "iap": {}
+  },
+  "BZ": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "CA": {
+   "currency": "CAD",
+   "app": "$12.99",
+   "iap": {
+    "TopoKit Monthly": "$6.99",
+    "TopoKit Forever": "$49.99"
+   }
+  },
+  "CD": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "CH": {
+   "currency": "CHF",
+   "app": "CHF 9.00",
+   "iap": {}
+  },
+  "CI": {
+   "currency": "USD",
+   "app": "11,99 $US",
+   "iap": {}
+  },
+  "CL": {
+   "currency": "CLP",
+   "app": "$9.990",
+   "iap": {}
+  },
+  "CM": {
+   "currency": "USD",
+   "app": "11,99 $US",
+   "iap": {}
+  },
+  "CN": {
+   "currency": "CNY",
+   "app": "¥68.00",
+   "iap": {}
+  },
+  "CO": {
+   "currency": "COP",
+   "app": "$ 49.900,00",
+   "iap": {}
+  },
+  "CR": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "CV": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "CY": {
+   "currency": "EUR",
+   "app": "9,99 €",
+   "iap": {}
+  },
+  "CZ": {
+   "currency": "CZK",
+   "app": "249,00 Kč",
+   "iap": {}
+  },
+  "DE": {
+   "currency": "EUR",
+   "app": "9,99 €",
+   "iap": {}
+  },
+  "DK": {
+   "currency": "DKK",
+   "app": "89,00 kr",
+   "iap": {}
+  },
+  "DM": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "DO": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "DZ": {
+   "currency": "USD",
+   "app": "$9.99",
+   "iap": {}
+  },
+  "EC": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "EE": {
+   "currency": "EUR",
+   "app": "9,99 €",
+   "iap": {}
+  },
+  "EG": {
+   "currency": "EGP",
+   "app": "EGP 499.99",
+   "iap": {}
+  },
+  "ES": {
+   "currency": "EUR",
+   "app": "9,99 €",
+   "iap": {}
+  },
+  "FI": {
+   "currency": "EUR",
+   "app": "9,99 €",
+   "iap": {}
+  },
+  "FJ": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "FM": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "FR": {
+   "currency": "EUR",
+   "app": "9,99 €",
+   "iap": {}
+  },
+  "GA": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "GB": {
+   "currency": "GBP",
+   "app": "£9.99",
+   "iap": {}
+  },
+  "GD": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "GE": {
+   "currency": "USD",
+   "app": "USD 11.99",
+   "iap": {}
+  },
+  "GH": {
+   "currency": "USD",
+   "app": "USD 11.99",
+   "iap": {}
+  },
+  "GM": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "GR": {
+   "currency": "EUR",
+   "app": "9,99 €",
+   "iap": {}
+  },
+  "GT": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "GW": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "GY": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "HK": {
+   "currency": "HKD",
+   "app": "HK$ 88.00",
+   "iap": {}
+  },
+  "HN": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "HR": {
+   "currency": "EUR",
+   "app": "9,99 €",
+   "iap": {}
+  },
+  "HU": {
+   "currency": "HUF",
+   "app": "HUF4,490.00",
+   "iap": {}
+  },
+  "ID": {
+   "currency": "IDR",
+   "app": "Rp 199ribu",
+   "iap": {}
+  },
+  "IE": {
+   "currency": "EUR",
+   "app": "€9.99",
+   "iap": {}
+  },
+  "IL": {
+   "currency": "ILS",
+   "app": "₪29.90",
+   "iap": {}
+  },
+  "IN": {
+   "currency": "INR",
+   "app": "₹ 999",
+   "iap": {}
+  },
+  "IQ": {
+   "currency": "USD",
+   "app": "$9.99",
+   "iap": {}
+  },
+  "IS": {
+   "currency": "USD",
+   "app": "USD 11.99",
+   "iap": {}
+  },
+  "IT": {
+   "currency": "EUR",
+   "app": "9,99 €",
+   "iap": {}
+  },
+  "JM": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "JO": {
+   "currency": "USD",
+   "app": "$9.99",
+   "iap": {}
+  },
+  "JP": {
+   "currency": "JPY",
+   "app": "¥1,500",
+   "iap": {}
+  },
+  "KE": {
+   "currency": "USD",
+   "app": "USD 11.99",
+   "iap": {}
+  },
+  "KG": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "KH": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "KN": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "KR": {
+   "currency": "KRW",
+   "app": "￦17,000",
+   "iap": {}
+  },
+  "KW": {
+   "currency": "USD",
+   "app": "$9.99",
+   "iap": {}
+  },
+  "KY": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "KZ": {
+   "currency": "KZT",
+   "app": "5,990.00₸",
+   "iap": {}
+  },
+  "LA": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "LB": {
+   "currency": "USD",
+   "app": "$9.99",
+   "iap": {}
+  },
+  "LC": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "LK": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "LR": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "LT": {
+   "currency": "EUR",
+   "app": "9,99 €",
+   "iap": {}
+  },
+  "LU": {
+   "currency": "EUR",
+   "app": "9,99 €",
+   "iap": {}
+  },
+  "LV": {
+   "currency": "EUR",
+   "app": "9,99 €",
+   "iap": {}
+  },
+  "LY": {
+   "currency": "USD",
+   "app": "$9.99",
+   "iap": {}
+  },
+  "MA": {
+   "currency": "USD",
+   "app": "$11.99",
+   "iap": {}
+  },
+  "MD": {
+   "currency": "USD",
+   "app": "USD 11.99",
+   "iap": {}
+  },
+  "ME": {
+   "currency": "EUR",
+   "app": "9,99 €",
+   "iap": {}
+  },
+  "MG": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "MK": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "ML": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "MM": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "MN": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "MO": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "MR": {
+   "currency": "USD",
+   "app": "$9.99",
+   "iap": {}
+  },
+  "MS": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "MT": {
+   "currency": "EUR",
+   "app": "9,99 €",
+   "iap": {}
+  },
+  "MU": {
+   "currency": "USD",
+   "app": "USD 11.99",
+   "iap": {}
+  },
+  "MV": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "MW": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "MX": {
+   "currency": "MXN",
+   "app": "$199.00",
+   "iap": {}
+  },
+  "MY": {
+   "currency": "MYR",
+   "app": "RM49.90",
+   "iap": {}
+  },
+  "MZ": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "NA": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "NE": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "NG": {
+   "currency": "NGN",
+   "app": "₦ 14,900.00",
+   "iap": {}
+  },
+  "NI": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "NL": {
+   "currency": "EUR",
+   "app": "€ 9,99",
+   "iap": {}
+  },
+  "NO": {
+   "currency": "NOK",
+   "app": "129,00 kr",
+   "iap": {}
+  },
+  "NP": {
+   "currency": "USD",
+   "app": "USD 11.99",
+   "iap": {}
+  },
+  "NR": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "NZ": {
+   "currency": "NZD",
+   "app": "$19.99",
+   "iap": {}
+  },
+  "OM": {
+   "currency": "USD",
+   "app": "$9.99",
+   "iap": {}
+  },
+  "PA": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "PE": {
+   "currency": "PEN",
+   "app": "S/ 44.90",
+   "iap": {}
+  },
+  "PG": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "PH": {
+   "currency": "PHP",
+   "app": "₱ 599.00",
+   "iap": {}
+  },
+  "PK": {
+   "currency": "PKR",
+   "app": "Rs 2,900.00",
+   "iap": {}
+  },
+  "PL": {
+   "currency": "PLN",
+   "app": "49,99 zł",
+   "iap": {}
+  },
+  "PT": {
+   "currency": "EUR",
+   "app": "9,99 €",
+   "iap": {}
+  },
+  "PW": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "PY": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "QA": {
+   "currency": "QAR",
+   "app": "QAR 39.99",
+   "iap": {}
+  },
+  "RO": {
+   "currency": "RON",
+   "app": "49,99 lei",
+   "iap": {}
+  },
+  "RS": {
+   "currency": "EUR",
+   "app": "9,99 €",
+   "iap": {}
+  },
+  "RU": {
+   "currency": "RUB",
+   "app": "899,00 ₽",
+   "iap": {}
+  },
+  "RW": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "SA": {
+   "currency": "SAR",
+   "app": "SAR 39.99",
+   "iap": {}
+  },
+  "SB": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "SC": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "SE": {
+   "currency": "SEK",
+   "app": "129,00 kr",
+   "iap": {}
+  },
+  "SG": {
+   "currency": "SGD",
+   "app": "S$ 14.98",
+   "iap": {}
+  },
+  "SI": {
+   "currency": "EUR",
+   "app": "9,99 €",
+   "iap": {}
+  },
+  "SK": {
+   "currency": "EUR",
+   "app": "9,99 €",
+   "iap": {}
+  },
+  "SL": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "SN": {
+   "currency": "USD",
+   "app": "USD 11.99",
+   "iap": {}
+  },
+  "SR": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "ST": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "SV": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "SZ": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "TC": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "TD": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "TH": {
+   "currency": "THB",
+   "app": "฿399.00",
+   "iap": {}
+  },
+  "TJ": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "TM": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "TN": {
+   "currency": "USD",
+   "app": "$9.99",
+   "iap": {}
+  },
+  "TO": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "TR": {
+   "currency": "TRY",
+   "app": "₺499,99",
+   "iap": {}
+  },
+  "TT": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "TW": {
+   "currency": "TWD",
+   "app": "$320.00",
+   "iap": {}
+  },
+  "TZ": {
+   "currency": "TZS",
+   "app": "29,900.00 TZS",
+   "iap": {}
+  },
+  "UA": {
+   "currency": "USD",
+   "app": "11,99 USD",
+   "iap": {}
+  },
+  "UG": {
+   "currency": "USD",
+   "app": "USD 11.99",
+   "iap": {}
+  },
+  "US": {
+   "currency": "USD",
+   "app": "$9.99",
+   "iap": {
+    "TopoKit Monthly": "$4.99",
+    "TopoKit Forever": "$34.99"
+   }
+  },
+  "UY": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "UZ": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "VC": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "VE": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "VG": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "VN": {
+   "currency": "VND",
+   "app": "299.000đ",
+   "iap": {}
+  },
+  "VU": {
+   "currency": "USD",
+   "app": "USD 9.99",
+   "iap": {}
+  },
+  "XK": {
+   "currency": "EUR",
+   "app": "9,99 €",
+   "iap": {}
+  },
+  "YE": {
+   "currency": "USD",
+   "app": "$9.99",
+   "iap": {}
+  },
+  "ZA": {
+   "currency": "ZAR",
+   "app": "R199.99",
+   "iap": {}
+  },
+  "ZM": {
+   "currency": "USD",
+   "app": "USD 11.99",
+   "iap": {}
+  },
+  "ZW": {
+   "currency": "USD",
+   "app": "USD 11.99",
+   "iap": {}
+  }
+ }
+}
