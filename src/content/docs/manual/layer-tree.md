@@ -18,7 +18,7 @@ A row is a feature (a point, line or polygon, drawn or imported), a raster overl
 :::
 ::::
 
-An **Offline: {name}** row's icon carries a small download arrow when the tiles are on this device, and is dimmed with an orange iCloud arrow when the project arrived by sync and the tiles did not ([Using offline tiles](/manual/tile-layers/#using-offline-tiles)).
+An **Offline: {name}** row's icon carries a small download arrow when the tiles are on this device, and is dimmed with an orange iCloud arrow when the project arrived by sync and the tiles did not ([Using offline tiles](/manual/tile-layers/#using-offline-tiles)). A basemap you built carries the same arrow when it is built on this device ([The basemap in the Layers tab](/manual/basemaps/#the-basemap-in-the-layers-tab)).
 
 ## Draw order
 
@@ -30,11 +30,11 @@ Rows higher in the tree draw on top of rows below them.
 :::
 
 :::mac
-<video src="/media/layer-tree-draw-order.mp4" autoplay loop muted playsinline aria-label="The Maps folder dragged up the Layers panel on a Mac to above the folder holding the trail: the hut pins and the trail inside the rasters' footprints vanish from the map, and when the folder is dragged back below Parks they return"></video>
+<video src="/media/layer-tree-draw-order.mp4" autoplay loop muted playsinline aria-label="The Maps folder dragged up the Layers tab on a Mac to above the folder holding the trail: the hut pins and the trail inside the rasters' footprints vanish from the map, and when the folder is dragged back below Parks they return"></video>
 :::
 ::::
 
-A layer that is switched on can still be missing from the map, because something above it in the tree is covering it. A tile layer covers the whole map, so anything below it in the tree is hidden everywhere; a raster only hides the area inside its own footprint, so the same layer can be hidden in one part of the map and visible in another. An offline tile layer covers only the regions you downloaded, a basemap you built covers only the area it was built for, and a layer faded below 5% opacity covers nothing at all.
+A layer that is switched on can still be missing from the map, because something above it in the tree is covering it. A tile layer covers the whole map, so anything below it in the tree is hidden everywhere except through the transparent parts of its tiles; a raster only hides the area inside its own footprint, so the same layer can be hidden in one part of the map and visible in another. An offline tile layer covers only the regions you downloaded, a basemap you built covers only the area it was built for, and a layer faded below 5% opacity covers nothing at all.
 
 Points are not stacked with lines and polygons: a point always draws above every line and polygon, whatever the tree says. A point below a raster or tile layer is removed wherever that layer covers it, even a partly transparent one, and for a raster that means anywhere inside its bounding box. A line or polygon below one stays drawn and shows through as far as the layer's opacity allows.
 
@@ -48,11 +48,11 @@ Choose **New Folder** from the :ui[plus]{icon=plus} menu at the top of the Layer
 
 To put rows you already have into a new folder, use **Group** in the **Select** bar, or **New Folder with “{name}”** in a row's menu. Each makes a folder called **New Group** in the place of the topmost chosen row, puts the rows inside it in their order, and opens its editor.
 
-Closing a folder only shortens the list; its contents still draw on the map.
+A folder's icon opens and closes it. Closing a folder only shortens the list; its contents still draw on the map.
 
 ## Styling a folder
 
-Tap a folder's row on iPhone, or click it on Mac, to open **Edit Folder**. It has a style row for each kind of feature directly inside the folder, and only for those kinds, so an empty folder cannot be styled in advance. A folder has no style of its own, so the sheet starts from the style of the first feature of that kind inside it.
+Tap a folder's name on iPhone, or click it on Mac, to open **Edit Folder**. It has a style row for each kind of feature directly inside the folder, and only for those kinds, so an empty folder cannot be styled in advance. A folder has no style of its own, so the sheet starts from the style of the first feature of that kind inside it.
 
 When you choose **Done**, the style is written onto the features of that kind directly inside the folder, replacing styles set on them one by one, and a single Undo reverses it. Features in its subfolders keep their own styles.
 
@@ -60,12 +60,10 @@ It is not a live default: a feature you draw afterwards starts from the **Defaul
 
 ## Selecting several rows
 
-:::ios
-On iPhone, **Select** turns the tree into a checklist for the bar's **Hide**, **Delete**, **Share** and **Export**. **Delete** and **Group** end Select; **Hide** leaves the rows checked for another action.
-:::
+**Select** turns the tree into a checklist for the bar's **Hide**, **Delete**, **Share** and **Export**. **Delete**, **Group** and **Move** end Select; **Hide** leaves the rows checked for another action.
 
 :::mac
-On Mac, **Select** at the top of the Layers tab does the same. Cmd-click and Shift-click turn it on as well; a Shift-click range skips rows inside closed folders.
+On Mac, Cmd-click and Shift-click turn **Select** on as well; a Shift-click range skips rows inside closed folders.
 
 Right-clicking a row that is part of the selection acts on every selected row. A row inside a selected folder goes with its folder when the selection is moved, copied, shared or exported.
 :::
@@ -148,7 +146,7 @@ On Mac, **Copy**, **Paste** and **Duplicate** are in the right-click menu; on a 
 
 ::::platforms
 :::ios
-![A folder's Layer options menu on iPhone: Edit, Hide and Zoom to, New Subfolder, Share and Export to File, Move to… and New Folder with “Folder”, Copy and Duplicate, and Delete](../../../assets/manual/layer-tree-copying-pasting-and-duplicating-menu-iphone.png)
+![A folder's Layer options menu on iPhone: Edit, Hide and Zoom to, New Subfolder, Share and Export to File, Move to... and New Folder with “Folder”, Copy and Duplicate, and Delete](../../../assets/manual/layer-tree-copying-pasting-and-duplicating-menu-iphone.png)
 :::
 
 :::mac
@@ -164,7 +162,7 @@ Deleting a folder deletes everything inside it. TopoKit always asks first.
 
 Undo brings deleted rows back where they were, contents included. See [Undo and redo](/manual/interface/#undo-and-redo).
 
-A basemap you built is the exception. Deleting it also deletes its map files from this device, unless a basemap in another project uses them, so Undo does not bring it back and it has to be built again. Everything deleted with it comes back, including the rest of a folder that held it.
+A basemap you built is the exception. Deleting it also deletes its built files from this device, except what another basemap still uses, and Undo does not bring it back: it has to be built again. Everything deleted with it comes back, including the rest of a folder that held it.
 
 :::mac
 ## The Layer menu
@@ -173,10 +171,10 @@ On Mac, the **Layer** menu in the menu bar acts on the rows selected in the Laye
 
 **Edit Layer…** (`Cmd-I`) opens the editor of the one selected row, opening any closed folder above it. Copy, Paste, Duplicate and Delete are not in it.
 
-![The Layer menu on Mac with the Trail row selected: Add Vector Layer, Add Raster Layer and Add Tile Layer, Download Map Tiles, Download Elevation and Build Basemap, New Folder and New Folder with Selection, Edit Layer, Hide Layer, Zoom to Layer and Move To, Edit Vertices on Map and Elevation Profile, Share and Export to File, and the offline items greyed](../../../assets/manual/layer-tree-the-layer-menu-menu-mac.png)
+![The Layer menu on Mac for a selected line: Add Vector Layer, Add Raster Layer and Add Tile Layer, Download Map Tiles, Download Elevation and Build Basemap, New Folder and New Folder with Selection, Edit Layer, Hide Layer, Zoom to Layer and Move To, Edit Vertices on Map, Elevation Profile and a greyed Route to Here, Share and Export to File, and the offline items greyed](../../../assets/manual/layer-tree-the-layer-menu-menu-mac.png)
 :::
 
 ## FAQ
 
 **I deleted a folder by accident. Can I get it back?**
-Yes, with Undo, until the project is closed or reopened, which clears its undo history. After that, see [Restoring an earlier version](/manual/projects-and-files/#restoring-an-earlier-version).
+Yes, with Undo, until the project is closed, reopened or reloaded with another device's changes, any of which clears its undo history. After that, see [Restoring an earlier version](/manual/projects-and-files/#restoring-an-earlier-version).
