@@ -7,7 +7,15 @@ description: "Switch Apple's map, build a topographic basemap that works with no
 
 The last button of the tool sidebar picks which Apple map is drawn under your layers. Each tap or click steps :ui[Standard]{icon=map-standard} → :ui[Hybrid]{icon=map-hybrid} → :ui[Satellite]{icon=map-satellite} → :ui[Off]. :mac[On Mac, **View → Apple Maps** in the [menu bar](/manual/interface/#the-menu-bar) holds the same choices.]
 
+::::platforms
+:::ios
+<video src="/media/basemaps-apple-maps-switch-iphone.mp4" autoplay loop muted playsinline aria-label="The Apple Maps button at the foot of the tool sidebar on iPhone tapped four times, with a built basemap in the upper half of the map and Apple's map below its edge: Hybrid to Satellite, then Off, then Standard, then back to Hybrid, the button's glyph changing with each"></video>
+:::
+
+:::mac
 <video src="/media/basemaps-apple-maps-switch.mp4" autoplay loop muted playsinline aria-label="Tapping the Apple Maps button at the foot of the tool sidebar four times: the map under a built basemap changes from Hybrid to Satellite, then Off, then Standard, then back to Hybrid"></video>
+:::
+::::
 
 Hybrid is the default. The choice belongs to this device, not the project: every project opens with it, and it does not sync. **Off** stops Apple's map from loading, so your layers draw over a plain background.
 

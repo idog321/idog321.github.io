@@ -173,7 +173,7 @@ The Mac has no cellular setting and downloads over any connection, a personal ho
 A finished download adds an **Offline: {layer name}** layer at the top of the source layer's folder. The next is **Offline: {layer name} (2)**, and so on; downloads never merge. Each reads only the downloaded tiles inside its own rectangle. Past the downloaded max zoom it scales up its sharpest tile.
 
 :::ios
-![The downloaded area on its own on iPhone: with the Topo row hidden, only the Offline: Topo rectangle of topographic tiles draws over the crater, and the rest of the volcano is Apple's imagery](../../../assets/manual/tile-layers-using-offline-tiles-iphone.png)
+<video src="/media/tile-layers-using-offline-tiles-iphone.mp4" autoplay loop muted playsinline aria-label="Downloading tiles on iPhone: Download Map Tiles… from the Add Data menu, the Topo layer, Draw with two corners tapped round Mount St. Helens and Done, the sheet with the Max Zoom Level dragged to z14 and the cards reading 23 tiles, Download, the Offline: Topo row appearing above Topo, and then Topo's eye tapped so only the downloaded rectangle draws over Apple's imagery of the volcano"></video>
 :::
 
 :::mac

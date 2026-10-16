@@ -31,7 +31,15 @@ The tool closes once the point is placed; the coordinate stays editable in the e
 
 Choose :ui[Add Line]{icon=add-line}, :ui[Add Polygon]{icon=add-polygon} or :ui[Add Circle]{icon=add-circle} in the tool sidebar; they are greyed out until a project is open. :mac[On Mac, the **Tools** menu starts each one from the keyboard ([The menu bar](/manual/interface/#the-menu-bar)).] The [tool card](/manual/interface/#the-map) shows the shape's [live figures](/manual/measurement/).
 
+::::platforms
+:::ios
+<video src="/media/points-lines-polygons-line-tool-iphone.mp4" autoplay loop muted playsinline aria-label="The line tool on iPhone tracing the Sunshine Coast Trail: each tap adds a vertex on the trail and a length appears along the segment, the card's Distance, Bearing and Points grow, a tap back on an earlier vertex rings it so the next tap inserts the trail's hairpin after it, a faint dot is dragged onto a bend the trace cut, and Save opens the Line Editor"></video>
+:::
+
+:::mac
 <video src="/media/points-lines-polygons-line-tool.mp4" autoplay loop muted playsinline aria-label="The line tool on a Mac tracing the Sunshine Coast Trail south of Tin Hat Hut: each click adds a vertex on the trail and a length appears along the segment, a click back on an earlier vertex rings it so the next click inserts the trail's hairpin after it, a faint dot is dragged onto a bend the trace cut, and Save opens the New Line sheet"></video>
+:::
+::::
 
 Each map tap adds a vertex, drawn as a dot styled by **Settings → Features → [Vertex Style](/manual/settings/#features)**. The vertex you touched last is the **active** one, marked by a ring, and new vertices insert after it, so you can tap back to an earlier vertex and add mid-line without starting over.
 
@@ -83,7 +91,15 @@ Cancelling the editor returns you to the drawing with every vertex in place. The
 
 Tap **Edit Vertices on Map** in a line's or polygon's editor. :mac[On Mac, **Layer → Edit Vertices on Map** does the same for the line or polygon selected in the Layers tab.] The editor closes, saving what it held, and the vertices come up as dots to [move, add and delete](#moving-adding-and-deleting-vertices).
 
+::::platforms
+:::ios
+<video src="/media/points-lines-polygons-edit-vertices-iphone.mp4" autoplay loop muted playsinline aria-label="Edit Vertices on Map on iPhone on a line traced along the trail: a vertex that slipped beside the trail is dragged onto it, a tap rings a vertex and a second tap shows Delete Point, which deletes it, the card's Undo brings it back, a faint dot is dragged from a segment that cuts a bend onto the bend, and Done"></video>
+:::
+
+:::mac
 <video src="/media/points-lines-polygons-edit-vertices.mp4" autoplay loop muted playsinline aria-label="Edit Vertices on Map on a line traced along the Sunshine Coast Trail on a Mac: a vertex that slipped beside the trail is dragged onto it, a right-click deletes a vertex with no menu, the card's Undo brings it back, a faint dot is dragged from a segment that cuts a bend onto the bend, and Done"></video>
+:::
+::::
 
 Each change is written into the saved feature as you make it, as its own undo step. **Done** keeps them all, so Undo afterward takes the changes back one at a time. ✕ puts the line or polygon back as it was when you opened Edit Vertices on Map and removes those steps. Every vertex you leave in place keeps its height, time and accuracy, so a recorded track keeps its timings; a vertex you move or add has none. While the card is up, its **Undo** :mac[and **Edit → Undo**] take back only this editing's changes ([While a tool is open](/manual/interface/#while-a-tool-is-open)).
 

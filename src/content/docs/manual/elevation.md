@@ -117,7 +117,15 @@ All six follow **Settings → Units & Coordinates → Units**, not the units the
 
 Selecting a stretch gives its own climb and descent. :mac[On Mac, drag across the chart.] :ios[On iPhone, hold a finger on the chart for a moment, then drag; a drag without the hold only moves the marker.] A stretch under 50 m is dropped.
 
+::::platforms
+:::ios
+<video src="/media/elevation-profile-select-iphone.mp4" autoplay loop muted playsinline aria-label="The elevation profile of the Sunshine Coast Trail on iPhone: a finger runs along the chart and the marker follows along the trail on the map, a hold and a drag select a stretch whose Selection, Gain, Loss, Min, Max and Avg replace the line's figures, a pinch zooms the chart to part of the line, and a double tap on the bar along its foot shows the whole line again"></video>
+:::
+
+:::mac
 ![A stretch selected on the profile of the Sunshine Coast Trail on a Mac: the stretch is shaded on the chart with a handle at each end, the line above the chart reads Selection 32.6 km with its start and end and Clear, the numbers switch to Selection, Gain, Loss, Min, Max and Avg for the stretch, and the same stretch is lit on the map](../../../assets/manual/elevation-selecting-and-zooming-mac.png)
+:::
+::::
 
 Pinch the chart to zoom into part of the line, down to 200 m or 2% of the line, whichever is longer. Double-click or double-tap the bar along the foot of the zoomed chart to show the whole line.
 

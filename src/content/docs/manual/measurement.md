@@ -10,7 +10,15 @@ The line, polygon and circle tools need an open project even when you only measu
 
 Figures appear once the shape has enough points: two for a line or a route, three for a polygon, a centre and an edge point for a circle.
 
+::::platforms
+:::ios
+<video src="/media/getting-started-draw-and-measure-iphone.mp4" autoplay loop muted playsinline aria-label="Drawing a polygon round Inland Lake on iPhone while the tool card updates Area, Perimeter and Points with each corner, and the segment lengths appear along the sides"></video>
+:::
+
+:::mac
 <video src="/media/getting-started-draw-and-measure.mp4" autoplay loop muted playsinline aria-label="Drawing a polygon round Inland Lake on a Mac: each click adds a corner, a length appears along each side, and the card's Area, Perimeter and Points update as the shape grows"></video>
+:::
+::::
 
 Tapping a figure copies the number as the card shows it, rounded, with the device's thousands separator and decimal mark (`1,234.5`) and without its unit; a bearing copies with its degree sign, as three digits (`045°`). A route's figures have no unit menu and do not copy.
 

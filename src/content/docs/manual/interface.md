@@ -63,7 +63,7 @@ Beyond pan, pinch, two-finger twist and a two-finger drag up or down, which tilt
 - **Swipe toward the screen edge** from the map just beside the sidebar to hide it. The chevron tab left at the edge brings it back ([Toolbar & Haptics](/manual/settings/#toolbar--haptics)).
 - **Slide a finger up or down the sidebar** to see each button's name as the finger passes it. Lifting the finger presses the button under it.
 
-<video src="/media/interface-sidebar-hide-and-show.mp4" autoplay loop muted playsinline aria-label="The tool sidebar on iPhone swiped toward the screen edge: it slides off and leaves a small chevron tab at the right edge of the map, and a tap on the tab brings it back"></video>
+<video src="/media/interface-sidebar-hide-and-show.mp4" autoplay loop muted playsinline aria-label="The tool sidebar on iPhone: a finger swipes from the map beside it toward the screen edge and the sidebar slides off, leaving a small chevron tab at the right edge, and a tap on the tab brings it back"></video>
 :::
 
 :::mac

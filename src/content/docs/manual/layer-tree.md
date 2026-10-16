@@ -24,9 +24,15 @@ An **Offline: {name}** row's icon carries a small download arrow when the tiles 
 
 Rows higher in the tree draw on top of rows below them.
 
+::::platforms
+:::ios
+<video src="/media/layer-tree-draw-order-iphone.mp4" autoplay loop muted playsinline aria-label="The Maps folder held until it lifts and dragged to the top of the Layers tab on iPhone: the hut pins and the trail under its rasters vanish from the map; dragged back below Parks, they return"></video>
+:::
+
 :::mac
 <video src="/media/layer-tree-draw-order.mp4" autoplay loop muted playsinline aria-label="The Maps folder dragged up the Layers panel on a Mac to above the folder holding the trail: the hut pins and the trail inside the rasters' footprints vanish from the map, and when the folder is dragged back below Parks they return"></video>
 :::
+::::
 
 A layer that is switched on can still be missing from the map, because something above it in the tree is covering it. A tile layer covers the whole map, so anything below it in the tree is hidden everywhere; a raster only hides the area inside its own footprint, so the same layer can be hidden in one part of the map and visible in another. An offline tile layer covers only the regions you downloaded, a basemap you built covers only the area it was built for, and a layer faded below 5% opacity covers nothing at all.
 

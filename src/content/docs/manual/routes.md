@@ -19,9 +19,15 @@ A stop picked from search, a typed coordinate or :ui[My Location]{icon=location}
 
 A stop tapped onto the map is named from Apple's place lookup, for example "St Mary's Ln"; until the lookup answers, or when it finds nothing, the field shows its coordinates.
 
+::::platforms
+:::ios
+<video src="/media/routes-adding-stops-iphone.mp4" autoplay loop muted playsinline aria-label="Add Route on iPhone, the same loop: each stop typed into the card's field and picked from the results, Crofton Terminal, Ganges, Victoria, Port Renfrew, Lake Cowichan and Crofton Terminal again, each leg drawing as Apple answers with the distance and time on the totals line, then Walk chosen from the travel-mode menu and the legs asked for again"></video>
+:::
+
 :::mac
 <video src="/media/routes-adding-stops.mp4" autoplay loop muted playsinline aria-label="Add Route on a Mac, a loop round southern Vancouver Island: six stops typed into the card's search field and picked one after another, Crofton Terminal, Ganges, Victoria, Port Renfrew, Lake Cowichan and Crofton Terminal again, each leg drawn as Apple answers, the two ferry crossings included, then Walk and Cycle chosen from the travel-mode menu and the legs asked for again, and Drive once more"></video>
 :::
+::::
 
 ### Starting from a point or a place
 

@@ -91,9 +91,15 @@ Every other way to add a point is in [Adding a point](/manual/points-lines-polyg
 2. Tap a figure to copy it.
 3. Tap **Save** to keep the shape once it has three corners, name it in the editor that opens, and tap **Create**. To discard the shape instead, tap ✕ on the tool card.
 
+::::platforms
+:::ios
+<video src="/media/getting-started-draw-and-measure-iphone.mp4" autoplay loop muted playsinline aria-label="Drawing a polygon round Inland Lake on iPhone: each tap on the shoreline adds a corner, a length appears along each side, and the card's Area, Perimeter and Points update as the shape grows"></video>
+:::
+
 :::mac
 <video src="/media/getting-started-draw-and-measure.mp4" autoplay loop muted playsinline aria-label="Drawing a polygon round Inland Lake on a Mac: each click adds a corner and a length appears along each side while the tool card updates Area, Perimeter and Points, then a corner is dragged, and Save opens the New Polygon sheet"></video>
 :::
+::::
 
 The drawing tools and the measuring tools are the same tools; saving is the only difference. :ui[Add Line]{icon=add-line} gives distance and bearing the same way. The figures are not stored with the shape, but tapping a saved polygon shows its area and perimeter again. Units are in [Units](/manual/measurement/#units), and the earth model behind each figure in [Calculation methods](/manual/measurement/#calculation-methods).
 
