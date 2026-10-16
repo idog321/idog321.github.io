@@ -292,8 +292,8 @@ html.clip-open { overflow: hidden; }
 .hl-scrim { position: absolute; left: 0; right: 0; bottom: 0; height: 55%; background: linear-gradient(to top, rgba(10,11,12,0.72), rgba(10,11,12,0)); }
 .hl-type-full h3, .hl-type-photo h3 { position: absolute; left: 3rem; right: 3rem; bottom: 2.4rem; color: #fff; max-width: 22em; }
 /* a mosaic of map looks */
-.hl-mosaic { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 0.8rem; }
-.hl-mosaic img { display: block; width: 100%; height: 100%; min-height: 0; object-fit: cover; border-radius: 12px; }
+.hl-mosaic { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 0; border-radius: 14px; overflow: hidden; }
+.hl-mosaic img { display: block; width: 100%; height: 100%; min-height: 0; object-fit: cover; }
 /* the two devices together */
 .hl-pair { position: relative; margin: auto; height: var(--media); width: min(100%, calc(var(--media) * 1.8)); }
 .hl-pair .hl-device.mac { position: absolute; right: 0; bottom: 0; width: calc(var(--media) * 1.6368); margin: 0; }
