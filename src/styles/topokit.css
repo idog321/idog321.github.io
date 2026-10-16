@@ -569,3 +569,17 @@
 .sl-markdown-content img[src*='tab-bar'] {
   max-width: 30rem;
 }
+
+/* ON A PHONE NO FIGURE IS WIDER THAN ITS COLUMN. The rem caps above are the
+   on-screen sizes of pop-ups in a desktop column, and several of them (35rem
+   for a sheet, 32rem for search results, 26rem for the location dot, 23rem for
+   a popover) are wider than the 358px column of a 390px phone, so those
+   figures ran off the right edge. Same specificity as the per-token rules and
+   later in the file, so it wins; the desktop sizes are untouched. */
+@media (max-width: 50rem) {
+  .sl-markdown-content img[src],
+  .sl-markdown-content video[src] {
+    max-width: 100%;
+    height: auto;
+  }
+}
