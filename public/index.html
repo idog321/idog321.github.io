@@ -17,7 +17,7 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://topokit.ca/Images/og-card.jpg">
-  <link rel="stylesheet" href="home.css?v=3">
+  <link rel="stylesheet" href="home.css?v=5">
   <link rel="icon" type="image/svg+xml" href="Images/Logo/Logo.svg">
   <link rel="icon" type="image/png" sizes="192x192" href="favicon.png">
   <!-- Safari paints SVG <img>s incrementally while they stream, and mask references
@@ -159,66 +159,45 @@
   <div class="hl-head"><h2 class="display">See it work.</h2></div>
   <div class="hl-viewport">
     <div class="hl-track">
-      <article class="hl-card active">
-        <h3>Draw a line along the trail and read its length as you go.</h3>
-        <div class="hl-device mac">
-          <video muted playsinline preload="none" poster="media/posters/points-lines-polygons-line-tool.webp" src="media/points-lines-polygons-line-tool.mp4" data-mac="points-lines-polygons-line-tool" data-iphone="points-lines-polygons-line-tool-iphone"></video>
-          <img class="hl-frame" src="Images/frames/macbook.png" width="2110" height="1289" alt="">
+      <article class="hl-card hl-type-full active">
+        <video class="hl-full" muted playsinline preload="none" poster="media/posters/basemaps-apple-maps-switch.webp" src="media/basemaps-apple-maps-switch.mp4" data-desktop="basemaps-apple-maps-switch" data-phone="basemaps-apple-maps-switch-iphone"></video><span class="hl-scrim"></span>
+        <h3>Pick an area, and TopoKit builds the topographic map on your device.</h3>
+      </article>
+      <article class="hl-card hl-type-device">
+        <h3>Drop in the scanned sheets and GPX files you already have. They line up on the map.</h3>
+        <div class="hl-device mac"><video muted playsinline preload="none" poster="media/posters/points-lines-polygons-line-tool.webp" src="media/points-lines-polygons-line-tool.mp4" data-desktop="points-lines-polygons-line-tool" data-phone="points-lines-polygons-line-tool-iphone"></video><img class="hl-frame" src="Images/frames/macbook.png" width="2110" height="1289" alt=""></div>
+      </article>
+      <article class="hl-card hl-type-device">
+        <h3>Tap anything on the map and a card tells you what it is.</h3>
+        <div class="hl-device iphone"><video muted playsinline preload="none" poster="media/posters/getting-started-draw-and-measure-iphone.webp" src="media/getting-started-draw-and-measure-iphone.mp4" data-desktop="getting-started-draw-and-measure-iphone" data-phone="getting-started-draw-and-measure-iphone"></video><img class="hl-frame" src="Images/frames/iphone.png" width="654" height="1355" alt=""></div>
+      </article>
+      <article class="hl-card hl-type-mosaic">
+        <h3>One map, four looks: Light, Dark, slope angle, or colours of your own.</h3>
+        <div class="hl-mosaic"><img src="Images/highlights/look-1.webp" width="900" height="600" alt="" loading="lazy"><img src="Images/highlights/look-2.webp" width="900" height="600" alt="" loading="lazy"><img src="Images/highlights/look-3.webp" width="900" height="600" alt="" loading="lazy"><img src="Images/highlights/look-4.webp" width="900" height="600" alt="" loading="lazy"></div>
+      </article>
+      <article class="hl-card hl-type-device">
+        <h3>Plan a route between the huts and read the climb before you go.</h3>
+        <div class="hl-device mac"><video muted playsinline preload="none" poster="media/posters/routes-adding-stops.webp" src="media/routes-adding-stops.mp4" data-desktop="routes-adding-stops" data-phone="routes-adding-stops-iphone"></video><img class="hl-frame" src="Images/frames/macbook.png" width="2110" height="1289" alt=""></div>
+      </article>
+      <article class="hl-card hl-type-pair">
+        <h3>Work on the Mac, then pick it up on the iPhone. One project, synced through your iCloud.</h3>
+        <div class="hl-pair">
+          <div class="hl-device mac"><video muted playsinline preload="none" poster="media/posters/layer-tree-draw-order.webp" src="media/layer-tree-draw-order.mp4" data-desktop="layer-tree-draw-order" data-phone="layer-tree-draw-order-iphone"></video><img class="hl-frame" src="Images/frames/macbook.png" width="2110" height="1289" alt=""></div>
+          <div class="hl-device iphone"><img class="hl-screen" src="media/posters/layer-tree-draw-order-iphone.webp" alt=""><img class="hl-frame" src="Images/frames/iphone.png" width="654" height="1355" alt=""></div>
         </div>
       </article>
-      <article class="hl-card">
-        <h3>Measure an area before you save anything.</h3>
-        <div class="hl-device iphone">
-          <video muted playsinline preload="none" poster="media/posters/getting-started-draw-and-measure-iphone.webp" src="media/getting-started-draw-and-measure-iphone.mp4" data-mac="getting-started-draw-and-measure" data-iphone="getting-started-draw-and-measure-iphone"></video>
-          <img class="hl-frame" src="Images/frames/iphone.png" width="654" height="1355" alt="">
-        </div>
+      <article class="hl-card hl-type-device">
+        <h3>Past the signal, everything still works. Record the track as you walk.</h3>
+        <div class="hl-device iphone"><video muted playsinline preload="none" poster="media/posters/tile-layers-using-offline-tiles-iphone.webp" src="media/tile-layers-using-offline-tiles-iphone.mp4" data-desktop="tile-layers-using-offline-tiles-iphone" data-phone="tile-layers-using-offline-tiles-iphone"></video><img class="hl-frame" src="Images/frames/iphone.png" width="654" height="1355" alt=""></div>
       </article>
-      <article class="hl-card">
-        <h3>Drag a point onto the trail, or add one between two.</h3>
-        <div class="hl-device mac">
-          <video muted playsinline preload="none" poster="media/posters/points-lines-polygons-edit-vertices.webp" src="media/points-lines-polygons-edit-vertices.mp4" data-mac="points-lines-polygons-edit-vertices" data-iphone="points-lines-polygons-edit-vertices-iphone"></video>
-          <img class="hl-frame" src="Images/frames/macbook.png" width="2110" height="1289" alt="">
-        </div>
-      </article>
-      <article class="hl-card">
-        <h3>Drag a folder and the map redraws in that order.</h3>
-        <div class="hl-device iphone">
-          <video muted playsinline preload="none" poster="media/posters/layer-tree-draw-order-iphone.webp" src="media/layer-tree-draw-order-iphone.mp4" data-mac="layer-tree-draw-order" data-iphone="layer-tree-draw-order-iphone"></video>
-          <img class="hl-frame" src="Images/frames/iphone.png" width="654" height="1355" alt="">
-        </div>
-      </article>
-      <article class="hl-card">
-        <h3>Download the tiles for an area and take them with you.</h3>
-        <div class="hl-device mac">
-          <video muted playsinline preload="none" poster="media/posters/tile-layers-using-offline-tiles.webp" src="media/tile-layers-using-offline-tiles.mp4" data-mac="tile-layers-using-offline-tiles" data-iphone="tile-layers-using-offline-tiles-iphone"></video>
-          <img class="hl-frame" src="Images/frames/macbook.png" width="2110" height="1289" alt="">
-        </div>
-      </article>
-      <article class="hl-card">
-        <h3>Type the stops and the roads fill in between them.</h3>
-        <div class="hl-device iphone">
-          <video muted playsinline preload="none" poster="media/posters/routes-adding-stops-iphone.webp" src="media/routes-adding-stops-iphone.mp4" data-mac="routes-adding-stops" data-iphone="routes-adding-stops-iphone"></video>
-          <img class="hl-frame" src="Images/frames/iphone.png" width="654" height="1355" alt="">
-        </div>
-      </article>
-      <article class="hl-card">
-        <h3>Move along the profile and the marker follows on the map.</h3>
-        <div class="hl-device mac">
-          <video muted playsinline preload="none" poster="media/posters/elevation-profile-hover.webp" src="media/elevation-profile-hover.mp4" data-mac="elevation-profile-hover" data-iphone="elevation-profile-select-iphone"></video>
-          <img class="hl-frame" src="Images/frames/macbook.png" width="2110" height="1289" alt="">
-        </div>
-      </article>
-      <article class="hl-card">
-        <h3>Switch the Apple map under your layers, or turn it off.</h3>
-        <div class="hl-device iphone">
-          <video muted playsinline preload="none" poster="media/posters/basemaps-apple-maps-switch-iphone.webp" src="media/basemaps-apple-maps-switch-iphone.mp4" data-mac="basemaps-apple-maps-switch" data-iphone="basemaps-apple-maps-switch-iphone"></video>
-          <img class="hl-frame" src="Images/frames/iphone.png" width="654" height="1355" alt="">
-        </div>
+      <article class="hl-card hl-type-photo">
+        <img class="hl-full" src="Images/alpenglow.jpg" alt="" loading="lazy"><span class="hl-scrim"></span>
+        <h3>Made for the field, by someone who works there.</h3>
       </article>
     </div>
   </div>
   <div class="hl-controls">
-    <div class="hl-dots" role="tablist" aria-label="Films"></div>
+    <div class="hl-dots" role="tablist" aria-label="Highlights"></div>
     <button type="button" class="hl-pause" aria-label="Pause" aria-pressed="false"><span class="ico-pause"></span><span class="ico-play"></span></button>
   </div>
 </section>
@@ -398,54 +377,75 @@ navState();
   dlg.addEventListener('close', function () { video.pause(); video.removeAttribute('src'); video.load(); document.documentElement.classList.remove('clip-open'); });
 })();
 
-/* See it work. One card at a time with its neighbours peeking in; the film on the
-   card's device plays while the section is in view and the dot under it fills.
-   When a film ends the next card comes. On a phone every card shows its iPhone
-   recording in the iPhone frame. */
+/* See it work. One card at a time with its neighbours peeking in. A card with a
+   film plays it, muted, while the band is in view, and the dot under it fills;
+   a card without one holds for a few seconds. The end of either brings the next
+   card. On a phone a device card shows its iPhone recording in the iPhone frame. */
 (function () {
   var sec = document.getElementById('see-it-work');
   if (!sec) return;
   var wrap = sec.querySelector('.hl-viewport'), track = sec.querySelector('.hl-track');
   var cards = [].slice.call(track.children), dotsWrap = sec.querySelector('.hl-dots'), pauseBtn = sec.querySelector('.hl-pause');
   var phone = matchMedia('(max-width: 640px)').matches, cur = 0, userPaused = false, inView = false;
+  var HOLD = 7000, timer = null, timerLeft = HOLD, active = null;
+  function shownVideo(card) {
+    var vs = card.querySelectorAll('video');
+    for (var i = 0; i < vs.length; i++) if (vs[i].offsetParent !== null) return vs[i];
+    return null;
+  }
   cards.forEach(function (card, i) {
-    var v = card.querySelector('video'), dev = card.querySelector('.hl-device');
-    if (phone) {
-      dev.className = 'hl-device iphone';
-      var f = card.querySelector('.hl-frame'); f.src = 'Images/frames/iphone.png'; f.width = 654; f.height = 1355;
-    }
-    var n = v.getAttribute(phone ? 'data-iphone' : (dev.classList.contains('mac') ? 'data-mac' : 'data-iphone'));
-    v.poster = 'media/posters/' + n + '.webp'; v.src = 'media/' + n + '.mp4';
+    [].forEach.call(card.querySelectorAll('video'), function (v) {
+      var n = v.getAttribute(phone ? 'data-phone' : 'data-desktop');
+      if (n) { v.poster = 'media/posters/' + n + '.webp'; v.src = 'media/' + n + '.mp4'; }
+      v.addEventListener('timeupdate', function () { if (v === active && v.duration) setFill(v.currentTime / v.duration); });
+      v.addEventListener('ended', function () { if (v === active && !userPaused) go(cur + 1); });
+    });
+    if (phone) [].forEach.call(card.querySelectorAll('.hl-device.mac'), function (d) {
+      if (d.parentNode.classList.contains('hl-pair')) return;
+      d.className = 'hl-device iphone';
+      var f = d.querySelector('.hl-frame'); f.src = 'Images/frames/iphone.png'; f.width = 654; f.height = 1355;
+    });
     var d = document.createElement('button'); d.type = 'button'; d.className = 'hl-dot'; d.setAttribute('role', 'tab');
-    d.setAttribute('aria-label', 'Film ' + (i + 1) + ' of ' + cards.length); d.innerHTML = '<span class="fill"></span>';
+    d.setAttribute('aria-label', 'Highlight ' + (i + 1) + ' of ' + cards.length); d.innerHTML = '<span class="fill"></span>';
     d.addEventListener('click', function () { go(i); }); dotsWrap.appendChild(d);
     card.addEventListener('click', function () { if (i !== cur) go(i); });
-    v.addEventListener('timeupdate', function () { if (i === cur && v.duration) dots[i].firstChild.style.width = (v.currentTime / v.duration * 100) + '%'; });
-    v.addEventListener('ended', function () { if (i === cur && !userPaused) go(cur + 1); });
   });
   var dots = dotsWrap.children;
+  function setFill(p) { dots[cur].firstChild.style.width = (Math.max(0, Math.min(1, p)) * 100) + '%'; }
+  function stopTimer() { if (timer) cancelAnimationFrame(timer); timer = null; }
+  function runTimer() {
+    stopTimer();
+    var t0 = performance.now() - (HOLD - timerLeft);
+    function tick(now) {
+      var el = now - t0; timerLeft = Math.max(0, HOLD - el); setFill(el / HOLD);
+      if (el >= HOLD) { timer = null; if (!userPaused) go(cur + 1); return; }
+      timer = requestAnimationFrame(tick);
+    }
+    timer = requestAnimationFrame(tick);
+  }
+  function start() {
+    if (!inView || userPaused) return;
+    if (active) { var p = active.play(); if (p && p.catch) p.catch(function () {}); } else runTimer();
+  }
+  function stop() { if (active) active.pause(); stopTimer(); }
   function layout() {
     var cw = cards[0].offsetWidth, gap = parseFloat(getComputedStyle(track).columnGap) || 0;
     track.style.transform = 'translateX(' + (-(cur * (cw + gap) - (wrap.offsetWidth - cw) / 2)) + 'px)';
   }
-  function playCur() {
-    var v = cards[cur].querySelector('video');
-    if (!inView || userPaused) return;
-    var p = v.play(); if (p && p.catch) p.catch(function () {});
-  }
   function go(i) {
-    var old = cards[cur].querySelector('video'); old.pause(); old.currentTime = 0;
-    dots[cur].firstChild.style.width = '0'; cards[cur].classList.remove('active'); dots[cur].setAttribute('aria-selected', 'false');
+    stop(); if (active) active.currentTime = 0; setFill(0);
+    cards[cur].classList.remove('active'); dots[cur].setAttribute('aria-selected', 'false');
     cur = (i + cards.length) % cards.length;
     cards[cur].classList.add('active'); dots[cur].setAttribute('aria-selected', 'true');
-    cards[(cur + 1) % cards.length].querySelector('video').preload = 'auto';
-    layout(); playCur();
+    active = shownVideo(cards[cur]); timerLeft = HOLD;
+    var nv = shownVideo(cards[(cur + 1) % cards.length]); if (nv) nv.preload = 'auto';
+    layout(); start();
   }
   pauseBtn.addEventListener('click', function () {
     userPaused = !userPaused;
     pauseBtn.setAttribute('aria-pressed', userPaused ? 'true' : 'false'); pauseBtn.setAttribute('aria-label', userPaused ? 'Play' : 'Pause');
     pauseBtn.classList.toggle('paused', userPaused);
-    if (userPaused) cards[cur].querySelector('video').pause(); else playCur();
+    if (userPaused) stop(); else start();
   });
   var sx = 0, sy = 0;
   wrap.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, { passive: true });
@@ -458,16 +458,14 @@ navState();
     if (r.top < innerHeight && r.bottom > 0) { if (e.key === 'ArrowLeft') go(cur - 1); if (e.key === 'ArrowRight') go(cur + 1); }
   });
   if ('IntersectionObserver' in window) {
-    new IntersectionObserver(function (es) {
-      inView = es[0].isIntersecting;
-      if (inView) playCur(); else cards[cur].querySelector('video').pause();
-    }, { threshold: 0.3 }).observe(sec);
+    new IntersectionObserver(function (es) { inView = es[0].isIntersecting; if (inView) start(); else stop(); }, { threshold: 0.3 }).observe(sec);
   } else { inView = true; }
-  dots[0].setAttribute('aria-selected', 'true'); cards[0].querySelector('video').preload = 'auto';
+  active = shownVideo(cards[0]); if (active) active.preload = 'auto';
+  dots[0].setAttribute('aria-selected', 'true');
   layout(); addEventListener('resize', layout); addEventListener('load', layout);
   if ('ResizeObserver' in window) { var ro = new ResizeObserver(layout); ro.observe(wrap); ro.observe(cards[0]); }
   setTimeout(layout, 400);
-  playCur();
+  start();
 })();
 </script>
 
