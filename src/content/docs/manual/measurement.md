@@ -4,7 +4,7 @@ description: "What the figures on the tool card are, which units they use, and h
 ---
 Drawing and measuring are one tool. :ui[Add Line]{icon=add-line}, :ui[Add Polygon]{icon=add-polygon}, :ui[Add Circle]{icon=add-circle} and :ui[Add Route] show their figures on the tool card while you draw, and saving is optional: cancelling closes the tool without adding anything to the project. Placing and moving vertices is in [Moving, adding and deleting vertices](/manual/points-lines-polygons/#moving-adding-and-deleting-vertices).
 
-The line, polygon and circle tools need an open project even when you only measure; a [route](/manual/routes/) started from a card does not. Drawing and measuring are part of the [full app](/manual/your-topokit/#what-asks-you-to-unlock).
+The line, polygon and circle tools need an open project even when you only measure; a [route](/manual/routes/) started with **Route here** (**Route to Here** on Mac) on a card does not. Drawing and measuring are part of the [full app](/manual/your-topokit/#what-asks-you-to-unlock).
 
 ## Live measurements
 
@@ -12,11 +12,11 @@ Figures appear once the shape has enough points: two for a line or a route, thre
 
 ::::platforms
 :::ios
-<video src="/media/getting-started-draw-and-measure-iphone.mp4" autoplay loop muted playsinline aria-label="Drawing a polygon round Inland Lake on iPhone while the tool card updates Area, Perimeter and Points with each corner, and the segment lengths appear along the sides"></video>
+<video src="/media/getting-started-draw-and-measure-iphone.mp4" autoplay loop muted playsinline aria-label="Drawing a polygon round Inland Lake on iPhone: each tap adds a corner and a length appears along each side; the tool card counts the points it still needs until the third corner, then updates Area, Perimeter and Points with each corner; a tap on Area makes the card read Copied"></video>
 :::
 
 :::mac
-<video src="/media/getting-started-draw-and-measure.mp4" autoplay loop muted playsinline aria-label="Drawing a polygon round Inland Lake on a Mac: each click adds a corner, a length appears along each side, and the card's Area, Perimeter and Points update as the shape grows"></video>
+<video src="/media/getting-started-draw-and-measure.mp4" autoplay loop muted playsinline aria-label="Drawing a polygon round Inland Lake on a Mac: each click adds a corner and a length appears along each side; the card counts the points it still needs until the third corner, then its Area, Perimeter and Points update as the shape grows; a corner is dragged, and Save opens the New Polygon sheet"></video>
 :::
 ::::
 
@@ -30,7 +30,7 @@ Until the circle is locked, dragging its centre moves the centre alone and chang
 
 ::::platforms
 :::ios
-![A circle being drawn on iPhone with the lock on: its centre on Tin Hat Hut and its edge on Elk Lake Hut, the dashed ring round the huts, and the card reading Area 257.8 km², Radius 9.06 km with a lock, and Circumference 56.91 km, with the lock button filled](../../../assets/manual/measurement-circles-and-the-radius-lock-iphone.png)
+![A circle being drawn on iPhone with the lock on: its centre on Tin Hat Hut and its edge on Elk Lake Hut, the dashed ring round the huts, your position's orange dot on the trail between them, and the card reading Area 257.8 km², Radius 9.06 km with a lock, and Circumference 56.91 km, with the lock button filled](../../../assets/manual/measurement-circles-and-the-radius-lock-iphone.png)
 :::
 
 :::mac
@@ -58,7 +58,7 @@ While measuring, the unit after a figure is a menu offering metric and imperial 
 :::
 ::::
 
-Every other distance and area TopoKit shows follows the **Units** picker alone and picks its scale by size: m below 1,000 m, then km; ft below 1,000 ft, then mi; m², ha and km², or ft², acres and mi². That covers a route's distance, the **Edit Vertices on Map** card, the elevation profile, a saved feature's card and the segment lengths on the map.
+A route's distance on its tool card, the figure on the **Edit Vertices on Map** card, the distances on the elevation profile, a saved feature's **Length**, **Area** and **Perimeter** on its card, and the segment lengths on the map follow the **Units** picker alone and pick their scale by size: m below 1,000 m, then km; ft below 1,000 ft, then mi; m², ha and km², or ft², acres and mi².
 
 ## Bearing
 
@@ -78,7 +78,7 @@ A line opens in True North unless **Settings → Units & Coordinates → Bearing
 
 ## Segment lengths
 
-While you draw a line or polygon, and while you edit a saved one with **Edit Vertices on Map**, each segment shows its length on the map, a polygon's closing side included. A label appears only where its text fits inside the segment on screen, so zooming in shows more of them; where two would overlap, the longer segment keeps its label. Circles and routes have none: a route's would measure the straight line between two stops, not the road.
+While you draw a line or polygon, and while you edit a saved one with **Edit Vertices on Map**, each segment shows its length on the map, a polygon's closing side included. A label appears only where its text fits inside the segment on screen, so zooming in shows more of them; where two would overlap, the longer segment keeps its label. The circle and route tools show none: a route's would measure the straight line between two stops, not the road.
 
 **Settings → Units & Coordinates → Show Segment Lengths** turns them off; the faint dots between points stay.
 
@@ -88,7 +88,7 @@ Each figure on the card has its own earth model: lengths, perimeters and radii a
 
 ### Distance
 
-Every distance TopoKit reports, a track's and an elevation profile's included, follows the curvature of the Earth, and a line's length is the chain of its segment distances summed point to point. Altitude never enters a distance, so a line up a steep slope reads its map distance, shorter than the distance walked.
+Every distance TopoKit measures on your own data, a track's and an elevation profile's included, follows the curvature of the Earth, except a circle's circumference, which is 2πr of its radius, and a line's length is the chain of its segment distances summed point to point. Altitude never enters a distance, so a line up a steep slope reads its map distance, shorter than the distance walked.
 
 The distance function is Apple's Core Location ([`CLLocation.distance(from:)`](https://developer.apple.com/documentation/corelocation/cllocation/distance%28from:%29)); Apple publishes neither its algorithm nor an error bound.
 
