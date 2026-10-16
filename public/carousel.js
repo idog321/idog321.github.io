@@ -29,6 +29,7 @@
     current = (index + slides.length) % slides.length;
     slides[current].classList.add('active');
     dots[current].classList.add('active');
+    document.querySelector('.carousel-section').dispatchEvent(new Event('carouselchange'));
   }
 
   prevBtn.addEventListener('click', () => goTo(current - 1));
