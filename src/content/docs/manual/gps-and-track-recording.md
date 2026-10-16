@@ -33,9 +33,9 @@ On Mac, the map marks your position with the system's blue location dot. TopoKit
 :::ios
 ## The GPS tab
 
-![The GPS tab on iPhone at rest on the trail: the coordinate, the H and V accuracy pills in yellow at 9 m and 8 m, the compass reading 349° with True N chosen, the Speed, Altitude, Course, Sunrise and Sunset slots, and Record Track](../../../assets/manual/gps-and-track-recording-the-gps-tab-iphone.png)
+![The GPS tab on iPhone at rest: the coordinate, the H and V accuracy figures at 9 m and 8 m, each after a yellow dot, the compass reading 349° with True N chosen, the Speed, Altitude, Course, Sunrise and Sunset slots, and Record Track](../../../assets/manual/gps-and-track-recording-the-gps-tab-iphone.png)
 
-The top of the tab holds latitude and longitude, or a single UTM line, in the format set under [Settings → Units & Coordinates](/manual/settings/#units--coordinates). The **H** and **V** pills give horizontal and vertical accuracy, green to 5 m, yellow to 15 m, orange to 50 m and red beyond. A grey dot and `--` mean iOS is not reporting that figure, most often vertical accuracy.
+The top of the tab holds latitude and longitude, or a single UTM line, in the format set under [Settings → Units & Coordinates](/manual/settings/#units--coordinates). **H** and **V** give horizontal and vertical accuracy, each after a dot that is green to 5 m, yellow to 15 m, orange to 50 m and red beyond. A grey dot and `--` mean iOS is not reporting that figure, most often vertical accuracy.
 
 ### The compass
 
@@ -51,7 +51,7 @@ Tap a slot's label to choose its reading from nine.
 - **Mag Declination**: the declination **Mag N** subtracts from a true bearing, read from the phone's compass and shown in degrees with **E** or **W**.
 - **Sunrise** and **Sunset**: worked out on the phone from your position and the date, shown in the phone's time zone rather than the local one at your position; "N/A" in polar day or night.
 
-Tapping a coordinate, an accuracy pill, the compass or a stat's value copies it: a coordinate in the format shown, a stat with its unit, the compass heading from whichever north is set.
+Tapping a coordinate, an accuracy figure, the compass or a stat's value copies it: a coordinate in the format shown, a stat with its unit, the compass heading from whichever north is set.
 
 ## Recording a track
 
@@ -60,11 +60,11 @@ Tapping a coordinate, an accuracy pill, the compass or a stat's value copies it:
 3. Tap the pause button for a rest break, and again to resume.
 4. Tap **Stop Recording** when the track is finished.
 
-![The GPS tab mid-recording on iPhone: the tab red, the compass reading the direction of travel, the trash, pause and Stop Recording buttons with Balanced under them, the Speed, Time and Elevation cards with their figures, and the live chart drawing the descent](../../../assets/manual/gps-and-track-recording-recording-a-track-iphone.png)
+![The GPS tab mid-recording on iPhone, scrolled past the coordinate: the tab red, the compass and the Course slot both at 184°, the trash, pause and Stop Recording buttons with Balanced under them, the Speed, Time and Elevation cards with their figures, and the live chart drawing the descent](../../../assets/manual/gps-and-track-recording-recording-a-track-iphone.png)
 
 A track records into an open project; with none open, **Record Track** asks you to open or create one from the [Projects tab](/manual/projects-and-files/#creating-a-project). Recording tracks is part of the full app ([What asks you to unlock](/manual/your-topokit/#what-asks-you-to-unlock)).
 
-While a recording runs, paused included, the line under the buttons names the profile in use, adding "· Paused" whether you paused or auto-pause did. If 60 seconds pass without a fix being accepted, a **No recent GPS fixes** banner appears; the recording continues. Dismissing this banner or **Precise Location Off** hides it for the rest of that recording only; **Location Access Revoked** cannot be dismissed.
+While a recording runs, paused included, the GPS tab is red and the line under the buttons names the profile in use, adding "· Paused" whether you paused or auto-pause did. If 60 seconds pass without a fix being accepted, a **No recent GPS fixes** banner appears; the recording continues. Dismissing this banner or **Precise Location Off** hides it for the rest of that recording only; **Location Access Revoked** cannot be dismissed.
 
 Every resume starts a new segment in the saved track, as does any gap longer than 60 seconds between accepted fixes, so the map draws no line across the part you did not record.
 
@@ -86,15 +86,15 @@ To keep the screen on from **Record Track** until the track is saved or deleted,
 
 TopoKit saves a snapshot of the track every 30 seconds or 100 metres, whichever comes first, and whenever you pause or leave the app. If iOS ends TopoKit, you force-quit it, it crashes or the battery dies, the next launch raises a **Recover Track?** alert once your last project has opened.
 
-**Recover** adds the track to the open project, or to a new project named like "Recovered Track 2026-10-08". **Discard** deletes it. **Not Now** leaves it for the next launch. One recording is offered per launch, newest first. No alert appears for a track already saved into the open project before TopoKit ended, for a recording whose last point is more than 30 days old, or for a recovery file TopoKit cannot read.
+**Recover** adds the track to the open project, or to a new project named like "Recovered Track 2026-10-08". **Discard** deletes it. **Not Now** leaves it for the next launch. One recording is offered per launch, newest first. No alert appears for a track already saved into the open project before TopoKit ended, for a recording whose last snapshot is more than 30 days old, or for a recovery file TopoKit cannot read.
 
-A recovered track is named like "Track 2026-10-08 14:30 (Recovered)" and carries `track_recovered` set to `true`. TopoKit works its statistics out again from the points, so its speeds and moving time can differ slightly from what the cards showed.
+A recovered track is named like "Track 2026-10-08 14:30 (Recovered)" and carries `track_recovered` set to `true`. TopoKit works its statistics out again from the points, so its speeds and moving time can differ from what the cards showed.
 
 ## Recording profiles
 
 The profile set at **Settings → GPS & Recording → Recording Profile** ([GPS & Recording](/manual/settings/#gps--recording)) is read when you tap **Record Track**, so a change takes effect on the next recording.
 
-![The GPS & Recording page in Settings on iPhone: the four recording profiles, Strict filter, Balanced, Permissive and Record All Fixes, each with a line describing it, Balanced ticked, and the Auto-Pause When Stationary switch](../../../assets/manual/gps-and-track-recording-recording-profiles-iphone.png)
+![The GPS and Recording page in Settings on iPhone: the four recording profiles, Strict filter, Balanced, Permissive and Record All Fixes, each with a line describing it, Balanced ticked, and the Auto-Pause When Stationary switch, off](../../../assets/manual/gps-and-track-recording-recording-profiles-iphone.png)
 
 | Profile | Distance filter | Accuracy threshold | Jump threshold | Max velocity | Desired accuracy |
 | --- | --- | --- | --- | --- | --- |
@@ -109,7 +109,7 @@ The profile set at **Settings → GPS & Recording → Recording Profile** ([GPS 
 
 With **Settings → GPS & Recording → Auto-Pause When Stationary** on, a recording pauses itself once the reported speed stays below 0.5 m/s for 30 seconds, and resumes when you move at 1.0 m/s or more.
 
-Auto-pause reads the speed each fix reports, not the change in position, and is judged before the distance filter, so standing still is noticed even though those fixes are not recorded.
+Auto-pause reads the speed each fix reports, not the change in position, and is judged before a fix is dropped for being too close to the last point, so those fixes still count toward a pause.
 
 ## How fixes are filtered
 
@@ -124,11 +124,11 @@ Rejections by checks 1, 2 and 4 are counted in the Time card's **Rejected** row,
 
 ## Trip statistics
 
-Three cards and a chart appear when a recording starts and stay through pauses; once the track is saved or deleted they go, and the figures remain only in the saved track's card.
+Three cards and a chart appear when a recording starts and stay through pauses; once the track is saved or deleted they go. A saved track keeps its statistics in its properties ([What a saved track carries](#what-a-saved-track-carries)), and its card shows **Time**, **Moving**, **Gain**, **Loss** and **Avg speed** from them.
 
 - **Speed**: the average is distance over moving time, so a rest does not drag it down.
 - **Time**: moving time counts above 0.3 m/s, a lower bar than auto-pause's 0.5 m/s, and the total leaves out every second spent paused.
-- **Elevation**: every figure comes from the GPS altitude, and gain and loss count a change only once it reaches 2 m, so receiver jitter does not add climb to a flat walk.
+- **Elevation**: every figure comes from the GPS altitude, and gain and loss count a change only once it reaches 2 m, so receiver jitter smaller than that does not add climb to a flat walk.
 :::
 
 ## What a saved track carries
