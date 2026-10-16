@@ -10,7 +10,7 @@ Everything you add draws over Apple Maps, which the **Apple Maps** button at the
 
 - **Compass**: appears when the map is rotated, and a tap or click turns the map back to north, keeping any tilt. **Settings → Map** can keep it on screen or lock north up ([Map](/manual/settings/#map)).
 - **Zoom**: :ios[On iPhone, there is no zoom button.] :mac[On Mac, a + and − pair is at the top right, with **Zoom to Project Extent** below it, which frames every visible feature and raster in the project; tile layers and basemaps are not counted.]
-- **Location button**: :ios[On iPhone, the first tap follows you, the second also turns the map to your heading, and the third stops following.] :mac[On Mac, each click centres the map on you once; the Mac map never follows you.]
+- **Location button**: :ios[On iPhone, the first tap follows you, the second also turns the map to your heading, and the third stops following. The map marks your position with an orange dot ([The location dot](/manual/gps-and-track-recording/#the-location-dot)).] :mac[On Mac, each click centres the map on you once; the Mac map never follows you.]
 - **Scale bar**: under the location button, in the units set in **Settings → Units & Coordinates → Units**.
 - **Search bar**: finds your layers, basemap names, places and typed coordinates. :ios[On iPhone, it is at the top of the **Layers** tab.] :mac[On Mac, it is in the bar above the map, and `Cmd-F` puts the cursor in it.] See [Search](/manual/search-and-identify/#search).
 - **Tool card**: appears at the bottom while a tool runs and holds its live figures, a ✕ at the left that cancels, and **Save** at the right, with **Undo** between them on the line, polygon and circle cards and **Redo** beside it once a step has been undone. The Add Point card has only the ✕ and, once location access is granted, the :ui[location]{icon=location} button, because a placed point opens its editor at once. Tapping a figure copies it, and tapping a unit opens a menu of units ([Units](/manual/measurement/#units)).
@@ -44,7 +44,7 @@ The sidebar holds the same eight buttons on iPhone and Mac.
 :::ios
 ## iPhone layout
 
-TopoKit on iPhone runs in portrait only. The map fills the screen, and the sheet stays at one of three heights: a strip showing only the tab bar, half the screen, or nearly full. Tapping another tab raises the strip to half height, and tapping the selected tab raises the sheet to nearly full, and again lowers it to half. Choosing a search result, or **Zoom to** on a row, lowers the sheet to the strip so the place is in view. Pulling the sheet down to the strip keeps what is open in it, so an editor in the Layers tab keeps its unsaved changes. Near full height the location button, scale bar, compass and credit line fade out.
+TopoKit on iPhone runs in portrait only. The map fills the screen, and the sheet stays at one of three heights: a strip showing only the tab bar, half the screen, or nearly full. Tapping another tab raises the strip to half height, and tapping the selected tab raises the sheet to nearly full, and again lowers it to half. Choosing a search result, or **Zoom to** on a row, lowers the sheet to the strip so the place is in view. Pulling the sheet down to the strip keeps what is open in it, so an editor in the Layers tab keeps its unsaved changes. Near full height the location button, scale bar, compass and credit line fade out. The tool sidebar fades out once the sheet passes a fifth of the screen and is gone at 40%, so it shows only beside the strip.
 
 ![The sheet at its three heights on iPhone, side by side: the strip showing only the tab bar, half the screen, and nearly full](../../../assets/manual/interface-sheet-heights-iphone.png)
 
@@ -60,8 +60,8 @@ Beyond pan, pinch, two-finger twist and a two-finger drag up or down, which tilt
 
 - **Tap a feature** to open its card ([What a tap finds](/manual/search-and-identify/#what-a-tap-finds)).
 - **Touch and hold a spot** for half a second to open a card for the ground there; it does nothing while a tool is running ([Holding a spot and the place card](/manual/search-and-identify/#holding-a-spot-and-the-place-card)).
-- **Swipe toward the screen edge** from the map just beside the sidebar to hide it. The chevron tab left at the edge brings it back ([Toolbar & Haptics](/manual/settings/#toolbar--haptics)).
 - **Slide a finger up or down the sidebar** to see each button's name as the finger passes it. Lifting the finger presses the button under it.
+- **Swipe toward the screen edge** from the map just beside the sidebar to hide it. The chevron tab left at the edge brings it back ([Toolbar & Haptics](/manual/settings/#toolbar--haptics)).
 
 <video src="/media/interface-sidebar-hide-and-show.mp4" autoplay loop muted playsinline aria-label="The tool sidebar on iPhone: a finger swipes from the map beside it toward the screen edge and the sidebar slides off, leaving a small chevron tab at the right edge, and a tap on the tab brings it back"></video>
 :::
@@ -83,41 +83,41 @@ The tool sidebar is always on the left of the map and moves up above the elevati
 
 - **Click a feature** to open its card in a popover ([What a tap finds](/manual/search-and-identify/#what-a-tap-finds)).
 - **Right-click the map**, or Control-click it, for a menu of actions at that spot ([Right-clicking the map](/manual/search-and-identify/#right-clicking-the-map)).
-- **Right-click a row** in the Layers tab for its menu ([The Layer menu](/manual/layer-tree/#the-layer-menu)).
+- **Right-click a row** in the Layers tab for its menu ([The Layers tab](/manual/layer-tree/)).
 - **Press `Esc`** to cancel the running tool, including Edit Vertices on Map and the area pickers of Download Map Tiles…, Download Elevation… and Basemaps. With points already placed or moved, it first asks in an **Unsaved Work** alert, where `Return` keeps the work and **Discard** takes a click. **Tools → Cancel Tool** and the card's ✕ discard without asking, and starting another tool with points placed asks the same question as `Esc`.
 
 ### The menu bar
 
 Most commands grey out while the Settings window is in front, or while a dialog, the introduction or the basemap setup panel is open over the map. **Reset to North** also greys while you type in a field, where `Cmd-Shift-Up` selects text instead.
 
+![The View menu on Mac: Hide Panel, Show Projects and Show Layers, Apple Maps, Zoom In, Zoom Out and Zoom to Project, Show My Location, Reset to North, and Exit Full Screen](../../../assets/manual/interface-view-menu-mac.png)
+
 | Menu | Commands and keys |
 |---|---|
-| **TopoKit** | **Settings…** `Cmd-,`, in a window of its own ([The Mac Settings window](/manual/settings/#the-mac-settings-window)); **Unlock TopoKit…** and **Restore Purchases** ([Your TopoKit](/manual/your-topokit/)); **Quit** `Cmd-Q`. |
+| **TopoKit** | **Settings…** `Cmd-,`, in a window of its own ([The Mac Settings window](/manual/settings/#the-mac-settings-window)); **Unlock TopoKit…** and **Restore Purchases** ([Your TopoKit](/manual/your-topokit/)); **Quit TopoKit** `Cmd-Q`. |
 | **File** | **New Project…** `Cmd-N`, **Open Project…** `Cmd-O`, **Open Recent**, **Close Project** `Cmd-W`, **Save** `Cmd-S`, and the open project's commands ([Projects, saving and iCloud](/manual/projects-and-files/)). |
 | **Edit** | **Undo** `Cmd-Z` and **Redo** `Cmd-Shift-Z`, named for the step; **Copy**, **Paste** and **Duplicate** `Cmd-D` act on layers while the Layers list has the keyboard; **Search** `Cmd-F`. |
 | **View** | **Hide Panel** or **Show Panel** `Cmd-Ctrl-S`, **Show Projects**, **Show Layers**, **Apple Maps**, **Zoom In** `Cmd-+`, **Zoom Out** `Cmd-−`, **Zoom to Project** `Cmd-0`, **Show My Location** `Cmd-L`, **Reset to North** `Cmd-Shift-Up`. |
-| **Layer** | The **Add Data** rows and **Build Basemap…**, **New Folder** `Cmd-Shift-N`, **New Folder with Selection** `Cmd-Ctrl-N`, **Edit Layer…** `Cmd-I`, and a row's right-click commands, acting on the rows selected in the Layers tab. |
+| **Layer** | The **Add Data** rows and **Build Basemap…**, **New Folder** `Cmd-Shift-N`, **New Folder with Selection** `Cmd-Ctrl-N`, **Edit Layer…** `Cmd-I`, **Export to File…** `Cmd-E`, and a row's other right-click commands apart from **New Subfolder**, **Copy**, **Paste**, **Duplicate**, **Download for This Device** and **Delete**, acting on the rows selected in the Layers tab. |
 | **Tools** | **Add Point** `Cmd-1`, **Add Line** `Cmd-2`, **Add Polygon** `Cmd-3`, **Add Circle** `Cmd-4`, **Add Route** `Cmd-5`, **Cancel Tool**. |
 | **Help** | **TopoKit Help** `Cmd-?` opens this manual and **Getting Started** its first chapter; **Replay Introduction** ([The first launch](/manual/getting-started/#the-first-launch)) and **What's New**; then the feedback, rating and legal items. |
 
 - `Cmd-W` saves the project and closes it, leaving the window open; if the save fails, the project stays open.
-- Closing the map window quits TopoKit, as `Cmd-Q` does. Both save the open project first, and TopoKit quits after 10 seconds whether or not the save has finished.
-
-![The View menu on Mac: Hide Panel, Show Projects and Show Layers, Apple Maps, Zoom In, Zoom Out and Zoom to Project, Show My Location, Reset to North, and Exit Full Screen](../../../assets/manual/interface-view-menu-mac.png)
+- Closing the map window quits TopoKit, as `Cmd-Q` does. Both save the open project first; if the save has not finished after 10 seconds, TopoKit quits anyway.
 :::
 
 ## Undo and redo
 
-TopoKit keeps one undo history for the open project. Each step has a name, which the Undo control and VoiceOver read, such as **Undo Delete Camp** or **Undo Hide 3 Layers**.
+TopoKit keeps one undo history for the open project. Each step has a name, which VoiceOver reads on the Undo control, such as **Undo Delete Camp** or **Undo Hide 3 Layers**.
 
 On the history: every row you add, including one saved from a basemap's card, and every raster or tile layer you add; deleting, hiding and showing rows, moving them, grouping them into a new folder, renaming a folder, and applying a folder's style to the features in it.
 
-Not on the history: changes made in an editor, such as a feature's name, description, coordinates, style or photos, or a raster's or tile layer's settings and name, apart from moving the layer to another folder. Building a basemap is not a step either, and deleting one deletes its map files, so Undo cannot bring it back ([Deleting](/manual/layer-tree/#deleting)).
+Not on the history: changes made in an editor, such as a feature's name, description, coordinates, style or photos, or a raster's or tile layer's settings and name, apart from moving the feature to another folder, making a folder with **Create New Folder** and deleting the feature. Building a basemap is not a step either, and deleting one deletes its built files, so Undo cannot bring it back ([Deleting](/manual/layer-tree/#deleting)).
 
 The history has no length limit. It starts empty whenever a project is created, opened, closed or reloaded, which happens after another device changes it, after a merge and after **Restore from Backup**. Saving does not clear it.
 
 :::ios
-On iPhone, Undo is a pill at the bottom right of the **Layers** list, shown while there is a step to undo or redo, and an editor opened from the list covers it. The pill steps aside while rows are checked in **Select**. It is the only place for the project's Undo on iPhone, so a change made on the map is undone from the Layers tab.
+On iPhone, Undo is a pill at the bottom right of the **Layers** list, shown while there is a step to undo or redo, and an editor opened from the list covers it. Redo appears beside Undo once a step has been undone, and Undo dims when nothing is left to undo. The pill steps aside while rows are checked in **Select**. It is the only place for the project's Undo on iPhone, so a change made on the map is undone from the Layers tab.
 
 ![The Undo pill at the bottom right of the Layers tab in its three states: Undo alone, Undo beside Redo once a step has been undone, and Undo dimmed beside Redo when nothing is left to undo](../../../assets/manual/interface-undo-pill.png)
 :::
@@ -125,7 +125,7 @@ On iPhone, Undo is a pill at the bottom right of the **Layers** list, shown whil
 :::mac
 On Mac, **Edit → Undo** (`Cmd-Z`) and **Edit → Redo** (`Cmd-Shift-Z`) carry the step's name. While you type in a field they undo the typing, and while a point is held they wait.
 
-![The Edit menu on Mac with the step's name in the first row: Undo Hide Folder, then Redo dimmed, the clipboard commands, Duplicate and Search](../../../assets/manual/interface-edit-menu-mac.png)
+![The Edit menu on Mac with the step's name in the first row: Undo Hide Folder, then Redo dimmed, the clipboard commands, Duplicate dimmed, Search, and the system's AutoFill, Start Dictation… and Emoji and Symbols](../../../assets/manual/interface-edit-menu-mac.png)
 :::
 
 ### While a tool is open
@@ -140,13 +140,13 @@ In **Edit Vertices on Map**, each change is its own step on the project's histor
 
 When a card opens, VoiceOver moves to its name, which reads the whole card at once: the name, its kind, its folder for your own feature, then its facts, with units spoken as words ("1,819 metres"). Activating the name copies it. The coordinate, address and description copy the same way, and each copy is announced "Copied."
 
-When several things lie under one tap, the card opens as a list headed "3 points here", or "3 things here" when anything other than your own points is among them.
+When two or more of your own points share the spot under a tap, the card opens as a list headed "3 points here", or "3 things here" when anything other than your own points is among them.
 
 A cluster of pins reads "5 grouped points", and activating it zooms in on them, or lists them when they share one spot. When a tap lands on a basemap tile that is still loading, VoiceOver says "Map still loading here." and answers again when the tile arrives, with the card or "Nothing here."
 
 :ios[On iPhone, a greyed sidebar button adds "Not available without a project", and while a tool or card is open the sheet is out of VoiceOver's reach as well as out of sight.]
 
-VoiceOver announces each tool as it starts and each point added or deleted with the running count, such as "Point added. 4 points." While you draw or reshape a line or area, activating a faint dot adds its point, and a point that can be removed offers the **Delete Point** action. Basemap builds, elevation downloads and track recording announce their milestones, such as "Offline basemap ready" with the basemap's name, and the number of points a stopped track holds. An elevation profile announces its gain and loss as it loads, and how much of the line has no terrain data.
+While you draw or reshape a line or area, activating a faint dot adds its point, and a point that can be removed offers the **Delete Point** action; each is announced with the running count, such as "Point added. 4 points." :ios[On iPhone, VoiceOver also announces each sidebar tool as it starts.] Basemap builds, elevation downloads and track recording announce their milestones, such as "Offline basemap ready" with the basemap's name, and the number of points a stopped track holds. An elevation profile announces its gain and loss as it loads, and how much of the line has no terrain data.
 
 TopoKit follows the system **Reduce Motion** setting: sheets, panels, cards and folds change in one step instead of sliding or fading.
 
