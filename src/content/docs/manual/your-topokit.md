@@ -16,7 +16,7 @@ Nothing is dimmed or badged. A control that needs the full app opens the **Unloc
 - A new project from the Projects tab or, on Mac, **File → New Project…**
 - :ui[Add Point]{icon=add-point}, :ui[Add Line]{icon=add-line}, :ui[Add Polygon]{icon=add-polygon} and :ui[Add Circle]{icon=add-circle}, however they start; **Add Point** and **Save** on a card; **Edit Vertices on Map**; opening a feature's, raster's, tile layer's or basemap's editor; a folder's style sheets
 - :ui[Add Route], **Route here** on a card (**Route to Here** on Mac and in :ui[Layer options]{icon=ellipsis}), and every other way of starting a route
-- **Add Vector Layer…** and **Add Raster Layer…**, dragging a file in, and opening a file in TopoKit from another app
+- **Add Vector Layer…** and **Add Raster Layer…**, which ask once a file is picked; :mac[on Mac, dragging a file in;] and opening a file in TopoKit from another app
 - **Add Tile Layer…**, **Download Map Tiles…** and **Download for This Device**
 - **Download Elevation…**, the terrain download on a card, and **Elevation Profile**
 - Picking an area in **Basemaps** and **Build on This Device**
@@ -40,7 +40,7 @@ On the free month or Monthly, the page offers **Unlock Forever** alone. Buying i
 
 ## If you already own TopoKit
 
-Anyone who bought TopoKit before it became a free download, or got it at the 1.2 launch, owns all of it on every iPhone and Mac signed into that Apple Account, with nothing to buy or restore. TopoKit reads this from the App Store's record of when your Apple Account first got the app.
+Anyone who bought TopoKit before it became a free download, or gets it before 1 January, owns all of it on every iPhone and Mac signed into that Apple Account, with nothing to buy or restore. TopoKit reads this from the App Store's record of when your Apple Account first got the app.
 
 ## The Your TopoKit page
 
@@ -59,7 +59,7 @@ Anyone who bought TopoKit before it became a free download, or got it at the 1.2
 
 TopoKit asks the App Store what you own each time it opens and each time it comes back to the front, so a purchase from another device arrives without either control.
 
-- **Restore Purchases**: syncs your Apple Account's purchases with the App Store, which may ask you to sign in. "Nothing to restore on this Apple Account." also appears when you cancel the sign-in.
+- **Restore Purchases**: syncs your Apple Account's purchases with the App Store, which may ask you to sign in.
 - **Redeem Code**: opens Apple's code sheet. TopoKit checks what you own again when the sheet closes.
 
 :mac[On Mac, **Restore Purchases** is also in the **TopoKit** menu.]
@@ -68,7 +68,7 @@ TopoKit asks the App Store what you own each time it opens and each time it come
 
 In the last three days of the free month, a banner reads "Free period ends *date*." Its **Unlock Forever** opens the sheet offering Forever alone.
 
-When Apple cannot take a Monthly payment, the banner reads "Payment problem." Its **Update in Settings** opens **Manage Subscription**. TopoKit stays unlocked through Apple's grace period. If Apple still has no payment after it, TopoKit locks, the sheet's first button becomes **Manage Subscription**, and TopoKit unlocks again as soon as the payment goes through.
+When Apple cannot take a Monthly payment, the banner reads "Payment problem." Its **Update in Settings** opens Apple's subscription settings, as **Manage Subscription** does. TopoKit stays unlocked through Apple's grace period. If Apple still has no payment after it, TopoKit locks, the sheet's first button becomes **Manage Subscription**, and TopoKit unlocks again as soon as the payment goes through.
 
 Closing the banner hides it until TopoKit next opens.
 
@@ -107,7 +107,7 @@ It appears once on each device: when the introduction ends for someone new, and 
 ## FAQ
 
 **Can I cancel the free month without paying?**
-Yes: cancel with **Manage Subscription** before the date on the page, and Monthly never starts.
+Yes: cancel with **Manage Subscription** at least 24 hours before the free month ends, and Monthly never starts.
 
 **The sheet says "Purchases are turned off on this device." Why?**
 In-app purchases are blocked on the device, by parental controls or by whoever manages it. TopoKit shows no plans until that changes.
