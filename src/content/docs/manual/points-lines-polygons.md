@@ -8,22 +8,22 @@ Points, lines and polygons are the three geometry types a TopoKit project stores
 
 Set the point's location in one of these ways; the editor then opens on that spot.
 
-::::platforms
-:::ios
-![The Point Editor on iPhone after a tap on the map: the name field, a description, Add Photo, the Folder row, the Style row with the default pin and its Edit button, and the coordinates of the spot](../../../assets/manual/getting-started-mark-a-point-sheet-iphone.png)
-:::
-
-:::mac
-![The New Point sheet on Mac: the name field, a description, Add Photo, the Folder row with Create New Folder, the Style row with the default pin, and the coordinates of the spot, with Cancel and Create](../../../assets/manual/getting-started-mark-a-point-sheet-mac.png)
-:::
-::::
-
 - Tap :ui[Add Point]{icon=add-point}, then tap the map where the point goes.
-- Tap the :ui[location]{icon=location} button on the Add Point tool card to place the point on your GPS fix. It appears once TopoKit has location access, and only on that card.
+- Tap the :ui[location]{icon=location} button on the Add Point tool card to place the point on your GPS fix. It appears once TopoKit has location access; the line, polygon and circle cards have none.
 - Choose **Add Point** on the card of a search result, a typed coordinate, a [held spot](/manual/search-and-identify/#holding-a-spot-and-the-place-card), or a peak, hut or other mark on a basemap you built.
 - :mac[On Mac, right-click the map and choose **Add Point Here** on an empty spot, or **Add Point** on a basemap mark.]
 
-The tool closes once the point is placed; the coordinate stays editable in the editor, and nothing is saved until **Create**, which waits for a name.
+::::platforms
+:::ios
+![The Point Editor on iPhone after a tap on the map, with Cancel, and Create dimmed until the name is filled: the empty name field and description, Add Photo, the Folder row with Create New Folder, the Style row with the default pin and its Edit button, and the coordinates of the spot](../../../assets/manual/getting-started-mark-a-point-sheet-iphone.png)
+:::
+
+:::mac
+![The New Point sheet on Mac: the empty name field and description, Add Photo, the Folder row with Create New Folder, the Style row with the default pin, and the coordinates of the spot, with Cancel, and Create dimmed until the name is filled](../../../assets/manual/getting-started-mark-a-point-sheet-mac.png)
+:::
+::::
+
+The tool closes once the point is placed; the coordinate stays editable in the editor, and the point is not saved until **Create**, which waits for a name.
 
 :ios[On iPhone, a point placed from your location also stores the GPS reading in its **Attributes**: its accuracy, timestamp and original lat/lon, plus altitude, speed and course when the fix includes them. A saved point you move keeps the original lat/lon and gains **Gps Location Edited** in its Attributes; moving it back onto the reading removes it.]
 
@@ -45,7 +45,7 @@ Each map tap adds a vertex, drawn as a dot styled by **Settings → Features →
 
 Every change to the shape is a [step](/manual/interface/#while-a-tool-is-open), and **Undo** on the card takes back the newest. The line card's **Elevation profile** button charts the line ([A profile while you draw](/manual/elevation/#a-profile-while-you-draw)).
 
-The ✕ on the card discards the shape and its steps without asking. Starting another tool does the same, and also puts a line or polygon open in [Edit Vertices on Map](#reshaping-a-saved-line-or-polygon) back as it was. :ios[On iPhone, nothing asks first.] :mac[On Mac, an **Unsaved Work** alert asks first when vertices are placed or moved.]
+The ✕ on the card discards the shape and its steps without asking. :mac[On Mac, starting another tool from the tool sidebar or the **Tools** menu does the same, and also puts a line or polygon open in [Edit Vertices on Map](#reshaping-a-saved-line-or-polygon) back as it was; an **Unsaved Work** alert asks first when vertices are placed or moved.]
 
 ### Polygons
 
@@ -117,7 +117,7 @@ On iPhone, the editor saves whenever you leave it: tap **Done**, swipe the sheet
 
 ::::platforms
 :::ios
-![Edit Point on iPhone for Tin Hat Hut: the Details card with the name, a description and Add Photo, the Folder row reading Huts with Create New Folder, the Style row reading House Fill with Edit, and the Coordinates below](../../../assets/manual/points-lines-polygons-editing-a-feature-sheet-iphone.png)
+![Edit Point on iPhone for Tin Hat Hut in the sheet's Layers tab, with the back arrow and Done at the top: the Details card with the name, an empty description and Add Photo, the Folder row reading Huts with Create New Folder, the Style row reading House Fill with Edit, and the Coordinates below](../../../assets/manual/points-lines-polygons-editing-a-feature-sheet-iphone.png)
 :::
 
 :::mac
@@ -125,7 +125,7 @@ On iPhone, the editor saves whenever you leave it: tap **Done**, swipe the sheet
 :::
 ::::
 
-A style is saved when you tap **Done** in its sheet, a photo when you add or delete it, and a height when **Get Elevation** returns, without waiting for the editor to close. A point's **Elevation** section fills in on its own when the spot's elevation tile is on the device, and otherwise offers **Get Elevation**, which downloads that one tile, 25–40 MB ([Elevation at a point](/manual/elevation/#elevation-at-a-point)). Changes made in an editor are not [undo steps](/manual/interface/#undo-and-redo); moving the feature to another folder is, and so is deleting it.
+A style is saved when you tap **Done** in its sheet, a photo when you add or delete it, and a height when **Get Elevation** returns, without waiting for the editor to close. A point's **Elevation** section fills in on its own when the spot's elevation tile is on the device, and otherwise offers **Get Elevation**, which downloads that one tile, 25–40 MB ([Elevation at a point](/manual/elevation/#elevation-at-a-point)). Changes made in an editor are not [undo steps](/manual/interface/#undo-and-redo); moving the feature to another folder is, and so are making a folder with **Create New Folder** and deleting the feature.
 
 ### Coordinate entry formats
 
@@ -163,12 +163,12 @@ A photo shows an exclamation mark in place of its thumbnail, and **Photo unavail
 :::
 
 :::mac
-![The Customize Pin sheet on Mac: the Colour row with the pin's own red in the well, the swatches, the Symbol row on Recently Used with General and Nature & Outdoors, Custom icon colour, and the My Presets card holding nine saved pins with Save Current](../../../assets/manual/points-lines-polygons-styling-a-feature-sheet-mac.png)
+![The Customize Pin sheet on Mac: the Colour row with the pin's own red in the well, the swatches, the Symbol row on Recently Used with General and Nature and Outdoors, Custom icon colour, and the My Presets card holding nine saved pins with Save Current](../../../assets/manual/points-lines-polygons-styling-a-feature-sheet-mac.png)
 :::
 ::::
 
 - **Pins**: the small dot first in the **General** symbol category is the no-symbol choice, and a pin with no symbol shows a disc in a shade of its own colour. **Custom icon colour** appears only once a symbol is set. The symbol picker opens on **Recently Used**, your last eight symbols, and on **General** until you have used one.
-- **Polygons**: the first stroke swatch, marked with a link, copies the current fill colour to the stroke once, so a fill changed afterwards leaves the stroke as it was. Stroke and fill opacities both run from 0.0, so a polygon can be outline only or fill only; a line's opacity stops at 0.1. Fill opacity starts at 0.15 for polygons you draw and 0.25 for imported ones.
+- **Polygons**: the first stroke swatch, marked with a link, copies the current fill colour to the stroke once, so a fill changed afterwards leaves the stroke as it was. Stroke and fill opacities both run from 0%, so a polygon can be outline only or fill only; a line's opacity stops at 10%. Until you change the defaults, fill opacity starts at 15% for polygons you draw and 25% for imported ones.
 - **My Presets**: empty until you save a style with **Save Current**. Tapping a preset loads it into the sheet, and **Done** applies it; its context menu holds **Delete**. A preset cannot be renamed. Presets are kept on this device and do not sync, but a project opened elsewhere looks the same, because each feature's style is saved in the project.
 
 To restyle every feature of a kind in a folder at once, [style the folder](/manual/layer-tree/#styling-a-folder).
@@ -179,15 +179,15 @@ Each point's name prints under its pin, as **Settings → Features → [Pin Name
 
 ::::platforms
 :::ios
-![Four named hut pins along the trail on iPhone with Tin Hat Hut picked: its pin larger than the others, and its card at the foot of the screen with Huts, the coordinate, Elevation 1145.9 m and the distance from you](../../../assets/manual/points-lines-polygons-points-on-the-map-iphone.png)
+![Four named hut pins along the trail on iPhone with Tin Hat Hut picked: its pin larger than the others, your position's orange dot on the trail south of it, and its card at the foot of the screen with Huts, the coordinate, Elevation 1145.9 m and the distance from you](../../../assets/manual/points-lines-polygons-points-on-the-map-iphone.png)
 :::
 
 :::mac
-![The hut pins along the trail on a Mac with Confederation Hut picked: its pin larger than the others, and its card beside it with Huts, the coordinate, the distance from you and an Also here row reading Trail](../../../assets/manual/points-lines-polygons-points-on-the-map-mac.png)
+![The hut pins along the trail on a Mac with Confederation Hut picked, the Layers tab open beside the map with the Huts folder expanded: the picked pin larger than the others, and its card under it with Huts, the coordinate, the distance from you and an Also here row reading Trail](../../../assets/manual/points-lines-polygons-points-on-the-map-mac.png)
 :::
 ::::
 
-A name prints on at most two lines, cut at an ellipsis; a point with no name, or named Untitled Point, prints none. A picked pin draws at one and a half times its size, and its name prints in bold whatever it overlaps. :ios[On iPhone, names follow the system text size, up to 22 pt.]
+A name prints on at most two lines, cut at an ellipsis; a point with no name, or named Untitled Point, prints none. A [picked pin](/manual/search-and-identify/#the-card) draws at one and a half times its size, and its name prints in bold whatever it overlaps. :ios[On iPhone, names follow the system text size, up to 22 pt.]
 
 With **Point Clustering** on, the default, pins that overlap merge into one round bubble showing how many points it holds. Tapping a bubble zooms in to spread its points; when they share one spot, or the map is as close as it goes, the card lists them.
 
