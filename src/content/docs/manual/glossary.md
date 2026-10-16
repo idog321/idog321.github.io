@@ -2,7 +2,7 @@
 title: "Glossary"
 description: "Definitions of the GIS and TopoKit terms used throughout this manual."
 ---
-A chapter marks the first use of each term with a dotted underline, and hovering over it or tapping it shows the entry.
+A chapter marks the first use of each term except raster, route and track with a dotted underline, and hovering over it or tapping it shows the entry.
 
 ## The map and its layers
 
@@ -16,7 +16,7 @@ A chapter marks the first use of each term with a dotted underline, and hovering
 
 **Shaded relief (hillshade)** — shading computed from elevation and a light direction. See [Ground and relief](/manual/basemaps/#ground-and-relief).
 
-**Slope angle** — how steep the ground is, in degrees from level. A basemap's slope shading measures it across 30 m, so a short steep step reads gentler than it is, and its colours start at 27°; a spot's card measures it across about 90 m ([Height, slope and aspect at a spot](/manual/elevation/#height-slope-and-aspect-at-a-spot)). See [Ground and relief](/manual/basemaps/#ground-and-relief).
+**Slope angle** — how steep the ground is, in degrees from level. A basemap's slope shading measures it across 40 to 60 m, so a short steep step reads gentler than it is, and its colours start at 27°; a spot's card measures it across about 90 m ([Height, slope and aspect at a spot](/manual/elevation/#height-slope-and-aspect-at-a-spot)). See [Ground and relief](/manual/basemaps/#ground-and-relief).
 
 **Tile layer** — map imagery drawn as square tiles, one set per zoom level. See [Tile layers](/manual/tile-layers/).
 
@@ -34,15 +34,15 @@ A chapter marks the first use of each term with a dotted underline, and hovering
 
 **Datum** — what ties a coordinate system to the ground: which ellipsoid, and where it is pinned. Two datums can put the same latitude and longitude metres or hundreds of metres apart. See [Datum accuracy](/manual/raster-overlays/#datum-accuracy).
 
-**Ellipsoid** — the flattened sphere that models the Earth's shape. TopoKit measures lengths and areas on WGS84's; the heights it reports are above sea level, which lies tens of metres above or below the ellipsoid. See [Calculation methods](/manual/measurement/#calculation-methods).
+**Ellipsoid** — the flattened sphere that models the Earth's shape. TopoKit measures the lines and polygons in a project on WGS84's; the heights it reports are above sea level, which lies tens of metres above or below the ellipsoid. See [Calculation methods](/manual/measurement/#calculation-methods).
 
 **EPSG code** — the registry number of a coordinate reference system: `EPSG:4326` for WGS84, `EPSG:3857` for Web Mercator. See [Coordinate systems](/manual/raster-overlays/#coordinate-systems).
 
 **UTM (Universal Transverse Mercator)** — a metre-based projection in 60 zones, written as zone, easting and northing. TopoKit writes `10N 417559E 5536636N`: the letter is the hemisphere, not a latitude band, and zones are plain six-degree strips without the Norway and Svalbard exceptions. See [Coordinate formats](/manual/search-and-identify/#coordinate-formats).
 
-**Web Mercator (EPSG:3857)** — the projection web maps render in, and the one TopoKit draws in. A raster in any other projection than this or plain latitude and longitude is reprojected first. See [How reprojection works](/manual/raster-overlays/#how-reprojection-works).
+**Web Mercator (EPSG:3857)** — the projection web maps render in, and the one TopoKit draws in. A raster in any other projection than this or plain latitude and longitude (EPSG:4326, 4269 or 4258) is reprojected first. See [How reprojection works](/manual/raster-overlays/#how-reprojection-works).
 
-**WGS84 (EPSG:4326)** — the latitude and longitude datum GPS reports in. TopoKit stores every coordinate in it, converting imports and writing every export in it. See [Importing and exporting](/manual/import-and-export/).
+**WGS84 (EPSG:4326)** — the latitude and longitude datum GPS reports in. TopoKit stores every feature in it, converting vector imports and writing every vector export in it. See [Importing and exporting](/manual/import-and-export/).
 
 ## Rasters and georeferencing
 
@@ -54,7 +54,7 @@ A chapter marks the first use of each term with a dotted underline, and hovering
 
 **Raster** — data stored as a grid of pixels: an air photo, a scanned map, a hillshade. See [Raster overlays](/manual/raster-overlays/).
 
-**Reprojection** — recomputing an image's pixels from one CRS into another so it lines up with the map. It runs once per raster on each device, and the result never syncs. See [How reprojection works](/manual/raster-overlays/#how-reprojection-works).
+**Reprojection** — recomputing an image's pixels from one CRS into another so it lines up with the map. Each device reprojects a raster for itself and caches the result, which never syncs. See [How reprojection works](/manual/raster-overlays/#how-reprojection-works).
 
 **Sidecar file** — a file with an image's name carrying what the image lacks: a world file for position, a `.prj` for coordinate system. TopoKit reads them only for a TIFF, chosen in the same pick. See [Sidecar files](/manual/raster-overlays/#sidecar-files).
 
@@ -94,7 +94,7 @@ A chapter marks the first use of each term with a dotted underline, and hovering
 
 **Bearing** — the direction from one point to another, in degrees clockwise from north. A magnetic bearing subtracts the declination, which TopoKit reads from the iPhone's compass where you stand, not where the line is. See [Bearing](/manual/measurement/#bearing).
 
-**Geodesic** — measured along the curve of the Earth's surface. Every length TopoKit reports is geodesic; for area, each polygon side is a straight line between its vertices. See [Calculation methods](/manual/measurement/#calculation-methods).
+**Geodesic** — measured along the curve of the Earth's surface. Every length TopoKit measures on your own data is geodesic, except a circle's circumference, which is 2πr of its radius; for area, each polygon side is a straight line between its vertices. See [Calculation methods](/manual/measurement/#calculation-methods).
 
 **Tool card** — the card at the bottom of the map while a tool runs, holding its live figures and buttons. See [The map](/manual/interface/#the-map).
 
