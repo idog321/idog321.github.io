@@ -286,7 +286,7 @@ html.clip-open { overflow: hidden; }
 .hl-device .hl-frame { display: block; width: 100%; height: auto; position: relative; }
 .hl-device video, .hl-device .hl-screen { position: absolute; object-fit: cover; background: #000; }
 .hl-device.mac video, .hl-device.mac .hl-screen { left: 9.033%; top: 2.173%; width: 81.935%; height: 86.69%; }
-.hl-device.iphone video, .hl-device.iphone .hl-screen { left: 3.899%; top: 1.624%; width: 92.202%; height: 96.753%; }
+.hl-device.iphone video, .hl-device.iphone .hl-screen { left: 3.899%; top: 1.624%; width: 92.202%; height: 96.753%; border-radius: 17.5% / 8%; }  /* the frame is transparent past the body's rounded corners; the display's own corner radius is about 100 px of the 603 px screen */
 /* a film or a photograph filling the card, the sentence over it */
 .hl-full { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; background: #000; }
 .hl-scrim { position: absolute; left: 0; right: 0; bottom: 0; height: 55%; background: linear-gradient(to top, rgba(10,11,12,0.72), rgba(10,11,12,0)); }
