@@ -39,40 +39,45 @@
   <!-- Privacy Policy Content -->
   <main class="legal-page">
     <h1>Privacy Policy</h1>
-    <p class="last-updated">Last updated: July 25, 2026</p>
+    <p class="last-updated">Last updated: 15 October 2026</p>
 
-    <p>TopoKit is developed by Nikolay Senilov. This privacy policy describes how TopoKit ("the App") handles your information. The short version: your data is yours, it stays on your device, and I have no interest in changing that.</p>
+    <p>TopoKit is developed by Nikolay Senilov. This policy says what TopoKit does with your information. The short version: your data is yours, it stays on your device, and I have no interest in changing that.</p>
 
-    <h2>Data Collection</h2>
-    <p>TopoKit does not collect, transmit, or store any personal data on external servers. The App does not require an account, does not use analytics or tracking services, and does not contain advertising.</p>
-    <p>All data you create in TopoKit — including features, annotations, GPS tracks, layers, photos, and settings — is stored locally on your device.</p>
+    <h2>No account, no tracking</h2>
+    <p>TopoKit has no account, no sign-in, no analytics or tracking, no advertising, and no server that receives your data. No request it makes carries a project.</p>
+    <p>Everything you make in TopoKit, including features, imported maps, recorded tracks, photos and settings, is stored on your device. Downloaded map tiles, downloaded elevation data and the basemaps TopoKit builds are stored on the device that fetched them.</p>
 
-    <h2>iCloud Sync</h2>
-    <p>If you have iCloud enabled on your device, TopoKit may sync your data across your Apple devices using your personal iCloud account. This includes project data, features, GPS tracks, and photos you have attached to map features. This sync is handled entirely by Apple's iCloud Drive and is governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>. TopoKit does not have access to your iCloud data at any time.</p>
+    <h2>iCloud sync</h2>
+    <p>A project you keep in iCloud syncs between your iPhone and Mac through iCloud Drive under your own Apple Account, which is the system's traffic, not TopoKit's. A local project stays on the device that made it. iCloud Drive is Apple's and is covered by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>. TopoKit does not have access to your iCloud data at any time.</p>
 
-    <h2>Location Data</h2>
-    <p>TopoKit requests access to your device's location services to show your position on the map, enable navigation features, and record GPS tracks. When GPS track recording is active, the App may access your location in the background. Location data is processed entirely on your device and is never transmitted to external servers by the App. You can revoke location access at any time through your device's Settings.</p>
+    <h2>Location</h2>
+    <p>TopoKit asks for your location while it is in use, to show where you are on the map, to place a point where you stand and, on iPhone, to record tracks. While a track is recording, TopoKit keeps reading your location in the background. TopoKit does not collect your location. You can turn location access off at any time in your device's Settings.</p>
 
-    <h2>Camera &amp; Photos</h2>
-    <p>TopoKit may request access to your device's camera to take photos and attach them to map features. The App may also request access to your photo library to attach existing photos to map features. Photos are stored locally within your project data on your device. On iOS, you may also save images from the App to your photo library. If iCloud sync is enabled, photos may sync across your devices as part of your project data. Photos are never transmitted to external servers by the App. You can revoke camera and photo library access at any time through your device's Settings.</p>
+    <h2>Camera and photos</h2>
+    <p>TopoKit asks for the camera to take photos and attach them to features, and for your photo library to attach photos you already have or, on iPhone, to save a photo from a feature to it. Photos are stored in the project on your device and sync with an iCloud project; TopoKit sends them nowhere. You can turn camera and photo library access off at any time in your device's Settings.</p>
 
-    <h2>Network Requests</h2>
-    <p>TopoKit connects to the following third-party services to provide core functionality:</p>
+    <h2>What TopoKit sends, and where</h2>
+    <p>These are the only requests TopoKit makes.</p>
     <ul>
-      <li><strong>Apple MapKit</strong> — to load map tiles, search for places, and provide routing/directions. These requests are governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>.</li>
-      <li><strong>Copernicus GLO-30 DEM</strong> — to download elevation data tiles from Amazon Web Services (AWS S3), which are then cached locally on your device. These requests contain only geographic tile coordinates and no personal information.</li>
+      <li><strong>Apple Maps</strong>: the map imagery for the area on screen; every search, as you type it, with the area the map is showing, including text that matches your layers or reads as a coordinate; the coordinate of a spot you hold, to name the nearest place and its time zone; and for a route, each leg's two ends and the travel mode, and each stop's coordinate to name it. These requests are covered by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>.</li>
+      <li><strong>The App Store</strong>: a check of what you own and the current prices, at launch, each time TopoKit returns to the foreground, and when you buy, restore or redeem a code.</li>
+      <li><strong>Elevation data</strong>: one file for each one-degree square, named by the square and carrying nothing else, whenever TopoKit downloads elevation. The data is <a href="https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model" target="_blank" rel="noopener">Copernicus GLO-30</a>, read from a public copy on Amazon Web Services.</li>
+      <li><strong>Map data for basemaps</strong> (<a href="https://overturemaps.org" target="_blank" rel="noopener">Overture Maps</a>): a listing to find the newest release, then only the parts of the data that cover the area you picked, sent with the app's name, version and platform. The same requests measure the download size before a build, and opening a built basemap's editor checks once for newer data. A basemap whose data is already on the device builds without them. The data is read from Overture's public copy on Amazon Web Services.</li>
+      <li><strong>topokit.ca</strong>: before any map-data request, TopoKit reads one small file that can point it to another copy of the map data or pause map-data downloads. The request carries a timestamp and the app's name, version and platform. If topokit.ca does not answer, TopoKit goes straight to the map data. This site is hosted on GitHub Pages, so that request reaches GitHub's servers.</li>
+      <li><strong>Tile and WMS servers you add</strong>: the tiles for the area on screen, a WMS service's capabilities when you connect to it, and for an offline download every tile in the area you chose, sent with the app's name, version and platform. You choose those servers, and what they do with the requests is theirs to say.</li>
+      <li><strong>Routes you hand off</strong>: Apple Maps receives the start, the end and the travel mode; another maps app also receives up to nine stops between them.</li>
+      <li><strong>Email you send</strong>: <strong>Send Feedback</strong> and <strong>Send Logs to Developer</strong> in <strong>Settings → Help &amp; Feedback</strong>, and a crash report, each open a draft to feedback@topokit.ca in your own mail, and nothing goes until you send it. The diagnostic log can include project names, file paths and coordinates, and TopoKit says so before it attaches it; a crash report holds the app and system versions and where the crash happened, not your projects, your locations or the log.</li>
     </ul>
-    <p>TopoKit also supports user-configured WMS and XYZ tile layer sources. If you add a custom tile layer, the App will make network requests to the server URL you specify to load map tiles. These connections are initiated by you, and the App does not control or monitor those third-party servers.</p>
-    <p>Beyond the services listed above, the App does not make network requests. The App does not use analytics SDKs, crash reporting services, or advertising networks.</p>
+    <p>TopoKit uses no analytics, no crash-reporting service and no advertising network. Crash reports come from the system and stay on the device until you answer. The diagnostic log stays on the device: it starts a new file at about 1 MB and keeps one earlier file, and <strong>Clear</strong> in <strong>View Logs</strong> deletes both.</p>
 
-    <h2>Third-Party Libraries</h2>
-    <p>TopoKit uses open-source and third-party libraries for coordinate reference system support (including PROJ, NGA Projections, and NGA Coordinate Reference Systems). These libraries operate entirely on-device and do not make any network requests or collect any data.</p>
+    <h2>Third-party libraries</h2>
+    <p>TopoKit's coordinate systems come from the open-source <a href="https://github.com/ngageoint/projections-ios" target="_blank" rel="noopener">NGA Projections</a> and <a href="https://github.com/ngageoint/coordinate-reference-systems-ios" target="_blank" rel="noopener">NGA Coordinate Reference Systems</a> libraries and from <a href="https://proj.org" target="_blank" rel="noopener">PROJ</a>. They run on the device and make no requests. <strong>Settings → About TopoKit → Licenses</strong> credits them, and the elevation and map data.</p>
 
-    <h2>Children's Privacy</h2>
-    <p>TopoKit does not collect personal information from anyone, including children under the age of 13. The App contains no age-restricted content.</p>
+    <h2>Children's privacy</h2>
+    <p>TopoKit does not collect personal information from anyone, including children under the age of 13. TopoKit contains no age-restricted content.</p>
 
-    <h2>Changes to This Policy</h2>
-    <p>If this privacy policy is updated, the revised version will be posted on this page with an updated "Last updated" date. Material changes will be noted in the App's release notes on the App Store.</p>
+    <h2>Changes to this policy</h2>
+    <p>If this privacy policy is updated, the revised version will be posted on this page with an updated "Last updated" date. Material changes will be noted in TopoKit's release notes on the App Store.</p>
 
     <h2>Contact</h2>
     <p>If you have questions about this privacy policy, contact me at <a href="mailto:support@topokit.ca">support@topokit.ca</a>.</p>
