@@ -139,7 +139,7 @@ export default defineConfig({
         dark: './src/assets/brand/wordmark_for_dark_background.png',
         replacesTitle: true,
       },
-      favicon: '/Images/Logo/Logo.svg',
+      favicon: '/favicon.png',
       description:
         'The official TopoKit manual — Field GIS for iPhone and macOS. Projects, layers, rasters, tiles, elevation, GPS.',
       customCss: ['./src/styles/topokit.css'],
