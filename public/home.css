@@ -176,9 +176,19 @@ body { font-family: 'Inter', -apple-system, sans-serif; color: var(--ink); backg
 .cta-pricing p strong { color: var(--ink); font-weight: 600; }
 
 /* Bottom bar */
-.footer { border-top: 1px solid rgba(35,34,31,0.12); padding: 2.2rem 2rem 2.6rem; }
+.footer { position: relative; border-top: 1px solid rgba(35,34,31,0.12); padding: 2.2rem 2rem 2.6rem; }
 .footer-inner { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 1.1rem; }
-.footer img { height: 22px; opacity: 0.9; }
+.footer img { height: 38px; opacity: 0.9; }
+/* Freda (freda.js): until she jumps in, the logo is its word without the mark. */
+.freda-away .footer-inner > img {
+  -webkit-clip-path: polygon(19.4% 0, 100% 0, 100% 100%, 24.28% 100%, 24.28% 29%, 19.4% 29%);
+  clip-path: polygon(19.4% 0, 100% 0, 100% 100%, 24.28% 100%, 24.28% 29%, 19.4% 29%);
+}
+.freda { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; }
+.freda .limb { fill: none; stroke: #111; stroke-linecap: round; stroke-linejoin: round; }
+.freda .paper { fill: var(--paper); }
+.freda .dust circle { fill: #D2C8B8; stroke: rgba(70,58,44,0.75); stroke-width: 1.2; }
+.freda image { opacity: 0.9; }
 .footer nav { display: flex; gap: 2.2rem; flex-wrap: wrap; justify-content: center; }
 .footer a { color: #6E6C66; text-decoration: none; font-size: 0.88rem; }
 .footer a:first-child { color: var(--ink); font-weight: 600; }
