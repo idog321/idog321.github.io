@@ -25,3 +25,6 @@ MANUAL-COMMENTS.md
 
 # personal photo inbox — never commit; the repo is public and history is permanent
 RandomPics/
+
+# Front-page mock-ups shown in the preview; never deployed.
+/public/mock/

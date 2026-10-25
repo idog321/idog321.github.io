@@ -99,47 +99,6 @@
   color: var(--sl-color-black);
 }
 
-/* The version picker. A labelled dropdown rather than a segmented control:
-   two version numbers side by side read as a page count or a rating, and say
-   nothing about what they are. The word "Version" has to be on screen. */
-.version-select {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  flex: none;
-  align-self: center;
-  font-size: var(--sl-text-xs);
-  color: var(--sl-color-gray-2);
-  white-space: nowrap;
-}
-.version-select select {
-  font: inherit;
-  font-size: var(--sl-text-xs);
-  color: var(--sl-color-white);
-  background: transparent;
-  border: 1px solid var(--sl-color-gray-5);
-  border-radius: 999px;
-  padding: 0.25rem 0.5rem;
-  cursor: pointer;
-}
-/* A transparent select renders its popup list transparent too on some
-   platforms, which makes the options unreadable. Paint them explicitly. */
-.version-select option {
-  background: var(--sl-color-bg-nav);
-  color: var(--sl-color-white);
-}
-
-/* Version scoping (1.1 / 1.1.1). No attribute on <html> means 1.1, the
-   released version, so the manual reads correctly for a first-time visitor
-   before any script runs. Only ever set display:none — never restore a
-   display value — so a scoped <li>, <div> or <span> keeps its own. */
-html:not([data-manual-version='1.1.1']) [data-version='1.1.1'] {
-  display: none;
-}
-html[data-manual-version='1.1.1'] [data-version='1.1'] {
-  display: none;
-}
-
 .platform-block {
   margin-block: 1rem;
 }
@@ -207,19 +166,13 @@ html[data-manual-version='1.1.1'] [data-version='1.1'] {
   border-radius: 8px;
 }
 
-/* The tile-download recording floats so the whole section wraps around it —
-   the four numbered settings, not just the lead-in paragraph. ::::beside is
-   wrong here: it pairs the figure with ONE sibling, so a tall video beside a
-   two-line paragraph left the list stranded under 400px of white space. Safe as
-   a float because Starting a download holds only this one figure, and the
-   h2/h3 { clear: both } rule below stops it bleeding into the next section. */
-@media (min-width: 50rem) {
-  .sl-markdown-content video[src*='tile-download'] {
-    float: inline-end;
-    margin-inline-start: 1.5rem;
-    margin-block-end: 1rem;
-  }
+/* A portrait phone recording is narrow: the sidebar clip, and every clip
+   named -iphone (the line tool, the profile, the route, the download…). */
+.sl-markdown-content video[src*='sidebar-hide'],
+.sl-markdown-content video[src*='-iphone'] {
+  max-width: 18rem;
 }
+
 
 /* DEFAULT CAP FOR EVERY MANUAL IMAGE. A portrait phone screenshot scaled to the
    text column is 1000px+ tall and swallows the page. Capping height as well as
@@ -270,6 +223,9 @@ html[data-manual-version='1.1.1'] [data-version='1.1'] {
   gap: 2rem;
   align-items: flex-start;
   flex-wrap: wrap;
+  /* A pair of figures sits centred as one group; with one platform hidden
+     the remaining figure is centred on its own (Nikolay, 13 October). */
+  justify-content: center;
 }
 .platform-pair > .platform-block {
   flex: 0 0 auto;
@@ -311,7 +267,6 @@ html[data-manual-version='1.1.1'] [data-version='1.1'] {
         project pairs the iPhone shot with the Mac one, so neither floats.
      2. ::::beside already pairs a figure with its prose as flex siblings, and
         a float inside it would fight that. */
-  .sl-markdown-content img[src*='new-project-ios'],
   .sl-markdown-content .figure-beside img {
     float: none;
   }
@@ -388,12 +343,108 @@ html[data-manual-version='1.1.1'] [data-version='1.1'] {
    SIZING ONLY: never add shadows, borders, or rounded corners to Nikolay's
    images. They are prepared deliberately (transparent backgrounds and all) and
    the manual must not decorate them. */
-.sl-markdown-content img[src*='right-click-menu'],
-.sl-markdown-content img[src*='-menu-'],
-.sl-markdown-content img[src*='new-project'] {
+.sl-markdown-content img[src*='right-click-menu'] {
   max-width: 26rem;
   width: 100%;
   height: auto;
+}
+
+/* Captures of the app's own pop-ups and panels, taken at 2x and shown at the
+   size they have on screen. The kind token in the file name picks the width:
+   -menu- a context menu, -card- the feature card, -panel- the Layers panel,
+   settings-window the Mac Settings window. A panel is tall, so it gets more
+   height than the default cap. */
+.sl-markdown-content img[src*='-menu-'] {
+  max-width: 15rem;
+  width: 100%;
+  height: auto;
+}
+.sl-markdown-content img[src*='-card-'] {
+  max-width: 23rem;
+  width: 100%;
+  height: auto;
+}
+.sl-markdown-content img[src*='-panel-'] {
+  max-width: 19rem;
+  max-height: 40rem;
+  width: auto;
+  height: auto;
+}
+.sl-markdown-content img[src*='settings-window'] {
+  max-width: 35rem;
+  width: 100%;
+  height: auto;
+}
+/* A Mac sheet or an iPhone sheet page (-sheet-), a live tool card
+   (-live-card-, narrower than the feature card), a row menu with its
+   submenu open (-menus-), an iPhone menu (its text is larger than a Mac
+   menu's), and the folded panel's pull tab. */
+.sl-markdown-content img[src*='-sheet-'] {
+  max-width: 35rem;
+  width: auto;
+  height: auto;
+}
+/* Mac popovers (Edit Offline Basemap, Edit Raster): about their own size */
+.sl-markdown-content img[src*='-popover-'] {
+  max-width: 23rem;
+}
+
+/* The search results panel, wider than a card */
+.sl-markdown-content img[src*='-results-'] {
+  max-width: 32rem;
+}
+
+/* Two 400 px crops of the location dot side by side, at about 1x */
+.sl-markdown-content img[src*='location-dot'] {
+  max-width: 26rem;
+}
+
+/* An alert (Save Track, Delete Layer?) is a small dialog */
+.sl-markdown-content img[src*='-alert-'] {
+  max-width: 22rem;
+}
+
+.sl-markdown-content img[src*='-live-card-'] {
+  max-width: 17.5rem;
+  width: 100%;
+  height: auto;
+}
+.sl-markdown-content img[src*='-menus-'] {
+  max-width: 20rem;
+  width: 100%;
+  height: auto;
+}
+.sl-markdown-content img[src*='-menu-iphone'] {
+  max-width: 21rem;
+}
+.sl-markdown-content img[src*='chevron-tab'] {
+  max-width: 8rem;
+  width: 100%;
+  height: auto;
+}
+.sl-markdown-content img[src*='pull-tab'] {
+  max-width: 10rem;
+  width: 100%;
+  height: auto;
+}
+/* In a ::::platforms row the two halves of a pair must fit side by side
+   in the 45rem column: 21rem each plus the 2rem gap. */
+.platform-pair > p {
+  flex: 0 0 auto;
+  margin-block: 0;
+}
+
+/* A panel crop that runs to the bottom of the panel (Select mode's bar, the
+   Projects list) is tall; in a pair it may stand taller than the 34rem cap. */
+.platform-pair img[src*='-panel-'] {
+  max-height: 42rem;
+}
+
+.platform-pair img[src*='-card-'],
+.platform-pair img[src*='-sheet-'],
+.platform-pair img[src*='-alert-'],
+.platform-pair img[src*='-menu-iphone'] {
+  max-width: 21rem;
 }
 
 /* The Reprojection Required sheet is a dialog, near square. At full column
@@ -517,4 +568,62 @@ html[data-manual-version='1.1.1'] [data-version='1.1'] {
 .sl-markdown-content img[src*='point-tool'],
 .sl-markdown-content img[src*='tab-bar'] {
   max-width: 30rem;
+}
+
+/* ON A PHONE NO FIGURE IS WIDER THAN ITS COLUMN. The rem caps above are the
+   on-screen sizes of pop-ups in a desktop column, and the ones over 22rem (a
+   sheet at 35rem, search results at 32rem, the location dot at 26rem, a card
+   or popover at 23rem, the reprojection sheet at 24rem, the settings window,
+   the right-click menu, the toolbar art) are wider than the 358px column of a
+   390px phone, so those figures ran off the right edge. Only those tokens are
+   capped here: a menu keeps its 15rem, so it is not stretched to the column.
+   Same specificity as the per-token rules and later in the file, so it wins;
+   desktop sizes are untouched. */
+@media (max-width: 50rem) {
+  .sl-markdown-content img[src*='-sheet-'],
+  .sl-markdown-content img[src*='-results-'],
+  .sl-markdown-content img[src*='location-dot'],
+  .sl-markdown-content img[src*='-card-'],
+  .sl-markdown-content img[src*='-popover-'],
+  .sl-markdown-content img[src*='reprojection-sheet'],
+  .sl-markdown-content img[src*='settings-window'],
+  .sl-markdown-content img[src*='right-click-menu'],
+  .sl-markdown-content img[src*='-tool'],
+  .sl-markdown-content img[src*='tab-bar'],
+  .sl-markdown-content img[src*='undo-pill'],
+  .sl-markdown-content video[src] {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Captures narrower than their token's cap are 2x or 3x pixels and would draw
+   at that scale: the Mac unit menu (154px for 77pt) and the Mac travel-mode
+   menu (132px for 66pt). Each gets its on-screen width. The Undo pill strip
+   is a 3x capture about 484pt wide with no kind token, so it stretched to the
+   column; 30rem is its real width. */
+.sl-markdown-content img[src*='measurement-units-menu-mac'] {
+  width: 4.8rem;
+}
+.sl-markdown-content img[src*='routes-travel-modes-menu-mac'] {
+  width: 4.1rem;
+}
+/* Two more 2x Mac menus narrower than the 15rem cap would otherwise draw
+   larger than life: the View menu (408px for 204pt) and the bearing menu
+   (380px for 190pt). */
+.sl-markdown-content img[src*='interface-view-menu-mac'] {
+  width: 12.75rem;
+}
+.sl-markdown-content img[src*='measurement-bearing-menu-mac'] {
+  width: 11.9rem;
+}
+/* The Mac Select-mode panel in its pair: the layer-tree- rule above caps every
+   layer-tree capture at 32rem, which left this 907pt panel at 56% of real size,
+   its row names about 7px. In a pair a panel may stand 42rem, as the pair rule
+   already says for every other -panel- capture. */
+.platform-pair img[src*='layer-tree-'][src*='-panel-'] {
+  max-height: 42rem;
+}
+.sl-markdown-content img[src*='undo-pill'] {
+  max-width: min(30rem, 100%);
 }

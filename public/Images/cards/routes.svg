@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg">
+    <defs><clipPath id="card"><rect width="800" height="480"/></clipPath></defs>
+    <g clip-path="url(#card)">
+    <path fill="#1a1b1e" stroke="none" d="M 0 0 L 800 0 L 800 480 L 0 480 Z"/>
+    <path fill="none" stroke="#393a3d" stroke-width="4" stroke-linecap="square" stroke-linejoin="bevel" d="M 0 120 L 120 130 L 190 160"/>
+    <path fill="none" stroke="#393a3d" stroke-width="4" stroke-linecap="square" stroke-linejoin="bevel" d="M 306 120 L 330 0"/>
+    <path fill="none" stroke="#393a3d" stroke-width="4" stroke-linecap="square" stroke-linejoin="bevel" d="M 400 276 L 396 480"/>
+    <path fill="none" stroke="#393a3d" stroke-width="4" stroke-linecap="square" stroke-linejoin="bevel" d="M 470 92 L 480 0"/>
+    <path fill="none" stroke="#393a3d" stroke-width="4" stroke-linecap="square" stroke-linejoin="bevel" d="M 584 228 L 640 150 L 800 136"/>
+    <path fill="none" stroke="#393a3d" stroke-width="4" stroke-linecap="square" stroke-linejoin="bevel" d="M 0 420 L 172 410"/>
+    <path fill="none" stroke="#5f5f62" stroke-width="8" stroke-linecap="square" stroke-linejoin="bevel" d="M 0 332 L 236 332 L 292 276 L 536 276 L 584 228 L 800 228"/>
+    <path fill="none" stroke="#5f5f62" stroke-width="8" stroke-linecap="square" stroke-linejoin="bevel" d="M 172 480 L 176 332 L 190 160 L 200 0"/>
+    <path fill="none" stroke="#5f5f62" stroke-width="8" stroke-linecap="square" stroke-linejoin="bevel" d="M 292 276 L 306 120 L 470 92 L 800 76"/>
+    <path fill="none" stroke="#5f5f62" stroke-width="8" stroke-linecap="square" stroke-linejoin="bevel" d="M 536 276 L 552 480"/>
+    <path fill="none" stroke="#5f5f62" stroke-width="8" stroke-linecap="square" stroke-linejoin="bevel" d="M 584 228 L 690 480"/>
+    <path fill="none" stroke="#ff9500" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" d="M 104 332 L 236 332 L 292 276 L 420 276 L 536 276 L 584 228 L 660 400"/>
+    <circle cx="104" cy="332" r="24" fill="#1a1b1e" stroke="#ff9500" stroke-width="8"/>
+    <text x="104" y="341" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="600" font-size="26" fill="#ff9500">1</text>
+    <circle cx="420" cy="276" r="24" fill="#1a1b1e" stroke="#ff9500" stroke-width="8"/>
+    <text x="420" y="285" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="600" font-size="26" fill="#ff9500">2</text>
+    <circle cx="660" cy="400" r="24" fill="#1a1b1e" stroke="#ff9500" stroke-width="8"/>
+    <text x="660" y="409" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="600" font-size="26" fill="#ff9500">3</text>
+    <rect x="250" y="385" width="300" height="54" rx="27.0" fill="#1a1b1e" stroke="#5f5f62" stroke-width="8"/>
+    <text x="400" y="422.8" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="600" font-size="30" fill="#5f5f62">148 km · 2 h 10 min</text>
+    </g>
+</svg>

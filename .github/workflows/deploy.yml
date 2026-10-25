@@ -13,6 +13,10 @@ on:
     branches: [main]
   # Lets you re-publish from the Actions tab without pushing anything.
   workflow_dispatch:
+  # Once a day, so the prices the front page shows (pulled from the App Store at build time by
+  # scripts/app-store-prices.mjs) follow what App Store Connect says without a push.
+  schedule:
+    - cron: '17 9 * * *'
 
 permissions:
   contents: read

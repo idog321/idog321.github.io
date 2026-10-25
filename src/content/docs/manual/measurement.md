@@ -1,61 +1,116 @@
 ---
 title: "Measuring"
-description: "Measure distance, area, bearings, and circles with the shape tools, and know how far to trust the numbers."
+description: "What the figures on the tool card are, which units they use, and how TopoKit calculates each one."
 ---
-Every shape tool (:ui[Add Line]{icon=add-line}, :ui[Add Polygon]{icon=add-polygon}, and :ui[Add Circle]{icon=add-circle}) shows live measurements as you draw: length and bearing for lines, area and perimeter for polygons, and radius, area, and circumference for circles. Tapping a value copies it. Saving the shape adds it to your project, cancelling discards it, and neither keeps the numbers: the measurements are display-only.
+Drawing and measuring are one tool. :ui[Add Line]{icon=add-line}, :ui[Add Polygon]{icon=add-polygon}, :ui[Add Circle]{icon=add-circle} and :ui[Add Route] show their figures on the tool card while you draw, and saving is optional: cancelling closes the tool without adding anything to the project. Placing and moving vertices is in [Moving, adding and deleting vertices](/manual/points-lines-polygons/#moving-adding-and-deleting-vertices).
 
-For placing and editing vertices and the [tool card](/manual/interface/#the-map)'s other controls, see [Map tools](/manual/map-tools/) and [Points, lines, polygons and circles](/manual/points-lines-polygons/).
+The line, polygon and circle tools need an open project even when you only measure; a [route](/manual/routes/) started with **Route here** (**Route to Here** on Mac) on a card does not. Drawing and measuring are part of the [full app](/manual/your-topokit/#what-asks-you-to-unlock).
 
-<video src="/media/measurement-live-measurements.mp4" autoplay loop muted playsinline aria-label="Drawing a shape while the tool card updates its live measurements, then tapping a value to copy it"></video>
+## Live measurements
+
+Figures appear once the shape has enough points: two for a line or a route, three for a polygon, a centre and an edge point for a circle.
+
+::::platforms
+:::ios
+<video src="/media/getting-started-draw-and-measure-iphone.mp4" autoplay loop muted playsinline aria-label="Drawing a polygon round Inland Lake on iPhone: each tap adds a corner and a length appears along each side; the tool card counts the points it still needs until the third corner, then updates Area, Perimeter and Points with each corner; a tap on Area makes the card read Copied"></video>
+:::
+
+:::mac
+<video src="/media/getting-started-draw-and-measure.mp4" autoplay loop muted playsinline aria-label="Drawing a polygon round Inland Lake on a Mac: each click adds a corner and a length appears along each side; the card counts the points it still needs until the third corner, then its Area, Perimeter and Points update as the shape grows; a corner is dragged, and Save opens the New Polygon sheet"></video>
+:::
+::::
+
+Tapping a figure copies the number as the card shows it, rounded, with the device's thousands separator and decimal mark (`1,234.5`) and without its unit; a bearing copies with its degree sign, as three digits (`045°`). A route's figures have no unit menu and do not copy.
+
+A saved line, polygon or circle keeps none of the card's figures: tapping it opens its [card](/manual/search-and-identify/#the-card), which measures it again, and a copy from that card carries the unit. A saved circle is a polygon, so that card shows **Area** and **Perimeter** and no **Radius**. A [saved route](/manual/routes/#saving-a-route) keeps its distance and travel time as properties.
 
 ## Circles and the radius lock
 
-Creating a circle takes two taps: the **centre**, then a **point on the edge**. Tapping again replaces the edge point, so the circle resizes live instead of starting over. The **lock** button, which appears only while drawing a circle, freezes the current radius. With the radius locked, tapping elsewhere or dragging the **centre** moves the whole circle at that fixed radius. Dragging the **edge** handle only slides the handle along the rim: the centre stays put and the radius cannot change. Undoing the edge vertex clears the lock.
+Until the circle is locked, dragging its centre moves the centre alone and changes the radius, and a tap or a drag of the edge point resizes it ([Circles](/manual/points-lines-polygons/#circles)).
+
+::::platforms
+:::ios
+![A circle being drawn on iPhone with the lock on: its centre on Tin Hat Hut and its edge on Elk Lake Hut, the dashed ring round the huts, your position's orange dot on the trail between them, and the card reading Area 257.8 km², Radius 9.06 km with a lock, and Circumference 56.91 km, with the lock button filled](../../../assets/manual/measurement-circles-and-the-radius-lock-iphone.png)
+:::
+
+:::mac
+![A circle being drawn on a Mac with the lock on: its centre on Tin Hat Hut and its edge on the trail, the dashed ring over the mountain, and the card reading Area 3.23 km², Radius 1.01 km with a lock, and Circumference 6.38 km, with the lock button filled](../../../assets/manual/measurement-circles-and-the-radius-lock-mac.png)
+:::
+::::
+
+The lock button becomes active once the circle has a radius, and locking freezes that radius. With the lock on, a tap elsewhere or a drag of the centre moves the whole circle at the fixed radius, the edge point keeping its bearing from the centre; dragging the edge point slides it round the rim. The readout and the ring both come from the radius captured at locking, so the figure does not change however far the circle moves, and unlocking leaves it as it was.
+
+Locking and unlocking are [undo steps](/manual/interface/#while-a-tool-is-open) of their own, **Lock Size** and **Unlock Size**, so Undo straight after locking unlocks the circle at the same size. A move made while locked undoes with the lock still on.
 
 ## Units
 
-All measurements are dictated from the defaults set in Settings → Units & Coordinates. Switching the **Units** picker between metric and imperial resets these defaults to km / mi and km² / mi². The defaults set the units a new measurement opens in; while measuring, tap the unit abbreviation beside a value on the tool card to change units on the spot. That menu offers metric and imperial units alike, whatever the **Units** picker is set to. Choosing one converts every value of that quantity on the card, and lasts only until you finish the measurement — the next one opens in your defaults again.
+**Settings → Units & Coordinates → Measuring Tools Start With** holds the **Distance** and **Area** pickers, which set the units a line, polygon or circle card opens in. **Distance** also covers perimeter, radius and circumference. The two pickers offer only the units of the system the **Units** picker names, and switching **Units** between **Metric** and **Imperial** resets them to km and km², or mi and mi². The rows are listed in [Settings](/manual/settings/#units--coordinates).
+
+While measuring, the unit after a figure is a menu offering metric and imperial units alike, whatever **Units** says. Choosing one converts every figure of that kind on the card and does not change the defaults. Feet, miles, square feet and acres are built on the international foot of exactly 0.3048 m.
+
+::::platforms
+:::ios
+![The unit menu on a line's card on iPhone: Imperial with mi, yd, ft and in, then Metric with km ticked, m, cm and mm](../../../assets/manual/measurement-units-menu-iphone.png)
+:::
+
+:::mac
+![The unit menu on a line's card on Mac: Metric with mm, cm, m and km, then Imperial with in, ft, yd and mi](../../../assets/manual/measurement-units-menu-mac.png)
+:::
+::::
+
+A route's distance on its tool card, the figure on the **Edit Vertices on Map** card, the distances on the elevation profile, a saved feature's **Length**, **Area** and **Perimeter** on its card, and the segment lengths on the map follow the **Units** picker alone and pick their scale by size: m below 1,000 m, then km; ft below 1,000 ft, then mi; m², ha and km², or ft², acres and mi².
 
 ## Bearing
 
-While drawing a line, the tool card shows the bearing of the **last segment**, computed as the forward azimuth and normalized to 0–360° clockwise from north. The last segment is the final pair of vertices in the sequence, which is not the pair you placed most recently if you have tapped back and inserted mid-line. Three display modes are available from the picker next to the bearing line:
+A line's card shows the bearing of its last segment, 0–360° clockwise from north, to the whole degree. The last segment is the final pair of points in the line's order, which is not the pair you placed most recently if you added points after an earlier one. The mode tag after the figure (**TN**, **MN** or **BB**) opens the menu:
 
-- **True North (TN)**: the geodetic bearing from the true pole.
-- **Magnetic North (MN)**: the true bearing minus the current **magnetic declination**, read from the iPhone's magnetometer.
-- **Back Bearing (BB)**: true bearing plus 180°, the direction to walk to return the way you came.
+- **True North**: the initial great-circle bearing from true north, calculated on a sphere rather than the ellipsoid.
+- **Magnetic North**: the true bearing minus the magnetic declination at your position, taken from the difference between the true and magnetic headings the compass reports. Declination is read where you stand, so a line drawn far away still uses your local declination, and it is recomputed on every compass reading.
+- **Back Bearing**: the true bearing plus 180°, the direction back the way you came.
 
-Declination changes across the Earth's surface and drifts with time, so the magnetic bearing for the same segment changes as you move. It is recomputed on every compass sample rather than fixed when you start the line. Magnetic North needs a magnetometer, so the menu shows it as **Magnetic North (iOS only)** and disables it on Mac; if declination is ever unavailable the card falls back to the true bearing.
+:::mac
+![The bearing menu on a line's card on Mac: True North, Magnetic North (iOS only) greyed, and Back Bearing](../../../assets/manual/measurement-bearing-menu-mac.png)
+:::
+
+A line opens in True North unless **Settings → Units & Coordinates → Bearing** names another mode; switching **Units** leaves it as it is. :ios[On iPhone, the **True N** / **Mag N** switch under the [GPS tab's compass](/manual/gps-and-track-recording/#the-compass) sets the same default.]
+
+:ios[On iPhone, Magnetic North needs location access: until the first compass reading after a location fix, the menu shows **Magnetic North (needs your location)** and greys it.] :mac[On Mac, which has no compass, the menu shows **Magnetic North (iOS only)** and greys it, and Settings does not offer it.] If Magnetic North is the default and no declination has arrived, the card shows the true bearing under the **MN** tag.
+
+## Segment lengths
+
+While you draw a line or polygon, and while you edit a saved one with **Edit Vertices on Map**, each segment shows its length on the map, a polygon's closing side included. A label appears only where its text fits inside the segment on screen, so zooming in shows more of them; where two would overlap, the longer segment keeps its label. The circle and route tools show none: a route's would measure the straight line between two stops, not the road.
+
+**Settings → Units & Coordinates → Show Segment Lengths** turns them off; the faint dots between points stay.
 
 ## Calculation methods
 
-This section explains how every number TopoKit reports is calculated, for anyone reconciling them against survey notes, reports, or another instrument.
+Each figure on the card has its own earth model: lengths, perimeters and radii are Apple's ellipsoidal distance summed segment by segment; area is measured on the WGS84 ellipsoid through an equal-area projection; a circle's area and circumference are the flat-plane πr² and 2πr of its radius, while its ring is placed on the ellipsoid by Vincenty's direct formula, so the vertices sit at the radius the card shows.
 
 ### Distance
 
-Every distance TopoKit reports — line length, polygon perimeter, circle radius, track distance, elevation-profile distance — follows the **curvature of the Earth**, not a flat straight line. For a line with N vertices, the reported distance is the sum of the N − 1 segment distances: a chain distance, not a straight line from first to last. That figure comes from Apple's Core Location rather than TopoKit's own code: every segment is measured with the system's distance function, `CLLocation.distance(from:)`. [Apple documents it](https://developer.apple.com/documentation/corelocation/cllocation/distance%28from:%29) as following the Earth's curvature, but publishes neither the algorithm nor an error bound. Its figures match an ellipsoidal geodesic and agree with handheld survey receivers to within a fraction of a percent over everyday distances. If a figure has to stand up in a legal or official context, measure it again in dedicated survey software. TopoKit's numbers are field estimates.
+Every distance TopoKit measures on your own data, a track's and an elevation profile's included, follows the curvature of the Earth, except a circle's circumference, which is 2πr of its radius, and a line's length is the chain of its segment distances summed point to point. Altitude never enters a distance, so a line up a steep slope reads its map distance, shorter than the distance walked.
+
+The distance function is Apple's Core Location ([`CLLocation.distance(from:)`](https://developer.apple.com/documentation/corelocation/cllocation/distance%28from:%29)); Apple publishes neither its algorithm nor an error bound.
+
+A route's distance is the same chain, measured along the road line Apple Maps returns rather than taken from Apple's own figure, so it matches the distance on the route's profile. A leg Apple finds no road for counts as the straight distance between its two stops. The travel time is Apple's estimate for the road legs only, so a straight leg adds distance but no time.
 
 ### Area and perimeter
 
-Area is an **approximation**: TopoKit projects the polygon onto a local flat plane centred on its centroid (a local equirectangular projection) and applies the planar [Shoelace formula](https://en.wikipedia.org/wiki/Shoelace_formula), the standard surveyor's formula for the area of a polygon from its corner coordinates. This is accurate for small-to-medium polygons up to tens of kilometres across. For very large polygons (regional or continental scale) the approximation degrades, but the error depends on shape and latitude more than on size alone: compact, roughly symmetric polygons stay within about 0.1% even at 1,000 km across, while elongated or lopsided polygons at higher latitudes can be off by a few percent at a few hundred kilometres and by much more at continental scale. The area calculation also treats the Earth as a perfect sphere of radius 6,371 km, which adds a small bias no matter how big the polygon is: roughly 0.45% too large at the equator, about 0.23% too small at 45°, and about 0.89% too small at the poles.
+TopoKit measures area on the WGS84 ellipsoid: it projects the polygon onto a plane with a Lambert azimuthal equal-area projection centred on the polygon, then applies the [Shoelace formula](https://en.wikipedia.org/wiki/Shoelace_formula). Because the projection is equal-area, it adds no error that grows with the polygon's size or latitude. A 1° by 1° cell between 45° and 46° N, its sides densified to follow the parallels and meridians, measures within two parts in 100,000 of its exact ellipsoidal area.
 
-**Area and perimeter on the same card come from different earth models.** Perimeter is measured exactly like line distance: the closed ring is a chain of segments, each measured with the same curvature-following distance function as lines, and summed. Area, as described above, comes from a perfect sphere.
+The one approximation is the sides. Each side is a straight line between its two vertices on that plane rather than a geodesic, and the difference grows with the side's length. To make a long side follow a particular line, such as a parallel, add points along it.
+
+Perimeter is summed segment by segment with the same distance function as a line, so it follows the Earth's curve along each side, while area takes each side as a straight line on the equal-area plane.
 
 ### Circles
 
-The radius is measured from centre to edge point with the same distance function as lines; area and circumference are the analytic πr² and 2πr from it. When rendered or saved, the circle becomes a 64-point ring whose vertices are spaced at equal bearings around the centre, so it is a true circle on the ground rather than a screen-space one. Near the poles or at very large radii it looks elongated on a Mercator map; that is correct behaviour.
+The radius is measured from centre to edge point with the same distance function as lines; area and circumference are the flat-plane πr² and 2πr from it. On the curved Earth a circle of that radius is slightly smaller than those formulas give, so both figures read a little high, more so as the radius grows.
 
-The ring is placed with a spherical formula while the radius comes from that distance function, so the drawn ring and the reported radius disagree by up to about 0.7%. The drawn ring does not pass exactly through the edge point you set, and its true ground radius differs slightly from the figure on the card. For a circle you intend to report on, trust the readout rather than measuring the exported ring.
+When drawn or saved, the circle becomes a ring of 64 vertices at equal bearings round the centre, the first due north, each placed on the WGS84 ellipsoid at the card's radius by Vincenty's direct formula. It is a true circle on the ground rather than one drawn on the screen, so near the poles or at very large radii it looks stretched on the map.
+
+The ring's sides are straight between vertices, so between two vertices it lies just inside the true circle, and it passes through your edge point only when that point lies on one of the 64 bearings.
 
 ## FAQ
 
 **Why doesn't my distance match my handheld GPS?**
-The most common cause is that the handheld reports a spherical great-circle distance while TopoKit uses a geodesic distance; the difference is typically under 0.5% for short routes but adds up over long ones. A second cause is that the handheld may show distance along a recorded **track**, where GPS noise adds path length, while TopoKit shows the straight-segment sum between the vertices you placed.
-
-**Why does my area seem off for a very large polygon?**
-The local-projection approximation distorts at large extents, more so for elongated or high-latitude shapes (see [Area and perimeter](#area-and-perimeter)). Split large areas, or measure them in a desktop GIS.
-
-**Are the measurement numbers saved with the feature?**
-For shapes you draw, no: the geometry, name, description, style, folder, and photos are stored, but the live distance, area, and perimeter figures are display-only. You do not have to retrace the feature to see them again, though: open :ui[Edit Vertices on Map]{icon=add-line} on a saved line or polygon and the tool card shows the vertex count alongside its current length or area, and a line's [elevation profile](/manual/elevation/) shows its length in the **Distance** stat.
-
-**Is a recorded track's distance saved?**
-Yes. A track saves its own statistics as feature properties, including `track_distance`. That figure is the distance accumulated fix by fix while recording, not a re-measurement of the saved line, so it includes the wander of the GPS path and will read higher than retracing the same route with the line tool.
+If the handheld's figure is a recorded track's distance, it includes the wander of every fix ([GPS FAQ](/manual/gps-and-track-recording/#faq)). Where both measure the same points, the remaining difference is the earth model and altitude: TopoKit's distances follow the [ellipsoid](#distance) and leave altitude out.

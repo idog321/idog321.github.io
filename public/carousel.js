@@ -23,11 +23,13 @@
   const dots = dotsContainer.querySelectorAll('.carousel-dot');
 
   function goTo(index) {
+    slides[current].querySelectorAll('video').forEach(function (v) { v.pause(); });
     slides[current].classList.remove('active');
     dots[current].classList.remove('active');
     current = (index + slides.length) % slides.length;
     slides[current].classList.add('active');
     dots[current].classList.add('active');
+    document.querySelector('.carousel-section').dispatchEvent(new Event('carouselchange'));
   }
 
   prevBtn.addEventListener('click', () => goTo(current - 1));

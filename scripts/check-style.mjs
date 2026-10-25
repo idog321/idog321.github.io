@@ -75,6 +75,8 @@ const RULES = [
   {
     id: 'third-party-name',
     why: 'His rule, refined 2026-08-12: products UNRELATED to TopoKit never appear — say "your desktop GIS", "another app". Actual dependencies and format owners (PROJ, GDAL tools, Copernicus, Google Earth for KML) are fine WITH a link.',
+    // basemaps.md may quote the app's map credit, "© OpenStreetMap contributors",
+    // exactly once (see the loop below). Decided for 1.2, 2026-10-08.
     // Apple is the platform and stays. USGS is excluded only because the
     // layer-tree screenshot's alt text describes what his own capture shows.
     re: /\b(QGIS|ArcGIS|ESRI|Google Maps|Garmin|Strava|OpenStreetMap|OpenTopoMap|Mapbox|Avenza|CalTopo|Gaia GPS|onX)\b/g,
@@ -104,8 +106,20 @@ for (const file of readdirSync(DIR).filter((f) => f.endsWith('.md'))) {
   const text = readFileSync(join(DIR, file), 'utf8');
   const lines = text.split('\n');
   const hits = [];
+  // The one place a banned name is allowed: the basemaps chapter quotes the
+  // map credit as the app prints it. Once, in that file, and nowhere else.
+  let creditAllowed = file === 'basemaps.md' ? 1 : 0;
   for (const rule of RULES) {
     for (const m of text.matchAll(rule.re)) {
+      if (
+        rule.id === 'third-party-name' &&
+        creditAllowed > 0 &&
+        m[0] === 'OpenStreetMap' &&
+        text.slice(m.index - 2, m.index + 26) === '© OpenStreetMap contributors'
+      ) {
+        creditAllowed--;
+        continue;
+      }
       const line = text.slice(0, m.index).split('\n').length;
       hits.push({ rule, line, match: m[0], ctx: (lines[line - 1] || '').trim() });
     }

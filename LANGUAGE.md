@@ -109,9 +109,13 @@ States a hard limit plainly, at the point the reader hits it.
 
 Mechanism, then the observable consequence, then the asymmetry between two cases.
 
-**`measurement.md:39`**
-> **Area and perimeter on the same card come from different earth models.**
-> Perimeter is ellipsoidal, area is spherical.
+**`measurement.md:53`**
+> Each figure on the card has its own earth model: lengths, perimeters and
+> radii are Apple's ellipsoidal distance summed segment by segment; area is
+> measured on the WGS84 ellipsoid through an equal-area projection; a circle's
+> area and circumference are the flat-plane πr² and 2πr of its radius, while
+> its ring is placed on the ellipsoid by Vincenty's direct formula, so the
+> vertices sit at the radius the card shows.
 
 Tells the reader something they would otherwise waste an afternoon on.
 

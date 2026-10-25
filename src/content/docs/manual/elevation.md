@@ -1,113 +1,158 @@
 ---
-title: "Elevation & DEMs"
-description: "Where TopoKit gets elevation, how DEM tiles download and store, and point and line elevation queries."
+title: "Elevation"
+description: "Where TopoKit's heights come from, how elevation tiles download and are removed, and how to read a height at a point and a profile along a line."
 ---
-TopoKit reads point elevations and route climb from a global digital elevation model, and works offline once its tiles are downloaded.
+TopoKit reads ground heights from one elevation model, downloaded an elevation tile at a time and kept on the device, so heights and profiles work with no connection once the tiles are there.
 
 ## Elevation data source
 
-Elevation comes from the [Copernicus GLO-30 Digital Elevation Model](https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM), distributed as 1°×1° tiles. Each value covers about 30 metres of ground, measured from sea level rather than from the ellipsoid. That has three consequences:
+Heights come from [Copernicus GLO-30](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model), distributed as 1° × 1° tiles, with each value covering about 30 metres of ground.
 
-- Terrain narrower than about 30 metres — a gully, a levee bank — is not in the model at all.
-- Values are orthometric: comparable to what a topographic map calls elevation above sea level, not to the ellipsoidal height a GNSS receiver reports. The two differ by roughly −100 m to +85 m depending on where you are.
-- The model is a surface: in forested or built-up areas the value can be canopy or roof rather than bare earth.
-
-No other elevation source is supported. A GeoTIFF you load as a [raster](/manual/raster-overlays/) is drawn as imagery, not read as elevation.
+- Terrain narrower than about 30 metres, such as a gully or a levee bank, is not in the model.
+- Heights are measured above sea level, not above the ellipsoid. The two differ by tens of metres in most places.
+- The model is a surface with trees and buildings included, so under forest it reads partway up the trees, and in town it reads roofs.
+- The surface was surveyed between 2011 and 2015, so ground that has changed since is not in it.
 
 ## Downloading tiles
 
-A tile reaches your device one of two ways: a query fetches it, or you select it in the DEM Tile Manager. Both store tiles in the app's own data area rather than a temporary cache, so they survive reboots until you remove them. A tile runs 25–40 MB, depending on latitude and terrain.
+An elevation tile downloads only when you ask for it, from one of the places below or by [building a basemap](/manual/basemaps/#building-a-basemap) over an area whose tile is not on the device.
 
-### On demand
+Every one of these stores the tile in the app's own data area, not a cache, so it stays until you remove it. Tiles belong to the device, not the project, and never sync through iCloud, so each device downloads its own.
 
-A query whose tile is already on the device reads it from storage and makes no network request. What happens when the tile is missing depends on where you asked from:
+:ios[On iPhone, an elevation download over cellular data follows **Settings → Storage & iCloud → Large Downloads**; see [Downloads over cellular data](/manual/tile-layers/#downloads-over-cellular-data).]
 
-- **The elevation measurement tool** shows **Download N elevation tiles (X MB)** on the [tool card](/manual/interface/), and downloads nothing until you tap it.
-- **The point editor** shows :ui[Get Elevation] with the download size beside it.
-- **The elevation profile on a saved line** downloads without asking, and what you are told beforehand depends on where you open it. In quick edit the :ui[Elevation Profile]{icon=elevation-profile} button carries a subtitle naming the tile count and estimated size, but tapping it starts the download rather than opening a confirmation. From the layer tree's context menu there is no subtitle and no estimate: the download starts the moment you choose **Elevation Profile**.
+### When a tile is missing
 
-### The DEM Tile Manager
+When the tile is missing, each place that reads heights asks before downloading:
 
-![The DEM Tile Manager over a coastal area: the 1°×1° grid overlay with downloaded cells in green, cells selected for download in blue, and cells selected for deletion in red, with the selection count, size estimate and Download button in the bar below](../../../assets/manual/elevation-downloading-tiles-mac.png)
+- The profile says "This line needs N elevation tiles that are not on this device." and offers **Download N tiles** with a size. The size counts 41.9 MB a tile, so the download is usually smaller. With no connection the profile says so and offers nothing; it checks when it opens, so reopen it once you are back online. Closing the profile cancels its download.
+- A point's editor shows **Get Elevation** with "(25–40 MB download)" beside it, and downloads as soon as you tap it.
+- A spot's card says "Terrain for this spot is not downloaded." with a **Download** button sized for that one tile.
 
-Open the Tile Manager from :ui[Download Data]{icon=download-data}, then the **Elevation Data** card. :mac[On Mac, **Download Data** is in the tool sidebar.] :ios[On iPhone, **Download Data** is in the [Layers tab](/manual/layer-tree/)'s :ui[plus]{icon=plus} menu.] A grid appears over the map, and each cell shows its state:
+### The elevation grid
 
-- **Green**: already on disk.
+1. With a project open, choose **Download Elevation…** from the :ui[Add Data]{icon=plus} menu on the tool sidebar, or from the :ui[plus]{icon=plus} menu in the [Layers tab](/manual/layer-tree/). :mac[On Mac it is also in the **Layer** menu.]
+2. Tap or click squares to select them.
+3. Choose **Download**.
+
+::::platforms
+:::ios
+![The elevation grid on iPhone over the Sunshine Coast: the square above the trail tapped and so tinted red, brown over the imagery and pink over a built basemap in its lower half, the square below it tinted green, which shows only over the basemap, as turquoise, and the tool card reading 1 downloaded tile selected with the trash turned red and Download dimmed](../../../assets/manual/elevation-the-elevation-grid-iphone.png)
+:::
+
+:::mac
+![The elevation grid on Mac over southern British Columbia and Washington: two squares south of the border, by Lake Chelan, tinted blue because they are selected, and the tool card reading 2 tiles · 50–80 MB with Download ready and the trash dimmed](../../../assets/manual/elevation-the-elevation-grid-mac.png)
+:::
+::::
+
+:ios[On iPhone, opening the grid ends any tool in progress and discards an unfinished drawing.]
+
+Each square's colour gives its state:
+
+- **Green**: the tile is on the device.
 - **Blue**: selected for download.
-- **Red**: selected and already on disk, so it is flagged for deletion instead.
-- **Grey**: a cell whose download previously failed.
-- **No cell at all**: the dataset does not publish that area, so there is nothing to select.
+- **Red**: on the device and selected, so it is marked for deletion.
+- **Grey**: the last download found no tile there. Tapping it selects it to try again.
+- **No square**: the dataset publishes nothing there.
 
-Select the cells you want and choose **Download**. The bar counts the new tiles and estimates their size, and a tile the network drops is retried on its own.
+Tiles finished before you cancel stay on the device. A dropped connection, a timeout or a server error gets a tile up to three attempts, but an attempt not finished in 15 minutes, the wait for a connection included, fails and is the last; a tile that still fails is not stored, so its square can be selected again.
 
-Selecting a cell that is already on disk flags it for deletion rather than download, and a red trash button appears in the bar to remove exactly those tiles.
+The trash button on the tool card turns red once a red square is selected, and removes exactly those tiles after you confirm.
 
-### Reviewing and deleting tiles
+### Removing tiles
 
-Open [Settings → Storage & Cache](/manual/ui-settings-styling/#storage-and-cache) and find the **Elevation Data** section:
-
-- **Manage Tiles** opens **Downloaded Elevation Tiles**, one row per tile with its size and a delete button. It stays unavailable until you have downloaded at least one tile.
-- **Clear All** deletes every downloaded tile, asking first and naming the count and total size.
-
-To clear a whole corner of the map instead of picking tiles off a list, select those cells in the Tile Manager.
+In **Settings → Storage & iCloud → Elevation Data**, **Manage Tiles** deletes one tile at a time and **Clear Elevation Data** deletes them all; see [Storage & iCloud](/manual/settings/#storage--icloud). A tile is named by its south-west corner, so N49° W123° covers 49° to 50° north and 123° to 122° west.
 
 ## Coverage gaps
 
-The dataset does not cover every cell: open ocean, most of Antarctica, and cells above 83°N are not published. In the Tile Manager those cells carry no grid overlay, so you cannot select them, and a point elevation query there returns no value.
+The dataset publishes nothing over open ocean or north of 84°N; Antarctica is covered. Armenia and Azerbaijan are absent from the release TopoKit reads, and so is every 1° square that touches either, which takes in neighbouring ground in Georgia, Turkey, Iran and Russia, Tbilisi and Tabriz among it; none of it has a square to select or returns a height.
 
-Armenia and Azerbaijan are absent from the release TopoKit reads, so they behave the same way: no cell to select, and no elevation to return.
+Over ground with no terrain data the profile shows a hole: a dashed line with no fill beneath joins the heights either side of it, and the dashed stretch is not data.
 
-**A profile that crosses water draws straight through the gap.** The chart connects the shore points on either side, so a flat span over water is interpolation rather than data. A note below the chart reads "Some elevation data unavailable (N tiles missing)".
+The line above the chart gives, in orange, the length with no terrain under it, as in "850 m with no terrain data", counting both where the dataset publishes no tile and where a tile on the device holds no value under the line.
 
-That note counts whole tiles that are not on disk. Where a downloaded tile simply holds no value under your line — a NoData pixel at a coastline or an ice sheet — those samples are dropped with no note at all.
+## Disk space
 
-## Disk-space planning
+Plan on 25–40 MB a tile, each covering about 111 km north to south and narrower east to west away from the equator.
 
-For rough planning, assume 30 MB per tile and work out how many 1°×1° cells your area covers:
+## Elevation at a point
 
-- A single county or watershed: 1–4 tiles, roughly 30–120 MB.
-- A moderate-sized US state or small European country: 20–40 tiles, 600 MB to 1.2 GB.
-- A whole continent: thousands of tiles, hundreds of GB.
+TopoKit finds the tile covering the point and interpolates between the four surrounding values. If any of the four has no value, the result is empty rather than zero.
 
-## Elevation queries: point and profile
+A point's editor has no field for typing a height; its **Elevation** section fills in on its own when the tile is on the device. Over open sea, or where the tile holds no value, it reads "Not available" and nothing is saved. A height that is found is saved with the point and shows on its card. See [Editing a feature](/manual/points-lines-polygons/#editing-a-feature).
 
-TopoKit answers two kinds of elevation question.
+### Height, slope and aspect at a spot
 
-**Point elevation.** TopoKit finds the covering tile and interpolates between the four surrounding DEM values. If any of the four is NoData, the result is empty rather than zero.
+A spot's card reads the ground anywhere without making a point; [Holding a spot and the place card](/manual/search-and-identify/#holding-a-spot-and-the-place-card) covers opening one.
 
-**Profile along a line.** TopoKit samples the line about every 30 metres, matching the DEM's own resolution, and builds a series of distance and elevation pairs. A segment shorter than 30 metres still contributes a sample at its far vertex, so a saved GPS track with fixes a few metres apart is sampled at every fix.
+With the spot's tile on the device, the card leads with **Elevation**, **Slope** and **Aspect**.
 
-<video src="/media/elevation-profile-hover.mp4" autoplay loop muted playsinline aria-label="The elevation profile panel open on a saved line: moving along the chart marks the matching position on the map, with the min, max, average, gain, loss and distance stats below"></video>
+- **Slope** and **Aspect** come from four heights 45 m north, south, east and west of the spot, so they describe a patch about 90 m across, not the spot itself.
+- **Aspect** is the downhill compass direction and appears only where the slope is 1° or more.
+- Where one of the four neighbours has no value, such as just across the edge of a tile that is not on the device, the card shows **Elevation** alone.
 
-Moving along the chart marks the matching spot on the map, so you can see where a climb or a drop actually is. :mac[On Mac, the marker follows the cursor.] :ios[On iPhone, drag along the chart.]
+## The elevation profile
 
-The stats below the chart:
+The elevation profile charts the ground along any line, drawn or imported, a recorded track, a saved route, or a trail, road or other line on a basemap you built. Polygons and circles have no profile. It opens from **Elevation profile** on a line's [card](/manual/search-and-identify/#the-card), and from **Elevation Profile** in the line's menu in the [Layers tab](/manual/layer-tree/) and in its editor. :mac[On Mac, **Elevation Profile** is also in the right-click menu on a line and in the **Layer** menu.]
 
-- **Min**, **Max** and **Avg**: taken from the samples, so a summit falling between two samples is not in the maximum.
-- **Gain** and **Loss**: the sums of the positive and negative steps between samples.
-- **Distance**: the real length of the line, summed segment by segment, not the sample count multiplied by 30 metres.
+:::mac
+<video src="/media/elevation-profile-hover.mp4" autoplay loop muted playsinline aria-label="The elevation profile of the saved line Trail, which follows the Sunshine Coast Trail, open under the map on a Mac: the pointer moves along the chart and a marker follows along the trail on the map, then a drag across the chart selects a stretch, which lights on the map while the numbers switch to the stretch's own"></video>
+:::
 
-### The Elevation Profile tool
+The chart shows the height and distance under the pointer, or under a finger dragged along it, and a marker on the map moves to that place on the line. The row at the foot of the profile has the card's **Zoom to** and **Share**, with no **Share** on a profile opened from the Layers tab, the line's editor or the **Layer** menu; see [The card's buttons](/manual/search-and-identify/#the-cards-buttons).
 
-The tool sidebar's :ui[Elevation Profile]{icon=elevation-profile} button is separate from the [profile you open on a saved line](/manual/points-lines-polygons/#line-elevation-profile): it builds a temporary path and charts it without saving a layer. It offers two modes:
+A named trail or road on a basemap is profiled along its whole length, not only the stretch you tapped; an unnamed one along the stretch outlined on the map.
 
-- **Points mode**: tap the map to drop waypoints, and TopoKit connects them with straight segments.
-- **Route mode**: tap a start and an end, and TopoKit follows a road route from [Apple Maps directions](/manual/directions-and-routing/) — walking by default, switchable to driving — sampling elevation along the real road geometry.
+Opening a profile from the Layers tab, the line's editor or the **Layer** menu ends any tool in progress and discards an unfinished drawing.
 
-Both modes share the same chart and stats. You can switch modes mid-measurement; the placed points and the panel reset.
+The profile samples the ground about every 30 m, matching the model's own spacing, and at every vertex, so a GPS track with fixes a few metres apart is sampled at every fix.
 
-The :ui[Save] button on the tool card opens the same line editor a drawn line opens, so you can name the feature before it is saved.
+The height scale fits the heights in view, never less than 20 m (66 ft) top to bottom, so a gentle grade can look steep and two profiles are rarely on the same scale.
+
+The numbers under the chart:
+
+- **Distance**: the length the profile charts, including any gap between its parts; side pieces it leaves out, and the second side of a line drawn twice, are not in it.
+- **Gain** and **Loss**: the total climb and descent, counting a rise or fall only once it reaches 4 m (13 ft) from the last counted height, the terrain model's own error from one point to the next. The step across a hole in the data, or across a gap between two parts of a line, is not counted. Without a hole or gap, gain minus loss equals the change in height from start to end.
+- **Min**, **Max** and **Avg**: taken from the samples, so a summit between two samples is not in **Max**, and **Avg** weighs every sample equally, so on a GPS track it leans toward stretches where the fixes lie closest together.
+
+All six follow **Settings → Units & Coordinates → Units**, not the units the measuring tools start with; see [Units & Coordinates](/manual/settings/#units--coordinates). A tap or click on a number copies it.
+
+### Selecting and zooming
+
+Selecting a stretch gives its own climb and descent. :mac[On Mac, drag across the chart.] :ios[On iPhone, hold a finger on the chart for a moment, then drag; a drag without the hold only moves the marker.] A stretch under 50 m is dropped. The stretch lights on the map with a handle at each end, as on the chart; drag a handle on the chart to move that end.
+
+::::platforms
+:::ios
+<video src="/media/elevation-profile-select-iphone.mp4" autoplay loop muted playsinline aria-label="The elevation profile of the Sunshine Coast Trail on iPhone: a finger runs along the chart and the marker follows along the trail on the map, a hold and a drag select a stretch whose Selection, Gain, Loss, Min, Max and Avg replace the line's figures, a pinch zooms the chart to part of the line and the map to the same stretch, and a double tap on the bar along its foot shows the whole line again on both"></video>
+:::
+
+:::mac
+![A stretch selected on the profile of the saved line Trail on a Mac: the stretch is shaded on the chart with a handle at each end, the line above the chart reads Selection 32.6 km with its start and end and Clear, the numbers switch to Selection, Gain, Loss, Min, Max and Avg for the stretch, and the same stretch is lit on the map](../../../assets/manual/elevation-selecting-and-zooming-mac.png)
+:::
+::::
+
+Pinch the chart to zoom into part of the line, down to 200 m or 2% of the line, whichever is longer. Double-click or double-tap the bar along the foot of the zoomed chart to show the whole line.
+
+### The line above the chart
+
+When the chart carries a note, such as a length with no terrain data, gaps between the line's parts or side pieces left out of the profile, the line above the chart shows only the first. A tap or click on a note, or on the line at rest, opens a short note on where the heights come from and how **Gain** and **Loss** are counted, with every chart note in full. On each device, until you first select a stretch, the line at rest says how to select one instead, and a tap or click on it opens nothing.
+
+### Recorded tracks and lines in several parts
+
+A recorded track, whether TopoKit's own or another app's track whose points carry times, is charted in the order it was travelled, with heights from the terrain model rather than the altitudes it recorded, so its **Gain** and **Loss** can differ from the track's own figures; see [Trip statistics](/manual/gps-and-track-recording/#trip-statistics).
+
+On any line in several parts, a jump of 100 m or less between parts is charted as ground. A longer jump is a gap, drawn dashed like a hole in the data and included in **Distance**.
+
+### A profile while you draw
+
+The :ui[Add Line]{icon=add-line} and :ui[Add Route] tool cards have an **Elevation profile** button. The drawing stays editable while the profile is open, and the chart redraws after each point you add, move or delete, clearing any selected stretch or zoom window.
+
+A route is charted along the roads its legs follow.
 
 ## FAQ
 
-**Why is elevation missing in some areas?**
+**Can TopoKit read heights from my own DEM or lidar?**
+No. Every height TopoKit reads from the ground comes from the Copernicus model. A DEM imported as a [raster](/manual/raster-overlays/) is drawn as an image and never read for heights.
 
-Either the cell is not published at all, or the tile is downloaded and the pixels under your query hold no value — most often near coastlines and ice sheets. See [Coverage gaps](#coverage-gaps).
-
-**Why is the elevation different from my handheld GPS reading?**
-
-Your receiver reports height above the ellipsoid while the DEM stores height above sea level, and the two differ by tens of metres almost everywhere. GLO-30 is also a surface model at 30-metre resolution, so it does not resolve the exact spot you are standing on. See [Elevation data source](#elevation-data-source).
-
-**Can the app work with elevation when offline?**
-
-Yes, as long as the tiles are already on disk: lookups read them straight from storage, so they behave the same with or without a connection. If a tile is missing and you have no connection, the download waits for the network rather than failing — close the panel and fetch the tiles when you are back online.
+**Why does no grid appear when I choose Download Elevation…?**
+The grid is drawn only once a 1° square is large enough on screen; zoom in until the squares appear.
