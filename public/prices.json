@@ -1,882 +1,1290 @@
 {
  "app": "6761090144",
- "generated": "2026-10-16T22:16:13.516Z",
+ "generated": "2026-10-25T00:57:14.255Z",
  "storefronts": {
   "AE": {
    "currency": "AED",
-   "app": "AED 39.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "AED 149.99",
+    "TopoKit Monthly": "AED 19.99"
+   }
   },
   "AF": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "AG": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "AI": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "AL": {
    "currency": "USD",
-   "app": "USD 11.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 49.99",
+    "TopoKit Monthly": "USD 5.99"
+   }
   },
   "AM": {
    "currency": "USD",
-   "app": "USD 11.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 49.99",
+    "TopoKit Monthly": "USD 5.99"
+   }
   },
   "AO": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "AR": {
    "currency": "USD",
-   "app": "USD 9.99",
+   "app": "Gratis",
    "iap": {}
   },
   "AT": {
    "currency": "EUR",
-   "app": "9,99 €",
+   "app": "Gratis",
    "iap": {}
   },
   "AU": {
    "currency": "AUD",
-   "app": "$14.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "$59.99",
+    "TopoKit Monthly": "$7.99"
+   }
   },
   "AZ": {
    "currency": "USD",
-   "app": "USD 11.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 49.99",
+    "TopoKit Monthly": "USD 5.99"
+   }
   },
   "BA": {
    "currency": "EUR",
-   "app": "9,99 €",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "44,99 €",
+    "TopoKit Monthly": "5,99 €"
+   }
   },
   "BB": {
    "currency": "USD",
-   "app": "USD 11.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 49.99",
+    "TopoKit Monthly": "USD 5.99"
+   }
   },
   "BE": {
    "currency": "EUR",
-   "app": "9,99 €",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "44,99 €",
+    "TopoKit Monthly": "5,99 €"
+   }
   },
   "BF": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "BG": {
    "currency": "EUR",
-   "app": "9,99 €",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "44,99 €",
+    "TopoKit Monthly": "5,99 €"
+   }
   },
   "BH": {
    "currency": "USD",
-   "app": "$9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "$39.99",
+    "TopoKit Monthly": "$4.99"
+   }
   },
   "BJ": {
    "currency": "USD",
-   "app": "USD 11.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 49.99",
+    "TopoKit Monthly": "USD 5.99"
+   }
   },
   "BM": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "BN": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "BO": {
    "currency": "USD",
-   "app": "USD 9.99",
+   "app": "Gratis",
    "iap": {}
   },
   "BR": {
    "currency": "BRL",
-   "app": "R$ 59,90",
+   "app": "Grátis",
    "iap": {}
   },
   "BS": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "BT": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "BW": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "BY": {
    "currency": "USD",
-   "app": "USD 11.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 49.99",
+    "TopoKit Monthly": "USD 5.99"
+   }
   },
   "BZ": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "CA": {
    "currency": "CAD",
-   "app": "$12.99",
+   "app": "Free",
    "iap": {
-    "TopoKit Monthly": "$6.99",
-    "TopoKit Forever": "$49.99"
+    "TopoKit Forever": "$49.99",
+    "TopoKit Monthly": "$6.99"
    }
   },
   "CD": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "CH": {
    "currency": "CHF",
-   "app": "CHF 9.00",
+   "app": "Gratis",
    "iap": {}
   },
   "CI": {
    "currency": "USD",
-   "app": "11,99 $US",
+   "app": "Gratuit",
    "iap": {}
   },
   "CL": {
    "currency": "CLP",
-   "app": "$9.990",
+   "app": "Gratis",
    "iap": {}
   },
   "CM": {
    "currency": "USD",
-   "app": "11,99 $US",
+   "app": "Gratuit",
    "iap": {}
   },
   "CN": {
    "currency": "CNY",
-   "app": "¥68.00",
+   "app": "免费",
    "iap": {}
   },
   "CO": {
    "currency": "COP",
-   "app": "$ 49.900,00",
+   "app": "Gratis",
    "iap": {}
   },
   "CR": {
    "currency": "USD",
-   "app": "USD 9.99",
+   "app": "Gratis",
    "iap": {}
   },
   "CV": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "CY": {
    "currency": "EUR",
-   "app": "9,99 €",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "44,99 €",
+    "TopoKit Monthly": "5,99 €"
+   }
   },
   "CZ": {
    "currency": "CZK",
-   "app": "249,00 Kč",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "999,00 Kč",
+    "TopoKit Monthly": "129,00 Kč"
+   }
   },
   "DE": {
    "currency": "EUR",
-   "app": "9,99 €",
+   "app": "Gratis",
    "iap": {}
   },
   "DK": {
    "currency": "DKK",
-   "app": "89,00 kr",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "349,00 kr",
+    "TopoKit Monthly": "39,00 kr"
+   }
   },
   "DM": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "DO": {
    "currency": "USD",
-   "app": "USD 9.99",
+   "app": "Gratis",
    "iap": {}
   },
   "DZ": {
    "currency": "USD",
-   "app": "$9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "$39.99",
+    "TopoKit Monthly": "$4.99"
+   }
   },
   "EC": {
    "currency": "USD",
-   "app": "USD 9.99",
+   "app": "Gratis",
    "iap": {}
   },
   "EE": {
    "currency": "EUR",
-   "app": "9,99 €",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "44,99 €",
+    "TopoKit Monthly": "5,99 €"
+   }
   },
   "EG": {
    "currency": "EGP",
-   "app": "EGP 499.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "EGP 1,999.99",
+    "TopoKit Monthly": "EGP 249.99"
+   }
   },
   "ES": {
    "currency": "EUR",
-   "app": "9,99 €",
+   "app": "Gratis",
    "iap": {}
   },
   "FI": {
    "currency": "EUR",
-   "app": "9,99 €",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "44,99 €",
+    "TopoKit Monthly": "5,99 €"
+   }
   },
   "FJ": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "FM": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "FR": {
    "currency": "EUR",
-   "app": "9,99 €",
+   "app": "Gratuit",
    "iap": {}
   },
   "GA": {
    "currency": "USD",
-   "app": "USD 9.99",
+   "app": "Gratuit",
    "iap": {}
   },
   "GB": {
    "currency": "GBP",
-   "app": "£9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "£39.99",
+    "TopoKit Monthly": "£4.99"
+   }
   },
   "GD": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "GE": {
    "currency": "USD",
-   "app": "USD 11.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 49.99",
+    "TopoKit Monthly": "USD 5.99"
+   }
   },
   "GH": {
    "currency": "USD",
-   "app": "USD 11.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 49.99",
+    "TopoKit Monthly": "USD 5.99"
+   }
   },
   "GM": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "GR": {
    "currency": "EUR",
-   "app": "9,99 €",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "44,99 €",
+    "TopoKit Monthly": "5,99 €"
+   }
   },
   "GT": {
    "currency": "USD",
-   "app": "USD 9.99",
+   "app": "Gratis",
    "iap": {}
   },
   "GW": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "GY": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "HK": {
    "currency": "HKD",
-   "app": "HK$ 88.00",
+   "app": "免費",
    "iap": {}
   },
   "HN": {
    "currency": "USD",
-   "app": "USD 9.99",
+   "app": "Gratis",
    "iap": {}
   },
   "HR": {
    "currency": "EUR",
-   "app": "9,99 €",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "44,99 €",
+    "TopoKit Monthly": "5,99 €"
+   }
   },
   "HU": {
    "currency": "HUF",
-   "app": "HUF4,490.00",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "HUF17,990.00",
+    "TopoKit Monthly": "HUF1,990.00"
+   }
   },
   "ID": {
    "currency": "IDR",
-   "app": "Rp 199ribu",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "Rp 799ribu",
+    "TopoKit Monthly": "Rp 99ribu"
+   }
   },
   "IE": {
    "currency": "EUR",
-   "app": "€9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "€44.99",
+    "TopoKit Monthly": "€5.99"
+   }
   },
   "IL": {
    "currency": "ILS",
-   "app": "₪29.90",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "₪119.90",
+    "TopoKit Monthly": "₪14.90"
+   }
   },
   "IN": {
    "currency": "INR",
-   "app": "₹ 999",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "₹ 3,999",
+    "TopoKit Monthly": "₹ 499"
+   }
   },
   "IQ": {
    "currency": "USD",
-   "app": "$9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "$39.99",
+    "TopoKit Monthly": "$4.99"
+   }
   },
   "IS": {
    "currency": "USD",
-   "app": "USD 11.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 49.99",
+    "TopoKit Monthly": "USD 5.99"
+   }
   },
   "IT": {
    "currency": "EUR",
-   "app": "9,99 €",
+   "app": "Gratis",
    "iap": {}
   },
   "JM": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "JO": {
    "currency": "USD",
-   "app": "$9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "$39.99",
+    "TopoKit Monthly": "$4.99"
+   }
   },
   "JP": {
    "currency": "JPY",
-   "app": "¥1,500",
+   "app": "無料",
    "iap": {}
   },
   "KE": {
    "currency": "USD",
-   "app": "USD 11.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 49.99",
+    "TopoKit Monthly": "USD 5.99"
+   }
   },
   "KG": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "KH": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "KN": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "KR": {
    "currency": "KRW",
-   "app": "￦17,000",
+   "app": "무료",
    "iap": {}
   },
   "KW": {
    "currency": "USD",
-   "app": "$9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "$39.99",
+    "TopoKit Monthly": "$4.99"
+   }
   },
   "KY": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "KZ": {
    "currency": "KZT",
-   "app": "5,990.00₸",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "22,990.00₸",
+    "TopoKit Monthly": "2,990.00₸"
+   }
   },
   "LA": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "LB": {
    "currency": "USD",
-   "app": "$9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "$39.99",
+    "TopoKit Monthly": "$4.99"
+   }
   },
   "LC": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "LK": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "LR": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "LT": {
    "currency": "EUR",
-   "app": "9,99 €",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "44,99 €",
+    "TopoKit Monthly": "5,99 €"
+   }
   },
   "LU": {
    "currency": "EUR",
-   "app": "9,99 €",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "44,99 €",
+    "TopoKit Monthly": "5,99 €"
+   }
   },
   "LV": {
    "currency": "EUR",
-   "app": "9,99 €",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "44,99 €",
+    "TopoKit Monthly": "5,99 €"
+   }
   },
   "LY": {
    "currency": "USD",
-   "app": "$9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "$39.99",
+    "TopoKit Monthly": "$4.99"
+   }
   },
   "MA": {
    "currency": "USD",
-   "app": "$11.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "$49.99",
+    "TopoKit Monthly": "$5.99"
+   }
   },
   "MD": {
    "currency": "USD",
-   "app": "USD 11.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 49.99",
+    "TopoKit Monthly": "USD 5.99"
+   }
   },
   "ME": {
    "currency": "EUR",
-   "app": "9,99 €",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "39,99 €",
+    "TopoKit Monthly": "4,99 €"
+   }
   },
   "MG": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "MK": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "ML": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "MM": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "MN": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "MO": {
    "currency": "USD",
-   "app": "USD 9.99",
+   "app": "免費",
    "iap": {}
   },
   "MR": {
    "currency": "USD",
-   "app": "$9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "$39.99",
+    "TopoKit Monthly": "$4.99"
+   }
   },
   "MS": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "MT": {
    "currency": "EUR",
-   "app": "9,99 €",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "44,99 €",
+    "TopoKit Monthly": "5,99 €"
+   }
   },
   "MU": {
    "currency": "USD",
-   "app": "USD 11.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 49.99",
+    "TopoKit Monthly": "USD 5.99"
+   }
   },
   "MV": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "MW": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "MX": {
    "currency": "MXN",
-   "app": "$199.00",
+   "app": "Gratis",
    "iap": {}
   },
   "MY": {
    "currency": "MYR",
-   "app": "RM49.90",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "RM199.90",
+    "TopoKit Monthly": "RM22.90"
+   }
   },
   "MZ": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "NA": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "NE": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "NG": {
    "currency": "NGN",
-   "app": "₦ 14,900.00",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "₦ 69,900.00",
+    "TopoKit Monthly": "₦ 7,900.00"
+   }
   },
   "NI": {
    "currency": "USD",
-   "app": "USD 9.99",
+   "app": "Gratis",
    "iap": {}
   },
   "NL": {
    "currency": "EUR",
-   "app": "€ 9,99",
+   "app": "Gratis",
    "iap": {}
   },
   "NO": {
    "currency": "NOK",
-   "app": "129,00 kr",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "499,00 kr",
+    "TopoKit Monthly": "59,00 kr"
+   }
   },
   "NP": {
    "currency": "USD",
-   "app": "USD 11.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 49.99",
+    "TopoKit Monthly": "USD 5.99"
+   }
   },
   "NR": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "NZ": {
    "currency": "NZD",
-   "app": "$19.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "$69.99",
+    "TopoKit Monthly": "$9.99"
+   }
   },
   "OM": {
    "currency": "USD",
-   "app": "$9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "$39.99",
+    "TopoKit Monthly": "$4.99"
+   }
   },
   "PA": {
    "currency": "USD",
-   "app": "USD 9.99",
+   "app": "Gratis",
    "iap": {}
   },
   "PE": {
    "currency": "PEN",
-   "app": "S/ 44.90",
+   "app": "Gratis",
    "iap": {}
   },
   "PG": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "PH": {
    "currency": "PHP",
-   "app": "₱ 599.00",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "₱ 2,490.00",
+    "TopoKit Monthly": "₱ 299.00"
+   }
   },
   "PK": {
    "currency": "PKR",
-   "app": "Rs 2,900.00",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "Rs 9,900.00",
+    "TopoKit Monthly": "Rs 1,300.00"
+   }
   },
   "PL": {
    "currency": "PLN",
-   "app": "49,99 zł",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "199,99 zł",
+    "TopoKit Monthly": "24,99 zł"
+   }
   },
   "PT": {
    "currency": "EUR",
-   "app": "9,99 €",
+   "app": "Gratuito",
    "iap": {}
   },
   "PW": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "PY": {
    "currency": "USD",
-   "app": "USD 9.99",
+   "app": "Gratis",
    "iap": {}
   },
   "QA": {
    "currency": "QAR",
-   "app": "QAR 39.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "QAR 149.99",
+    "TopoKit Monthly": "QAR 19.99"
+   }
   },
   "RO": {
    "currency": "RON",
-   "app": "49,99 lei",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "199,99 lei",
+    "TopoKit Monthly": "29,99 lei"
+   }
   },
   "RS": {
    "currency": "EUR",
-   "app": "9,99 €",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "44,99 €",
+    "TopoKit Monthly": "5,99 €"
+   }
   },
   "RU": {
    "currency": "RUB",
-   "app": "899,00 ₽",
+   "app": "Бесплатно",
    "iap": {}
   },
   "RW": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "SA": {
    "currency": "SAR",
-   "app": "SAR 39.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "SAR 179.99",
+    "TopoKit Monthly": "SAR 19.99"
+   }
   },
   "SB": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "SC": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "SE": {
    "currency": "SEK",
-   "app": "129,00 kr",
+   "app": "Gratis",
    "iap": {}
   },
   "SG": {
    "currency": "SGD",
-   "app": "S$ 14.98",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "S$ 59.98",
+    "TopoKit Monthly": "S$ 6.98"
+   }
   },
   "SI": {
    "currency": "EUR",
-   "app": "9,99 €",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "44,99 €",
+    "TopoKit Monthly": "5,99 €"
+   }
   },
   "SK": {
    "currency": "EUR",
-   "app": "9,99 €",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "44,99 €",
+    "TopoKit Monthly": "5,99 €"
+   }
   },
   "SL": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "SN": {
    "currency": "USD",
-   "app": "USD 11.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 49.99",
+    "TopoKit Monthly": "USD 5.99"
+   }
   },
   "SR": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "ST": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "SV": {
    "currency": "USD",
-   "app": "USD 9.99",
+   "app": "Gratis",
    "iap": {}
   },
   "SZ": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "TC": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "TD": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "TH": {
    "currency": "THB",
-   "app": "฿399.00",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "฿1,490.00",
+    "TopoKit Monthly": "฿199.00"
+   }
   },
   "TJ": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "TM": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "TN": {
    "currency": "USD",
-   "app": "$9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "$39.99",
+    "TopoKit Monthly": "$4.99"
+   }
   },
   "TO": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "TR": {
    "currency": "TRY",
-   "app": "₺499,99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "₺1.999,99",
+    "TopoKit Monthly": "₺249,99"
+   }
   },
   "TT": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "TW": {
    "currency": "TWD",
-   "app": "$320.00",
+   "app": "免費",
    "iap": {}
   },
   "TZ": {
    "currency": "TZS",
-   "app": "29,900.00 TZS",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "99,900.00 TZS",
+    "TopoKit Monthly": "14,900.00 TZS"
+   }
   },
   "UA": {
    "currency": "USD",
-   "app": "11,99 USD",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "49,99 USD",
+    "TopoKit Monthly": "5,99 USD"
+   }
   },
   "UG": {
    "currency": "USD",
-   "app": "USD 11.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 49.99",
+    "TopoKit Monthly": "USD 5.99"
+   }
   },
   "US": {
    "currency": "USD",
-   "app": "$9.99",
+   "app": "Free",
    "iap": {
-    "TopoKit Monthly": "$4.99",
-    "TopoKit Forever": "$34.99"
+    "TopoKit Forever": "$39.99",
+    "TopoKit Monthly": "$4.99"
    }
   },
   "UY": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "UZ": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "VC": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "VE": {
    "currency": "USD",
-   "app": "USD 9.99",
+   "app": "Gratis",
    "iap": {}
   },
   "VG": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "VN": {
    "currency": "VND",
-   "app": "299.000đ",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "1.199.000đ",
+    "TopoKit Monthly": "149.000đ"
+   }
   },
   "VU": {
    "currency": "USD",
-   "app": "USD 9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 39.99",
+    "TopoKit Monthly": "USD 4.99"
+   }
   },
   "XK": {
    "currency": "EUR",
-   "app": "9,99 €",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "44,99 €",
+    "TopoKit Monthly": "5,99 €"
+   }
   },
   "YE": {
    "currency": "USD",
-   "app": "$9.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "$39.99",
+    "TopoKit Monthly": "$4.99"
+   }
   },
   "ZA": {
    "currency": "ZAR",
-   "app": "R199.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "R799.99",
+    "TopoKit Monthly": "R99.99"
+   }
   },
   "ZM": {
    "currency": "USD",
-   "app": "USD 11.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 49.99",
+    "TopoKit Monthly": "USD 5.99"
+   }
   },
   "ZW": {
    "currency": "USD",
-   "app": "USD 11.99",
-   "iap": {}
+   "app": "Free",
+   "iap": {
+    "TopoKit Forever": "USD 49.99",
+    "TopoKit Monthly": "USD 5.99"
+   }
   }
  }
 }

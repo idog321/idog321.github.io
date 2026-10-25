@@ -242,7 +242,7 @@
   </div>
   <div class="cta-pricing">
     <p>Everyone who downloads TopoKit before January 1, 2027 gets the entire app, completely unlocked, for life. No subscription, no future payments, and no features locked away.</p>
-    <p>Starting in the new year, new users can choose between <span class="js-monthly">$4.99 USD</span> per month (with the first month free) or a one-time payment of <span class="js-forever">$34.99 USD</span> for lifetime access.<span class="js-price-note"></span></p>
+    <p>Starting in the new year, new users can choose between <span class="js-monthly">$4.99 USD</span> per month (with the first month free) or a one-time payment of <span class="js-forever">$39.99 USD</span> for lifetime access.<span class="js-price-note"></span></p>
     <p>Already have TopoKit? Nothing changes. Whether you downloaded it for free or purchased it previously, you keep full access forever. TopoKit stays unlocked on every iPhone and Mac signed into the same Apple Account, even if you delete it and download it again.</p>
   </div>
   </div>
@@ -337,7 +337,7 @@ navState();
     for (var i = 0; i < langs.length && !region; i++) { var p = langs[i].split('-'); if (p.length > 1 && /^[A-Za-z]{2}$/.test(p[p.length - 1])) region = p[p.length - 1].toUpperCase(); }
   }
   var mo = document.querySelector('.js-monthly'), fo = document.querySelector('.js-forever'), note = document.querySelector('.js-price-note');
-  if (!region || region === 'US' || !mo || !fo) return;
+  if (!region || !mo || !fo) return;
   fetch('prices.json').then(function (r) { return r.json(); }).then(function (d) {
     var row = d.storefronts && d.storefronts[region];
     if (!row) return;
