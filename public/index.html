@@ -17,6 +17,30 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://topokit.ca/Images/og-card.jpg">
+  <!-- Tells search engines this site, the App Store listing and the YouTube channel are one TopoKit. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "TopoKit",
+        "url": "https://topokit.ca/"
+      },
+      {
+        "@type": "Organization",
+        "name": "TopoKit",
+        "url": "https://topokit.ca/",
+        "logo": "https://topokit.ca/favicon.png",
+        "email": "support@topokit.ca",
+        "sameAs": [
+          "https://apps.apple.com/us/app/topokit/id6761090144",
+          "https://www.youtube.com/@TopoKitGIS"
+        ]
+      }
+    ]
+  }
+  </script>
   <link rel="stylesheet" href="home.css?v=19">
   <link rel="icon" type="image/png" sizes="192x192" href="favicon.png">
   <!-- Safari paints SVG <img>s incrementally while they stream, and mask references
