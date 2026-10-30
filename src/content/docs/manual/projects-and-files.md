@@ -176,7 +176,7 @@ The `.mapproject` file holds the project's name and dates, the style of each fea
 
 `nodes` is a lookup keyed by item ID, written as a flat array that alternates an ID string and an item object, so search for an ID as an array element, not a key. `deletedNodes` holds each deleted item's ID with its deletion date, for [merging](#merging-changes-from-another-device).
 
-`fileFormatVersion` records the format the file was written in. TopoKit 1.2 still writes format 1 ([Devices on different versions](#devices-on-different-versions)).
+`fileFormatVersion` records the format the file was written in. TopoKit 1.2.1 still writes format 1 ([Devices on different versions](#devices-on-different-versions)).
 
 A raster copied into the project is recorded by a path relative to the project folder, such as `Rasters/my-geotiff.tif`, so the folder can move between devices; any other raster keeps an absolute path on this device.
 

@@ -52,7 +52,7 @@ The card opens on the best answer and lists the rest under **Also here**. Your p
 
 The outline stays while the card is open, and on a line while its elevation profile is open. A basemap trail lights as far as the map has loaded, then the whole feature once it has been read.
 
-- **Icon**: the one your own feature's row shows in the Layers tab; a pin in a circle for a place or a basemap thing; a ring with a dot on the place card.
+- **Icon**: the one your own feature's row shows in the Layers tab; the :ui[Add Point]{icon=add-point} tool's pin for a place or a basemap thing; a ring with a dot on the place card.
 - **Name**: a tap copies it.
 - **Line under the name**: your feature's folder path, top folder first; a basemap thing's kind, such as "Footpath, unpaved"; or a place's address, which copies.
 - **Coordinate**: in your **Coordinate Format** (see [Units & Coordinates](/manual/settings/#units--coordinates)); a tap copies it. On a line it is the point of the line nearest your tap.
@@ -171,7 +171,7 @@ A query that is exactly a category word, such as `points`, `lines`, `area`, `ras
 | DDM | `49°58.5817'N 124°08.9868'W` | Degree mark and hemisphere letter required; minute mark optional. |
 | UTM | `10U 417559 5536636` | Zones 1–60, a six-digit easting, a northing of five to eight digits. `N` and `S` are the hemisphere, so a position in latitude band S (32° to 40° N) takes `N`; any other letter is a band, `C` to `M` south and `P` to `X` north. |
 
-Decimals take a point in every format. A comma always separates latitude from longitude, so `49,5 8,2` gives no coordinate row and `48,2` is read as latitude 48, longitude 2.
+Decimals take a point in every format. A comma always separates latitude from longitude, so `49,5 8,2` gives no coordinate row and `48,2` is read as latitude 48, longitude 2. Text that does not give one latitude and one longitude, such as `45 N, 30 N` or `45 30 N`, gives no coordinate row.
 
 When TopoKit writes UTM it uses the plain 6° zone, without the Norway and Svalbard exceptions, and the hemisphere letter: `10N 417559E 5536636N`. Every coordinate TopoKit writes, in any of the four formats, pastes back into search and is read.
 

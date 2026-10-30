@@ -55,4 +55,4 @@ The first time a chapter's text uses a term from the [Glossary](/manual/glossary
 ## FAQ
 
 **Which version of TopoKit does this manual describe?**
-TopoKit 1.2. **Settings → About TopoKit → Version** shows the one installed.
+TopoKit 1.2.1. **Settings → About TopoKit → Version** shows the one installed.

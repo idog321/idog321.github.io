@@ -84,13 +84,13 @@ While you draw a line or polygon, and while you edit a saved one with **Edit Ver
 
 ## Calculation methods
 
-Each figure on the card has its own earth model: lengths, perimeters and radii are Apple's ellipsoidal distance summed segment by segment; area is measured on the WGS84 ellipsoid through an equal-area projection; a circle's area and circumference are the flat-plane πr² and 2πr of its radius, while its ring is placed on the ellipsoid by Vincenty's direct formula, so the vertices sit at the radius the card shows.
+Each figure on the card has its own earth model: lengths, perimeters and radii are geodesic distances on the WGS84 ellipsoid summed segment by segment; area is measured on the WGS84 ellipsoid through an equal-area projection; a circle's area and circumference are the flat-plane πr² and 2πr of its radius, while its ring is placed on the ellipsoid by Vincenty's direct formula, so the vertices sit at the radius the card shows.
 
 ### Distance
 
 Every distance TopoKit measures on your own data, a track's and an elevation profile's included, follows the curvature of the Earth, except a circle's circumference, which is 2πr of its radius, and a line's length is the chain of its segment distances summed point to point. Altitude never enters a distance, so a line up a steep slope reads its map distance, shorter than the distance walked.
 
-The distance function is Apple's Core Location ([`CLLocation.distance(from:)`](https://developer.apple.com/documentation/corelocation/cllocation/distance%28from:%29)); Apple publishes neither its algorithm nor an error bound.
+The distance function is Karney's geodesic method as implemented in [PROJ](https://proj.org/en/stable/geodesic.html), the library TopoKit uses for reprojection. It matches Karney's published test geodesics to under a millimetre, near the poles and across 180° included.
 
 A route's distance is the same chain, measured along the road line Apple Maps returns rather than taken from Apple's own figure, so it matches the distance on the route's profile. A leg Apple finds no road for counts as the straight distance between its two stops. The travel time is Apple's estimate for the road legs only, so a straight leg adds distance but no time.
 
@@ -114,3 +114,6 @@ The ring's sides are straight between vertices, so between two vertices it lies 
 
 **Why doesn't my distance match my handheld GPS?**
 If the handheld's figure is a recorded track's distance, it includes the wander of every fix ([GPS FAQ](/manual/gps-and-track-recording/#faq)). Where both measure the same points, the remaining difference is the earth model and altitude: TopoKit's distances follow the [ellipsoid](#distance) and leave altitude out.
+
+**Why does a long line measure a little differently than it did in 1.2?**
+TopoKit 1.2 measured with Apple's distance, which could read a long segment a few hundred metres off when it came right after a short one. A line of 200 m and then 100 km at 49° N read 100.5 km in 1.2 and reads 100.2 km now. Short segments change by millimetres. A saved route's `routeDistance` and a saved track's `track_distance` keep the figure they were saved with.

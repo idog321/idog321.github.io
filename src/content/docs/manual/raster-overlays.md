@@ -47,6 +47,8 @@ A raster's coordinate system is read-only everywhere it appears.
 
 For a GeoTIFF, that means an EPSG code, read from the file's GeoTIFF keys, where UTM zones written as "user-defined" still resolve, or from a `.prj` picked with the image. The GeoTIFF's embedded WKT text is not read. A GeoTIFF with a position but no declared projection is placed as Web Mercator when its coordinates fall within Web Mercator's range but beyond 1,000,000 east or west and 500,000 north or south of the origin, and Edit Raster lists the guess in its diagnostics. A State Plane sheet in feet fits the same numbers, so if such an image lands in the wrong place, import it again with its `.prj`.
 
+A GeoTIFF that ties its coordinates to the centre of a pixel rather than its corner, as the Copernicus elevation tiles do, is placed half a pixel over to match, as GDAL places it.
+
 For a GeoPDF, TopoKit first uses the projection parameters stored in the file. Failing that, it reads the file's coordinate-system description, which accepts an `EPSG:` prefix, an `AUTHORITY["EPSG","XXXX"]` clause, or a recognized name such as a UTM zone, a State Plane zone or a national grid.
 
 A raster whose coordinate system cannot be resolved, or whose coordinates cannot be converted, imports switched off, and no badge marks its row. The alert is titled **No Georeference Found**, **Coordinate Conversion Failed** or **Unsupported Coordinate System**, or **Raster Import Warnings** when several fail at once. When the alert asks for a `.prj` or world file, import the image again with that file in the same pick. Otherwise correct the source file: [`gdal_translate -a_srs EPSG:XXXX in.tif out.tif`](https://gdal.org/en/stable/programs/gdal_translate.html) writes the code into a GeoTIFF's keys.
@@ -65,15 +67,16 @@ The number of control points, the spots on the page paired with spots on the Ear
 
 | Control points | How the sheet is placed |
 |---|---|
-| Exactly four | Reprojected. The edges of a wide sheet are straightened, and two diagonal corners may be trimmed. |
+| Exactly four | Reprojected. The map is drawn out to the frame the four points make, and nothing inside the frame is trimmed. |
 | Five or more | Reprojected. The edges of a wide sheet stay bowed, and nothing is trimmed. |
+
+A sheet placed by four control points is reprojected between them in the coordinate system it names, so a UTM sheet follows UTM from corner to corner. When a sheet gives its control points in the latitude and longitude of a datum other than WGS84, as an Ordnance Survey sheet does in OSGB36, TopoKit moves them into WGS84 with the datum shift a GeoTIFF of the same map gets.
 
 ### Edge clipping
 
-The collar outside a topographic sheet's neatline, with the title block, legend and scale bar, has no position on the ground. TopoKit cuts a sheet placed by four or more control points along the outline they make, so when they sit at the neatline corners the collar is cut away. Two causes cut more:
+The collar outside a topographic sheet's neatline, with the title block, legend and scale bar, has no position on the ground. TopoKit cuts a sheet placed by four or more control points along the outline they make, so when they sit at the neatline corners the collar is cut away. Most frames sit a little slanted on the map, because the sheet's grid north is not true north, and a slanted edge is cut along the frame itself.
 
-- Control points registered at the tick marks rather than the outermost corners shave tick labels or a sliver of terrain. Register the source at the outermost corners.
-- A sheet placed by exactly four control points is clipped to the largest rectangle inside its reprojected trapezoid, which can trim two diagonal corners. This cannot be turned off.
+Control points registered at the tick marks rather than the outermost corners cut more, shaving tick labels or a sliver of terrain. Register the source at the outermost corners.
 
 ## How reprojection works
 
@@ -175,3 +178,6 @@ The warning triangle on a raster's row marks a raster that failed to draw, inclu
 
 **Can TopoKit colour a DEM or an NDVI grid?**
 No. A raster is drawn as stored, with no band selector, contrast stretch or colour ramp, so render a single-band product to 8-bit RGB or greyscale in your desktop GIS first.
+
+**Why did my rasters reproject again after updating TopoKit?**
+An update that changes how TopoKit reprojects remakes each reprojected copy once, the first time the raster shows, with the progress bar on its row. Where an update changes how a file's position is read, a raster already in a project keeps the position it was imported with until you import it again.

@@ -193,7 +193,7 @@ With **Point Clustering** on, the default, pins that overlap merge into one roun
 
 ## Moving features between folders
 
-A feature's **Create New Folder** button creates the new folder at the top level of the tree at once, so cancelling the editor afterwards leaves it there empty, and makes it the feature's folder: a feature you are creating saves into it, and a feature you are editing moves into it when the editor closes. The folder picker lists only folders that directly hold a feature of the same type, so a new or empty folder, or one holding only subfolders, is not in its list. The Layers tab has its own ways of [moving rows](/manual/layer-tree/#moving-rows).
+A feature's **Create New Folder** button creates the new folder at the top level of the tree at once, so cancelling the editor afterwards leaves it there empty, and makes it the feature's folder: a feature you are creating saves into it, and a feature you are editing moves into it when the editor closes. The **Folder** picker lists every folder in the project, in the Layers tab's order, each indented under its parent. The Layers tab has its own ways of [moving rows](/manual/layer-tree/#moving-rows).
 
 ## FAQ
 

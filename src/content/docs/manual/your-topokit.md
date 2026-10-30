@@ -40,7 +40,7 @@ On the free month or Monthly, the page offers **Unlock Forever** alone. Buying i
 
 ## If you already own TopoKit
 
-Anyone who bought TopoKit before it became a free download, or gets it before 1 January, owns all of it on every iPhone and Mac signed into that Apple Account, with nothing to buy or restore. TopoKit reads this from the App Store's record of when your Apple Account first got the app.
+Anyone who bought TopoKit before it became a free download, or gets it before January 1st, 2027, owns all of it on every iPhone and Mac signed into that Apple Account, with nothing to buy or restore. TopoKit reads this from the App Store's record of when your Apple Account first got the app.
 
 ## The Your TopoKit page
 
