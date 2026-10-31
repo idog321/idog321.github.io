@@ -251,6 +251,7 @@ ${contribute}${data.outro ? `    <p class="map-outro">${inline(data.outro)}</p>\
         <li><a href="/manual/">Manual</a></li>
         <li><a href="/release-notes/">Release notes</a></li>
         <li><a href="/maps/">Maps</a></li>
+        <li><a href="https://www.youtube.com/@TopoKitGIS">YouTube</a></li>
         <li><a href="/support">Support</a></li>
         <li><a href="/privacy">Privacy Policy</a></li>
         <li><a href="/terms">Terms of Use</a></li>
