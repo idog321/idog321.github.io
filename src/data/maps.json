@@ -3,6 +3,7 @@
   "description": "Where to download georeferenced GeoPDF and GeoTIFF maps and find XYZ and WMS map services, by country, province and state, free and paid.",
   "intro": [
     "TopoKit opens georeferenced GeoPDF and GeoTIFF files, but finding maps for a particular area isn't always easy. I've put together a list of places to get them across Canada, the United States, Australia, New Zealand, the UK, Ireland, Spain, Portugal and France. It includes free and paid downloads, along with XYZ and WMS map services that you can add to TopoKit and save for offline use.",
+    "I've been collecting map sources as I've come across them over the past few years, and while I've tried to include as many as I can, this is by no means a complete list. If you know of any I've missed, you can suggest them using the form at the bottom of the page.",
     "Each country starts with national map sources, followed by maps for individual provinces, states and regions. Each entry explains what's available, where to get it and whether it's free. I checked the sources in October 2026. For help adding them to TopoKit, see [Raster overlays](https://topokit.ca/manual/raster-overlays/) for files or [Tile layers](https://topokit.ca/manual/tile-layers/) for map services.",
     "Some services need an API key or limit offline downloads, so check each source's terms."
   ],
@@ -32,27 +33,27 @@
     {
       "id": "ca",
       "name": "Canada",
-      "note": "Many commercial publishers sell their digital maps only inside an app rather than as files, among them Backroad Mapbooks (its PDF mapbooks are not georeferenced), Clark Geomatics, ITMB and Xavier Maps. Gem Trek, John Baldwin, Trail Ventures BC, Wild Coast and Chrismar sell paper maps. The West Coast Trail and Juan de Fuca Marine Trail maps that Parks Canada and BC Parks post are not georeferenced, and neither are the Kettle Valley Rail Trail maps from BC Rail Trails and BC Parks. The Trans Canada Trail's own map is a web map with GPX and KML downloads; the Regional District of Nanaimo sheets above include its section of the trail."
+      "note": "Backroad Mapbooks' PDF mapbooks are not georeferenced. Gem Trek, John Baldwin, Trail Ventures BC, Wild Coast, Chrismar, GoTrekkers (the Great Divide Trail) and the East Coast Trail Association sell paper maps. Fundy Hiking Trails prints the Fundy Footpath maps only in its guidebook. The West Coast Trail, Juan de Fuca Marine Trail, North Coast Trail and Howe Sound Crest Trail maps that Parks Canada and BC Parks post are not georeferenced, and neither are the Kettle Valley Rail Trail maps from BC Rail Trails and BC Parks. Nova Scotia Parks' Cape Chignecto maps and the free Great Divide Trail guidebook topo set are not georeferenced either. The Trans Canada Trail's own map is a web map with GPX and KML downloads; the Regional District of Nanaimo sheets above include its section of the trail."
     },
     {
       "id": "us",
       "name": "United States",
-      "note": "Many of the large trail-map publishers sell digital maps only through Avenza or partner apps, among them Tom Harrison, National Geographic Trails Illustrated (its free PDF Quads are not georeferenced), Green Trails, Beartooth, Latitude 40°, Benchmark, Adventure Maps and Purple Lizard. MyTopo prints custom maps but does not sell files. The Pacific Crest Trail has no georeferenced map set: Halfmile's free PDFs were withdrawn in 2019, and the Forest Service's ten PCT maps are paper or, for Oregon and Washington, Avenza-only. The Appalachian Trail Conservancy sells printed map sets."
+      "note": "National Geographic's free Trails Illustrated PDF Quads are not georeferenced, and MyTopo prints custom maps but does not sell files. The Pacific Crest Trail has no georeferenced map set: Halfmile's free PDFs were withdrawn in 2019, and the Forest Service's ten PCT maps are sold on paper. The Appalachian Trail Conservancy, the Tahoe Rim Trail Association and the Pacific Northwest Trail Association sell printed maps."
     },
     {
       "id": "au",
       "name": "Australia",
-      "note": "Western Australia sells its topographic sheets as locked, print-only PDFs, and South Australia's Mapland maps were sold through Avenza. Hema, Spatial Vision and ExplorOz sell digital maps inside their own apps."
+      "note": "Western Australia sells its topographic sheets as locked, print-only PDFs. The Bibbulmun Track Foundation and the Friends of the Heysen Trail sell printed maps, and the NSW government sells a paper map kit for the Great North Walk. The NT government's Larapinta Trail section maps are not georeferenced."
     },
     {
       "id": "nz",
       "name": "New Zealand",
-      "note": "The Topo50 and Topo250 series above are free. Paid digital maps in New Zealand are mostly sold inside apps, so there is no paid file to list. DOC's Great Walk brochure maps are not georeferenced; the Topo50 sheets above cover every Great Walk."
+      "note": "The Topo50 and Topo250 series above are free. DOC's Great Walk brochure maps are not georeferenced; the Topo50 sheets above cover every Great Walk."
     },
     {
       "id": "uk",
       "name": "United Kingdom",
-      "note": "Ordnance Survey does not sell the Explorer or Landranger maps to walkers as files: it licenses the 1:25,000 and 1:50,000 rasters to businesses, and sells them to walkers inside apps such as OS Maps, Anquet, Memory-Map and TwoNav. Harvey Maps also sells its digital maps through apps. The free OS files and the hillshade above are the options for TopoKit."
+      "note": "Ordnance Survey does not sell the Explorer or Landranger maps to walkers as files: it licenses the 1:25,000 and 1:50,000 rasters to businesses. The free OS files and the hillshade above are the options for TopoKit."
     },
     {
       "id": "ie",
@@ -62,7 +63,7 @@
     {
       "id": "es",
       "name": "Spain",
-      "note": "The Camino de Santiago overlay above draws the routes and stages over any of these maps. The Camino guidebook publishers' maps are paper or in-app."
+      "note": "The Camino de Santiago overlay above draws the routes and stages over any of these maps."
     },
     {
       "id": "pt",
@@ -509,7 +510,7 @@
       "what": "Each National Forest's legal map of the roads and trails open to motor vehicles and when; black and white, no terrain.",
       "steps": [
         "On the forest's website: **Visit**, **Maps & Guides**, **Motor Vehicle Use Maps**, then the PDF.",
-        "Or in the Forest Service [Map Finder](https://www.fs.usda.gov/media/241668): set **Map Type** to MVUM, find the forest, tap a map outline and download the geospatial PDF. The Avenza links are for Avenza only."
+        "Or in the Forest Service [Map Finder](https://www.fs.usda.gov/media/241668): set **Map Type** to MVUM, find the forest, tap a map outline and download the geospatial PDF."
       ],
       "addresses": [],
       "notes": "",
@@ -538,7 +539,7 @@
         }
       ],
       "coverage": "Western United States, BLM land",
-      "what": "Recreation, travel-management and surface-management maps for BLM land in the western states; coverage and age vary by state, and some states link only to Avenza.",
+      "what": "Recreation, travel-management and surface-management maps for BLM land in the western states; coverage and age vary by state.",
       "steps": [
         "Open the [collection page](https://www.blm.gov/maps/georeferenced-PDFs), pick the state, tap a map title, then the PDF link on its page."
       ],
@@ -1020,7 +1021,7 @@
       "coverage": "Great Smoky Mountains National Park",
       "what": "Two 1:50,000 GeoPDFs of the park with 100 ft contours, a UTM grid and the backcountry campsites, plus GPX files, as one 250 MB download.",
       "steps": [
-        "Buy the pack, download it and unzip it. The same maps are on Avenza; this is the copy you own."
+        "Buy the pack, download it and unzip it."
       ],
       "addresses": [],
       "notes": "",
@@ -3092,7 +3093,7 @@
         }
       ],
       "coverage": "State of West Virginia (WMAs, public hunting lands, trout streams, fishing lakes, trails)",
-      "what": "The WVDNR interactive map of WMAs, public hunting land, fishing access and trout streams over topography; WVDNR says the PDF it exports can be loaded into Avenza Maps.",
+      "what": "The WVDNR interactive map of WMAs, public hunting land, fishing access and trout streams over topography.",
       "steps": [
         "Open mapwv.gov/huntfish.",
         "Zoom to the area and use the print tool to save a PDF."
@@ -4435,7 +4436,7 @@
         }
       ],
       "coverage": "West Bragg Creek trail network, Kananaskis Country, west of Calgary",
-      "what": "The full and central West Bragg Creek trail maps (December 2020) as georeferenced PDFs; winter ski and equestrian versions are offered through Avenza only.",
+      "what": "The full and central West Bragg Creek trail maps (December 2020) as georeferenced PDFs.",
       "steps": [
         "Open the Bragg Creek Trails maps page.",
         "Use Download pdf of Full Bragg Creek Trails or Download pdf of Central Bragg Creek Trails."
@@ -4471,7 +4472,7 @@
         }
       ],
       "coverage": "The mobile caribou zone north and east of Yellowknife (Dettah, Behchokǫ̀, Whatì, Gamètì area to the Nunavut border), including Thaidene Nëné National Park Reserve, ECC patrol stations, the approximate winter road and the Ekati, Diavik and Gahcho Kué mine sites",
-      "what": "The weekly regulatory map of the no-hunting zone that follows the Bathurst caribou herd, reissued every Tuesday; the NWT Centre for Geomatics says it is made for Avenza Maps.",
+      "what": "The weekly regulatory map of the no-hunting zone that follows the Bathurst caribou herd, reissued every Tuesday.",
       "steps": [
         "Open ECC's View current Mobile Core Bathurst Caribou Management Zone page.",
         "Click View the most recent map and save the PDF."
@@ -4589,7 +4590,7 @@
         }
       ],
       "coverage": "The 650 km Québec section of the International Appalachian Trail from Matapédia to Cap-Gaspé (Avignon, Vallée de la Matapédia, Réserve faunique de Matane, Parc national de la Gaspésie, Haute-Gaspésie, Côte-de-Gaspé, Parc national Forillon)",
-      "what": "Official trail maps of the Québec section of the International Appalachian Trail, in three sections prepared for Avenza Maps, with GPX tracks on the same page.",
+      "what": "Official trail maps of the Québec section of the International Appalachian Trail, in three sections, with GPX tracks on the same page.",
       "steps": [
         "Open the Cartes et tableaux des distances page on sia-iat.com.",
         "In the Avenza Maps section, click the PDF link for the section you want."
@@ -5583,7 +5584,7 @@
         "Scroll to the PDF list and download the summer or winter trail map."
       ],
       "addresses": [],
-      "notes": "The PDFs on the page may lag the Avenza editions by a season.",
+      "notes": "",
       "checked": "2026-10-30"
     },
     {
@@ -5609,7 +5610,7 @@
         }
       ],
       "coverage": "Fall Creek Falls State Park huntable lands, Tennessee",
-      "what": "Tennessee State Parks' 2026 map of the huntable lands at Fall Creek Falls, posted as a georeferenced PDF; the other park maps on tnstateparks.com are images or Avenza links.",
+      "what": "Tennessee State Parks' 2026 map of the huntable lands at Fall Creek Falls, posted as a georeferenced PDF.",
       "steps": [
         "Open the Fall Creek Falls State Park page and scroll to the maps list.",
         "Click Offline-Use GPS Map Huntable Lands to download the PDF."
@@ -7005,7 +7006,7 @@
         "Download the sheet's PDF."
       ],
       "addresses": [],
-      "notes": "The department's Avenza listings of the same sheets are georeferenced.",
+      "notes": "",
       "checked": "2026-10-30"
     },
     {
@@ -7714,6 +7715,37 @@
       "addresses": [],
       "notes": "",
       "checked": "2026-10-30"
+    },
+    {
+      "id": "ca-nl-gros-morne-long-range-traverse-map",
+      "country": "ca",
+      "jurisdiction": "Newfoundland and Labrador",
+      "scope": "local",
+      "name": "Gros Morne Long Range and Northern Traverse map",
+      "publisher": "Parks Canada",
+      "kind": "file",
+      "formats": [
+        "GeoPDF"
+      ],
+      "cost": "free",
+      "price": "",
+      "licence": {
+        "name": "Terms not stated"
+      },
+      "links": [
+        {
+          "label": "Long Range Traverse",
+          "url": "https://parks.canada.ca/pn-np/nl/grosmorne/activ/experiences/arriere-pays-backcountry/longrange"
+        }
+      ],
+      "coverage": "Gros Morne National Park, the Long Range and Northern Rim traverses",
+      "what": "The park's backcountry hiking map of the Long Range and Northern traverses, one 36 by 28 inch page of about 32 MB, with GPX tracks of both routes on the same page. The page doesn't say so, but the PDF is georeferenced.",
+      "steps": [
+        "Open the [Long Range Traverse page](https://parks.canada.ca/pn-np/nl/grosmorne/activ/experiences/arriere-pays-backcountry/longrange) and, under **Download**, tap **Long Range & Northern Traverse Backcountry Hiking Map**."
+      ],
+      "addresses": [],
+      "notes": "",
+      "checked": "2026-10-31"
     }
   ]
 }
