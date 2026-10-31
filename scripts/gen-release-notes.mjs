@@ -169,6 +169,7 @@ ${body}
       <ul class="footer-links">
         <li><a href="/manual/">Manual</a></li>
         <li><a href="/release-notes/">Release notes</a></li>
+        <li><a href="/maps/">Maps</a></li>
         <li><a href="/support">Support</a></li>
         <li><a href="/privacy">Privacy Policy</a></li>
         <li><a href="/terms">Terms of Use</a></li>

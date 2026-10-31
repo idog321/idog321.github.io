@@ -4,6 +4,8 @@ description: "Import GeoTIFF and GeoPDF images, answer the reprojection sheet, s
 ---
 A raster overlay is a map image with its real-world position stored in the file: an aerial photo, a scanned survey sheet, a hillshade. TopoKit reads two formats, **GeoTIFF** (`.tif`, `.tiff`, including BigTIFF) and **GeoPDF** (`.pdf`), and draws the image above or below your points, lines and polygons depending on where its row sits in the Layers tab.
 
+The [Maps](/maps/) page lists where to download GeoPDF and GeoTIFF maps by country, province and state.
+
 ## Importing a raster
 
 :::mac
