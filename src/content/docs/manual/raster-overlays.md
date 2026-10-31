@@ -39,7 +39,7 @@ A raster that needs no reprojection appears at once; in an iCloud project it is 
 
 When several rasters are waiting, **All (N)** reprojects each of them in turn with this sheet's settings, so you answer the sheet once.
 
-**Cancel** switches the raster off. :mac[On Mac, to bring the sheet back, right-click the raster's row and choose **Show**.] :ios[On iPhone, to bring the sheet back, tap **Select** in the Layers tab, select the raster, and tap **Show**.]
+**Cancel** switches the raster off, along with every other raster in the same folder that is still waiting for this sheet, such as the other pages of a map book. :mac[On Mac, to bring the sheet back, right-click the raster's row and choose **Show**.] :ios[On iPhone, to bring the sheet back, tap **Select** in the Layers tab, select the raster, and tap **Show**.]
 
 ## Coordinate systems
 
@@ -61,7 +61,7 @@ A world file sets the image's position, replacing the one in the TIFF, but names
 
 ## GeoPDF import
 
-A sheet with a locator inset is placed by its main map, not the inset. In a multi-page PDF, TopoKit takes the georeference from the first page that has one but always draws page 1, so split the PDF and import each page.
+A sheet with a locator inset is placed by its main map, not the inset. A PDF with maps on several pages comes in as a folder named after the file, holding one raster per map page in page order. TopoKit saves each map page as a PDF of its own, so a map that follows a cover page also comes in as just that page.
 
 The number of control points, the spots on the page paired with spots on the Earth, decides how the sheet is placed:
 
