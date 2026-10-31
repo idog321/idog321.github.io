@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "rm -rf .astro node_modules/.astro && astro dev",
     "start": "astro dev",
-    "build": "node scripts/guard-dev.mjs && node scripts/app-store-prices.mjs && node scripts/gen-maps.mjs && astro build",
+    "build": "node scripts/guard-dev.mjs && node scripts/app-store-prices.mjs && node scripts/gen-maps.mjs && node scripts/check-media.mjs && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "lint:style": "node scripts/check-style.mjs",
