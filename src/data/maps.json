@@ -2,7 +2,7 @@
   "title": "Where to get GeoPDF and GeoTIFF maps",
   "description": "Where to download georeferenced GeoPDF and GeoTIFF maps and find XYZ and WMS map services, by country, province and state, free and paid.",
   "intro": [
-    "TopoKit opens georeferenced GeoPDF and GeoTIFF files, but finding maps for a particular area isn't always easy. I've put together a list of places to get them across Canada, the United States, Australia, New Zealand, the UK and Ireland. It includes free and paid downloads, along with XYZ and WMS map services that you can add to TopoKit and save for offline use.",
+    "TopoKit opens georeferenced GeoPDF and GeoTIFF files, but finding maps for a particular area isn't always easy. I've put together a list of places to get them across Canada, the United States, Australia, New Zealand, the UK, Ireland, Spain, Portugal and France. It includes free and paid downloads, along with XYZ and WMS map services that you can add to TopoKit and save for offline use.",
     "Each country starts with national map sources, followed by maps for individual provinces, states and regions. Each entry explains what's available, where to get it and whether it's free. I checked the sources in October 2026. For help adding them to TopoKit, see [Raster overlays](https://topokit.ca/manual/raster-overlays/) for files or [Tile layers](https://topokit.ca/manual/tile-layers/) for map services.",
     "Some services need an API key or limit offline downloads, so check each source's terms."
   ],
@@ -32,12 +32,12 @@
     {
       "id": "ca",
       "name": "Canada",
-      "note": "Many commercial publishers sell their digital maps only inside an app rather than as files, among them Backroad Mapbooks (its PDF mapbooks are not georeferenced), Clark Geomatics, ITMB and Xavier Maps. Gem Trek, John Baldwin, Trail Ventures BC, Wild Coast and Chrismar sell paper maps."
+      "note": "Many commercial publishers sell their digital maps only inside an app rather than as files, among them Backroad Mapbooks (its PDF mapbooks are not georeferenced), Clark Geomatics, ITMB and Xavier Maps. Gem Trek, John Baldwin, Trail Ventures BC, Wild Coast and Chrismar sell paper maps. The West Coast Trail and Juan de Fuca Marine Trail maps that Parks Canada and BC Parks post are not georeferenced, and neither are the Kettle Valley Rail Trail maps from BC Rail Trails and BC Parks. The Trans Canada Trail's own map is a web map with GPX and KML downloads; the Regional District of Nanaimo sheets above include its section of the trail."
     },
     {
       "id": "us",
       "name": "United States",
-      "note": "Many of the large trail-map publishers sell digital maps only through Avenza or partner apps, among them Tom Harrison, National Geographic Trails Illustrated (its free PDF Quads are not georeferenced), Green Trails, Beartooth, Latitude 40°, Benchmark, Adventure Maps and Purple Lizard. MyTopo prints custom maps but does not sell files."
+      "note": "Many of the large trail-map publishers sell digital maps only through Avenza or partner apps, among them Tom Harrison, National Geographic Trails Illustrated (its free PDF Quads are not georeferenced), Green Trails, Beartooth, Latitude 40°, Benchmark, Adventure Maps and Purple Lizard. MyTopo prints custom maps but does not sell files. The Pacific Crest Trail has no georeferenced map set: Halfmile's free PDFs were withdrawn in 2019, and the Forest Service's ten PCT maps are paper or, for Oregon and Washington, Avenza-only. The Appalachian Trail Conservancy sells printed map sets."
     },
     {
       "id": "au",
@@ -47,7 +47,7 @@
     {
       "id": "nz",
       "name": "New Zealand",
-      "note": "The Topo50 and Topo250 series above are free. Paid digital maps in New Zealand are mostly sold inside apps, so there is no paid file to list."
+      "note": "The Topo50 and Topo250 series above are free. Paid digital maps in New Zealand are mostly sold inside apps, so there is no paid file to list. DOC's Great Walk brochure maps are not georeferenced; the Topo50 sheets above cover every Great Walk."
     },
     {
       "id": "uk",
@@ -58,6 +58,21 @@
       "id": "ie",
       "name": "Ireland",
       "note": "Tailte Éireann (formerly Ordnance Survey Ireland) sells the Discovery 1:50,000 series on paper; its digital mapping is licensed to public bodies through MapGenie, and there is no open raster of it."
+    },
+    {
+      "id": "es",
+      "name": "Spain",
+      "note": "The Camino de Santiago overlay above draws the routes and stages over any of these maps. The Camino guidebook publishers' maps are paper or in-app."
+    },
+    {
+      "id": "pt",
+      "name": "Portugal",
+      "note": ""
+    },
+    {
+      "id": "fr",
+      "name": "France",
+      "note": "The IGN 1:25,000 map (SCAN 25) is not part of the free service."
     }
   ],
   "sources": [
@@ -875,7 +890,7 @@
         }
       ],
       "coverage": "Tasmania",
-      "what": "The state map series as plain files: each 1:50,000 sheet comes as GeoTIFF, GeoPDF and KMZ, and the archived 1:25,000 and the 1:250,000 sheets cost less.",
+      "what": "The state map series as plain files: each 1:50,000 sheet comes as GeoTIFF, GeoPDF and KMZ, and the archived 1:25,000 and the 1:250,000 sheets cost less. The shop also sells the walk maps as digital files, among them Cradle Mountain Lake St Clair for the Overland Track, Peninsula Walks for the Three Capes Track and South Coast Walks.",
       "steps": [
         "In the [TASMAP shop](https://tasmapshop.au/), find the sheet, set **Format** to **Digital** and check out. Whole-state bundles: 1:100,000 for A$59.95, 1:25,000 for A$275, 1:50,000 for A$350."
       ],
@@ -7214,6 +7229,446 @@
           "url": "https://services.thelist.tas.gov.au/arcgis/rest/services/Basemaps/Hillshade/MapServer/tile/{z}/{y}/{x}"
         }
       ],
+      "notes": "",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "ca-bc-garibaldi-park-geopdf",
+      "country": "ca",
+      "jurisdiction": "British Columbia",
+      "scope": "local",
+      "name": "Garibaldi Park wilderness camping and flight zone maps",
+      "publisher": "BC Parks",
+      "kind": "file",
+      "formats": [
+        "GeoPDF"
+      ],
+      "cost": "free",
+      "price": "",
+      "licence": {
+        "name": "Terms not stated",
+        "note": "BC Parks says its maps are for information only and should not be used for navigation"
+      },
+      "links": [
+        {
+          "label": "Garibaldi Park",
+          "url": "https://bcparks.ca/garibaldi-park/"
+        }
+      ],
+      "coverage": "Garibaldi Provincial Park",
+      "what": "Two maps of the park as GeoPDFs: the wilderness camping area map, one 72 by 72 inch page of about 21 MB, and the voluntary flight zones map; BC Parks labels only the second as georeferenced.",
+      "steps": [
+        "Open the [Garibaldi Park page](https://bcparks.ca/garibaldi-park/), go to **Maps and location** and download **Wilderness Camping Area [PDF]** or **Garibaldi georeferenced voluntary flight zones [PDF]**."
+      ],
+      "addresses": [],
+      "notes": "",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "us-cdt-section-maps",
+      "country": "us",
+      "jurisdiction": "New Mexico",
+      "alsoIn": [
+        "Colorado",
+        "Wyoming",
+        "Idaho",
+        "Montana"
+      ],
+      "scope": "local",
+      "name": "Continental Divide Trail section maps",
+      "publisher": "Continental Divide Trail Coalition",
+      "kind": "file",
+      "formats": [
+        "GeoPDF"
+      ],
+      "cost": "free",
+      "price": "",
+      "licence": {
+        "name": "Terms not stated"
+      },
+      "links": [
+        {
+          "label": "How to download the section maps",
+          "url": "https://cdtcoalition.org/how-to-download-free-section-maps/"
+        },
+        {
+          "label": "CDT Interactive Map",
+          "url": "https://cdtc.maps.arcgis.com/apps/instant/basic/index.html?appid=1ddce45fa58b4ba39a2125c61fd394e8"
+        }
+      ],
+      "coverage": "The Continental Divide Trail from Mexico to Canada, in 425 map pages",
+      "what": "The coalition's Version 4.0 map set at half a mile to the inch, built on Forest Service data, with land ownership and an elevation profile; one page per PDF, in high or low resolution. The pages don't say so, but the PDFs are georeferenced.",
+      "steps": [
+        "Open the [CDT Interactive Map](https://cdtc.maps.arcgis.com/apps/instant/basic/index.html?appid=1ddce45fa58b4ba39a2125c61fd394e8), preferably on a computer.",
+        "Tap **Layers**, find **Mapset Pages** and tap its eye icon to show the purple page outlines.",
+        "Tap the outline for your section and, under **Download Version 4.0**, choose **High Resolution** or **Low Resolution**. The PDF opens on Dropbox; tap the download icon to save it."
+      ],
+      "addresses": [],
+      "notes": "",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "us-arizona-trail-passage-maps",
+      "country": "us",
+      "jurisdiction": "Arizona",
+      "scope": "local",
+      "name": "Arizona Trail passage maps",
+      "publisher": "Arizona Trail Association",
+      "kind": "file",
+      "formats": [
+        "GeoPDF"
+      ],
+      "cost": "free",
+      "price": "",
+      "licence": {
+        "name": "Terms not stated"
+      },
+      "links": [
+        {
+          "label": "Passages",
+          "url": "https://aztrail.org/explore/passages/"
+        }
+      ],
+      "coverage": "The Arizona Trail, Mexico to Utah",
+      "what": "A one-page map for most of the trail's passages, dated 2018 to 2025, and an eight-page overview map book of the whole trail. The pages don't say so, but the PDFs are georeferenced.",
+      "steps": [
+        "Open [Passages](https://aztrail.org/explore/passages/), choose a passage and tap **MAP** to open its PDF."
+      ],
+      "addresses": [],
+      "notes": "",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "us-usfs-forest-district-maps",
+      "country": "us",
+      "jurisdiction": null,
+      "scope": "national",
+      "name": "Forest Service forest and ranger district maps",
+      "publisher": "USDA Forest Service",
+      "kind": "file",
+      "formats": [
+        "GeoPDF"
+      ],
+      "cost": "free",
+      "price": "",
+      "licence": {
+        "name": "Public domain (CC0)",
+        "url": "https://catalog.data.gov/dataset/forest-service-digital-maps"
+      },
+      "links": [
+        {
+          "label": "Forest Service Digital Maps",
+          "url": "https://experience.arcgis.com/experience/9ab8d03e2bec4d7fbfc27ba836e70aed"
+        }
+      ],
+      "coverage": "United States, National Forests and Grasslands",
+      "what": "Whole-forest maps, mostly at 1:63,360 to 1:158,400, and ranger district maps at 1:63,360 or 1:126,720, with land ownership, roads, trails and recreation sites, plus a 1:100,000 series over Forest Service land; the PDFs are large, often 30 to 90 MB.",
+      "steps": [
+        "Open [Forest Service Digital Maps](https://experience.arcgis.com/experience/9ab8d03e2bec4d7fbfc27ba836e70aed) and choose **Forest Series**, **Ranger District Series** or **100K Series**.",
+        "Zoom to your area, tap a map outline and tap **Download**, or use the list below the map."
+      ],
+      "addresses": [],
+      "notes": "",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "us-grsm-trail-area-maps",
+      "country": "us",
+      "jurisdiction": "Tennessee",
+      "alsoIn": [
+        "North Carolina"
+      ],
+      "scope": "local",
+      "name": "Great Smoky Mountains trail and area maps",
+      "publisher": "National Park Service",
+      "kind": "file",
+      "formats": [
+        "GeoPDF"
+      ],
+      "cost": "free",
+      "price": "",
+      "licence": {
+        "name": "US government work"
+      },
+      "links": [
+        {
+          "label": "Maps",
+          "url": "https://www.nps.gov/grsm/planyourvisit/maps.htm"
+        }
+      ],
+      "coverage": "Great Smoky Mountains National Park",
+      "what": "The park's trail map, with trails, distances, backcountry campsites and shelters, and its area map; the page says both are GPS-enabled for mapping apps.",
+      "steps": [
+        "Open the park's [Maps page](https://www.nps.gov/grsm/planyourvisit/maps.htm) and tap **Trail Map** or **Area Map**."
+      ],
+      "addresses": [],
+      "notes": "",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "us-grsm-topo-quads",
+      "country": "us",
+      "jurisdiction": "Tennessee",
+      "alsoIn": [
+        "North Carolina"
+      ],
+      "scope": "local",
+      "name": "Great Smoky Mountains topographic maps",
+      "publisher": "National Park Service",
+      "kind": "file",
+      "formats": [
+        "GeoPDF"
+      ],
+      "cost": "free",
+      "price": "",
+      "licence": {
+        "name": "US government work"
+      },
+      "links": [
+        {
+          "label": "Mobile Topographic Maps",
+          "url": "https://www.nps.gov/grsm/planyourvisit/offline_topo.htm"
+        },
+        {
+          "label": "Data Store collection",
+          "url": "https://irma.nps.gov/DataStore/Collection/Profile/2606"
+        }
+      ],
+      "coverage": "Great Smoky Mountains National Park, 29 quadrangles",
+      "what": "The park's 1:24,000 topographic quadrangles with trails, backcountry campsites, grid ticks and contours.",
+      "steps": [
+        "Open the [Data Store collection](https://irma.nps.gov/DataStore/Collection/Profile/2606), tap the number in the **File Count** column beside a quadrangle and download the file described as **GeoPDF**."
+      ],
+      "addresses": [],
+      "notes": "",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "us-florida-st-marks-florida-trail-map",
+      "country": "us",
+      "jurisdiction": "Florida",
+      "scope": "local",
+      "name": "Florida Trail map, St. Marks National Wildlife Refuge",
+      "publisher": "U.S. Fish and Wildlife Service",
+      "kind": "file",
+      "formats": [
+        "GeoPDF"
+      ],
+      "cost": "free",
+      "price": "",
+      "licence": {
+        "name": "All rights reserved",
+        "url": "https://www.fws.gov/media/florida-trail-map-st-marks-nwr"
+      },
+      "links": [
+        {
+          "label": "Florida Trail map",
+          "url": "https://www.fws.gov/media/florida-trail-map-st-marks-nwr"
+        }
+      ],
+      "coverage": "The Florida National Scenic Trail through St. Marks National Wildlife Refuge",
+      "what": "A one-page map of the trail's segment through the refuge, dated January 2022. The page doesn't say so, but the PDF is georeferenced.",
+      "steps": [
+        "Open the [map's page](https://www.fws.gov/media/florida-trail-map-st-marks-nwr) and download the PDF."
+      ],
+      "addresses": [],
+      "notes": "",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "us-new-york-fltc-digital-maps",
+      "country": "us",
+      "jurisdiction": "New York",
+      "scope": "local",
+      "name": "Finger Lakes Trail digital maps",
+      "publisher": "Finger Lakes Trail Conference",
+      "kind": "file",
+      "formats": [
+        "GeoPDF"
+      ],
+      "cost": "paid",
+      "price": "$3.00 to $5.00 a map",
+      "licence": {
+        "name": "Terms not stated"
+      },
+      "links": [
+        {
+          "label": "Maps and GPS",
+          "url": "https://fingerlakestrail.org/maps-and-gps/"
+        }
+      ],
+      "coverage": "The Finger Lakes Trail system in New York, 66 maps",
+      "what": "The conference's 66 trail maps as downloads: each ZIP holds a two-page PDF, the georeferenced map and the trail description, and a GPX file. A free sample map is on the same page.",
+      "steps": [
+        "Open [Maps and GPS](https://fingerlakestrail.org/maps-and-gps/), choose maps from the index or the single-map list and buy the digital files.",
+        "Download each ZIP from the link shown after checkout (the links expire after five days) and unzip it."
+      ],
+      "addresses": [],
+      "notes": "",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "es-ign-mtn-wms",
+      "country": "es",
+      "jurisdiction": null,
+      "scope": "national",
+      "name": "IGN topographic maps (MTN25 and MTN50)",
+      "publisher": "Instituto Geográfico Nacional",
+      "kind": "wms",
+      "formats": [
+        "WMS"
+      ],
+      "cost": "free",
+      "price": "",
+      "licence": {
+        "name": "CC BY 4.0",
+        "url": "https://www.ign.es/resources/licencia/Condiciones_licenciaUso_IGN.pdf",
+        "note": "credit ign.es"
+      },
+      "links": [
+        {
+          "label": "Capabilities",
+          "url": "https://www.ign.es/wms-inspire/mapa-raster?SERVICE=WMS&REQUEST=GetCapabilities"
+        }
+      ],
+      "coverage": "Spain",
+      "what": "The national 1:25,000 and 1:50,000 topographic maps as one map service.",
+      "steps": [
+        "WMS address: `https://www.ign.es/wms-inspire/mapa-raster`. The layer is **mtn_rasterizado**."
+      ],
+      "addresses": [],
+      "notes": "",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "es-ign-pnoa-wms",
+      "country": "es",
+      "jurisdiction": null,
+      "scope": "national",
+      "name": "PNOA orthophotos",
+      "publisher": "Instituto Geográfico Nacional",
+      "kind": "wms",
+      "formats": [
+        "WMS"
+      ],
+      "cost": "free",
+      "price": "",
+      "licence": {
+        "name": "CC BY 4.0",
+        "url": "https://www.ign.es/resources/licencia/Condiciones_licenciaUso_IGN.pdf",
+        "note": "credit scne.es"
+      },
+      "links": [
+        {
+          "label": "Capabilities",
+          "url": "https://www.ign.es/wms-inspire/pnoa-ma?SERVICE=WMS&REQUEST=GetCapabilities"
+        }
+      ],
+      "coverage": "Spain",
+      "what": "The most recent aerial photographs of Spain, with Sentinel-2 satellite imagery at small scales.",
+      "steps": [
+        "WMS address: `https://www.ign.es/wms-inspire/pnoa-ma`. The layer is **OI.OrthoimageCoverage**."
+      ],
+      "addresses": [],
+      "notes": "",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "es-ign-camino-de-santiago-wms",
+      "country": "es",
+      "jurisdiction": null,
+      "scope": "regional",
+      "name": "Camino de Santiago routes",
+      "publisher": "Instituto Geográfico Nacional",
+      "kind": "wms",
+      "formats": [
+        "WMS"
+      ],
+      "cost": "free",
+      "price": "",
+      "licence": {
+        "name": "CC BY 4.0",
+        "url": "https://www.ign.es/resources/licencia/Condiciones_licenciaUso_IGN.pdf",
+        "note": "credit ign.es"
+      },
+      "links": [
+        {
+          "label": "Capabilities",
+          "url": "https://www.ign.es/wms-inspire/camino-santiago?SERVICE=WMS&REQUEST=GetCapabilities"
+        }
+      ],
+      "coverage": "Camino routes in Spain, Portugal and France",
+      "what": "The Camino routes and their stages as a transparent overlay; the Camino Francés has a layer of its own, and the other routes are grouped by region.",
+      "steps": [
+        "WMS address: `https://www.ign.es/wms-inspire/camino-santiago`. Layers include **camino_frances**, **caminos_norte**, **caminos_portugueses** and **caminos_francia**."
+      ],
+      "addresses": [],
+      "notes": "",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "pt-dgt-ortosat-2023-wms",
+      "country": "pt",
+      "jurisdiction": null,
+      "scope": "national",
+      "name": "OrtoSat 2023 imagery",
+      "publisher": "Direção-Geral do Território",
+      "kind": "wms",
+      "formats": [
+        "WMS"
+      ],
+      "cost": "free",
+      "price": "",
+      "licence": {
+        "name": "No conditions stated",
+        "url": "https://ortos.dgterritorio.gov.pt/wms/ortosat2023?SERVICE=WMS&REQUEST=GetCapabilities",
+        "note": "the service lists no fees and no access constraints"
+      },
+      "links": [
+        {
+          "label": "Capabilities",
+          "url": "https://ortos.dgterritorio.gov.pt/wms/ortosat2023?SERVICE=WMS&REQUEST=GetCapabilities"
+        }
+      ],
+      "coverage": "Mainland Portugal",
+      "what": "High-resolution satellite imagery of mainland Portugal from 2023, in true and false colour.",
+      "steps": [
+        "WMS address: `https://ortos.dgterritorio.gov.pt/wms/ortosat2023`. The true-colour layer is **ortoSat2023-CorVerdadeira**."
+      ],
+      "addresses": [],
+      "notes": "",
+      "checked": "2026-10-30"
+    },
+    {
+      "id": "fr-ign-geoplateforme-wms",
+      "country": "fr",
+      "jurisdiction": null,
+      "scope": "national",
+      "name": "IGN Géoplateforme map services",
+      "publisher": "IGN",
+      "kind": "wms",
+      "formats": [
+        "WMS"
+      ],
+      "cost": "free",
+      "price": "",
+      "licence": {
+        "name": "Licence Ouverte (Etalab)",
+        "url": "https://cartes.gouv.fr/cgu",
+        "note": "the default for Géoplateforme data unless a layer's metadata names another licence"
+      },
+      "links": [
+        {
+          "label": "Capabilities",
+          "url": "https://data.geopf.fr/wms-r?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities"
+        }
+      ],
+      "coverage": "France",
+      "what": "The national map layers that need no key, among them Plan IGN, the 1:250,000 regional map, a hillshade and aerial photographs.",
+      "steps": [
+        "WMS address: `https://data.geopf.fr/wms-r`. Layers include **GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2** (Plan IGN), **SCANREG_PYR-JPEG_WLD_WM** (regional map), **ELEVATION.ELEVATIONGRIDCOVERAGE.SHADOW** (hillshade) and **ORTHOIMAGERY.ORTHOPHOTOS** (aerial photographs)."
+      ],
+      "addresses": [],
       "notes": "",
       "checked": "2026-10-30"
     }
