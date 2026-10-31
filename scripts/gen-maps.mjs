@@ -183,6 +183,20 @@ if (data.contribute) {
   contribute += '    </section>\n';
 }
 
+// The front page's App Store panel, under the search and the country links, and the
+// top bar's Get TopoKit button. Both carry a campaign tag, so App Store
+// Connect counts the downloads that came from this page.
+const APP_STORE = 'https://apps.apple.com/app/apple-store/id6761090144?pt=128458311&amp;ct=maps&amp;mt=8';
+const getTopoKit = `    <div class="map-get">
+      <a class="promo" href="${APP_STORE}">
+        <span class="store-btn">
+          <svg viewBox="0 0 814 1000" width="20" height="24"><path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76.5 0-103.7 40.8-165.9 40.8s-105.6-57.5-155.5-127.4c-57.9-81.6-104.6-208.7-104.6-329.3 0-193.5 125.8-296.2 249.6-296.2 65.8 0 120.5 43.1 161.9 43.1 39.5 0 101-45.7 175.3-45.7 28.3 0 130 2.6 197.4 99.5zm-234.6-182.9c31.4-37.2 53.7-88.9 53.7-140.6 0-7.2-.6-14.4-1.9-20.2-51.2 1.9-112 34.1-148.6 76.5-26.4 30.1-55.6 81.7-55.6 134.2 0 7.8.6 15.7 1.3 18.3 2.6.6 6.4.6 10.2.6 46.4 0 105.3-30.7 140.9-68.8z"/></svg>
+          <span class="store-txt"><span class="store-small">Download on the</span><span class="store-big">App Store</span></span>
+        </span>
+        <span class="promo-words">Free forever if you get it before <em>January 1, 2027</em></span>
+      </a>
+    </div>`;
+
 const page = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -215,11 +229,12 @@ const page = `<!DOCTYPE html>
           <img class="logo-wordmark" src="/Images/Logo/wordmark_for_light_background.png" alt="TopoKit" height="28">
         </picture>
       </a>
+      <a href="/manual/" class="nav-plain">Manual</a>
       <ul class="nav-links">
         <li><a href="/release-notes/">Release notes</a></li>
         <li><a href="/support">Support</a></li>
       </ul>
-      <a href="/manual/" class="nav-cta">Manual</a>
+      <a href="${APP_STORE}" class="nav-cta">Get TopoKit</a>
     </div>
   </nav>
 
@@ -236,6 +251,7 @@ ${data.intro.map((p) => `    <p class="map-intro">${inline(p)}</p>`).join('\n')}
     </form>
     <p class="map-jump">${jump} · <span class="map-count">${data.sources.length} sources</span></p>
     <p class="map-empty" hidden>No maps found. Try a different place or search term.</p>
+${getTopoKit}
 
 ${body}
 ${contribute}${data.outro ? `    <p class="map-outro">${inline(data.outro)}</p>\n` : ''}  </main>
