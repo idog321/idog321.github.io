@@ -4943,6 +4943,49 @@
       "previewAlt": "CanVec WMS at Squamish"
     },
     {
+      "id": "ca-chs-enc-charts-wms",
+      "country": "ca",
+      "jurisdiction": null,
+      "scope": "national",
+      "name": "Nautical charts (WMS)",
+      "publisher": "Canadian Hydrographic Service",
+      "kind": "wms",
+      "formats": [
+        "WMS"
+      ],
+      "cost": "free",
+      "price": "",
+      "licence": {
+        "name": "Open Government Licence – Canada",
+        "url": "https://open.canada.ca/en/open-government-licence-canada",
+        "note": "commercial use allowed"
+      },
+      "links": [
+        {
+          "label": "Open Canada record",
+          "url": "https://open.canada.ca/data/en/dataset/12b769c8-48b8-4562-80fb-4a2e5ee9b45b"
+        },
+        {
+          "label": "Service page",
+          "url": "https://egisp.dfo-mpo.gc.ca/arcgis/rest/services/chs/ENC_MaritimeChartService/MapServer/exts/MaritimeChartService/WMSServer?request=GetCapabilities&service=WMS"
+        }
+      ],
+      "coverage": "Canadian waters with CHS electronic charts: the Pacific, Arctic and Atlantic coasts, the Great Lakes, the St. Lawrence and some inland waterways",
+      "what": "Canada's nautical charts, drawn from the Canadian Hydrographic Service's electronic navigational charts, with depths, soundings, buoys, lights, hazards and port features.",
+      "steps": [
+        "Add the address below as a WMS service three times, picking one layer each time, in this order: **Natural and man-made features, port features** for the land and shore, **Depths, currents, etc** for the water, then **Buoys, beacons, lights, fog signals, radar**, so the buoys draw on top.",
+        "Add **Seabed, obstructions, pipelines** the same way for rocks, wrecks and other hazards. Each layer downloads separately for offline use."
+      ],
+      "addresses": [
+        {
+          "label": "CHS chart service, WMS 1.3.0",
+          "url": "https://egisp.dfo-mpo.gc.ca/arcgis/rest/services/chs/ENC_MaritimeChartService/MapServer/exts/MaritimeChartService/WMSServer"
+        }
+      ],
+      "notes": "The service says it is not for navigation.",
+      "checked": "2026-10-31"
+    },
+    {
       "id": "au-nsw-nsw-imagery-tiles",
       "country": "au",
       "jurisdiction": "New South Wales",
