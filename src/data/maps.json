@@ -8,7 +8,7 @@
   ],
   "contribute": {
     "heading": "Add or fix a map",
-    "text": "Send a map that belongs here, ask about an area with nothing listed, or report a broken link or a wrong detail. Each link opens an email with a few lines to fill in.",
+    "text": "Know of a map source I've missed? Looking for maps in an area that isn't listed, or found a broken link? Let me know so I can keep this list useful and up to date.",
     "links": [
       {
         "label": "Suggest a map",
@@ -26,7 +26,7 @@
         "body": "Entry:\nWhat is wrong:\n"
       }
     ],
-    "fallback": "Or write to [support@topokit.ca](mailto:support@topokit.ca)."
+    "fallback": "Or email me at [support@topokit.ca](mailto:support@topokit.ca)."
   },
   "countries": [
     {
