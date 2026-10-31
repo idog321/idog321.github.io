@@ -85,6 +85,7 @@ const ABBR = {
 const COUNTRY_WORDS = {
   ca: 'canada', us: 'united states usa us america', au: 'australia', nz: 'new zealand nz aotearoa',
   uk: 'united kingdom uk britain great britain', ie: 'ireland',
+  es: 'spain españa espana', pt: 'portugal', fr: 'france',
 };
 
 // A sample with no file in public/Images/maps/ is left off rather than shipped
@@ -143,14 +144,15 @@ for (const c of data.countries) {
     body += `<h3 class="map-group">Nationwide</h3>\n`;
     for (const s of national) body += sourceHtml(s);
   }
-  // A source that crosses a border (alsoIn) is listed under each area it covers.
+  // A source that crosses a border (alsoIn) is listed under each area it covers,
+  // and each copy carries that area's name and abbreviation in its search terms.
   const juris = [...new Set(all.flatMap((s) => (s.jurisdiction ? [s.jurisdiction] : []).concat(s.alsoIn || [])))].sort((a, b) => a.localeCompare(b));
   for (const j of juris) {
     // Province- or state-wide sources first, then local ones (a park, a trail,
     // a regional district); otherwise the order of maps.json.
     const rank = { national: 0, regional: 1, local: 2 };
     const list = all.filter((s) => s.jurisdiction === j || (s.alsoIn || []).includes(j))
-      .map((s) => (s.jurisdiction === j ? s : { ...s, key: s.id, id: s.id + '-' + j.toLowerCase().replace(/[^a-z0-9]+/g, '-') }))
+      .map((s) => (s.jurisdiction === j ? s : { ...s, jurisdiction: j, key: s.id, id: s.id + '-' + j.toLowerCase().replace(/[^a-z0-9]+/g, '-') }))
       .map((s, i) => [s, i])
       .sort((a, b) => ((rank[a[0].scope] ?? 1) - (rank[b[0].scope] ?? 1)) || (a[1] - b[1]))
       .map(([s]) => s);
