@@ -18,6 +18,8 @@ TopoKit ships no tile sources: you paste the address of a service you choose. Fo
 
 ## Finding a tile source
 
+The [Maps](/maps/) page lists XYZ and WMS services by country, province and state.
+
 The address decides which tab it goes in. An XYZ address contains `{z}`, `{x}` and `{y}`. A WMS address contains `service=WMS`, or is the bare endpoint the provider gives for WMS. A WFS, WMTS or WCS address does not work, even with `request=GetCapabilities` in it, and neither does a vector-tile address, though it contains `{z}`, `{x}` and `{y}`.
 
 Test an address in a browser first, with real numbers in place of the placeholders. An error page or a login form means TopoKit cannot use it, because TopoKit sends no authentication.
