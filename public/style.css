@@ -145,6 +145,31 @@ body {
   transform: translateY(-1px);
 }
 
+/* A plain top-bar link outside .nav-links, so it stays visible under 640px
+   where the list collapses: the maps page's Manual link, as on the front page. */
+.nav-plain {
+  margin-left: auto;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-plain:hover {
+  color: var(--color-text);
+}
+
+.nav-plain + .nav-links {
+  margin-left: 2rem;
+}
+
+@media (max-width: 640px) {
+  .nav-plain {
+    margin-right: 1.25rem;
+  }
+}
+
 /* Mobile nav toggle */
 .nav-toggle {
   display: none;
@@ -1566,6 +1591,107 @@ body {
   font-size: 0.85rem;
   color: var(--color-text-light);
   margin-bottom: 0;
+}
+
+/* Get TopoKit: the front page's App Store panel (home.css), copied rule for
+   rule so this page needn't load home.css. Scoped to .maps-page because the
+   .legal-page link rules would otherwise colour it orange and underline it. */
+.maps-page .map-get {
+  display: flex;
+  margin: 1.6rem 0 1.9rem;
+}
+
+.maps-page .promo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.95rem;
+  padding: 0.47rem 1.2rem 0.47rem 0.47rem;
+  border-radius: 17px;
+  color: var(--color-text);
+  text-decoration: none;
+  overflow-wrap: normal;
+  background: var(--color-surface);
+  border: 1px solid rgba(35, 34, 31, 0.10);
+  box-shadow: 0 10px 27px rgba(35, 34, 31, 0.13);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.maps-page .promo:hover {
+  color: var(--color-text);
+  text-decoration: none;
+  border-color: rgba(35, 34, 31, 0.22);
+  transform: translateY(-1px);
+}
+
+.maps-page .promo:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.maps-page .store-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #000;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 10px;
+  padding: 0.6rem 1.4rem 0.6rem 1.1rem;
+}
+
+.maps-page .store-btn svg {
+  fill: #fff;
+}
+
+.maps-page .store-txt {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+  text-align: left;
+}
+
+.maps-page .store-small {
+  font-size: 0.55rem;
+  letter-spacing: 0.02em;
+}
+
+.maps-page .store-big {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.maps-page .promo-words {
+  font-family: var(--font-logo);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.maps-page .promo-words em {
+  font-style: italic;
+  color: var(--color-accent);
+}
+
+/* Stacks once its row no longer fits, as on the front page: the button over
+   the words, the date on its own line, the panel the column's full width. */
+@media (max-width: 680px) {
+  .maps-page .promo {
+    flex: 1;
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 1rem 1.45rem 1.07rem;
+  }
+
+  .maps-page .promo-words {
+    text-align: center;
+    white-space: normal;
+    font-size: min(1rem, 4.3vw);
+  }
+
+  .maps-page .promo-words em {
+    display: block;
+  }
 }
 
 .maps-page ol {
