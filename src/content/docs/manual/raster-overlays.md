@@ -110,7 +110,7 @@ On iPhone, keep TopoKit on screen: in another app, iOS lets the reprojection con
 
 ### Caching
 
-The cache does not sync through [iCloud](/manual/projects-and-files/#icloud-sync), so each device reprojects for itself, but TopoKit saves your approval in the project, so another device starts without showing the sheet. The cache is capped at 2 GB; when it is full, the oldest copies go first.
+The cache does not sync through [iCloud](/manual/projects-and-files/#icloud-sync), so each device reprojects for itself, but TopoKit saves your approval in the project, so another device starts without showing the sheet. The cache keeps every reprojected copy while the device has a tenth of its storage free. Below that, once the cache is over 2 GB, the oldest copies of rasters outside the open project are removed first, down to 2 GB at most. A deleted raster's copy is removed when its project closes, and a deleted project's copies are removed with it, unless another project on the device still has that raster. The cache is not included in device backups, so a device restored from a backup reprojects its rasters again.
 
 ## Editing a raster
 
