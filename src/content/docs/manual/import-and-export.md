@@ -41,9 +41,21 @@ Styling in the file is not read. Imported features take their style from [Settin
 
 One Undo removes an import's folder and every feature in it ([Undo and redo](/manual/interface/#undo-and-redo)).
 
-A GPX or KML file with no feature TopoKit can read, or a GeoPackage whose feature tables hold none it can read, still adds its folder, empty. :mac[On Mac, an import that skipped or changed something ends with an alert titled **Imported, With Gaps** or **Imported, With Notes**, giving the number of features imported, the number skipped, and the first three reasons.]
+A GPX or KML file still adds an empty folder when it contains no features TopoKit can read, as does a GeoPackage with no readable features in its feature tables. When an import skips or changes something, an alert titled **Imported, With Gaps** or **Imported, With Notes** shows the number of features imported, the number skipped, and the first three reasons.
 
-Every vector format is capped at 100 MB a file, checked before any of it is read; a KMZ must be under the cap both as the archive and as the KML inside it.
+Vector files have no fixed size limit in any format. :mac[On Mac, TopoKit reads files of any size without a size check.] :ios[On iPhone, TopoKit checks the available memory before reading a file. For KMZ, it checks the archive first, then the KML inside it before unzipping.]
+
+:ios[After reading the file, TopoKit checks the available memory again before adding anything to the project, because saving needs more memory than reading. If any check fails, nothing is added, and an alert shows the file's name, roughly how much memory is needed and how much is free.]
+
+When a file takes more than a moment to read, a progress row appears at the bottom of the map with the file's name, a percentage and ✕. Use the row's ✕ to stop the import immediately without a confirmation, and nothing from the file is added.
+
+For GPX, KML and KMZ, the percentage is based on the number of lines read. When all the text is on one line, it stays at the same percentage until reading finishes. For a KML or KMZ file with a few very long lines or areas, the percentage also stays the same until reading finishes, however many line breaks the file contains. With thousands of shorter lines, the percentage moves normally. For GeoPackage, the percentage stays at 0% until reading finishes; for GeoJSON, it stays at 0% until the whole file has been read, then continues from 50%.
+
+If you open another project or close the project you were importing into while a file is being read, the file is not added to any project. The progress row disappears as soon as the project changes. Once reading has stopped, an alert titled **Import Stopped** names the file. If the row was not moving when the project changed, TopoKit reads the file to the end first, so the alert can appear some time later.
+
+If you open the same file again while it is being read, an alert titled **Already Importing** appears, and the file is imported only once.
+
+When you import lines and areas, TopoKit leaves out a point if it has the same position, height and accuracy as the point before it, unless removing it would leave a line part with fewer than two points or an area ring with fewer than four. The import alert shows how many repeated points were left out. Point features are unaffected, and TopoKit keeps repeated points in a line or area that has a time on any point.
 
 ## Exporting and sharing
 

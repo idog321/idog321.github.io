@@ -18,7 +18,7 @@ Everything you add draws over Apple Maps, which the **Apple Maps** button at the
 
 Opening a project frames its visible features and rasters, and so does **Reload** on **Updated on another device** ([iCloud sync](/manual/projects-and-files/#icloud-sync)), so the view you had is lost; with nothing to frame, the map centres once per launch on your first location fix.
 
-Each tile download, elevation download and basemap build shows a progress row at the bottom of the map, whichever tab is open, with a ✕; for tile and elevation downloads it asks before stopping.
+You can follow each tile download, elevation download, basemap build, vector file import and GeoPDF import in a progress row at the bottom of the map, whichever tab is open. Use the row's ✕ to stop it; for tile and elevation downloads, TopoKit asks before stopping.
 
 ## The tool sidebar
 
