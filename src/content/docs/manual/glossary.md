@@ -2,103 +2,103 @@
 title: "Glossary"
 description: "Definitions of the GIS and TopoKit terms used throughout this manual."
 ---
-A chapter marks the first use of each term except raster, route and track with a dotted underline, and hovering over it or tapping it shows the entry.
+Except for raster, route and track, the first use of each term in a chapter has a dotted underline. Hover over or tap an underlined term to read its glossary entry.
 
 ## The map and its layers
 
-**Apple Maps** — Apple's map, drawn under every project and switched between :ui[Standard]{icon=map-standard}, :ui[Hybrid]{icon=map-hybrid}, :ui[Satellite]{icon=map-satellite} and :ui[Off] by the last sidebar button. The choice belongs to the device, not the project. See [The Apple Maps switch](/manual/basemaps/#the-apple-maps-switch).
+**Apple Maps**: Apple's map appears under every project. Use [the last sidebar button](/manual/basemaps/#the-apple-maps-switch) to switch between :ui[Standard]{icon=map-standard}, :ui[Hybrid]{icon=map-hybrid}, :ui[Satellite]{icon=map-satellite} and :ui[Off]. Your choice applies to the device rather than the project.
 
-**Basemap** — a topographic map TopoKit builds on the device from downloaded elevation and map data, drawn with no connection once built. See [What a basemap is](/manual/basemaps/#what-a-basemap-is).
+**Basemap**: TopoKit builds a topographic [basemap](/manual/basemaps/#what-a-basemap-is) on your device from downloaded elevation and map data. You can view the basemap without a connection once it's built.
 
-**Contour interval** — the difference in height between neighbouring contour lines. See [Contour lines](/manual/basemaps/#contour-lines).
+**Contour interval**: The contour interval is the difference in height between neighbouring [contour lines](/manual/basemaps/#contour-lines).
 
-**Quarter** — half a degree of latitude by half a degree of longitude, a quarter of a 1° square. Each basemap covers one quarter or one whole square, and a quarter still downloads its square's whole elevation tile. See [Picking the area](/manual/basemaps/#picking-the-area).
+**Quarter**: A quarter measures half a degree of latitude by half a degree of longitude, covering a quarter of a 1° square. Each [basemap area](/manual/basemaps/#picking-the-area) covers one quarter or one whole square, but choosing a quarter still downloads the whole elevation tile for its square.
 
-**Shaded relief (hillshade)** — shading computed from elevation and a light direction. See [Ground and relief](/manual/basemaps/#ground-and-relief).
+**Shaded relief (hillshade)**: [Shaded relief](/manual/basemaps/#ground-and-relief) is shading computed from elevation and a light direction.
 
-**Slope angle** — how steep the ground is, in degrees from level. A basemap's slope shading measures it across 40 to 60 m, so a short steep step reads gentler than it is, and its colours start at 27°; a spot's card measures it across about 90 m ([Height, slope and aspect at a spot](/manual/elevation/#height-slope-and-aspect-at-a-spot)). See [Ground and relief](/manual/basemaps/#ground-and-relief).
+**Slope angle**: The slope angle describes how steep the ground is, in degrees from level. A basemap's [slope shading](/manual/basemaps/#ground-and-relief) measures the angle across 40 to 60 m, so a short steep step appears gentler than it is; the shading colours start at 27°. The [card for a spot](/manual/elevation/#height-slope-and-aspect-at-a-spot) measures the angle across about 90 m.
 
-**Tile layer** — map imagery drawn as square tiles, one set per zoom level. See [Tile layers](/manual/tile-layers/).
+**Tile layer**: A [tile layer](/manual/tile-layers/) displays map imagery as square tiles, with one set of tiles for each zoom level.
 
-**TMS (Tile Map Service)** — a tile-address scheme like XYZ that counts rows from the south instead of the north. Write `{-y}` in place of `{y}` in the address; with `{y}` the tiles are drawn with north and south swapped. See [Adding an XYZ tile layer](/manual/tile-layers/#adding-an-xyz-tile-layer).
+**TMS (Tile Map Service)**: Like XYZ, TMS is a tile-address scheme, but it counts rows from the south instead of the north. When you [add a TMS tile layer](/manual/tile-layers/#adding-an-xyz-tile-layer), write `{-y}` in place of `{y}` in the address; using `{y}` draws the tiles with north and south swapped.
 
-**WMS** — Web Map Service, an OGC standard many government portals publish: one address offers a catalogue of named layers. TopoKit always asks the server for Web Mercator. See [Adding a WMS layer](/manual/tile-layers/#adding-a-wms-layer).
+**WMS**: Web Map Service is an OGC standard used by many government portals to publish a catalogue of named layers at one address. TopoKit always requests Web Mercator from the server for a [WMS layer](/manual/tile-layers/#adding-a-wms-layer).
 
-**XYZ** — the tile-address convention most providers publish, with `{z}`, `{x}` and `{y}` placeholders for zoom, column and row, which TopoKit fills in. See [Adding an XYZ tile layer](/manual/tile-layers/#adding-an-xyz-tile-layer).
+**XYZ**: Most providers publish tiles using the XYZ tile-address convention. An [XYZ tile address](/manual/tile-layers/#adding-an-xyz-tile-layer) uses `{z}`, `{x}` and `{y}` placeholders for zoom, column and row, which TopoKit fills in.
 
 ## Coordinates and projections
 
-**Axis order** — whether a coordinate pair is written latitude first or longitude first. Every vector format TopoKit reads fixes it in its specification, so only a raster can be ambiguous. See [Editing a raster](/manual/raster-overlays/#editing-a-raster).
+**Axis order**: Axis order determines whether a coordinate pair is written latitude first or longitude first. Every vector format TopoKit reads specifies the order, so only a [raster](/manual/raster-overlays/#editing-a-raster) can have an ambiguous axis order.
 
-**CRS (coordinate reference system)** — the datum, projection and units that give coordinate numbers meaning, usually identified by an EPSG code. TopoKit reads a raster's CRS from the file, or from a `.prj` chosen with a TIFF, and shows it read-only. See [Coordinate systems](/manual/raster-overlays/#coordinate-systems).
+**CRS (coordinate reference system)**: A [coordinate reference system](/manual/raster-overlays/#coordinate-systems) defines the datum, projection and units that give coordinate numbers meaning, and is usually identified by an EPSG code. TopoKit reads a raster's CRS from the file or from a `.prj` you choose with a TIFF, and displays it as read-only.
 
-**Datum** — what ties a coordinate system to the ground: which ellipsoid, and where it is pinned. Two datums can put the same latitude and longitude metres or hundreds of metres apart. See [Datum accuracy](/manual/raster-overlays/#datum-accuracy).
+**Datum**: A datum relates a coordinate system to the ground by specifying which ellipsoid it uses and where that ellipsoid is positioned. The same latitude and longitude can refer to locations metres or hundreds of metres apart in [different datums](/manual/raster-overlays/#datum-accuracy).
 
-**Ellipsoid** — the flattened sphere that models the Earth's shape. TopoKit measures the lines and polygons in a project on WGS84's; the heights it reports are above sea level, which lies tens of metres above or below the ellipsoid. See [Calculation methods](/manual/measurement/#calculation-methods).
+**Ellipsoid**: An ellipsoid is a flattened sphere used to model the Earth's shape. TopoKit [measures the lines and polygons in a project](/manual/measurement/#calculation-methods) on the WGS84 ellipsoid, but reports heights above sea level, which lies tens of metres above or below the ellipsoid.
 
-**EPSG code** — the registry number of a coordinate reference system: `EPSG:4326` for WGS84, `EPSG:3857` for Web Mercator. See [Coordinate systems](/manual/raster-overlays/#coordinate-systems).
+**EPSG code**: An EPSG code is the registry number of a [coordinate reference system](/manual/raster-overlays/#coordinate-systems), such as `EPSG:4326` for WGS84 or `EPSG:3857` for Web Mercator.
 
-**UTM (Universal Transverse Mercator)** — a metre-based projection in 60 zones, written as zone, easting and northing. TopoKit writes `10N 417559E 5536636N`: the letter is the hemisphere, not a latitude band, and zones are plain six-degree strips without the Norway and Svalbard exceptions. See [Coordinate formats](/manual/search-and-identify/#coordinate-formats).
+**UTM (Universal Transverse Mercator)**: UTM is a metre-based projection divided into 60 zones, with coordinates written as zone, easting and northing. TopoKit uses the [format](/manual/search-and-identify/#coordinate-formats) `10N 417559E 5536636N`, where the letter identifies the hemisphere rather than a latitude band. Its zones are six-degree strips without the Norway and Svalbard exceptions.
 
-**Web Mercator (EPSG:3857)** — the projection web maps render in, and the one TopoKit draws in. A raster in any other projection than this or plain latitude and longitude (EPSG:4326, 4269 or 4258) is reprojected first. See [How reprojection works](/manual/raster-overlays/#how-reprojection-works).
+**Web Mercator (EPSG:3857)**: TopoKit draws its map in Web Mercator, the projection used to render web maps. Before drawing a raster, TopoKit [reprojects it](/manual/raster-overlays/#how-reprojection-works) unless it uses Web Mercator or plain latitude and longitude (EPSG:4326, 4269 or 4258).
 
-**WGS84 (EPSG:4326)** — the latitude and longitude datum GPS reports in. TopoKit stores every feature in it, converting vector imports and writing every vector export in it. See [Importing and exporting](/manual/import-and-export/).
+**WGS84 (EPSG:4326)**: GPS reports latitude and longitude in the WGS84 datum. TopoKit stores every feature in WGS84, converting [vector imports](/manual/import-and-export/) to it and using it for every vector export.
 
 ## Rasters and georeferencing
 
-**GeoPDF** (`.pdf`) — a PDF carrying its georeferencing inside the file, common for published topographic maps. See [GeoPDF import](/manual/raster-overlays/#geopdf-import).
+**GeoPDF** (`.pdf`): A [GeoPDF](/manual/raster-overlays/#geopdf-import) includes its georeferencing inside the PDF file and is commonly used for published topographic maps.
 
-**GeoTIFF** (`.tif`, `.tiff`) — a TIFF image carrying its own position and coordinate system in the file's tags. See [Coordinate systems](/manual/raster-overlays/#coordinate-systems).
+**GeoTIFF** (`.tif`, `.tiff`): A GeoTIFF is a TIFF image with its position and [coordinate system](/manual/raster-overlays/#coordinate-systems) recorded in the file's tags.
 
-**NoData** — a pixel value meaning "nothing here", such as the border around a scanned sheet. See [NoData](/manual/raster-overlays/#nodata).
+**NoData**: A [NoData](/manual/raster-overlays/#nodata) pixel value means "nothing here", such as in the border around a scanned sheet.
 
-**Raster** — data stored as a grid of pixels: an air photo, a scanned map, a hillshade. See [Raster overlays](/manual/raster-overlays/).
+**Raster**: A [raster](/manual/raster-overlays/) stores data as a grid of pixels, as in an air photo, a scanned map or a hillshade.
 
-**Reprojection** — recomputing an image's pixels from one CRS into another so it lines up with the map. Each device reprojects a raster for itself and caches the result, which never syncs. See [How reprojection works](/manual/raster-overlays/#how-reprojection-works).
+**Reprojection**: [Reprojection](/manual/raster-overlays/#how-reprojection-works) recomputes an image's pixels from one CRS into another so the image lines up with the map. Each device reprojects a raster and caches its own result, which never syncs.
 
-**Sidecar file** — a file with an image's name carrying what the image lacks: a world file for position, a `.prj` for coordinate system. TopoKit reads them only for a TIFF, chosen in the same pick. See [Sidecar files](/manual/raster-overlays/#sidecar-files).
+**Sidecar file**: A [sidecar file](/manual/raster-overlays/#sidecar-files) has the same name as an image and supplies information the image lacks: a world file specifies the position, and a `.prj` specifies the coordinate system. TopoKit reads sidecar files only for a TIFF, and only when you choose them together with the TIFF.
 
-**WKT (well-known text)** — a coordinate system written out as text, as in a `.prj` file. TopoKit reads it in a GeoPDF and a `.prj`, never in a GeoTIFF's own tags. See [Sidecar files](/manual/raster-overlays/#sidecar-files).
+**WKT (well-known text)**: WKT describes a coordinate system as text, as in a [`.prj` file](/manual/raster-overlays/#sidecar-files). TopoKit reads WKT in a GeoPDF or a `.prj`, but never in a GeoTIFF's own tags.
 
-**World file** (`.tfw`, `.wld`, `.tifw`, `.tiffw`) — a text sidecar holding the transform that positions an image. It replaces the position stored in the TIFF but names no projection, so choose the matching `.prj` too unless the TIFF declares one. See [Sidecar files](/manual/raster-overlays/#sidecar-files).
+**World file** (`.tfw`, `.wld`, `.tifw`, `.tiffw`): A [world file](/manual/raster-overlays/#sidecar-files) is a text sidecar file that specifies the transform used to position an image. It replaces the position stored in the TIFF but does not specify a projection, so choose the matching `.prj` too unless the TIFF declares a projection.
 
 ## Elevation
 
-**DEM (digital elevation model)** — a raster whose pixel values are ground heights. Every height TopoKit looks up, and every basemap's relief, comes from one DEM downloaded a tile at a time; a DEM you import is drawn as imagery and never queried. See [Elevation data source](/manual/elevation/#elevation-data-source).
+**DEM (digital elevation model)**: A DEM is a raster whose pixel values represent ground heights. TopoKit uses [one DEM](/manual/elevation/#elevation-data-source), downloaded a tile at a time, for every height lookup and every basemap's relief. A DEM you import is drawn as imagery and is never queried.
 
-**Elevation profile** — a chart of ground height along a line, with climb and descent totalled as gain and loss. See [The elevation profile](/manual/elevation/#the-elevation-profile).
+**Elevation profile**: An [elevation profile](/manual/elevation/#the-elevation-profile) charts ground height along a line and totals the climb and descent as gain and loss.
 
-**Elevation tile** — one 1° square of the DEM, a 25–40 MB file kept on the device for every project until you remove it. See [Downloading tiles](/manual/elevation/#downloading-tiles).
+**Elevation tile**: Each [elevation tile](/manual/elevation/#downloading-tiles) is a 25–40 MB file containing one 1° square of the DEM. The tile is kept on your device for use in every project until you remove it.
 
 ## Features and files
 
-**Attribute** — a named value carried on a feature beside its geometry, such as a sample ID. See [Attributes are read-only](/manual/points-lines-polygons/#attributes-are-read-only).
+**Attribute**: An [attribute](/manual/points-lines-polygons/#attributes-are-read-only) is a named value stored with a feature in addition to its geometry, such as a sample ID.
 
-**GeoJSON** (`.geojson`, `.json`) — a plain-text JSON file of features and their attributes. See [GeoJSON](/manual/import-and-export/#geojson).
+**GeoJSON** (`.geojson`, `.json`): A [GeoJSON file](/manual/import-and-export/#geojson) stores features and their attributes as plain-text JSON.
 
-**GeoPackage** (`.gpkg`) — a single-file GIS database holding points, lines and polygons in typed tables. See [GeoPackage](/manual/import-and-export/#geopackage).
+**GeoPackage** (`.gpkg`): A [GeoPackage](/manual/import-and-export/#geopackage) is a single-file GIS database that stores points, lines and polygons in typed tables.
 
-**GPX** (`.gpx`) — the exchange format handhelds write, holding waypoints, routes and tracks but nothing with an area. See [GPX](/manual/import-and-export/#gpx).
+**GPX** (`.gpx`): Handhelds write waypoints, routes and tracks in the [GPX exchange format](/manual/import-and-export/#gpx), which does not include anything with an area.
 
-**KML / KMZ** — KML is an OGC XML format for points, lines and polygons; KMZ is a zip archive holding a KML. See [KML and KMZ](/manual/import-and-export/#kml-and-kmz).
+**KML / KMZ**: [KML](/manual/import-and-export/#kml-and-kmz) is an OGC XML format for points, lines and polygons, and KMZ is a zip archive containing a KML file.
 
-**Multi-part (MultiPoint, MultiLineString, MultiPolygon)** — one feature holding several separate geometries, such as a parcel in two pieces. See [Points, lines, polygons and circles](/manual/points-lines-polygons/#faq).
+**Multi-part (MultiPoint, MultiLineString, MultiPolygon)**: A [multi-part feature](/manual/points-lines-polygons/#faq) contains several separate geometries, such as a parcel in two pieces.
 
-**Shapefile** (`.shp`) — a multi-file vector format TopoKit neither reads nor writes; convert it to GeoPackage or GeoJSON first. See [Importing and exporting](/manual/import-and-export/#faq).
+**Shapefile** (`.shp`): A shapefile is a multi-file vector format. To [import its data into TopoKit](/manual/import-and-export/#faq), convert it to GeoPackage or GeoJSON first, because TopoKit neither reads nor writes shapefiles.
 
-**Vector feature** — data stored as coordinates: points, lines and polygons, sharp at any zoom. See [Points, lines, polygons and circles](/manual/points-lines-polygons/).
+**Vector feature**: A vector feature stores data as coordinates, so [points, lines and polygons](/manual/points-lines-polygons/) remain sharp at any zoom.
 
-**Waypoint / route / track** — a GPX file's marked point, planned path and travelled path. TopoKit reads all three but writes only waypoints and tracks, so a line drawn with :ui[Add Route] is written as a track. See [GPX](/manual/import-and-export/#gpx).
+**Waypoint / route / track**: In a [GPX file](/manual/import-and-export/#gpx), a waypoint is a marked point, a route is a planned path and a track is a travelled path. TopoKit reads all three but writes only waypoints and tracks, so a line drawn with :ui[Add Route] is written as a track.
 
 ## Drawing and measuring
 
-**Bearing** — the direction from one point to another, in degrees clockwise from north. A magnetic bearing subtracts the declination, which TopoKit reads from the iPhone's compass where you stand, not where the line is. See [Bearing](/manual/measurement/#bearing).
+**Bearing**: A [bearing](/manual/measurement/#bearing) gives the direction from one point to another in degrees clockwise from north. A magnetic bearing subtracts the declination, which TopoKit reads from the iPhone's compass at your location rather than at the line's location.
 
-**Geodesic** — measured along the curve of the Earth's surface. Every length TopoKit measures on your own data is geodesic, except a circle's circumference, which is 2πr of its radius; for area, each polygon side is a straight line between its vertices. See [Calculation methods](/manual/measurement/#calculation-methods).
+**Geodesic**: A geodesic measurement follows the curve of the Earth's surface. TopoKit uses [geodesic measurements](/manual/measurement/#calculation-methods) for every length on your own data except a circle's circumference, which is calculated as 2πr from its radius. For area calculations, each polygon side is a straight line between its vertices.
 
-**Tool card** — the card at the bottom of the map while a tool runs, holding its live figures and buttons. See [The map](/manual/interface/#the-map).
+**Tool card**: While a tool runs, the [tool card](/manual/interface/#the-map) at the bottom of the map displays its live figures and buttons.
 
 ## FAQ
 
 **Why is a word underlined in one paragraph and not in the next?**
-Only a term's first use on each page is marked, and never one inside a heading, a link or code.
+Only the first use of a term on each page is marked, and terms inside headings, links or code are never marked.
