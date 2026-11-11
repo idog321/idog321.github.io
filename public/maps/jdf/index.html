@@ -64,6 +64,7 @@
         <h2>Using the maps in TopoKit</h2>
         <p>You can import the entire PDF into TopoKit at once, rather than adding each map separately. TopoKit places the seven maps into a folder named after the PDF, with each map available as its own layer. If you're asked to reproject the maps during import, select All to process them together.</p>
         <p>On iPhone, you can open the PDF in TopoKit from Files, Mail or Messages, or import it using Add Data → Add Raster Layer. On Mac, you can drag the PDF directly onto the map. Once the maps are imported, your iPhone can show your GPS position on them without an internet connection.</p>
+        <p class="trail-yt"><a href="https://www.youtube.com/watch?v=xuJy47GVFec"><svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#FF9500"/><path d="M13 10.5v11l9-5.5z" fill="#fff"/></svg><span>Watch a tutorial on how to upload these maps using TopoKit on YouTube</span></a></p>
         <p class="trail-manual"><a href="/manual/raster-overlays/">More about using GeoPDFs in TopoKit</a></p>
         <div class="maps-page">
           <div class="map-get">
@@ -353,7 +354,8 @@
       var film = document.querySelector('.trail-phone video');
       if (film && film.offsetParent) {
         film.preload = 'auto';
-        film.play();
+        var playing = film.play();
+        if (playing) playing.catch(function () {}); // paused to save power: the poster shows instead
       }
 
       document.querySelectorAll('.trail-row').forEach(function (row) {
