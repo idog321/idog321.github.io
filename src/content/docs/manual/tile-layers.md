@@ -18,7 +18,7 @@ To add a tile layer, paste the address of a service you choose; TopoKit does not
 
 ## Finding a tile source
 
-The [Maps](/maps/) page lists XYZ and WMS services by country, province and state.
+The [Map sources](/maps/sources/) page lists XYZ and WMS services by country, province and state.
 
 Choose the tab that matches the service address:
 

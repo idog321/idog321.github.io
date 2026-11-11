@@ -1287,8 +1287,905 @@ body {
 }
 
 
+/* ---- Trail maps ----
+   /maps/ lists the trail booklets and links the map sources. /maps/<trail>/ is one
+   booklet: its cover beside the download, TopoKit straight under it (his call), the
+   map pages in a list beside a zoomable page, a close-up, then the small print with
+   the change log. The covers and pages
+   are his artwork, shown whole: no border, shadow or rounded corners. The App
+   Store panel is the maps page's, so it sits inside a .maps-page wrapper. */
+.trail {
+  --trail-red: #C8102E; /* the trail line on the maps */
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.75rem 2rem 5rem;
+}
+
+.trail h1,
+.trail h2 {
+  font-family: var(--font-logo);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+
+.trail h1 {
+  font-size: clamp(2.1rem, 4.6vw, 3.1rem);
+  line-height: 1.12;
+  margin-bottom: 0.75rem;
+}
+
+.trail h2 {
+  font-size: clamp(1.45rem, 2.8vw, 1.85rem);
+  line-height: 1.2;
+  margin-bottom: 0.7rem;
+}
+
+.trail p {
+  color: var(--color-text-muted);
+}
+
+.trail p a,
+.trail li a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+.trail p a:hover,
+.trail li a:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
+.trail-crumb {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  margin-bottom: 2.25rem;
+}
+
+/* p.trail-crumb outranks both .trail p a and the map sources page's .legal-page a. */
+p.trail-crumb a {
+  color: var(--color-text-muted);
+}
+
+p.trail-crumb a:hover {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+/* The cover spans both rows on the left; the title sits over the rest on the
+   right. On a phone the three stack in source order: title, cover, the rest. */
+.trail-top {
+  display: grid;
+  grid-template-columns: 400px minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+  column-gap: 4rem;
+  margin-bottom: 2.25rem;
+}
+
+.trail-cover {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  margin: 0;
+}
+
+.trail-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.trail-head {
+  grid-column: 2;
+  grid-row: 1;
+  padding-top: 1.25rem;
+}
+
+.trail-body {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.trail-byline {
+  font-size: 0.88rem;
+  margin-bottom: 1.4rem;
+}
+
+.trail .trail-byline {
+  color: var(--color-text-light);
+}
+
+/* The version links to the change log without shouting. */
+.trail .trail-byline a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(35, 34, 31, 0.25);
+  text-underline-offset: 0.2em;
+}
+
+.trail .trail-byline a:hover {
+  color: var(--color-text);
+}
+
+.trail-lede {
+  font-size: 1.12rem;
+  line-height: 1.6;
+  max-width: 34em;
+  margin-bottom: 1.75rem;
+}
+
+.trail-dl {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  background: var(--color-accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.7rem 1.25rem;
+  border-radius: 10px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.trail-dl:hover {
+  background: var(--color-accent-hover);
+  color: #fff;
+}
+
+.trail-dl span {
+  font-weight: 400;
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+
+.trail-file {
+  font-size: 0.82rem;
+  margin-top: 0.75rem;
+}
+
+.trail .trail-file {
+  color: var(--color-text-light);
+}
+
+
+.trail-intro {
+  max-width: 640px;
+  margin-bottom: 2rem;
+}
+
+/* The map pages: the list on the right, the page pointed at on the left. */
+.trail-pages {
+  display: grid;
+  grid-template-columns: 340px minmax(0, 1fr);
+  gap: 3.5rem;
+  align-items: start;
+  margin-bottom: 6rem;
+}
+
+.trail-locator {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 76px;
+  margin: 0;
+}
+
+/* The page sits in a fixed 340x440 frame; zoomed, the script sizes and places it
+   in px, so nothing here depends on percentages or transforms. */
+.trail-zoom {
+  position: relative;
+  width: 340px;
+  height: 440px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.trail-zoom img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 340px;
+  height: 440px;
+  max-width: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.trail-zoom.is-zoomed {
+  cursor: grab;
+  touch-action: none;
+}
+
+.trail-zoom.is-dragging {
+  cursor: grabbing;
+}
+
+.trail-locator figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 0.6rem;
+  font-size: 0.82rem;
+  color: var(--color-text-light);
+}
+
+.trail-dial {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.trail-dial input {
+  width: 120px;
+  accent-color: var(--color-accent);
+}
+
+.trail-dial button {
+  width: 1.6rem;
+  height: 1.6rem;
+  padding: 0;
+  border: 1px solid rgba(35, 34, 31, 0.18);
+  border-radius: 50%;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.trail-dial button:hover {
+  border-color: var(--color-accent);
+}
+
+.trail-list {
+  list-style: none;
+  border-top: 1px solid var(--color-border);
+}
+
+.trail-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem 1.1rem;
+  padding: 0.85rem 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+  transition: background 0.15s;
+}
+
+.trail-row:hover,
+.trail-row.is-on {
+  background: var(--color-surface);
+}
+
+.trail-thumb {
+  display: none;
+}
+
+.trail-code {
+  flex: 0 0 4.4rem;
+  font-family: var(--font-logo);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.trail-route {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+/* A row's note wraps onto a line of its own, under the route on a wide screen
+   and the whole row's width on a phone. */
+.trail-note {
+  flex: 0 0 100%;
+  padding-left: 5.5rem; /* the code column and its gap */
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--color-text-light);
+}
+
+.trail-tag {
+  display: inline-block;
+  margin-left: 0.4rem;
+  padding: 0.05rem 0.4rem;
+  border-radius: 4px;
+  background: var(--trail-red);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  vertical-align: 0.1em;
+}
+
+.trail-km {
+  flex: 0 0 auto;
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  font-variant-numeric: tabular-nums;
+}
+
+.trail-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 3.5rem;
+  align-items: start;
+  margin-bottom: 6rem;
+}
+
+.trail-split figure {
+  margin: 0;
+}
+
+.trail-split img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.trail-split figcaption {
+  font-size: 0.82rem;
+  color: var(--color-text-light);
+  margin-top: 0.6rem;
+}
+
+.trail-split p {
+  margin-bottom: 1rem;
+}
+
+/* Using the maps in TopoKit. Wider than 900px it is two columns: the words, the
+   links and the App Store panel on the left, and his iPhone film of the import on
+   the right, in the front page's iPhone frame. Narrower, there is no phone: the
+   film is a YouTube link instead, and the App Store panel is stacked as on a phone. */
+.trail-panel {
+  background: var(--color-surface);
+  border: 1px solid rgba(35, 34, 31, 0.08);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  margin-bottom: 6rem;
+}
+
+.trail-panel-text > p + p {
+  margin-top: 0.9rem;
+}
+
+.trail-panel .maps-page .map-get {
+  margin: 1.75rem 0 0;
+}
+
+/* The tutorial is how most people will learn the import, so it is a button;
+   the manual link under it stays quiet. */
+.trail-panel-text > p.trail-yt {
+  margin-top: 1.4rem;
+}
+
+.trail .trail-yt a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 100%;
+  padding: 0.55rem 1.1rem 0.55rem 0.55rem;
+  border-radius: 14px;
+  background: rgba(255, 149, 0, 0.12);
+  color: var(--color-text);
+  font-weight: 600;
+  line-height: 1.35;
+  text-align: left;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.trail .trail-yt a:hover {
+  background: rgba(255, 149, 0, 0.2);
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.trail-yt svg {
+  display: block;
+  flex: 0 0 auto;
+}
+
+.trail-panel-text > p.trail-manual {
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
+}
+
+.trail .trail-manual a {
+  color: var(--color-text-muted);
+  text-decoration: underline;
+  text-decoration-color: rgba(35, 34, 31, 0.25);
+  text-underline-offset: 0.2em;
+}
+
+.trail .trail-manual a:hover {
+  color: var(--color-text);
+}
+
+/* The screen sits under the frame's opening (numbers measured in home.css), and
+   the frame paints over it, being later in the page. */
+.trail-phone {
+  display: none;
+  position: relative;
+  width: 220px;
+}
+
+.trail-phone-screen {
+  position: absolute;
+  left: 2.599%;
+  top: 1.033%;
+  width: 94.801%;
+  height: 97.934%;
+  border-radius: 16.29% / 7.61%;
+  object-fit: cover;
+  background: #000;
+}
+
+.trail-phone-frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 901px) {
+  .trail-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 220px;
+    column-gap: 4rem;
+    align-items: center;
+  }
+
+  .trail-phone {
+    display: block;
+  }
+
+  /* The words may wrap where the column is narrow; the badge and the date don't. */
+  .trail-panel .maps-page .promo-words {
+    white-space: normal;
+  }
+
+  .trail-panel .maps-page .store-btn {
+    flex-shrink: 0;
+  }
+
+  .trail-panel .maps-page .promo-words em {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 900px) {
+  .trail-panel .maps-page .promo {
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 1rem 1.45rem 1.07rem;
+  }
+
+  .trail-panel .maps-page .promo-words {
+    text-align: center;
+    white-space: normal;
+  }
+
+  .trail-panel .maps-page .promo-words em {
+    display: block;
+  }
+}
+
+@media (min-width: 681px) and (max-width: 900px) {
+  .trail-panel {
+    text-align: center;
+  }
+
+  .trail-panel-text > p {
+    max-width: 40em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .trail-panel .maps-page {
+    max-width: none;
+  }
+
+  .trail-panel .maps-page .map-get {
+    justify-content: center;
+  }
+}
+
+.trail-fine {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 3rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 2.5rem;
+}
+
+.trail-fine h3 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.trail-fine * + h3 {
+  margin-top: 1.75rem;
+}
+
+.trail-fine p,
+.trail-fine li {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.trail-fine p {
+  margin-bottom: 0.6rem;
+}
+
+.trail-fine ul {
+  list-style: none;
+}
+
+.trail-fine li {
+  margin-bottom: 0.5rem;
+}
+
+.trail-credits {
+  grid-column: 1 / -1;
+  max-width: 760px;
+}
+
+.trail-credits summary {
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: var(--color-link);
+  list-style: none;
+}
+
+.trail-credits summary::-webkit-details-marker {
+  display: none;
+}
+
+.trail-credits summary::before {
+  content: '+';
+  display: inline-block;
+  width: 1rem;
+}
+
+.trail-credits details[open] summary::before {
+  content: '–';
+}
+
+.trail-credits details ul {
+  margin-top: 0.8rem;
+}
+
+/* Phones and tablets: a tapped map opens here, in the frame and dial the wide
+   layout shows beside the list. The script moves them in and back out. */
+.trail-viewer {
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: 0;
+  margin: auto;
+  background: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: var(--shadow-lg);
+}
+
+.trail-viewer::backdrop {
+  background: rgba(35, 34, 31, 0.55);
+}
+
+.trail-viewer-inner {
+  padding: 0.75rem 1rem 1rem;
+}
+
+.trail-viewer-close {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  margin: 0 0 0.6rem auto;
+  padding: 0;
+  border: 1px solid rgba(35, 34, 31, 0.18);
+  border-radius: 50%;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.trail-viewer .trail-locator {
+  display: block;
+  position: static;
+}
+
+/* The terms, before every download. */
+.trail-terms {
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: 0;
+  max-width: 560px;
+  width: calc(100% - 32px);
+  margin: auto;
+  background: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: var(--shadow-lg);
+}
+
+.trail-terms::backdrop {
+  background: rgba(35, 34, 31, 0.45);
+}
+
+.trail-terms form {
+  padding: 2rem;
+}
+
+.trail-terms h2 {
+  font-family: var(--font-logo);
+  font-size: 1.35rem;
+  margin-bottom: 0.3rem;
+}
+
+.trail-terms-file {
+  font-size: 0.82rem;
+  color: var(--color-text-light);
+  margin-bottom: 1.1rem;
+}
+
+.trail-terms ul {
+  margin: 0 0 1.2rem 1.1rem;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}
+
+.trail-terms li {
+  margin-bottom: 0.5rem;
+}
+
+.trail-terms label {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.9rem 1rem;
+  background: var(--color-bg);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.trail-terms label input {
+  margin-top: 0.2rem;
+  accent-color: var(--color-accent);
+}
+
+.trail-terms-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.3rem;
+}
+
+.trail-terms-actions button {
+  font: inherit;
+  font-size: 0.92rem;
+  background: none;
+  border: 1px solid rgba(35, 34, 31, 0.18);
+  border-radius: 10px;
+  padding: 0.6rem 1.1rem;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.trail-terms .trail-dl[aria-disabled="true"] {
+  background: #D9D6CE;
+  pointer-events: none;
+}
+
+/* /maps/: one row per booklet or list, the picture beside the words. */
+.maps-hub .hub-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.6rem;
+  padding: 1.4rem 0 0.4rem;
+}
+
+.maps-hub a.hub-item,
+.maps-hub a.hub-item:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.maps-hub .hub-item img {
+  display: block;
+  flex: 0 0 auto;
+  width: 150px;
+  height: auto;
+}
+
+.maps-hub .hub-item h3 {
+  font-family: var(--font-logo);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0.1rem 0 0.35rem;
+  transition: color 0.2s;
+}
+
+.maps-hub a.hub-item:hover h3 {
+  color: var(--color-accent);
+}
+
+.maps-hub .hub-item p {
+  margin-bottom: 0.4rem;
+}
+
+.maps-hub .hub-meta {
+  font-size: 0.82rem;
+  color: var(--color-text-light);
+}
+
+.maps-hub .hub-next {
+  font-size: 0.9rem;
+  margin-top: 1.2rem;
+}
+
+@media (max-width: 900px) {
+  .trail-top {
+    grid-template-columns: 300px minmax(0, 1fr);
+    column-gap: 2.5rem;
+  }
+
+  .trail-pages,
+  .trail-split,
+  .trail-fine {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  .trail-locator {
+    display: none;
+  }
+
+  /* No dial on a phone: the thumbnail opens the 200 dpi page, which pinches. */
+  .trail-thumb {
+    display: block;
+    flex: 0 0 52px;
+  }
+
+  .trail-thumb img {
+    display: block;
+    width: 52px;
+    height: 67px;
+    border-radius: 4px;
+  }
+
+  .trail-note {
+    padding-left: calc(52px + 6.6rem); /* the thumbnail, the code and their gaps */
+  }
+}
+
+@media (max-width: 680px) {
+  .trail {
+    padding: 1.25rem 16px 4rem;
+  }
+
+  .trail-crumb {
+    margin-bottom: 1.5rem;
+  }
+
+  .trail-top {
+    display: block;
+    margin-bottom: 2.5rem;
+  }
+
+  .trail-head {
+    padding-top: 0;
+  }
+
+  .trail h1 {
+    font-size: 1.95rem;
+  }
+
+  .trail-byline {
+    margin-bottom: 1.1rem;
+  }
+
+  .trail-cover {
+    margin: 0 0 1.4rem;
+  }
+
+  .trail-lede {
+    font-size: 1rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .trail-panel-text > p,
+  .trail-split p {
+    font-size: 0.95rem;
+  }
+
+  .trail-pages,
+  .trail-split {
+    margin-bottom: 4rem;
+  }
+
+  /* A row is the thumbnail beside two lines, the code and km over the route,
+     with JDF-03's note under the whole row. */
+  .trail-row {
+    display: grid;
+    grid-template-columns: 52px auto minmax(0, 1fr);
+    grid-template-areas:
+      "thumb code km"
+      "thumb route route"
+      "note note note";
+    align-items: end;
+    gap: 0.1rem 0.6rem;
+    padding: 0.7rem 0.25rem;
+  }
+
+  .trail-thumb {
+    grid-area: thumb;
+    align-self: center;
+    margin-right: 0.3rem;
+  }
+
+  .trail-code {
+    grid-area: code;
+    font-size: 0.85rem;
+  }
+
+  .trail-km {
+    grid-area: km;
+    font-size: 0.8rem;
+  }
+
+  .trail-route {
+    grid-area: route;
+    align-self: start;
+    font-size: 0.95rem;
+  }
+
+  .trail-note {
+    grid-area: note;
+    padding-left: 0;
+    margin-top: 0.5rem;
+  }
+
+  .trail-panel {
+    padding: 1.6rem 1.25rem;
+    margin-bottom: 4rem;
+  }
+
+  /* The download centred, with its line under it (not the terms window's button). */
+  .trail-body .trail-dl {
+    display: flex;
+    width: max-content;
+    margin: 0 auto;
+  }
+
+  .trail-file {
+    text-align: center;
+  }
+
+  .maps-hub .hub-item {
+    gap: 1rem;
+  }
+
+  .maps-hub .hub-item img {
+    width: 96px;
+  }
+}
+
+
 /* ---- Maps ----
-   Generated by scripts/gen-maps.mjs into maps/index.html from src/data/maps.json.
+   Generated by scripts/gen-maps.mjs into maps/sources/index.html from src/data/maps.json.
    A directory, not an article: each country lists its nationwide sources, then
    one collapsed row per province or state. A source is its name, a muted facts
    line and one sentence; steps and addresses sit behind a Details toggle. The

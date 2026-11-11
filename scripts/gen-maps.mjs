@@ -1,7 +1,9 @@
 #!/usr/bin/env node
-// Generates public/maps/index.html from src/data/maps.json, the way
+// Generates public/maps/sources/index.html from src/data/maps.json, the way
 // gen-release-notes.mjs generates the release notes from ReleaseNotes.swift.
 // Edit maps.json and run `npm run maps`; edits to index.html are lost.
+// (/maps/ itself is the hand-written list of trail maps; the sources moved off
+// it in November 2026, and its script sends old /maps/#entry links here.)
 //
 // Unlike the release notes, the source lives in this repo, so `npm run build`
 // runs this too and the live page can never lag the data. The generated page is
@@ -20,7 +22,7 @@
 // sit behind a Details toggle. Inline text may use **bold**, `code` and
 // [text](https://…), nothing else.
 
-import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -60,7 +62,7 @@ const detailsLabel = (s) => (s.kind === 'file' ? (s.cost === 'free' ? 'How to do
 
 const reportLink = (s) => mailto(
   'Maps: problem with ' + s.name,
-  'Entry: ' + s.name + '\nhttps://topokit.ca/maps/#' + s.id + '\n\nWhat is wrong:\n'
+  'Entry: ' + s.name + '\nhttps://topokit.ca/maps/sources/#' + s.id + '\n\nWhat is wrong:\n'
 );
 
 // Short names people type into the filter. Searches of three letters or fewer
@@ -207,10 +209,10 @@ const page = `<!DOCTYPE html>
   <title>${esc(data.title || 'Maps')} — TopoKit</title>
   <meta name="description" content="${esc(data.description)}">
   <meta name="color-scheme" content="light dark">
-  <link rel="canonical" href="https://topokit.ca/maps/">
+  <link rel="canonical" href="https://topokit.ca/maps/sources/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="TopoKit">
-  <meta property="og:url" content="https://topokit.ca/maps/">
+  <meta property="og:url" content="https://topokit.ca/maps/sources/">
   <meta property="og:title" content="${esc(data.title || 'Maps')} — TopoKit">
   <meta property="og:description" content="${esc(data.description)}">
   <meta property="og:image" content="https://topokit.ca/Images/og-card.jpg">
@@ -241,7 +243,8 @@ const page = `<!DOCTYPE html>
   </nav>
 
   <main class="legal-page maps-page">
-    <h1>Maps</h1>
+    <p class="trail-crumb"><a href="/maps/">Maps</a> / Map sources</p>
+    <h1>Map sources</h1>
 ${data.intro.map((p) => `    <p class="map-intro">${inline(p)}</p>`).join('\n')}
 
     <form class="map-filter" role="search" onsubmit="return false">
@@ -363,6 +366,7 @@ ${contribute}${data.outro ? `    <p class="map-outro">${inline(data.outro)}</p>\
 </html>
 `;
 
-writeFileSync(join(root, 'public', 'maps', 'index.html'), page);
-console.log(`public/maps/index.html: ${data.sources.length} sources in ${data.countries.length} countries`);
+mkdirSync(join(root, 'public', 'maps', 'sources'), { recursive: true });
+writeFileSync(join(root, 'public', 'maps', 'sources', 'index.html'), page);
+console.log(`public/maps/sources/index.html: ${data.sources.length} sources in ${data.countries.length} countries`);
 if (missing.size) console.log(`Left off ${missing.size} sample(s) with no file in public/Images/maps/: ${[...missing].join(', ')}`);
