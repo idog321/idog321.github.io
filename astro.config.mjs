@@ -127,6 +127,8 @@ export default defineConfig({
         'https://topokit.ca/',
         'https://topokit.ca/release-notes/',
         'https://topokit.ca/maps/',
+        'https://topokit.ca/maps/jdf/',
+        'https://topokit.ca/maps/sources/',
         'https://topokit.ca/privacy',
         'https://topokit.ca/terms',
         'https://topokit.ca/support',

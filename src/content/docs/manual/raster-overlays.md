@@ -4,7 +4,7 @@ description: "Import GeoTIFF and GeoPDF images, answer the reprojection sheet, s
 ---
 A raster overlay is a map image, such as an aerial photo, a scanned survey sheet or a hillshade, with its real-world position stored in the file. You can import images in two formats, **GeoTIFF** (`.tif`, `.tiff`, including BigTIFF) and **GeoPDF** (`.pdf`), then arrange their rows in the Layers tab to draw them above or below your points, lines and polygons.
 
-The [Maps](/maps/) page lists where to download GeoPDF and GeoTIFF maps by country, province and state.
+The [Map sources](/maps/sources/) page lists where to download GeoPDF and GeoTIFF maps by country, province and state.
 
 ## Importing a raster
 
