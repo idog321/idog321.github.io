@@ -55,4 +55,4 @@ Hover over or tap a term with a dotted underline to read its [Glossary](/manual/
 ## FAQ
 
 **Which version of TopoKit does this manual describe?**
-This manual describes TopoKit 1.2; you can check your installed version in **Settings → About TopoKit → Version**.
+This manual describes TopoKit 1.2.1; you can check your installed version in **Settings → About TopoKit → Version**.

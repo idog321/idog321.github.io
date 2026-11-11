@@ -90,7 +90,7 @@ Turn off **Settings → Units & Coordinates → Show Segment Lengths** to hide t
 
 TopoKit measures distances on your own data along the Earth's ellipsoid, including distances on tracks and elevation profiles. A circle's circumference is the exception, calculated as 2πr from its radius. A line's length is the sum of its segment distances, measured point to point. Altitude is not included in any distance, so a line up a steep slope shows its map distance, which is shorter than the distance walked.
 
-Distances are calculated using Apple's Core Location function, [`CLLocation.distance(from:)`](https://developer.apple.com/documentation/corelocation/cllocation/distance%28from:%29). Apple publishes neither its algorithm nor an error bound.
+TopoKit calculates lengths, perimeters and radii by summing geodesic distances on the WGS84 ellipsoid segment by segment. It uses Karney's geodesic method as implemented in [PROJ](https://proj.org/en/stable/geodesic.html), its reprojection library. Results differ from Karney's published test geodesics by less than a millimetre, including near the poles and across 180°.
 
 A route's distance is calculated by summing distances along the road line returned by Apple Maps, using the same method as a line. TopoKit uses this calculation rather than Apple's own distance figure, so the distance matches the route's profile. When Apple finds no road for a leg, that leg counts as the straight distance between its two stops. Travel time uses Apple's estimate for the road legs only, so a straight leg adds distance but no time.
 
@@ -114,3 +114,6 @@ The ring's straight sides lie just inside the true circle between vertices. The 
 
 **Why doesn't my distance match my handheld GPS?**
 If your handheld shows the distance of a recorded track, that distance includes the [wander of every fix](/manual/gps-and-track-recording/#faq). When both devices measure the same points, the remaining difference comes from the earth model and altitude: TopoKit measures along the [ellipsoid](#distance) without including altitude.
+
+**Why does a long line measure a little differently than it did in 1.2?**
+TopoKit 1.2 used Apple's distance calculation, which could be a few hundred metres out for a long segment immediately following a short one. For a line of 200 m followed by 100 km at 49° N, the measurement was 100.5 km in 1.2 on a Mac and is 100.2 km now. On a Mac, a 100 m segment right after a 1 km one differed by up to 9 mm at 40–60° latitude, 2 cm at 60–75° and 16 cm above 75°. A saved route's `routeDistance` and a saved track's `track_distance` retain the figures they were saved with.

@@ -30,6 +30,8 @@ TopoKit copies each raster into its own storage on the device, so moving, renami
 :::
 ::::
 
+Before copying a GeoTIFF or GeoPDF in, TopoKit checks that at least 1 GB of storage would stay free so your projects can still save. If it wouldn't, nothing is imported, and a **Not Enough Space** alert gives the file's size, the free space and how much to free up.
+
 A raster appears at once when it needs no reprojection, followed by the [**Raster Storage** question](#rasters-and-icloud) if the project is in iCloud. When a raster needs reprojection, TopoKit opens the **Reprojection Required** sheet.
 
 ## The reprojection sheet
@@ -41,15 +43,19 @@ In the sheet, **Source CRS** reads "Unknown Projected CRS" when TopoKit did not 
 - **Transparent Value** sets the pixel value to make transparent when you turn on [NoData](#nodata).
 - **Copy into Project** copies the raster into the project's folder so it [syncs through iCloud](#rasters-and-icloud). This setting starts on and appears only in an iCloud project when the raster has not already been copied into it.
 
+Below the settings, the sheet says roughly how much storage drawing the raster takes at your [Map Image Quality](#reprojection-quality). When that would leave less than 1 GB free, the line turns orange and either offers a **Use** button with the sharpest quality that fits, which also changes **Map Image Quality** in Settings, or says how much space to free up. When the drawing fits only by clearing other projects' reprojected copies, the line says how much it will clear; those rasters are reprojected again when you open their projects.
+
 To reproject several waiting rasters with the same settings, choose **All (N)**. TopoKit reprojects them in turn using the sheet's settings, so you only need to answer the sheet once.
 
-If you choose **Cancel**, TopoKit switches the raster off. :mac[On Mac, you can open the sheet again by right-clicking the raster's row and choosing **Show**.] :ios[On iPhone, you can open the sheet again by tapping **Select** in the Layers tab, selecting the raster, and tapping **Show**.]
+If you choose **Cancel**, TopoKit switches off the raster and every other raster in the same folder still waiting for this sheet, such as the other pages of a map book. :mac[On Mac, you can open the sheet again by right-clicking the raster's row and choosing **Show**.] :ios[On iPhone, you can open the sheet again by tapping **Select** in the Layers tab, selecting the raster, and tapping **Show**.]
 
 ## Coordinate systems
 
 A raster's coordinate system is read-only everywhere it appears.
 
 For a GeoTIFF, TopoKit reads the EPSG code from the file's GeoTIFF keys or from a `.prj` selected with the image. UTM zones marked as "user-defined" in the keys still resolve, but TopoKit does not read the GeoTIFF's embedded WKT text.
+
+When a GeoTIFF's coordinates refer to pixel centres rather than corners, as in Copernicus elevation tiles, TopoKit shifts its placement by half a pixel to match GDAL.
 
 When a GeoTIFF has a position but no declared projection, TopoKit places it as Web Mercator only if its coordinates fall within Web Mercator's range but beyond 1,000,000 east or west and 500,000 north or south of the origin, and it spans more than 1,000 metres in both width and height. The diagnostics in Edit Raster identify this as a guess. A State Plane sheet in feet can match the same numbers, so if such an image appears in the wrong place, import it again with its `.prj`.
 
@@ -69,21 +75,22 @@ Sidecars are ignored for GeoPDFs. :mac[On Mac, rasters dragged onto the map or o
 
 ## GeoPDF import
 
-TopoKit uses the main map to position a sheet that has a locator inset. For a multi-page PDF, split the file and import each page, because TopoKit takes the georeference from the first page that has one but always draws page 1.
+TopoKit uses the main map to position a sheet that has a locator inset. A PDF with maps on several pages is imported as a folder named after the file, with one raster per map page in page order, starting with page 1 at the top. An overview page goes to the bottom of the folder wherever it appears in the PDF, so it does not hide the other maps. A page is an overview if it contains the centres of at least half the other maps and covers at least four times the area of the middle-sized map. TopoKit saves each map page as a separate PDF, so a map after a cover page is imported as just that map page.
 
 Control points pair positions on the page with positions on the Earth. The number of control points determines how TopoKit places the sheet:
 
 | Control points | How the sheet is placed |
 |---|---|
-| Exactly four | The sheet is reprojected, which straightens the edges of a wide sheet and may trim two diagonal corners. |
+| Exactly four | The sheet is reprojected and drawn to the frame formed by the four points, with nothing inside the frame trimmed. |
 | Five or more | The sheet is reprojected with the edges of a wide sheet still bowed and nothing trimmed. |
+
+When TopoKit recognizes the declared coordinate system of a sheet placed by four control points, it reprojects the area between them in that system, so a UTM sheet uses UTM from corner to corner. If TopoKit does not recognize the named coordinate system, it blends between the points in latitude and longitude. When a sheet gives its control points in the latitude and longitude of a datum other than WGS84, such as OSGB36 under the British National Grid, TopoKit converts them to WGS84 using the same datum shift as for a GeoTIFF of the same map, but only if the sheet's coordinate-system text names an EPSG code.
 
 ### Edge clipping
 
-TopoKit clips a sheet placed by four or more control points to the outline formed by those points. When the points are at the neatline corners, this removes the collar outside the neatline, which contains the title block, legend and scale bar and has no position on the ground. The following two causes clip more of the sheet:
+TopoKit clips a sheet placed by four or more control points to the outline formed by those points. When the points are at the neatline corners, this removes the collar outside the neatline, which contains the title block, legend and scale bar and has no position on the ground. Most frames are slightly slanted on the map because the sheet's grid north differs from true north. TopoKit clips a slanted edge along the frame itself only when the sheet is placed by exactly four control points.
 
-- If control points are registered at the tick marks rather than the outermost corners, clipping removes tick labels or a sliver of terrain. To avoid this, register the source at the outermost corners.
-- When a sheet has exactly four control points, TopoKit clips it to the largest rectangle inside its reprojected trapezoid, which can trim two diagonal corners. You cannot turn this clipping off.
+When control points are registered at the tick marks rather than the outermost corners, clipping removes tick labels or a sliver of terrain. To avoid this, register the source at the outermost corners.
 
 ## How reprojection works
 
@@ -109,11 +116,11 @@ To remake rasters at a new setting, choose **Clear Map Image Cache** in **Settin
 
 ### Reprojection time
 
-A large raster can take several minutes to reproject, and its row shows a progress bar captioned "Keep TopoKit open" while you wait. When you use **All (N)**, a "Reprojecting rasters…" banner above the tree also shows how many rasters are done out of the total.
+A large raster can take several minutes to reproject, and its row shows a progress bar captioned "Keep TopoKit open" while you wait. When you use **All (N)**, a "Reprojecting rasters…" banner above the tree also shows how many rasters are done out of the total, and a **Drawing maps** row at the bottom of the map counts them too, along with any that failed.
 
 Once reprojection begins, there is no cancel button. If it is interrupted, TopoKit discards all of the work and starts again the next time the project opens, without showing the sheet.
 
-If reprojection fails, the raster returns to the Reprojection Required sheet without an alert, and you can choose **Reproject** to try again. When you use **All (N)**, TopoKit skips a failed raster and continues with the rest.
+If reprojection fails, the raster returns to the Reprojection Required sheet without an alert, and you can choose **Reproject** to try again. When you use **All (N)**, TopoKit skips a failed raster and continues with the rest. If the device runs nearly out of space or TopoKit runs low on memory, drawing stops, the rasters already drawn are kept, and the sheet says why when it comes back for the rest.
 
 :::ios
 On iPhone, keep TopoKit on screen while it reprojects. If you switch to another app, iOS lets reprojection continue only briefly before suspending TopoKit, and reprojection starts over if iOS then closes it.
@@ -121,7 +128,13 @@ On iPhone, keep TopoKit on screen while it reprojects. If you switch to another 
 
 ### Caching
 
-Each device reprojects its own copies because the cache does not sync through [iCloud](/manual/projects-and-files/#icloud-sync). TopoKit saves your approval in the project, so reprojection starts on another device without showing the sheet. The cache is capped at 2 GB, and when it is full, TopoKit removes the oldest copies first.
+Each device reprojects its own copies because the cache does not sync through [iCloud](/manual/projects-and-files/#icloud-sync). TopoKit saves your approval in the project, so reprojection starts on another device without showing the sheet. Right after saving a new reprojected copy, TopoKit checks the available storage. If at least a tenth of the device's storage is free, it keeps every copy. If less than a tenth is free and the cache exceeds 2 GB, TopoKit removes the oldest copies of rasters outside the open project, removing only as many as needed to bring free storage back to a tenth and never reducing the cache below 2 GB. The open project's copies and the copy just saved are never removed this way.
+
+Before saving a new copy that would leave less than 1 GB free, TopoKit removes other projects' copies, oldest first, regardless of the cache's size. If removing all of them would still not make room, TopoKit removes none and does not save the new copy.
+
+A deleted raster's cached copy is removed when you close its project. Opening another project or quitting TopoKit does not remove it. When you delete a project, TopoKit removes its cached copies with it. In both cases, a copy is kept if another project on the device still contains that raster, and no copies are removed while any project on the device cannot be read, such as an iCloud project that has not been downloaded yet.
+
+The cache is excluded from device backups, so TopoKit reprojects the rasters again when you restore a device from a backup.
 
 ## Editing a raster
 
@@ -197,3 +210,6 @@ Use **Re-link** to choose the file for the layer. TopoKit uses the file at its c
 
 **Can TopoKit colour a DEM or an NDVI grid?**
 To display a DEM or an NDVI grid, first render the single-band product to 8-bit RGB or greyscale in your desktop GIS. TopoKit draws a raster as stored, with no band selector, contrast stretch or colour ramp.
+
+**Why did my rasters reproject again after updating TopoKit?**
+When an update changes how TopoKit reprojects rasters, each reprojected copy is remade once, the first time the raster appears, with a progress bar on its row. If an update changes how a file's position is read, a raster already in a project keeps the position it was imported with until you import it again.

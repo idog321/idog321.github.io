@@ -193,7 +193,7 @@ With **Point Clustering** on, as it is by default, overlapping pins merge into a
 
 To create a folder for a feature, tap **Create New Folder** in its editor. The new folder is created immediately at the top level of the tree and selected as the feature's folder, so cancelling the editor leaves the new folder empty. A feature you are creating is saved into the new folder, and a feature you are editing moves into it when the editor closes.
 
-The folder picker lists only folders that directly contain a feature of the same type, so a new or empty folder, or one containing only subfolders, does not appear. You can also [move rows in the Layers tab](/manual/layer-tree/#moving-rows).
+The **Folder** picker shows all folders in the project in the same order as the Layers tab, with each folder indented beneath its parent. You can also [move rows in the Layers tab](/manual/layer-tree/#moving-rows).
 
 ## FAQ
 

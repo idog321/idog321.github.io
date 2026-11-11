@@ -52,7 +52,7 @@ When a tap finds several things, TopoKit chooses which card to open in this orde
 
 The outline remains on the map while the card is open, and a line's outline remains while its elevation profile is open. A basemap trail is highlighted as far as the map has loaded, then the whole feature is highlighted once it has been read.
 
-- **Icon**: Your own feature shows the same icon as its row in the **Layers** tab. A place or a basemap feature shows a pin in a circle, and the place card shows a ring with a dot.
+- **Icon**: Your own feature shows the same icon as its row in the **Layers** tab. A place or a basemap feature shows the :ui[Add Point]{icon=add-point} tool's pin, and the place card shows a ring with a dot.
 - **Name**: Tap the name to copy it.
 - **Line under the name**: For your own feature, this line shows its folder path with the top folder first. For a basemap feature, it shows the kind, such as "Footpath, unpaved"; for a place, it shows the address, which you can tap to copy.
 - **Coordinate**: The coordinate uses your **Coordinate Format** from [Units & Coordinates](/manual/settings/#units--coordinates), and you can tap it to copy it. For a line, it is the point on the line nearest your tap.
@@ -181,7 +181,7 @@ To list every layer of a kind under **Layers** instead of matching names, enter 
 | DDM | `49°58.5817'N 124°08.9868'W` | Include a degree mark and a hemisphere letter; the minute mark is optional. |
 | UTM | `10U 417559 5536636` | Use zones 1–60, a six-digit easting and a northing of five to eight digits. `N` and `S` indicate the hemisphere, so a position in latitude band S (32° to 40° N) takes `N`. Any other letter indicates a band: `C` to `M` is south, and `P` to `X` is north. |
 
-All formats use a point for decimals. A comma always separates latitude from longitude, so `49,5 8,2` gives no coordinate row and `48,2` is read as latitude 48, longitude 2.
+All formats use a point for decimals. A comma always separates latitude from longitude, so `49,5 8,2` gives no coordinate row and `48,2` is read as latitude 48, longitude 2. If the text does not specify one latitude and one longitude, as in `45 N, 30 N` or `45 30 N`, no coordinate row appears.
 
 TopoKit writes UTM using the plain 6° zone without the Norway and Svalbard exceptions, and the hemisphere letter: `10N 417559E 5536636N`. You can paste every coordinate TopoKit writes back into search, in any of the four formats, and TopoKit will read it.
 

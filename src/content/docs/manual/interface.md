@@ -18,7 +18,7 @@ Everything you add appears over Apple Maps. To change the map underneath, use th
 
 When you open a project, the map frames its visible features and rasters, replacing your previous view. Choosing **Reload** on [**Updated on another device**](/manual/projects-and-files/#icloud-sync) does the same. If there is nothing to frame, the map centres on your first location fix once per launch.
 
-You can follow each tile download, elevation download and basemap build in a progress row at the bottom of the map, whichever tab is open. Use the row's ✕ to stop it; for tile and elevation downloads, TopoKit asks before stopping.
+You can follow each tile download, elevation download, basemap build, vector file import, GeoPDF import and batch of rasters being reprojected in a progress row at the bottom of the map, whichever tab is open. Use the row's ✕ to stop any of them except reprojection; for tile and elevation downloads, TopoKit asks before stopping.
 
 ## The tool sidebar
 
