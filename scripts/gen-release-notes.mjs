@@ -34,7 +34,7 @@ const OUT = resolve(process.cwd(), 'public/release-notes/index.html');
 // page entirely. Take a version out of this set the day it ships — nothing
 // detects this, because the app repo has no notion of "shipped", only of what
 // the current build is.
-const UNRELEASED = new Set(['1.2.1', '1.3']);
+const UNRELEASED = new Set(['1.3']);
 
 // Swift interpolations in the notes, and the words they come out as in the
 // shipped app. Anything not listed here stops the run instead of leaking code

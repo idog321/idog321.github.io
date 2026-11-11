@@ -30,6 +30,8 @@ TopoKit copies each raster into its own storage on the device, so moving, renami
 :::
 ::::
 
+Before copying a GeoTIFF or GeoPDF in, TopoKit checks that at least 1 GB of storage would stay free so your projects can still save. If it wouldn't, nothing is imported, and a **Not Enough Space** alert gives the file's size, the free space and how much to free up.
+
 A raster appears at once when it needs no reprojection, followed by the [**Raster Storage** question](#rasters-and-icloud) if the project is in iCloud. When a raster needs reprojection, TopoKit opens the **Reprojection Required** sheet.
 
 ## The reprojection sheet
@@ -40,6 +42,8 @@ In the sheet, **Source CRS** reads "Unknown Projected CRS" when TopoKit did not 
 
 - **Transparent Value** sets the pixel value to make transparent when you turn on [NoData](#nodata).
 - **Copy into Project** copies the raster into the project's folder so it [syncs through iCloud](#rasters-and-icloud). This setting starts on and appears only in an iCloud project when the raster has not already been copied into it.
+
+Below the settings, the sheet says roughly how much storage drawing the raster takes at your [Map Image Quality](#reprojection-quality). When that would leave less than 1 GB free, the line turns orange and either offers a **Use** button with the sharpest quality that fits, which also changes **Map Image Quality** in Settings, or says how much space to free up. When the drawing fits only by clearing other projects' reprojected copies, the line says how much it will clear; those rasters are reprojected again when you open their projects.
 
 To reproject several waiting rasters with the same settings, choose **All (N)**. TopoKit reprojects them in turn using the sheet's settings, so you only need to answer the sheet once.
 
@@ -112,11 +116,11 @@ To remake rasters at a new setting, choose **Clear Map Image Cache** in **Settin
 
 ### Reprojection time
 
-A large raster can take several minutes to reproject, and its row shows a progress bar captioned "Keep TopoKit open" while you wait. When you use **All (N)**, a "Reprojecting rasters…" banner above the tree also shows how many rasters are done out of the total.
+A large raster can take several minutes to reproject, and its row shows a progress bar captioned "Keep TopoKit open" while you wait. When you use **All (N)**, a "Reprojecting rasters…" banner above the tree also shows how many rasters are done out of the total, and a **Drawing maps** row at the bottom of the map counts them too, along with any that failed.
 
 Once reprojection begins, there is no cancel button. If it is interrupted, TopoKit discards all of the work and starts again the next time the project opens, without showing the sheet.
 
-If reprojection fails, the raster returns to the Reprojection Required sheet without an alert, and you can choose **Reproject** to try again. When you use **All (N)**, TopoKit skips a failed raster and continues with the rest.
+If reprojection fails, the raster returns to the Reprojection Required sheet without an alert, and you can choose **Reproject** to try again. When you use **All (N)**, TopoKit skips a failed raster and continues with the rest. If the device runs nearly out of space or TopoKit runs low on memory, drawing stops, the rasters already drawn are kept, and the sheet says why when it comes back for the rest.
 
 :::ios
 On iPhone, keep TopoKit on screen while it reprojects. If you switch to another app, iOS lets reprojection continue only briefly before suspending TopoKit, and reprojection starts over if iOS then closes it.

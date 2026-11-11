@@ -47,6 +47,8 @@ Vector files have no fixed size limit in any format. :mac[On Mac, TopoKit reads 
 
 :ios[After reading the file, TopoKit checks the available memory again before adding anything to the project, because saving needs more memory than reading. If any check fails, nothing is added, and an alert shows the file's name, roughly how much memory is needed and how much is free.]
 
+Every point feature is a pin on the map, so TopoKit doesn't add a file that would take a project past 50,000 separate points on Mac or 20,000 on iPhone. An alert gives the number of points and suggests splitting or filtering the file, or putting it in a project of its own. A project already past the limit still opens.
+
 When a file takes more than a moment to read, a progress row appears at the bottom of the map with the file's name, a percentage and ✕. Use the row's ✕ to stop the import immediately without a confirmation, and nothing from the file is added.
 
 For GPX, KML and KMZ, the percentage is based on the number of lines read. When all the text is on one line, it stays at the same percentage until reading finishes. For a KML or KMZ file with a few very long lines or areas, the percentage also stays the same until reading finishes, however many line breaks the file contains. With thousands of shorter lines, the percentage moves normally. For GeoPackage, the percentage stays at 0% until reading finishes; for GeoJSON, it stays at 0% until the whole file has been read, then continues from 50%.
@@ -118,7 +120,7 @@ TopoKit reads points, lines and polygons with holes from KML's `<Placemark>` ele
 
 Altitude becomes each vertex's elevation, except that 0 is read as no elevation rather than sea level when the altitude mode is `clampToGround`, KML's default. TopoKit also reads per-point times and accuracy from `<gx:Track>` and `<gx:MultiTrack>`.
 
-Each part of a `<MultiGeometry>` or `<gx:MultiTrack>` becomes a separate feature with the placemark's name and attributes, so a placemark containing three polygons becomes three polygons. In GeoJSON and GeoPackage, a `MultiPoint`, `MultiLineString` or `MultiPolygon` remains one feature in several parts.
+Each part of a `<MultiGeometry>` or `<gx:MultiTrack>` becomes a separate feature with the placemark's name and attributes, so a placemark containing three polygons becomes three polygons. In GeoJSON and GeoPackage, a `MultiPoint`, `MultiLineString` or `MultiPolygon` remains one feature in several parts. TopoKit also reads a GeoPackage's curved types, `CircularString`, `CompoundCurve`, `MultiCurve`, `CurvePolygon` and `MultiSurface`, and draws any arcs as short straight segments.
 
 When you import a KMZ, TopoKit opens the archive and reads the first `.kml` file inside it, ignoring other KML documents, icons and overlays in the archive.
 
