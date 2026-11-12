@@ -17,7 +17,10 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://topokit.ca/Images/og-card.jpg">
-  <!-- Tells search engines this site, the App Store listing and the YouTube channel are one TopoKit. -->
+  <!-- Tells search engines this site, the App Store listing and the YouTube channel are one TopoKit,
+       and that TopoKit is an iPhone and Mac app. The offers repeat the pricing lines further down this
+       page: when the "Free forever" line comes off on January 1, 2027, take the first offer and the two
+       validFrom dates out with it. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -29,6 +32,7 @@
       },
       {
         "@type": "Organization",
+        "@id": "https://topokit.ca/#organization",
         "name": "TopoKit",
         "url": "https://topokit.ca/",
         "logo": "https://topokit.ca/favicon.png",
@@ -36,6 +40,42 @@
         "sameAs": [
           "https://apps.apple.com/us/app/topokit/id6761090144",
           "https://www.youtube.com/@TopoKitGIS"
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "TopoKit",
+        "description": "A full GIS workflow on your iPhone and Mac. Build a topographic basemap of your area, add your own maps and data, and take it all past cell service. No account. No subscription needed.",
+        "url": "https://topokit.ca/",
+        "applicationCategory": "Navigation",
+        "operatingSystem": "iOS, macOS",
+        "installUrl": "https://apps.apple.com/us/app/topokit/id6761090144",
+        "sameAs": "https://apps.apple.com/us/app/topokit/id6761090144",
+        "publisher": { "@id": "https://topokit.ca/#organization" },
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Free forever if you get it before January 1, 2027",
+            "price": "0",
+            "priceCurrency": "USD",
+            "priceValidUntil": "2026-12-31"
+          },
+          {
+            "@type": "Offer",
+            "name": "TopoKit Monthly",
+            "description": "Per month, with the first month free.",
+            "price": "4.99",
+            "priceCurrency": "USD",
+            "validFrom": "2027-01-01"
+          },
+          {
+            "@type": "Offer",
+            "name": "TopoKit Forever",
+            "description": "A one-time payment for lifetime access.",
+            "price": "39.99",
+            "priceCurrency": "USD",
+            "validFrom": "2027-01-01"
+          }
         ]
       }
     ]
