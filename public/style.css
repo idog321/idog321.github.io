@@ -2188,6 +2188,520 @@ p.trail-crumb a:hover {
 }
 
 
+/* ---- Trail band ----
+   /maps/jdf/band/ is the Juan de Fuca Trail Band's page and the address in the QR code
+   on the band's tag, so the address never moves. The page is that tag carried out, for someone who
+   has just scanned the tag: the thanks, then the free maps with the three steps in one
+   dark card, then what TopoKit is, then how the band works, and then the small print.
+   The page uses the trail page's pieces (.trail, the tutorial button, and the small
+   print) and the App Store panel; only what differs is here. */
+.band {
+  width: 100%;
+}
+
+.band .trail {
+  padding-top: 2.75rem;
+}
+
+/* The thanks: his words, nothing beside them, centred over the card (left on a phone,
+   where it already spans the width). */
+.band-hello {
+  max-width: 44rem;
+  margin: 0 auto 2.25rem;
+  text-align: center;
+}
+
+.trail .band-hello h1 {
+  font-size: clamp(2rem, 3.6vw, 2.6rem);
+  margin-bottom: 0.6rem;
+  text-wrap: balance;
+}
+
+.trail .band-hello p {
+  font-size: 1.15rem;
+  line-height: 1.55;
+}
+
+/* The free maps: the front page's charcoal card with the same faint contours. The cover
+   spans the left; the heading, the sentence, and the three steps sit beside the cover,
+   centred on the cover. */
+.band-offer {
+  display: grid;
+  grid-template-columns: 290px minmax(0, 1fr);
+  grid-template-rows: 1fr auto auto auto 1fr;
+  grid-template-areas: "cover ." "cover head" "cover text" "cover steps" "cover .";
+  column-gap: 3.5rem;
+  margin-bottom: 6rem;
+  padding: 3rem;
+  border-radius: 24px;
+  color: #fff;
+  background-color: #1A1B1D;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='700' height='700' viewBox='0 0 700 700'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.045' stroke-width='1.4'%3E%3Cpath d='M60 620 C140 520 120 430 210 380 C300 330 320 240 430 220 C540 200 560 120 660 90'/%3E%3Cpath d='M20 640 C120 540 100 440 200 385 C300 330 330 230 450 205 C570 180 590 100 690 70'/%3E%3Cpath d='M100 600 C170 510 150 430 230 380 C310 330 330 250 420 235 C510 220 540 150 630 115'/%3E%3Cpath d='M-20 560 C60 500 80 420 160 390 C240 360 260 300 340 280 C420 260 470 200 520 170'/%3E%3Cpath d='M180 660 C240 590 230 520 300 470 C370 420 390 350 480 330 C570 310 600 240 680 210'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.band-offer-cover {
+  grid-area: cover;
+  margin: 0;
+  align-self: center;
+}
+
+/* The smaller copies of the cover round to a hair off the page's own shape; this keeps it. */
+.band-offer-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 960 / 1243;
+  border-radius: 10px;
+}
+
+/* On one line beside the cover wherever the window gives it room (from about 980 px).
+   The size stops at 2.2rem because the line is 15.5 em long and the column 574 px wide,
+   which leaves a twentieth to spare for a browser that sets the type a little wider. */
+.trail .band-offer h2 {
+  grid-area: head;
+  color: #fff;
+  font-size: clamp(1.9rem, 3vw, 2.2rem);
+  line-height: 1.12;
+  margin-bottom: 0.8rem;
+  text-wrap: balance;
+}
+
+.band-offer h2 em {
+  font-style: italic;
+  color: var(--color-accent);
+}
+
+.trail .band-offer > p {
+  grid-area: text;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 1.06rem;
+  line-height: 1.6;
+  max-width: 31em;
+}
+
+/* Three steps under their own heading, one thing to tap each, in the order the tag
+   gives them. All three are one shape: a full-width row of the same glass, a sign on
+   the left (the download arrow, Apple's badge, the play button) and the words beside
+   the sign. The numbers are white; the signs keep the orange. */
+.band-offer-do {
+  grid-area: steps;
+  margin-top: 1.75rem;
+}
+
+.trail .band-offer-do h3 {
+  font-family: var(--font-logo);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  color: #fff;
+  margin-bottom: 0.9rem;
+}
+
+.band-offer-steps {
+  list-style: none;
+  counter-reset: offer;
+  margin: 0;
+  display: grid;
+  row-gap: 0.85rem;
+}
+
+.band-offer-steps li {
+  counter-increment: offer;
+  display: grid;
+  grid-template-columns: 2.1rem minmax(0, 1fr);
+  align-items: center;
+}
+
+.band-offer-steps li::before {
+  content: counter(offer);
+  font-family: var(--font-logo);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+.band-offer-steps li > * {
+  justify-self: stretch;
+}
+
+.trail .band-offer .maps-page .promo {
+  flex: 1;
+  min-height: 4.25rem;
+}
+
+.trail .band-offer .trail-yt a {
+  display: flex;
+  min-height: 4.25rem;
+}
+
+/* The trail page colours every link in a list orange; these keep their own colours. */
+.trail .band-offer li a,
+.trail .band-offer li a:hover {
+  text-decoration: none;
+}
+
+/* The download: the same glass row as the other two. The orange circle is the only orange. */
+.trail .band-offer a.band-dl,
+.trail .band-offer a.band-dl:hover {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  min-height: 4.25rem;
+  padding: 0.5rem 1.15rem 0.5rem 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 17px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.07));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  color: #fff;
+  font-size: 1.08rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.trail .band-offer a.band-dl:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.band-offer .band-dl svg,
+.band-offer .trail-yt svg {
+  flex: 0 0 auto;
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+/* The App Store panel as the front page's hero has it: frosted glass, white words. */
+.band-offer .maps-page {
+  max-width: none;
+}
+
+.band-offer .maps-page .map-get {
+  margin: 0;
+}
+
+.trail .band-offer .maps-page .promo,
+.trail .band-offer .maps-page .promo:hover {
+  color: #fff;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.07));
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.trail .band-offer .maps-page .promo:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* The badge never squeezes; the offer wraps beside it, the date kept whole. */
+.band-offer .maps-page .store-btn {
+  flex-shrink: 0;
+}
+
+.band-offer .maps-page .promo-words {
+  white-space: normal;
+}
+
+.band-offer .maps-page .promo-words em {
+  white-space: nowrap;
+}
+
+/* "Download TopoKit" over his line: Apple's badge can't name the app, so the words do. */
+.band-offer .promo-name {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-family: var(--font-body);
+  font-size: 1.08rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* The tutorial: the trail page's play button, in the same glass as the App Store panel. */
+.trail .band-offer .trail-yt {
+  margin: 0;
+}
+
+.trail .band-offer .trail-yt a,
+.trail .band-offer .trail-yt a:hover {
+  color: #fff;
+  padding: 0.5rem 1.15rem 0.5rem 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 17px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.07));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.trail .band-offer .trail-yt a:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* What TopoKit is, and how the band works: a picture in one half, with the heading and
+   the words in the other half, centred on the picture. How the band works has the film
+   on the left, like the cover in the card above. What TopoKit is turns the other way,
+   words on the left and the picture on the right, as the front page shows the same
+   picture, so the pictures alternate sides down the page instead of standing one above
+   the other. On a phone each section stacks: heading, picture, and words. */
+.band-use {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: 1fr auto auto 1fr;
+  grid-template-areas: "film ." "film head" "film text" "film .";
+  column-gap: 3.5rem;
+  margin-bottom: 4.5rem;
+}
+
+.band-use-flip {
+  grid-template-areas: ". film" "head film" "text film" ". film";
+}
+
+.band-use-film {
+  grid-area: film;
+  align-self: center;
+  margin: 0;
+}
+
+.trail .band-use-head {
+  grid-area: head;
+  margin-bottom: 0.9rem;
+}
+
+.trail .band-use > p,
+.band-use-text {
+  grid-area: text;
+}
+
+.band-use-film img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* The way on to the front page, drawn like the front page's own links of that kind:
+   bold, with an orange underline and an arrow. */
+.trail .band-use p.band-more {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.trail .band-more a,
+.trail .band-more a:hover {
+  display: inline-block;
+  padding-bottom: 0.1rem;
+  border-bottom: 2px solid var(--color-accent);
+  color: var(--color-text);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.trail .band-more a:hover {
+  border-bottom-color: var(--color-link-hover);
+}
+
+.band-more a::after {
+  content: " \2192";
+}
+
+.band-film {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1048 / 560;
+  border-radius: 12px;
+  background: var(--color-bg-alt);
+  cursor: pointer;
+}
+
+/* No word left alone on the last line, where the browser can. */
+.trail .band-use p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  max-width: 26em;
+  text-wrap: pretty;
+}
+
+@media (max-width: 900px) {
+  /* The cover becomes a thumbnail beside the heading; the sentence and the steps run under both. */
+  .band-offer {
+    grid-template-columns: 150px minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "cover head" "text text" "steps steps";
+    column-gap: 1.75rem;
+    padding: 2.25rem;
+  }
+
+  .trail .band-offer h2 {
+    align-self: center;
+    margin-bottom: 0;
+    max-width: 9.5em;
+  }
+
+  .trail .band-offer > p {
+    margin-top: 1.5rem;
+    max-width: none;
+  }
+
+  .band-use {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: "head" "film" "text";
+    row-gap: 1.4rem;
+  }
+
+  .trail .band-use-head {
+    margin-bottom: 0;
+  }
+
+  .band-use-film {
+    max-width: 600px;
+  }
+
+  .trail .band-use p {
+    max-width: 34em;
+  }
+}
+
+@media (max-width: 680px) {
+  .band .trail {
+    padding-top: 1.6rem;
+  }
+
+  .band-hello {
+    margin: 0 0 1.35rem;
+    text-align: left;
+  }
+
+  .trail .band-hello h1 {
+    font-size: min(1.75rem, 7.2vw);
+    margin-bottom: 0.5rem;
+  }
+
+  .trail .band-hello p {
+    font-size: 1.02rem;
+  }
+
+  .band-offer {
+    grid-template-columns: 88px minmax(0, 1fr);
+    column-gap: 1.1rem;
+    margin: 0 -0.5rem 4rem;
+    padding: 1.25rem 1.15rem 1.4rem;
+    border-radius: 20px;
+  }
+
+  .band-offer-cover img {
+    border-radius: 6px;
+  }
+
+  .trail .band-offer h2 {
+    font-size: min(1.6rem, 6.9vw);
+  }
+
+  .trail .band-offer > p {
+    margin-top: 1rem;
+    font-size: 0.98rem;
+  }
+
+  .band-offer-do {
+    margin-top: 1.2rem;
+  }
+
+  .trail .band-offer-do h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .band-offer-steps {
+    row-gap: 0.7rem;
+  }
+
+  .band-offer-steps li {
+    grid-template-columns: 1.7rem minmax(0, 1fr);
+  }
+
+  /* The panel stays a row on a phone (badge, then the words wrapping beside it), so the
+     three steps keep one height. */
+  .trail .band-offer .maps-page .promo {
+    flex: 1;
+    flex-direction: row;
+    gap: 0.7rem;
+    padding: 0.45rem 0.8rem 0.45rem 0.45rem;
+  }
+
+  /* Apple's badge a little smaller, so "Download TopoKit" keeps to one line beside it. */
+  .band-offer .maps-page .store-btn {
+    flex-shrink: 0;
+    gap: 0.5rem;
+    padding: 0.55rem 0.8rem 0.55rem 0.7rem;
+  }
+
+  .band-offer .maps-page .store-big {
+    font-size: 1.05rem;
+  }
+
+  .band-offer .maps-page .promo-words {
+    text-align: left;
+    font-size: 0.86rem;
+  }
+
+  .trail .band-offer a.band-dl,
+  .trail .band-offer a.band-dl:hover {
+    font-size: 1rem;
+  }
+
+  .band-offer .promo-name {
+    font-size: min(0.95rem, 3.7vw);
+    white-space: nowrap;
+  }
+
+  .band-offer .maps-page .promo-words em {
+    display: inline;
+    white-space: nowrap;
+  }
+
+  .trail .band-offer .trail-yt a {
+    display: flex;
+    font-size: 0.92rem;
+  }
+
+  .trail .band-use p {
+    font-size: 1.02rem;
+  }
+
+  .band-use {
+    margin-bottom: 2.5rem;
+  }
+}
+
+/* The narrowest phones: no room for the date beside the badge, so the panel stacks as
+   it does everywhere else on the site at phone width. */
+@media (max-width: 360px) {
+  .trail .band-offer .maps-page .promo {
+    flex-direction: column;
+    padding: 0.8rem 1rem 0.9rem;
+  }
+
+  .band-offer .maps-page .promo-words {
+    text-align: center;
+  }
+
+  .band-offer .maps-page .promo-words em {
+    display: block;
+  }
+}
+
+/* The trail's page, for the band. "Download the free maps" lands on #download: on a
+   phone that is the paragraph and the Download button, under the top bar; on a wider
+   screen they are already on the first screen, so the page doesn't move. */
+#download {
+  scroll-margin-top: 100vh;
+}
+
+@media (max-width: 680px) {
+  #download {
+    scroll-margin-top: 4.5rem;
+  }
+}
+
+
 /* ---- Maps ----
    Generated by scripts/gen-maps.mjs into maps/sources/index.html from src/data/maps.json.
    A directory, not an article: each country lists its nationwide sources, then
